@@ -95,10 +95,10 @@ main.floors.MT25=
                     null
                 ],
                 "loc": [
-                    -370,
-                    140,
-                    1280,
-                    200
+                    -60,
+                    120,
+                    600,
+                    240
                 ],
                 "opacity": 1,
                 "time": 0
@@ -107,11 +107,11 @@ main.floors.MT25=
                 "type": "scaleImage",
                 "code": 1,
                 "center": [
-                    190,
-                    200
+                    80,
+                    160
                 ],
-                "scale": 0.4,
-                "time": 1000
+                "scale": 0.5,
+                "time": 500
             },
             {
                 "type": "function",
@@ -135,7 +135,7 @@ main.floors.MT25=
                             null
                         ],
                         "loc": [
-                            130,
+                            15,
                             50,
                             90,
                             90
@@ -166,7 +166,7 @@ main.floors.MT25=
                                     null
                                 ],
                                 "loc": [
-                                    280,
+                                    175,
                                     50,
                                     90,
                                     90
@@ -197,7 +197,7 @@ main.floors.MT25=
                                             null
                                         ],
                                         "loc": [
-                                            430,
+                                            325,
                                             50,
                                             90,
                                             90
@@ -218,6 +218,65 @@ main.floors.MT25=
                     }
                 ],
                 "false": []
+            },
+            {
+                "type": "showImage",
+                "code": 5,
+                "image": "abstract.png",
+                "loc": [
+                    40,
+                    480
+                ],
+                "opacity": 1,
+                "time": 0
+            },
+            {
+                "type": "moveImage",
+                "code": 5,
+                "to": [
+                    40,
+                    20
+                ],
+                "time": 500
+            },
+            {
+                "type": "sleep",
+                "time": 500
+            },
+            {
+                "type": "drawTextContent",
+                "text": "   我们所有人都应对指挥官阁下及其\n英勇无畏的下属们表达最诚挚的谢意。\n如果不是他们拖住了德军的进攻，我们\n根本没有这么多宝贵的时间来完成这次\n奇迹般的撤退行动。\n   三十万大军已成功从敦刻尔克海滩\n撤回英国本土。我们输掉了法国战役，\n但我们不会就此罢休。我们还没有输掉\n整场战争！",
+                "left": 60,
+                "top": 100,
+                "align": "left",
+                "fontSize": 20,
+                "color": [
+                    0,
+                    0,
+                    0,
+                    1
+                ]
+            },
+            {
+                "type": "sleep",
+                "time": 7500
+            },
+            {
+                "type": "clearMap"
+            },
+            {
+                "type": "moveImage",
+                "code": 5,
+                "to": [
+                    40,
+                    480
+                ],
+                "time": 500
+            },
+            {
+                "type": "hideImage",
+                "code": 5,
+                "time": 0
             },
             {
                 "type": "sleep",

@@ -13,7 +13,44 @@ main.floors.MT141=
     "ratio": 1,
     "defaultGround": "water",
     "bgm": "medaction1.mp3",
-    "firstArrive": [],
+    "firstArrive": [
+        {
+            "type": "text",
+            "text": "\t[南云忠一]\f[nanbu.jpg,0,310]为防止敌人的反扑，取消原定的第三波次攻击。攻击机群现在返航，我们即刻离开。",
+            "pos": [
+                100,
+                300,
+                380
+            ]
+        },
+        {
+            "type": "text",
+            "text": "\t[山本五十六]\f[yamamoto.jpg,0,310]袭击成功了，但我更担心的是，我们的行动是不是在唤醒一个沉睡着的巨人？",
+            "pos": [
+                100,
+                300,
+                380
+            ]
+        },
+        {
+            "type": "text",
+            "text": "\t[尼米兹]\f[nimitz.png,0,310]日本人无耻地对我们不宣而战，太平洋舰队损失惨重。唯一的好消息是，我们所有的航空母舰都不在珍珠港内，未来我们要依靠她们去应对日军的入侵了。",
+            "pos": [
+                100,
+                300,
+                380
+            ]
+        },
+        {
+            "type": "text",
+            "text": "\t[哈尔西]\f[halsey.jpg,0,310]企业号全速前进，回港补给，我们要准备出海复仇了！等到我们复仇完成，我只允许日本人在地狱里说日语！",
+            "pos": [
+                100,
+                300,
+                380
+            ]
+        }
+    ],
     "eachArrive": [],
     "parallelDo": "",
     "events": {
@@ -91,10 +128,10 @@ main.floors.MT141=
                     null
                 ],
                 "loc": [
-                    -370,
-                    140,
-                    1280,
-                    200
+                    -60,
+                    120,
+                    600,
+                    240
                 ],
                 "opacity": 1,
                 "time": 0
@@ -103,11 +140,11 @@ main.floors.MT141=
                 "type": "scaleImage",
                 "code": 1,
                 "center": [
-                    190,
-                    200
+                    80,
+                    160
                 ],
-                "scale": 0.4,
-                "time": 1000
+                "scale": 0.5,
+                "time": 500
             },
             {
                 "type": "function",
@@ -131,7 +168,7 @@ main.floors.MT141=
                             null
                         ],
                         "loc": [
-                            130,
+                            15,
                             50,
                             90,
                             90
@@ -162,7 +199,7 @@ main.floors.MT141=
                                     null
                                 ],
                                 "loc": [
-                                    280,
+                                    175,
                                     50,
                                     90,
                                     90
@@ -193,7 +230,7 @@ main.floors.MT141=
                                             null
                                         ],
                                         "loc": [
-                                            430,
+                                            325,
                                             50,
                                             90,
                                             90

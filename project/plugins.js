@@ -581,7 +581,7 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			strategy = true;
 			name = '空战王牌';
 			cost = 100;
-			description = '秒杀面前的非boss空军';
+			description = '秒杀面前的非boss空军。如果无法秒杀对方，则改为“造成3倍攻击力的伤害”';
 			event = [
 				{ "type": "setValue", "name": "flag:空战王牌", "value": "core.getBlockId(core.nextX(),core.nextY())" }, { "type": "if", "condition": "core.plugin.Luftwaffe.includes(core.material.enemys[flags.空战王牌]?.type)&&!core.material.enemys[flag:空战王牌].notBomb&&core.material.enemys[flags.空战王牌]?.type!=='导弹'&&!core.hasSpecial(flags['空战王牌'], 65)", "true": [{ "type": "playSound", "name": "fighter.mp3" }, { "type": "showImage", "code": 1, "image": "aircraft1.png", "loc": [643, "32*core.nextY()+16-125"], "opacity": 1, "time": 0 }, { "type": "moveImage", "code": 1, "to": [-195, "32*core.nextY()+16-125"], "time": 500, "async": true }, { "type": "battle", "loc": ["core.nextX()", "core.nextY()"] }, { "type": "waitAsync" }, { "type": "hideImage", "code": 1, "time": 0 }], "false": [{ "type": "tip", "text": "目标无法击杀！" }, { "type": "playSound", "name": "操作失败" }, { "type": "setValue", "name": "status:mana", "operator": "+=", "value": "100" }, { "type": "setValue", "name": "flag:空战王牌", "value": "null" }] }
 			];
@@ -621,7 +621,7 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 		if (id === 8) {
 			name = '剑鱼818中队';
 			cost = 80;
-			description = '对面前的敌军舰艇发射5枚鱼雷，如果命中目标，除造成正常的鱼雷伤害外，对手闪避鱼雷数-2。可重复空袭，敌方闪避数值最低为0'
+			description = '对面前的敌军舰艇发射5枚鱼雷，且至少会命中1枚（潜艇除外），除造成正常的鱼雷伤害外，对手闪避鱼雷数-2。可重复空袭，但不会再降低对方的闪避'
 		}
 		if (id === 9) {
 			name = '抵抗运动';
@@ -637,7 +637,7 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			strategy = true;
 			name = '空中打击';
 			cost = 200;
-			description = '秒杀面前的非boss坦克';
+			description = '秒杀面前的非boss坦克，如无法秒杀，改为“投掷一轮伤害为4倍攻击力的炸弹攻击”';
 			event = [
 				{ "type": "setValue", "name": "flag:空中打击", "value": "core.getBlockId(core.nextX(),core.nextY())" }, { "type": "if", "condition": "['轻坦','中坦','重坦','坦歼'].includes(core.material.enemys[flag:空中打击]?.type)&&!core.material.enemys[flag:空中打击]?.notBomb&&!core.hasSpecial(flags['空中打击'], 65)", "true": [{ "type": "playSound", "name": "bomber3.mp3" }, { "type": "showImage", "code": 1, "image": "aircraft2.png", "loc": [643, "32*core.nextY()+16-125"], "opacity": 1, "time": 0 }, { "type": "moveImage", "code": 1, "to": [-195, "32*core.nextY()+16-125"], "time": 500, "async": true }, { "type": "battle", "loc": ["core.nextX()", "core.nextY()"] }, { "type": "waitAsync" }, { "type": "hideImage", "code": 1, "time": 0 }], "false": [{ "type": "tip", "text": "目标无法击杀！" }, { "type": "playSound", "name": "操作失败" }, { "type": "setValue", "name": "status:mana", "operator": "+=", "value": "200" }, { "type": "setValue", "name": "flag:空中打击", "value": "null" }] }
 			];
@@ -650,7 +650,7 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 		if (id === 13) {
 			name = '金牌损管';
 			cost = 180;
-			description = '下一场与敌人海军的战斗结束后，如果剩余血量不足30%，则恢复全部血量'
+			description = '下一场在海上的战斗结束后，回满血量并获得一层5%的减伤效果，持续一场战斗'
 		}
 		if (id === 14) {
 			name = '补给线';

@@ -53,10 +53,10 @@ main.floors.MT316=
                     null
                 ],
                 "loc": [
-                    -370,
-                    140,
-                    1280,
-                    200
+                    -60,
+                    120,
+                    600,
+                    240
                 ],
                 "opacity": 1,
                 "time": 0
@@ -65,11 +65,11 @@ main.floors.MT316=
                 "type": "scaleImage",
                 "code": 1,
                 "center": [
-                    190,
-                    200
+                    80,
+                    160
                 ],
-                "scale": 0.4,
-                "time": 1000
+                "scale": 0.5,
+                "time": 500
             },
             {
                 "type": "function",
@@ -93,7 +93,7 @@ main.floors.MT316=
                             null
                         ],
                         "loc": [
-                            130,
+                            15,
                             50,
                             90,
                             90
@@ -124,7 +124,7 @@ main.floors.MT316=
                                     null
                                 ],
                                 "loc": [
-                                    280,
+                                    175,
                                     50,
                                     90,
                                     90
@@ -155,7 +155,7 @@ main.floors.MT316=
                                             null
                                         ],
                                         "loc": [
-                                            430,
+                                            325,
                                             50,
                                             90,
                                             90

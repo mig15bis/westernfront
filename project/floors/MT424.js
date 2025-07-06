@@ -340,6 +340,43 @@ main.floors.MT424=
         ],
         "8,12": [
             "\t[伊吹萃香]\f[specialnpc.jpg,30,200,150,300]显伤后面标有“风”字的是进行神风攻击的飞机，注意躲避！"
+        ],
+        "7,2": [
+            {
+                "type": "animate",
+                "name": "fire",
+                "loc": "hero"
+            },
+            {
+                "type": "animate",
+                "name": "sing",
+                "loc": [
+                    7,
+                    2
+                ]
+            },
+            {
+                "type": "move",
+                "loc": [
+                    7,
+                    2
+                ],
+                "time": 500,
+                "keep": true,
+                "steps": [
+                    "up:3"
+                ]
+            },
+            {
+                "type": "sleep",
+                "time": 500
+            },
+            "\t[远处传来日本军官的怒吼]佐佐木友次！你怎么又回来了！八格牙路！！！！！",
+            {
+                "type": "animate",
+                "name": "ugh",
+                "loc": "hero"
+            }
         ]
     },
     "changeFloor": {

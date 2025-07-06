@@ -13,10 +13,7 @@ main.floors.MT138=
     "ratio": 1,
     "defaultGround": "water",
     "bgm": "medaction1.mp3",
-    "firstArrive": [
-        "\t[落水的官兵们]快看！那是我们的战斗机！",
-        "\t[落水的官兵们]上啊！把那些混蛋打下来！"
-    ],
+    "firstArrive": [],
     "eachArrive": [],
     "parallelDo": "",
     "events": {},

@@ -57,10 +57,80 @@ main.floors.MT136=
         },
         "我们成功潜入夏威夷海军基地，没有被敌人发现！",
         "立刻向旗舰发送暗号",
+        {
+            "type": "showImage",
+            "code": 1,
+            "image": "pearlharbor1.png",
+            "loc": [
+                0,
+                0
+            ],
+            "opacity": 1,
+            "time": 0
+        },
+        {
+            "type": "setCurtain",
+            "time": 500
+        },
         "\\c[40]\r[red]虎！虎！虎！",
         {
             "type": "playSound",
             "name": "airstrike.mp3"
+        },
+        {
+            "type": "sleep",
+            "time": 500
+        },
+        {
+            "type": "setCurtain",
+            "color": [
+                255,
+                255,
+                255,
+                1
+            ],
+            "time": 500,
+            "keep": true
+        },
+        {
+            "type": "hideImage",
+            "code": 1,
+            "time": 0
+        },
+        {
+            "type": "showImage",
+            "code": 1,
+            "image": "pearlharbor2.png",
+            "loc": [
+                0,
+                0
+            ],
+            "opacity": 1,
+            "time": 0
+        },
+        {
+            "type": "setCurtain",
+            "time": 500
+        },
+        {
+            "type": "sleep",
+            "time": 1000
+        },
+        {
+            "type": "setCurtain",
+            "color": [
+                0,
+                0,
+                0,
+                1
+            ],
+            "time": 500,
+            "keep": true
+        },
+        {
+            "type": "hideImage",
+            "code": 1,
+            "time": 0
         },
         {
             "type": "sleep",

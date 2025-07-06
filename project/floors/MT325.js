@@ -430,7 +430,7 @@ main.floors.MT325=
             "进攻D点！\n不行！\n不行！\n收到！\n干得好！\n非常感谢！\n进攻D点！\n防守D点！\n收到！\n不行！\n对不起！\n攻击敌军部队！\n正在装填！\n小心空中敌袭！\n干得好！",
             {
                 "type": "animate",
-                "name": "irritable",
+                "name": "ugh",
                 "loc": "hero"
             },
             "雷P收收味。"

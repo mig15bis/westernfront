@@ -305,10 +305,10 @@ main.floors.MT18=
                     null
                 ],
                 "loc": [
-                    -370,
-                    140,
-                    1280,
-                    200
+                    -60,
+                    120,
+                    600,
+                    240
                 ],
                 "opacity": 1,
                 "time": 0
@@ -317,11 +317,11 @@ main.floors.MT18=
                 "type": "scaleImage",
                 "code": 1,
                 "center": [
-                    190,
-                    200
+                    80,
+                    160
                 ],
-                "scale": 0.4,
-                "time": 1000
+                "scale": 0.5,
+                "time": 500
             },
             {
                 "type": "function",
@@ -345,7 +345,7 @@ main.floors.MT18=
                             null
                         ],
                         "loc": [
-                            130,
+                            15,
                             50,
                             90,
                             90
@@ -376,7 +376,7 @@ main.floors.MT18=
                                     null
                                 ],
                                 "loc": [
-                                    280,
+                                    175,
                                     50,
                                     90,
                                     90
@@ -407,7 +407,7 @@ main.floors.MT18=
                                             null
                                         ],
                                         "loc": [
-                                            430,
+                                            325,
                                             50,
                                             90,
                                             90
@@ -428,6 +428,65 @@ main.floors.MT18=
                     }
                 ],
                 "false": []
+            },
+            {
+                "type": "showImage",
+                "code": 5,
+                "image": "abstract.png",
+                "loc": [
+                    40,
+                    480
+                ],
+                "opacity": 1,
+                "time": 0
+            },
+            {
+                "type": "moveImage",
+                "code": 5,
+                "to": [
+                    40,
+                    20
+                ],
+                "time": 500
+            },
+            {
+                "type": "sleep",
+                "time": 500
+            },
+            {
+                "type": "drawTextContent",
+                "text": "   指挥官阁下在这场装甲对决中，率\n领这些新式坦克打出了不错的交换比。\n但敌军不知从何处搬来了一些致命的反\n坦克炮，眨眼间扭转了战场局势。我们\n的坦克装甲在他们面前就像一张纸片！\n   这次反击攻势以失败告终，法国沦\n陷只是时间问题。如果不能尽快撤离，\n或许我们所有人都要在德军的集中营见\n面了。",
+                "left": 60,
+                "top": 100,
+                "align": "left",
+                "fontSize": 20,
+                "color": [
+                    0,
+                    0,
+                    0,
+                    1
+                ]
+            },
+            {
+                "type": "sleep",
+                "time": 7500
+            },
+            {
+                "type": "clearMap"
+            },
+            {
+                "type": "moveImage",
+                "code": 5,
+                "to": [
+                    40,
+                    480
+                ],
+                "time": 500
+            },
+            {
+                "type": "hideImage",
+                "code": 5,
+                "time": 0
             },
             {
                 "type": "sleep",

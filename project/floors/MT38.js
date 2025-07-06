@@ -109,10 +109,10 @@ main.floors.MT38=
                     null
                 ],
                 "loc": [
-                    -370,
-                    140,
-                    1280,
-                    200
+                    -60,
+                    120,
+                    600,
+                    240
                 ],
                 "opacity": 1,
                 "time": 0
@@ -121,11 +121,11 @@ main.floors.MT38=
                 "type": "scaleImage",
                 "code": 1,
                 "center": [
-                    190,
-                    200
+                    80,
+                    160
                 ],
-                "scale": 0.4,
-                "time": 1000
+                "scale": 0.5,
+                "time": 500
             },
             {
                 "type": "function",
@@ -149,7 +149,7 @@ main.floors.MT38=
                             null
                         ],
                         "loc": [
-                            130,
+                            15,
                             50,
                             90,
                             90
@@ -180,7 +180,7 @@ main.floors.MT38=
                                     null
                                 ],
                                 "loc": [
-                                    280,
+                                    175,
                                     50,
                                     90,
                                     90
@@ -211,7 +211,7 @@ main.floors.MT38=
                                             null
                                         ],
                                         "loc": [
-                                            430,
+                                            325,
                                             50,
                                             90,
                                             90
@@ -232,6 +232,65 @@ main.floors.MT38=
                     }
                 ],
                 "false": []
+            },
+            {
+                "type": "showImage",
+                "code": 5,
+                "image": "abstract.png",
+                "loc": [
+                    40,
+                    480
+                ],
+                "opacity": 1,
+                "time": 0
+            },
+            {
+                "type": "moveImage",
+                "code": 5,
+                "to": [
+                    40,
+                    20
+                ],
+                "time": 500
+            },
+            {
+                "type": "sleep",
+                "time": 500
+            },
+            {
+                "type": "drawTextContent",
+                "text": "   看起来德军决定先消灭我们的舰队\n来为他们的登陆行动做准备。然而只要\n有指挥官阁下和我们的空军编队在，这\n些计划就不会得逞。\n   在沿海防线上建设雷达站是个正确\n的选择，我们及时发现了来袭的机群，\n并出动战斗机前去拦截。如果没有雷达\n，也许我们停泊在港口的舰船已经……",
+                "left": 60,
+                "top": 100,
+                "align": "left",
+                "fontSize": 20,
+                "color": [
+                    0,
+                    0,
+                    0,
+                    1
+                ]
+            },
+            {
+                "type": "sleep",
+                "time": 7500
+            },
+            {
+                "type": "clearMap"
+            },
+            {
+                "type": "moveImage",
+                "code": 5,
+                "to": [
+                    40,
+                    480
+                ],
+                "time": 500
+            },
+            {
+                "type": "hideImage",
+                "code": 5,
+                "time": 0
             },
             {
                 "type": "sleep",

@@ -62,10 +62,10 @@ main.floors.MT5=
                     null
                 ],
                 "loc": [
-                    -370,
-                    140,
-                    1280,
-                    200
+                    -60,
+                    120,
+                    600,
+                    240
                 ],
                 "opacity": 1,
                 "time": 0
@@ -74,11 +74,11 @@ main.floors.MT5=
                 "type": "scaleImage",
                 "code": 1,
                 "center": [
-                    190,
-                    200
+                    80,
+                    160
                 ],
-                "scale": 0.4,
-                "time": 1000
+                "scale": 0.5,
+                "time": 500
             },
             {
                 "type": "function",
@@ -102,7 +102,7 @@ main.floors.MT5=
                             null
                         ],
                         "loc": [
-                            130,
+                            15,
                             50,
                             90,
                             90
@@ -133,7 +133,7 @@ main.floors.MT5=
                                     null
                                 ],
                                 "loc": [
-                                    280,
+                                    175,
                                     50,
                                     90,
                                     90
@@ -164,7 +164,7 @@ main.floors.MT5=
                                             null
                                         ],
                                         "loc": [
-                                            430,
+                                            325,
                                             50,
                                             90,
                                             90
@@ -185,6 +185,65 @@ main.floors.MT5=
                     }
                 ],
                 "false": []
+            },
+            {
+                "type": "showImage",
+                "code": 5,
+                "image": "abstract.png",
+                "loc": [
+                    40,
+                    480
+                ],
+                "opacity": 1,
+                "time": 0
+            },
+            {
+                "type": "moveImage",
+                "code": 5,
+                "to": [
+                    40,
+                    20
+                ],
+                "time": 500
+            },
+            {
+                "type": "sleep",
+                "time": 500
+            },
+            {
+                "type": "drawTextContent",
+                "text": "   作为其军官生涯中的第一场实战，\n指挥官阁下十分出色地完成了本次作战\n任务。\n   我们的马奇诺防线被证实的确是坚\n不可摧的，但它并没有成功阻挡敌军的\n进攻步伐——因为他们从侧翼绕过来了！",
+                "left": 60,
+                "top": 100,
+                "align": "left",
+                "fontSize": 20,
+                "color": [
+                    0,
+                    0,
+                    0,
+                    1
+                ]
+            },
+            {
+                "type": "sleep",
+                "time": 7500
+            },
+            {
+                "type": "clearMap"
+            },
+            {
+                "type": "moveImage",
+                "code": 5,
+                "to": [
+                    40,
+                    480
+                ],
+                "time": 500
+            },
+            {
+                "type": "hideImage",
+                "code": 5,
+                "time": 0
             },
             {
                 "type": "sleep",

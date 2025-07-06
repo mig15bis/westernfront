@@ -95,10 +95,10 @@ main.floors.MT31=
                     null
                 ],
                 "loc": [
-                    -370,
-                    140,
-                    1280,
-                    200
+                    -60,
+                    120,
+                    600,
+                    240
                 ],
                 "opacity": 1,
                 "time": 0
@@ -107,11 +107,11 @@ main.floors.MT31=
                 "type": "scaleImage",
                 "code": 1,
                 "center": [
-                    190,
-                    200
+                    80,
+                    160
                 ],
-                "scale": 0.4,
-                "time": 1000
+                "scale": 0.5,
+                "time": 500
             },
             {
                 "type": "function",
@@ -135,7 +135,7 @@ main.floors.MT31=
                             null
                         ],
                         "loc": [
-                            130,
+                            15,
                             50,
                             90,
                             90
@@ -166,7 +166,7 @@ main.floors.MT31=
                                     null
                                 ],
                                 "loc": [
-                                    280,
+                                    175,
                                     50,
                                     90,
                                     90
@@ -197,7 +197,7 @@ main.floors.MT31=
                                             null
                                         ],
                                         "loc": [
-                                            430,
+                                            325,
                                             50,
                                             90,
                                             90
@@ -218,6 +218,65 @@ main.floors.MT31=
                     }
                 ],
                 "false": []
+            },
+            {
+                "type": "showImage",
+                "code": 5,
+                "image": "abstract.png",
+                "loc": [
+                    40,
+                    480
+                ],
+                "opacity": 1,
+                "time": 0
+            },
+            {
+                "type": "moveImage",
+                "code": 5,
+                "to": [
+                    40,
+                    20
+                ],
+                "time": 500
+            },
+            {
+                "type": "sleep",
+                "time": 500
+            },
+            {
+                "type": "drawTextContent",
+                "text": "   希特勒的飞机和潜艇企图把我们淹\n死在英吉利海峡，但指挥官阁下带着他\n的战机和驱逐舰及时赶到，我们的船队\n安全了。\n   最后一艘载满士兵的船只已安全靠\n岸，可以看到那些士兵们难以掩饰的喜\n悦之情。我们安全了，暂时的。",
+                "left": 60,
+                "top": 100,
+                "align": "left",
+                "fontSize": 20,
+                "color": [
+                    0,
+                    0,
+                    0,
+                    1
+                ]
+            },
+            {
+                "type": "sleep",
+                "time": 7500
+            },
+            {
+                "type": "clearMap"
+            },
+            {
+                "type": "moveImage",
+                "code": 5,
+                "to": [
+                    40,
+                    480
+                ],
+                "time": 500
+            },
+            {
+                "type": "hideImage",
+                "code": 5,
+                "time": 0
             },
             {
                 "type": "sleep",

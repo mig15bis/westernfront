@@ -184,7 +184,7 @@ main.floors.MT88=
                 "type": "if",
                 "condition": "(flag:MT88boss>=4)",
                 "true": [
-                    "\t[盟军指挥官,hero]这是欧根亲王号，没时间在她身上浪费炮弹了，必须尽快攻击真正的俾斯麦号！"
+                    "\t[盟军指挥官,hero]我们在欧根亲王号上浪费太多炮弹了，立刻集火俾斯麦！"
                 ],
                 "false": []
             }
@@ -865,10 +865,10 @@ main.floors.MT88=
                                                     null
                                                 ],
                                                 "loc": [
-                                                    -370,
-                                                    140,
-                                                    1280,
-                                                    200
+                                                    -60,
+                                                    120,
+                                                    600,
+                                                    240
                                                 ],
                                                 "opacity": 1,
                                                 "time": 0
@@ -877,11 +877,11 @@ main.floors.MT88=
                                                 "type": "scaleImage",
                                                 "code": 1,
                                                 "center": [
-                                                    190,
-                                                    200
+                                                    80,
+                                                    160
                                                 ],
-                                                "scale": 0.4,
-                                                "time": 1000
+                                                "scale": 0.5,
+                                                "time": 500
                                             },
                                             {
                                                 "type": "function",
@@ -905,7 +905,7 @@ main.floors.MT88=
                                                             null
                                                         ],
                                                         "loc": [
-                                                            130,
+                                                            15,
                                                             50,
                                                             90,
                                                             90
@@ -936,7 +936,7 @@ main.floors.MT88=
                                                                     null
                                                                 ],
                                                                 "loc": [
-                                                                    280,
+                                                                    175,
                                                                     50,
                                                                     90,
                                                                     90
@@ -967,7 +967,7 @@ main.floors.MT88=
                                                                             null
                                                                         ],
                                                                         "loc": [
-                                                                            430,
+                                                                            325,
                                                                             50,
                                                                             90,
                                                                             90
