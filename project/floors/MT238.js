@@ -210,6 +210,64 @@ main.floors.MT238=
                 "false": []
             },
             {
+                "type": "showImage",
+                "code": 5,
+                "image": "abstract.png",
+                "loc": [
+                    40,
+                    480
+                ],
+                "opacity": 1,
+                "time": 0
+            },
+            {
+                "type": "moveImage",
+                "code": 5,
+                "to": [
+                    40,
+                    20
+                ],
+                "time": 500
+            },
+            {
+                "type": "sleep",
+                "time": 500
+            },
+            {
+                "type": "drawTextContent",
+                "text": "   通往突尼斯的所有海上航线都已被\n指挥官阁下严密封锁，从现在起，没有\n任何敌军补给能抵达突尼斯！\n   劝降单已经用运输机空投到突尼斯\n了，就看敌人能不能认清形势。那里的\n敌人就算再怎么顽强抵抗，也必然逃不\n过全军覆没的命运。",
+                "left": 60,
+                "top": 100,
+                "align": "left",
+                "fontSize": 20,
+                "color": [
+                    0,
+                    0,
+                    0,
+                    1
+                ]
+            },
+            {
+                "type": "wait"
+            },
+            {
+                "type": "clearMap"
+            },
+            {
+                "type": "moveImage",
+                "code": 5,
+                "to": [
+                    40,
+                    480
+                ],
+                "time": 500
+            },
+            {
+                "type": "hideImage",
+                "code": 5,
+                "time": 0
+            },
+            {
                 "type": "sleep",
                 "time": 2000
             },

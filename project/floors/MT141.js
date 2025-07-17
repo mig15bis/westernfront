@@ -253,6 +253,64 @@ main.floors.MT141=
                 "false": []
             },
             {
+                "type": "showImage",
+                "code": 5,
+                "image": "abstract.png",
+                "loc": [
+                    40,
+                    480
+                ],
+                "opacity": 1,
+                "time": 0
+            },
+            {
+                "type": "moveImage",
+                "code": 5,
+                "to": [
+                    40,
+                    20
+                ],
+                "time": 500
+            },
+            {
+                "type": "sleep",
+                "time": 500
+            },
+            {
+                "type": "drawTextContent",
+                "text": "   1941年12月7日，这是应该被我们\n永远刻在记忆里的一天。\n   从天而降的炸弹和鱼雷令所有人猝\n不及防，整个珍珠港都在燃烧，到处都\n是残骸和尸体，这是一场实打实的灾难\n。从现在起，我们不再中立！向轴心国\n全面宣战！尤其是要让这群不知好歹的\n日本人付出最惨痛的代价！",
+                "left": 60,
+                "top": 100,
+                "align": "left",
+                "fontSize": 20,
+                "color": [
+                    0,
+                    0,
+                    0,
+                    1
+                ]
+            },
+            {
+                "type": "wait"
+            },
+            {
+                "type": "clearMap"
+            },
+            {
+                "type": "moveImage",
+                "code": 5,
+                "to": [
+                    40,
+                    480
+                ],
+                "time": 500
+            },
+            {
+                "type": "hideImage",
+                "code": 5,
+                "time": 0
+            },
+            {
                 "type": "sleep",
                 "time": 2000
             },

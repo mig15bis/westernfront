@@ -220,6 +220,64 @@ main.floors.MT363=
                 "false": []
             },
             {
+                "type": "showImage",
+                "code": 5,
+                "image": "abstract.png",
+                "loc": [
+                    40,
+                    480
+                ],
+                "opacity": 1,
+                "time": 0
+            },
+            {
+                "type": "moveImage",
+                "code": 5,
+                "to": [
+                    40,
+                    20
+                ],
+                "time": 500
+            },
+            {
+                "type": "sleep",
+                "time": 500
+            },
+            {
+                "type": "drawTextContent",
+                "text": "   本次任务十分惊险，商船差点就被\n那些反舰导弹击沉了，幸好有指挥官阁\n下及时击落了那些操控导弹的轰炸机！\n   我们在这些导弹上吃亏也不是一次\n两次了，还好舰队里面跟着小型护航航\n母，她们的战斗机让我们化险为夷。为\n防范敌人的导弹袭击，今后舰队出航一\n定要有空中掩护才行。",
+                "left": 60,
+                "top": 100,
+                "align": "left",
+                "fontSize": 20,
+                "color": [
+                    0,
+                    0,
+                    0,
+                    1
+                ]
+            },
+            {
+                "type": "wait"
+            },
+            {
+                "type": "clearMap"
+            },
+            {
+                "type": "moveImage",
+                "code": 5,
+                "to": [
+                    40,
+                    480
+                ],
+                "time": 500
+            },
+            {
+                "type": "hideImage",
+                "code": 5,
+                "time": 0
+            },
+            {
                 "type": "sleep",
                 "time": 2000
             },

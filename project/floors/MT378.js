@@ -733,6 +733,64 @@ main.floors.MT378=
                                                 "false": []
                                             },
                                             {
+                                                "type": "showImage",
+                                                "code": 5,
+                                                "image": "abstract.png",
+                                                "loc": [
+                                                    40,
+                                                    480
+                                                ],
+                                                "opacity": 1,
+                                                "time": 0
+                                            },
+                                            {
+                                                "type": "moveImage",
+                                                "code": 5,
+                                                "to": [
+                                                    40,
+                                                    20
+                                                ],
+                                                "time": 500
+                                            },
+                                            {
+                                                "type": "sleep",
+                                                "time": 500
+                                            },
+                                            {
+                                                "type": "drawTextContent",
+                                                "text": "   指挥官阁下的机群重创了“提尔皮茨\n”号，使其无法再出航，最终被我们的重\n型轰炸机结果了她的船生。\n   德军再也没有可供使用的水面舰艇了\n，他们引以为傲的水下狼群也没能力再翻\n起什么浪花，更别提我们还轰炸了他们的\n潜艇基地。现在的海上，再没有德军的容\n身之地了。",
+                                                "left": 60,
+                                                "top": 100,
+                                                "align": "left",
+                                                "fontSize": 20,
+                                                "color": [
+                                                    0,
+                                                    0,
+                                                    0,
+                                                    1
+                                                ]
+                                            },
+                                            {
+                                                "type": "wait"
+                                            },
+                                            {
+                                                "type": "clearMap"
+                                            },
+                                            {
+                                                "type": "moveImage",
+                                                "code": 5,
+                                                "to": [
+                                                    40,
+                                                    480
+                                                ],
+                                                "time": 500
+                                            },
+                                            {
+                                                "type": "hideImage",
+                                                "code": 5,
+                                                "time": 0
+                                            },
+                                            {
                                                 "type": "sleep",
                                                 "time": 2000
                                             },

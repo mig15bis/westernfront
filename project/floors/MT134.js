@@ -354,6 +354,64 @@ main.floors.MT134=
                 "false": []
             },
             {
+                "type": "showImage",
+                "code": 5,
+                "image": "abstract.png",
+                "loc": [
+                    40,
+                    480
+                ],
+                "opacity": 1,
+                "time": 0
+            },
+            {
+                "type": "moveImage",
+                "code": 5,
+                "to": [
+                    40,
+                    20
+                ],
+                "time": 500
+            },
+            {
+                "type": "sleep",
+                "time": 500
+            },
+            {
+                "type": "drawTextContent",
+                "text": "   我们第一次在北非的战役中打赢了\n德军！他们撤退了，托布鲁克的包围圈\n已不复存在！\n   德军的补给线拉的太长了，现在他\n们的弱点暴露无遗，只可惜他们撤的很\n是时候。乘胜追击，把失去的夺回来！",
+                "left": 60,
+                "top": 100,
+                "align": "left",
+                "fontSize": 20,
+                "color": [
+                    0,
+                    0,
+                    0,
+                    1
+                ]
+            },
+            {
+                "type": "wait"
+            },
+            {
+                "type": "clearMap"
+            },
+            {
+                "type": "moveImage",
+                "code": 5,
+                "to": [
+                    40,
+                    480
+                ],
+                "time": 500
+            },
+            {
+                "type": "hideImage",
+                "code": 5,
+                "time": 0
+            },
+            {
                 "type": "sleep",
                 "time": 2000
             },

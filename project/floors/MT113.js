@@ -220,6 +220,64 @@ main.floors.MT113=
                 "false": []
             },
             {
+                "type": "showImage",
+                "code": 5,
+                "image": "abstract.png",
+                "loc": [
+                    40,
+                    480
+                ],
+                "opacity": 1,
+                "time": 0
+            },
+            {
+                "type": "moveImage",
+                "code": 5,
+                "to": [
+                    40,
+                    20
+                ],
+                "time": 500
+            },
+            {
+                "type": "sleep",
+                "time": 500
+            },
+            {
+                "type": "drawTextContent",
+                "text": "   感谢指挥官阁下为我们争取了一些\n撤退的时间，只可惜我们刚夺取的地盘\n又被德军抢走了。\n   情报明明说这只是一小支德军部队\n，这个叫隆美尔的少将为何有这么大的\n胆子敢向我们发起突击？好吧，这次算\n他赢了，不过这样的莽夫不会常胜！",
+                "left": 60,
+                "top": 100,
+                "align": "left",
+                "fontSize": 20,
+                "color": [
+                    0,
+                    0,
+                    0,
+                    1
+                ]
+            },
+            {
+                "type": "wait"
+            },
+            {
+                "type": "clearMap"
+            },
+            {
+                "type": "moveImage",
+                "code": 5,
+                "to": [
+                    40,
+                    480
+                ],
+                "time": 500
+            },
+            {
+                "type": "hideImage",
+                "code": 5,
+                "time": 0
+            },
+            {
                 "type": "sleep",
                 "time": 2000
             },

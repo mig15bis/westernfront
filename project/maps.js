@@ -643,6 +643,8 @@ var maps_90f36752_8815_4be8_b32b_d7fad1d0542e =
 	"727": {"cls":"enemys","id":"nagato"},
 	"728": {"cls":"enemys","id":"yamato"},
 	"729": {"cls":"enemys","id":"hakuryu"},
+	"730": {"cls":"items","id":"shermancrab"},
+	"731": {"cls":"items","id":"crocodile"},
 	"10014": {"cls":"tileset","id":"X10014","canBreak":true},
 	"10015": {"cls":"tileset","id":"X10015","canBreak":true},
 	"10295": {"cls":"tileset","id":"X10295","canBreak":true},

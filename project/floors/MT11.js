@@ -251,8 +251,7 @@ main.floors.MT11=
                 ]
             },
             {
-                "type": "sleep",
-                "time": 7500
+                "type": "wait"
             },
             {
                 "type": "clearMap"

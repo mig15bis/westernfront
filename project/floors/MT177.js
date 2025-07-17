@@ -415,6 +415,64 @@ main.floors.MT177=
                 "false": []
             },
             {
+                "type": "showImage",
+                "code": 5,
+                "image": "abstract.png",
+                "loc": [
+                    40,
+                    480
+                ],
+                "opacity": 1,
+                "time": 0
+            },
+            {
+                "type": "moveImage",
+                "code": 5,
+                "to": [
+                    40,
+                    20
+                ],
+                "time": 500
+            },
+            {
+                "type": "sleep",
+                "time": 500
+            },
+            {
+                "type": "drawTextContent",
+                "text": "   我们几乎已经习惯了这巨大的损失\n。不过好消息是，指挥官阁下的奋战成\n功让我们与隆美尔陷入僵持状态。\n   隆美尔的补给严重不足，这让我们\n守住了阿拉曼，但同样的，我们也没能\n击穿他就地建起的防线。这小子的能力\n有点过于出众了，再加上他不虐待战俘\n，现在士兵们听到隆美尔的名字就开始\n发抖。",
+                "left": 60,
+                "top": 100,
+                "align": "left",
+                "fontSize": 20,
+                "color": [
+                    0,
+                    0,
+                    0,
+                    1
+                ]
+            },
+            {
+                "type": "wait"
+            },
+            {
+                "type": "clearMap"
+            },
+            {
+                "type": "moveImage",
+                "code": 5,
+                "to": [
+                    40,
+                    480
+                ],
+                "time": 500
+            },
+            {
+                "type": "hideImage",
+                "code": 5,
+                "time": 0
+            },
+            {
                 "type": "sleep",
                 "time": 2000
             },

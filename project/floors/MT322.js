@@ -210,6 +210,64 @@ main.floors.MT322=
                 "false": []
             },
             {
+                "type": "showImage",
+                "code": 5,
+                "image": "abstract.png",
+                "loc": [
+                    40,
+                    480
+                ],
+                "opacity": 1,
+                "time": 0
+            },
+            {
+                "type": "moveImage",
+                "code": 5,
+                "to": [
+                    40,
+                    20
+                ],
+                "time": 500
+            },
+            {
+                "type": "sleep",
+                "time": 500
+            },
+            {
+                "type": "drawTextContent",
+                "text": "   经过一番激战，我军已成功夺取所\n有的登陆地点，这其中指挥官阁下的表\n现最为亮眼！\n   尽管登陆过程充满了意外和混乱，\n但我们依旧完成了这项壮举。我们踩着\n战友们的尸体登上海滩，借着我们的坦\n克残骸充当掩体，一步一步靠近，并将\n手雷扔进敌人的堡垒。这短短的几个小\n时，却漫长的好像过了几年。我们终将\n取胜，一切牺牲都不会白费。",
+                "left": 60,
+                "top": 100,
+                "align": "left",
+                "fontSize": 20,
+                "color": [
+                    0,
+                    0,
+                    0,
+                    1
+                ]
+            },
+            {
+                "type": "wait"
+            },
+            {
+                "type": "clearMap"
+            },
+            {
+                "type": "moveImage",
+                "code": 5,
+                "to": [
+                    40,
+                    480
+                ],
+                "time": 500
+            },
+            {
+                "type": "hideImage",
+                "code": 5,
+                "time": 0
+            },
+            {
                 "type": "sleep",
                 "time": 2000
             },

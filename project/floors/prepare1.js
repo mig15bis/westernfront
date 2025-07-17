@@ -3071,6 +3071,1068 @@ main.floors.prepare1=
             {
                 "type": "waitAsync"
             }
+        ],
+        "4,1": [
+            "展示结局",
+            {
+                "type": "setCurtain",
+                "color": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "time": 500,
+                "keep": true
+            },
+            {
+                "type": "confirm",
+                "text": "要观看结尾吗？",
+                "yes": [
+                    {
+                        "type": "showImage",
+                        "code": 1,
+                        "image": "black.png",
+                        "loc": [
+                            0,
+                            0
+                        ],
+                        "opacity": 1,
+                        "time": 0
+                    },
+                    {
+                        "type": "setCurtain",
+                        "time": 0
+                    },
+                    {
+                        "type": "playBgm",
+                        "name": "pearlharbor.mp3",
+                        "keep": true
+                    },
+                    {
+                        "type": "sleep",
+                        "time": 2000
+                    },
+                    {
+                        "type": "showImage",
+                        "code": 2,
+                        "image": "title1.png",
+                        "sloc": [
+                            0,
+                            0,
+                            null
+                        ],
+                        "loc": [
+                            140,
+                            100,
+                            360,
+                            90
+                        ],
+                        "opacity": 1,
+                        "time": 500
+                    },
+                    {
+                        "type": "showImage",
+                        "code": 3,
+                        "image": "title2.png",
+                        "sloc": [
+                            0,
+                            0,
+                            null
+                        ],
+                        "loc": [
+                            140,
+                            190,
+                            350,
+                            120
+                        ],
+                        "opacity": 1,
+                        "time": 500
+                    },
+                    {
+                        "type": "sleep",
+                        "time": 2000
+                    },
+                    {
+                        "type": "hideImage",
+                        "code": 2,
+                        "time": 500
+                    },
+                    {
+                        "type": "hideImage",
+                        "code": 3,
+                        "time": 500
+                    },
+                    {
+                        "type": "sleep",
+                        "time": 2000
+                    },
+                    {
+                        "type": "showImage",
+                        "code": 3,
+                        "image": "end1.jpg",
+                        "sloc": [
+                            0,
+                            0,
+                            null
+                        ],
+                        "loc": [
+                            0,
+                            0,
+                            null
+                        ],
+                        "opacity": 1,
+                        "time": 500
+                    },
+                    {
+                        "type": "sleep",
+                        "time": 2000
+                    },
+                    {
+                        "type": "showImage",
+                        "code": 4,
+                        "image": "aircraft7.png",
+                        "loc": [
+                            640,
+                            115
+                        ],
+                        "opacity": 1,
+                        "time": 0
+                    },
+                    {
+                        "type": "showTextImage",
+                        "code": 2,
+                        "text": "作者：\n    喜食佩刀的米格\n策划：\n    喜食佩刀的米格\n剧情：\n    喜食佩刀的米格",
+                        "loc": [
+                            200,
+                            150
+                        ],
+                        "lineHeight": 1.4,
+                        "opacity": 1,
+                        "time": 500,
+                        "async": true
+                    },
+                    {
+                        "type": "moveImage",
+                        "code": 4,
+                        "to": [
+                            -195,
+                            115
+                        ],
+                        "time": 500,
+                        "async": true
+                    },
+                    {
+                        "type": "moveImage",
+                        "code": 3,
+                        "to": [
+                            -480,
+                            0
+                        ],
+                        "time": 500,
+                        "async": true
+                    },
+                    {
+                        "type": "waitAsync"
+                    },
+                    {
+                        "type": "hideImage",
+                        "code": 3,
+                        "time": 0
+                    },
+                    {
+                        "type": "hideImage",
+                        "code": 4,
+                        "time": 0
+                    },
+                    {
+                        "type": "sleep",
+                        "time": 5000
+                    },
+                    {
+                        "type": "hideImage",
+                        "code": 2,
+                        "time": 500
+                    },
+                    {
+                        "type": "sleep",
+                        "time": 500
+                    },
+                    {
+                        "type": "showImage",
+                        "code": 3,
+                        "image": "end2.jpg",
+                        "sloc": [
+                            0,
+                            0,
+                            null
+                        ],
+                        "loc": [
+                            0,
+                            0,
+                            null
+                        ],
+                        "opacity": 1,
+                        "time": 500
+                    },
+                    {
+                        "type": "sleep",
+                        "time": 2000
+                    },
+                    {
+                        "type": "showImage",
+                        "code": 4,
+                        "image": "aircraft1.png",
+                        "loc": [
+                            -195,
+                            115
+                        ],
+                        "opacity": 1,
+                        "time": 0
+                    },
+                    {
+                        "type": "rotateImage",
+                        "code": 4,
+                        "angle": 180,
+                        "time": 0
+                    },
+                    {
+                        "type": "showTextImage",
+                        "code": 2,
+                        "text": "脚本：\n    秋橙\n美工：\n    喜食佩刀的米格\n    永葆一颗童心\n测试：\n    待定",
+                        "loc": [
+                            200,
+                            150
+                        ],
+                        "lineHeight": 1.4,
+                        "opacity": 1,
+                        "time": 500,
+                        "async": true
+                    },
+                    {
+                        "type": "moveImage",
+                        "code": 4,
+                        "to": [
+                            640,
+                            115
+                        ],
+                        "time": 500,
+                        "async": true
+                    },
+                    {
+                        "type": "moveImage",
+                        "code": 3,
+                        "to": [
+                            640,
+                            0
+                        ],
+                        "time": 500,
+                        "async": true
+                    },
+                    {
+                        "type": "waitAsync"
+                    },
+                    {
+                        "type": "hideImage",
+                        "code": 3,
+                        "time": 0
+                    },
+                    {
+                        "type": "hideImage",
+                        "code": 4,
+                        "time": 0
+                    },
+                    {
+                        "type": "waitAsync"
+                    },
+                    {
+                        "type": "sleep",
+                        "time": 5000
+                    },
+                    {
+                        "type": "hideImage",
+                        "code": 2,
+                        "time": 500
+                    },
+                    {
+                        "type": "sleep",
+                        "time": 500
+                    },
+                    {
+                        "type": "showImage",
+                        "code": 3,
+                        "image": "end3.jpg",
+                        "sloc": [
+                            0,
+                            0,
+                            null
+                        ],
+                        "loc": [
+                            0,
+                            0,
+                            null
+                        ],
+                        "opacity": 1,
+                        "time": 500
+                    },
+                    {
+                        "type": "sleep",
+                        "time": 2000
+                    },
+                    {
+                        "type": "showImage",
+                        "code": 4,
+                        "image": "aircraft7.png",
+                        "loc": [
+                            143,
+                            480
+                        ],
+                        "opacity": 1,
+                        "time": 0
+                    },
+                    {
+                        "type": "rotateImage",
+                        "code": 4,
+                        "angle": 90,
+                        "time": 0
+                    },
+                    {
+                        "type": "showTextImage",
+                        "code": 2,
+                        "text": "灵感来源：\n        真实历史\n制作工具：\n        HTML5魔塔样板v2.8\n文本参考：\n        百度百科",
+                        "loc": [
+                            200,
+                            150
+                        ],
+                        "lineHeight": 1.4,
+                        "opacity": 1,
+                        "time": 500,
+                        "async": true
+                    },
+                    {
+                        "type": "moveImage",
+                        "code": 4,
+                        "to": [
+                            143,
+                            -115
+                        ],
+                        "time": 500,
+                        "async": true
+                    },
+                    {
+                        "type": "moveImage",
+                        "code": 3,
+                        "to": [
+                            0,
+                            -480
+                        ],
+                        "time": 500,
+                        "async": true
+                    },
+                    {
+                        "type": "waitAsync"
+                    },
+                    {
+                        "type": "hideImage",
+                        "code": 3,
+                        "time": 0
+                    },
+                    {
+                        "type": "hideImage",
+                        "code": 4,
+                        "time": 0
+                    },
+                    {
+                        "type": "sleep",
+                        "time": 5000
+                    },
+                    {
+                        "type": "hideImage",
+                        "code": 2,
+                        "time": 500
+                    },
+                    {
+                        "type": "sleep",
+                        "time": 500
+                    },
+                    {
+                        "type": "showImage",
+                        "code": 3,
+                        "image": "end4.jpg",
+                        "sloc": [
+                            0,
+                            0,
+                            null
+                        ],
+                        "loc": [
+                            0,
+                            0,
+                            null
+                        ],
+                        "opacity": 1,
+                        "time": 500
+                    },
+                    {
+                        "type": "sleep",
+                        "time": 2000
+                    },
+                    {
+                        "type": "showImage",
+                        "code": 4,
+                        "image": "aircraft2.png",
+                        "loc": [
+                            143,
+                            -251
+                        ],
+                        "opacity": 1,
+                        "time": 0
+                    },
+                    {
+                        "type": "rotateImage",
+                        "code": 4,
+                        "angle": -90,
+                        "time": 0
+                    },
+                    {
+                        "type": "showTextImage",
+                        "code": 2,
+                        "text": "图片来源：\n        互联网\n        War in the Pacific（游戏）\n        如发现图片内容与文本不符，欢迎指正",
+                        "loc": [
+                            200,
+                            150
+                        ],
+                        "lineHeight": 1.4,
+                        "opacity": 1,
+                        "time": 500,
+                        "async": true
+                    },
+                    {
+                        "type": "moveImage",
+                        "code": 4,
+                        "to": [
+                            143,
+                            480
+                        ],
+                        "time": 500,
+                        "async": true
+                    },
+                    {
+                        "type": "moveImage",
+                        "code": 3,
+                        "to": [
+                            0,
+                            480
+                        ],
+                        "time": 500,
+                        "async": true
+                    },
+                    {
+                        "type": "waitAsync"
+                    },
+                    {
+                        "type": "hideImage",
+                        "code": 3,
+                        "time": 0
+                    },
+                    {
+                        "type": "hideImage",
+                        "code": 4,
+                        "time": 0
+                    },
+                    {
+                        "type": "sleep",
+                        "time": 5000
+                    },
+                    {
+                        "type": "hideImage",
+                        "code": 2,
+                        "time": 500
+                    },
+                    {
+                        "type": "sleep",
+                        "time": 500
+                    },
+                    {
+                        "type": "showImage",
+                        "code": 3,
+                        "image": "end5.jpg",
+                        "sloc": [
+                            0,
+                            0,
+                            null
+                        ],
+                        "loc": [
+                            0,
+                            0,
+                            null
+                        ],
+                        "opacity": 1,
+                        "time": 500
+                    },
+                    {
+                        "type": "sleep",
+                        "time": 2000
+                    },
+                    {
+                        "type": "showImage",
+                        "code": 4,
+                        "image": "aircraft1.png",
+                        "loc": [
+                            640,
+                            115
+                        ],
+                        "opacity": 1,
+                        "time": 0
+                    },
+                    {
+                        "type": "showTextImage",
+                        "code": 2,
+                        "text": "音乐来源：\n        碧蓝航线\n        永远的七日之都\n        双星物语\n        将军的荣耀\n        钢铁雄心\n        坦克世界\n        三国志曹操传\n        冰封前线系列\n        欧洲空战英雄\n        战争雷霆\n        空中冲突太平洋航母\n        War on the Sea\n        艾丽卡（小孩版本）\n        farthestend\n        Harbinger\n        Exodus",
+                        "loc": [
+                            200,
+                            50
+                        ],
+                        "lineHeight": 1.4,
+                        "opacity": 1,
+                        "time": 500,
+                        "async": true
+                    },
+                    {
+                        "type": "moveImage",
+                        "code": 4,
+                        "to": [
+                            -195,
+                            115
+                        ],
+                        "time": 500,
+                        "async": true
+                    },
+                    {
+                        "type": "moveImage",
+                        "code": 3,
+                        "to": [
+                            -480,
+                            0
+                        ],
+                        "time": 500,
+                        "async": true
+                    },
+                    {
+                        "type": "waitAsync"
+                    },
+                    {
+                        "type": "hideImage",
+                        "code": 3,
+                        "time": 0
+                    },
+                    {
+                        "type": "hideImage",
+                        "code": 4,
+                        "time": 0
+                    },
+                    {
+                        "type": "sleep",
+                        "time": 5000
+                    },
+                    {
+                        "type": "hideImage",
+                        "code": 2,
+                        "time": 500
+                    },
+                    {
+                        "type": "sleep",
+                        "time": 500
+                    },
+                    {
+                        "type": "showImage",
+                        "code": 3,
+                        "image": "end6.jpg",
+                        "sloc": [
+                            0,
+                            0,
+                            null
+                        ],
+                        "loc": [
+                            0,
+                            0,
+                            null
+                        ],
+                        "opacity": 1,
+                        "time": 500
+                    },
+                    {
+                        "type": "sleep",
+                        "time": 2000
+                    },
+                    {
+                        "type": "showImage",
+                        "code": 4,
+                        "image": "aircraft3.png",
+                        "loc": [
+                            143,
+                            480
+                        ],
+                        "opacity": 1,
+                        "time": 0
+                    },
+                    {
+                        "type": "showTextImage",
+                        "code": 2,
+                        "text": "音效来源：（H5自带及群文件中的不算在内）\n        War in the Pacific\n        Kards\n        新抢摊登陆\n        抢摊登陆2006\n        战争雷霆\n        偷袭珍珠港\n        猎杀潜航\n        太平洋风暴：盟军\n        还有从其他魔塔借的",
+                        "loc": [
+                            200,
+                            100
+                        ],
+                        "lineHeight": 1.4,
+                        "opacity": 1,
+                        "time": 500,
+                        "async": true
+                    },
+                    {
+                        "type": "moveImage",
+                        "code": 4,
+                        "to": [
+                            143,
+                            -251
+                        ],
+                        "time": 500,
+                        "async": true
+                    },
+                    {
+                        "type": "moveImage",
+                        "code": 3,
+                        "to": [
+                            0,
+                            -480
+                        ],
+                        "time": 500,
+                        "async": true
+                    },
+                    {
+                        "type": "waitAsync"
+                    },
+                    {
+                        "type": "hideImage",
+                        "code": 3,
+                        "time": 0
+                    },
+                    {
+                        "type": "hideImage",
+                        "code": 4,
+                        "time": 0
+                    },
+                    {
+                        "type": "sleep",
+                        "time": 5000
+                    },
+                    {
+                        "type": "hideImage",
+                        "code": 2,
+                        "time": 500
+                    },
+                    {
+                        "type": "sleep",
+                        "time": 500
+                    },
+                    {
+                        "type": "showImage",
+                        "code": 3,
+                        "image": "end7.jpg",
+                        "sloc": [
+                            0,
+                            0,
+                            null
+                        ],
+                        "loc": [
+                            0,
+                            0,
+                            null
+                        ],
+                        "opacity": 1,
+                        "time": 500
+                    },
+                    {
+                        "type": "sleep",
+                        "time": 2000
+                    },
+                    {
+                        "type": "showImage",
+                        "code": 4,
+                        "image": "aircraft1.png",
+                        "loc": [
+                            -195,
+                            115
+                        ],
+                        "opacity": 1,
+                        "time": 0
+                    },
+                    {
+                        "type": "rotateImage",
+                        "code": 4,
+                        "angle": 180,
+                        "time": 0
+                    },
+                    {
+                        "type": "showTextImage",
+                        "code": 2,
+                        "text": "声明：\n    本游戏目前仅在h5mota.com发布\n    完全免费，不用于商业用途\n    剧情改编自真实历史，如有雷同，纯属正常\n    不雷同那就怪了\n    若您在其他网站发现并游玩本游戏\n    建议前往上述网站支持原版\n    不会有人付费玩这游戏吧？不会吧？",
+                        "loc": [
+                            200,
+                            100
+                        ],
+                        "lineHeight": 1.4,
+                        "opacity": 1,
+                        "time": 500,
+                        "async": true
+                    },
+                    {
+                        "type": "moveImage",
+                        "code": 4,
+                        "to": [
+                            640,
+                            115
+                        ],
+                        "time": 500,
+                        "async": true
+                    },
+                    {
+                        "type": "moveImage",
+                        "code": 3,
+                        "to": [
+                            640,
+                            0
+                        ],
+                        "time": 500,
+                        "async": true
+                    },
+                    {
+                        "type": "waitAsync"
+                    },
+                    {
+                        "type": "hideImage",
+                        "code": 3,
+                        "time": 0
+                    },
+                    {
+                        "type": "hideImage",
+                        "code": 4,
+                        "time": 0
+                    },
+                    {
+                        "type": "sleep",
+                        "time": 5000
+                    },
+                    {
+                        "type": "hideImage",
+                        "code": 2,
+                        "time": 500
+                    },
+                    {
+                        "type": "sleep",
+                        "time": 500
+                    },
+                    {
+                        "type": "showImage",
+                        "code": 3,
+                        "image": "end8.jpg",
+                        "sloc": [
+                            0,
+                            0,
+                            null
+                        ],
+                        "loc": [
+                            0,
+                            0,
+                            null
+                        ],
+                        "opacity": 1,
+                        "time": 500
+                    },
+                    {
+                        "type": "sleep",
+                        "time": 2000
+                    },
+                    {
+                        "type": "showImage",
+                        "code": 4,
+                        "image": "cvairgroup.png",
+                        "loc": [
+                            0,
+                            -1920
+                        ],
+                        "opacity": 1,
+                        "time": 0
+                    },
+                    {
+                        "type": "showTextImage",
+                        "code": 2,
+                        "text": "作者B站名：大傻米格\nuid：279738052\n欢迎关注！",
+                        "loc": [
+                            200,
+                            150
+                        ],
+                        "lineHeight": 1.4,
+                        "opacity": 1,
+                        "time": 500,
+                        "async": true
+                    },
+                    {
+                        "type": "moveImage",
+                        "code": 4,
+                        "to": [
+                            0,
+                            480
+                        ],
+                        "time": 500,
+                        "async": true
+                    },
+                    {
+                        "type": "moveImage",
+                        "code": 3,
+                        "to": [
+                            0,
+                            480
+                        ],
+                        "time": 500,
+                        "async": true
+                    },
+                    {
+                        "type": "waitAsync"
+                    },
+                    {
+                        "type": "hideImage",
+                        "code": 3,
+                        "time": 0
+                    },
+                    {
+                        "type": "hideImage",
+                        "code": 4,
+                        "time": 0
+                    },
+                    {
+                        "type": "sleep",
+                        "time": 5000
+                    },
+                    {
+                        "type": "hideImage",
+                        "code": 2,
+                        "time": 500
+                    },
+                    {
+                        "type": "sleep",
+                        "time": 500
+                    },
+                    {
+                        "type": "showImage",
+                        "code": 3,
+                        "image": "end9.jpg",
+                        "sloc": [
+                            0,
+                            0,
+                            null
+                        ],
+                        "loc": [
+                            0,
+                            0,
+                            null
+                        ],
+                        "opacity": 1,
+                        "time": 500
+                    },
+                    {
+                        "type": "sleep",
+                        "time": 2000
+                    },
+                    {
+                        "type": "showImage",
+                        "code": 4,
+                        "image": "carpetbomb.png",
+                        "loc": [
+                            0,
+                            480
+                        ],
+                        "opacity": 1,
+                        "time": 0
+                    },
+                    {
+                        "type": "showTextImage",
+                        "code": 2,
+                        "text": "    如有意见或建议\n     可发评论区\n     或私信作者\n欢迎一切积极友善的讨论！",
+                        "loc": [
+                            200,
+                            120
+                        ],
+                        "lineHeight": 1.4,
+                        "opacity": 1,
+                        "time": 500,
+                        "async": true
+                    },
+                    {
+                        "type": "moveImage",
+                        "code": 4,
+                        "to": [
+                            0,
+                            -1920
+                        ],
+                        "time": 500,
+                        "async": true
+                    },
+                    {
+                        "type": "moveImage",
+                        "code": 3,
+                        "to": [
+                            0,
+                            -480
+                        ],
+                        "time": 500,
+                        "async": true
+                    },
+                    {
+                        "type": "waitAsync"
+                    },
+                    {
+                        "type": "hideImage",
+                        "code": 3,
+                        "time": 0
+                    },
+                    {
+                        "type": "hideImage",
+                        "code": 4,
+                        "time": 0
+                    },
+                    {
+                        "type": "sleep",
+                        "time": 5000
+                    },
+                    {
+                        "type": "hideImage",
+                        "code": 2,
+                        "time": 500
+                    },
+                    {
+                        "type": "sleep",
+                        "time": 500
+                    },
+                    {
+                        "type": "showImage",
+                        "code": 3,
+                        "image": "end10.jpg",
+                        "sloc": [
+                            0,
+                            0,
+                            null
+                        ],
+                        "loc": [
+                            0,
+                            0,
+                            null
+                        ],
+                        "opacity": 1,
+                        "time": 500
+                    },
+                    {
+                        "type": "sleep",
+                        "time": 2000
+                    },
+                    {
+                        "type": "showImage",
+                        "code": 4,
+                        "image": "aircraft6.png",
+                        "loc": [
+                            20,
+                            480
+                        ],
+                        "opacity": 1,
+                        "time": 0
+                    },
+                    {
+                        "type": "showTextImage",
+                        "code": 2,
+                        "text": "谨以本作以及另外两部前作\n向所有在第二次世界大战中\n为反法西斯事业做出贡献的\n来自世界各地的英勇战士们\n   致以最崇高的敬意！",
+                        "loc": [
+                            200,
+                            120
+                        ],
+                        "lineHeight": 1.4,
+                        "opacity": 1,
+                        "time": 500,
+                        "async": true
+                    },
+                    {
+                        "type": "moveImage",
+                        "code": 4,
+                        "to": [
+                            20,
+                            -330
+                        ],
+                        "time": 500,
+                        "async": true
+                    },
+                    {
+                        "type": "moveImage",
+                        "code": 3,
+                        "to": [
+                            0,
+                            -480
+                        ],
+                        "time": 500,
+                        "async": true
+                    },
+                    {
+                        "type": "waitAsync"
+                    },
+                    {
+                        "type": "hideImage",
+                        "code": 3,
+                        "time": 0
+                    },
+                    {
+                        "type": "hideImage",
+                        "code": 4,
+                        "time": 0
+                    },
+                    {
+                        "type": "sleep",
+                        "time": 5000
+                    },
+                    {
+                        "type": "hideImage",
+                        "code": 2,
+                        "time": 500
+                    },
+                    {
+                        "type": "sleep",
+                        "time": 500
+                    },
+                    {
+                        "type": "setCurtain",
+                        "color": [
+                            0,
+                            0,
+                            0,
+                            1
+                        ],
+                        "time": 0,
+                        "keep": true
+                    },
+                    {
+                        "type": "hideImage",
+                        "code": 1,
+                        "time": 0
+                    },
+                    {
+                        "type": "changeFloor",
+                        "floorId": "MT451",
+                        "loc": [
+                            7,
+                            0
+                        ],
+                        "direction": "down",
+                        "time": 1000
+                    }
+                ],
+                "no": []
+            }
         ]
     },
     "changeFloor": {},

@@ -464,6 +464,64 @@ main.floors.MT281=
                 "false": []
             },
             {
+                "type": "showImage",
+                "code": 5,
+                "image": "abstract.png",
+                "loc": [
+                    40,
+                    480
+                ],
+                "opacity": 1,
+                "time": 0
+            },
+            {
+                "type": "moveImage",
+                "code": 5,
+                "to": [
+                    40,
+                    20
+                ],
+                "time": 500
+            },
+            {
+                "type": "sleep",
+                "time": 500
+            },
+            {
+                "type": "drawTextContent",
+                "text": "   指挥官阁下为“约克公爵”号争取了\n足够多的时间，这次能够歼灭“沙恩霍斯\n特”号，他功不可没。\n   我们在大海上的重大威胁又少了一个\n。德军已经不敢再轻易派出大型水面战舰\n了，剩余的两艘战列舰我们也会持续跟踪\n。此外，我们应当向“沙恩霍斯特”号表现\n出的永不言弃精神学习，虽是敌人，但值\n得敬佩。",
+                "left": 60,
+                "top": 100,
+                "align": "left",
+                "fontSize": 20,
+                "color": [
+                    0,
+                    0,
+                    0,
+                    1
+                ]
+            },
+            {
+                "type": "wait"
+            },
+            {
+                "type": "clearMap"
+            },
+            {
+                "type": "moveImage",
+                "code": 5,
+                "to": [
+                    40,
+                    480
+                ],
+                "time": 500
+            },
+            {
+                "type": "hideImage",
+                "code": 5,
+                "time": 0
+            },
+            {
                 "type": "sleep",
                 "time": 2000
             },

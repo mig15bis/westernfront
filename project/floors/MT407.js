@@ -1204,6 +1204,64 @@ main.floors.MT407=
                 "false": []
             },
             {
+                "type": "showImage",
+                "code": 5,
+                "image": "abstract.png",
+                "loc": [
+                    40,
+                    480
+                ],
+                "opacity": 1,
+                "time": 0
+            },
+            {
+                "type": "moveImage",
+                "code": 5,
+                "to": [
+                    40,
+                    20
+                ],
+                "time": 500
+            },
+            {
+                "type": "sleep",
+                "time": 500
+            },
+            {
+                "type": "drawTextContent",
+                "text": "   德军组织起的零散防御根本没法阻\n挡指挥官阁下的扫荡。在易北河的另一\n端，我们遇见了一支友善的苏军部队。\n   来自地球两端的两国军队居然碰到\n了一起，猜猜这意味着什么？我们把德\n国人彻底包围了！战争马上要结束了！\n管他那么多干什么，我们与这些苏联朋\n友热情拥抱，交换香烟和美酒。不得不\n说，那些伏特加的酒劲真大！",
+                "left": 60,
+                "top": 100,
+                "align": "left",
+                "fontSize": 20,
+                "color": [
+                    0,
+                    0,
+                    0,
+                    1
+                ]
+            },
+            {
+                "type": "wait"
+            },
+            {
+                "type": "clearMap"
+            },
+            {
+                "type": "moveImage",
+                "code": 5,
+                "to": [
+                    40,
+                    480
+                ],
+                "time": 500
+            },
+            {
+                "type": "hideImage",
+                "code": 5,
+                "time": 0
+            },
+            {
                 "type": "sleep",
                 "time": 2000
             },

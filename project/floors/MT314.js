@@ -39,7 +39,7 @@ main.floors.MT314=
                 "type": "setCurtain",
                 "time": 500
             },
-            "\t[盟军指挥官,hero]坦克来了！掩护他们攻击！给我拆了那些碉堡！",
+            "\t[盟军指挥官,hero]坦克来了！火力掩护！给我拆了那些碉堡！",
             {
                 "type": "choices",
                 "text": "\t[维修人员,N514]请选择出战坦克",

@@ -210,6 +210,64 @@ main.floors.MT60=
                 "false": []
             },
             {
+                "type": "showImage",
+                "code": 5,
+                "image": "abstract.png",
+                "loc": [
+                    40,
+                    480
+                ],
+                "opacity": 1,
+                "time": 0
+            },
+            {
+                "type": "moveImage",
+                "code": 5,
+                "to": [
+                    40,
+                    20
+                ],
+                "time": 500
+            },
+            {
+                "type": "sleep",
+                "time": 500
+            },
+            {
+                "type": "drawTextContent",
+                "text": "   今晚，指挥官阁下用他的战机机枪\n让德国空军吃尽了苦头。大量德军飞机\n坠毁在伦敦城内，这还没算返航途中坠\n毁以及降落后宣告报废的。\n   尽管伦敦已经变为燃烧的废墟，但\n轰炸无法击垮民众的意志。轰炸目标的\n转移给了我们绝佳的喘息之机，现在该\n是敌人付出代价的时候了！今晚只是个\n开头，我们还会一直抵抗，直到彻底消\n灭他们！",
+                "left": 60,
+                "top": 100,
+                "align": "left",
+                "fontSize": 20,
+                "color": [
+                    0,
+                    0,
+                    0,
+                    1
+                ]
+            },
+            {
+                "type": "wait"
+            },
+            {
+                "type": "clearMap"
+            },
+            {
+                "type": "moveImage",
+                "code": 5,
+                "to": [
+                    40,
+                    480
+                ],
+                "time": 500
+            },
+            {
+                "type": "hideImage",
+                "code": 5,
+                "time": 0
+            },
+            {
                 "type": "sleep",
                 "time": 2000
             },

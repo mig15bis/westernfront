@@ -875,6 +875,64 @@ main.floors.MT99=
                                                 "false": []
                                             },
                                             {
+                                                "type": "showImage",
+                                                "code": 5,
+                                                "image": "abstract.png",
+                                                "loc": [
+                                                    40,
+                                                    480
+                                                ],
+                                                "opacity": 1,
+                                                "time": 0
+                                            },
+                                            {
+                                                "type": "moveImage",
+                                                "code": 5,
+                                                "to": [
+                                                    40,
+                                                    20
+                                                ],
+                                                "time": 500
+                                            },
+                                            {
+                                                "type": "sleep",
+                                                "time": 500
+                                            },
+                                            {
+                                                "type": "drawTextContent",
+                                                "text": "   我们亲眼见证了俾斯麦号的沉没，\n这离不开我们所有人的努力，尤其是不\n懈追踪俾斯麦号的巡洋舰和巡逻机、皇\n家方舟号航空母舰，还有指挥官阁下。\n   失去胡德号对我们而言是一个沉重\n的打击，不过我们成功给她报仇了。而\n且，我们能够承受一艘战列巡洋舰的损\n失，而德军显然无法承受俾斯麦号的损\n失。所以，在丹麦海峡安心长眠吧，胡\n德号，还有随她而去的水兵们，剩下的\n就交给我们了。",
+                                                "left": 60,
+                                                "top": 100,
+                                                "align": "left",
+                                                "fontSize": 20,
+                                                "color": [
+                                                    0,
+                                                    0,
+                                                    0,
+                                                    1
+                                                ]
+                                            },
+                                            {
+                                                "type": "wait"
+                                            },
+                                            {
+                                                "type": "clearMap"
+                                            },
+                                            {
+                                                "type": "moveImage",
+                                                "code": 5,
+                                                "to": [
+                                                    40,
+                                                    480
+                                                ],
+                                                "time": 500
+                                            },
+                                            {
+                                                "type": "hideImage",
+                                                "code": 5,
+                                                "time": 0
+                                            },
+                                            {
                                                 "type": "sleep",
                                                 "time": 2000
                                             },

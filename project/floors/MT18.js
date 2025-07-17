@@ -468,8 +468,7 @@ main.floors.MT18=
                 ]
             },
             {
-                "type": "sleep",
-                "time": 7500
+                "type": "wait"
             },
             {
                 "type": "clearMap"

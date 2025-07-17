@@ -385,6 +385,64 @@ main.floors.MT264=
                 "false": []
             },
             {
+                "type": "showImage",
+                "code": 5,
+                "image": "abstract.png",
+                "loc": [
+                    40,
+                    480
+                ],
+                "opacity": 1,
+                "time": 0
+            },
+            {
+                "type": "moveImage",
+                "code": 5,
+                "to": [
+                    40,
+                    20
+                ],
+                "time": 500
+            },
+            {
+                "type": "sleep",
+                "time": 500
+            },
+            {
+                "type": "drawTextContent",
+                "text": "   “雪崩”计划遭遇了一些小小的麻烦\n，不过尚在可控范围内。得益于克拉克\n将军的优秀指挥，我们已在萨勒诺站稳\n脚跟。\n   据说德军派出了在东线身经百战的\n精锐部队和新型坦克，但那又如何？根\n本不足为惧。意大利的战事很快就会结\n束，让记者们做好出发准备，伟大的克\n拉克将军会在罗马接受采访！\n（这份简报似乎是在克拉克的要求下写\n的）",
+                "left": 60,
+                "top": 100,
+                "align": "left",
+                "fontSize": 20,
+                "color": [
+                    0,
+                    0,
+                    0,
+                    1
+                ]
+            },
+            {
+                "type": "wait"
+            },
+            {
+                "type": "clearMap"
+            },
+            {
+                "type": "moveImage",
+                "code": 5,
+                "to": [
+                    40,
+                    480
+                ],
+                "time": 500
+            },
+            {
+                "type": "hideImage",
+                "code": 5,
+                "time": 0
+            },
+            {
                 "type": "sleep",
                 "time": 2000
             },

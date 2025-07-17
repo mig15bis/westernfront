@@ -760,6 +760,64 @@ main.floors.MT302=
             "false": []
         },
         {
+            "type": "showImage",
+            "code": 5,
+            "image": "abstract.png",
+            "loc": [
+                40,
+                480
+            ],
+            "opacity": 1,
+            "time": 0
+        },
+        {
+            "type": "moveImage",
+            "code": 5,
+            "to": [
+                40,
+                20
+            ],
+            "time": 500
+        },
+        {
+            "type": "sleep",
+            "time": 500
+        },
+        {
+            "type": "drawTextContent",
+            "text": "   新型“野马”战机的实战效果十分理\n想，而将这些战斗机大队交给指挥官阁下\n是一个非常正确的决定！\n   有了全程护航的轰炸机大队狠狠打击\n了鲁尔工业区，轰炸带来的损失足够德军\n喝一壶的了，而今后我们会对德军的各个\n后方生产设施进行轮番轰炸，直至它们彻\n底停摆。在那之前，我们更好奇戈林那个\n死胖子的身份证件上有没有改名。",
+            "left": 60,
+            "top": 100,
+            "align": "left",
+            "fontSize": 20,
+            "color": [
+                0,
+                0,
+                0,
+                1
+            ]
+        },
+        {
+            "type": "wait"
+        },
+        {
+            "type": "clearMap"
+        },
+        {
+            "type": "moveImage",
+            "code": 5,
+            "to": [
+                40,
+                480
+            ],
+            "time": 500
+        },
+        {
+            "type": "hideImage",
+            "code": 5,
+            "time": 0
+        },
+        {
             "type": "sleep",
             "time": 2000
         },

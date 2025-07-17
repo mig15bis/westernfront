@@ -206,6 +206,64 @@ main.floors.MT329=
                 "false": []
             },
             {
+                "type": "showImage",
+                "code": 5,
+                "image": "abstract.png",
+                "loc": [
+                    40,
+                    480
+                ],
+                "opacity": 1,
+                "time": 0
+            },
+            {
+                "type": "moveImage",
+                "code": 5,
+                "to": [
+                    40,
+                    20
+                ],
+                "time": 500
+            },
+            {
+                "type": "sleep",
+                "time": 500
+            },
+            {
+                "type": "drawTextContent",
+                "text": "   敌人的反扑十分猛烈，给我们造成\n了不小的麻烦，不过指挥官阁下最终还\n是占领了卡昂，阶段任务已经完成。\n   敌军的队伍里全是刚成年甚至未成\n年的孩子！该死的希特勒把他们也洗脑\n成了战争机器！一想到我们的孩子也跟\n他们差不多大，让人有些不忍心。不过\n他们终究已经成了纳粹的打手，我们只\n好杀了他们。这里可是战场，如果我们\n不这么做，死的就是我们了。",
+                "left": 60,
+                "top": 100,
+                "align": "left",
+                "fontSize": 20,
+                "color": [
+                    0,
+                    0,
+                    0,
+                    1
+                ]
+            },
+            {
+                "type": "wait"
+            },
+            {
+                "type": "clearMap"
+            },
+            {
+                "type": "moveImage",
+                "code": 5,
+                "to": [
+                    40,
+                    480
+                ],
+                "time": 500
+            },
+            {
+                "type": "hideImage",
+                "code": 5,
+                "time": 0
+            },
+            {
                 "type": "sleep",
                 "time": 2000
             },

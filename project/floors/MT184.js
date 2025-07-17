@@ -230,6 +230,64 @@ main.floors.MT184=
                 "false": []
             },
             {
+                "type": "showImage",
+                "code": 5,
+                "image": "abstract.png",
+                "loc": [
+                    40,
+                    480
+                ],
+                "opacity": 1,
+                "time": 0
+            },
+            {
+                "type": "moveImage",
+                "code": 5,
+                "to": [
+                    40,
+                    20
+                ],
+                "time": 500
+            },
+            {
+                "type": "sleep",
+                "time": 500
+            },
+            {
+                "type": "drawTextContent",
+                "text": "   一夜的激战下来，没有任何一支部\n队成功突破防线，指挥官阁下已经是其\n中进度最好的了。\n   太阳升起时，我们看到了地狱般的\n景象：士兵尸体和坦克残骸横七竖八地\n散落在德军的雷区里，甚至都找不出几\n具相对完整的。侥幸活下来的人，到现\n在也都魂不守舍。要突破“魔鬼的花园”\n，最好另寻他法。",
+                "left": 60,
+                "top": 100,
+                "align": "left",
+                "fontSize": 20,
+                "color": [
+                    0,
+                    0,
+                    0,
+                    1
+                ]
+            },
+            {
+                "type": "wait"
+            },
+            {
+                "type": "clearMap"
+            },
+            {
+                "type": "moveImage",
+                "code": 5,
+                "to": [
+                    40,
+                    480
+                ],
+                "time": 500
+            },
+            {
+                "type": "hideImage",
+                "code": 5,
+                "time": 0
+            },
+            {
                 "type": "sleep",
                 "time": 2000
             },

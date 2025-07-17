@@ -232,6 +232,64 @@ main.floors.MT308=
                 "false": []
             },
             {
+                "type": "showImage",
+                "code": 5,
+                "image": "abstract.png",
+                "loc": [
+                    40,
+                    480
+                ],
+                "opacity": 1,
+                "time": 0
+            },
+            {
+                "type": "moveImage",
+                "code": 5,
+                "to": [
+                    40,
+                    20
+                ],
+                "time": 500
+            },
+            {
+                "type": "sleep",
+                "time": 500
+            },
+            {
+                "type": "drawTextContent",
+                "text": "   指挥官阁下刚刚完成了对加莱地区\n的最后一轮打击。虽然轰炸效果已无所\n谓，但他的表现仍然值得称赞。\n   欺诈行动进行的很顺利，敌人似乎\n真的以为我们马上要登陆加莱。侦察机\n拍下的照片表明，他们又把一批驻防诺\n曼底的部队调去了加莱。即便如此，明\n天仍会是一场恶战。今晚让炊事班做点\n好的，对很多人来说这是最后一餐了。",
+                "left": 60,
+                "top": 100,
+                "align": "left",
+                "fontSize": 20,
+                "color": [
+                    0,
+                    0,
+                    0,
+                    1
+                ]
+            },
+            {
+                "type": "wait"
+            },
+            {
+                "type": "clearMap"
+            },
+            {
+                "type": "moveImage",
+                "code": 5,
+                "to": [
+                    40,
+                    480
+                ],
+                "time": 500
+            },
+            {
+                "type": "hideImage",
+                "code": 5,
+                "time": 0
+            },
+            {
                 "type": "sleep",
                 "time": 2000
             },

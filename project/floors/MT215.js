@@ -781,6 +781,64 @@ main.floors.MT215=
             "false": []
         },
         {
+            "type": "showImage",
+            "code": 5,
+            "image": "abstract.png",
+            "loc": [
+                40,
+                480
+            ],
+            "opacity": 1,
+            "time": 0
+        },
+        {
+            "type": "moveImage",
+            "code": 5,
+            "to": [
+                40,
+                20
+            ],
+            "time": 500
+        },
+        {
+            "type": "sleep",
+            "time": 500
+        },
+        {
+            "type": "drawTextContent",
+            "text": "   指挥官阁下圆满完成了此次护航任\n务，轰炸机群成功抵达目标上空并投弹\n，效果很好，那座机场短时间内没法正\n常使用了。\n   在迪耶普地区的登陆行动没能成功，\n虽然我们本来也不指望能成功。不过这\n些B17轰炸机的表现让高层很满意。虽\n然没达到“无需护航”的程度，不过把今\n后的战略轰炸任务抛给它们是没问题的。",
+            "left": 60,
+            "top": 100,
+            "align": "left",
+            "fontSize": 20,
+            "color": [
+                0,
+                0,
+                0,
+                1
+            ]
+        },
+        {
+            "type": "wait"
+        },
+        {
+            "type": "clearMap"
+        },
+        {
+            "type": "moveImage",
+            "code": 5,
+            "to": [
+                40,
+                480
+            ],
+            "time": 500
+        },
+        {
+            "type": "hideImage",
+            "code": 5,
+            "time": 0
+        },
+        {
             "type": "sleep",
             "time": 2000
         },

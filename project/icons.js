@@ -659,7 +659,9 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"I672": 222,
 		"I680": 223,
 		"I681": 224,
-		"I682": 225
+		"I682": 225,
+		"shermancrab": 226,
+		"crocodile": 227
 	},
 	"autotile": {
 		"autotile": 0,

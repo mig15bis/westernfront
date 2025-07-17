@@ -210,6 +210,64 @@ main.floors.MT230=
                 "false": []
             },
             {
+                "type": "showImage",
+                "code": 5,
+                "image": "abstract.png",
+                "loc": [
+                    40,
+                    480
+                ],
+                "opacity": 1,
+                "time": 0
+            },
+            {
+                "type": "moveImage",
+                "code": 5,
+                "to": [
+                    40,
+                    20
+                ],
+                "time": 500
+            },
+            {
+                "type": "sleep",
+                "time": 500
+            },
+            {
+                "type": "drawTextContent",
+                "text": "   敌人的新型坦克很强，但无法阻止\n指挥官阁下将他们的防线拆个稀巴烂。\n   那些虎式坦克真的很结实，我们得\n把所有能找到的炮弹一齐招呼过去才能\n干掉一辆，而我们却没有任何一种能抗\n住它88毫米主炮的坦克来与之抗衡。北\n非都出现这玩意了，想必我们在欧洲也\n会与它们交战，做好心理准备吧。",
+                "left": 60,
+                "top": 100,
+                "align": "left",
+                "fontSize": 20,
+                "color": [
+                    0,
+                    0,
+                    0,
+                    1
+                ]
+            },
+            {
+                "type": "wait"
+            },
+            {
+                "type": "clearMap"
+            },
+            {
+                "type": "moveImage",
+                "code": 5,
+                "to": [
+                    40,
+                    480
+                ],
+                "time": 500
+            },
+            {
+                "type": "hideImage",
+                "code": 5,
+                "time": 0
+            },
+            {
                 "type": "sleep",
                 "time": 2000
             },
