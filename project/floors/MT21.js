@@ -19,9 +19,6 @@ main.floors.MT21=
             "opacity": 1
         },
         {
-            "type": "showStatusBar"
-        },
-        {
             "type": "setCurtain",
             "time": 500
         },

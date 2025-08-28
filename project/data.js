@@ -867,6 +867,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"sb2c.jpg",
 			"sbd.jpg",
 			"scharnhorst.jpg",
+			"shangmian.png",
 			"sheffield.jpg",
 			"skill10.png",
 			"skill11.jpg",
@@ -900,6 +901,9 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"spitfiremk9.jpg",
 			"star.png",
 			"status.png",
+			"statusBackground.png",
+			"statusBackground2.png",
+			"statusBackground3.jpg",
 			"statusbar.png",
 			"swordfish.jpg",
 			"taranto.jpg",
@@ -940,11 +944,14 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"winskin.png",
 			"wittmann.png",
 			"wrestler.jpg",
+			"xiamian.png",
 			"yamamoto.jpg",
 			"yamashita.jpg",
+			"youbian.png",
 			"z1007.jpg",
 			"zeppelin.jpg",
-			"zhukov.png"
+			"zhukov.png",
+			"zuobian.png"
 		],
 		"tilesets": [
 			"magictower.png",
@@ -1326,7 +1333,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 	"firstData": {
 		"title": "铁血战将：落日余晖",
 		"name": "westernfront",
-		"version": "Ver 2.10.2",
+		"version": "Ver 2.10.3",
 		"floorId": "train1",
 		"hero": {
 			"image": "hero.png",
@@ -1356,13 +1363,20 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 				"x": 7,
 				"y": 14
 			},
-			"flags": {},
+			"flags": {
+				"itemDetail": true
+			},
 			"followers": [],
 			"steps": 0,
 			"bom": 0,
 			"tpn": 0,
 			"dod": 0,
-			"gro": 0
+			"gro": 0,
+			"spell": null,
+			"matk": null,
+			"mhp": null,
+			"speed": null,
+			"cd": 10
 		},
 		"startCanvas": [
 			{
@@ -1407,7 +1421,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 					null
 				],
 				"loc": [
-					140,
+					60,
 					-100,
 					360,
 					90
@@ -1425,7 +1439,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 					null
 				],
 				"loc": [
-					140,
+					65,
 					-120,
 					350,
 					120
@@ -1523,7 +1537,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 				"type": "moveImage",
 				"code": 2,
 				"to": [
-					140,
+					60,
 					10
 				],
 				"time": 500
@@ -1536,7 +1550,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 				"type": "moveImage",
 				"code": 3,
 				"to": [
-					140,
+					65,
 					80
 				],
 				"time": 500
@@ -1559,7 +1573,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 				"type": "moveImage",
 				"code": 4,
 				"to": [
-					220,
+					140,
 					240
 				],
 				"time": 800,
@@ -1569,7 +1583,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 				"type": "moveImage",
 				"code": 5,
 				"to": [
-					220,
+					140,
 					290
 				],
 				"time": 800,
@@ -1579,7 +1593,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 				"type": "moveImage",
 				"code": 6,
 				"to": [
-					220,
+					140,
 					340
 				],
 				"time": 800,
@@ -1616,8 +1630,8 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 							{
 								"case": "mouse",
 								"px": [
-									220,
-									420
+									140,
+									340
 								],
 								"py": [
 									240,
@@ -1710,8 +1724,8 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 							{
 								"case": "mouse",
 								"px": [
-									220,
-									420
+									140,
+									340
 								],
 								"py": [
 									290,
@@ -1726,34 +1740,34 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 							{
 								"case": "mouse",
 								"px": [
-									20,
-									420
+									140,
+									340
 								],
 								"py": [
 									340,
 									390
 								],
 								"action": [
-									"\t[步兵,scoutinf]\b[down,null]\f[title6.png,170,50]基础兵种，战斗力较低，但会在战场上发挥多种多样的技能，常常出奇制胜。\n（高血量、低攻击，技能多样）",
-									"\t[轻型坦克/装甲车,ab41]\b[down,null]\f[title7.png,170,50]以大口径机枪或速射炮作为主要武器，机动灵活，适合侦察。\n（低血量、低攻击、高敏捷，前期主力，后期辅助）",
-									"\t[中型坦克,panzer3e]\b[down,null]\f[title8.png,170,50]装甲部队的重要战力，无论是火炮还是装甲都比较优秀。\n（中血量、中攻击，主力输出兵种）",
-									"\t[重型坦克,tigere]\b[down,null]\f[title9.png,170,50]能够以一敌百的战场“巨无霸”，战斗力极强，但数量很少且油耗很大。\n（高血量、高攻击，精锐部队）",
-									"\t[坦克歼击车,stug3a]\b[down,null]\f[title10.png,170,50]牺牲了装甲防护换来更强有力的火炮，是坦克中的狙击手。\n（中血量、高攻击、低敏捷，辅助兵种）",
-									"\t[反坦克炮,pak36]\b[down,null]\f[title11.png,170,50]专门用来摧毁坦克的火炮，具有相对不错的穿甲能力。\n（低血量、高穿透，辅助攻击，对坦克特攻）",
-									"\t[榴弹炮,artillery75]\b[down,null]\f[title12.png,170,50]拥有强大的远程火力，在敌人的射程之外对其进行猛烈轰炸，不过一旦被近身就会变得非常脆弱。\n（低血量、高攻击、领域类技能，削弱主角）",
-									"\t[高射炮,flak37]\b[down,null]\f[title13.png,170,50]密集的高射炮火令敌机飞行员感到胆寒。口径较大的高射炮甚至可以把地面上的敌军也一块炸飞。\n（低血量，高攻击，对空特攻，对地协同攻击）",
-									"\t[防御工事,mgbunker]\b[down,null]\f[title14.png,170,50]固定的防御建筑物，攻守兼备，但是无法移动，很容易被重型火力击中。\n（高血量、高防护，地面辅助）",
-									"\t[潜艇,u7]\b[down,null]\f[uboat.png,170,50]潜藏在深海中的“幽灵猎手”，能躲掉大多数炮火，并给予敌舰致命一击。\n（低血量、满级闪避，巨额鱼雷攻击，惧怕驱逐舰）",
-									"\t[驱逐舰,italydd1]\b[down,null]\f[flecher.jpg,170,50]战斗力低下却数量众多的小型军舰，扮演着国际象棋里弱小却不可或缺的“兵”。同时也是潜艇的天敌。\n（较低血量、低攻击、高闪避，较强鱼雷攻击，对潜艇特攻）",
-									"\t[巡洋舰,italycl1]\b[down,null]\f[cleveland.jpg,170,50]性能较均衡的中型军舰，分为“轻巡洋舰”和“重巡洋舰”两种。在舰队里是主力战舰的绝佳辅助，周围没有大型军舰时，它们就是主力。\n（中血量、中攻击、中闪避、中等鱼雷攻击，海战辅助）",
-									"\t[战列舰,bismark]\b[down,null]\f[iowa.jpg,170,50]拥有堪称恐怖的火力和坚硬装甲的大型军舰，没有人敢硬接这群庞然大物的巨型主炮，除非他是从精神病院里偷跑出来的。\n（高血量、高攻击、低闪避，海战精锐）",
-									"\t[航空母舰,zeppelin]\b[down,null]\f[enterprise.jpg,170,50]尚未经历实战检验的新型军舰，使用舰载机作为主要武器，也许会取代战列舰成为新的海上霸主？\n（较多出现在我军中。使用飞机攻击，前期较弱，后期主力）",
-									"\t[战斗机,me109e4]\b[down,null]\f[title15.png,170,50]轻盈灵巧的空中作战单位，是夺取制空权的主力。\n（中血量、中攻击、高敏捷，空战主力）",
-									"\t[重型战斗机,me110c]\b[down,null]\f[title16.png,170,50]通过牺牲机动性，换来更强的火力和战场生存能力，最喜欢欺负落单的轰炸机。\n（中血量、高攻击，专打后排，参考“新新魔塔2”弓箭手）",
-									"\t[俯冲轰炸机,ju87b]\b[down,null]\f[title17.png,170,50]载弹量较小的轻型轰炸机，通过俯冲投弹来换取更高的精准度。多数俯冲轰炸机可以从航空母舰上起飞。\n（低血量、高攻击，空对地/空对舰擅长，施加负面效果）",
-									"\t[鱼雷轰炸机,do17z]\b[down,null]\f[title18.png,170,50]挂载鱼雷，专门攻击军舰的飞机。但投放鱼雷时必须放慢速度，低空飞行，导致它们很容易被击落。\n（中血量、高攻击，空对舰专用，中等鱼雷攻击）",
-									"\t[中型轰炸机,ju88a]\b[down,null]\f[title19.png,170,50]标准的轰炸机，能挂载大量炸弹进行水平轰炸，但精度比较低。\n（高血量、中攻击，空对地擅长）",
-									"\t[战略轰炸机,evilFairy]\b[down,null]\f[title20.png,170,50]翱翔在高空中的巨大飞机，拥有能让一座城市瞬间化为火海的恐怖战力，但精度极差，且依赖战斗机的保护。\n（仅我军拥有此类兵种。造成空对地范围伤害）"
+									"\t[步兵,scoutinf]\b[down,null]\f[title6.png,90,50]基础兵种，战斗力较低，但会在战场上发挥多种多样的技能，常常出奇制胜。\n（高血量、低攻击，技能多样）",
+									"\t[轻型坦克/装甲车,ab41]\b[down,null]\f[title7.png,90,50]以大口径机枪或速射炮作为主要武器，机动灵活，适合侦察。\n（低血量、低攻击、高敏捷，前期主力，后期辅助）",
+									"\t[中型坦克,panzer3e]\b[down,null]\f[title8.png,90,50]装甲部队的重要战力，无论是火炮还是装甲都比较优秀。\n（中血量、中攻击，主力输出兵种）",
+									"\t[重型坦克,tigere]\b[down,null]\f[title9.png,90,50]能够以一敌百的战场“巨无霸”，战斗力极强，但数量很少且油耗很大。\n（高血量、高攻击，精锐部队）",
+									"\t[坦克歼击车,stug3a]\b[down,null]\f[title10.png,90,50]牺牲了装甲防护换来更强有力的火炮，是坦克中的狙击手。\n（中血量、高攻击、低敏捷，辅助兵种）",
+									"\t[反坦克炮,pak36]\b[down,null]\f[title11.png,90,50]专门用来摧毁坦克的火炮，具有相对不错的穿甲能力。\n（低血量、高穿透，辅助攻击，对坦克特攻）",
+									"\t[榴弹炮,artillery75]\b[down,null]\f[title12.png,90,50]拥有强大的远程火力，在敌人的射程之外对其进行猛烈轰炸，不过一旦被近身就会变得非常脆弱。\n（低血量、高攻击、领域类技能，削弱主角）",
+									"\t[高射炮,flak37]\b[down,null]\f[title13.png,90,50]密集的高射炮火令敌机飞行员感到胆寒。口径较大的高射炮甚至可以把地面上的敌军也一块炸飞。\n（低血量，高攻击，对空特攻，对地协同攻击）",
+									"\t[防御工事,mgbunker]\b[down,null]\f[title14.png,90,50]固定的防御建筑物，攻守兼备，但是无法移动，很容易被重型火力击中。\n（高血量、高防护，地面辅助）",
+									"\t[潜艇,u7]\b[down,null]\f[uboat.png,90,50]潜藏在深海中的“幽灵猎手”，能躲掉大多数炮火，并给予敌舰致命一击。\n（低血量、满级闪避，巨额鱼雷攻击，惧怕驱逐舰）",
+									"\t[驱逐舰,italydd1]\b[down,null]\f[flecher.jpg,90,50]战斗力低下却数量众多的小型军舰，扮演着国际象棋里弱小却不可或缺的“兵”。同时也是潜艇的天敌。\n（较低血量、低攻击、高闪避，较强鱼雷攻击，对潜艇特攻）",
+									"\t[巡洋舰,italycl1]\b[down,null]\f[cleveland.jpg,90,50]性能较均衡的中型军舰，分为“轻巡洋舰”和“重巡洋舰”两种。在舰队里是主力战舰的绝佳辅助，周围没有大型军舰时，它们就是主力。\n（中血量、中攻击、中闪避、中等鱼雷攻击，海战辅助）",
+									"\t[战列舰,bismark]\b[down,null]\f[iowa.jpg,90,50]拥有堪称恐怖的火力和坚硬装甲的大型军舰，没有人敢硬接这群庞然大物的巨型主炮，除非他是从精神病院里偷跑出来的。\n（高血量、高攻击、低闪避，海战精锐）",
+									"\t[航空母舰,zeppelin]\b[down,null]\f[enterprise.jpg,90,50]尚未经历实战检验的新型军舰，使用舰载机作为主要武器，也许会取代战列舰成为新的海上霸主？\n（较多出现在我军中。使用飞机攻击，前期较弱，后期主力）",
+									"\t[战斗机,me109e4]\b[down,null]\f[title15.png,90,50]轻盈灵巧的空中作战单位，是夺取制空权的主力。\n（中血量、中攻击、高敏捷，空战主力）",
+									"\t[重型战斗机,me110c]\b[down,null]\f[title16.png,90,50]通过牺牲机动性，换来更强的火力和战场生存能力，最喜欢欺负落单的轰炸机。\n（中血量、高攻击，专打后排，参考“新新魔塔2”弓箭手）",
+									"\t[俯冲轰炸机,ju87b]\b[down,null]\f[title17.png,90,50]载弹量较小的轻型轰炸机，通过俯冲投弹来换取更高的精准度。多数俯冲轰炸机可以从航空母舰上起飞。\n（低血量、高攻击，空对地/空对舰擅长，施加负面效果）",
+									"\t[鱼雷轰炸机,do17z]\b[down,null]\f[title18.png,90,50]挂载鱼雷，专门攻击军舰的飞机。但投放鱼雷时必须放慢速度，低空飞行，导致它们很容易被击落。\n（中血量、高攻击，空对舰专用，中等鱼雷攻击）",
+									"\t[中型轰炸机,ju88a]\b[down,null]\f[title19.png,90,50]标准的轰炸机，能挂载大量炸弹进行水平轰炸，但精度比较低。\n（高血量、中攻击，空对地擅长）",
+									"\t[战略轰炸机,evilFairy]\b[down,null]\f[title20.png,90,50]翱翔在高空中的巨大飞机，拥有能让一座城市瞬间化为火海的恐怖战力，但精度极差，且依赖战斗机的保护。\n（仅我军拥有此类兵种。造成空对地范围伤害）"
 								]
 							}
 						]
@@ -1769,6 +1783,11 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			{
 				"type": "playSound",
 				"name": "xinxinmagic.mp3"
+			},
+			{
+				"type": "setValue",
+				"name": "flag:itemDetail",
+				"value": "true"
 			},
 			"\t[系统提示]本游戏目前为测试版，手机端玩家可以先尝试横屏，如果横屏仍然不能正常游戏，那就是仅支持PC端游玩。本游戏无任何盈利成分，如果您在游玩之前或过程中被要求氪金或开会员，那么请前往https://h5mota.com寻找正版游戏。大部分音频和图片素材均非原创，素材来源将在游戏中注明，侵权必删（除非忘写了）。如发现任何疑似bug的情况，请在评论区向作者反馈。",
 			{
@@ -1798,6 +1817,11 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 				"type": "setValue",
 				"name": "flag:anime",
 				"value": "true"
+			},
+			{
+				"type": "setValue",
+				"name": "flag:skill",
+				"value": "0"
 			}
 		],
 		"shops": [
@@ -6750,7 +6774,8 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 		"animateSpeed": 300,
 		"moveSpeed": 100,
 		"statusCanvasRowsOnMobile": 3,
-		"floorChangeTime": 100
+		"floorChangeTime": 100,
+		"yellowGem": null
 	},
 	"flags": {
 		"statusBarItems": [
@@ -6778,10 +6803,10 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 		"enableAddPoint": false,
 		"enableNegativeDamage": false,
 		"betweenAttackMax": false,
-		"useLoop": false,
+		"useLoop": true,
 		"startUsingCanvas": true,
 		"statusCanvas": false,
-		"enableEnemyPoint": false,
+		"enableEnemyPoint": true,
 		"enableGentleClick": true,
 		"ignoreChangeFloor": true,
 		"canGoDeadZone": true,

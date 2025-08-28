@@ -18,9 +18,7 @@ main.floors.MT365=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        {
-            "type": "showStatusBar"
-        },
+        
         {
             "type": "update"
         },

@@ -18,9 +18,7 @@ main.floors.MT283=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        {
-            "type": "showStatusBar"
-        },
+        
         {
             "type": "update"
         },

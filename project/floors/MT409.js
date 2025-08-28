@@ -18,9 +18,7 @@ main.floors.MT409=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        {
-            "type": "showStatusBar"
-        },
+        
         {
             "type": "update"
         },

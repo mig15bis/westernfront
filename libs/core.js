@@ -11,7 +11,7 @@
 // const core = (() => {
 
 function core () {
-    this._WIDTH_ = 20;
+    this._WIDTH_ = 15;
     this._HEIGHT_ = 15;
     this._PX_ = this._WIDTH_ * 32;
     this._PY_ = this._HEIGHT_ * 32;
@@ -133,7 +133,7 @@ function core () {
             "time": 0,
             "updated": false,
             "storage": true, // 是否把自动存档写入文件a
-            "max": 20, // 自动存档最大回退数
+            "max": 50, // 自动存档最大回退数
             "now": 0,
         },
         "favorite": [],
@@ -401,8 +401,8 @@ core.prototype._init_platform = function () {
     window.AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext || window.msAudioContext;
     core.musicStatus.bgmStatus = core.getLocalStorage('bgmStatus', true);
     core.musicStatus.soundStatus = core.getLocalStorage('soundStatus', true);
-    //新增 userVolume 默认值0.7
-    core.musicStatus.userVolume = core.getLocalStorage('userVolume', 0.7);
+    //新增 userVolume 默认值0.09
+    core.musicStatus.userVolume = core.getLocalStorage('userVolume', 0.09);
     try {
         core.musicStatus.audioContext = new window.AudioContext();
         core.musicStatus.gainNode = core.musicStatus.audioContext.createGain();

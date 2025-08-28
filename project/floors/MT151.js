@@ -28,9 +28,7 @@ main.floors.MT151=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        {
-            "type": "showStatusBar"
-        },
+        
         {
             "type": "setCurtain",
             "time": 500

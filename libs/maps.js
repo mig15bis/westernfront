@@ -35,6 +35,7 @@ maps.prototype._resetFloorImages = function () {
 }
 
 maps.prototype._setHDCanvasSize = function (ctx, width, height) {
+    if(main.replayChecking)return
     ctx.setTransform(1, 0, 0, 1, 0, 0);
     var ratio = core.domStyle.scale;
     ratio *= devicePixelRatio;

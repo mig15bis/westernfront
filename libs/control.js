@@ -1124,6 +1124,12 @@ control.prototype.checkBlock = function () {
     var x = core.getHeroLoc('x'), y = core.getHeroLoc('y'), loc = x + "," + y;
     var damage = core.status.checkBlock.damage[loc];
     if (damage) {
+        core.taskSystem.tasksInfo.forEach(v => v.tasks.forEach(a => {
+			if (a.type === "specialBlock" ) {
+                if((core.status.checkBlock.type[loc] || {})[a.specialType]&&(!a.floorIds||a.floorIds.includes(core.status.floorId)))
+                    a.has++;
+			} 
+		}));
         core.status.hero.hp -= damage;
         var text = (Object.keys(core.status.checkBlock.type[loc] || {}).join("，")) || "伤害";
         core.drawTip("受到" + text + damage + "点");
@@ -3064,45 +3070,12 @@ control.prototype.updateStatusBar_update = function () {
     if (!core.isPlaying() || core.hasFlag('__statistics__')) return;
     core.control.controldata.updateStatusBar();
     if (!core.control.noAutoEvents) core.checkAutoEvents();
-    core.control._updateStatusBar_setToolboxIcon();
+    
     core.clearRouteFolding();
     core.control.noAutoEvents = true;
 };
 
-control.prototype._updateStatusBar_setToolboxIcon = function () {
-    if (core.isReplaying()) {
-        core.statusBar.image.book.src = core.status.replay.pausing ? core.statusBar.icons.play.src : core.statusBar.icons.pause.src;
-        core.statusBar.image.book.style.opacity = 1;
-        core.statusBar.image.fly.src = core.statusBar.icons.stop.src;
-        core.statusBar.image.fly.style.opacity = 1;
-        core.statusBar.image.toolbox.src = core.statusBar.icons.rewind.src;
-        core.statusBar.image.keyboard.src = core.statusBar.icons.book.src;
-        core.statusBar.image.shop.src = core.statusBar.icons.floor.src;
-        core.statusBar.image.save.src = core.statusBar.icons.speedDown.src;
-        core.statusBar.image.save.style.opacity = 1;
-        core.statusBar.image.load.src = core.statusBar.icons.speedUp.src;
-        core.statusBar.image.settings.src = core.statusBar.icons.save.src;
-    }
-    else {
-        core.statusBar.image.book.src = core.statusBar.icons.book.src;
-        core.statusBar.image.book.style.opacity = core.hasItem('book') ? 1 : 0.3;
-        if (!core.flags.equipboxButton) {
-            core.statusBar.image.fly.src = core.statusBar.icons.fly.src;
-            core.statusBar.image.fly.style.opacity = core.hasItem('fly') ? 1 : 0.3;
-        }
-        else {
-            core.statusBar.image.fly.src = core.statusBar.icons.equipbox.src;
-            core.statusBar.image.fly.style.opacity = 1;
-        }
-        core.statusBar.image.toolbox.src = core.statusBar.icons.toolbox.src;
-        core.statusBar.image.keyboard.src = core.statusBar.icons.keyboard.src;
-        core.statusBar.image.shop.src = core.statusBar.icons.shop.src;
-        core.statusBar.image.save.src = core.statusBar.icons.save.src;
-        core.statusBar.image.save.style.opacity = core.hasFlag('__forbidSave__') ? 0.3 : 1;
-        core.statusBar.image.load.src = core.statusBar.icons.load.src;
-        core.statusBar.image.settings.src = core.statusBar.icons.settings.src;
-    }
-}
+
 
 control.prototype.showStatusBar = function () {
     if (main.mode == 'editor') return;
@@ -3113,9 +3086,7 @@ control.prototype.showStatusBar = function () {
     // 显示
     for (var i = 0; i < statusItems.length; ++i)
         statusItems[i].style.opacity = 1;
-    this.setToolbarButton(false);
-    core.dom.tools.hard.style.display = 'block';
-    core.dom.toolBar.style.display = 'block';
+    
 }
 
 control.prototype.hideStatusBar = function (showToolbox) {
@@ -3133,10 +3104,7 @@ control.prototype.hideStatusBar = function (showToolbox) {
     // 隐藏
     for (var i = 0; i < statusItems.length; ++i)
         statusItems[i].style.opacity = 0;
-    if ((!core.domStyle.isVertical && !core.flags.extendToolbar) || !showToolbox) {
-        for (var i = 0; i < toolItems.length; ++i)
-            toolItems[i].style.display = 'none';
-    }
+    
     if (!core.domStyle.isVertical && !core.flags.extendToolbar) {
         core.dom.toolBar.style.display = 'none';
     }
@@ -3164,43 +3132,6 @@ control.prototype.updateHeroIcon = function (name) {
 }
 
 ////// 改变工具栏为按钮1-8 //////
-control.prototype.setToolbarButton = function (useButton) {
-    if (!core.domStyle.showStatusBar) {
-        // 隐藏状态栏时检查竖屏
-        if (!core.domStyle.isVertical && !core.flags.extendToolbar) {
-            for (var i = 0; i < core.dom.tools.length; ++i)
-                core.dom.tools[i].style.display = 'none';
-            return;
-        }
-        if (!core.hasFlag('showToolbox')) return;
-        else core.dom.tools.hard.style.display = 'block';
-    }
-
-    if (useButton == null) useButton = core.domStyle.toolbarBtn;
-    if ((!core.domStyle.isVertical && !core.flags.extendToolbar)) useButton = false;
-    core.domStyle.toolbarBtn = useButton;
-
-    if (useButton) {
-        ["book", "fly", "toolbox", "keyboard", "shop", "save", "load", "settings"].forEach(function (t) {
-            core.statusBar.image[t].style.display = 'none';
-        });
-        ["btn1", "btn2", "btn3", "btn4", "btn5", "btn6", "btn7", "btn8"].forEach(function (t) {
-            core.statusBar.image[t].style.display = 'block';
-        })
-        main.statusBar.image.btn8.style.filter = core.getLocalStorage('altKey') ? 'sepia(1) contrast(1.5)' : '';
-    }
-    else {
-        ["btn1", "btn2", "btn3", "btn4", "btn5", "btn6", "btn7", "btn8"].forEach(function (t) {
-            core.statusBar.image[t].style.display = 'none';
-        });
-        ["book", "fly", "toolbox", "save", "load", "settings"].forEach(function (t) {
-            core.statusBar.image[t].style.display = 'block';
-        });
-        core.statusBar.image.keyboard.style.display
-            = core.statusBar.image.shop.style.display
-            = core.domStyle.isVertical || core.flags.extendToolbar ? "block" : "none";
-    }
-}
 
 ////// ------ resize处理 ------ //
 
@@ -3330,7 +3261,6 @@ control.prototype.resize = function () {
     };
 
     this._doResize(obj);
-    this.setToolbarButton();
     core.updateStatusBar();
 }
 

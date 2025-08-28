@@ -181,24 +181,32 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 
 		},
         "afterChangeFloor": function (floorId) {
-			// 转换楼层结束的事件；此函数会在整个楼层切换完全结束后再执行
-			// floorId是切换到的楼层
+	// 转换楼层结束的事件；此函数会在整个楼层切换完全结束后再执行
+	// floorId是切换到的楼层
 
-			// 如果是读档，则进行检查（是否需要恢复事件）
-			if (core.hasFlag('__fromLoad__')) {
-				core.events.recoverEvents(core.getFlag("__events__"));
-				core.removeFlag("__events__");
-			} else {
-				// 每次抵达楼层执行的事件
-				core.insertAction(core.floors[floorId].eachArrive);
-
-				// 首次抵达楼层时执行的事件（后插入，先执行）
-				if (!core.hasVisitedFloor(floorId)) {
-					core.insertAction(core.floors[floorId].firstArrive);
-					core.visitFloor(floorId);
-				}
+	// 如果是读档，则进行检查（是否需要恢复事件）
+	if (core.hasFlag('__fromLoad__')) {
+		core.events.recoverEvents(core.getFlag("__events__"));
+		core.removeFlag("__events__");
+	} else {
+		// 每次抵达楼层执行的事件
+		core.insertAction(core.floors[floorId].eachArrive);
+		core.taskSystem.tasksInfo.forEach(v => v.tasks.forEach(a => {
+			if (a.type === "arrival" && a.floorId === floorId) {
+				a.has = 1;
+			} else if (a.type === "gosthFloor" && (!a.floorId || a.floorId.includes(core.status.floorId))) {
+				a.has++;
 			}
-		},
+
+		}));
+
+		// 首次抵达楼层时执行的事件（后插入，先执行）
+		if (!core.hasVisitedFloor(floorId)) {
+			core.insertAction(core.floors[floorId].firstArrive);
+			core.visitFloor(floorId);
+		}
+	}
+},
         "flyTo": function (toId, callback) {
 			// 楼层传送器的使用，从当前楼层飞往toId
 			// 如果不能飞行请返回false
@@ -368,22 +376,66 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		damage = 0;
 		delete flags['空中打击'];
 	}
+	//直掩
+	core.searchBlockWithFilter(block => {
+		if (!block || !block.event.cls.startsWith("enemy"))
+			return false;
+		if (core.hasSpecial(block.event.special, 70))
+			return true;
+	}).forEach(v => {
+		let number = 1;
+		if (core.hasSpecial(v.event.special, 4)) {
+			number *= 2;
+		}
+		if (core.hasSpecial(v.event.special, 5)) {
+			number *= 3;
+		}
+		if (core.hasSpecial(v.event.special, 6)) {
+			number *= v.event.n;
+		}
+		hero.hp -= v.event.atk * number;
+	})
+	//狼群改
+	if (core.core.hasSpecial(mon_special, 85) && x !== null && y !== null) {
+		for (let m = -2; m <= 2; m++) {
+			for (let n = -2; n <= 2; n++) {
+				if (m !== 0 && n !== 0) {
+					if (core.getBlockCls(x + m, y + n).startsWith("enemy") && core.material.enemys[core.getBlockId(x + m, y + n)].type === "潜艇") {
+						damage += core.getEnemyInfo(core.getBlockId(x + m, y + n), hero, x + m, y + n).top * core.material.enemys[core.getBlockId(x + m, y + n)].tpn * 3 / 10;
+					}
+				}
+			}
+		}
+	}
+	//火力覆盖
+	core.searchBlockWithFilter(block => {
+		if (!block || !block.event.cls.startsWith("enemy"))
+			return false;
+		if (core.hasSpecial(block.event.special, 72))
+			return true;
+	}).forEach(v => {
+		hero.hp -= v.event.atk * 3;
+	})
 	if (damage == null || damage >= core.status.hero.hp) {
 		core.status.hero.hp = 0;
 		core.updateStatusBar(false, true);
 		core.events.lose('战斗失败');
 		return;
 	}
-	if (flags['escort'] && damage >= 0) {
-		var fredamage = (core.hasSpecial(enemyId, 64) ? 2 : 0.4) * damage;
-		if (core.hasEquip('classj')) { fredamage *= 0.5 } //检测到装备，友伤减半
-		flags['友军血量'] -= fredamage;
-		if (flags['友军血量'] <= 0) {
-			core.events.lose('任务失败');
-			// 战斗失败
+	if (flags.skill !== 18) { //孟菲斯美女号
+		if (flags['escort'] && damage >= 0) { //拦截
+			var fredamage = (core.hasSpecial(enemyId, 64) ? 2 : 0.4) * damage;
+			if (core.hasEquip('classj')) { fredamage *= 0.5 } //检测到装备，友伤减半
+			flags['友军血量'] -= fredamage;
+			if (core.enemys.hasSpecial(special, 83)) { //对空火箭
+				flags['友军血量'] -= 0.05 * enemy.ammo * core.getEnemyInfo(enemy, hero, x, y).atk * turn;
+			}
+			if (flags['友军血量'] <= 0) {
+				core.events.lose('任务失败');
+				// 战斗失败
+			}
 		}
 	}
-
 
 	// 扣减体力值并记录统计数据
 	core.status.hero.hp -= damage;
@@ -434,13 +486,14 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 
 	//战后关技能并扣mana
 	if (flags.skill > 0) {
-		hero.mana -= core.getSkillInfo(flags.skill).cost;
+		hero.mana -= core.plugin.skillInfo[flags.skill].cost;
 		flags.skill = 0;
 	}
 	//清楚可乐buff层数
 	if (flags.colabuff > 0) {
 		flags.colabuff = 0;
 	}
+
 
 	//B17空中堡垒
 	if (core.hasEquip('b17'))
@@ -477,6 +530,55 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		if (core.status.hero.atk < 0) core.status.hero.atk = 0;
 		if (core.status.hero.def < 0) core.status.hero.def = 0;
 	}
+	// 谍报
+	if (core.hasSpecial(special, 41)) {
+		flags.spy = (flags.spy ?? 0) + 1;
+	}
+	// 惊慌
+	if (damageInfo.bool || core.hasSpecial(special, 75)) { // v2
+		flags.scare = (flags.scare ?? 0) + 1;
+	}
+	if (flags.scare > 0) {
+		flags.scare--;
+	}
+	// 警戒
+	if (core.hasSpecial(special, 45)) {
+		if (!flags.jingjie) {
+			flags.jingjie = {};
+		}
+		flags.jingjie[core.stauts.floorId] = (flags.jingjie[core.stauts.floorId] ?? 1) + 0.1
+
+	}
+	// 燃烧
+	if (core.hasSpecial(special, 47)) {
+		flags.fire = (flags.fire ?? 0) + 3;
+	}
+	if (core.getFlag("fire", 0) > 0) {
+		flags.fire--;
+	}
+	// 遥控				
+	if (core.hasSpecial(special, 50) && core.searchBlockWithFilter(block => { //有且仅有最后一个
+			if (!block || !block.event.cls.startsWith("enemy"))
+				return false;
+			if (core.hasSpecial(block.event.special, 50))
+				return true;
+		}).length === 1) {
+		let wuxianNum = core.searchBlockWithFilter(block => {
+			if (!block || !block.event.cls.startsWith("enemy"))
+				return false;
+			if (core.hasSpecial(block.event.special, 49))
+				return true;
+		})
+		wuxianNum.forEach(v => {
+			delete((flags.enemyOnPoint || {})[core.status.floorId] || {})[v.x + "," + v.y];
+			core.removeBlock(v.x, v.y);
+		})
+	}
+	// 细菌弹				 
+	if (core.hasSpecial(special, 54)) {
+		flags.xijun = (flags.xijun ?? 0) + 1;
+	}
+
 	// 增加仇恨值
 	core.setFlag('hatred', core.getFlag('hatred', 0) + core.values.hatred);
 
@@ -527,6 +629,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	// 删除该点设置的怪物信息
 	delete((flags.enemyOnPoint || {})[core.status.floorId] || {})[x + "," + y];
 
+
 	// 因为removeBlock和hideBlock都会刷新状态栏，因此将删除部分移动到这里并保证刷新只执行一次，以提升效率
 	if (core.getBlock(x, y) != null) {
 		// 检查是否是重生怪物；如果是则仅隐藏不删除
@@ -538,7 +641,38 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	} else {
 		core.updateStatusBar();
 	}
+	if (core.hasSpecial(special, 84)) {
+		core.setBlock("yellowWall", x, y);
+	}
 
+	//战后任务检测
+	core.taskSystem.tasksInfo.forEach(v => v.tasks.forEach(a => {
+		if (a.type === "kill" && (!a.floorId || a.floorId.includes(core.status.floorId))) {
+			if (a.kill && a.kill === enemyId) {
+				a.has++;
+			} else if (!a.kill) {
+				a.has++;
+			}
+
+		} else if (a.type === "killSpecial" && (!a.floorId || a.floorId.includes(core.status.floorId))) {
+			if (core.hasSpecial(enemy.special, a.killSpecial))
+				a.has++;
+		} else if (a.type === "killLocs" && a.floorId === core.status.floorId) {
+			if (a.loc[0] instanceof Array) {
+				a.loc.forEach(v => {
+					if (x === v[0] && y === v[1] && (!a.floorId || a.floorId.includes(core.status.floorId)))
+						a.has++;
+				})
+			} else {
+				if (x === a.loc[0] && y === a.loc[1] && (!a.floorId || a.floorId.includes(core.status.floorId)))
+					a.has++;
+			}
+
+		} else if (a.type === "killType" && (!a.floorId || a.floorId.includes(core.status.floorId))) {
+			if (a.killType === core.material.enemys[enemyId].type)
+				a.has++;
+		}
+	}));
 	// 如果已有事件正在处理中
 	if (core.status.event.id == null)
 		core.continueAutomaticRoute();
@@ -629,7 +763,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		[30, "航炮", "普攻伤害提升30%"],
 		[31, "280mm舰炮", "每\r[red]3\r回合额外发射一轮主炮，伤害等于3倍攻击力"],
 		[32, "380mm舰炮", "每\r[red]4\r回合额外发射一轮主炮，伤害等于6倍攻击力"],
-		[33, "潜行", "受到主角攻击力伤害减少90%"],
+		[33, "潜行", "受到主角普通攻击伤害减少90%"],
 		[34, "惊雷", "战斗开始时，发起先手鱼雷攻击。发射鱼雷数量以及伤害等同于正常的鱼雷袭击"],
 		[35, "闪避", function (enemy) { return "主角发起鱼雷攻击时，闪避其中的" + (enemy.dod ?? 0) + "枚" }],
 		[36, "俯冲轰炸", "航空炸弹造成的伤害增加50%，且第一枚炸弹命中后，主角攻击力降低5%，持续到战斗结束", "#00ffff"],
@@ -662,7 +796,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		[64, "拦截", "对主角的伤害降为50%，但对受保护的友军伤害倍率改为100%", "#ffcc33"],
 		[65, "抗破", "秒杀类技能无法对该敌人生效", "#d3d3d3"],
 		[66, "点杀", "主角在当前地图使用即时战略技能时（例如扫雷），以2倍攻击力攻击主角一次，可被后勤值抵消", "#c677dd"],
-		[67, "好战", "主角经过该敌人周围4格时，以120%攻击力与主角发生强制战斗,但如果是被隐蔽状态下的主角主动攻击，则自身攻击力减少20%，主角额外先攻一次", "#ff8c00"],
+		[67, "好战", "主角经过该敌人周围4格时，以120%攻击力与主角发生强制战斗", "#ff8c00"],
 		[68, "尖啸死神", "斯图卡轰炸机专属技能。投弹命中主角后，施加3层“惊慌”debuff，每层debuff会使主角攻击力减少10%，每过一次战斗减少一层，可无限叠加", "#dc143c"],
 		[69, "迂回包抄", "主角进行楼层切换操作时，进行强制战斗（为防止不必要的错误，每个区域最后一张地图不会出现）"],
 		[70, "直掩", "主角在当前地图中每主动进行一场战斗后，会遭到全体直掩战斗机的一次普攻（攻击×连击），无视后勤值"],
@@ -717,6 +851,9 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		mon_spd = core.getEnemyValue(enemy, 'spd', x, y, floorId),
 		n = core.getEnemyValue(enemy, 'n', x, y, floorId),
 		mon_gro = core.getEnemyValue(enemy, 'gro', x, y, floorId);
+	if (flags.jingjie) { //警戒 45
+		mon_atk *= flags.jingjie[floorId] ?? 1;
+	}
 	var mon_id = core.getEnemyValue(enemy, 'id', x, y, floorId);
 
 	var guards = [];
@@ -733,7 +870,9 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			trap_buff = 0,
 			aa_buff = 0;
 		// 已经计算过的光环怪ID列表，用于判定叠加
-		var usedEnemyIds = {};
+		var usedEnemyIds = {},
+			zhendiguai = {},
+			zhendifanwei = {};
 		// 检查光环和支援的缓存
 		var index = x != null && y != null ? (x + "," + y) : floorId;
 		if (!core.status.checkBlock.cache) core.status.checkBlock.cache = {};
@@ -765,8 +904,20 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 							usedEnemyIds[enemy.id] = true;
 						}
 					}
+					// 检查【堡垒】技能，数字46
+					if (enemy && core.hasSpecial(enemy.special, 46)) {
+						// 检查是否是范围光环
+						var inRange = null;
+						var dx = Math.abs(block.x - x),
+							dy = Math.abs(block.y - y);
+						if (dx <= 4 && dy <= 4) inRange = true;
+						// 检查是否可叠加
+						if (inRange) {
+							damage_debuff += 0.2;
+						}
+					}
 					// 检查【狼群】技能，数字58
-					if (enemy && core.hasSpecial(enemy.special, 58) && core.hasSpecial(mon_special, 58)) { // 这里要判断一下两个怪都有狼群
+					if (enemy && enemy.type === "潜艇" && core.hasSpecial(mon_special, 58)) { // 这里要判断一下两个怪都有狼群
 						if (x !== block.x || y !== block.y) top_buff += 10;
 					}
 					// 检查【阵地】技能，数字63（其他阵地给当前怪物加光环）
@@ -777,9 +928,9 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 								dy = Math.abs(block.y - y);
 							if (dx <= 2 && dy <= 2 && !(dx === 0 && dy === 0)) inRange = true;
 						}
-						if (inRange && !usedEnemyIds[enemy.id]) {
+						if (inRange && !zhendifanwei[enemy.id]) {
 							damage_debuff += 0.2;
-							usedEnemyIds[enemy.id] = true;
+							zhendifanwei[enemy.id] = true;
 						}
 					}
 					// 检查【阵地】技能，数字63（其他怪物给当前阵地加光环）
@@ -790,10 +941,10 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 								dy = Math.abs(block.y - y);
 							if (dx <= 2 && dy <= 2 && !(dx === 0 && dy === 0)) inRange = true;
 						}
-						if (inRange && !usedEnemyIds[mon_id]) {
+						if (inRange && !zhendiguai[mon_id]) {
 							damage_debuff += 0.4;
 							atk_buff += 10;
-							usedEnemyIds[mon_id] = true;
+							zhendiguai[mon_id] = true;
 						}
 					}
 					// 检查【支援】技能，数字26
@@ -847,6 +998,29 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		}
 
 		// 增加比例；如果要增加数值可以直接在这里修改
+		if (core.searchBlockWithFilter((block => { //祥瑞之舰
+				if (!block || !block.event.cls.startsWith("enemy"))
+					return false;
+				if (!core.hasSpecial(block.event.special, 78))
+					return true;
+			})).length > 0) {
+			mon_hp *= 0.6;
+			atk_buff -= 30;
+			top_buff -= 60;
+		}
+		if (core.searchBlockWithFilter((block => { //航空支援
+				if (!block || !block.event.cls.startsWith("enemy"))
+					return false;
+				if (!core.hasSpecial(block.event.special, 79))
+					return true;
+			})).length > 0) {
+			if (core.plugin.Luftwaffe.includes(core.getEnemyValue(enemy, 'type', x, y, floorId))) {
+				mon_hp *= 1.2;
+				atk_buff += 10;
+				top_buff += 50;
+				bom_buff += 50;
+			}
+		}
 		mon_atk *= (1 + atk_buff / 100);
 		mon_top *= (1 + top_buff / 100);
 		mon_bom *= (1 + bom_buff / 100);
@@ -856,8 +1030,14 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	// 比如仿攻（怪物攻击不低于勇士攻击）：
 	// if (core.hasSpecial(mon_special, 27) && mon_atk < hero_atk) {
 	//     mon_atk = hero_atk;
-	// }
+	// }		
 	// 也可以按需增加各种自定义内容
+	damage_debuff = core.searchBlockWithFilter((block => { //防御大师
+		if (!block || !block.event.cls.startsWith("enemy"))
+			return false;
+		if (!core.hasSpecial(block.event.special, 77))
+			return true;
+	})).length > 0 ? damage_debuff + 0.3 : damage_debuff;
 
 	return {
 		"hp": Math.floor(mon_hp),
@@ -896,27 +1076,34 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	floorId = floorId || core.status.floorId;
 
 	var hero_hp = core.getRealStatusOrDefault(hero, 'hp'),
+		hero_hpmax = core.getRealStatusOrDefault(hero, 'hpmax'),
 		hero_atk = core.getRealStatusOrDefault(hero, 'atk'),
 		hero_def = core.getRealStatusOrDefault(hero, 'def'),
 		hero_mdef = core.getRealStatusOrDefault(hero, 'mdef'),
 		origin_hero_hp = core.getStatusOrDefault(hero, 'hp'),
 		origin_hero_atk = core.getStatusOrDefault(hero, 'atk'),
 		origin_hero_def = core.getStatusOrDefault(hero, 'def'),
+		hero_cd = core.getRealStatusOrDefault(hero, 'cd'),
 		hero_ap = core.getRealStatusOrDefault(hero, 'ap'),
 		hero_arm = core.getRealStatusOrDefault(hero, 'arm'),
 		hero_top = core.getRealStatusOrDefault(hero, 'top'),
-		hero_bom = core.getRealStatusOrDefault(hero, 'bom'),
 		hero_tpn = core.getRealStatusOrDefault(hero, 'tpn'),
 		hero_dod = core.getRealStatusOrDefault(hero, 'dod'),
-		hero_gro = core.getRealStatusOrDefault(hero, 'gro');
 
-	// 勇士的负属性都按0计算
-	hero_hp = Math.max(0, hero_hp);
+		// 勇士的负属性都按0计算
+		hero_hp = Math.max(0, hero_hp);
 	hero_atk = Math.max(0, hero_atk);
 	hero_def = Math.max(0, hero_def);
 	hero_mdef = Math.max(0, hero_mdef);
+	hero_ap = Math.max(0, hero_ap);
+	hero_arm = Math.max(0, hero_arm);
+	hero_top = Math.max(0, hero_top);
+	hero_tpn = Math.max(0, hero_tpn);
+	hero_dod = Math.max(0, hero_dod);
+	hero_cd = Math.max(1, hero_cd);
 
-	if (core.searchBlockWithFilter(block => core.hasSpecial(block.event.id, 42)).length > 0) hero_mdef = 0; // 截断：勇士护盾失效
+
+	/*if (core.searchBlockWithFilter(block => core.hasSpecial(block.event.id, 42)).length > 0) hero_mdef = 0; // 截断：勇士护盾失效 */
 
 	// 怪物的各项数据
 	// 对坚固模仿等处理扔到了脚本编辑-getEnemyInfo之中
@@ -924,7 +1111,6 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	var mon_hp = enemyInfo.hp,
 		mon_atk = enemyInfo.atk,
 		mon_def = enemyInfo.def,
-		fixdamage = enemyInfo.damage,
 		mon_special = enemyInfo.special,
 		mon_ap = enemyInfo.ap,
 		mon_arm = enemyInfo.arm,
@@ -936,9 +1122,284 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		mon_ammo = enemyInfo.ammo,
 		mon_spd = enemyInfo.spd,
 		mon_gro = enemyInfo.gro,
-		damage_debuff = enemyInfo.damage_debuff;
+		damage_debuff = enemyInfo.damage_debuff,
+		mon_skillNum = core.material.enemys[enemyInfo.enemyId],
+		cache = core.status.checkBlock.cache[x + "," + y] || {};
 
+
+	//战前属性调整             俯冲轰炸待改 未写    防空（                 65抗破     66点杀    67好战    68尖啸死神  74追猎   金牌损管
+	if (core.hasSpecial(mon_special, 61)) { //投降
+		return {
+			"mon_hp": Math.floor(mon_hp),
+			"mon_atk": Math.floor(mon_atk),
+			"mon_def": Math.floor(mon_def),
+			"turn": 1,
+			"damage": 0,
+			"bool": false,
+			"v1": false
+		}
+	}
+	if (core.hasSpecial(mon_special, 75)) {
+		return {
+			"mon_hp": Math.floor(mon_hp),
+			"mon_atk": Math.floor(mon_atk),
+			"mon_def": Math.floor(mon_def),
+			"turn": 1,
+			"damage": mon_skillNum.value,
+			"bool": false,
+			"v1": false
+		}
+	}
+	if (core.hasSpecial(mon_special, 76)) {
+		return null;
+	}
+
+	var damage = 0,
+		turn = 1,
+		finalDamage = 1,
+		beilv = 1,
+		yongshi = { atk: hero_atk, def: hero_def, mdef: hero_mdef, ap: hero_ap, arm: hero_arm, top: hero_top, tpn: hero_tpn, dod: hero_dod, cd: hero_cd },
+		guaiwu = { hp: mon_hp, atk: mon_atk, def: mon_def, ap: mon_ap, arm: mon_arm, top: mon_top, bom: mon_bom, tpn: mon_tpn, dod: mon_dod, cd: mon_cd, ammo: mon_ammo, spd: mon_spd, gro: mon_gro },
+		taishi = (hero_ap > mon_arm) && (mon_ap <= hero_arm) ? "优势" : (mon_ap > hero_arm) && (hero_ap <= mon_arm) ? "劣势" : "均势",
+		junzhong = core.plugin.Army.includes(mon_skillNum.type) ? "陆军" : core.plugin.Navy.includes(mon_skillNum.type) ? "海军" : "空军";
+	if (flags.scare > 0) {
+		yongshi.atk *= Math.max(1 - 0.1 * flags.scare)
+	}
+	if (junzhong === "空军" && flags.skill === 1) { //防空弹幕
+		yongshi.atk *= 1.2;
+	}
+	var mon_perDamage = guaiwu.atk,
+		hero_perDamage = yongshi.atk;
+
+
+	if (core.hasSpecial(mon_special, 30)) { //技能 航炮
+		mon_perDamage *= 1.3;
+	}
+	if (core.hasSpecial(mon_special, 4)) { //技能 二连击
+		mon_perDamage *= 2;
+	}
+	if (core.hasSpecial(mon_special, 5)) { //技能 三连击
+		mon_perDamage *= 3;
+	}
+	if (core.hasSpecial(mon_special, 6)) { //技能 n连击
+		mon_perDamage *= mon_skillNum.n;
+	}
+	if (core.hasSpecial(mon_special, 33)) { //技能 潜行
+		hero_perDamage *= 0.1;
+	}
+	if (x !== null && y !== null) { //技能 防空 40
+		mon_perDamage += cache.aa_buff || 0;
+	}
+	if (core.hasSpecial(mon_special, 43) && guaiwu.ap > yongshi.arm) { //技能 潜行
+		finalDamage *= 1.4;
+	}
+	if (x !== null && y !== null) { //技能 堡垒 46
+		beilv *= 1 - (cache.damage_debuff || 0);
+	}
+	if (core.hasSpecial(mon_special, 73)) {
+		beilv *= 0.3;
+	}
+	if (core.core.hasSpecial(mon_special, 46) && x !== null && y !== null) { //不可被攻击
+		for (let m = -4; m <= 4; m++) {
+			for (let n = -4; n <= 4; n++) {
+				if (m !== 0 && n !== 0) {
+					if (core.getBlockCls(x + m, y + n).startsWith("enemy")) {
+						return null;
+					}
+				}
+			}
+		}
+	}
+	if (flags.skill === 5) {
+		guaiwu.tpn = Math.max(0, guaiwu.tpn - 6)
+	}
 	if (flags.skill === 6) {
+		guaiwu.tpn = Math.max(0, guaiwu.tpn - 3)
+	}
+	if (flags.skill === 8 && junzhong === "海军" && mon_skillNum.type !== "潜艇") { //剑鱼818中队
+		guaiwu.dod = Math.max(0, guaiwu.dod - 2);
+		guaiwu.hp -= yongshi.top * Math.max(1, 5 - guaiwu.dod);
+	}
+	if (flags.skill === 11) { //从海底出击
+		guaiwu.hp -= yongshi.top * Math.max(1, 8 - guaiwu.dod);
+	}
+	//战斗伤害计算
+	if (core.hasSpecial(mon_special, 38)) { //技能 精锐
+		finalDamage *= 2;
+	}
+	if (core.hasSpecial(mon_special, 1) && guaiwu.hp > 0) { //技能 突袭
+		damage += mon_perDamage;
+	}
+	if (core.hasSpecial(mon_special, 22)) { //技能 固伤
+		damage += mon_skillNum.damage;
+	}
+	if (core.hasSpecial(mon_special, 34)) { //技能 惊雷
+		damage += guaiwu.top * guaiwu.tpn;
+	}
+	if (core.hasSpecial(mon_special, 37)) { //技能 跨射
+		if (![].include(core.getEquip(3))) { // 装备传入数组
+			damage += 9 * guaiwu.atk;
+		}
+	}
+	if (core.hasSpecial(mon_special, 56)) { //技能 狙击
+		damage += guaiwu.atk * 2;
+	}
+	if (core.hasSpecial(mon_special, 57)) { //技能 主将
+		if (core.searchBlockWithFilter(block => {
+				if (!block || !block.event.cls.startsWith("enemy"))
+					return false;
+				if (!core.hasSpecial(block.event.special, 57))
+					return true;
+			}).length > 0) {
+			return null;
+		}
+	}
+	if (flags.dry && (core.hasSpecial(mon_special, 55) || core.hasSpecial(mon_special, 62))) {
+		beilv *= 1.2;
+	}
+	//回合计算	
+	let bool = false,
+		v1 = false,
+		a = 0,
+		b = 0;
+	if (junzhong === "陆军" && taishi === "劣势") {
+		a = 5;
+	}
+	if (junzhong === "陆军" && taishi === "优势") {
+		b = 5;
+		if (core.hasSpecial(mon_special, 60)) { //机动
+			b -= 3;
+		}
+	}
+	for (;;) { // 勇士回合 
+		damage += cache.trap_buff || 0; //陷阱
+		if (core.getFlag("fire", 0) > 0) { // 燃烧 47
+			damage += hero_hp * 0.05;
+		}
+
+		if (a === 0) { //能出手
+			guaiwu.hp -= hero_perDamage * beilv;
+			if (turn % yongshi.cd === 0) {
+				guaiwu.hp -= yongshi.top * Math.max(0, (yongshi.tpn - (core.hasSpecial(mon_special, 35) ? guaiwu.dod : 0))) * beilv; //鱼雷闪避
+			}
+		}
+
+		if (guaiwu.hp <= 0) {
+			if (core.hasSpecial(mon_special, 48)) {
+				damage += guaiwu.top * 0.2;
+			}
+			break;
+		}
+		if (core.hasSpecial(mon_special, 44) && turn >= guaiwu.spd) { // 神风
+			damage += guaiwu.top;
+			bool = true;
+			break;
+		}
+
+		if (core.hasSpecial(mon_special, 48) && turn >= 10) { // v1导弹 
+			damage += guaiwu.top;
+			v1 = true;
+			break;
+		}
+		if (core.hasSpecial(mon_special, 49)) { //无线制导		
+			damage += guaiwu.top;
+			break;
+		}
+		if (flags.skill === 9 && junzhong === "陆军" && turn <= 7) { //抵抗运动
+			guaiwu.atk -= mon_atk * 0.1;
+			var mon_perDamage = guaiwu.atk;
+			if (core.hasSpecial(mon_special, 30)) { //技能 航炮
+				mon_perDamage *= 1.3;
+			}
+			if (core.hasSpecial(mon_special, 4)) { //技能 二连击
+				mon_perDamage *= 2;
+			}
+			if (core.hasSpecial(mon_special, 5)) { //技能 三连击
+				mon_perDamage *= 3;
+			}
+			if (core.hasSpecial(mon_special, 6)) { //技能 n连击
+				mon_perDamage *= mon_skillNum.n;
+			}
+			if (x !== null && y !== null) { //技能 防空 40
+				mon_perDamage += cache.aa_buff || 0;
+			}
+		}
+		//怪物回合
+		if (b === 0) {
+			damage += mon_perDamage;
+			if (core.hasSpecial(mon_special, 28)) { //技能 航弹
+				if (turn % guaiwu.spd === 0) {
+					damage += guaiwu.ammo * guaiwu.bom;
+				}
+			}
+			if (core.hasSpecial(mon_special, 29)) { //技能 鱼雷
+				if (turn % guaiwu.cd === 0) {
+					damage += guaiwu.top * guaiwu.tpn;
+				}
+			}
+			if (core.hasSpecial(mon_special, 31)) { //技能 280mm舰炮
+				if (turn % 3 === 0) {
+					damage += guaiwu.atk * 3;
+				}
+			}
+			if (core.hasSpecial(mon_special, 32)) { //技能 380mm舰炮
+				if (turn % 4 === 0) {
+					damage += guaiwu.atk * 6;
+				}
+			}
+			if (core.hasSpecial(mon_special, 80)) { //技能 410mm舰炮
+				if (turn % 4 === 0) {
+					damage += guaiwu.atk * 8;
+				}
+			}
+			if (core.hasSpecial(mon_special, 81)) { //技能 460mm舰炮
+				if (turn % 5 === 0) {
+					damage += guaiwu.atk * 12;
+				}
+			}
+		}
+		turn++;
+		if (a > 0) a--;
+		if (b > 0) b--;
+	}
+
+
+	const fn = block => { //截断
+		if (!block || !block.event.cls.startsWith("enemy"))
+			return false;
+		if (core.hasSpecial(block.event.special, 42) || core.hasSpecial(block.event.special, 39))
+			return true;
+	}
+	if (flags.skill === 14) { //补给线
+		yongshi.mdef *= 10;
+	}
+	if (flags.skill === 5) { //预警
+		finalDamage *= 0.7;
+	}
+	if (flags.skill === 10) { //破译
+		finalDamage *= 0.8;
+	}
+	if (flags.skill === 1 && junzhong === "陆军") { //战壕
+		finalDamage *= 0.9;
+	}
+	if (flags.dry) {
+		finalDamage *= 1.2;
+	}
+	if (flags.dry && core.hasSpecial(mon_special, 55)) { //沙漠之狐
+		finalDamage *= 1.25;
+	}
+	if (core.hasSpecial(mon_special, 82)) { //万岁冲锋
+		finalDamage = Math.min(0.9, finalDamage);
+	}
+	damage *= finalDamage;
+	if (core.getFlag("xijun", 0) > 0) { //细菌弹
+		damage += flags.xijun * hero_hpmax / 100;
+	}
+	if (core.searchBlockWithFilter(fn).length === 0) { //后勤
+		damage -= yongshi.mdef;
+	}
+
+	/*if (flags.skill === 6) {
 		hero_dod += 2;
 	}
 	hero_dod = core.clamp(hero_dod, 0, mon_tpn);
@@ -1105,13 +1566,16 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	if (core.hasSpecial(mon_special, 22)) {
 		damage += fixdamage; //固伤在护盾前，可以被护盾减少
 	}
+	*/
 
 	return {
 		"mon_hp": Math.floor(mon_hp),
 		"mon_atk": Math.floor(mon_atk),
 		"mon_def": Math.floor(mon_def),
 		"turn": Math.floor(turn),
-		"damage": Math.floor(damage)
+		"damage": Math.floor(damage),
+		"bool": bool,
+		"v1": v1
 	};
 }
     },
@@ -1214,22 +1678,30 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			flags.skill = 0;
 			core.drawTip('已取消当前战术指令');
 		} else {
-			var info = core.getSkillInfo(skill);
+			var info = core.plugin.skillInfo[skill];
 			if (info.strategy)
-				if (hero.mana - core.getSkillInfo(flags.skill).cost < info.cost) {
+				if (hero.mana - core.plugin.skillInfo[flags.skill].cost < info.cost) {
 					core.playSound('error.mp3');
 					core.drawTip('指挥点不足，无法启用战略指令' + info.name);
 				} else {
 					core.control.autosave(true); // 自动存档
 					hero.mana -= info.cost; //扣mp
-					core.insertAction(info.event);
+					if ((flags.spy ?? 0) > 0) {
+						flags.spy--;
+					} else {
+						core.insertAction(info.event);
+					}
 				}
 			else
 			if (hero.mana < info.cost) {
 				core.playSound('error.mp3');
 				core.drawTip('指挥点不足，无法启用战术指令' + info.name);
-			} else
+			} else if ((flags.spy ?? 0) > 0) {
+				flags.spy--;
+			} else {
 				flags.skill = info.id;
+			}
+
 		}
 		core.updateStatusBar(true, true);
 	}
@@ -1305,69 +1777,72 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
     },
     "control": {
         "saveData": function () {
-			// 存档操作，此函数应该返回“具体要存档的内容”
+	// 存档操作，此函数应该返回“具体要存档的内容”
 
-			// 差异化存储values
-			var values = {};
-			for (var key in core.values) {
-				if (!core.same(core.values[key], core.data.values[key]))
-					values[key] = core.clone(core.values[key]);
-			}
+	// 差异化存储values
+	var values = {};
+	for (var key in core.values) {
+		if (!core.same(core.values[key], core.data.values[key]))
+			values[key] = core.clone(core.values[key]);
+	}
 
-			// 要存档的内容
-			var data = {
-				'floorId': core.status.floorId,
-				'hero': core.clone(core.status.hero),
-				'hard': core.status.hard,
-				'maps': core.clone(core.maps.saveMap()),
-				'route': core.encodeRoute(core.status.route),
-				'values': values,
-				'version': core.firstData.version,
-				'guid': core.getGuid(),
-				"time": new Date().getTime()
-			};
+	// 要存档的内容
+	var data = {
+		'floorId': core.status.floorId,
+		'hero': core.clone(core.status.hero),
+		'hard': core.status.hard,
+		'maps': core.clone(core.maps.saveMap()),
+		'route': core.encodeRoute(core.status.route),
+		'values': values,
+		'version': core.firstData.version,
+		'guid': core.getGuid(),
+		"time": new Date().getTime(),
+		"tasksInfo": core.taskSystem.save()
+	};
 
-			return data;
-		},
+	return data;
+},
         "loadData": function (data, callback) {
-			// 读档操作；从存储中读取了内容后的行为
+	// 读档操作；从存储中读取了内容后的行为
 
-			// 重置游戏和路线
-			core.resetGame(data.hero, data.hard, data.floorId, core.maps.loadMap(data.maps, null, data.hero.flags), data.values);
-			core.status.route = core.decodeRoute(data.route);
-			core.control._bindRoutePush();
-			// 文字属性，全局属性
-			core.status.textAttribute = core.getFlag('textAttribute', core.status.textAttribute);
-			var toAttribute = core.getFlag('globalAttribute', core.status.globalAttribute);
-			if (!core.same(toAttribute, core.status.globalAttribute)) {
-				core.status.globalAttribute = toAttribute;
-				core.resize();
-			}
-			// 重置音量
-			core.events.setVolume(core.getFlag("__volume__", 1), 0);
-			// 加载勇士图标
-			var icon = core.status.hero.image;
-			icon = core.getMappedName(icon);
-			if (core.material.images.images[icon]) {
-				core.material.images.hero = core.material.images.images[icon];
-				core.material.icons.hero.width = core.material.images.images[icon].width / 4;
-				core.material.icons.hero.height = core.material.images.images[icon].height / 4;
-			}
-			core.setFlag('__fromLoad__', true);
+	// 重置游戏和路线
+	core.resetGame(data.hero, data.hard, data.floorId, core.maps.loadMap(data.maps, null, data.hero.flags), data.values);
+	core.status.route = core.decodeRoute(data.route);
+	core.control._bindRoutePush();
+	// 文字属性，全局属性
+	core.status.textAttribute = core.getFlag('textAttribute', core.status.textAttribute);
+	var toAttribute = core.getFlag('globalAttribute', core.status.globalAttribute);
+	if (!core.same(toAttribute, core.status.globalAttribute)) {
+		core.status.globalAttribute = toAttribute;
+		core.resize();
+	}
+	// 重置音量
+	core.events.setVolume(core.getFlag("__volume__", 1), 0);
+	// 加载勇士图标
+	var icon = core.status.hero.image;
+	icon = core.getMappedName(icon);
+	if (core.material.images.images[icon]) {
+		core.material.images.hero = core.material.images.images[icon];
+		core.material.icons.hero.width = core.material.images.images[icon].width / 4;
+		core.material.icons.hero.height = core.material.images.images[icon].height / 4;
+	}
+	core.setFlag('__fromLoad__', true);
 
-			// TODO：增加自己的一些读档处理
+	// TODO：增加自己的一些读档处理
+	core.taskSystem.load(data.tasksInfo);
+	core.ui.statusBar.update();
 
-			// 切换到对应的楼层
-			core.changeFloor(data.floorId, null, data.hero.loc, 0, function () {
-				// TODO：可以在这里设置读档后播放BGM
-				if (core.hasFlag("__bgm__")) { // 持续播放
-					core.playBgm(core.getFlag("__bgm__"));
-				}
+	// 切换到对应的楼层
+	core.changeFloor(data.floorId, null, data.hero.loc, 0, function () {
+		// TODO：可以在这里设置读档后播放BGM
+		if (core.hasFlag("__bgm__")) { // 持续播放
+			core.playBgm(core.getFlag("__bgm__"));
+		}
 
-				core.removeFlag('__fromLoad__');
-				if (callback) callback();
-			});
-		},
+		core.removeFlag('__fromLoad__');
+		if (callback) callback();
+	});
+},
         "getStatusLabel": function (name) {
 	// 返回某个状态英文名的对应中文标签，如atk -> 攻击，def -> 防御等。
 	// 请注意此项仅影响 libs/ 下的内容（如绘制怪物手册、数据统计等）
@@ -1462,78 +1937,16 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	if (core.flags.statusBarItems.indexOf('enableHPMax') >= 0) {
 		core.setStatus('hp', Math.min(core.getRealStatus('hpmax'), core.getStatus('hp')));
 	}
-
-	// 设置楼层名
-	if (core.status.floorId) {
-		core.setStatusBarInnerHTML('floor', core.status.maps[core.status.floorId].name);
-	}
-
-	// 设置勇士名字和图标
-	core.setStatusBarInnerHTML('name', core.getStatus('name'));
-	// 设置等级名称
-	core.setStatusBarInnerHTML('lv', core.getLvName());
-
-	// 设置生命上限、生命值、攻防护盾金币和经验值
-	var statusList = ['hpmax', 'hp', 'mana', 'atk', 'def', 'mdef', 'money', 'exp'];
-	statusList.forEach(function (item) {
-		// 向下取整
-		core.status.hero[item] = Math.floor(core.status.hero[item]);
-		// 大数据格式化
-		core.setStatusBarInnerHTML(item, core.getRealStatus(item));
-	});
-
-	// 设置魔力值; status:manamax 只有在非负时才生效。
-	if (core.status.hero.manamax != null && core.getRealStatus('manamax') >= 0) {
-		core.status.hero.mana = Math.min(core.status.hero.mana, core.getRealStatus('manamax'));
-		core.setStatusBarInnerHTML('mana', core.status.hero.mana + "/" + core.getRealStatus('manamax'));
-	} else {
-		core.setStatusBarInnerHTML("mana", core.status.hero.mana);
-	}
-	// 设置技能栏
-	// 可以用flag:skill表示当前开启的技能类型，flag:skillName显示技能名；详见文档-个性化-技能塔的支持
-	core.setStatusBarInnerHTML('skill', core.getFlag('skillName', '无'));
-
-	// 可以在这里添加自己额外的状态栏信息，比如想攻击显示 +0.5 可以这么写：
-	// if (core.hasFlag('halfAtk')) core.setStatusBarInnerHTML('atk', core.statusBar.atk.innerText + "+0.5");
-
-	// 如果是自定义添加的状态栏，也需要在这里进行设置显示的数值
-
-	// 进阶
-	if (core.flags.statusBarItems.indexOf('enableLevelUp') >= 0) {
-		core.setStatusBarInnerHTML('up', core.formatBigNumber(core.getNextLvUpNeed()) || "");
-	} else core.setStatusBarInnerHTML('up', "");
-
-	// 钥匙
-	var keys = ['yellowKey', 'blueKey', 'redKey', 'greenKey'];
-	keys.forEach(function (key) {
-		core.setStatusBarInnerHTML(key, core.setTwoDigits(core.itemCount(key)));
-	});
-	// 毒衰咒
-	core.setStatusBarInnerHTML('poison', core.hasFlag('poison') ? "毒" : "");
-	core.setStatusBarInnerHTML('weak', core.hasFlag('weak') ? "衰" : "");
-	core.setStatusBarInnerHTML('curse', core.hasFlag('curse') ? "咒" : "");
-	// 破炸飞
-	core.setStatusBarInnerHTML('pickaxe', "破" + core.itemCount('pickaxe'));
-	core.setStatusBarInnerHTML('bomb', "炸" + core.itemCount('bomb'));
-	core.setStatusBarInnerHTML('fly', "飞" + core.itemCount('centerFly'));
-
-	// 难度
-	if (core.statusBar.hard.innerText != core.status.hard) {
-		core.statusBar.hard.innerText = core.status.hard;
-	}
-	var hardColor = core.getFlag('__hardColor__');
-	if (hardColor == null) core.statusBar.hard.innerText = '';
-	if (core.statusBar.hard.getAttribute('_style') != hardColor) {
-		core.statusBar.hard.style.color = hardColor;
-		core.statusBar.hard.setAttribute('_style', hardColor);
-	}
-	// 自定义状态栏绘制
-	core.drawStatusBar();
+	//更新任务状态
+	core.taskSystem.checkAll();
+	// 更新状态栏
+	core.ui.statusBar.update();
 
 	// 更新阻激夹域的伤害值
 	core.updateCheckBlock();
-	// updateDamage只能在此处执行！！更新全地图显伤
+	// 更新全地图显伤
 	core.updateDamage();
+
 },
         "updateCheckBlock": function (floorId) {
 	// 领域、夹击、阻击等的伤害值计算
@@ -1554,6 +1967,12 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	core.flags.canGoDeadZone = true;
 
 	// 计算血网和领域、阻击、激光的伤害，计算捕捉信息
+	let a = core.searchBlockWithFilter(block => { //71
+		if (!block || !block.event.cls.startsWith("enemy"))
+			return false;
+		if (core.hasSpecial(block.event.special, 71))
+			return true;
+	}).length > 0;
 	for (var loc in blocks) {
 		var block = blocks[loc],
 			x = block.x,
@@ -1599,7 +2018,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			// 是否是九宫格领域
 			var zoneSquare = false;
 			if (enemy.zoneSquare != null) zoneSquare = enemy.zoneSquare;
-			// 在范围内进行搜索，增加领域伤害值
+			// 在范围内进行搜索，增加领域伤害值			
 			for (var dx = -range; dx <= range; dx++) {
 				for (var dy = -range; dy <= range; dy++) {
 					if (dx == 0 && dy == 0) continue;
@@ -1609,7 +2028,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 					if (nx < 0 || nx >= width || ny < 0 || ny >= height) continue;
 					// 如果是十字领域，则还需要满足 |dx|+|dy|<=range
 					if (!zoneSquare && Math.abs(dx) + Math.abs(dy) > range) continue;
-					damage[currloc] = (damage[currloc] || 0) + (enemy.zone || 0);
+					damage[currloc] = (damage[currloc] || 0) + (enemy.zone || 0) * (a ? 0.8 : 1);
 					type[currloc] = type[currloc] || {};
 					type[currloc]["领域伤害"] = true;
 				}
@@ -1729,12 +2148,12 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		if (enemyId1 != null || enemyId2 != null) {
 			var value = 0;
 			if (enemyId1 != null) {
-				value += core.plugin.getEnemyPerDamage(enemyId1, hero, x - 1, y, floorId);
-				value += core.plugin.getEnemyPerDamage(enemyId1, hero, x + 1, y, floorId);
+				value += core.getEnemyInfo(enemyId1, hero, x - 1, y, floorId).atk;
+				value += core.getEnemyInfo(enemyId1, hero, x + 1, y, floorId).atk;
 			}
 			if (enemyId2 != null) {
-				value += core.plugin.getEnemyPerDamage(enemyId2, hero, x, y - 1, floorId);
-				value += core.plugin.getEnemyPerDamage(enemyId2, hero, x, y + 1, floorId);
+				value += core.getEnemyInfo(enemyId2, hero, x, y - 1, floorId).atk;
+				value += core.getEnemyInfo(enemyId2, hero, x, y + 1, floorId).atk;
 			}
 			if (value > 0) {
 				damage[loc] = (damage[loc] || 0) + value;
@@ -1913,6 +2332,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 				.sort( /*function (id1, id2) { return core.material.items[id1].name <= core.material.items[id2].name ? -1 : 1 }*/);
 		},
         "drawStatusBar": function () {
+
 	if (!core.dymCanvas['status']) core.ui.createCanvas('status', 480, 0, core._PX_, core._PY_, 66); // 刚好盖过显伤层
 	ctx = main.mode === 'editor' ? core.dom.statusCanvasCtx : core.dymCanvas['status']; // 为了预览，但预览宽度不足
 	core.ui.clearMap(ctx); // 擦除
@@ -1958,7 +2378,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	}
 	core.ui.fillText(ctx, core.getRealStatus('mdef'), 50, 378); // 后勤
 	core.ui.setFont(ctx, '16px Aaknife'); // 字体字号（技能名）
-	if (flags.skill > 0) core.ui.fillText(ctx, core.getSkillInfo(flags.skill).name, 6, 404, 'orange') // 技能名
+	if (flags.skill > 0) core.ui.fillText(ctx, core.plugin.skillInfo[flags.skill].name, 6, 404, 'orange') // 技能名
 	core.ui.setFont(ctx, '18px Aaknife'); // 字体字号（钥匙）
 	core.ui.fillText(ctx, core.replaceText('\r[#FFD700]${core.setTwoDigits(item:yellowKey)}  \r[#66CCFF]${core.setTwoDigits(item:blueKey)}  \r[#FF0000]${core.setTwoDigits(item:redKey)}'), 10, 428); // 钥匙
 	if (flags.stage >= 0) {

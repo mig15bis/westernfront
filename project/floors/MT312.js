@@ -18,9 +18,7 @@ main.floors.MT312=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        {
-            "type": "showStatusBar"
-        },
+        
         "\r[yellow]Mission 43 登陆日——朱诺海滩",
         {
             "type": "setCurtain",

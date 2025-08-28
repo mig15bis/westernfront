@@ -29,9 +29,6 @@ main.floors.MT350=
             "opacity": 1
         },
         {
-            "type": "showStatusBar"
-        },
-        {
             "type": "setCurtain",
             "time": 500
         },

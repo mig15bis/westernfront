@@ -19,9 +19,6 @@ main.floors.MT7=
             "opacity": 1
         },
         {
-            "type": "showStatusBar"
-        },
-        {
             "type": "update"
         },
         {

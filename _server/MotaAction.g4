@@ -947,6 +947,13 @@ action
     |   drawSelector_1_s
     |   unknown_s
     |   function_s
+    |   setTask_s
+    |   removeTask_s
+    |   removeTaskByName_s
+    |   successTask_s
+    |   successTaskByName_s    
+    |   clearTask_s
+    |   submitTask_s
     |   pass_s
     ;
 
@@ -3612,6 +3619,323 @@ var code = ' \n';
 return code;
 */;
 
+setTask_s
+    :   '设置任务 任务名' EvalString '需完成的最低子任务数' Int BGNL? Newline 
+    '任务描述' EvalString_Multi?  BGNL? Newline
+    tasksList+ Newline
+
+
+/* setTask_s
+tooltip : 设置/接取任务
+colour : this.tasksColor
+default :["mission name",1,"任务描述"]
+EvalString_Multi_0=EvalString_Multi_0?(',"text": "'+EvalString_Multi_0+'"'): '';
+var code = '{"type":"setTask","name":"'+EvalString_0+'","n":'+Int_0+EvalString_Multi_0+',"info":['+tasksList_0+'\n]},\n';
+return code;
+*/;
+
+tasksList
+    : checkItem
+    | checkStatus
+    | checkFlag
+    | checkBlock
+    | checkEnemyType
+    | kill
+    | killLocs
+    | killType
+    | killSpecial
+    | killAll
+    | specialBlock
+    | gosthFloor
+    | arrival
+    | outer
+    | empty;
+
+checkItem
+    : '道具ID' IdString TaskOperator_List '数量' Int '子任务描述' EvalString_Multi?   BGNL? Newline
+/*  checkItem
+tooltip : 检查道具数量
+default : ["yellowKey",">=",0,""]
+colour : this.subColor
+allItems : ['IdString_0']
+EvalString_Multi_0=EvalString_Multi_0?(',"text": "'+EvalString_Multi_0+'"'): '';
+var code = '{"type":"checkItem","checkItem":"'+IdString_0+'","operator":"'+TaskOperator_List_0+'"'+EvalString_Multi_0+',"count":'+Int_0+'},';
+return code;
+ */;
+
+checkStatus
+    :'检查' Status_List '属性' TaskOperator_List Int '子任务描述' EvalString_Multi?   BGNL? Newline  
+/*  checkStatus
+tooltip : 检查属性数值
+default : ["atk",">=",10,""]
+colour : this.subColor
+EvalString_Multi_0=EvalString_Multi_0?(',"text": "'+EvalString_Multi_0+'"'): '';
+var code = '{"type":"checkStatus","checkStatus":"'+Status_List_0+'","operator":"'+TaskOperator_List_0+'"'+EvalString_Multi_0+',"count":'+Int_0+'},';
+return code;
+ */;
+
+checkFlag
+    :'检查Flag变量' EvalString TaskOperator_List expression '子任务描述'EvalString_Multi?   BGNL? Newline  
+/*  checkFlag
+tooltip : 检查Flag变量
+default : ["flag1","=","",""]
+colour : this.subColor
+EvalString_Multi_0=EvalString_Multi_0?(',"text": "'+EvalString_Multi_0+'"'): '';
+var code = '{"type":"checkFlag","checkFlag":"'+EvalString_0+'","operator":"'+TaskOperator_List_0+'"'+EvalString_Multi_0+',"count":"'+expression_0+'"},';
+return code;
+*/;
+
+checkBlock
+    :'检查地面图块数量' EvalString '楼层' EvalString TaskOperator_List Int '子任务描述' EvalString_Multi?   BGNL? Newline  
+/*  checkBlock
+tooltip : 检查地面图块数量
+default : ["ju87b","MT1,MT2","<=",0,""]
+colour : this.subColor
+EvalString_Multi_0=EvalString_Multi_0?(',"text": "'+EvalString_Multi_0+'"'): '';
+var thisFloorId=EvalString_1.split(",")
+thisFloorId=thisFloorId.map(function(v){return '"'+v.trim()+'"'})
+var floorstr=',"floorId":['+thisFloorId.join(",")+']'
+var code = '{"type":"checkBlock","checkBlock":"'+EvalString_0+'"'+floorstr+',"operator":"'+TaskOperator_List_0+'"'+EvalString_Multi_0+',"count":'+Int_0+'},';
+return code;
+*/;
+
+checkEnemyType
+    :'检查' EnemyType_List '敌人楼层' EvalString TaskOperator_List Int '子任务描述' EvalString_Multi?   BGNL? Newline 
+/*  checkEnemyType
+tooltip : 检查某种种类敌人数量
+default : ["战斗机","MT1,MT2","<=",0,""]
+colour : this.subColor
+EvalString_Multi_0=EvalString_Multi_0?(',"text": "'+EvalString_Multi_0+'"'): '';
+var thisFloorId=EvalString_0.split(",")
+thisFloorId=thisFloorId.map(function(v){return '"'+v.trim()+'"'})
+var floorstr=',"floorId":['+thisFloorId.join(",")+']'
+var code = '{"type":"checkEnemyType","checkEnemyType":"'+EnemyType_List_0+'"'+floorstr+',"operator":"'+TaskOperator_List_0+'"'+EvalString_Multi_0+',"count":'+Int_0+'},';
+return code;
+*/;
+
+kill
+    :'击杀' IdString? '敌人楼层' EvalString? TaskOperator_List Int'子任务描述' EvalString_Multi?   BGNL? Newline 
+/*  kill
+tooltip : 击杀一定数量的敌人
+default : ["","",">",0,""]
+colour : this.subColor
+allEnemys : ['IdString_0']
+IdString_0=IdString_0?(',"kill": "'+IdString_0+'"'):'';
+EvalString_Multi_0=EvalString_Multi_0?(',"text": "'+EvalString_Multi_0+'"'): '';
+if(EvalString_0){
+var thisFloorId=EvalString_0.split(",")
+thisFloorId=thisFloorId.map(function(v){return '"'+v.trim()+'"'})
+var floorstr=',"floorId":['+thisFloorId.join(",")+']'
+}else {
+var floorstr=""    
+}
+var code = '{"type":"kill"'+IdString_0+floorstr+',"operator":"'+TaskOperator_List_0+'"'+EvalString_Multi_0+',"count":'+Int_0+'},';
+return code;
+*/;
+
+killLocs
+    :'击杀x' EvalString 'y' EvalString '楼层' IdString '位置的敌人' TaskOperator_List Int'子任务描述' EvalString_Multi?   BGNL? Newline
+/*  killLocs
+tooltip : 击杀某些位置的敌人
+default : ["1","1","MT1",">=",1,""]
+colour : this.subColor
+allFloorIds : ['IdString_0']
+selectPoint : ["EvalString_0","EvalString_1","IdString_0"]
+EvalString_Multi_0=EvalString_Multi_0?(',"text": "'+EvalString_Multi_0+'"'): '';
+var floorstr = MotaActionFunctions.processMultiLoc(EvalString_0,EvalString_1);
+var code = '{"type":"killLocs"'+floorstr+',"floorId":"'+IdString_0+'","operator":"'+TaskOperator_List_0+'"'+EvalString_Multi_0+',"count":'+Int_0+'},';
+return code;
+*/;
+
+killType
+    :'击杀种类为' EnemyType_List '的敌人楼层' EvalString? TaskOperator_List Int '子任务描述' EvalString_Multi?   BGNL? Newline 
+/*  killType
+tooltip : 击杀一定数量的某种敌人
+default : ["战斗机","MT1,MT2",">=",1,""]
+colour : this.subColor
+EvalString_Multi_0=EvalString_Multi_0?(',"text": "'+EvalString_Multi_0+'"'): '';
+if(EvalString_0){
+var thisFloorId=EvalString_0.split(",")
+thisFloorId=thisFloorId.map(function(v){return '"'+v.trim()+'"'})
+var floorstr=',"floorId":['+thisFloorId.join(",")+']'
+}else {
+var floorstr=""    
+}
+var code = '{"type":"killType","killType":"'+EnemyType_List_0+'"'+floorstr+',"operator":"'+TaskOperator_List_0+'"'+EvalString_Multi_0+',"count":'+Int_0+'},';
+return code;
+*/;
+
+killSpecial
+    :'击杀拥有' Int '技能的敌人楼层'  EvalString? TaskOperator_List Int  '子任务描述' EvalString_Multi?   BGNL? Newline 
+/*  killSpecial
+tooltip : 击杀一定数量的某种敌人
+default : [61,"MT1,MT2",">=",1,""]
+colour : this.subColor
+EvalString_Multi_0=EvalString_Multi_0?(',"text": "'+EvalString_Multi_0+'"'): '';
+if(EvalString_0){
+var thisFloorId=EvalString_0.split(",")
+thisFloorId=thisFloorId.map(function(v){return '"'+v.trim()+'"'})
+var floorstr=',"floorId":['+thisFloorId.join(",")+']'
+}else {
+var floorstr=""    
+}
+var code = '{"type":"killSpecial","killSpecial":"'+Int_0+'"'+floorstr+',"operator":"'+TaskOperator_List_0+'"'+EvalString_Multi_0+',"count":'+Int_1+'},';
+return code;
+*/;
+
+killAll
+    :'击杀楼层' EvalString '所有敌人'  '子任务描述' EvalString_Multi?   BGNL? Newline 
+/*  killAll
+tooltip : 击杀某些楼层所有敌人
+default : ["MT1",""]
+colour : this.subColor
+EvalString_Multi_0=EvalString_Multi_0?(',"text": "'+EvalString_Multi_0+'"'): '';
+var thisFloorId=EvalString_0.split(",")
+thisFloorId=thisFloorId.map(function(v){return '"'+v.trim()+'"'})
+var floorstr=',"floorId":['+thisFloorId.join(",")+']'
+var code = '{"type":"killAll"'+floorstr+EvalString_Multi_0+'},';
+return code;
+*/;
+
+specialBlock
+    :'在楼层' EvalString? '受到' MapDamage_List '地图伤害次数' TaskOperator_List Int  '子任务描述' EvalString_Multi?   BGNL? Newline 
+/*  specialBlock
+tooltip : 在某些楼层受到一定次数的地图伤害
+default : ["地雷伤害","MT1","<",1,""]
+colour : this.subColor
+EvalString_Multi_0=EvalString_Multi_0?(',"text": "'+EvalString_Multi_0+'"'): '';
+if(EvalString_0){
+var thisFloorId=EvalString_0.split(",")
+thisFloorId=thisFloorId.map(function(v){return '"'+v.trim()+'"'})
+var floorstr=',"floorId":['+thisFloorId.join(",")+']'
+}else {
+var floorstr=""    
+}
+var code = '{"type":"specialBlock","specialBlock":"'+MapDamage_List_0+'"'+floorstr+',"operator":"'+TaskOperator_List_0+'"'+EvalString_Multi_0+',"count":'+Int_0+'},'
+return code;
+*/;
+
+gosthFloor
+    :'切换至楼层' EvalString? '次数' TaskOperator_List Int  '子任务描述' EvalString_Multi?   BGNL? Newline 
+/*  gosthFloor
+tooltip : 切换/到达某楼层不超过一定次数
+default : ["MT1","<",1,""]
+colour : this.subColor
+EvalString_Multi_0=EvalString_Multi_0?(',"text": "'+EvalString_Multi_0+'"'): '';
+if(EvalString_0){
+var thisFloorId=EvalString_0.split(",")
+thisFloorId=thisFloorId.map(function(v){return '"'+v.trim()+'"'})
+var floorstr=',"floorId":['+thisFloorId.join(",")+']'
+}else {
+var floorstr=""    
+}
+var code = '{"type":"gosthFloor"'+floorstr+',"operator":"'+TaskOperator_List_0+'"'+EvalString_Multi_0+',"count":'+Int_0+'},'
+return code;
+*/;
+
+arrival
+    :'抵达' IdString  '子任务描述' EvalString_Multi?   BGNL? Newline 
+/*  arrival
+tooltip : 抵达某楼层
+default : ["MT1",""]
+colour : this.subColor
+allFloorIds : ['IdString_0']
+EvalString_Multi_0=EvalString_Multi_0?(',"text": "'+EvalString_Multi_0+'"'): '';
+var code = '{"type":"arrival","floorId":"'+IdString_0+'"'+EvalString_Multi_0+'},'
+return code;
+*/;
+
+outer
+    :'进度子任务' '子任务描述' EvalString_Multi?   BGNL? Newline 
+/*  outer
+tooltip : 无法正常检测完成的子任务
+colour : this.subColor
+EvalString_Multi_0=EvalString_Multi_0?(',"text": "'+EvalString_Multi_0+'"'): '';
+var code = '{"type":"outer"'+EvalString_Multi_0+'},'
+return code;
+*/;
+
+empty
+    :   Newline
+    
+
+/* empty
+var code = ' \n';
+return code;
+*/;
+
+
+
+removeTask_s
+    :   '移除第' Int '项任务'
+
+
+/* removeTask_s
+tooltip : 移除第n项任务。
+colour : this.tasksColor
+default :[0]
+var code = '{"type":"removeTask","index":'+Int_0+'},\n';
+return code;
+*/;
+
+removeTaskByName_s
+    :   '移除名为' EvalString '的任务'
+
+
+/* removeTaskByName_s
+tooltip : 移除某一任务。
+colour : this.tasksColor
+default :["mission's name"]
+var code = '{"type":"removeTaskByName","name":"'+EvalString_0+'"},\n';
+return code;
+*/;
+
+successTask_s
+    :   '完成第' Int '项任务'
+
+
+/* successTask_s
+tooltip : 强制完成第n项任务时。
+colour : this.tasksColor
+default :[0]
+var code = '{"type":"successTask","index":'+Int_0+'},\n';
+return code;
+*/;
+
+successTaskByName_s
+    :   '完成名为' EvalString '的任务'
+
+
+/* successTaskByName_s
+tooltip : 强制完成某一任务时。
+colour : this.tasksColor
+default :["mission's name"]
+var code = '{"type":"successTaskByName","name":"'+EvalString_0+'"},\n';
+return code;
+*/;
+
+clearTask_s
+    :   '删除任务'
+
+
+/* clearTask_s
+tooltip : 删除所有任务。
+colour : this.tasksColor
+var code = '{"type":"clearTask"},\n';
+return code;
+*/;
+
+submitTask_s
+    :   '提交并清空任务'
+
+
+/* submitTask_s
+tooltip : 关卡结束时清空任务并提交。
+colour : this.tasksColor
+var code = '{"type":"submitTask"},\n';
+return code;
+*/;
+
 statExprSplit : '=== statement ^ === expression v ===' ;
 //===blockly表达式===
 
@@ -4021,6 +4345,21 @@ Arithmetic_List
     :   '加'|'减'|'乘'|'除'|'取余'|'乘方'|'等于'|'不等于'|'大于'|'小于'|'大于等于'|'小于等于'|'且'|'或'|'异或'|'取较大'|'取较小'|'弱相等'|'弱不相等'|'开始于'|'结束于'|'包含'
     /*Arithmetic_List ['+','-','*','/','%','**','===','!==','>','<','>=','<=','&&','||','^','max','min','==','!=','startsWith','endsWith','includes']*/;
 
+ TaskOperator_List
+     :   '等于'|'小于'|'小于等于'|'大于'|'大于等于'
+     /*TaskOperator_List ['=','<','<=','>','>=']*/;
+ Status_List
+     :   '生命上限'|'生命'|'攻击'|'指挥点'|'后勤点'|'穿甲'|'装甲'|'雷击'|'鱼雷'|'黄金'
+    /*Status_List ['hpmax','hp','atk','mana','mdef','ap','arm','top','tpn','money']*/;
+
+ EnemyType_List   
+     :   '步兵'|'轻坦'|'中坦'|'重坦'|'坦歼'|'反坦克炮'|'榴弹炮'|'高射炮'|'建筑'|'潜艇'|'鱼雷艇'|'商船'|'驱逐'|'轻巡'|'重巡'|'战列'|'航母'|'战斗机'|'重型战斗机'|'攻击机'|'俯冲轰炸机'|'鱼雷轰炸机'|'中型轰炸机'|'导弹'
+    /*EnemyType_List ['步兵','轻坦','中坦','重坦','坦歼','反坦克炮','榴弹炮','高射炮','建筑','潜艇','鱼雷艇','商船','驱逐','轻巡','重巡','战列','航母','战斗机','重型战斗机','攻击机','俯冲轰炸机','鱼雷轰炸机','中型轰炸机','导弹']*/;
+
+ MapDamage_List
+     :   '血网伤害'|'地雷伤害'|'水雷伤害'|'歼灭伤害'|'领域伤害'|'阻击伤害'|'激光伤害'|'包夹伤害'
+     /*MapDamage_List ['血网伤害','地雷伤害','水雷伤害','歼灭伤害','领域伤害','阻击伤害','激光伤害','包夹伤害']*/;
+
 AssignOperator_List
     :   '设为'|'增加'|'减少'|'乘以'|'除以'|'乘方'|'除以并取商'|'除以并取余'|'设为不小于'|'设为不大于'
     /*AssignOperator_List ['=','+=','-=','*=','/=','**=','//=','%=','max=','min=']*/;  
@@ -4219,6 +4558,7 @@ this.evisitor.entryColor=250;
 this.evisitor.idstring_eColor=310;
 this.evisitor.subColor=250;
 this.evisitor.dataColor=130;
+this.evisitor.tasksColor=33;
 this.evisitor.eventColor=220;
 this.evisitor.soundColor=20;
 this.evisitor.commentColor=285;

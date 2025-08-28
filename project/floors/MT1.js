@@ -45,9 +45,6 @@ main.floors.MT1=
             "opacity": 1
         },
         {
-            "type": "showStatusBar"
-        },
-        {
             "type": "update"
         },
         {

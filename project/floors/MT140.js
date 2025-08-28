@@ -33,7 +33,122 @@ main.floors.MT140=
                 "shadow": 0
             },
             "data": []
-        }
+        },
+        "6,5": [
+            {
+                "type": "setTask",
+                "name": "mission name",
+                "n": 1,
+                "text": "任务描述",
+                "info": [
+                    {
+                        "type": "checkItem",
+                        "checkItem": "yellowKey",
+                        "operator": ">=",
+                        "count": 0
+                    },
+                    {
+                        "type": "checkStatus",
+                        "checkStatus": "atk",
+                        "operator": ">=",
+                        "count": 10
+                    },
+                    {
+                        "type": "checkFlag",
+                        "checkFlag": "flag1",
+                        "operator": "=",
+                        "count": "\"value\""
+                    },
+                    {
+                        "type": "checkBlock",
+                        "checkBlock": "ju87b",
+                        "floorId": [
+                            "MT1",
+                            "MT2"
+                        ],
+                        "operator": "<=",
+                        "count": 0
+                    },
+                    {
+                        "type": "checkEnemyType",
+                        "checkEnemyType": "战斗机",
+                        "floorId": [
+                            "MT1",
+                            "MT2"
+                        ],
+                        "operator": "<=",
+                        "count": 0
+                    },
+                    {
+                        "type": "kill",
+                        "operator": ">=",
+                        "count": 0
+                    },
+                    {
+                        "type": "killLocs",
+                        "loc": [
+                            [
+                                1,
+                                1
+                            ]
+                        ],
+                        "floorId": "MT1",
+                        "operator": ">=",
+                        "count": 1
+                    },
+                    {
+                        "type": "killType",
+                        "killType": "战斗机",
+                        "floorId": [
+                            "MT1",
+                            "MT2"
+                        ],
+                        "operator": ">=",
+                        "count": 1
+                    },
+                    {
+                        "type": "killSpecial",
+                        "killSpecial": "61",
+                        "floorId": [
+                            "MT1",
+                            "MT2"
+                        ],
+                        "operator": ">=",
+                        "count": 1
+                    },
+                    {
+                        "type": "killAll",
+                        "floorId": [
+                            "MT1"
+                        ]
+                    },
+                    {
+                        "type": "specialBlock",
+                        "specialBlock": "MT1",
+                        "floorId": [
+                            "地雷伤害"
+                        ],
+                        "operator": "<",
+                        "count": 1
+                    },
+                    {
+                        "type": "gosthFloor",
+                        "floorId": [
+                            "MT1"
+                        ],
+                        "operator": "<",
+                        "count": 1
+                    },
+                    {
+                        "type": "arrival",
+                        "floorId": "MT1"
+                    },
+                    {
+                        "type": "outer"
+                    }
+                ]
+            }
+        ]
     },
     "changeFloor": {
         "14,2": {

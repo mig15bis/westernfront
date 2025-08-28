@@ -2,7 +2,7 @@
 function main() {
     //------------------------ 用户修改内容 ------------------------//
 
-    this.version = '2.10.2'; // 游戏版本号；如果更改了游戏内容建议修改此version以免造成缓存问题。
+    this.version = '2.10.3'; // 游戏版本号；如果更改了游戏内容建议修改此version以免造成缓存问题。
 
     this.useCompress = false; // 是否使用压缩文件
     // 当你即将发布你的塔时，请使用“JS代码压缩工具”将所有js代码进行压缩，然后将这里的useCompress改为true。
@@ -39,8 +39,6 @@ function main() {
         floorNameLabel: document.getElementById('floorNameLabel'),
         statusBar: document.getElementById('statusBar'),
         status: document.getElementsByClassName('status'),
-        toolBar: document.getElementById('toolBar'),
-        tools: document.getElementsByClassName('tools'),
         gameCanvas: document.getElementsByClassName('gameCanvas'),
         gif: document.getElementById('gif'),
         gif2: document.getElementById('gif2'),
@@ -216,8 +214,8 @@ function main() {
     this.floors = {};
     this.canvas = {};
 
-    this.__VERSION__ = '2.10.2';
-    this.__VERSION_CODE__ = 511;
+    this.__VERSION__ = '2.10.3';
+    this.__VERSION_CODE__ = 512;
 }
 
 main.prototype.init = function (mode, callback) {
@@ -724,216 +722,40 @@ main.prototype.listen = function () {
     };
 
     ////// 点击状态栏中的怪物手册时 //////
-    main.statusBar.image.book.onclick = function (e) {
-        e.stopPropagation();
-
-        if (core.isReplaying()) {
-            core.triggerReplay();
-            return;
-        }
-
-        if (main.core.isPlaying()) main.core.openBook(true);
-    };
+    
 
     ////// 点击状态栏中的楼层传送器/装备栏时 //////
-    main.statusBar.image.fly.onclick = function (e) {
-        e.stopPropagation();
-
-        // 播放录像时
-        if (core.isReplaying()) {
-            core.stopReplay();
-            return;
-        }
-
-        if (main.core.isPlaying()) {
-            if (!main.core.flags.equipboxButton) {
-                main.core.useFly(true);
-            } else {
-                main.core.openEquipbox(true);
-            }
-        }
-    };
+   
 
     ////// 点击状态栏中的工具箱时 //////
-    main.statusBar.image.toolbox.onclick = function (e) {
-        e.stopPropagation();
-
-        if (core.isReplaying()) {
-            core.rewindReplay();
-            return;
-        }
-
-        if (main.core.isPlaying()) {
-            main.core.openToolbox(core.status.event.id != 'equipbox');
-        }
-    };
+   
 
     ////// 双击状态栏中的工具箱时 //////
-    main.statusBar.image.toolbox.ondblclick = function (e) {
-        e.stopPropagation();
-
-        if (core.isReplaying()) {
-            return;
-        }
-
-        if (main.core.isPlaying()) main.core.openEquipbox(true);
-    };
+   
 
     ////// 点击状态栏中的虚拟键盘时 //////
-    main.statusBar.image.keyboard.onclick = function (e) {
-        e.stopPropagation();
-
-        if (core.isReplaying()) {
-            core.control._replay_book();
-            return;
-        }
-
-        if (main.core.isPlaying()) main.core.openKeyBoard(true);
-    };
+  
 
     ////// 点击状态栏中的快捷商店时 //////
-    main.statusBar.image.shop.onclick = function (e) {
-        e.stopPropagation();
-
-        if (core.isReplaying()) {
-            core.control._replay_viewMap();
-            return;
-        }
-
-        if (main.core.isPlaying()) main.core.openQuickShop(true);
-    };
+  
 
     ////// 点击金币时也可以开启快捷商店 //////
-    main.statusBar.image.money.onclick = function (e) {
-        e.stopPropagation();
-
-        if (main.core.isPlaying()) main.core.openQuickShop(true);
-    };
+ 
 
     ////// 点击楼梯图标也可以浏览地图 //////
-    main.statusBar.image.floor.onclick = function (e) {
-        e.stopPropagation();
-
-        if (
-            main.core &&
-            main.core.isPlaying() &&
-            !core.isMoving() &&
-            !core.status.lockControl
-        ) {
-            core.ui._drawViewMaps();
-        }
-    };
-
+  
     ////// 点击状态栏中的存档按钮时 //////
-    main.statusBar.image.save.onclick = function (e) {
-        e.stopPropagation();
-
-        if (core.isReplaying()) {
-            core.speedDownReplay();
-            return;
-        }
-
-        if (main.core.isPlaying()) main.core.save(true);
-    };
-
+ 
     ////// 点击状态栏中的读档按钮时 //////
-    main.statusBar.image.load.onclick = function (e) {
-        e.stopPropagation();
-
-        if (core.isReplaying()) {
-            core.speedUpReplay();
-            return;
-        }
-
-        if (main.core.isPlaying()) main.core.load(true);
-    };
+ 
 
     ////// 点击状态栏中的系统菜单时 //////
-    main.statusBar.image.settings.onclick = function (e) {
-        e.stopPropagation();
-
-        if (core.isReplaying()) {
-            core.control._replay_SL();
-            return;
-        }
-
-        if (main.core.isPlaying()) main.core.openSettings(true);
-    };
-
+  
     ////// 点击工具栏时 //////
-    main.dom.hard.onclick = function () {
-        main.core.control.setToolbarButton(!core.domStyle.toolbarBtn);
-    };
+  
 
     ////// 手机端的按钮1-7 //////
-    main.statusBar.image.btn1.onclick = function (e) {
-        e.stopPropagation();
-        main.core.onkeyUp({
-            keyCode: 49,
-            altKey: core.getLocalStorage('altKey')
-        });
-    };
-
-    main.statusBar.image.btn2.onclick = function (e) {
-        e.stopPropagation();
-        main.core.onkeyUp({
-            keyCode: 50,
-            altKey: core.getLocalStorage('altKey')
-        });
-    };
-
-    main.statusBar.image.btn3.onclick = function (e) {
-        e.stopPropagation();
-        main.core.onkeyUp({
-            keyCode: 51,
-            altKey: core.getLocalStorage('altKey')
-        });
-    };
-
-    main.statusBar.image.btn4.onclick = function (e) {
-        e.stopPropagation();
-        main.core.onkeyUp({
-            keyCode: 52,
-            altKey: core.getLocalStorage('altKey')
-        });
-    };
-
-    main.statusBar.image.btn5.onclick = function (e) {
-        e.stopPropagation();
-        main.core.onkeyUp({
-            keyCode: 53,
-            altKey: core.getLocalStorage('altKey')
-        });
-    };
-
-    main.statusBar.image.btn6.onclick = function (e) {
-        e.stopPropagation();
-        main.core.onkeyUp({
-            keyCode: 54,
-            altKey: core.getLocalStorage('altKey')
-        });
-    };
-
-    main.statusBar.image.btn7.onclick = function (e) {
-        e.stopPropagation();
-        main.core.onkeyUp({
-            keyCode: 55,
-            altKey: core.getLocalStorage('altKey')
-        });
-    };
-
-    main.statusBar.image.btn8.onclick = function (e) {
-        e.stopPropagation();
-        if (core.getLocalStorage('altKey')) {
-            core.removeLocalStorage('altKey');
-            core.drawTip('Alt模式已关闭。');
-            main.statusBar.image.btn8.style.filter = '';
-        } else {
-            core.setLocalStorage('altKey', true);
-            core.drawTip('Alt模式已开启；此模式下1~7按钮视为Alt+1~7。');
-            main.statusBar.image.btn8.style.filter = 'sepia(1) contrast(1.5)';
-        }
-    };
+    
 
     ////// 点击“开始游戏”时 //////
     main.dom.playGame.onclick = function () {

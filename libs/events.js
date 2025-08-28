@@ -699,6 +699,12 @@ events.prototype.changeFloor = function (floorId, stair, heroLoc, time, callback
         if (callback) callback();
         return;
     }
+    core.searchBlockWithFilter(block => { 
+        if (!block || !block.event.cls.startsWith("enemy"))
+				return false;
+			if (core.hasSpecial(block.event.special, 69))
+				return true;
+    }).forEach(v=>core.battle(null,v.x,v.y,true))// 迂回包抄 69
     floorId = info.floorId;
     info.locked = core.status.lockControl;
 

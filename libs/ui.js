@@ -2154,7 +2154,7 @@ ui.prototype._drawBook_drawBackground = function () {
 
 ui.prototype._drawBook_drawEmpty = function () {
     core.setTextAlign('ui', 'center');
-    core.fillText('ui', "未发现敌军有生力量", core._PX_ / 2, core._PY_ / 2 + 14, '#00E100', this._buildFont(50, true));
+    core.fillText('ui', "本层无怪物", core._PX_ / 2, core._PY_ / 2 + 14, '#999999', this._buildFont(50, true));
     core.fillText('ui', '返回游戏', core._PX_ - 46, core._PY_ - 13, '#DDDDDD', this._buildFont(15, true));
 }
 
@@ -2383,7 +2383,7 @@ ui.prototype._drawBookDetail_getInfo = function (index) {
     index = core.clamp(index, 0, enemys.length - 1);
     var enemy = enemys[index], enemyId = enemy.id;
     var texts = core.enemys.getSpecialHint(enemyId);
-    if (texts.length == 0) texts.push("该敌人无特殊属性。");
+    if (texts.length == 0) texts.push("该怪物无特殊属性。");
     if (enemy.description) texts.push(enemy.description + "\r");
     texts.push("");
     this._drawBookDetail_getTexts(enemy, floorId, texts);

@@ -1,9 +1,6 @@
 var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 = 
 {
     "init": function () {
-	this.Army = ['步兵', '轻坦', '中坦', '重坦', '坦歼', '反坦克炮', '榴弹炮', '高射炮', '建筑'];
-	this.Navy = ['潜艇', '鱼雷艇', '商船', '驱逐', '轻巡', '重巡', '战列', '航母'];
-	this.Luftwaffe = ['战斗机', '重型战斗机', '攻击机', '俯冲轰炸机', '鱼雷轰炸机', '中型轰炸机', '导弹'];
 	this.getHeroPerTurnDamageFn = function (enemyInfo, hero, x, y, floorId) {
 		hero = hero || core.status.hero;
 		floorId = floorId || core.status.floorId;
@@ -427,7 +424,11 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 		var damage = mon_atk;
 		//技能6：Z字规避
 		if (flags.skill === 6) {
-			hero_dod += 2;
+			hero_dod += 3;
+		}
+		//技能5：预警
+		if (flags.skill === 5) {
+			hero_dod += 6;
 		}
 		hero_dod = core.clamp(hero_dod, 0, mon_tpn);
 		mon_dod = core.clamp(mon_dod, 0, hero_tpn);
@@ -460,10 +461,6 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				}
 			}
 		} else if (this.Navy.includes(enemyInfo.type)) { // 海战
-			//技能5
-			if (flags.skill === 5 && core.status.thisMap.area === "海洋") {
-				damage *= 0.8;
-			}
 			//光辉号装甲
 			if (core.hasEquip('illus1941') && !enemyInfo.type.endsWith('战列') && !enemyInfo.type.endsWith('潜艇')) {
 				damage *= 0.8
@@ -552,409 +549,73 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 		return damage;
 	}
 
-	//技能系统
-	this.getSkillInfo = function (id) {
-		id = id ?? 0;
-		var strategy = false,
-			name = '无',
-			cost = 0,
-			event = [],
-			description = '无';
-		if (id === 1) {
-			name = '战壕';
-			cost = 20;
-			description = '挖掘战壕，与敌方陆军战斗时，受到的伤害减少10%';
-		}
-		if (id === 2) {
-			strategy = true;
-			name = '紧急补给';
-			cost = 100;
-			description = '血量立即恢复25%';
-			event = [{ "type": "setValue", "name": "status:hp", "operator": "+=", "value": "status:hpmax/4" }];
-		}
-		if (id === 3) {
-			name = '防空弹幕';
-			cost = 50;
-			description = '下一次与敌方空军的战斗中，攻击力提升20%';
-		}
-		if (id === 4) {
-			strategy = true;
-			name = '空战王牌';
-			cost = 100;
-			description = '秒杀面前的非boss空军。如果无法秒杀对方，则改为“造成3倍攻击力的伤害”';
-			event = [
-				{ "type": "setValue", "name": "flag:空战王牌", "value": "core.getBlockId(core.nextX(),core.nextY())" }, { "type": "if", "condition": "core.plugin.Luftwaffe.includes(core.material.enemys[flags.空战王牌]?.type)&&!core.material.enemys[flag:空战王牌].notBomb&&core.material.enemys[flags.空战王牌]?.type!=='导弹'&&!core.hasSpecial(flags['空战王牌'], 65)", "true": [{ "type": "playSound", "name": "fighter.mp3" }, { "type": "showImage", "code": 1, "image": "aircraft1.png", "loc": [643, "32*core.nextY()+16-125"], "opacity": 1, "time": 0 }, { "type": "moveImage", "code": 1, "to": [-195, "32*core.nextY()+16-125"], "time": 500, "async": true }, { "type": "battle", "loc": ["core.nextX()", "core.nextY()"] }, { "type": "waitAsync" }, { "type": "hideImage", "code": 1, "time": 0 }], "false": [{ "type": "tip", "text": "目标无法击杀！" }, { "type": "playSound", "name": "操作失败" }, { "type": "setValue", "name": "status:mana", "operator": "+=", "value": "100" }, { "type": "setValue", "name": "flag:空战王牌", "value": "null" }] }
-			];
-		}
-		if (id === 5) {
-			name = '预警';
-			cost = 150;
-			description = '下一场战斗中，闪避鱼雷+8，受到伤害-30%';
-		}
-		if (id === 6) {
-			name = 'Z字规避';
-			cost = 80;
-			description = '下一场战斗中，每次遭遇鱼雷攻击时额外闪避3枚鱼雷'
-		}
-		if (id === 7) {
-			strategy = true;
-			name = '扫雷';
-			cost = 20;
-			description = '立即清除主角面前的地雷或水雷'
-			event = [
-				{ "type": "setValue", "name": "temp:A", "value": "core.getBlockId(core.nextX(), core.nextY())" },
-				{
-					"type": "if",
-					"condition": "((temp:A==='lavaNet')||(temp:A==='mine'))",
-					"true": [
-						{ "type": "playSound", "name": "005-System05.mp3" },
-						{ "type": "hide", "loc": ["core.nextX()", "core.nextY()"], "remove": true },
-					],
-					"false": [
-						{ "type": "playSound", "name": "error.mp3" },
-						{ "type": "setValue", "name": "status:mana", "operator": "+=", "value": "20" },
-						{ "type": "tip", "text": "操作失败！" },
-					]
-				},
-			]
-		}
-		if (id === 8) {
-			name = '剑鱼818中队';
-			cost = 80;
-			description = '对面前的敌军舰艇发射5枚鱼雷，且至少会命中1枚（潜艇除外），除造成正常的鱼雷伤害外，对手闪避鱼雷数-2。可重复空袭，但不会再降低对方的闪避'
-		}
-		if (id === 9) {
-			name = '抵抗运动';
-			cost = 100;
-			description = '下一场战斗中，敌方陆军攻击力随回合数增加而减少，每回合减少原攻击力的10%。当敌人攻击力不足原来的30%时，则不会继续减少'
-		}
-		if (id === 10) {
-			name = '破译';
-			cost = 40;
-			description = '下一场战斗中，获得20%减伤'
-		}
-		if (id === 11) {
-			strategy = true;
-			name = '空中打击';
-			cost = 200;
-			description = '秒杀面前的非boss坦克，如无法秒杀，改为“投掷一轮伤害为4倍攻击力的炸弹攻击”';
-			event = [
-				{ "type": "setValue", "name": "flag:空中打击", "value": "core.getBlockId(core.nextX(),core.nextY())" }, { "type": "if", "condition": "['轻坦','中坦','重坦','坦歼'].includes(core.material.enemys[flag:空中打击]?.type)&&!core.material.enemys[flag:空中打击]?.notBomb&&!core.hasSpecial(flags['空中打击'], 65)", "true": [{ "type": "playSound", "name": "bomber3.mp3" }, { "type": "showImage", "code": 1, "image": "aircraft2.png", "loc": [643, "32*core.nextY()+16-125"], "opacity": 1, "time": 0 }, { "type": "moveImage", "code": 1, "to": [-195, "32*core.nextY()+16-125"], "time": 500, "async": true }, { "type": "battle", "loc": ["core.nextX()", "core.nextY()"] }, { "type": "waitAsync" }, { "type": "hideImage", "code": 1, "time": 0 }], "false": [{ "type": "tip", "text": "目标无法击杀！" }, { "type": "playSound", "name": "操作失败" }, { "type": "setValue", "name": "status:mana", "operator": "+=", "value": "200" }, { "type": "setValue", "name": "flag:空中打击", "value": "null" }] }
-			];
-		}
-		if (id === 12) {
-			name = '从海底出击';
-			cost = 100;
-			description = '下一场战斗中，派遣一艘潜艇支援：在战斗开始时发射8枚鱼雷，随后潜艇撤退'
-		}
-		if (id === 13) {
-			name = '金牌损管';
-			cost = 180;
-			description = '下一场战斗结束后，回满血量，清除所有负面效果，获得20%当前后勤值的临时后勤值'
-		}
-		if (id === 14) {
-			name = '补给线';
-			cost = 250;
-			description = '下一场战斗中，后勤值提升10倍'
-		}
-		if (id === 15) {
-			strategy = true;
-			name = 'C-47空中列车';
-			cost = 300;
-			description = '只能在陆地或浅滩使用，空降至当前地图的中心对称落点。如果目标地点处于“防空”范围内或敌方战斗机周围8格内，会失去等同于80%血限的生命值。（确认空降坐标时，点击目标点或空格进行空降，重新按对应快捷键则取消空降）';
-			event = [{ "type": "if", "condition": "(!['陆地','浅滩'].includes(core.status.thisMap.area))", "true": [{ "type": "playSound", "name": "操作失败" }, { "type": "tip", "text": "当前地图不可使用该技能！" }, { "type": "setValue", "name": "status:mana", "operator": "+=", "value": "300" }], "false": [{ "type": "function", "function": "function(){\nflags.X = core.bigmap.width - 1 - hero.loc.x;\nflags.Y = core.bigmap.height - 1 - hero.loc.y;\nflags.C = '#00FF00';\nif (core.getBlockNumber(flags.X, flags.Y) > 0) {\n\tflags.C = 'red';\n} else {\n\tfor (let dx = -2; dx <= 2; ++dx)\n\t\tfor (let dy = -2; dy <= +2; ++dy) {\n\t\t\tlet x = flags.X + dx,\n\t\t\t\ty = flags.Y + dy,\n\t\t\t\tid = core.getBlockId(x, y);\n\t\t\tif (core.enemyExists(x, y)) {\n\t\t\t\tif (core.hasSpecial(id, 40)) flags.C = 'yellow';\n\t\t\t\tif (Math.abs(dx) <= 1 && Math.abs(dy) <= 1 && core.material.enemys[id].type.endsWith('战斗机')) flags.C = 'yellow';\n\t\t\t}\n\t\t}\n}\ncore.ui._createUIEvent();\ncore.ui.fillRect('uievent', 32 * flags.X, 32 * flags.Y, 32, 32, flags.C);\n}" }, { "type": "tip", "text": "请确认空降位置" }, { "type": "wait" }, { "type": "if", "condition": "(((flags.type===1)&&((flags.x!==flags.X)||(flags.y!==flags.Y)))||((flags.type===0)&&((flags.keycode!==32)&&(flags.keycode!==13))))", "true": [{ "type": "playSound", "name": "取消" }, { "type": "tip", "text": "已取消空降" }, { "type": "setValue", "name": "status:mana", "operator": "+=", "value": "300" }], "false": [{ "type": "if", "condition": "(flags.C==='red')", "true": [{ "type": "playSound", "name": "操作失败" }, { "type": "tip", "text": "空降落点有障碍物存在，无法着陆！" }, { "type": "setValue", "name": "status:mana", "operator": "+=", "value": "300" }], "false": [{ "type": "playSound", "name": "bomber.mp3" }, { "type": "showImage", "code": 1, "image": "aircraft5.png", "loc": [480, "32 * flags.Y - 125"], "opacity": 1, "time": 0 }, { "type": "moveImage", "code": 1, "to": [-195, "32 * flags.Y - 125"], "time": 500 }, { "type": "hideImage", "code": 1, "time": 0 }, { "type": "changePos", "loc": ["flags.X", "flags.Y"] }, { "type": "if", "condition": "(flags.C==='yellow')", "true": [{ "type": "animate", "name": "explore", "loc": "hero" }, { "type": "setValue", "name": "status:hp", "operator": "-=", "value": "0.8*status:hpmax" }] }] }] }, { "type": "clearMap" }] }];
-		}
-		if (id === 16) {
-			strategy = true;
-			name = '海上霸主';
-			cost = 1000;
-			description = '只能在海上使用且必须装备着航空母舰。舰载机发动空袭，使全图除潜艇外的敌方海军损失50%生命值，同时我方损失等同于20%血限的hp作为飞机损失。每张地图仅限使用一次，对boss无效';
-		}
-		if (id === 17) {
-			strategy = true;
-			name = '范弗利特弹药量';
-			cost = 60;
-			description = '下一场战斗中，主角攻击力+60%';
-		}
-		if (id === 18) {
-			name = '孟菲斯美女号';
-			cost = 50;
-			description = '下一场战斗中，友军不会受到任何伤害';
-		}
-		if (id === 19) {
-			strategy = true;
-			name = '刺猬弹';
-			cost = 100;
-			description = '下一场战斗中发射“刺猬”反潜迫击炮，在首回合对潜艇造成5倍攻击力的伤害，战后无视狼群协同攻击';
-		}
-		if (id === 20) {
-			strategy = true;
-			name = '红色尾翼';
-			cost = 1000;
-			description = '获得第332战斗机大队的支援。无条件直接夺取当前地图制空权，且制空权效果改为20%。主角在当前地图行动期间，友军不会受到任何损失，对敌方空军伤害+30%';
-		}
-		if (id === 21) {
-			strategy = true;
-			name = 'T34谢尔曼风琴';
-			cost = 600;
-			description = '仅可在地面使用。呼叫火箭炮覆盖打击，打击目标为以自身为中心7×7正方形区域，其中的敌人陆军受到不同程度的损失：步兵失去70%生命值，炮兵失去50%，装甲失去20%';
-		}
-		if (id === 22) {
-			name = '地毯式轰炸';
-			cost = 3000;
-			description = '仅可在地面使用。呼叫大规模轰炸机群展开全图轰炸，全体敌方陆军损失70%生命值，空军损失15%生命值。';
-		}
-		if (id === 23) {
-			strategy = true;
-			name = '铝箔条';
-			cost = 1200;
-			description = '抛洒铝箔条，干扰敌方雷达。在使用过该技能的地图中，光环类（指挥、截断）、协同攻击类（陷阱、防空）等技能无效';
-		}
-		if (id === 24) {
-			strategy = true;
-			name = '翼尖挑衅';
-			cost = 200;
-			description = '将面前的V1导弹向前推1格并引爆。如果引爆地点是可破墙壁或非boss敌人，可将其摧毁（不获得金经）';
-		}
-		if (id === 25) {
-			strategy = true;
-			name = '高脚柜炸弹';
-			cost = 1000;
-			description = '只能在陆地或浅滩使用，且必须装备着特定轰炸机。使用后在前方一格投下一枚“高脚柜”炸弹，直接摧毁面前的非boss陆军（无视抗破），并在爆炸地点九宫格3格半径内引发小范围地震，摧毁可破墙壁，范围内其他敌方陆军损失80%血量';
-		}
-		if (id === 26) {
-			strategy = true;
-			name = '钳形攻势';
-			cost = 2000;
-			description = '主角能够从当前地图任意出口通行时可用。发动此技能后，在当前地图战斗时攻击力+50%，伤害减免40%。'
-		}
-		return {
-			'strategy': strategy,
-			'name': name,
-			'cost': cost,
-			'event': event,
-			'id': id,
-			'description': description
-		};
-	}
-	this._makeList = function (list, depth) {
-		if (list.length > 9) { // 分页
-			var suffix = list.splice(9);
-			list.push({ "text": "下一页", "action": this._makeList(suffix, depth + 1) });
-		}
-		list.push({ "text": "查看当前快捷键", "action": [{ "type": "insert", "name": "查看技能" }] });
-		list.push({ "text": "保存并进入下一章", "action": [{ "type": "break", "n": depth }] });
-		return [{
-			"type": "while",
-			"condition": "true",
-			"data": [{ "type": "choices", "text": "\t[技能快捷键设定] ", "choices": list }]
-		}];
-	}
-	this.bindSkills = function () {
-		var list = [];
-		for (var i = 0; i < flags.learned.length; ++i) {
-			if (flags.learned[i]) {
-				var info = this.getSkillInfo(i),
-					obj = {
-						"text": info.name + (info.strategy ? '（即时）' : '') + '，消耗：' + info.cost,
-						"action": [
-							{ "type": "tip", "text": "请按下要绑定到的数字键1~7" },
-							{
-								"type": "wait",
-								"forceChild": true,
-								"data": [{
-									"case": "keyboard",
-									"keycode": "49,50,51,52,53,54,55",
-									"action": [{
-										"type": "function",
-										"function": "function(){var index=flags.skillList.indexOf(" + info.id + ");" +
-											"if(index>=0)flags.skillList[index]=flags.skillList[flags.keycode-49];" +
-											"flags.skillList[flags.keycode-49]=" + info.id + ";}"
-									}, ]
-								}, ]
-							},
-						]
-					};
-				list.push(obj);
-			}
-		}
-		return this._makeList(list, 1);
-	}
-	// 禁止手动换装，只能在事件中用指令强制换装
-	core.items._realLoadEquip = function (type, loadId, unloadId, callback) {
-		if (core.status.event.id === 'action') {
-			var loadEquip = core.material.items[loadId] || {},
-				unloadEquip = core.material.items[unloadId] || {};
-			// --- 音效
-			core.items._realLoadEquip_playSound();
-			// --- 实际换装
-			core.items._loadEquipEffect(loadId, unloadId);
-			// --- 加减
-			if (loadId) core.removeItem(loadId);
-			if (unloadId) core.addItem(unloadId);
-			core.status.hero.equipment[type] = loadId || null;
-			// --- 提示
-			if (loadId) core.drawTip("已装备上" + loadEquip.name, loadId);
-			else if (unloadId) core.drawTip("已卸下" + unloadEquip.name, unloadId);
-		}
-		if (callback) callback();
-	}
-	//显伤加字
-	core.enemys.getDamageString = function (enemy, x, y, floorId) {
-		if (typeof enemy == 'string') enemy = core.material.enemys[enemy];
-		var damage = this.getDamage(enemy, x, y, floorId);
 
-		var color = '#000000';
-
-		if (damage == null) {
-			damage = "???";
-			color = '#FF2222';
-		} else {
-			if (damage <= 0) color = '#11FF11';
-			else if (damage < core.status.hero.hp / 3) color = '#FFFFFF';
-			else if (damage < core.status.hero.hp * 2 / 3) color = '#FFFF00';
-			else if (damage < core.status.hero.hp) color = '#FF9933';
-			else color = '#FF2222';
-
-			damage = core.formatBigNumber(damage, true);
-			if (core.enemys.hasSpecial(enemy, 19))
-				damage += "+";
-			if (core.enemys.hasSpecial(enemy, 21))
-				damage += "-";
-			if (core.enemys.hasSpecial(enemy, 11))
-				damage += "^";
-			if (core.enemys.hasSpecial(enemy, 42))
-				damage += "截";
-			if (core.enemys.hasSpecial(enemy, 51))
-				damage += "歼";
-			if (core.enemys.hasSpecial(enemy, 52))
-				damage += "夹";
-			if (core.enemys.hasSpecial(enemy, 59))
-				damage += "X";
-			if (core.enemys.hasSpecial(enemy, 63))
-				damage += "阵";
-		}
-
-		return {
-			"damage": damage,
-			"color": color
-		};
-	}
-	//歼灭领域显伤
-	core.control._updateDamage_extraDamage = function (floorId, onMap) {
-		core.status.damage.extraData = [];
-		if (!core.flags.displayExtraDamage) return;
-
-		var width = core.floors[floorId].width,
-			height = core.floors[floorId].height;
-		var startX = onMap && core.bigmap.v2 ? Math.max(0, core.bigmap.posX - core.bigmap.extend) : 0;
-		var endX = onMap && core.bigmap.v2 ? Math.min(width, core.bigmap.posX + core._WIDTH_ + core.bigmap.extend + 1) : width;
-		var startY = onMap && core.bigmap.v2 ? Math.max(0, core.bigmap.posY - core.bigmap.extend) : 0;
-		var endY = onMap && core.bigmap.v2 ? Math.min(height, core.bigmap.posY + core._HEIGHT_ + core.bigmap.extend + 1) : height;
-
-		for (var x = startX; x < endX; x++) {
-			for (var y = startY; y < endY; y++) {
-				var alpha = 1;
-				if (core.noPass(x, y, floorId)) {
-					if (core.flags.extraDamageType == 2) alpha = 0;
-					else if (core.flags.extraDamageType == 1) alpha = 0.6;
-				}
-				var damage = core.status.checkBlock.damage[x + "," + y] || 0;
-				if (damage > 0 && Number.isFinite(damage)) { // 该点伤害
-					damage = core.formatBigNumber(damage, true);
-					core.status.damage.extraData.push({ text: damage, px: 32 * x + 16, py: 32 * (y + 1) - 14, color: '#ffaa33', alpha: alpha });
-				} else if (damage === Infinity) {
-					core.status.damage.extraData.push({ text: '死', px: 32 * x + 16, py: 32 * (y + 1) - 14, color: '#ff0000', alpha: alpha });
-				} else { // 检查捕捉
-					if (core.status.checkBlock.ambush[x + "," + y]) {
-						core.status.damage.extraData.push({ text: '!', px: 32 * x + 16, py: 32 * (y + 1) - 14, color: '#ffaa33', alpha: alpha });
-					}
-				}
-			}
-		}
-	}
-	//灯光
-	//core.control._drawHero_draw = function (direction, x, y, status, offset, frame) {
-	//offset = offset || { x: 0, y: 0, offset: 0, px: 0, py: 0 };
-	//if (["MT55", "MT56", "MT57", "MT58", "MT59", "MT60", "MT180", "MT181", "MT182", "MT183", "MT184"].indexOf(core.status.floorId) >= 0) {
-	//core.plugin.drawLight('newui1', 0.5, [
-	//[16 + hero.loc.x * 32 + offset.x, 16 + hero.loc.y * 32 + offset.y, flags.lighton ? 128 : 1000]
-	//], 0.8);
-	//}
-	//var opacity = core.setAlpha('hero', core.getFlag('__heroOpacity__', 1))
-	//this._drawHero_getDrawObjs(direction, x, y, status, offset).forEach(function (block) {
-	//core.drawImage('hero', block.img, (block.heroIcon[block.status] + (frame || 0)) % 4 * block.width,
-	//block.heroIcon.loc * block.height, block.width, block.height,
-	//block.posx + (32 - block.width) / 2, block.posy + 32 - block.height, block.width, block.height);
-	//});
-	//core.setAlpha('hero', opacity);
-
-	//}
 	this._afterLoadResources = function () {
-		// 本函数将在所有资源加载完毕后，游戏开启前被执行
+		core.ui.statusBar.init()
+		// 本函数将在所有资源加载完毕后，游戏开启前被执行（原init）
 	}
 },
     "drawLight": function () {
 
-		// 绘制灯光/漆黑层效果。调用方式 core.plugin.drawLight(...)
-		// 【参数说明】
-		// name：必填，要绘制到的画布名；可以是一个系统画布，或者是个自定义画布；如果不存在则创建
-		// color：可选，只能是一个0~1之间的数，为不透明度的值。不填则默认为0.9。
-		// lights：可选，一个数组，定义了每个独立的灯光。
-		//        其中每一项是三元组 [x,y,r] x和y分别为该灯光的横纵坐标，r为该灯光的半径。
-		// lightDec：可选，0到1之间，光从多少百分比才开始衰减（在此范围内保持全亮），不设置默认为0。
-		//        比如lightDec为0.5代表，每个灯光部分内圈50%的范围全亮，50%以后才开始快速衰减。
-		// 【调用样例】
-		// core.plugin.drawLight('curtain'); // 在curtain层绘制全图不透明度0.9，等价于更改画面色调为[0,0,0,0.9]。
-		// core.plugin.drawLight('ui', 0.95, [[25,11,46]]); // 在ui层绘制全图不透明度0.95，其中在(25,11)点存在一个半径为46的灯光效果。
-		// core.plugin.drawLight('test', 0.2, [[25,11,46,0.1]]); // 创建一个test图层，不透明度0.2，其中在(25,11)点存在一个半径为46的灯光效果，灯光中心不透明度0.1。
-		// core.plugin.drawLight('test2', 0.9, [[25,11,46],[105,121,88],[301,221,106]]); // 创建test2图层，且存在三个灯光效果，分别是中心(25,11)半径46，中心(105,121)半径88，中心(301,221)半径106。
-		// core.plugin.drawLight('xxx', 0.3, [[25,11,46],[105,121,88,0.2]], 0.4); // 存在两个灯光效果，它们在内圈40%范围内保持全亮，40%后才开始衰减。
-		this.drawLight = function (name, color, lights, lightDec) {
+	// 绘制灯光/漆黑层效果。调用方式 core.plugin.drawLight(...)
+	// 【参数说明】
+	// name：必填，要绘制到的画布名；可以是一个系统画布，或者是个自定义画布；如果不存在则创建
+	// color：可选，只能是一个0~1之间的数，为不透明度的值。不填则默认为0.9。
+	// lights：可选，一个数组，定义了每个独立的灯光。
+	//        其中每一项是三元组 [x,y,r] x和y分别为该灯光的横纵坐标，r为该灯光的半径。
+	// lightDec：可选，0到1之间，光从多少百分比才开始衰减（在此范围内保持全亮），不设置默认为0。
+	//        比如lightDec为0.5代表，每个灯光部分内圈50%的范围全亮，50%以后才开始快速衰减。
+	// 【调用样例】
+	// core.plugin.drawLight('curtain'); // 在curtain层绘制全图不透明度0.9，等价于更改画面色调为[0,0,0,0.9]。
+	// core.plugin.drawLight('ui', 0.95, [[25,11,46]]); // 在ui层绘制全图不透明度0.95，其中在(25,11)点存在一个半径为46的灯光效果。
+	// core.plugin.drawLight('test', 0.2, [[25,11,46,0.1]]); // 创建一个test图层，不透明度0.2，其中在(25,11)点存在一个半径为46的灯光效果，灯光中心不透明度0.1。
+	// core.plugin.drawLight('test2', 0.9, [[25,11,46],[105,121,88],[301,221,106]]); // 创建test2图层，且存在三个灯光效果，分别是中心(25,11)半径46，中心(105,121)半径88，中心(301,221)半径106。
+	// core.plugin.drawLight('xxx', 0.3, [[25,11,46],[105,121,88,0.2]], 0.4); // 存在两个灯光效果，它们在内圈40%范围内保持全亮，40%后才开始衰减。
+	this.drawLight = function (name, color, lights, lightDec) {
 
-			// 清空色调层；也可以修改成其它层比如animate/weather层，或者用自己创建的canvas
-			var ctx = core.getContextByName(name);
-			if (ctx == null) {
-				if (typeof name == 'string')
-					ctx = core.createCanvas(name, 0, 0, core._PX_ || core.__PIXELS__, core._PY_ || core.__PIXELS__, 98);
-				else return;
-			}
-
-			ctx.mozImageSmoothingEnabled = false;
-			ctx.webkitImageSmoothingEnabled = false;
-			ctx.msImageSmoothingEnabled = false;
-			ctx.imageSmoothingEnabled = false;
-
-			core.clearMap(name);
-			// 绘制色调层，默认不透明度
-			if (color == null) color = 0.9;
-			ctx.fillStyle = "rgba(0,0,0," + color + ")";
-			ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-
-			lightDec = core.clamp(lightDec, 0, 1);
-
-			// 绘制每个灯光效果
-			ctx.globalCompositeOperation = 'destination-out';
-			lights.forEach(function (light) {
-				// 坐标，半径，中心不透明度
-				var x = light[0],
-					y = light[1],
-					r = light[2];
-				// 计算衰减距离
-				var decDistance = parseInt(r * lightDec);
-				// 正方形区域的直径和左上角坐标
-				var grd = ctx.createRadialGradient(x, y, decDistance, x, y, r);
-				grd.addColorStop(0, "rgba(0,0,0,1)");
-				grd.addColorStop(1, "rgba(0,0,0,0)");
-				ctx.beginPath();
-				ctx.fillStyle = grd;
-				ctx.arc(x, y, r, 0, 2 * Math.PI);
-				ctx.fill();
-			});
-			ctx.globalCompositeOperation = 'source-over';
-			// 可以在任何地方（如afterXXX或自定义脚本事件）调用函数，方法为  core.plugin.xxx();
+		// 清空色调层；也可以修改成其它层比如animate/weather层，或者用自己创建的canvas
+		var ctx = core.getContextByName(name);
+		if (ctx == null) {
+			if (typeof name == 'string')
+				ctx = core.createCanvas(name, 0, 0, core._PX_ || core.__PIXELS__, core._PY_ || core.__PIXELS__, 98);
+			else return;
 		}
-	},
+
+		ctx.mozImageSmoothingEnabled = false;
+		ctx.webkitImageSmoothingEnabled = false;
+		ctx.msImageSmoothingEnabled = false;
+		ctx.imageSmoothingEnabled = false;
+
+		core.clearMap(name);
+		// 绘制色调层，默认不透明度
+		if (color == null) color = 0.9;
+		ctx.fillStyle = "rgba(0,0,0," + color + ")";
+		ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+
+		lightDec = core.clamp(lightDec, 0, 1);
+
+		// 绘制每个灯光效果
+		ctx.globalCompositeOperation = 'destination-out';
+		lights.forEach(function (light) {
+			// 坐标，半径，中心不透明度
+			var x = light[0],
+				y = light[1],
+				r = light[2];
+			// 计算衰减距离
+			var decDistance = parseInt(r * lightDec);
+			// 正方形区域的直径和左上角坐标
+			var grd = ctx.createRadialGradient(x, y, decDistance, x, y, r);
+			grd.addColorStop(0, "rgba(0,0,0,1)");
+			grd.addColorStop(1, "rgba(0,0,0,0)");
+			ctx.beginPath();
+			ctx.fillStyle = grd;
+			ctx.arc(x, y, r, 0, 2 * Math.PI);
+			ctx.fill();
+		});
+		ctx.globalCompositeOperation = 'source-over';
+		// 可以在任何地方（如afterXXX或自定义脚本事件）调用函数，方法为  core.plugin.xxx();
+	}
+},
     "shop": function () {
 		// 【全局商店】相关的功能
 		// 
@@ -2579,5 +2240,2335 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 		}
 
 		window.Sprite = Sprite;
+	},
+    "statusBar": function () {
+	//新版鸽窝状态栏ui绘制，请作者在添加道具等操作时一并将老版状态栏一起添加，以供玩家自行选择ui，或通过提示让玩家选择作者想使用的ui。
+	main.dom.floorMsgGroup.style.display = "none";
+	main.dom.statusBar.style.display = "none";
+
+	const GAMEVIEW_WIDTH = 780; //横屏画面宽度
+	const GAMEVIEW_HEIGHT = 480; //横屏画面高度
+
+	const GAMEVIEW_WIDTH_VERTICAL = 480; //竖屏画面宽度
+	const GAMEVIEW_HEIGHT_VERTICAL = 780; //竖屏画面高度
+
+	const BAR_WIDTH = 150; //横屏左侧额外距离（即边栏宽度）
+	const BAR_HEIGHT_VERTICAL = 150; //竖屏上侧额外距离（即边栏高度）
+	const BORDER_WIDTH = 0; //游戏画面左侧偏移距离
+	const BORDER_HEIGHT = 0; //游戏画面上侧偏移距离
+
+
+	const outerBackground = document.createElement("canvas"); //背景画布设置
+	outerBackground.style.position = "absolute";
+	outerBackground.style.zIndex = 5;
+	outerBackground.id = "outerBackground";
+	main.dom.outerBackground = outerBackground;
+	main.dom.startPanel.insertAdjacentElement("afterend", outerBackground);
+
+	const outerUI = document.createElement("canvas"); //额外ui画布设置（状态栏所有绘制、点击都在额外ui上）
+	outerUI.style.position = "absolute";
+	outerUI.style.zIndex = 165;
+	outerUI.id = "outerUI";
+	main.dom.outerUI = outerUI;
+	outerBackground.insertAdjacentElement("afterend", outerUI);
+	setTimeout(function () {
+		// Should be executed immediately after init()
+		main.canvas.outerUI = outerUI.getContext("2d");
+	});
+	outerUI.onclick = function (e) {
+		try {
+			//e.preventDefault();
+			if (!core.isPlaying()) return false;
+			const left = core.dom.gameGroup.offsetLeft;
+			const top = core.dom.gameGroup.offsetTop;
+			const px = Math.floor((e.clientX - left) / core.domStyle.scale),
+				py = Math.floor((e.clientY - top) / core.domStyle.scale);
+			core.ui.statusBar.onclick(px, py);
+		} catch (ee) {
+			main.log(ee);
+		}
+	};
+
+	const _resize_gameGroup = function (obj) {
+
+		//游戏画面自适应调节
+		const gameGroup = core.dom.gameGroup;
+		gameGroup.style.width = obj.totalWidth + "px";
+		gameGroup.style.height = obj.totalHeight + "px";
+		gameGroup.style.left = (obj.clientWidth - obj.totalWidth) / 2 + "px";
+		gameGroup.style.top = (obj.clientHeight - obj.totalHeight) / 2 + "px";
+		//floorMsgGroup为切换楼层中生效，显示时间可通过‘全塔属性’——‘切换楼层时间’或游戏内设置调整
+		//显示内容为游戏名/版本号/楼层名
+		// floorMsgGroup
+		var floorMsgGroup = core.dom.floorMsgGroup;
+		var globalAttribute =
+			core.status.globalAttribute || core.initStatus.globalAttribute;
+		floorMsgGroup.style = globalAttribute.floorChangingStyle;
+		floorMsgGroup.style.height = floorMsgGroup.style.width =
+			GAMEVIEW_HEIGHT * core.domStyle.scale + "px";
+		floorMsgGroup.style.fontSize = 16 * core.domStyle.scale + "px";
+
+		if (core.domStyle.isVertical) {
+			floorMsgGroup.style.left = "0px";
+			floorMsgGroup.style.top =
+				((GAMEVIEW_HEIGHT_VERTICAL - GAMEVIEW_WIDTH_VERTICAL) *
+					core.domStyle.scale) /
+				2 +
+				"px";
+		} else {
+			floorMsgGroup.style.left =
+				((GAMEVIEW_WIDTH - GAMEVIEW_HEIGHT) * core.domStyle.scale) / 2 + "px";
+			floorMsgGroup.style.top = "0px";
+		}
+		core.dom.musicBtn.style.right =
+			(obj.clientWidth - obj.totalWidth) / 2 + "px";
+		core.dom.musicBtn.style.bottom =
+			(obj.clientHeight - obj.totalHeight) / 2 - 28 + "px";
+		let startBackground = core.domStyle.isVertical ?
+			main.styles.startVerticalBackground || main.styles.startBackground :
+			main.styles.startBackground;
+		if (main.dom.startBackground.getAttribute("__src__") != startBackground) {
+			main.dom.startBackground.setAttribute("__src__", startBackground);
+			main.dom.startBackground.src = startBackground;
+		}
+		// startPanel
+
+
+	};
+	const _resize_canvas = function (obj) {
+		//自适应画布
+		main.dom.outerBackground.style.width = obj.totalWidth + "px";
+		main.dom.outerBackground.style.height = obj.totalHeight + "px";
+		main.dom.outerUI.style.width = obj.totalWidth + "px";
+		main.dom.outerUI.style.height = obj.totalHeight + "px";
+
+		// perf 8: HD compatibility.
+		const innerSize = obj.canvasWidth * core.domStyle.scale + "px";
+		for (let i = 0; i < core.dom.gameCanvas.length; ++i) {
+			core.dom.gameCanvas[i].style.width = innerSize;
+			core.dom.gameCanvas[i].style.height = innerSize;
+
+
+		}
+		core.dom.gif.style.width = core.dom.gif.style.height = innerSize;
+		core.dom.gif2.style.width = core.dom.gif2.style.height = innerSize;
+
+		core.dom.gameDraw.style.width = core.dom.gameDraw.style.height =
+			innerSize;
+		core.dom.gameDraw.style.top =
+			obj.gameDrawBox.top * core.domStyle.scale + "px";
+		core.dom.gameDraw.style.left =
+			obj.gameDrawBox.left * core.domStyle.scale + "px";
+		// resize bigmap
+		core.bigmap.canvas.forEach(function (cn) {
+			const ratio = core.canvas[cn].canvas.hasAttribute("isHD") ?
+				core.domStyle.ratio * devicePixelRatio :
+				1;
+			core.canvas[cn].canvas.style.width =
+				(innerSize / ratio) * core.domStyle.scale + "px";
+			core.canvas[cn].canvas.style.height =
+				(innerSize / ratio) * core.domStyle.scale + "px";
+		});
+		// resize dynamic canvas
+		for (const name in core.dymCanvas) {
+			const ctx = core.dymCanvas[name],
+				canvas = ctx.canvas;
+			const ratio = canvas.hasAttribute("isHD") ? core.domStyle.ratio * devicePixelRatio : 1;
+			canvas.style.width =
+				(canvas.width / ratio) * core.domStyle.scale + 'px';
+			canvas.style.height =
+				(canvas.height / ratio) * core.domStyle.scale + 'px';
+			canvas.style.left =
+				parseFloat(canvas.getAttribute("_left")) * core.domStyle.scale + "px";
+			canvas.style.top =
+				parseFloat(canvas.getAttribute("_top")) * core.domStyle.scale + "px";
+		}
+		// resize next
+		main.dom.next.style.width = main.dom.next.style.height =
+			5 * core.domStyle.scale + "px";
+		main.dom.next.style.borderBottomWidth =
+			main.dom.next.style.borderRightWidth = 4 * core.domStyle.scale + "px";
+	};
+	core.control.resize = function () {
+		//自适应，可实现横竖屏切换
+		if (main.mode == "editor") return;
+
+		const clientWidth = main.dom.body.clientWidth,
+			clientHeight = main.dom.body.clientHeight;
+		const canvasWidth = core.__PIXELS__;
+
+		const isVertical = clientHeight > clientWidth;
+		core.domStyle.isVertical = isVertical;
+
+		const totalWidth = isVertical ? GAMEVIEW_WIDTH_VERTICAL : GAMEVIEW_WIDTH,
+			totalHeight = isVertical ? GAMEVIEW_HEIGHT_VERTICAL : GAMEVIEW_HEIGHT;
+
+		const maxRatio = Math.min(
+			clientWidth / totalWidth,
+			clientHeight / totalHeight
+		);
+
+		core.domStyle.availableScale = [];
+		[1, 1.25, 1.5, 1.75, 2].forEach(function (v) {
+			if (maxRatio >= v) {
+				core.domStyle.availableScale.push(v);
+			}
+		});
+
+		if (core.domStyle.availableScale.indexOf(core.domStyle.scale) < 0) {
+			core.domStyle.scale = Math.min(1, maxRatio);
+		} else if (
+			core.getLocalStorage("scale") == null &&
+			core.domStyle.availableScale.length >= 2
+		) {
+			core.domStyle.scale =
+				core.domStyle.availableScale[core.domStyle.availableScale.length - 2];
+			core.setLocalStorage("scale", core.domStyle.scale);
+		}
+
+		const totalWidthScaled = totalWidth * core.domStyle.scale,
+			totalHeightScaled = totalHeight * core.domStyle.scale;
+
+		const gameDrawBox = isVertical ? {
+			left: BORDER_WIDTH,
+			top: BAR_HEIGHT_VERTICAL + BORDER_HEIGHT,
+		} : { left: BAR_WIDTH + BORDER_WIDTH, top: BORDER_HEIGHT };
+
+		const obj = {
+			clientWidth: clientWidth,
+			clientHeight: clientHeight,
+			canvasWidth: canvasWidth,
+			totalWidth: totalWidthScaled,
+			totalHeight: totalHeightScaled,
+			gameDrawBox: gameDrawBox,
+			globalAttribute: core.status.globalAttribute || core.initStatus.globalAttribute,
+		};
+
+		_resize_gameGroup(obj);
+		_resize_canvas(obj);
+
+		if (core.status.automaticRoute == null) core.status.automaticRoute = {};
+		core.updateStatusBar();
+	};
+
+	const bgctx = main.dom.outerBackground.getContext("2d");
+	const uictx = main.dom.outerUI.getContext("2d");
+	bgctx.imageSmoothingEnabled = false
+	uictx.imageSmoothingEnabled = false //关闭抗锯齿
+	class StatusBar {
+		constructor() {
+			//道具栏列表
+
+
+		}
+		//初始化内容（工具栏/录像操作执行函数）
+		init() {
+			this.toolbarAction = [
+				[
+					main.core.openKeyBoard,
+					main.core.openQuickShop,
+					core.doSL
+				],
+				[main.core.save, main.core.load, main.core.openSettings],
+			];
+			this.replayAction = [
+				[core.triggerReplay, core.stopReplay, core.rewindReplay],
+				[core.speedDownReplay, core.speedUpReplay, function () { core.control._replay_SL() }],
+			];
+		}
+		//更新
+		update() {
+			this._update_background(); //更新背景
+			this._update_props(); //更新属性
+			this._update_skills(); //更新当前技能栏
+			this._update_keys(); //更新钥匙栏
+			this._update_missions(); //更新任务栏
+			this._update_state(); //更新异常状态栏
+			this._update_items(); //更新道具
+			this._update_toolBox(); //更新工具栏
+		}
+		//更新背景
+		_update_background() {
+			if (core.domStyle.isVertical) {
+				core.maps._setHDCanvasSize(bgctx, 480, 780)
+				core.maps._setHDCanvasSize(uictx, 480, 780)
+
+				const bg = core.material.images.images["shangmian.png"]; //竖屏背景（上）
+				bgctx.drawImage(
+					bg,
+					0,
+					0,
+					GAMEVIEW_WIDTH_VERTICAL,
+					BAR_HEIGHT_VERTICAL
+				);
+				const bg2 = core.material.images.images["xiamian.png"]; //竖屏背景（下）
+				bgctx.drawImage(
+					bg2,
+					0,
+					BAR_HEIGHT_VERTICAL + GAMEVIEW_WIDTH_VERTICAL,
+					GAMEVIEW_WIDTH_VERTICAL,
+					BAR_HEIGHT_VERTICAL
+				);
+
+
+				core.setTextAlign("outerUI", "center");
+			} else {
+				core.maps._setHDCanvasSize(bgctx, 780, 480)
+				core.maps._setHDCanvasSize(uictx, 780, 480)
+
+				const bg = core.material.images.images["zuobian.png"]; //横屏背景（左）
+				bgctx.drawImage(
+					bg,
+					0,
+					0,
+					BAR_WIDTH,
+					GAMEVIEW_HEIGHT
+				);
+				const bg2 = core.material.images.images["youbian.png"]; //横屏背景（右）
+				bgctx.drawImage(
+					bg2,
+					BAR_WIDTH + GAMEVIEW_HEIGHT,
+					0,
+					BAR_WIDTH,
+					GAMEVIEW_HEIGHT
+				);
+				core.setTextAlign("outerUI", "center");
+			}
+		}
+		// 更新属性
+		_update_props() {
+			if (core.domStyle.isVertical) { // 竖屏
+				core.clearMap(uictx, 0, 0, 150, 480); //上部（0--480，0--150）
+				if (core.status.maps[core.status.floorId]) { // 绘制楼层名 地区 军衔
+					core.setTextAlign("outerUI", "left") //左对齐
+					core.fillBoldText(uictx, core.status.maps[core.status.floorId].name, 10, 20, "#00CCFF", "#000000", "bold 16px kaiti", 150)
+
+					core.fillBoldText(uictx, core.status.maps[core.status.floorId].area, 10, 38, "#66FF33", "#000000", "bold 16px kaiti", 35)
+
+					core.setTextAlign("outerUI", "right") //右对齐
+					core.fillBoldText(uictx, core.getLvName(), 150, 38, "#CC9900", "#000000", "bold 16px kaiti", 35)
+
+					core.setTextAlign("outerUI", "center") //居中
+					let a = core.status.hard,
+						b = "",
+						c = ""; //难度
+					if (a === 'Massacre') {
+						b = "神剧";
+						c = "#60B103";
+					} else if (a === 'Arcade') {
+						b = "街机";
+						c = "#EBB659"
+					} else if (a === 'History') {
+						b = "历史";
+						c = "#CD0001"
+					}
+					core.fillBoldText(uictx, b, 80, 38, c, "#000000", "bold 16px kaiti", 35);
+
+					core.setTextAlign("outerUI", "left") //左对齐
+					if (core.getFlag("escort")) { //存在友军血量 core.getFlag("escort")
+						core.fillBoldText(uictx, "友军血量:", 10, 53, "#33FF99", "#000000", "bold 12px kaiti") //友军血量
+						core.fillBoldText(uictx, 22222266, 64, 54, "#33FF99", "#000000", "12px number", 102) //core.formatBigNumber(core.getFlag("友军血量"))
+					}
+
+					core.setTextAlign("outerUI", "left")
+					core.drawIcon(uictx, "hp", 6, 55, 24, 24)
+					core.fillRect(uictx, 32, 58.5, 94, 18, "#000000") //血槽
+					core.fillRect(uictx, 34, 60.5, 90 * hero.hp / hero.hpmax, 14, "#FF0000") //血
+					core.setTextAlign("outerUI", "center")
+					core.fillText(uictx, core.formatBigNumber(hero.hp, true) + "/" + core.formatBigNumber(hero.hpmax, true), 79, 72, "#FFFFFF", "12px number", 90) //  血量数字
+
+					core.setTextAlign("outerUI", "left") //左对齐
+					core.fillRoundRect(uictx, 6, 80, 148, 68, 5, "rgba(0,0,0,0.5)"); //常规状态底板
+					core.drawIcon(uictx, "hp", 6, 79, 24, 24) //攻击力
+					core.fillText(uictx, "攻击:", 32, 94.5, "#FF0000", "bold 16px kaiti") //攻击：
+					core.fillText(uictx, core.formatBigNumber(core.getRealStatus("atk"), false), 70, 96, "#FF0000", "18px number", 100) //攻击数字
+
+					core.drawIcon(uictx, "hp", 6, 103, 24, 24) //指挥点	
+					core.fillText(uictx, "指挥点:", 32, 118.5, "#00CCFF", "bold 16px kaiti") //指挥点：
+					core.fillText(uictx, core.formatBigNumber(core.getRealStatus("mana"), false), 86, 120, "#00CCFF", "18px number", 100) //指挥点数字
+
+					core.drawIcon(uictx, "hp", 6, 127, 24, 24) //后勤点	
+					core.fillText(uictx, "后勤点:", 32, 142.5, "#AAFF88", "bold 16px kaiti") //后勤点：
+					core.fillText(uictx, core.formatBigNumber(core.getRealStatus("mdef"), false), 86, 144, "#AAFF88", "18px number", 100) //后勤点数字
+
+					core.setTextAlign("outerUI", "center") //居中
+					core.fillText(uictx, "——陆军属性——", 240, 20, "#FFFF00", "bold 16px kaiti", 150)
+					core.setTextAlign("outerUI", "left") //左对齐
+					core.fillRoundRect(uictx, 167, 26, 148, 49, 5, "rgba(0,0,0,0.5)"); //陆军属性底板
+					core.drawIcon(uictx, "hp", 172, 28, 24, 24) //穿甲
+					core.fillText(uictx, "穿甲:", 196, 43.5, "#FFFFFF", "bold 16px kaiti") //穿甲：
+					core.fillText(uictx, core.formatBigNumber(core.getRealStatus('ap'), false), 234, 45, "#FFFFFF", "18px number", 100) //穿甲数字
+
+					core.drawIcon(uictx, "hp", 172, 52, 24, 24) //装甲
+					core.fillText(uictx, "装甲:", 196, 67.5, "#D1AD89", "bold 16px kaiti") //装甲：
+					core.fillText(uictx, core.formatBigNumber(core.getRealStatus('arm'), false), 234, 69, "#D1AD89", "18px number", 100) //装甲数字
+
+					core.setTextAlign("outerUI", "center") //居中
+					core.fillText(uictx, "——海军属性——", 240, 89, "#55CCFF", "bold 16px kaiti", 150)
+					core.setTextAlign("outerUI", "left") //左对齐
+					core.fillRoundRect(uictx, 167, 95, 148, 49, 5, "rgba(0,0,0,0.5)"); //海军属性底板
+					core.drawIcon(uictx, "hp", 172, 97, 24, 24) //雷击
+					core.fillText(uictx, "雷击:", 196, 112.5, "#224499", "bold 16px kaiti") //雷击：
+					core.fillText(uictx, core.formatBigNumber(core.getRealStatus('top'), false), 234, 114, "#224499F", "18px number", 100) //雷击数字
+
+					core.drawIcon(uictx, "hp", 172, 121, 24, 24) //鱼雷
+					core.fillText(uictx, "鱼雷:", 196, 136.5, "#CC33FF", "bold 16px kaiti") //鱼雷：
+					core.fillText(uictx, core.formatBigNumber(core.getRealStatus('tpn'), false), 234, 138, "#CC33FF", "18px number", 100) //鱼雷数字
+
+					core.fillRoundRect(uictx, 325, 4, 148, 49, 5, "rgba(0,0,0,0.5)"); //非战斗属性底板
+					core.drawIcon(uictx, "hp", 330, 6, 24, 24) //黄金
+					core.fillText(uictx, "黄金:", 354, 21.5, "#FBBF3D", "bold 16px kaiti") //黄金：
+					core.fillText(uictx, core.formatBigNumber(core.getRealStatus('money'), false), 392, 23, "#FBBF3D", "18px number", 70) //黄金数字
+
+					core.drawIcon(uictx, "hp", 330, 30, 24, 24) //晋升
+					core.fillText(uictx, "晋升:", 354, 45.5, "#CCCC44", "bold 16px kaiti") //晋升：
+					core.fillText(uictx, core.formatBigNumber(core.control.getNextLvUpNeed(), false), 392, 47, "#CCCC44", "18px number", 70) //晋升数字
+
+
+
+					core.setTextAlign("outerUI", "center") //居中
+					if (core.getFlag("制空权") === 1) { //core.getFlag("制空权")===1
+						core.fillBoldText(uictx, "制空权↑", 400, 114, "#6633FF", "#000000", "bold 20px kaiti", 100)
+					} else if (core.getFlag("制空权") === 2) { //core.getFlag("制空权")===2
+						core.fillBoldText(uictx, "制空权↓", 400, 114, "#FF8844", "#000000", "bold 20px kaiti", 100) //制空权↓
+					}
+
+					core.setTextAlign("outerUI", "center") //居中
+					if (flags.skill > 0) { //flags.skill > 0
+						core.fillBoldText(uictx, core.plugin.skillInfo[flags.skill].name, 400, 140, "#28B6F6", "#000000", "bold 20px kaiti", 160) //技能显示 core.plugin.skillInfo[flags.skill].name
+					}
+				}
+			} else { // 横屏
+				core.clearMap(uictx, 0, 0, 150, 480); //左侧（0--150，0--480）
+				if (core.status.maps[core.status.floorId]) { // 绘制楼层名 地区 军衔
+					core.setTextAlign("outerUI", "center") //居中
+					core.fillBoldText(uictx, core.status.maps[core.status.floorId].name, 75, 18, "#00CCFF", "#000000", "bold 16px kaiti", 150)
+					core.setTextAlign("outerUI", "right") //右对齐
+					core.fillBoldText(uictx, core.status.maps[core.status.floorId].area, 134, 38, "#66FF33", "#000000", "bold 16px kaiti", 150)
+					core.setTextAlign("outerUI", "left") //左对齐
+					core.fillBoldText(uictx, core.getLvName(), 16, 38, "#CC9900", "#000000", "bold 16px kaiti", 150)
+				}
+				core.setTextAlign("outerUI", "center") //居中
+				let a = core.status.hard,
+					b = "",
+					c = ""; //难度
+				if (a === 'Massacre') {
+					b = "神剧";
+					c = "#60B103";
+				} else if (a === 'Arcade') {
+					b = "街机";
+					c = "#EBB659"
+				} else if (a === 'History') {
+					b = "历史";
+					c = "#CD0001"
+				}
+				core.fillBoldText(uictx, b, 75, 38, c, "#000000", "bold 16px kaiti");
+
+				core.setTextAlign("outerUI", "center") //居中
+				core.fillText(uictx, "————————————————————————", 75, 55, "#FFFFFF", "bold 16px kaiti")
+
+				core.setTextAlign("outerUI", "center") //居中
+				if (core.getFlag("制空权") === 1) { //core.getFlag("制空权")===1
+					core.fillBoldText(uictx, "制空权↑", 75, 73, "#6633FF", "#000000", "bold 16px kaiti")
+				} else if (core.getFlag("制空权") === 2) { //core.getFlag("制空权")===2
+					core.fillBoldText(uictx, "制空权↓", 75, 73, "#FF8844", "#000000", "bold 16px kaiti") //制空权↓
+				}
+
+
+				core.setTextAlign("outerUI", "left") //左对齐
+				if (core.getFlag("escort")) { //存在友军血量 
+					core.fillBoldText(uictx, "友军血量:", 10, 96, "#33FF99", "#000000", "bold 12px kaiti") //友军血量
+					core.fillBoldText(uictx, core.formatBigNumber(core.getFlag("友军血量")), 64, 96, "#33FF99", "#000000", "12px number", 102)
+				}
+
+				core.setTextAlign("outerUI", "center")
+				core.drawIcon(uictx, "hp", 4, 103, 32, 32)
+				core.fillRect(uictx, 36, 107, 106, 24, "#000000") //血槽
+				core.fillRect(uictx, 38, 109, 102 * hero.hp / hero.hpmax, 20, "#FF0000") //血	
+				core.fillText(uictx, core.formatBigNumber(hero.hp, true) + "/" + core.formatBigNumber(hero.hpmax, true), 89, 123.5, "#FFFFFF", "12px number", 102) //  血量数字
+
+				core.fillRoundRect(uictx, 4, 133, 142, 84, 5, "rgba(0,0,0,0.5)"); //常规状态底板
+				core.drawIcon(uictx, "hp", 4, 131, 32, 32) //攻击力
+				core.setTextAlign("outerUI", "left") //左对齐
+				core.fillText(uictx, "攻击:", 36, 153, "#FF0000", "bold 16px kaiti") //攻击：
+				core.fillText(uictx, core.formatBigNumber(core.getRealStatus("atk"), false), 74, 154.5, "#FF0000", "18px number", 70) //攻击数字
+
+				core.drawIcon(uictx, "hp", 4, 159, 32, 32) //指挥点	
+				core.fillText(uictx, "指挥点:", 36, 181, "#00CCFF", "bold 16px kaiti") //指挥点：
+				core.fillText(uictx, core.formatBigNumber(core.getRealStatus("mana"), false), 90, 182.5, "#00CCFF", "18px number", 54) //指挥点数字
+
+				core.drawIcon(uictx, "hp", 4, 187, 32, 32) //后勤点	
+				core.fillText(uictx, "后勤点:", 36, 209, "#AAFF88", "bold 16px kaiti") //后勤点：
+				core.fillText(uictx, core.formatBigNumber(core.getRealStatus("mdef"), false), 90, 210.5, "#AAFF88", "18px number", 54) //后勤点数字
+
+				core.setTextAlign("outerUI", "center") //居中
+				core.fillText(uictx, "——————————陆军属性——————————", 75, 235.5, "#FFFF00", "bold 16px kaiti")
+				core.setTextAlign("outerUI", "left") //左对齐
+				core.fillRoundRect(uictx, 4, 243, 142, 57, 5, "rgba(0,0,0,0.5)"); //陆军属性底板
+				core.drawIcon(uictx, "hp", 4, 241, 32, 32) //穿甲
+				core.fillText(uictx, "穿甲:", 36, 263, "#FFFFFF", "bold 16px kaiti") //穿甲：
+				core.fillText(uictx, core.formatBigNumber(core.getRealStatus('ap'), false), 74, 264.5, "#FFFFFF", "18px number", 70) //穿甲数字
+
+				core.drawIcon(uictx, "hp", 4, 269, 32, 32) //装甲
+				core.fillText(uictx, "装甲:", 36, 291, "#D1AD89", "bold 16px kaiti") //装甲：
+				core.fillText(uictx, core.formatBigNumber(core.getRealStatus('arm'), false), 74, 292.5, "#D1AD89", "18px number", 70) //装甲数字
+
+				core.setTextAlign("outerUI", "center") //居中
+				core.fillText(uictx, "——————————海军属性——————————", 75, 317.5, "#55CCFF", "bold 16px kaiti")
+				core.setTextAlign("outerUI", "left") //左对齐
+				core.fillRoundRect(uictx, 4, 325, 142, 57, 5, "rgba(0,0,0,0.5)"); //海军属性底板
+				core.drawIcon(uictx, "hp", 4, 323, 32, 32) //雷击
+				core.fillText(uictx, "雷击:", 36, 343.5, "#33CCFF", "bold 16px kaiti") //雷击：
+				core.fillText(uictx, core.formatBigNumber(core.getRealStatus('top'), false), 74, 345, "#33CCFF", "18px number", 70) //雷击数字
+
+				core.drawIcon(uictx, "hp", 4, 351, 32, 32) //鱼雷
+				core.fillText(uictx, "鱼雷:", 36, 373, "#CC33FF", "bold 16px kaiti") //鱼雷：
+				core.fillText(uictx, core.formatBigNumber(core.getRealStatus('tpn'), false), 74, 374.5, "#CC33FF", "18px number", 70) //鱼雷数字
+
+				core.setTextAlign("outerUI", "center") //居中
+				core.fillText(uictx, "————————————————————————", 75, 395, "#FFFFFF", "bold 16px kaiti")
+				core.setTextAlign("outerUI", "left") //左对齐
+				core.fillRoundRect(uictx, 4, 397, 142, 57, 5, "rgba(0,0,0,0.5)"); //非战斗属性底板
+				core.drawIcon(uictx, "hp", 4, 395, 32, 32) //黄金
+				core.fillText(uictx, "黄金:", 36, 417, "#FBBF3D", "bold 16px kaiti") //黄金：
+				core.fillText(uictx, core.formatBigNumber(core.getRealStatus('money'), false), 74, 418.5, "#FBBF3D", "18px number", 70) //黄金数字
+
+				core.drawIcon(uictx, "hp", 4, 423, 32, 32) //晋升
+				core.fillText(uictx, "晋升:", 36, 445, "#CCCC44", "bold 16px kaiti") //晋升：
+				core.fillText(uictx, core.formatBigNumber(core.control.getNextLvUpNeed(), false), 74, 446.5, "#CCCC44", "18px number", 70) //晋升数字
+
+				core.setTextAlign("outerUI", "center") //居中
+				if (flags.skill > 0) {
+					core.fillBoldText(uictx, core.plugin.skillInfo[flags.skill].name, 75, 472, "#28B6F6", "#000000", "bold 20px kaiti", 142) //技能显示
+				}
+
+
+
+			}
+
+
+		}
+
+		//横屏右侧（630--780，0--480）竖屏下部（0--480，630，780）
+
+		_update_skills() { //当前技能栏
+			const skill1 = core.plugin.skillInfo[flags?.skillList?.[0] || 0];
+			const skill2 = core.plugin.skillInfo[flags?.skillList?.[1] || 0];
+			const skill3 = core.plugin.skillInfo[flags?.skillList?.[2] || 0];
+			const skill4 = core.plugin.skillInfo[flags?.skillList?.[3] || 0];
+			const skill5 = core.plugin.skillInfo[flags?.skillList?.[4] || 0];
+			const skill6 = core.plugin.skillInfo[flags?.skillList?.[5] || 0];
+			const skill7 = core.plugin.skillInfo[flags?.skillList?.[6] || 0];
+
+
+			if (core.domStyle.isVertical) { // 竖屏下部
+				core.clearMap(uictx, 0, 630, 160, 150);
+				core.fillRoundRect(uictx, 4, 633, 152, 144, 5, "rgba(0,0,0,0.5)"); //技能栏底板								 
+				core.setTextAlign("outerUI", "left") //左对齐								 
+				core.drawIcon(uictx, "btn1", 5, 635, 20, 20) //技能标记
+				core.fillBoldText(uictx, skill1.name + " " + skill1.cost, 29, 650, skill1.strategy ? "#FF0000" : "#00FF00", "#000000", "14px number", 126) //  技能名+消耗								 
+
+				core.drawIcon(uictx, "btn2", 5, 655, 20, 20) //技能标记
+				core.fillBoldText(uictx, skill2.name + " " + skill2.cost, 29, 670, skill2.strategy ? "#FF0000" : "#00FF00", "#000000", "14px number", 126) //  技能名+消耗
+
+				core.drawIcon(uictx, "btn3", 5, 675, 20, 20) //技能标记
+				core.fillBoldText(uictx, skill3.name + " " + skill3.cost, 29, 690, skill3.strategy ? "#FF0000" : "#00FF00", "#000000", "14px number", 126) //  技能名+消耗
+
+				core.drawIcon(uictx, "btn4", 5, 695, 20, 20) //技能标记
+				core.fillBoldText(uictx, skill4.name + " " + skill4.cost, 29, 710, skill4.strategy ? "#FF0000" : "#00FF00", "#000000", "14px number", 126) //  技能名+消耗
+
+				core.drawIcon(uictx, "btn5", 5, 715, 20, 20) //技能标记
+				core.fillBoldText(uictx, skill5.name + " " + skill5.cost, 29, 730, skill5.strategy ? "#FF0000" : "#00FF00", "#000000", "14px number", 126) //  技能名+消耗
+
+				core.drawIcon(uictx, "btn6", 5, 735, 20, 20) //技能标记
+				core.fillBoldText(uictx, skill6.name + " " + skill6.cost, 29, 750, skill6.strategy ? "#FF0000" : "#00FF00", "#000000", "14px number", 126) //  技能名+消耗							 
+
+				core.drawIcon(uictx, "btn7", 5, 755, 20, 20) //技能标记
+				core.fillBoldText(uictx, skill7.name + " " + skill7.cost, 29, 770, skill7.strategy ? "#FF0000" : "#00FF00", "#000000", "14px number", 126) //  技能名+消耗	
+
+
+			} else { //横屏右侧
+				core.clearMap(uictx, 630, 0, 150, 171);
+				core.fillRoundRect(uictx, 634, 6, 142, 167, 5, "rgba(0,0,0,0.5)"); //技能栏底板								 
+				core.setTextAlign("outerUI", "left") //左对齐
+				core.drawIcon(uictx, "btn1", 634, 5, 24, 24) //技能标记
+				core.fillBoldText(uictx, skill1.name + " " + skill1.cost, 662, 22, skill1.strategy ? "#FF0000" : "#00FF00", "#000000", "16px number", 112) //  技能名+消耗
+
+				core.drawIcon(uictx, "btn2", 634, 29, 24, 24) //技能标记
+				core.fillBoldText(uictx, skill2.name + " " + skill2.cost, 662, 46, skill2.strategy ? "#FF0000" : "#00FF00", "#000000", "16px number", 112) //  技能名+消耗
+
+				core.drawIcon(uictx, "btn3", 634, 53, 24, 24) //技能标记
+				core.fillBoldText(uictx, skill3.name + " " + skill3.cost, 662, 70, skill3.strategy ? "#FF0000" : "#00FF00", "#000000", "16px number", 112) //  技能名+消耗
+
+				core.drawIcon(uictx, "btn4", 634, 77, 24, 24) //技能标记
+				core.fillBoldText(uictx, skill4.name + " " + skill4.cost, 662, 94, skill4.strategy ? "#FF0000" : "#00FF00", "#000000", "16px number", 112) //  技能名+消耗
+
+				core.drawIcon(uictx, "btn5", 634, 101, 24, 24) //技能标记
+				core.fillBoldText(uictx, skill5.name + " " + skill5.cost, 662, 118, skill5.strategy ? "#FF0000" : "#00FF00", "#000000", "16px number", 112) //  技能名+消耗
+
+				core.drawIcon(uictx, "btn6", 634, 125, 24, 24) //技能标记
+				core.fillBoldText(uictx, skill6.name + " " + skill6.cost, 662, 142, skill6.strategy ? "#FF0000" : "#00FF00", "#000000", "16px number", 112) //  技能名+消耗							 
+
+				core.drawIcon(uictx, "btn7", 634, 149, 24, 24) //技能标记
+				core.fillBoldText(uictx, skill7.name + " " + skill7.cost, 662, 166, skill7.strategy ? "#FF0000" : "#00FF00", "#000000", "16px number", 112) //  技能名+消耗	
+
+
+			}
+		}
+
+		_update_keys() { //钥匙栏
+			if (!core.domStyle.isVertical) { // 横屏右侧								 
+				core.clearMap(uictx, 630, 173, 150, 47);
+				core.setTextAlign("outerUI", "left") //左对齐								 
+				core.drawIcon(uictx, "yellowKey", 652, 174, 24, 24) //黄钥匙
+				core.setTextAlign("outerUI", "center") //居中								 
+				core.fillText(uictx, core.itemCount("yellowKey"), 660, 216, "#FFCCAA", "18px number", 42) //黄钥匙数量
+
+				core.setTextAlign("outerUI", "left") //左对齐	
+				core.drawIcon(uictx, "blueKey", 694, 174, 24, 24) //蓝钥匙
+				core.setTextAlign("outerUI", "center") //居中								 
+				core.fillText(uictx, core.itemCount("blueKey"), 702, 216, "#CCCCFF", "18px number", 42) //蓝钥匙数量
+
+				core.setTextAlign("outerUI", "left") //左对齐	
+				core.drawIcon(uictx, "redKey", 736, 174, 24, 24) //红钥匙
+				core.setTextAlign("outerUI", "center") //居中									 
+				core.fillText(uictx, core.itemCount("redKey"), 744, 216, "#FF8888", "18px number", 42) //红钥匙数量								 
+			} else { //竖屏上部！							 
+				core.clearMap(uictx, 320, 53, 119, 39)
+				core.setTextAlign("outerUI", "left") //左对齐								 
+				core.drawIcon(uictx, "yellowKey", 356, 54, 16, 16) //黄钥匙
+				core.setTextAlign("outerUI", "center") //居中	
+				core.fillText(uictx, core.itemCount("yellowKey"), 362, 88, "#FFCCAA", "16px number", 56) //黄钥匙数量
+
+				core.drawIcon(uictx, "blueKey", 397, 54, 16, 16) //蓝钥匙
+				core.setTextAlign("outerUI", "center") //居中	
+				core.fillText(uictx, core.itemCount("blueKey"), 403, 88, "#CCCCFF", "16px number", 56) //蓝钥匙数量
+
+				core.drawIcon(uictx, "redKey", 440, 54, 16, 16) //红钥匙
+				core.setTextAlign("outerUI", "center") //居中	
+				core.fillText(uictx, core.itemCount("redKey"), 446, 88, "#FF8888", "16px number", 56) //红钥匙数量
+
+			}
+		}
+
+		_update_missions() { //当前任务栏   
+			if (!core.taskSystem.tasksInfo[0]) return;
+			if (core.domStyle.isVertical) { // 竖屏
+				core.clearMap(uictx, 161, 631, 160, 50);
+				core.fillRoundRect(uictx, 168, 640, 135, 35, 15, "rgba(0,0,0,0.5)") //任务底板	
+
+				if (!core.taskSystem.checkTask(0)) { //任务一 未完成								 
+					core.drawIcon(uictx, "star1", 180, 644, 24, 24)
+				} else { // 任务一 已完成
+					core.drawIcon(uictx, "star2", 180, 644, 24, 24)
+				}
+
+				if (!core.taskSystem.checkTask(1)) { //任务二 未完成								 
+					core.drawIcon(uictx, "star1", 223, 644, 24, 24)
+				} else { // 任务二 已完成
+					core.drawIcon(uictx, "star2", 223, 644, 24, 24)
+				}
+
+				if (!core.taskSystem.checkTask(2)) { //任务三 未完成								 
+					core.drawIcon(uictx, "star1", 266, 644, 24, 24)
+				} else { // 任务三 已完成
+					core.drawIcon(uictx, "star2", 266, 644, 24, 24)
+				}
+
+			} else { //横屏
+				core.clearMap(uictx, 630, 220, 150, 40);
+				core.fillRoundRect(uictx, 637, 220, 131, 35, 15, "rgba(0,0,0,0.5)") //任务底板
+
+				if (!core.taskSystem.checkTask(0)) { //任务一 未完成								 
+					core.drawIcon(uictx, "star1", 648, 224, 24, 24)
+				} else { // 任务一 已完成
+					core.drawIcon(uictx, "star2", 648, 224, 24, 24)
+				}
+
+				if (!core.taskSystem.checkTask(1)) { //任务二 未完成								 
+					core.drawIcon(uictx, "star1", 690, 224, 24, 24)
+				} else { // 任务二 已完成
+					core.drawIcon(uictx, "star2", 690, 224, 24, 24)
+				}
+
+				if (!core.taskSystem.checkTask(2)) { //任务三 未完成								 
+					core.drawIcon(uictx, "star1", 732, 224, 24, 24)
+				} else { // 任务三 已完成
+					core.drawIcon(uictx, "star2", 732, 224, 24, 24)
+				}
+
+			}
+		}
+
+		_update_state() { //异常状态
+			if (core.domStyle.isVertical) { //竖屏
+				core.clearMap(uictx, 161, 681, 160, 50);
+				core.fillRoundRect(uictx, 168, 688, 135, 35, 15, "rgba(0,0,0,0.5)") //任务底板								 
+				core.setTextAlign("outerUI", "center");
+				if (true) { //异常状态检测需改动
+					core.fillText(uictx, "异常状态", 235.5, 710, "#FFAACC", "16px number", 130) //异常状态文字显示
+				} else {
+					core.fillText(uictx, "暂无异常状态", 235.5, 710, "#FFAACC", "16px number", 130)
+				}
+			} else { //横屏	
+				core.clearMap(uictx, 630, 261, 150, 40);
+				core.fillRoundRect(uictx, 637, 261, 131, 35, 15, "rgba(0,0,0,0.5)"); //异常状态底板
+				core.setTextAlign("outerUI", "center");
+				if (true) { //异常状态检测需改动
+					core.fillText(uictx, "异常状态", 702.5, 283, "#FFAACC", "16px number", 120) //异常状态文字显示
+				} else {
+					core.fillText(uictx, "暂无异常状态", 702.5, 283, "#FFAACC", "16px number", 120)
+				}
+			}
+		}
+
+
+		_update_items() { //道具栏 下午茶 可乐 手册 楼传 背包 
+			if (core.domStyle.isVertical) { // 竖屏
+				core.clearMap(uictx, 161, 731, 160, 50); //下部 中间格 最下区 下午茶+可乐								 
+				core.setTextAlign("outerUI", "left");
+
+				core.drawIcon(uictx, "tea", 165, 737, 26, 32)
+				core.fillText(uictx, core.itemCount("tea"), 190, 761, "#FF3366", "24px number", 49)
+
+
+				core.drawIcon(uictx, "cola", 225, 738.5, 26, 32)
+				core.fillText(uictx, core.itemCount("cola"), 250, 761, "#FFB728", "24px number", 49)
+
+
+				core.clearMap(uictx, 321, 630, 53, 150); //下部  右侧格	最左区	
+
+				core.drawIcon(uictx, "book", 327, 636, 42, 42)
+
+				core.drawIcon(uictx, "fly", 327, 684, 42, 42)
+
+
+				core.drawIcon(uictx, "pack", 327, 732, 42, 42)
+
+
+			} else { //横屏
+				core.clearMap(uictx, 630, 301, 150, 80);
+				core.setTextAlign("outerUI", "left");
+
+				core.drawIcon(uictx, "tea", 634, 303, 26, 32)
+				core.fillText(uictx, core.itemCount("tea"), 659, 328, "#FF3366", "24px number", 45)
+
+
+				core.drawIcon(uictx, "cola", 709, 304.5, 26, 32)
+				core.fillText(uictx, core.itemCount("cola"), 734, 328, "#FFB728", "24px number", 45)
+
+
+
+				core.drawIcon(uictx, "book", 634, 338, 42, 42)
+
+				core.drawIcon(uictx, "fly", 684, 338, 42, 42)
+
+
+				core.drawIcon(uictx, "pack", 734, 338, 42, 42)
+
+
+
+			}
+		}
+
+		_update_toolBox() { //工具栏
+			const tools = core.isReplaying() ? [
+				[core.status.replay.pausing ? "play" : "pause", "stop", "rewind"],
+				["speedDown", "speedUp", "save"],
+			] : [
+				["keyboard", "shop", "T732"],
+				["save", "load", "settings"],
+			];
+
+			if (core.domStyle.isVertical) { //竖屏
+				core.clearMap(uictx, 374, 631, 106, 150);
+				for (let i = 0; i < tools.length; i++) {
+					for (let j = 0; j < tools[i].length; j++) {
+						core.drawIcon(uictx, tools[i][j], 377 + 50 * i, 636 + 48 * j, 42, 42);
+					}
+				}
+			} else { //横屏
+				core.clearMap(uictx, 630, 381, 150, 100);
+				for (let i = 0; i < tools.length; i++) {
+					for (let j = 0; j < tools[i].length; j++) {
+						core.drawIcon(uictx, tools[i][j], 636 + 50 * j, 384 + 46 * i, 42, 42);
+					}
+				}
+			}
+		}
+
+		showmetheui() { //ui显示
+			outerBackground.style.display = "block";
+			outerUI.style.display = "block";
+			this.update();
+		}
+
+		hidetheui() { //ui隐藏
+			outerBackground.style.display = "none";
+			outerUI.style.display = "none";
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+		onclick(x, y) { //点击
+			const makeBox = ([x, y], [w, h]) => {
+				return [
+					[x, y],
+					[x + w, y + h],
+				];
+			};
+			const gridify = ([x, y], [gw, gh]) => {
+				return [Math.floor(x / gw), Math.floor(y / gh)];
+			};
+
+			const inRect = ([x, y], [
+				[sx, sy],
+				[dx, dy]
+			]) => {
+				return sx <= x && x <= dx && sy <= y && y <= dy;
+			};
+
+			const relativeTo = ([x, y], [ax, ay]) => {
+				return [x - ax, y - ay];
+			};
+			const pos = [x, y];
+
+			if (core.domStyle.isVertical) { //竖屏
+
+
+				const skillsBox = makeBox( //技能栏
+					[4, 635],
+					[152, 20 * 7]
+				)
+				if (inRect(pos, skillsBox)) {
+					if (
+						core.isReplaying() ||
+						core.status.lockControl ||
+						core.isMoving()
+					)
+						return;
+					const click = Math.min(Math.floor((y - 635) / 20), 6);
+					core.keyUp(49 + click);
+				}
+
+				const missionsBox = makeBox( //任务栏
+					[168, 640],
+					[135, 35]
+				)
+				if (inRect(pos, missionsBox)) {
+					if (
+						core.isReplaying() ||
+						core.status.lockControl ||
+						core.isMoving() ||
+						!core.taskSystem.tasksInfo[0]
+					)
+						return;
+					/*let text = `${core.taskSystem.checkTask(0)?"\\i[star2]":"\\i[star1]"}${core.taskSystem.tasksInfo[0].name}
+${core.taskSystem.tasksInfo[0].text}
+${core.taskSystem.checkTask(1)?"\\i[star2]":"\\i[star1]"}${core.taskSystem.tasksInfo[1].name}
+${core.taskSystem.tasksInfo[1].text}
+${core.taskSystem.checkTask(2)?"\\i[star2]":"\\i[star1]"}${core.taskSystem.tasksInfo[2].name}
+${core.taskSystem.tasksInfo[2].text}`;*/
+					let text = ""
+					text += (core.taskSystem.checkTask(0) ? "\\i[star2]" : "\\i[star1]") + core.taskSystem.tasksInfo[0].name + "\\n"
+					core.taskSystem.tasksInfo[0].tasks.forEach(v => {
+						if (v.type === "arrival") text += v.text + "(" + v.has + "/1)\\n"
+						else if (v.type === "killAll") text += v.text + "(剩余" + v.has + ")\\n"
+						else if (v.type === "outer") text += v.text + "\\n"
+						else text += v.text + "(" + v.has + "/" + v.count + ")\\n"
+					})
+					text += (core.taskSystem.checkTask(1) ? "\\i[star2]" : "\\i[star1]") + core.taskSystem.tasksInfo[1].name + "\\n"
+					core.taskSystem.tasksInfo[1].tasks.forEach(v => {
+						if (v.type === "arrival") text += v.text + "(" + v.has + "/1)\\n"
+						else if (v.type === "killAll") text += v.text + "(剩余" + v.has + ")\\n"
+						else if (v.type === "outer") text += v.text + "\\n"
+						else text += v.text + "(" + v.has + "/" + v.count + ")\\n"
+					})
+					text += (core.taskSystem.checkTask(2) ? "\\i[star2]" : "\\i[star1]") + core.taskSystem.tasksInfo[2].name + "\\n"
+					core.taskSystem.tasksInfo[2].tasks.forEach(v => {
+						if (v.type === "arrival") text += v.text + "(" + v.has + "/1)\\n"
+						else if (v.type === "killAll") text += v.text + "(剩余" + v.has + ")\\n"
+						else if (v.type === "outer") text += v.text + "\\n"
+						else text += v.text + "(" + v.has + "/" + v.count + ")\\n"
+					})
+					const length = core.status.route.length;
+					core.insertAction(text, void 0, void 0, () => core.status.route.length = length);
+
+				}
+
+				const teaBox = makeBox( //茶
+					[165, 737],
+					[60, 32]
+				)
+				if (inRect(pos, teaBox)) {
+					if (
+						core.isReplaying() ||
+						core.status.lockControl ||
+						core.isMoving() ||
+						core.itemCount("tea") === 0
+					)
+						return;
+					core.useItem("tea");
+				}
+
+				const colaBox = makeBox( //可乐
+					[225, 738.5],
+					[60, 32]
+				)
+				if (inRect(pos, colaBox)) {
+					if (
+						core.isReplaying() ||
+						core.status.lockControl ||
+						core.isMoving() ||
+						core.itemCount("cola") === 0
+					)
+						return;
+					core.useItem("cola");
+				}
+
+				const bookBox = makeBox( //手册
+					[327, 636],
+					[42, 42]
+				);
+
+				if (inRect(pos, bookBox)) {
+					if (core.status.event.id == "viewMaps" ||
+						core.status.event.id == "fly")
+						core.openBook(true);
+					if (core.isReplaying() || core.status.lockControl || core.isMoving()) { return; }
+					core.openBook(true);
+				}
+
+				const flyBox = makeBox( //楼传
+					[327, 684],
+					[42, 42]
+				);
+				if (inRect(pos, flyBox)) {
+					if (core.isReplaying() || core.status.lockControl || core.isMoving()) { return; }
+					core.useFly(true)
+				}
+
+
+				const packBox = makeBox( //背包
+					[327, 732],
+					[42, 42]
+				);
+				if (inRect(pos, packBox)) {
+					if (core.isReplaying() || core.status.lockControl || core.isMoving()) { return; }
+					core.openToolbox(true)
+				}
+
+
+
+
+				const toolBox = makeBox( //工具栏修改  
+					[372, 631],
+					[49.5 * 2, 50 * 3]
+				);
+				if (inRect(pos, toolBox)) {
+					const [col, row] = gridify(relativeTo(pos, toolBox[0]), [50, 50]);
+					if (core.isReplaying()) {
+						this.replayAction[col][row].call(core);
+					} else if (core.isPlaying()) {
+						if (col === 0 && row === 2) {
+							core.doSL("autoSave", "load");
+						} else {
+							this.toolbarAction[col][row].call(core, true);
+						}
+					}
+					return;
+				}
+
+			} else { //横屏
+
+
+
+				const skillsBox = makeBox( //技能栏
+					[634, 5],
+					[142, 24 * 7]
+				)
+				if (inRect(pos, skillsBox)) {
+					if (
+						core.isReplaying() ||
+						core.status.lockControl ||
+						core.isMoving()
+					)
+						return;
+					const click = Math.min(Math.floor((y - 5) / 24), 6);
+					core.keyUp(49 + click);
+					return;
+				}
+
+				const missionsBox = makeBox( //任务栏
+					[637, 220],
+					[131, 35]
+				)
+				if (inRect(pos, missionsBox)) {
+					if (
+						core.isReplaying() ||
+						core.status.lockControl ||
+						core.isMoving() ||
+						!core.taskSystem.tasksInfo[0]
+					)
+						return;
+					/*let text = `${core.taskSystem.checkTask(0)?"\\i[star2]":"\\i[star1]"}${core.taskSystem.tasksInfo[0].name}
+${core.taskSystem.tasksInfo[0].text}
+${core.taskSystem.checkTask(1)?"\\i[star2]":"\\i[star1]"}${core.taskSystem.tasksInfo[1].name}
+${core.taskSystem.tasksInfo[1].text}
+${core.taskSystem.checkTask(2)?"\\i[star2]":"\\i[star1]"}${core.taskSystem.tasksInfo[2].name}
+${core.taskSystem.tasksInfo[2].text}`;*/
+					let text = ""
+					text += (core.taskSystem.checkTask(0) ? "\\i[star2]" : "\\i[star1]") + core.taskSystem.tasksInfo[0].name + "\\n"
+					core.taskSystem.tasksInfo[0].tasks.forEach(v => {
+						if (v.type === "arrival") text += v.text + "(" + v.has + "/1)\\n"
+						else if (v.type === "killAll") text += v.text + "(剩余" + v.has + ")\\n"
+						else if (v.type === "outer") text += v.text + "\\n"
+						else text += v.text + "(" + v.has + "/" + v.count + ")\\n"
+					})
+					text += (core.taskSystem.checkTask(1) ? "\\i[star2]" : "\\i[star1]") + core.taskSystem.tasksInfo[1].name + "\\n"
+					core.taskSystem.tasksInfo[1].tasks.forEach(v => {
+						if (v.type === "arrival") text += v.text + "(" + v.has + "/1)\\n"
+						else if (v.type === "killAll") text += v.text + "(剩余" + v.has + ")\\n"
+						else if (v.type === "outer") text += v.text + "\\n"
+						else text += v.text + "(" + v.has + "/" + v.count + ")\\n"
+					})
+					text += (core.taskSystem.checkTask(2) ? "\\i[star2]" : "\\i[star1]") + core.taskSystem.tasksInfo[2].name + "\\n"
+					core.taskSystem.tasksInfo[2].tasks.forEach(v => {
+						if (v.type === "arrival") text += v.text + "(" + v.has + "/1)\\n"
+						else if (v.type === "killAll") text += v.text + "(剩余" + v.has + ")\\n"
+						else if (v.type === "outer") text += v.text + "\\n"
+						else text += v.text + "(" + v.has + "/" + v.count + ")\\n"
+					})
+					const length = core.status.route.length;
+					core.insertAction(text, void 0, void 0, () => core.status.route.length = length);
+				}
+
+				const teaBox = makeBox( //茶
+					[634, 303],
+					[75, 32]
+				)
+				if (inRect(pos, teaBox)) {
+					if (
+						core.isReplaying() ||
+						core.status.lockControl ||
+						core.isMoving() ||
+						core.itemCount("tea") === 0
+					)
+						return;
+					core.useItem("tea");
+				}
+
+				const colaBox = makeBox( //可乐
+					[709, 304.5],
+					[75, 32]
+				)
+				if (inRect(pos, colaBox)) {
+					if (
+						core.isReplaying() ||
+						core.status.lockControl ||
+						core.isMoving() ||
+						core.itemCount("cola") === 0
+					)
+						return;
+					core.useItem("cola");
+				}
+
+				const bookBox = makeBox( //手册
+					[634, 338],
+					[42, 42]
+				);
+
+				if (inRect(pos, bookBox)) {
+					if (core.status.event.id == "viewMaps" ||
+						core.status.event.id == "fly")
+						core.openBook(true);
+					if (core.isReplaying() || core.status.lockControl || core.isMoving()) { return; }
+					core.openBook(true);
+				}
+
+				const flyBox = makeBox( //楼传
+					[684, 338],
+					[42, 42]
+				);
+				if (inRect(pos, flyBox)) {
+					if (core.isReplaying() || core.status.lockControl || core.isMoving()) { return; }
+					core.useFly(true)
+				}
+
+
+				const packBox = makeBox( //背包
+					[734, 338],
+					[42, 42]
+				);
+				if (inRect(pos, packBox)) {
+					if (core.isReplaying() || core.status.lockControl || core.isMoving()) { return; }
+					core.openToolbox(true)
+				}
+
+
+
+				const toolBox = makeBox( //工具栏
+					[630, 381],
+					[50 * 3, 50 * 2]
+				);
+				if (inRect(pos, toolBox)) {
+					const [row, col] = gridify(relativeTo(pos, toolBox[0]), [50, 50]);
+					if (core.isReplaying()) {
+						this.replayAction[col][row].call(core);
+					} else if (core.isPlaying()) {
+						if (col === 0 && row === 2) {
+							core.doSL("autoSave", "load");
+						} else {
+							this.toolbarAction[col][row].call(core, true);
+						}
+					}
+					return;
+				}
+			}
+		}
 	}
+
+	core.ui.statusBar = new StatusBar();
+
+	core.control.clearStatusBar = function () {
+		core.clearMap("outerUI");
+	};
+	// init() called in `afterLoadResources`.
+},
+    "函数复写": function () {
+	core.statusBar.icons = {
+		floor: 0,
+		name: null,
+		lv: 1,
+		hpmax: 2,
+		hp: 3,
+		atk: 4,
+		def: 5,
+		mdef: 6,
+		money: 7,
+		exp: 8,
+		up: 9,
+		book: 10,
+		fly: 11,
+		toolbox: 12,
+		keyboard: 13,
+		shop: 14,
+		save: 15,
+		load: 16,
+		settings: 17,
+		play: 18,
+		pause: 19,
+		stop: 20,
+		speedDown: 21,
+		speedUp: 22,
+		rewind: 23,
+		equipbox: 24,
+		mana: 25,
+		skill: 26,
+		exit: null,
+		btn1: 27,
+		btn2: 28,
+		btn3: 29,
+		btn4: 30,
+		btn5: 31,
+		btn6: 32,
+		btn7: 33,
+		alt: 34,
+		keys: null,
+		help: null,
+		battle: null,
+	};
+	core.actions._getClickLoc = function (x, y) {
+		var size = 32 * core.domStyle.scale;
+		var left = main.dom.gameDraw.offsetLeft + main.dom.gameGroup.offsetLeft;
+		var top = main.dom.gameDraw.offsetTop + main.dom.gameGroup.offsetTop;
+		var loc = {
+			x: Math.max(x - left, 0),
+			y: Math.max(y - top, 0),
+			size: size,
+		};
+		return loc;
+	};
+	/*core.ui._drawWindowSelector = function (background, x, y, w, h) {
+		w = Math.round(w) + 48;
+		h = Math.round(h);
+		var ctx = core.ui.createCanvas("_selector", x - 24, y, w, h, 165);
+		ctx.canvas.id = "";
+		this._drawSelector(ctx, background, w, h);
+	};
+
+	core.ui._drawSelector = function (ctx, background, w, h, left, top) {
+		left = left || 0;
+		top = top || 0;
+		ctx = this.getContextByName(ctx);
+		if (!ctx) return;
+		if (typeof background == "string")
+			background = core.material.images.images[background];
+		if (!(background instanceof Image)) return;
+		// badge
+		ctx.drawImage(background, 132, 68, 24, 24, left + 4, top + 4, 24, 24);
+		ctx.drawImage(
+			background,
+			132,
+			68,
+			24,
+			24,
+			w - left - 28,
+			top + 4,
+			24,
+			24
+		);
+	};*/
+
+	enemys.prototype._nextCriticals_useBinarySearch = function (
+		enemy,
+		info,
+		number,
+		x,
+		y,
+		floorId
+	) {
+		var mon_hp = info.mon_hp,
+			hero_atk = core.status.hero.atk,
+			mon_def = info.mon_def,
+			pre = info.damage;
+		var list = [];
+		var start_atk = hero_atk;
+		if (info.__over__) {
+			start_atk += info.__overAtk__;
+			list.push([info.__overAtk__, -info.damage]);
+		}
+		var calNext = function (currAtk, maxAtk) {
+			var start = Math.floor(currAtk),
+				end = Math.floor(maxAtk);
+			if (start > end) return null;
+
+			while (start < end) {
+				var mid = Math.floor((start + end) / 2);
+				if (mid - start > end - mid) mid--;
+				var nextInfo = core.enemys.getDamageInfo(
+					enemy, { atk: mid },
+					x,
+					y,
+					floorId
+				);
+				if (nextInfo == null || typeof nextInfo == "number") return null;
+				if (pre > nextInfo.damage) end = mid;
+				else start = mid + 1;
+			}
+			var nextInfo = core.enemys.getDamageInfo(
+				enemy, { atk: start },
+				x,
+				y,
+				floorId
+			);
+			return nextInfo == null ||
+				typeof nextInfo == "number" ||
+				nextInfo.damage >= pre ?
+				null : [start, nextInfo.damage];
+		};
+		var currAtk = start_atk;
+		while (true) {
+			var next = calNext(currAtk + 1, Number.MAX_SAFE_INTEGER, pre);
+			if (next == null) break;
+			currAtk = next[0];
+			pre = next[1];
+			list.push([currAtk - hero_atk, info.damage - pre]);
+			if (pre <= 0 && !core.flags.enableNegativeDamage) break;
+			if (list.length >= number) break;
+		}
+		if (list.length == 0) list.push([0, 0]);
+		return list;
+	};
+	core.ui.clearMap = function (name, x, y, width, height) {
+		if (name == "all") {
+			for (var m in core.canvas) {
+				core.canvas[m].clearRect(
+					-32,
+					-32,
+					core.canvas[m].canvas.width + 32,
+					core.canvas[m].canvas.height + 32
+				);
+			}
+			core.clearMap("outerUI");
+			core.dom.gif.innerHTML = "";
+			core.removeGlobalAnimate();
+			core.deleteCanvas(function (one) {
+				return one.startsWith("_bigImage_");
+			});
+			core.setWeather(null);
+		} else {
+			var ctx = this.getContextByName(name);
+			if (ctx)
+				ctx.clearRect(
+					x || 0,
+					y || 0,
+					width || ctx.canvas.width,
+					height || ctx.canvas.height
+				);
+		}
+	};
+	events.prototype.openBook = function (fromUserAction) {
+		if (core.isReplaying()) return;
+		// 如果能恢复事件（从callBook事件触发）
+		if (
+			core.status.event.id == "book" &&
+			core.events.recoverEvents(core.status.event.interval)
+		)
+			return;
+		// 当前是book，且从“浏览地图”打开
+		if (core.status.event.id == "book" && core.status.event.ui) {
+			core.status.boxAnimateObjs = [];
+			core.ui._drawViewMaps(core.status.event.ui);
+			return;
+		}
+		// 从“浏览地图”页面打开
+		if (core.status.event.id == "viewMaps" || core.status.event.id == "fly") {
+			fromUserAction = false;
+			core.status.event.ui = core.status.event.data;
+		}
+		if (!this._checkStatus("book", fromUserAction, true)) return;
+		core.playSound("打开界面");
+		core.useItem("book", true);
+	};
+	////// 怪物手册界面时，放开某个键的操作 //////
+	core.actions._keyUpBook = function (keycode) {
+		if (keycode == 27 || keycode == 88) {
+			core.playSound("取消");
+			if (core.events.recoverEvents(core.status.event.interval)) {
+				return;
+			} else if (core.status.event.ui != null) {
+				core.status.boxAnimateObjs = [];
+				if (typeof core.status.event.ui === "number") {
+					core.status.event.id = "fly";
+					core.ui.drawFly(core.status.event.ui);
+				} else {
+					core.ui._drawViewMaps(core.status.event.ui);
+				}
+			} else core.ui.closePanel();
+			return;
+		}
+		if (keycode == 13 || keycode == 32 || keycode == 67) {
+			var data = core.status.event.data;
+			if (data != null) {
+				core.ui._drawBookDetail(data);
+			}
+			return;
+		}
+	};
+	////// 怪物手册界面的点击操作 //////
+	actions.prototype._clickBook = function (x, y) {
+		var pageinfo = core.ui._drawBook_pageinfo();
+		// 上一页
+		if (
+			(x == this._HX_ - 2 || x == this._HX_ - 3) &&
+			y === core._HEIGHT_ - 1
+		) {
+			core.playSound("光标移动");
+			core.ui.drawBook(core.status.event.data - pageinfo.per_page);
+			return;
+		}
+		// 下一页
+		if (
+			(x == this._HX_ + 2 || x == this._HX_ + 3) &&
+			y === core._HEIGHT_ - 1
+		) {
+			core.playSound("光标移动");
+			core.ui.drawBook(core.status.event.data + pageinfo.per_page);
+			return;
+		}
+		// 返回
+		if (x >= this.LAST - 2 && y === core._HEIGHT_ - 1) {
+			core.playSound("取消");
+			if (core.events.recoverEvents(core.status.event.interval)) {
+				return;
+			} else if (core.status.event.ui != null) {
+				core.status.boxAnimateObjs = [];
+				if (typeof core.status.event.ui === "number") {
+					core.status.event.id = "fly";
+					core.ui.drawFly(core.status.event.ui);
+				} else {
+					core.ui._drawViewMaps(core.status.event.ui);
+				}
+			} else core.ui.closePanel();
+			return;
+		}
+		// 怪物信息
+		var data = core.status.event.data;
+		if (data != null && y < core._HEIGHT_ - 1) {
+			var per_page = pageinfo.per_page,
+				page = parseInt(data / per_page);
+			var u = (core._HEIGHT_ - 1) / per_page;
+			for (var i = 0; i < per_page; ++i) {
+				if (y >= u * i && y < u * (i + 1)) {
+					var index = per_page * page + i;
+					core.ui.drawBook(index);
+					core.ui._drawBookDetail(index);
+					break;
+				}
+			}
+			return;
+		}
+		return;
+	};
+
+	////// 战斗 //////
+	events.prototype.battle = function (id, x, y, force, callback) {
+		core.saveAndStopAutomaticRoute();
+		id = id || core.getBlockId(x, y);
+		const cls = core.getClsFromId(id);
+		if (!id || !cls || !(cls === 'enemys' || cls === 'enemy48')) return core.clearContinueAutomaticRoute(callback);
+		if (!id) return core.clearContinueAutomaticRoute(callback);
+		// 非强制战斗
+		if (!core.enemys.canBattle(id, x, y) && !force && !core.status.event.id) {
+			core.stopSound();
+			core.playSound('操作失败');
+			core.drawTip("你打不过此怪物！", id);
+			return core.clearContinueAutomaticRoute(callback);
+		}
+		// 自动存档
+		if (!core.status.event.id) core.autosave(true);
+		// 战前事件
+		if (!this.beforeBattle(id, x, y))
+			return core.clearContinueAutomaticRoute(callback);
+		// 战后事件
+		this.afterBattle(id, x, y);
+		if (callback) callback();
+	}
+	// 禁止手动换装，只能在事件中用指令强制换装   // 函数复写
+	core.items._realLoadEquip = function (type, loadId, unloadId, callback) {
+		if (core.status.event.id === 'action') {
+			var loadEquip = core.material.items[loadId] || {},
+				unloadEquip = core.material.items[unloadId] || {};
+			// --- 音效
+			core.items._realLoadEquip_playSound();
+			// --- 实际换装
+			core.items._loadEquipEffect(loadId, unloadId);
+			// --- 加减
+			if (loadId) core.removeItem(loadId);
+			if (unloadId) core.addItem(unloadId);
+			core.status.hero.equipment[type] = loadId || null;
+			// --- 提示
+			if (loadId) core.drawTip("已装备上" + loadEquip.name, loadId);
+			else if (unloadId) core.drawTip("已卸下" + unloadEquip.name, unloadId);
+		}
+		if (callback) callback();
+	}
+	//显伤加字
+	core.enemys.getDamageString = function (enemy, x, y, floorId) {
+		if (typeof enemy == 'string') enemy = core.material.enemys[enemy];
+		var damage = this.getDamage(enemy, x, y, floorId);
+
+		var color = '#000000';
+
+		if (damage == null) {
+			damage = "???";
+			color = '#FF2222';
+		} else {
+			if (damage <= 0) color = '#11FF11';
+			else if (damage < core.status.hero.hp / 3) color = '#FFFFFF';
+			else if (damage < core.status.hero.hp * 2 / 3) color = '#FFFF00';
+			else if (damage < core.status.hero.hp) color = '#FF9933';
+			else color = '#FF2222';
+
+			damage = core.formatBigNumber(damage, true);
+			if (core.enemys.hasSpecial(enemy, 19))
+				damage += "+";
+			if (core.enemys.hasSpecial(enemy, 21))
+				damage += "-";
+			if (core.enemys.hasSpecial(enemy, 11))
+				damage += "^";
+			if (core.enemys.hasSpecial(enemy, 42))
+				damage += "截";
+			if (core.enemys.hasSpecial(enemy, 51))
+				damage += "歼";
+			if (core.enemys.hasSpecial(enemy, 52))
+				damage += "夹";
+			if (core.enemys.hasSpecial(enemy, 59))
+				damage += "X";
+			if (core.enemys.hasSpecial(enemy, 63))
+				damage += "阵";
+		}
+
+		return {
+			"damage": damage,
+			"color": color
+		};
+	}
+	//歼灭领域显伤
+	core.control._updateDamage_extraDamage = function (floorId, onMap) {
+		core.status.damage.extraData = [];
+		if (!core.flags.displayExtraDamage) return;
+
+		var width = core.floors[floorId].width,
+			height = core.floors[floorId].height;
+		var startX = onMap && core.bigmap.v2 ? Math.max(0, core.bigmap.posX - core.bigmap.extend) : 0;
+		var endX = onMap && core.bigmap.v2 ? Math.min(width, core.bigmap.posX + core._WIDTH_ + core.bigmap.extend + 1) : width;
+		var startY = onMap && core.bigmap.v2 ? Math.max(0, core.bigmap.posY - core.bigmap.extend) : 0;
+		var endY = onMap && core.bigmap.v2 ? Math.min(height, core.bigmap.posY + core._HEIGHT_ + core.bigmap.extend + 1) : height;
+
+		for (var x = startX; x < endX; x++) {
+			for (var y = startY; y < endY; y++) {
+				var alpha = 1;
+				if (core.noPass(x, y, floorId)) {
+					if (core.flags.extraDamageType == 2) alpha = 0;
+					else if (core.flags.extraDamageType == 1) alpha = 0.6;
+				}
+				var damage = core.status.checkBlock.damage[x + "," + y] || 0;
+				if (damage > 0 && Number.isFinite(damage)) { // 该点伤害
+					damage = core.formatBigNumber(damage, true);
+					core.status.damage.extraData.push({ text: damage, px: 32 * x + 16, py: 32 * (y + 1) - 14, color: '#ffaa33', alpha: alpha });
+				} else if (damage === Infinity) {
+					core.status.damage.extraData.push({ text: '死', px: 32 * x + 16, py: 32 * (y + 1) - 14, color: '#ff0000', alpha: alpha });
+				} else { // 检查捕捉
+					if (core.status.checkBlock.ambush[x + "," + y]) {
+						core.status.damage.extraData.push({ text: '!', px: 32 * x + 16, py: 32 * (y + 1) - 14, color: '#ffaa33', alpha: alpha });
+					}
+				}
+			}
+		}
+	}
+	//灯光  
+	core.control._drawHero_draw = function (direction, x, y, status, offset, frame) {
+		offset = offset || { x: 0, y: 0, offset: 0, px: 0, py: 0 };
+		if (["MT55", "MT56", "MT57", "MT58", "MT59", "MT60", "MT180", "MT181", "MT182", "MT183", "MT184"].indexOf(core.status.floorId) >= 0) {
+			core.plugin.drawLight('newui1', 0.5, [
+				[16 + hero.loc.x * 32 + offset.x, 16 + hero.loc.y * 32 + offset.y, flags.lighton ? 128 : 1000]
+			], 0.8);
+		} else { core.plugin.drawLight('newui1', 0, []) }
+		var opacity = core.setAlpha('hero', core.getFlag('__heroOpacity__', 1))
+		this._drawHero_getDrawObjs(direction, x, y, status, offset).forEach(function (block) {
+			core.drawImage('hero', block.img, (block.heroIcon[block.status] + (frame || 0)) % 4 * block.width,
+				block.heroIcon.loc * block.height, block.width, block.height,
+				block.posx + (32 - block.width) / 2, block.posy + 32 - block.height, block.width, block.height);
+		});
+		core.setAlpha('hero', opacity);
+
+	}
+
+
+},
+    "兵种分类": function () {
+	// 在此增加新插件
+	this.Army = ['步兵', '轻坦', '中坦', '重坦', '坦歼', '反坦克炮', '榴弹炮', '高射炮', '建筑'];
+	this.Navy = ['潜艇', '鱼雷艇', '商船', '驱逐', '轻巡', '重巡', '战列', '航母'];
+	this.Luftwaffe = ['战斗机', '重型战斗机', '攻击机', '俯冲轰炸机', '鱼雷轰炸机', '中型轰炸机', '导弹'];
+},
+    "技能系统": function () {
+	// 在此增加新插件
+	//技能系统  
+	this.skillInfo = [{ // 0
+			id: 0,
+			strategy: false,
+			name: '无',
+			cost: 0,
+			event: [],
+			description: '无'
+		},
+
+		{ // 1
+			id: 1,
+			strategy: false,
+			name: '战壕',
+			cost: 20,
+			event: [],
+			description: '挖掘战壕，与敌方陆军战斗时，受到的伤害减少10%'
+		},
+
+		{ // 2
+			id: 2,
+			strategy: true,
+			name: '紧急补给',
+			cost: 100,
+			event: [{ "type": "setValue", "name": "status:hp", "operator": "+=", "value": "status:hpmax/4" }],
+			description: '血量立即恢复25%'
+		},
+
+		{ // 3
+			id: 3,
+			strategy: false,
+			name: '防空弹幕',
+			cost: 50,
+			event: [],
+			description: '下一次与敌方空军的战斗中，攻击力提升20%'
+		},
+
+		{ // 4
+			id: 4,
+			strategy: true,
+			name: '空战王牌',
+			cost: 100,
+			event: [
+				{ "type": "setValue", "name": "flag:空战王牌", "value": "core.getBlockId(core.nextX(),core.nextY())" }, { "type": "if", "condition": "core.plugin.Luftwaffe.includes(core.material.enemys[flags.空战王牌]?.type)&&!core.material.enemys[flag:空战王牌].notBomb&&core.material.enemys[flags.空战王牌]?.type!=='导弹'&&!core.hasSpecial(flags['空战王牌'], 65)", "true": [{ "type": "playSound", "name": "fighter.mp3" }, { "type": "showImage", "code": 1, "image": "aircraft1.png", "loc": [643, "32*core.nextY()+16-125"], "opacity": 1, "time": 0 }, { "type": "moveImage", "code": 1, "to": [-195, "32*core.nextY()+16-125"], "time": 500, "async": true }, { "type": "battle", "loc": ["core.nextX()", "core.nextY()"] }, { "type": "waitAsync" }, { "type": "hideImage", "code": 1, "time": 0 }], "false": [{ "type": "tip", "text": "目标无法击杀！" }, { "type": "playSound", "name": "操作失败" }, { "type": "setValue", "name": "status:mana", "operator": "+=", "value": "100" }, { "type": "setValue", "name": "flag:空战王牌", "value": "null" }] }
+			],
+			description: '秒杀面前的非boss空军。如果无法秒杀对方，则改为“造成3倍攻击力的伤害”'
+		},
+
+		{ // 5
+			id: 5,
+			strategy: false,
+			name: '预警',
+			cost: 240,
+			event: [],
+			description: '下一场战斗中，闪避鱼雷数+6，受到伤害-30%'
+		},
+
+		{ // 6
+			id: 6,
+			strategy: false,
+			name: 'Z字规避',
+			cost: 80,
+			event: [],
+			description: '下一场战斗中，闪避鱼雷数+3'
+		},
+
+		{ // 7
+			id: 7,
+			strategy: true,
+			name: '扫雷',
+			cost: 20,
+			event: [
+				{ "type": "setValue", "name": "temp:A", "value": "core.getBlockId(core.nextX(), core.nextY())" },
+				{
+					"type": "if",
+					"condition": "((temp:A==='lavaNet')||(temp:A==='mine'))",
+					"true": [
+						{ "type": "playSound", "name": "005-System05.mp3" },
+						{ "type": "hide", "loc": ["core.nextX()", "core.nextY()"], "remove": true },
+					],
+					"false": [
+						{ "type": "playSound", "name": "error.mp3" },
+						{ "type": "setValue", "name": "status:mana", "operator": "+=", "value": "20" },
+						{ "type": "tip", "text": "操作失败！" },
+					]
+				},
+			],
+			description: '立即清除主角面前的地雷或水雷'
+		},
+
+		{ // 8
+			id: 8,
+			strategy: false,
+			name: '剑鱼818中队',
+			cost: 80,
+			event: [],
+			description: '对面前的敌军舰艇发射5枚鱼雷，且至少会命中1枚（潜艇除外），除造成正常的鱼雷伤害外，对手闪避鱼雷数-2。可重复空袭，但不会再降低对方的闪避'
+		},
+
+		{ // 9
+			id: 9,
+			strategy: false,
+			name: '抵抗运动',
+			cost: 100,
+			event: [],
+			description: '下一场战斗中，敌方陆军攻击力随回合数增加而减少，每回合减少原攻击力的10%。当敌人攻击力不足原来的30%时，则不会继续减少'
+		},
+
+		{ // 10
+			id: 10,
+			strategy: false,
+			name: '破译',
+			cost: 40,
+			event: [],
+			description: '下一场战斗中，获得20%减伤'
+		},
+
+		{ // 11
+			id: 11,
+			strategy: true,
+			name: '空中打击',
+			cost: 200,
+			event: [
+				{ "type": "setValue", "name": "flag:空中打击", "value": "core.getBlockId(core.nextX(),core.nextY())" }, { "type": "if", "condition": "['轻坦','中坦','重坦','坦歼'].includes(core.material.enemys[flag:空中打击]?.type)&&!core.material.enemys[flag:空中打击]?.notBomb&&!core.hasSpecial(flags['空中打击'], 65)", "true": [{ "type": "playSound", "name": "bomber3.mp3" }, { "type": "showImage", "code": 1, "image": "aircraft2.png", "loc": [643, "32*core.nextY()+16-125"], "opacity": 1, "time": 0 }, { "type": "moveImage", "code": 1, "to": [-195, "32*core.nextY()+16-125"], "time": 500, "async": true }, { "type": "battle", "loc": ["core.nextX()", "core.nextY()"] }, { "type": "waitAsync" }, { "type": "hideImage", "code": 1, "time": 0 }], "false": [{ "type": "tip", "text": "目标无法击杀！" }, { "type": "playSound", "name": "操作失败" }, { "type": "setValue", "name": "status:mana", "operator": "+=", "value": "200" }, { "type": "setValue", "name": "flag:空中打击", "value": "null" }] }
+			],
+			description: '秒杀面前的非boss坦克，如无法秒杀，改为“投掷一轮伤害为4倍攻击力的炸弹攻击”'
+		},
+
+		{ // 12
+			id: 12,
+			strategy: false,
+			name: '从海底出击',
+			cost: 100,
+			event: [],
+			description: '下一场战斗中，派遣一艘潜艇支援：在战斗开始时发射8枚鱼雷，随后潜艇撤退'
+		},
+
+		{ // 13
+			id: 13,
+			strategy: false,
+			name: '金牌损管',
+			cost: 180,
+			event: [],
+			description: '下一场战斗结束后，回满血量，清除所有负面效果，获得20%当前后勤值的临时后勤值'
+		},
+
+		{ // 14
+			id: 14,
+			strategy: false,
+			name: '补给线',
+			cost: 250,
+			event: [],
+			description: '下一场战斗中，后勤值提升10倍'
+		},
+
+		{ // 15
+			id: 15,
+			strategy: true,
+			name: 'C-47空中列车',
+			cost: 300,
+			event: [{ "type": "if", "condition": "(!['陆地','浅滩'].includes(core.status.thisMap.area))", "true": [{ "type": "playSound", "name": "操作失败" }, { "type": "tip", "text": "当前地图不可使用该技能！" }, { "type": "setValue", "name": "status:mana", "operator": "+=", "value": "300" }], "false": [{ "type": "function", "function": "function(){\nflags.X = core.bigmap.width - 1 - hero.loc.x;\nflags.Y = core.bigmap.height - 1 - hero.loc.y;\nflags.C = '#00FF00';\nif (core.getBlockNumber(flags.X, flags.Y) > 0) {\n\tflags.C = 'red';\n} else {\n\tfor (let dx = -2; dx <= 2; ++dx)\n\t\tfor (let dy = -2; dy <= +2; ++dy) {\n\t\t\tlet x = flags.X + dx,\n\t\t\t\ty = flags.Y + dy,\n\t\t\t\tid = core.getBlockId(x, y);\n\t\t\tif (core.enemyExists(x, y)) {\n\t\t\t\tif (core.hasSpecial(id, 40)) flags.C = 'yellow';\n\t\t\t\tif (Math.abs(dx) <= 1 && Math.abs(dy) <= 1 && core.material.enemys[id].type.endsWith('战斗机')) flags.C = 'yellow';\n\t\t\t}\n\t\t}\n}\ncore.ui._createUIEvent();\ncore.ui.fillRect('uievent', 32 * flags.X, 32 * flags.Y, 32, 32, flags.C);\n}" }, { "type": "tip", "text": "请确认空降位置" }, { "type": "wait" }, { "type": "if", "condition": "(((flags.type===1)&&((flags.x!==flags.X)||(flags.y!==flags.Y)))||((flags.type===0)&&((flags.keycode!==32)&&(flags.keycode!==13))))", "true": [{ "type": "playSound", "name": "取消" }, { "type": "tip", "text": "已取消空降" }, { "type": "setValue", "name": "status:mana", "operator": "+=", "value": "300" }], "false": [{ "type": "if", "condition": "(flags.C==='red')", "true": [{ "type": "playSound", "name": "操作失败" }, { "type": "tip", "text": "空降落点有障碍物存在，无法着陆！" }, { "type": "setValue", "name": "status:mana", "operator": "+=", "value": "300" }], "false": [{ "type": "playSound", "name": "bomber.mp3" }, { "type": "showImage", "code": 1, "image": "aircraft5.png", "loc": [480, "32 * flags.Y - 125"], "opacity": 1, "time": 0 }, { "type": "moveImage", "code": 1, "to": [-195, "32 * flags.Y - 125"], "time": 500 }, { "type": "hideImage", "code": 1, "time": 0 }, { "type": "changePos", "loc": ["flags.X", "flags.Y"] }, { "type": "if", "condition": "(flags.C==='yellow')", "true": [{ "type": "animate", "name": "explore", "loc": "hero" }, { "type": "setValue", "name": "status:hp", "operator": "-=", "value": "0.8*status:hpmax" }] }] }] }, { "type": "clearMap" }] }],
+			description: '只能在陆地或浅滩使用，空降至当前地图的中心对称落点。如果目标地点处于“防空”范围内或敌方战斗机周围8格内，会失去等同于80%血限的生命值。（确认空降坐标时，点击目标点或空格进行空降，重新按对应快捷键则取消空降）'
+		},
+
+		{ // 16
+			id: 16,
+			strategy: true,
+			name: '海上霸主',
+			cost: 1000,
+			event: [],
+			description: '只能在海上使用且必须装备着航空母舰。舰载机发动空袭，使全图除潜艇外的敌方海军损失50%生命值，同时我方损失等同于20%血限的hp作为飞机损失。每张地图仅限使用一次，对boss无效'
+		},
+
+		{ // 17
+			id: 17,
+			strategy: true,
+			name: '范弗利特弹药量',
+			cost: 60,
+			event: [],
+			description: '下一场战斗中，主角攻击力+60%'
+		},
+
+		{ // 18
+			id: 18,
+			strategy: false,
+			name: '孟菲斯美女号',
+			cost: 50,
+			event: [],
+			description: '下一场战斗中，友军不会受到任何伤害'
+		},
+
+		{ // 19
+			id: 19,
+			strategy: true,
+			name: '刺猬弹',
+			cost: 100,
+			event: [],
+			description: '下一场战斗中发射“刺猬”反潜迫击炮，在首回合对潜艇造成5倍攻击力的伤害，战后无视狼群协同攻击'
+		},
+
+		{ // 20
+			id: 20,
+			strategy: true,
+			name: '红色尾翼',
+			cost: 1000,
+			event: [],
+			description: '获得第332战斗机大队的支援。无条件直接夺取当前地图制空权，且制空权效果改为20%。主角在当前地图行动期间，友军不会受到任何损失，对敌方空军伤害+30%'
+		},
+
+		{ // 21
+			id: 21,
+			strategy: true,
+			name: 'T34谢尔曼风琴',
+			cost: 600,
+			event: [],
+			description: '仅可在地面使用。呼叫火箭炮覆盖打击，打击目标为以自身为中心7×7正方形区域，其中的敌人陆军受到不同程度的损失：步兵失去70%生命值，炮兵失去50%，装甲失去20%'
+		},
+
+		{ // 22
+			id: 22,
+			strategy: false,
+			name: '地毯式轰炸',
+			cost: 3000,
+			event: [],
+			description: '仅可在地面使用。呼叫大规模轰炸机群展开全图轰炸，全体敌方陆军损失70%生命值，空军损失15%生命值。'
+		},
+
+		{ // 23
+			id: 23,
+			strategy: true,
+			name: '铝箔条',
+			cost: 1200,
+			event: [],
+			description: '抛洒铝箔条，干扰敌方雷达。在使用过该技能的地图中，光环类（指挥、截断）、协同攻击类（陷阱、防空）等技能无效'
+		},
+
+		{ // 24
+			id: 24,
+			strategy: true,
+			name: '翼尖挑衅',
+			cost: 200,
+			event: [],
+			description: '将面前的V1导弹向前推1格并引爆。如果引爆地点是可破墙壁或非boss敌人，可将其摧毁（不获得金经）'
+		},
+
+		{ // 25
+			id: 25,
+			strategy: true,
+			name: '高脚柜炸弹',
+			cost: 1000,
+			event: [],
+			description: '只能在陆地或浅滩使用，且必须装备着特定轰炸机。使用后在前方一格投下一枚“高脚柜”炸弹，直接摧毁面前的非boss陆军（无视抗破），并在爆炸地点九宫格3格半径内引发小范围地震，摧毁可破墙壁，范围内其他敌方陆军损失80%血量'
+		},
+
+		{ // 26
+			id: 26,
+			strategy: true,
+			name: '钳形攻势',
+			cost: 2000,
+			event: [],
+			description: '主角能够从当前地图任意出口通行时可用。发动此技能后，在当前地图战斗时攻击力+50%，伤害减免40%。'
+		}
+	]
+
+	this._makemiddleList = function (list, depth) {
+		if (list.length > 13) { // 分页
+			var suffix = list.splice(6);
+			list.unshift({ "text": "上一页", "action": [{ "type": "break", "n": 1 }] })
+
+			list.push({ "text": "下一页", "action": this._makemiddleList(suffix, depth + 1) });
+		} else {
+			var suffix = list.splice(6);
+			list.unshift({ "text": "上一页", "action": [{ "type": "break", "n": 1 }] })
+
+			list.push({ "text": "下一页", "action": this._makelastList(suffix, depth + 1) });
+		}
+		list.push({ "text": "查看当前快捷键", "action": [{ "type": "insert", "name": "查看技能" }] });
+		list.push({ "text": "保存并进入下一章", "action": [{ "type": "break", "n": depth }] });
+		return [{
+			"type": "while",
+			"condition": "true",
+			"data": [{ "type": "choices", "text": "\t[技能快捷键设定] ", "choices": list }]
+		}];
+	}
+	this._makelastList = function (list, depth) {
+		list.unshift({ "text": "上一页", "action": [{ "type": "break", "n": 1 }] })
+		list.push({ "text": "查看当前快捷键", "action": [{ "type": "insert", "name": "查看技能" }] });
+		list.push({ "text": "保存并进入下一章", "action": [{ "type": "break", "n": depth }] });
+		return [{
+			"type": "while",
+			"condition": "true",
+			"data": [{ "type": "choices", "text": "\t[技能快捷键设定] ", "choices": list }]
+		}];
+	}
+	this._makeList = function (list, depth) {
+		if (list.length > 8) { // 分页
+			if (list.length > 14) {
+				var suffix = list.splice(7);
+				list.push({ "text": "下一页", "action": this._makemiddleList(suffix, depth + 1) });
+			} else {
+				var suffix = list.splice(7);
+				list.push({ "text": "下一页", "action": this._makelastList(suffix, depth + 1) });
+			}
+
+		}
+		list.push({ "text": "查看当前快捷键", "action": [{ "type": "insert", "name": "查看技能" }] });
+		list.push({ "text": "保存并进入下一章", "action": [{ "type": "break", "n": depth }] });
+		return [{
+			"type": "choices",
+			"text": "\t[技能快捷键设定] ",
+			"choices": list
+		}]
+
+	}
+	this.bindSkills = function () {
+		var list = [];
+		for (var i = 0; i < flags.learned.length; ++i) {
+			if (flags.learned[i]) {
+				var info = this.skillInfo[i],
+					obj = {
+						"text": info.name + (info.strategy ? '（即时）' : '') + '，消耗：' + info.cost,
+						"action": [{
+							"type": "choices",
+							"text": "请选择要绑定的技能按键",
+							"choices": [{
+									"text": "数字1:" + core.plugin.skillInfo[flags.skillList[0]].name + (core.plugin.skillInfo[flags.skillList[0]].strategy ? '（即时）' : '') + '，消耗：' + core.plugin.skillInfo[flags.skillList[0]].cost,
+									"action": [
+										{ "type": "function", "function": "function(){\n var index = flags.skillList.indexOf(" + info.id + ")\n if (index >= 0) flags.skillList[index] = flags.skillList[0]\n flags.skillList[0] = " + info.id + "\n core.ui.statusBar._update_skills()}" },
+									]
+								},
+								{
+									"text": "数字2:" + core.plugin.skillInfo[flags.skillList[1]].name + (core.plugin.skillInfo[flags.skillList[1]].strategy ? '（即时）' : '') + '，消耗：' + core.plugin.skillInfo[flags.skillList[1]].cost,
+									"action": [
+										{ "type": "function", "function": "function(){\nvar index = flags.skillList.indexOf(" + info.id + ")\nif (index >= 0) flags.skillList[index] = flags.skillList[1]\nflags.skillList[1] = " + info.id + "\n core.ui.statusBar._update_skills()}" },
+									]
+								},
+								{
+									"text": "数字3:" + core.plugin.skillInfo[flags.skillList[2]].name + (core.plugin.skillInfo[flags.skillList[2]].strategy ? '（即时）' : '') + '，消耗：' + core.plugin.skillInfo[flags.skillList[2]].cost,
+									"action": [
+										{ "type": "function", "function": "function(){\nvar index = flags.skillList.indexOf(" + info.id + ")\nif (index >= 0) flags.skillList[index] = flags.skillList[2]\nflags.skillList[2] = " + info.id + "\n core.ui.statusBar._update_skills()}" },
+									]
+								},
+								{
+									"text": "数字4:" + core.plugin.skillInfo[flags.skillList[3]].name + (core.plugin.skillInfo[flags.skillList[3]].strategy ? '（即时）' : '') + '，消耗：' + core.plugin.skillInfo[flags.skillList[3]].cost,
+									"action": [
+										{ "type": "function", "function": "function(){\nvar index = flags.skillList.indexOf(" + info.id + ")\nif (index >= 0) flags.skillList[index] = flags.skillList[3]\nflags.skillList[3] = " + info.id + "\n core.ui.statusBar._update_skills()}" },
+									]
+								},
+								{
+									"text": "数字5:" + core.plugin.skillInfo[flags.skillList[4]].name + (core.plugin.skillInfo[flags.skillList[4]].strategy ? '（即时）' : '') + '，消耗：' + core.plugin.skillInfo[flags.skillList[4]].cost,
+									"action": [
+										{ "type": "function", "function": "function(){\nvar index = flags.skillList.indexOf(" + info.id + ")\nif (index >= 0) flags.skillList[index] = flags.skillList[4]\nflags.skillList[4] = " + info.id + "\n core.ui.statusBar._update_skills()}" },
+									]
+								},
+								{
+									"text": "数字6:" + core.plugin.skillInfo[flags.skillList[5]].name + (core.plugin.skillInfo[flags.skillList[5]].strategy ? '（即时）' : '') + '，消耗：' + core.plugin.skillInfo[flags.skillList[5]].cost,
+									"action": [
+										{ "type": "function", "function": "function(){\nvar index = flags.skillList.indexOf(" + info.id + ")\nif (index >= 0) flags.skillList[index] = flags.skillList[5]\nflags.skillList[5] = " + info.id + "\n core.ui.statusBar._update_skills()}" },
+									]
+								},
+								{
+									"text": "数字7:" + core.plugin.skillInfo[flags.skillList[6]].name + (core.plugin.skillInfo[flags.skillList[6]].strategy ? '（即时）' : '') + '，消耗：' + core.plugin.skillInfo[flags.skillList[6]].cost,
+									"action": [
+										{ "type": "function", "function": "function(){\nvar index = flags.skillList.indexOf(" + info.id + ")\nif (index >= 0) flags.skillList[index] = flags.skillList[6]\nflags.skillList[6] = " + info.id + "\n core.ui.statusBar._update_skills()}" },
+									]
+								},
+							]
+						}, ]
+					};
+				list.push(obj);
+			}
+		}
+		return this._makeList(list, 1);
+	}
+
+},
+    "额外信息": function () {
+	/* 宝石血瓶左下角显示数值
+	 * 注意！！！不要在道具属性中直接操作flags，使用core.status.hero.flags或core.setFlag系列函数代替！
+	 * 需要将 变量：itemDetail改为true才可正常运行
+	 * 请尽量减少勇士的属性数量，否则可能会出现严重卡顿（划掉，现在你放一万个属性也不会卡）
+	 * 注意：这里的属性必须是core.status.hero里面的，flag无法显示
+	 * 如果不想显示，可以core.setFlag("itemDetail", false);
+	 * 然后再core.getItemDetail();
+	 * 如有bug在大群或造塔群@古祠
+	 */
+
+	// 忽略的道具
+
+	const ignore = ["superPotion"];
+
+	// 取消注释下面这句可以减少超大地图的判定。
+	// 如果地图宝石过多，可能会略有卡顿，可以尝试取消注释下面这句话来解决。
+	// core.bigmap.threshold = 256;
+	const origin = core.control.updateStatusBar;
+	core.updateStatusBar = core.control.updateStatusBar = function () {
+		if (core.getFlag("__statistics__")) return;
+		else return origin.apply(core.control, arguments);
+	};
+
+	core.control.updateDamage = function (floorId, ctx) {
+		floorId = floorId || core.status.floorId;
+		if (!floorId || core.status.gameOver || main.mode != "play") return;
+		const onMap = ctx == null;
+
+		// 没有怪物手册
+		if (!core.hasItem("book")) return;
+		core.status.damage.posX = core.bigmap.posX;
+		core.status.damage.posY = core.bigmap.posY;
+		if (!onMap) {
+			const width = core.floors[floorId].width,
+				height = core.floors[floorId].height;
+			// 地图过大的缩略图不绘制显伤
+			if (width * height > core.bigmap.threshold) return;
+		}
+		this._updateDamage_damage(floorId, onMap);
+		this._updateDamage_extraDamage(floorId, onMap);
+		core.getItemDetail(floorId); // 宝石血瓶详细信息
+		this.drawDamage(ctx);
+	};
+	// 获取宝石信息 并绘制
+	this.getItemDetail = function (floorId) {
+		if (!flags?.itemDetail) return console.log("1");
+		if (!core.status.thisMap) return console.log("2");
+		floorId = floorId ?? core.status.thisMap.floorId;
+		const beforeRatio = core.status.thisMap.ratio;
+		core.status.thisMap.ratio = core.status.maps[floorId].ratio;
+		let diff = {};
+		const before = core.status.hero;
+		const hero = core.clone(core.status.hero);
+		const handler = {
+			set(target, key, v) {
+				diff[key] = v - (target[key] || 0);
+				if (!diff[key]) diff[key] = void 0;
+				return true;
+			},
+		};
+		core.status.hero = new Proxy(hero, handler);
+		core.status.maps[floorId].blocks.forEach(function (block) {
+			if (
+				block.event.cls !== "items" ||
+				ignore.includes(block.event.id) ||
+				block.disable
+			)
+				return;
+			const x = block.x,
+				y = block.y;
+			// v2优化，只绘制范围内的部分
+			if (core.bigmap.v2) {
+				if (
+					x < core.bigmap.posX - core.bigmap.extend ||
+					x > core.bigmap.posX + core._WIDTH_ + core.bigmap.extend ||
+					y < core.bigmap.posY - core.bigmap.extend ||
+					y > core.bigmap.posY + core._HEIGHT_ + core.bigmap.extend
+				) {
+					return;
+				}
+			}
+			diff = {};
+			const id = block.event.id;
+			const item = core.material.items[id];
+			if (item.cls === "equips") {
+				// 装备也显示
+				const diff = item.equip.value ?? {};
+				const per = item.equip.percentage ?? {};
+				for (const name in per) {
+					diff[name + "per"] = per[name].toString() + "%";
+				}
+				drawItemDetail(diff, x, y);
+				return;
+			}
+			// 跟数据统计原理一样 执行效果 前后比较
+			core.setFlag("__statistics__", true);
+			try {
+				eval(item.itemEffect);
+			} catch (error) {}
+			drawItemDetail(diff, x, y);
+		});
+		core.status.thisMap.ratio = beforeRatio;
+		core.status.hero = before;
+		window.hero = before;
+		window.flags = before.flags;
+	};
+
+	// 绘制
+	function drawItemDetail(diff, x, y) {
+		const px = 32 * x + 2,
+			py = 32 * y + 30;
+		let content = "";
+		// 获得数据和颜色
+		let i = 0;
+		for (const name in diff) {
+			if (!diff[name]) continue;
+			let color = "#fff";
+
+			if (typeof diff[name] === "number")
+				content = core.formatBigNumber(diff[name], true);
+			else content = diff[name];
+			switch (name) { //
+			case "atk":
+			case "atkper":
+				color = "#FF7A7A";
+				break;
+			case "top":
+			case "topper":
+				color = "#00E6F1";
+				break;
+			case "mdef":
+			case "mdefper":
+				color = "#6EFF83";
+				break;
+			case "hp":
+				color = "#A4FF00";
+				break;
+			case "hpmax":
+			case "hpmaxper":
+				color = "#F9FF00";
+				break;
+			case "mana":
+				color = "#c66";
+				break;
+			}
+			// 绘制
+			core.status.damage.data.push({
+				text: content,
+				px: px,
+				py: py - 10 * i,
+				color: color,
+			});
+			i++;
+		}
+	}
+},
+    "任务系统": function () {
+	// 在此增加新插件
+	class TaskSystem {
+		constructor() {
+			this.tasksInfo = []
+		}
+		setTask(name, text, info, n) {
+			this.tasksInfo.push({ name, text, n, tasks: info.map(v => new Task(v)) })
+			this.tasksInfo[this.tasksInfo.length - 1].complter = this.checkTask(this.tasksInfo.length - 1)
+		}
+		checkTask(index) {
+			if (this.tasksInfo[index].success) return true
+			else return this.tasksInfo[index].tasks.reduce((a, b) => a + Number(b.check()), 0) >= this.tasksInfo[index].n
+		}
+		removeTaskByName(name) {
+			const index = this.tasksInfo.findIndex(v => v.name === name)
+			removeTask(index)
+		}
+		removeTask(index) {
+			this.tasksInfo.splice(index, 1)
+		}
+		clearTask() {
+			this.tasksInfo = []
+		}
+		checkAll() {
+			for (let i = 0; i < this.tasksInfo.length; i++) {
+				this.checkTask(i)
+			}
+		}
+		submitTask() {
+			if (!flags.score) flags.score = 0
+			for (let i = 0; i < this.tasksInfo.length; i++) {
+				flags.score += Number(this.tasksInfo[i].complter) * 100
+			}
+			this.clearTask()
+		}
+		successTask(index) {
+			this.tasksInfo[index].success = true
+			this.tasksInfo[index].complter = true
+		}
+		successTaskByName(name) {
+			const index = this.tasksInfo.findIndex(v => v.name === name)
+			this.tsuccessTask(index)
+		}
+		save() {
+			return this.tasksInfo.map(v => {
+				const c = core.clone(v)
+				const b = v.tasks.map(a => a.save());
+				c.tasks = b
+				return c
+			})
+		}
+		load(data) {
+
+			this.tasksInfo = data.map(v => {
+				const c = core.clone(v)
+				const b = v.tasks.map(a => new Task(a))
+				c.tasks = b
+				return c
+			})
+
+		}
+
+	}
+	class Task {
+		constructor(info) {
+			this.type = info.type
+			this.text = info.text
+			if (info.type === "checkItem") {
+				this.checkItem = info.checkItem
+				this.count = info.count
+				this.operator = info.operator
+				this.has = info.has ?? core.itemCount(this.checkItem)
+			} else if (info.type === "checkStatus") {
+				this.checkStatus = info.checkStatus
+				this.count = info.count
+				this.operator = info.operator
+				this.has = info.has ?? core.getRealStatus(this.checkStatus)
+			} else if (info.type === "checkFlag") {
+				this.checkFlag = info.checkFlag
+				this.count = info.count
+				this.operator = info.operator
+				this.has = info.has ?? core.getFlag(this.checkFlag)
+			} else if (info.type === "checkBlock") { //剩余图块
+				this.checkBlock = info.checkBlock
+				this.count = info.count
+				this.operator = info.operator
+				this.floorId = info.floorId
+				this.has = info.has ?? core.searchBlock(this.checkBlock, this.floorId).length
+			} else if (info.type === "checkEnemyType") {
+				this.checkEnemyType = info.checkEnemyType
+				this.count = info.count
+				this.operator = info.operator
+				this.floorId = info.floorId
+				this.has = info.has ?? core.searchBlockWithFilter(block => block.event.cls.startsWith("enemy") && block.event.type === this.checkEnemyType, this.floorId).length
+			} else if (info.type === "kill") {
+				this.floorId = info.floorId
+				this.kill = info.kill
+				this.count = info.count
+				this.has = info.has ?? 0
+				this.operator = info.operator
+			} else if (info.type === "killLocs") {
+				this.floorId = info.floorId
+				this.loc = info.loc
+				this.count = info.count
+				this.has = info.has ?? 0
+				this.operator = info.operator
+			} else if (info.type === "killType") {
+				this.floorId = info.floorId
+				this.killType = info.killTpye
+				this.count = info.count
+				this.has = info.has ?? 0
+				this.operator = info.operator
+			} else if (info.type === "killSpecial") {
+				this.floorId = info.floorId
+				this.killSpecial = info.killSpecial
+				this.count = info.count
+				this.has = info.has ?? 0
+				this.operator = info.operator
+			} else if (info.type === "killAll") {
+				this.floorId = info.floorId
+				this.has = info.has ?? core.searchBlockWithFilter(block => block.event.cls.startsWith("enemy"), this.floorId).length
+			} else if (info.type === "specialBlock") { //踩雷
+				this.floorId = info.floorId
+				this.specialType = info.specialType
+				this.count = info.count
+				this.has = info.has ?? 0
+				this.operator = info.operator
+			} else if (info.type === "gosthFloor") {
+				this.floorId = info.floorId
+				this.count = info.count
+				this.has = info.has ?? 0
+				this.operator = info.operator
+			} else if (info.type === "arrival") {
+				this.floorId = info.floorId
+				this.has = info.has ?? 0
+			}
+
+
+		}
+		check() {
+			if (this.type === "checkItem") return this.checkInfo(this.count, this.has = core.itemCount(this.checkItem))
+			else if (this.type === "checkStatus") return this.checkInfo(this.count, this.has = core.getRealStatus(this.checkStatus))
+			else if (this.type === "checkFlag") return this.checkInfo(this.count, this.has = core.getFlag(this.checkFlag))
+			else if (this.type === "checkBlock") return this.checkInfo(this.count, this.has = core.searchBlock(this.checkBlock, this.floorId).length)
+			else if (this.type === "checkEnemyType") return this.checkInfo(this.count, this.has = core.searchBlockWithFilter(block => block.event.cls.startsWith("enemy") && block.event.type === this.checkEnemyType, this.floorId).length)
+			else if (this.type === "killAll") return this.has = core.searchBlockWithFilter(block => block.event.cls.startsWith("enemy"), this.floorId).length, this.has === 0
+			else if (this.type === "specialBlock" || this.type === "gosthFloor" || this.type === "kill" || this.type === "killSpecial" || this.type === "killLocs" || this.type === "killType") return this.checkInfo(this.count, this.has)
+			else if (this.type === "arrival") return Boolean(this.has)
+			else if (this.type === "outer") return false
+
+		}
+		checkInfo(check, has) {
+			switch (this.operator) {
+			case "=":
+				return check === has
+			case "<":
+				return check > has
+			case "<=":
+				return check >= has
+			case ">":
+				return check < has
+			case ">=":
+				return check <= has
+			}
+		}
+		save() {
+			let info = { type: this.type, text: this.text }
+			if (info.type === "checkItem") {
+				info.checkItem = this.checkItem
+				info.count = this.count
+				info.operator = this.operator
+				info.has = this.has
+			} else if (info.type === "checkStatus") {
+				info.checkStatus = this.checkStatus
+				info.count = this.count
+				info.operator = this.operator
+				info.has = this.has
+			} else if (info.type === "checkFlag") {
+				info.checkFlag = this.checkFlag
+				info.count = this.count
+				info.operator = this.operator
+				info.has = this.has
+			} else if (info.type === "checkBlock") {
+				info.checkBlock = this.checkBlock
+				info.count = this.count
+				info.operator = this.operator
+				info.floorId = this.floorId
+				info.has = this.has
+			} else if (info.type === "checkEnemyType") {
+				info.checkEnemyType = this.checkEnemyType
+				info.count = this.count
+				info.operator = this.operator
+				info.floorId = this.floorId
+				info.has = this.has
+			} else if (info.type === "kill") {
+				info.floorId = this.floorId
+				info.kill = this.kill
+				info.count = this.count
+				info.has = this.has
+				info.operator = this.operator
+			} else if (info.type === "killLocs") {
+				info.floorId = this.floorId
+				info.loc = this.loc
+				info.count = this.count
+				info.has = this.has
+				info.operator = this.operator
+			} else if (info.type === "killType") {
+				info.floorId = this.floorId
+				info.killType = this.killTpye
+				info.count = this.count
+				info.has = this.has
+				info.operator = this.operator
+			} else if (info.type === "killSpecial") {
+				info.floorId = this.floorId
+				info.killSpecial = this.killSpecial
+				info.count = this.count
+				info.has = this.has
+				info.operator = this.operator
+			} else if (info.type === "killAll") {
+				info.floorId = this.floorId
+				info.has = this.has
+			} else if (info.type === "specialBlock") {
+				info.floorId = this.floorId
+				info.specialType = this.specialType
+				info.count = this.count
+				info.has = this.has
+				info.operator = this.operator
+			} else if (info.type === "gosthFloor") {
+				info.floorId = this.floorId
+				info.count = this.count
+				info.has = this.has
+				info.operator = this.operator
+			} else if (info.type === "arrival") {
+				info.floorId = this.floorId
+				info.has = this.has
+			}
+			return info
+		}
+
+	}
+	core.taskSystem = new TaskSystem()
+
+	core.registerEvent("setTask", (data) => {
+		core.taskSystem.setTask(data.name, data.text, data.info, data.n)
+		core.doAction()
+	})
+	core.registerEvent("removeTask", (data) => {
+		core.taskSystem.removeTask(data.index)
+		core.doAction()
+	})
+	core.registerEvent("removeTaskByName", (data) => {
+		core.taskSystem.removeTaskByName(data.name)
+		core.doAction()
+	})
+	core.registerEvent("successTask", (data) => {
+		core.taskSystem.successTask(data.index)
+		core.doAction()
+	})
+	core.registerEvent("successTaskByName", (data) => {
+		core.taskSystem.successTaskByName(data.name)
+		core.doAction()
+	})
+	core.registerEvent("clearTask", () => {
+		core.taskSystem.clearTask()
+		core.doAction()
+	})
+
+	core.registerEvent("submitTask", () => {
+		core.taskSystem.submitTask()
+		core.doAction()
+	})
+}
 }

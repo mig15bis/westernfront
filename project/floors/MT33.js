@@ -19,9 +19,6 @@ main.floors.MT33=
             "opacity": 1
         },
         {
-            "type": "showStatusBar"
-        },
-        {
             "type": "update"
         },
         {

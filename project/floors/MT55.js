@@ -18,9 +18,7 @@ main.floors.MT55=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        {
-            "type": "showStatusBar"
-        },
+        
         "\r[yellow]Mission 9 伦敦上空的鹰",
         {
             "type": "playSound",

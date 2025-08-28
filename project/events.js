@@ -151,43 +151,43 @@ var events_c12a15a8_c380_4b28_8144_256cba95f760 =
 					{
 						"type": "setValue",
 						"name": "temp:A",
-						"value": "core.getSkillInfo(flags.skillList[0])",
+						"value": "core.plugin.skillInfo[flags.skillList[0]]",
 						"norefresh": true
 					},
 					{
 						"type": "setValue",
 						"name": "temp:B",
-						"value": "core.getSkillInfo(flags.skillList[1])",
+						"value": "core.plugin.skillInfo[flags.skillList[1]]",
 						"norefresh": true
 					},
 					{
 						"type": "setValue",
 						"name": "temp:C",
-						"value": "core.getSkillInfo(flags.skillList[2])",
+						"value": "core.plugin.skillInfo[flags.skillList[2]]",
 						"norefresh": true
 					},
 					{
 						"type": "setValue",
 						"name": "temp:D",
-						"value": "core.getSkillInfo(flags.skillList[3])",
+						"value": "core.plugin.skillInfo[flags.skillList[3]]",
 						"norefresh": true
 					},
 					{
 						"type": "setValue",
 						"name": "temp:E",
-						"value": "core.getSkillInfo(flags.skillList[4])",
+						"value": "core.plugin.skillInfo[flags.skillList[4]]",
 						"norefresh": true
 					},
 					{
 						"type": "setValue",
 						"name": "temp:F",
-						"value": "core.getSkillInfo(flags.skillList[5])",
+						"value": "core.plugin.skillInfo[flags.skillList[5]]",
 						"norefresh": true
 					},
 					{
 						"type": "setValue",
 						"name": "temp:G",
-						"value": "core.getSkillInfo(flags.skillList[6])",
+						"value": "core.plugin.skillInfo[flags.skillList[6]]",
 						"norefresh": true
 					},
 					{
@@ -259,8 +259,14 @@ var events_c12a15a8_c380_4b28_8144_256cba95f760 =
 		],
 		"选择技能": [
 			{
-				"type": "function",
-				"function": "function(){\ncore.insertAction(core.plugin.bindSkills())\n}"
+				"type": "while",
+				"condition": "true",
+				"data": [
+					{
+						"type": "function",
+						"function": "function(){\ncore.insertAction(core.plugin.bindSkills())\n}"
+					}
+				]
 			}
 		]
 	}

@@ -25,9 +25,7 @@ main.floors.MT267=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        {
-            "type": "showStatusBar"
-        },
+        
         "\r[yellow]Mission 38 黑色星期四",
         {
             "type": "setValue",

@@ -25,9 +25,7 @@ main.floors.MT296=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        {
-            "type": "showStatusBar"
-        },
+        
         "\r[yellow]Mission 41 戈林？迈耶！",
         {
             "type": "setValue",

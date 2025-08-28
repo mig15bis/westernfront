@@ -216,7 +216,8 @@ ActionParser.prototype.parse = function (obj,type) {
     
     default:
       return MotaActionBlocks[type+'_m'].xmlText([this.parseList(obj)]);
-  }
+  
+}
 }
 
 ////// 开始解析一系列自定义事件 //////
@@ -1146,6 +1147,160 @@ ActionParser.prototype.parseAction = function() {
       }
     case "animateImage":  // 兼容 animateImage
       break;
+    case  "setTask": // 设置任务
+    var that=this
+      var bulidTaskList = function (obj) {  
+          var res = null;
+          for (var ii = obj.length - 1, one; (one = obj[ii]); ii--) {
+            if(one.type==="checkItem"){
+              res = MotaActionBlocks["checkItem"].xmlText([
+              one.checkItem,
+              one.operator,
+              one.count,
+              one.text||"",
+              res,
+            ]);
+            }else if(one.type==="checkStatus"){
+              res = MotaActionBlocks["checkStatus"].xmlText([
+              one.checkStatus,
+              one.operator,
+              one.count,
+              one.text||"",
+              res,
+            ]);
+            }else if(one.type==="checkFlag"){
+              res = MotaActionBlocks["checkFlag"].xmlText([
+              one.checkFlag,
+              one.operator,
+              that.expandEvalBlock([one.count]),
+              one.text||"",
+              res,
+            ]);
+            }else if(one.type==="checkBlock"){
+              res = MotaActionBlocks["checkBlock"].xmlText([
+              one.checkBlock,
+              one.floorId.join(","), 
+              one.operator,
+              one.count,
+              one.text||"",
+              res,
+            ]);
+            }else if(one.type==="checkEnemyType"){
+              res = MotaActionBlocks["checkEnemyType"].xmlText([
+              one.checkEnemyType,
+              one.floorId.join(","), 
+              one.operator,
+              one.count,
+              one.text||"",
+              res,
+            ]);
+             }else if(one.type==="kill"){
+              res = MotaActionBlocks["kill"].xmlText([
+              one.kill||"",
+              one.floorId?one.floorId.join(","):"", 
+              one.operator,
+              one.count,
+              one.text||"",
+              res,
+            ]);
+            }else if(one.type==="killLocs"){
+              var x_str = [],
+                y_str = [];
+              one.loc.forEach(function(t){
+                x_str.push(t[0]);
+                y_str.push(t[1]);
+              });
+              res = MotaActionBlocks["killLocs"].xmlText([
+              x_str.join(","),
+              y_str.join(","),
+              one.floorId, 
+              one.operator,
+              one.count,
+              one.text||"",
+              res,
+            ]);
+            }else if(one.type==="killType"){
+              res = MotaActionBlocks["killType"].xmlText([
+              one.killType,  
+              one.floorId.join(","), 
+              one.operator,
+              one.count,
+              one.text||"",
+              res,
+            ]);
+             }else if(one.type==="killSpecial"){
+              res = MotaActionBlocks["killSpecial"].xmlText([
+              one.killSpecial,  
+              one.floorId.join(","), 
+              one.operator,
+              one.count,
+              one.text||"",
+              res,
+            ]);
+             }else if(one.type==="killAll"){
+              res = MotaActionBlocks["killAll"].xmlText([
+              one.floorId.join(","), 
+              one.text||"",
+              res,
+            ]);
+             }else if(one.type==="specialBlock"){
+              res = MotaActionBlocks["specialBlock"].xmlText([
+              one.specialBlock,  
+              one.floorId.join(","), 
+              one.operator,
+              one.count,
+              one.text||"",
+              res,
+            ]);
+            }else if(one.type==="gosthFloor"){
+              res = MotaActionBlocks["gosthFloor"].xmlText([ 
+              one.floorId.join(","), 
+              one.operator,
+              one.count,
+              one.text||"",
+              res,
+            ]);
+            }else if(one.type==="arrival"){
+              res = MotaActionBlocks["arrival"].xmlText([ 
+              one.floorId,
+              one.text||"",
+              res,
+            ]);
+            }else if(one.type==="outer"){
+              res = MotaActionBlocks["outer"].xmlText([ 
+              one.text||"",
+              res,
+            ]);
+            }else if(one.type==="empty"){
+              res = MotaActionBlocks["empty"].xmlText([ 
+              res,
+            ]);
+            }
+         
+          }
+          return res;
+    };
+      this.next = MotaActionBlocks['setTask_s'].xmlText([data.name,data.n,data.text||"",bulidTaskList(data.info),this.next ]);
+      break;
+
+    case "removeTask":  // 移除第n项任务  
+      this.next = MotaActionBlocks['removeTask_s'].xmlText([data.index,this.next ]);
+      break;    
+    case "removeTaskByName":  // 移除某一任务  
+      this.next = MotaActionBlocks['removeTaskByName_s'].xmlText([data.name,this.next ]);
+      break;    
+    case "successTask":  // 强制完成第n项任务  
+      this.next = MotaActionBlocks['successTask_s'].xmlText([data.index,this.next ]);
+      break;    
+    case "successTaskByName":  // 强制完成某一任务  
+      this.next = MotaActionBlocks['successTaskByName_s'].xmlText([data.name,this.next ]);
+      break;  
+    case "clearTask":  // 删除所有任务  
+      this.next = MotaActionBlocks['clearTask_s'].xmlText([this.next ]);
+      break;
+    case "submitTask":  // 清除并提交任务
+      this.next = MotaActionBlocks['submitTask_s'].xmlText([this.next ]);
+      break;
     default:
       this.next = MotaActionBlocks['unknown_s'].xmlText([
         JSON.stringify(data),this.next]);
@@ -1732,6 +1887,7 @@ MotaActionFunctions.replaceFromName = function (str) {
   str = str.replace(/图块I[dD][:：]/g, "blockId:").replace(/图块数字[:：]/g, "blockNumber:").replace(/图块类别[:：]/g, "blockCls:").replace(/装备孔[:：]/g, "equip:");
 
   return str;
+ }
 }
 
-}
+

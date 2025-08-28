@@ -29,9 +29,6 @@ main.floors.MT27=
             "opacity": 1
         },
         {
-            "type": "showStatusBar"
-        },
-        {
             "type": "setCurtain",
             "time": 500
         },

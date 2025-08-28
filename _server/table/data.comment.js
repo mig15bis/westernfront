@@ -284,6 +284,11 @@ var data_comment_c456ea59_6018_45ef_8bcc_211a24c627dc = {
 							"_type": "textarea",
 							"_data": "初始空袭"
 						},
+						"cd": {
+							"_leaf": true,
+							"_type": "textarea",
+							"_data": "鱼雷cd"
+						},
 						"tpn": {
 							"_leaf": true,
 							"_type": "textarea",
