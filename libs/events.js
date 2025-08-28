@@ -699,7 +699,7 @@ events.prototype.changeFloor = function (floorId, stair, heroLoc, time, callback
         if (callback) callback();
         return;
     }
-    core.searchBlockWithFilter(block => { 
+    if (core.status.floorId)core.searchBlockWithFilter(block => { 
         if (!block || !block.event.cls.startsWith("enemy"))
 				return false;
 			if (core.hasSpecial(block.event.special, 69))

@@ -396,7 +396,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		hero.hp -= v.event.atk * number;
 	})
 	//狼群改
-	if (core.core.hasSpecial(mon_special, 85) && x !== null && y !== null) {
+	if (core.hasSpecial(special, 85) && x !== null && y !== null) {
 		for (let m = -2; m <= 2; m++) {
 			for (let n = -2; n <= 2; n++) {
 				if (m !== 0 && n !== 0) {
@@ -1199,7 +1199,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	if (core.hasSpecial(mon_special, 73)) {
 		beilv *= 0.3;
 	}
-	if (core.core.hasSpecial(mon_special, 46) && x !== null && y !== null) { //不可被攻击
+	if (core.hasSpecial(mon_special, 46) && x !== null && y !== null) { //不可被攻击
 		for (let m = -4; m <= 4; m++) {
 			for (let n = -4; n <= 4; n++) {
 				if (m !== 0 && n !== 0) {

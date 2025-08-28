@@ -100,7 +100,17 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"T659": 68,
 		"T660": 69,
 		"T661": 70,
-		"T732": 71
+		"T732": 71,
+		"statusAp": 72,
+		"statusArm": 73,
+		"statusMana": 74,
+		"statusTop": 75,
+		"statusTpn": 76,
+		"statusAtk": 77,
+		"statusHp": 78,
+		"statusMdef": 79,
+		"statusMoney": 80,
+		"statusLevel": 81
 	},
 	"animates": {
 		"star": 0,

@@ -2547,96 +2547,95 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 
 					core.setTextAlign("outerUI", "right") //右对齐
 					core.fillBoldText(uictx, core.getLvName(), 150, 38, "#CC9900", "#000000", "bold 16px kaiti", 35)
+				}
+				core.setTextAlign("outerUI", "center") //居中
+				let a = core.status.hard,
+					b = "",
+					c = ""; //难度
+				if (a === 'Massacre') {
+					b = "神剧";
+					c = "#60B103";
+				} else if (a === 'Arcade') {
+					b = "街机";
+					c = "#EBB659"
+				} else if (a === 'History') {
+					b = "历史";
+					c = "#CD0001"
+				}
+				core.fillBoldText(uictx, b, 80, 38, c, "#000000", "bold 16px kaiti", 35);
 
-					core.setTextAlign("outerUI", "center") //居中
-					let a = core.status.hard,
-						b = "",
-						c = ""; //难度
-					if (a === 'Massacre') {
-						b = "神剧";
-						c = "#60B103";
-					} else if (a === 'Arcade') {
-						b = "街机";
-						c = "#EBB659"
-					} else if (a === 'History') {
-						b = "历史";
-						c = "#CD0001"
-					}
-					core.fillBoldText(uictx, b, 80, 38, c, "#000000", "bold 16px kaiti", 35);
+				core.setTextAlign("outerUI", "left") //左对齐
+				if (core.getFlag("escort")) { //存在友军血量 core.getFlag("escort")
+					core.fillBoldText(uictx, "友军血量:", 10, 53, "#33FF99", "#000000", "bold 12px kaiti") //友军血量
+					core.fillBoldText(uictx, 22222266, 64, 54, "#33FF99", "#000000", "12px number", 102) //core.formatBigNumber(core.getFlag("友军血量"))
+				}
 
-					core.setTextAlign("outerUI", "left") //左对齐
-					if (core.getFlag("escort")) { //存在友军血量 core.getFlag("escort")
-						core.fillBoldText(uictx, "友军血量:", 10, 53, "#33FF99", "#000000", "bold 12px kaiti") //友军血量
-						core.fillBoldText(uictx, 22222266, 64, 54, "#33FF99", "#000000", "12px number", 102) //core.formatBigNumber(core.getFlag("友军血量"))
-					}
+				core.setTextAlign("outerUI", "left")
+				core.drawIcon(uictx, "statusHp", 6, 55, 24, 24)
+				core.fillRect(uictx, 32, 58.5, 94, 18, "#000000") //血槽
+				core.fillRect(uictx, 34, 60.5, 90 * hero.hp / hero.hpmax, 14, "#FF0000") //血
+				core.setTextAlign("outerUI", "center")
+				core.fillText(uictx, core.formatBigNumber(hero.hp, true) + "/" + core.formatBigNumber(hero.hpmax, true), 79, 72, "#FFFFFF", "12px number", 90) //  血量数字
 
-					core.setTextAlign("outerUI", "left")
-					core.drawIcon(uictx, "hp", 6, 55, 24, 24)
-					core.fillRect(uictx, 32, 58.5, 94, 18, "#000000") //血槽
-					core.fillRect(uictx, 34, 60.5, 90 * hero.hp / hero.hpmax, 14, "#FF0000") //血
-					core.setTextAlign("outerUI", "center")
-					core.fillText(uictx, core.formatBigNumber(hero.hp, true) + "/" + core.formatBigNumber(hero.hpmax, true), 79, 72, "#FFFFFF", "12px number", 90) //  血量数字
+				core.setTextAlign("outerUI", "left") //左对齐
+				core.fillRoundRect(uictx, 6, 80, 148, 68, 5, "rgba(0,0,0,0.5)"); //常规状态底板
+				core.drawIcon(uictx, "statusAtk", 8, 79, 20, 20) //攻击力
+				core.fillText(uictx, "攻击:", 32, 94.5, "#FF0000", "bold 16px kaiti") //攻击：
+				core.fillText(uictx, core.formatBigNumber(core.getRealStatus("atk"), false), 70, 96, "#FF0000", "18px number", 100) //攻击数字
 
-					core.setTextAlign("outerUI", "left") //左对齐
-					core.fillRoundRect(uictx, 6, 80, 148, 68, 5, "rgba(0,0,0,0.5)"); //常规状态底板
-					core.drawIcon(uictx, "hp", 6, 79, 24, 24) //攻击力
-					core.fillText(uictx, "攻击:", 32, 94.5, "#FF0000", "bold 16px kaiti") //攻击：
-					core.fillText(uictx, core.formatBigNumber(core.getRealStatus("atk"), false), 70, 96, "#FF0000", "18px number", 100) //攻击数字
+				core.drawIcon(uictx, "statusMana", 8, 103, 20, 20) //指挥点	
+				core.fillText(uictx, "指挥点:", 32, 118.5, "#00CCFF", "bold 16px kaiti") //指挥点：
+				core.fillText(uictx, core.formatBigNumber(core.getRealStatus("mana"), false), 86, 120, "#00CCFF", "18px number", 100) //指挥点数字
 
-					core.drawIcon(uictx, "hp", 6, 103, 24, 24) //指挥点	
-					core.fillText(uictx, "指挥点:", 32, 118.5, "#00CCFF", "bold 16px kaiti") //指挥点：
-					core.fillText(uictx, core.formatBigNumber(core.getRealStatus("mana"), false), 86, 120, "#00CCFF", "18px number", 100) //指挥点数字
+				core.drawIcon(uictx, "statusMdef", 8, 127, 20, 20) //后勤点	
+				core.fillText(uictx, "后勤点:", 32, 142.5, "#AAFF88", "bold 16px kaiti") //后勤点：
+				core.fillText(uictx, core.formatBigNumber(core.getRealStatus("mdef"), false), 86, 144, "#AAFF88", "18px number", 100) //后勤点数字
 
-					core.drawIcon(uictx, "hp", 6, 127, 24, 24) //后勤点	
-					core.fillText(uictx, "后勤点:", 32, 142.5, "#AAFF88", "bold 16px kaiti") //后勤点：
-					core.fillText(uictx, core.formatBigNumber(core.getRealStatus("mdef"), false), 86, 144, "#AAFF88", "18px number", 100) //后勤点数字
+				core.setTextAlign("outerUI", "center") //居中
+				core.fillText(uictx, "——陆军属性——", 240, 20, "#FFFF00", "bold 16px kaiti", 150)
+				core.setTextAlign("outerUI", "left") //左对齐
+				core.fillRoundRect(uictx, 167, 26, 148, 49, 5, "rgba(0,0,0,0.5)"); //陆军属性底板
+				core.drawIcon(uictx, "statusAp", 172, 28, 20, 20) //穿甲
+				core.fillText(uictx, "穿甲:", 196, 43.5, "#FFFFFF", "bold 16px kaiti") //穿甲：
+				core.fillText(uictx, core.formatBigNumber(core.getRealStatus('ap'), false), 234, 45, "#FFFFFF", "18px number", 100) //穿甲数字
 
-					core.setTextAlign("outerUI", "center") //居中
-					core.fillText(uictx, "——陆军属性——", 240, 20, "#FFFF00", "bold 16px kaiti", 150)
-					core.setTextAlign("outerUI", "left") //左对齐
-					core.fillRoundRect(uictx, 167, 26, 148, 49, 5, "rgba(0,0,0,0.5)"); //陆军属性底板
-					core.drawIcon(uictx, "hp", 172, 28, 24, 24) //穿甲
-					core.fillText(uictx, "穿甲:", 196, 43.5, "#FFFFFF", "bold 16px kaiti") //穿甲：
-					core.fillText(uictx, core.formatBigNumber(core.getRealStatus('ap'), false), 234, 45, "#FFFFFF", "18px number", 100) //穿甲数字
+				core.drawIcon(uictx, "statusArm", 172, 52, 20, 20) //装甲
+				core.fillText(uictx, "装甲:", 196, 67.5, "#D1AD89", "bold 16px kaiti") //装甲：
+				core.fillText(uictx, core.formatBigNumber(core.getRealStatus('arm'), false), 234, 69, "#D1AD89", "18px number", 100) //装甲数字
 
-					core.drawIcon(uictx, "hp", 172, 52, 24, 24) //装甲
-					core.fillText(uictx, "装甲:", 196, 67.5, "#D1AD89", "bold 16px kaiti") //装甲：
-					core.fillText(uictx, core.formatBigNumber(core.getRealStatus('arm'), false), 234, 69, "#D1AD89", "18px number", 100) //装甲数字
+				core.setTextAlign("outerUI", "center") //居中
+				core.fillText(uictx, "——海军属性——", 240, 89, "#55CCFF", "bold 16px kaiti", 150)
+				core.setTextAlign("outerUI", "left") //左对齐
+				core.fillRoundRect(uictx, 167, 95, 148, 49, 5, "rgba(0,0,0,0.5)"); //海军属性底板
+				core.drawIcon(uictx, "statusTop", 170, 95, 24, 24) //雷击
+				core.fillText(uictx, "雷击:", 196, 112.5, "#FF8C00", "bold 16px kaiti") //雷击：
+				core.fillText(uictx, core.formatBigNumber(core.getRealStatus('top'), false), 234, 114, "#FF8C00", "18px number", 100) //雷击数字
 
-					core.setTextAlign("outerUI", "center") //居中
-					core.fillText(uictx, "——海军属性——", 240, 89, "#55CCFF", "bold 16px kaiti", 150)
-					core.setTextAlign("outerUI", "left") //左对齐
-					core.fillRoundRect(uictx, 167, 95, 148, 49, 5, "rgba(0,0,0,0.5)"); //海军属性底板
-					core.drawIcon(uictx, "hp", 172, 97, 24, 24) //雷击
-					core.fillText(uictx, "雷击:", 196, 112.5, "#224499", "bold 16px kaiti") //雷击：
-					core.fillText(uictx, core.formatBigNumber(core.getRealStatus('top'), false), 234, 114, "#224499F", "18px number", 100) //雷击数字
+				core.drawIcon(uictx, "statusTpn", 170, 119, 24, 24) //鱼雷
+				core.fillText(uictx, "鱼雷:", 196, 136.5, "#CC33FF", "bold 16px kaiti") //鱼雷：
+				core.fillText(uictx, core.formatBigNumber(core.getRealStatus('tpn'), false), 234, 138, "#CC33FF", "18px number", 100) //鱼雷数字
 
-					core.drawIcon(uictx, "hp", 172, 121, 24, 24) //鱼雷
-					core.fillText(uictx, "鱼雷:", 196, 136.5, "#CC33FF", "bold 16px kaiti") //鱼雷：
-					core.fillText(uictx, core.formatBigNumber(core.getRealStatus('tpn'), false), 234, 138, "#CC33FF", "18px number", 100) //鱼雷数字
+				core.fillRoundRect(uictx, 325, 4, 148, 49, 5, "rgba(0,0,0,0.5)"); //非战斗属性底板
+				core.drawIcon(uictx, "statusMoney", 330, 6, 24, 24) //黄金
+				core.fillText(uictx, "黄金:", 354, 21.5, "#FBBF3D", "bold 16px kaiti") //黄金：
+				core.fillText(uictx, core.formatBigNumber(core.getRealStatus('money'), false), 392, 23, "#FBBF3D", "18px number", 70) //黄金数字
 
-					core.fillRoundRect(uictx, 325, 4, 148, 49, 5, "rgba(0,0,0,0.5)"); //非战斗属性底板
-					core.drawIcon(uictx, "hp", 330, 6, 24, 24) //黄金
-					core.fillText(uictx, "黄金:", 354, 21.5, "#FBBF3D", "bold 16px kaiti") //黄金：
-					core.fillText(uictx, core.formatBigNumber(core.getRealStatus('money'), false), 392, 23, "#FBBF3D", "18px number", 70) //黄金数字
-
-					core.drawIcon(uictx, "hp", 330, 30, 24, 24) //晋升
-					core.fillText(uictx, "晋升:", 354, 45.5, "#CCCC44", "bold 16px kaiti") //晋升：
-					core.fillText(uictx, core.formatBigNumber(core.control.getNextLvUpNeed(), false), 392, 47, "#CCCC44", "18px number", 70) //晋升数字
+				core.drawIcon(uictx, "statusLevel", 330, 30, 24, 24) //晋升
+				core.fillText(uictx, "晋升:", 354, 45.5, "#CCCC44", "bold 16px kaiti") //晋升：
+				core.fillText(uictx, core.formatBigNumber(core.control.getNextLvUpNeed(), false), 392, 47, "#CCCC44", "18px number", 70) //晋升数字
 
 
 
-					core.setTextAlign("outerUI", "center") //居中
-					if (core.getFlag("制空权") === 1) { //core.getFlag("制空权")===1
-						core.fillBoldText(uictx, "制空权↑", 400, 114, "#6633FF", "#000000", "bold 20px kaiti", 100)
-					} else if (core.getFlag("制空权") === 2) { //core.getFlag("制空权")===2
-						core.fillBoldText(uictx, "制空权↓", 400, 114, "#FF8844", "#000000", "bold 20px kaiti", 100) //制空权↓
-					}
+				core.setTextAlign("outerUI", "center") //居中
+				if (core.getFlag("制空权") === 1) { //core.getFlag("制空权")===1
+					core.fillBoldText(uictx, "制空权↑", 400, 114, "#6633FF", "#000000", "bold 20px kaiti", 100)
+				} else if (core.getFlag("制空权") === 2) { //core.getFlag("制空权")===2
+					core.fillBoldText(uictx, "制空权↓", 400, 114, "#FF8844", "#000000", "bold 20px kaiti", 100) //制空权↓
+				}
 
-					core.setTextAlign("outerUI", "center") //居中
-					if (flags.skill > 0) { //flags.skill > 0
-						core.fillBoldText(uictx, core.plugin.skillInfo[flags.skill].name, 400, 140, "#28B6F6", "#000000", "bold 20px kaiti", 160) //技能显示 core.plugin.skillInfo[flags.skill].name
-					}
+				core.setTextAlign("outerUI", "center") //居中
+				if (flags.skill > 0) { //flags.skill > 0
+					core.fillBoldText(uictx, core.plugin.skillInfo[flags.skill].name, 400, 140, "#28B6F6", "#000000", "bold 20px kaiti", 160) //技能显示 core.plugin.skillInfo[flags.skill].name
 				}
 			} else { // 横屏
 				core.clearMap(uictx, 0, 0, 150, 480); //左侧（0--150，0--480）
@@ -2682,22 +2681,22 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				}
 
 				core.setTextAlign("outerUI", "center")
-				core.drawIcon(uictx, "hp", 4, 103, 32, 32)
+				core.drawIcon(uictx, "statusHp", 4, 103, 32, 32)
 				core.fillRect(uictx, 36, 107, 106, 24, "#000000") //血槽
 				core.fillRect(uictx, 38, 109, 102 * hero.hp / hero.hpmax, 20, "#FF0000") //血	
 				core.fillText(uictx, core.formatBigNumber(hero.hp, true) + "/" + core.formatBigNumber(hero.hpmax, true), 89, 123.5, "#FFFFFF", "12px number", 102) //  血量数字
 
 				core.fillRoundRect(uictx, 4, 133, 142, 84, 5, "rgba(0,0,0,0.5)"); //常规状态底板
-				core.drawIcon(uictx, "hp", 4, 131, 32, 32) //攻击力
+				core.drawIcon(uictx, "statusAtk", 6, 134, 24, 24) //攻击力
 				core.setTextAlign("outerUI", "left") //左对齐
 				core.fillText(uictx, "攻击:", 36, 153, "#FF0000", "bold 16px kaiti") //攻击：
 				core.fillText(uictx, core.formatBigNumber(core.getRealStatus("atk"), false), 74, 154.5, "#FF0000", "18px number", 70) //攻击数字
 
-				core.drawIcon(uictx, "hp", 4, 159, 32, 32) //指挥点	
+				core.drawIcon(uictx, "statusMana", 6, 163, 24, 24) //指挥点	
 				core.fillText(uictx, "指挥点:", 36, 181, "#00CCFF", "bold 16px kaiti") //指挥点：
 				core.fillText(uictx, core.formatBigNumber(core.getRealStatus("mana"), false), 90, 182.5, "#00CCFF", "18px number", 54) //指挥点数字
 
-				core.drawIcon(uictx, "hp", 4, 187, 32, 32) //后勤点	
+				core.drawIcon(uictx, "statusMdef", 6, 190, 24, 24) //后勤点	
 				core.fillText(uictx, "后勤点:", 36, 209, "#AAFF88", "bold 16px kaiti") //后勤点：
 				core.fillText(uictx, core.formatBigNumber(core.getRealStatus("mdef"), false), 90, 210.5, "#AAFF88", "18px number", 54) //后勤点数字
 
@@ -2705,11 +2704,11 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				core.fillText(uictx, "——————————陆军属性——————————", 75, 235.5, "#FFFF00", "bold 16px kaiti")
 				core.setTextAlign("outerUI", "left") //左对齐
 				core.fillRoundRect(uictx, 4, 243, 142, 57, 5, "rgba(0,0,0,0.5)"); //陆军属性底板
-				core.drawIcon(uictx, "hp", 4, 241, 32, 32) //穿甲
+				core.drawIcon(uictx, "statusAp", 6, 245, 24, 24) //穿甲
 				core.fillText(uictx, "穿甲:", 36, 263, "#FFFFFF", "bold 16px kaiti") //穿甲：
 				core.fillText(uictx, core.formatBigNumber(core.getRealStatus('ap'), false), 74, 264.5, "#FFFFFF", "18px number", 70) //穿甲数字
 
-				core.drawIcon(uictx, "hp", 4, 269, 32, 32) //装甲
+				core.drawIcon(uictx, "statusArm", 6, 272, 24, 24) //装甲
 				core.fillText(uictx, "装甲:", 36, 291, "#D1AD89", "bold 16px kaiti") //装甲：
 				core.fillText(uictx, core.formatBigNumber(core.getRealStatus('arm'), false), 74, 292.5, "#D1AD89", "18px number", 70) //装甲数字
 
@@ -2717,11 +2716,11 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				core.fillText(uictx, "——————————海军属性——————————", 75, 317.5, "#55CCFF", "bold 16px kaiti")
 				core.setTextAlign("outerUI", "left") //左对齐
 				core.fillRoundRect(uictx, 4, 325, 142, 57, 5, "rgba(0,0,0,0.5)"); //海军属性底板
-				core.drawIcon(uictx, "hp", 4, 323, 32, 32) //雷击
-				core.fillText(uictx, "雷击:", 36, 343.5, "#33CCFF", "bold 16px kaiti") //雷击：
-				core.fillText(uictx, core.formatBigNumber(core.getRealStatus('top'), false), 74, 345, "#33CCFF", "18px number", 70) //雷击数字
+				core.drawIcon(uictx, "statusTop", 4, 323, 32, 32) //雷击
+				core.fillText(uictx, "雷击:", 36, 343.5, "#FF8C00", "bold 16px kaiti") //雷击：
+				core.fillText(uictx, core.formatBigNumber(core.getRealStatus('top'), false), 74, 345, "#FF8C00", "18px number", 70) //雷击数字
 
-				core.drawIcon(uictx, "hp", 4, 351, 32, 32) //鱼雷
+				core.drawIcon(uictx, "statusTpn", 4, 351, 32, 32) //鱼雷
 				core.fillText(uictx, "鱼雷:", 36, 373, "#CC33FF", "bold 16px kaiti") //鱼雷：
 				core.fillText(uictx, core.formatBigNumber(core.getRealStatus('tpn'), false), 74, 374.5, "#CC33FF", "18px number", 70) //鱼雷数字
 
@@ -2729,11 +2728,11 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				core.fillText(uictx, "————————————————————————", 75, 395, "#FFFFFF", "bold 16px kaiti")
 				core.setTextAlign("outerUI", "left") //左对齐
 				core.fillRoundRect(uictx, 4, 397, 142, 57, 5, "rgba(0,0,0,0.5)"); //非战斗属性底板
-				core.drawIcon(uictx, "hp", 4, 395, 32, 32) //黄金
+				core.drawIcon(uictx, "statusMoney", 4, 395, 32, 32) //黄金
 				core.fillText(uictx, "黄金:", 36, 417, "#FBBF3D", "bold 16px kaiti") //黄金：
 				core.fillText(uictx, core.formatBigNumber(core.getRealStatus('money'), false), 74, 418.5, "#FBBF3D", "18px number", 70) //黄金数字
 
-				core.drawIcon(uictx, "hp", 4, 423, 32, 32) //晋升
+				core.drawIcon(uictx, "statusLevel", 4, 423, 32, 32) //晋升
 				core.fillText(uictx, "晋升:", 36, 445, "#CCCC44", "bold 16px kaiti") //晋升：
 				core.fillText(uictx, core.formatBigNumber(core.control.getNextLvUpNeed(), false), 74, 446.5, "#CCCC44", "18px number", 70) //晋升数字
 
@@ -4187,8 +4186,6 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 	};
 	// 获取宝石信息 并绘制
 	this.getItemDetail = function (floorId) {
-		if (!flags?.itemDetail) return console.log("1");
-		if (!core.status.thisMap) return console.log("2");
 		floorId = floorId ?? core.status.thisMap.floorId;
 		const beforeRatio = core.status.thisMap.ratio;
 		core.status.thisMap.ratio = core.status.maps[floorId].ratio;
