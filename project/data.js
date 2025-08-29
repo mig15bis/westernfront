@@ -1781,6 +1781,11 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 				"time": 500
 			},
 			{
+				"type": "setValue",
+				"name": "flag:cri",
+				"value": "true"
+			},
+			{
 				"type": "playSound",
 				"name": "xinxinmagic.mp3"
 			},
@@ -6748,10 +6753,10 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			},
 			{
 				"need": "10000",
-				"title": "元帅/五星上将",
+				"title": "元帅",
 				"clear": true,
 				"action": [
-					"晋升元帅/五星上将"
+					"晋升元帅"
 				]
 			}
 		]

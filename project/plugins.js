@@ -1441,9 +1441,9 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 		var b13 = this._buildFont(13, true),
 			f13 = this._buildFont(13, false);
 		var col1 = left,
-			col2 = left + width * 0.25,
-			col3 = left + width * 0.45,
-			col4 = left + width * 0.65;
+			col2 = left + width * 0.35,
+			col3 = left + width * 0.65,
+			col4 = left + width * 0.95;
 		core.fillText('ui', '生命', col1, position, [0, 255, 0, 1], f13);
 		core.fillText('ui', core.formatBigNumber(enemy.hp || 0), col1 + 30, position, null, b13);
 		core.fillText('ui', '黄金', col2, position, [255, 255, 0, 1], f13);
@@ -1459,30 +1459,32 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			f13 = core.ui._buildFont(13, false);
 		var col1 = left,
 			col2 = left + width * 0.25,
-			col3 = left + width * 0.45,
-			col4 = left + width * 0.65;
+			col3 = left + width * 0.55,
+			col4 = left + width * 0.75;
 		// 获得第二行绘制的内容
 		var second_line = [];
 		if (core.plugin.Army.includes(enemy.type)) {
-			core.fillText('ui', '穿甲', col1, position, [255, 255, 255, 1], f13);
+			core.fillText('ui', '穿甲', col1, position, [244, 164, 96, 1], f13);
 			core.fillText('ui', core.formatBigNumber(enemy.ap || 0), col1 + 30, position, null, b13);
-			core.fillText('ui', '装甲', col2, position, null, f13);
-			core.fillText('ui', core.formatBigNumber(enemy.arm || 0), col2 + 30, position, null, b13);
+			core.fillText('ui', '装甲', col2 + 30, position, [244, 164, 96, 1], f13);
+			core.fillText('ui', core.formatBigNumber(enemy.arm || 0), col2 + 60, position, null, b13);
 		}
 		if (core.plugin.Navy.includes(enemy.type)) {
-			core.fillText('ui', '鱼雷管', col1, position, [255, 255, 255, 1], f13);
+			core.fillText('ui', '鱼雷管', col1, position, [0, 191, 255, 1], f13);
 			core.fillText('ui', core.formatBigNumber(enemy.tpn || 0), col1 + 45, position, null, b13);
-			core.fillText('ui', '雷击', col2, position, null, f13);
-			core.fillText('ui', core.formatBigNumber(enemy.top || 0), col2 + 30, position, null, b13);
+			core.fillText('ui', '雷击', col2 + 30, position, [0, 191, 255, 1], f13);
+			core.fillText('ui', core.formatBigNumber(enemy.top || 0), col2 + 60, position, null, b13);
 		}
 		if (core.plugin.Luftwaffe.includes(enemy.type)) {
-			core.fillText('ui', '鱼雷管', col1, position, [255, 255, 255, 1], f13);
-			core.fillText('ui', core.formatBigNumber(enemy.tpn || 0), col1 + 45, position, null, b13);
-			core.fillText('ui', '雷击', col2, position, null, f13);
-			core.fillText('ui', core.formatBigNumber(enemy.top || 0), col2 + 30, position, null, b13);
+			core.fillText('ui', '雷击', col1, position, [255, 255, 255, 1], f13);
+			core.fillText('ui', core.formatBigNumber(enemy.top || 0), col1 + 30, position, null, b13);
+			core.fillText('ui', '空袭', col2 + 10, position, [255, 255, 255, 1], f13);
+			core.fillText('ui', core.formatBigNumber(enemy.bom || 0), col2 + 40, position, null, b13);
+			core.fillText('ui', '鱼雷', col3, position, [255, 255, 255, 1], f13);
+			core.fillText('ui', core.formatBigNumber(enemy.tpn || 0), col3 + 30, position, null, b13);
 		}
 
-		var damage_offset = col3 + 20;
+		var damage_offset = col4 + 15;
 
 		// 忽略第三列，直接绘制伤害
 		this._drawBook_drawDamage(index, enemy, damage_offset, position);
@@ -1494,13 +1496,13 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 		var b13 = core.ui._buildFont(13, true),
 			f13 = core.ui._buildFont(13, false);
 		var col1 = left,
-			col2 = left + width * 0.25,
-			col3 = left + width * 0.45,
-			col4 = left + width * 0.65;
+			col2 = left + width * 0.35,
+			col3 = left + width * 0.65,
+			col4 = left + width * 0.95;
 		core.fillText('ui', '攻击', col1, position, [255, 0, 0, 1], f13);
 		core.fillText('ui', core.formatBigNumber(enemy.atk || 0), col1 + 30, position, null, b13);
-		core.fillText('ui', '空袭', col2, position, '#DDDDDD', f13);
-		core.fillText('ui', core.formatBigNumber(enemy.bom || 0), col2 + 30, position, null, b13);
+		core.fillText('ui', '临界', col2, position, '#DDDDDD', f13);
+		core.fillText('ui', core.formatBigNumber(enemy.critical || 0), col2 + 30, position, null, b13);
 		core.fillText('ui', '回合', col3, position, null, f13);
 		core.fillText('ui', core.getDamageInfo(enemy)?.turn, col3 + 30, position, null, b13);
 	}
