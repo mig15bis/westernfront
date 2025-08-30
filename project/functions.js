@@ -454,8 +454,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	var money = guards.reduce(function (curr, g) {
 		return curr + core.material.enemys[g[2]].money;
 	}, core.getEnemyValue(enemy, "money", x, y));
-	if (core.hasEquip('m4')) money += 5; //谢馒头，触发在双倍前
-	if (core.hasEquip('m4a2')) money += 5; //M4A2馒头
+	if (core.hasEquip('m4') || core.hasEquip('m4a2') || core.hasEquip('m4a3') || core.hasEquip('m4a3e2') || core.hasEquip('firefly')) money += 5; //谢馒头，触发在双倍前
 	if (core.hasEquip('classj')) money += 5; //J级驱逐舰
 	if (flags.warmachine === true) money *= 2; //工业潜能，金币翻倍，计算在下面几个之前
 	if (core.hasEquip('edinburgh')) money += 2; //爱丁堡号巡洋舰，金币+2
@@ -472,7 +471,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	if (core.hasEquip('classv')) exp += 2; //V级驱逐舰
 	if (core.hasEquip('classj')) exp += 5; //J级驱逐舰
 	if (core.hasEquip('hood')) exp += 10; //胡德号，经验+10
-	if (core.hasEquip('m4a2')) exp *= 2; //M4A2馒头
+	if (core.hasEquip('m4a2') || core.hasEquip('m4a3') || core.hasEquip('m4a3e2') || core.hasEquip('firefly')) exp *= 2; //馒头
 	if (core.hasSpecial(enemyId, 61)) exp = 0; // 投降
 	core.status.hero.exp += exp;
 	core.status.hero.statistics.exp += exp;
@@ -1160,10 +1159,16 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		beilv = 1,
 		yongshi = { atk: hero_atk, def: hero_def, mdef: hero_mdef, ap: hero_ap, arm: hero_arm, top: hero_top, tpn: hero_tpn, dod: hero_dod, cd: hero_cd },
 		guaiwu = { hp: mon_hp, atk: mon_atk, def: mon_def, ap: mon_ap, arm: mon_arm, top: mon_top, bom: mon_bom, tpn: mon_tpn, dod: mon_dod, cd: mon_cd, ammo: mon_ammo, spd: mon_spd, gro: mon_gro },
-		taishi = (hero_ap > mon_arm) && (mon_ap <= hero_arm) ? "优势" : (mon_ap > hero_arm) && (hero_ap <= mon_arm) ? "劣势" : "均势",
-		junzhong = core.plugin.Army.includes(mon_skillNum.type) ? "陆军" : core.plugin.Navy.includes(mon_skillNum.type) ? "海军" : "空军";
-	if (flags.scare > 0) {
-		yongshi.atk *= Math.max(1 - 0.1 * flags.scare)
+		junzhong = core.plugin.Army.includes(mon_skillNum.type) ? "陆军" : core.plugin.Navy.includes(mon_skillNum.type) ? "海军" : "空军",
+		taishi = (junzhong === "陆军" && (hero_ap > mon_arm) && (mon_ap <= hero_arm)) ? "优势" : (junzhong === "陆军" && (mon_ap > hero_arm) && (hero_ap <= mon_arm)) ? "劣势" : junzhong === "陆军" ? "均势" : "非陆军";
+	if (taishi === "劣势" && (core.hasEquip('m4') || core.hasEquip('m4a2') || core.hasEquip('m4a3'))) { //谢馒头
+		yongshi.atk *= 1.15;
+	}
+	if (core.hasEquip('m26pershing') && ['panzer5d', 'panzer5g', 'tigere', 'japtank6'].includes(enemyInfo.enemyId)) { //潘兴
+		yongshi.atk *= 1.3;
+	}
+	if (flags.scare > 0) { //惊慌
+		yongshi.atk *= Math.max(0, 1 - 0.1 * flags.scare)
 	}
 	if (junzhong === "空军" && flags.skill === 1) { //防空弹幕
 		yongshi.atk *= 1.2;
@@ -1254,16 +1259,32 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			return null;
 		}
 	}
-	if (flags.dry && (core.hasSpecial(mon_special, 55) || core.hasSpecial(mon_special, 62))) {
+	if (flags.dry && (core.hasSpecial(mon_special, 55) || core.hasSpecial(mon_special, 62))) { //炎热
 		beilv *= 1.2;
+	}
+	if ((core.hasSpecial(mon_special, 38) || core.hasSpecial(mon_special, 57)) && core.hasEquip('firefly')) { //萤火虫
+		beilv *= 1.4;
+	}
+	if (core.hasEquip('m26pershing') && ['步兵', '反坦克炮', '榴弹炮', '高射炮'].includes(mon_skillNum.type)) { //潘兴
+		beilv *= 1.5;
+		finalDamage *= 0.6;
 	}
 	//回合计算	
 	let bool = false,
 		v1 = false,
-		a = 0,
-		b = 0;
+		a = 0, //敌方先攻
+		b = 0; //我方先攻
 	if (junzhong === "陆军" && taishi === "劣势") {
 		a = 5;
+		if (core.hasEquip('crusades') || core.hasEquip('a34comet')) { //十字军
+			a -= 2;
+		}
+		if (core.hasEquip('valentine') || core.hasEquip('cromwell') || core.hasEquip('matilda')) { //瓦伦丁、克伦威尔、马蒂尔达
+			a += 5;
+		}
+		if (core.hasEquip('churchillmk3') || core.hasEquip('m3grant')) { //丘吉尔、格兰特
+			a += 10;
+		}
 	}
 	if (junzhong === "陆军" && taishi === "优势") {
 		b = 5;
@@ -1278,9 +1299,16 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		}
 
 		if (a === 0) { //能出手
-			guaiwu.hp -= hero_perDamage * beilv;
-			if (turn % yongshi.cd === 0) {
+			guaiwu.hp -= hero_perDamage * beilv *
+				((['步兵', '反坦克炮', '榴弹炮', '高射炮'].includes(mon_skillNum.type) && (core.hasEquip('m4') || core.hasEquip('m4a2') || core.hasEquip('m4a3') || core.hasEquip('m4a3e2'))) ? 1.3 : 1); //谢馒头榴弹
+			if (junzhong === "海军" && turn % yongshi.cd === 0 && !((!flags.引信改良 || flags.hard !== 1) && (core.hasEquip('mahan') || core.hasEquip('benson') || core.hasEquip('flecher') || core.hasEquip('cleveland')))) { //鱼雷生效
 				guaiwu.hp -= yongshi.top * Math.max(0, (yongshi.tpn - (core.hasSpecial(mon_special, 35) ? guaiwu.dod : 0))) * beilv; //鱼雷闪避
+			}
+			if (mon_skillNum.type === '潜艇' && core.hasEquip('classe') && turn % 3 === 0) { //E级驱逐舰
+				guaiwu.hp -= yongshi.atk * 0.5 * beilv;
+			}
+			if (mon_skillNum.type === '潜艇' && core.hasEquip('mahan') && turn % 3 === 0) { //马汉级驱逐舰
+				guaiwu.hp -= yongshi.atk * 0.5 * beilv;
 			}
 		}
 
@@ -1377,6 +1405,12 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		finalDamage *= 0.7;
 	}
 	if (flags.skill === 10) { //破译
+		finalDamage *= 0.8;
+	}
+	if ((core.hasEquip('matilda') || core.hasEquip('m3grant')) && hero_arm > mon_ap) { //马蒂尔达 压制
+		finalDamage *= 0.8;
+	}
+	if (junzhong === "陆军" && hero_ap <= mon_arm && hero.arm >= mon_ap && core.hasEquip('m4a3e2')) {
 		finalDamage *= 0.8;
 	}
 	if (flags.skill === 1 && junzhong === "陆军") { //战壕

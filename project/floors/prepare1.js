@@ -83,7 +83,6 @@ main.floors.prepare1=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        
         {
             "type": "update"
         },

@@ -4486,8 +4486,8 @@ EnemyPoint_List
     /*EnemyPoint_List ['hp','atk','def','money','exp','point','name']*/;
 
 Equip_List
-    :   '生命'|'生命上限'|'攻击'|'防御'|'护盾'|'魔力'|'魔力上限'
-    /*Equip_List ['hp','hpmax','atk','def','mdef','mana','manamax']*/;
+    :   '生命'|'生命上限'|'攻击'|'防御'|'护盾'|'魔力'|'魔力上限'|'穿甲'|'装甲'|'雷击'|'鱼雷管'
+    /*Equip_List ['hp','hpmax','atk','def','mdef','mana','manamax','ap','arm','top','tpn']*/;
 
 Key_List
     :   '黄钥匙'|'蓝钥匙'|'红钥匙'|'绿钥匙'|'铁门钥匙'
