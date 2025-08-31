@@ -422,10 +422,11 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		core.events.lose('战斗失败');
 		return;
 	}
+	//友伤
 	if (flags.skill !== 18) { //孟菲斯美女号
 		if (flags['escort'] && damage >= 0) { //拦截
 			var fredamage = (core.hasSpecial(enemyId, 64) ? 2 : 0.4) * damage;
-			if (core.hasEquip('classj')) { fredamage *= 0.5 } //检测到装备，友伤减半
+			if (core.hasEquip('classj')) { fredamage *= 0.5 } //检测到装备（J驱），友伤减半
 			flags['友军血量'] -= fredamage;
 			if (core.enemys.hasSpecial(special, 83)) { //对空火箭
 				flags['友军血量'] -= 0.05 * enemy.ammo * core.getEnemyInfo(enemy, hero, x, y).atk * turn;
@@ -1153,14 +1154,19 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		return null;
 	}
 
-	var damage = 0,
-		turn = 1,
-		finalDamage = 1,
-		beilv = 1,
-		yongshi = { atk: hero_atk, def: hero_def, mdef: hero_mdef, ap: hero_ap, arm: hero_arm, top: hero_top, tpn: hero_tpn, dod: hero_dod, cd: hero_cd },
-		guaiwu = { hp: mon_hp, atk: mon_atk, def: mon_def, ap: mon_ap, arm: mon_arm, top: mon_top, bom: mon_bom, tpn: mon_tpn, dod: mon_dod, cd: mon_cd, ammo: mon_ammo, spd: mon_spd, gro: mon_gro },
-		junzhong = core.plugin.Army.includes(mon_skillNum.type) ? "陆军" : core.plugin.Navy.includes(mon_skillNum.type) ? "海军" : "空军",
-		taishi = (junzhong === "陆军" && (hero_ap > mon_arm) && (mon_ap <= hero_arm)) ? "优势" : (junzhong === "陆军" && (mon_ap > hero_arm) && (hero_ap <= mon_arm)) ? "劣势" : junzhong === "陆军" ? "均势" : "非陆军";
+	var damage = 0, //勇士受到伤害
+		turn = 1, //回合数
+		finalDamage = 1, //最终伤害倍率，初始为1倍，最终战斗伤害=damage*finalDamage
+		beilv = 1, //勇士攻击总倍率，勇士单个回合伤害=hero_perDamage * beilv * 其他
+		yongshi = { atk: hero_atk, def: hero_def, mdef: hero_mdef, ap: hero_ap, arm: hero_arm, top: hero_top, tpn: hero_tpn, dod: hero_dod, cd: hero_cd }, //勇士属性
+		guaiwu = { hp: mon_hp, atk: mon_atk, def: mon_def, ap: mon_ap, arm: mon_arm, top: mon_top, bom: mon_bom, tpn: mon_tpn, dod: mon_dod, cd: mon_cd, ammo: mon_ammo, spd: mon_spd, gro: mon_gro }, //怪物属性
+		junzhong = core.plugin.Army.includes(mon_skillNum.type) ? "陆军" : core.plugin.Navy.includes(mon_skillNum.type) ? "海军" : "空军", //军种判定
+		taishi = (junzhong === "陆军" && (hero_ap > mon_arm) && (mon_ap <= hero_arm)) ? "优势" : (junzhong === "陆军" && (mon_ap > hero_arm) && (hero_ap <= mon_arm)) ? "劣势" : junzhong === "陆军" ? "均势" : "非陆军"; //陆战态势判定（是否击穿）
+
+	if (core.hasEquip('sheffield') && (mon_skillNum.type === '轻巡' || mon_skillNum.type === '驱逐')) { //谢菲尔德，巴伦支海
+		guaiwu.hp -= guaiwu.top * 0.3;
+		guaiwu.top *= 0.7;
+	}
 	if (taishi === "劣势" && (core.hasEquip('m4') || core.hasEquip('m4a2') || core.hasEquip('m4a3'))) { //谢馒头
 		yongshi.atk *= 1.15;
 	}
@@ -1173,8 +1179,11 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	if (junzhong === "空军" && flags.skill === 1) { //防空弹幕
 		yongshi.atk *= 1.2;
 	}
-	var mon_perDamage = guaiwu.atk,
-		hero_perDamage = yongshi.atk;
+	if (yongshi.dod < 0) { //如果主角闪避小于0，按0处理
+		yongshi.dod = 0;
+	}
+	var mon_perDamage = guaiwu.atk, //初始怪物伤害=攻击力
+		hero_perDamage = yongshi.atk; //初始勇士伤害=攻击力
 
 
 	if (core.hasSpecial(mon_special, 30)) { //技能 航炮
@@ -1201,13 +1210,13 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	if (x !== null && y !== null) { //技能 堡垒 46
 		beilv *= 1 - (cache.damage_debuff || 0);
 	}
-	if (core.hasSpecial(mon_special, 73)) {
+	if (core.hasSpecial(mon_special, 73)) { //喷气机
 		beilv *= 0.3;
 	}
-	if (core.hasSpecial(mon_special, 46) && x !== null && y !== null) { //不可被攻击
-		for (let m = -4; m <= 4; m++) {
+	if (core.hasSpecial(mon_special, 46) && x !== null && y !== null) { //不可被攻击（堡垒）
+		for (let m = -4; m <= 4; m++) { //循环遍历身周格子看有没有敌人
 			for (let n = -4; n <= 4; n++) {
-				if (m !== 0 && n !== 0) {
+				if (m !== 0 && n !== 0) { //自身不算
 					if (core.getBlockCls(x + m, y + n).startsWith("enemy")) {
 						return null;
 					}
@@ -1215,20 +1224,24 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			}
 		}
 	}
-	if (flags.skill === 5) {
+	if (flags.skill === 5) { //技能5：预警
 		guaiwu.tpn = Math.max(0, guaiwu.tpn - 6)
 	}
-	if (flags.skill === 6) {
+	if (flags.skill === 6) { //技能6：Z字规避
 		guaiwu.tpn = Math.max(0, guaiwu.tpn - 3)
 	}
-	if (flags.skill === 8 && junzhong === "海军" && mon_skillNum.type !== "潜艇") { //剑鱼818中队
+	if (flags.skill === 8 && junzhong === "海军" && mon_skillNum.type !== "潜艇") { //剑鱼818中队（需重写）
 		guaiwu.dod = Math.max(0, guaiwu.dod - 2);
 		guaiwu.hp -= yongshi.top * Math.max(1, 5 - guaiwu.dod);
 	}
-	if (flags.skill === 11) { //从海底出击
+	if (flags.skill === 12) { //从海底出击
 		guaiwu.hp -= yongshi.top * Math.max(1, 8 - guaiwu.dod);
 	}
 	//战斗伤害计算
+	//总伤害计算（先攻、倍率调整等）
+	if (core.hasEquip('cleveland') && hero_hp < hero_hpmax * 0.5) { //克利夫兰·海上骑士
+		finalDamage *= 0.75;
+	}
 	if (core.hasSpecial(mon_special, 38)) { //技能 精锐
 		finalDamage *= 2;
 	}
@@ -1239,10 +1252,10 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		damage += mon_skillNum.damage;
 	}
 	if (core.hasSpecial(mon_special, 34)) { //技能 惊雷
-		damage += guaiwu.top * guaiwu.tpn;
+		damage += guaiwu.top * Math.max(guaiwu.tpn - yongshi.dod, 0);
 	}
 	if (core.hasSpecial(mon_special, 37)) { //技能 跨射
-		if (![].include(core.getEquip(3))) { // 装备传入数组
+		if (!['hood', 'warspite', 'kinggeorge5', 'northcarolina', 'iowa', 'illustrious', 'essex', 'enterprise'].include(core.getEquip(3))) { // 装备传入数组
 			damage += 9 * guaiwu.atk;
 		}
 	}
@@ -1292,28 +1305,119 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			b -= 3;
 		}
 	}
+	if (core.hasEquip('sheffield')) { //谢菲尔德·额外先攻
+		guaiwu.hp -= hero_perDamage * beilv * ((['步兵', '反坦克炮', '榴弹炮', '高射炮'].includes(mon_skillNum.type) && (core.hasEquip('m4') || core.hasEquip('m4a2') || core.hasEquip('m4a3') || core.hasEquip('m4a3e2'))) ? 1.3 : 1);
+	}
+	if (core.hasEquip('norfolk') && mon_skillNum.type !== '潜艇' && junzhong === '海军') { //诺福克，额外先攻
+		guaiwu.hp -= hero_perDamage * beilv;
+	}
+	//战斗过程循环
+	let norfolkattack = 0;
 	for (;;) { // 勇士回合 
+		let hero_dc = 0, //伤害类型：深水炸弹
+			hero_common = 0, //伤害类型：普攻
+			hero_rocket = 0, //伤害类型：火箭弹
+			hero_bomb = 0, //伤害类型：炸弹
+			hero_main = 0, //伤害类型：战列舰主炮
+			hero_torpedo = 0, //伤害类型：鱼雷
+			mon_summary = 0, //怪物总伤
+			mon_common = 0, //怪物伤害类型：普攻
+			mon_bomb = 0, //怪物伤害类型：炸弹
+			mon_main = 0, //怪物伤害类型：战列舰主炮
+			mon_torpedo = 0; //怪物伤害类型：鱼雷
 		damage += cache.trap_buff || 0; //陷阱
 		if (core.getFlag("fire", 0) > 0) { // 燃烧 47
 			damage += hero_hp * 0.05;
 		}
 
 		if (a === 0) { //能出手
-			guaiwu.hp -= hero_perDamage * beilv *
-				((['步兵', '反坦克炮', '榴弹炮', '高射炮'].includes(mon_skillNum.type) && (core.hasEquip('m4') || core.hasEquip('m4a2') || core.hasEquip('m4a3') || core.hasEquip('m4a3e2'))) ? 1.3 : 1); //谢馒头榴弹
-			if (junzhong === "海军" && turn % yongshi.cd === 0 && !((!flags.引信改良 || flags.hard !== 1) && (core.hasEquip('mahan') || core.hasEquip('benson') || core.hasEquip('flecher') || core.hasEquip('cleveland')))) { //鱼雷生效
-				guaiwu.hp -= yongshi.top * Math.max(0, (yongshi.tpn - (core.hasSpecial(mon_special, 35) ? guaiwu.dod : 0))) * beilv; //鱼雷闪避
+
+			hero_common += hero_perDamage
+
+			if (core.hasEquip('cleveland') && core.status.maps[floorId].area === '海洋' && junzhong === '空军') { //克利夫兰·防空轻巡
+				beilv += 0.25;
 			}
+			if (core.hasEquip('benson')) { //本森级，cd-2
+				yongshi.cd -= 2;
+				if (yongshi.cd < 0) { yongshi.cd = 0 }
+			}
+
+			if (core.hasEquip('flecher')) { //弗莱彻级，双倍鱼雷快乐
+				yongshi.tpn *= 2;
+			}
+
+			if (core.hasEquip('flecher') && (mon_skillNum.type === '重巡' || mon_skillNum.type === '战列')) { //弗莱彻级，减cd
+				yongshi.cd -= 5;
+				if (yongshi.cd < 0) { yongshi.cd = 0 }
+			}
+
+			if (junzhong === "海军" && turn % yongshi.cd === 0 && !((!flags.引信改良 || flags.hard !== 1) && (core.hasEquip('mahan') || core.hasEquip('benson') || core.hasEquip('flecher') || core.hasEquip('cleveland')))) { //鱼雷生效
+				hero_torpedo += yongshi.top * Math.max(0, (yongshi.tpn - (core.hasSpecial(mon_special, 35) ? guaiwu.dod : 0))); //鱼雷闪避
+			}
+
+			//反潜
 			if (mon_skillNum.type === '潜艇' && core.hasEquip('classe') && turn % 3 === 0) { //E级驱逐舰
-				guaiwu.hp -= yongshi.atk * 0.5 * beilv;
+				hero_dc += yongshi.atk * 0.5;
 			}
 			if (mon_skillNum.type === '潜艇' && core.hasEquip('mahan') && turn % 3 === 0) { //马汉级驱逐舰
-				guaiwu.hp -= yongshi.atk * 0.5 * beilv;
+				hero_dc += yongshi.atk * 0.5;
+			}
+			if (mon_skillNum.type === '潜艇' && core.hasEquip('classv') && turn % 3 === 0) { //V级驱逐舰
+				hero_dc += yongshi.atk;
+			}
+			if (mon_skillNum.type === '潜艇' && core.hasEquip('benson') && turn % 3 === 0) { //本森级驱逐舰
+				hero_dc += yongshi.atk;
+			}
+			if (mon_skillNum.type === '潜艇' && core.hasEquip('classj') && turn % 3 === 0) { //J级驱逐舰
+				hero_dc += yongshi.atk * 1.5;
+			}
+			if (mon_skillNum.type === '潜艇' && core.hasEquip('flecher') && turn % 3 === 0) { //弗莱彻级驱逐舰
+				hero_dc += yongshi.atk * 2;
+			}
+
+			//主炮
+			if (mon_skillNum.type === '潜艇' && core.hasEquip('hood') && turn % 4 === 0 && junzhong === '海军') { //胡德号
+				hero_main += yongshi.atk * 6;
+			}
+			if (mon_skillNum.type === '潜艇' && core.hasEquip('warspite') && turn % 3 === 0 && junzhong === '海军') { //厌战号
+				hero_main += yongshi.atk * 3;
+			}
+			if (mon_skillNum.type === '潜艇' && core.hasEquip('kinggeorge5') && turn % 4 === 0 && junzhong === '海军') { //乔治五世号
+				hero_main += yongshi.atk * 6;
+			}
+			if (mon_skillNum.type === '潜艇' && core.hasEquip('northcarolina') && turn % 4 === 0 && junzhong === '海军') { //北卡罗莱纳
+				hero_main += yongshi.atk * 9;
+			}
+			if (mon_skillNum.type === '潜艇' && core.hasEquip('iowa') && turn % 4 === 0 && junzhong === '海军') { //衣阿华
+				hero_main += yongshi.atk * 10;
+			}
+
+			hero_common *= ((['步兵', '反坦克炮', '榴弹炮', '高射炮'].includes(mon_skillNum.type) && (core.hasEquip('m4') || core.hasEquip('m4a2') || core.hasEquip('m4a3') || core.hasEquip('m4a3e2'))) ? 1.3 : 1); //谢馒头榴弹
+
+			if (core.hasEquip('baltimore')) { //巴尔的摩·航空引导
+				if (core.hasEquip('essex') || core.hasEquip('enterprise')) {
+					if (junzhong === '空军') { beilv *= 1.4 }
+					if (junzhong === '海军') { hero_torpedo *= 1.6 }
+					if (junzhong === '陆军') { hero_bomb *= 1.3 }
+				}
+			}
+
+			if (core.hasEquip('northcarolina') && junzhong === '空军' && core.status.maps[floorId].area === '海洋') { //北卡防空
+				hero_common *= 1.6;
+			}
+			if (core.hasEquip('iowa') && junzhong === '空军' && core.status.maps[floorId].area === '海洋') { //衣阿华防空
+				hero_common *= 1.8;
+			}
+
+			guaiwu.hp -= (hero_common + hero_dc + hero_rocket + hero_bomb + hero_torpedo + hero_main) * beilv; //总伤计算
+			if (guaiwu.hp < mon_hp * 0.2 && core.hasEquip('norfolk') && norfolkattack === 0) { //诺福克·最后一击
+				guaiwu.hp -= yongshi.top * Math.max(0, (3 - (core.hasSpecial(mon_special, 35) ? guaiwu.dod : 0))) * beilv;
+				norfolkattack++;
 			}
 		}
 
 		if (guaiwu.hp <= 0) {
-			if (core.hasSpecial(mon_special, 48)) {
+			if (core.hasSpecial(mon_special, 48)) { //V1导弹
 				damage += guaiwu.top * 0.2;
 			}
 			break;
@@ -1354,37 +1458,55 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		}
 		//怪物回合
 		if (b === 0) {
-			damage += mon_perDamage;
+			mon_common += guaiwu.atk;
 			if (core.hasSpecial(mon_special, 28)) { //技能 航弹
 				if (turn % guaiwu.spd === 0) {
-					damage += guaiwu.ammo * guaiwu.bom;
+					mon_bomb += guaiwu.ammo * guaiwu.bom;
 				}
 			}
 			if (core.hasSpecial(mon_special, 29)) { //技能 鱼雷
 				if (turn % guaiwu.cd === 0) {
-					damage += guaiwu.top * guaiwu.tpn;
+					mon_torpedo += guaiwu.top * Math.max(0, guaiwu.tpn - yongshi.dod);
 				}
 			}
 			if (core.hasSpecial(mon_special, 31)) { //技能 280mm舰炮
 				if (turn % 3 === 0) {
-					damage += guaiwu.atk * 3;
+					mon_main += guaiwu.atk * 3;
 				}
 			}
 			if (core.hasSpecial(mon_special, 32)) { //技能 380mm舰炮
 				if (turn % 4 === 0) {
-					damage += guaiwu.atk * 6;
+					mon_main += guaiwu.atk * 6;
 				}
 			}
 			if (core.hasSpecial(mon_special, 80)) { //技能 410mm舰炮
 				if (turn % 4 === 0) {
-					damage += guaiwu.atk * 8;
+					mon_main += guaiwu.atk * 8;
 				}
 			}
 			if (core.hasSpecial(mon_special, 81)) { //技能 460mm舰炮
 				if (turn % 5 === 0) {
-					damage += guaiwu.atk * 12;
+					mon_main += guaiwu.atk * 12;
 				}
 			}
+			if (core.hasEquip('kinggeorge5') && (mon_skillNum.type === '轻巡' || mon_skillNum.type === '驱逐')) { //乔五，普攻减伤，鱼雷增伤
+				mon_common *= 0.5;
+				mon_torpedo *= 1.4;
+			}
+			if (core.hasEquip('northcarolina') && (mon_skillNum.type === '轻巡' || mon_skillNum.type === '驱逐')) { //北卡，普攻减伤，鱼雷增伤
+				mon_common *= 0.6;
+				mon_torpedo *= 1.2;
+			}
+			if (core.hasEquip('iowa') && junzhong === '海军') { //衣阿华，全方位减伤
+				if (mon_skillNum.type === '轻巡' || mon_skillNum.type === '驱逐') {
+					mon_common *= 0.2;
+				} else {
+					mon_common *= 0.6;
+				}
+			}
+			mon_summary += mon_common + mon_bomb + mon_torpedo;
+			mon_perDamage += mon_summary;
+			damage += mon_perDamage;
 		}
 		turn++;
 		if (a > 0) a--;
