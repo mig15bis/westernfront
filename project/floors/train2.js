@@ -16,19 +16,19 @@ main.floors.train2=
         {
             "type": "setValue",
             "name": "status:hpmax",
-            "value": "50000",
+            "value": "3000",
             "norefresh": true
         },
         {
             "type": "setValue",
             "name": "status:hp",
-            "value": "50000",
+            "value": "3000",
             "norefresh": true
         },
         {
             "type": "setValue",
-            "name": "status:top",
-            "value": "890",
+            "name": "status:atk",
+            "value": "10",
             "norefresh": true
         },
         {
@@ -452,14 +452,6 @@ main.floors.train2=
                 "value": "1"
             }
         ],
-        "10,12": [
-            {
-                "type": "setValue",
-                "name": "flag:door_train2_13_9",
-                "operator": "+=",
-                "value": "1"
-            }
-        ],
         "11,12": [
             {
                 "type": "setValue",
@@ -485,6 +477,14 @@ main.floors.train2=
             }
         ],
         "7,12": [
+            {
+                "type": "setValue",
+                "name": "flag:door_train2_13_9",
+                "operator": "+=",
+                "value": "1"
+            }
+        ],
+        "10,12": [
             {
                 "type": "setValue",
                 "name": "flag:door_train2_13_9",

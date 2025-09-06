@@ -2539,6 +2539,18 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 		}
 		// 更新属性
 		_update_props() {
+			let diji,
+				skycontrol;
+			if (core.status.floorId) {
+				diji = core.searchBlockWithFilter(Block => Block && ['战斗机', '重型战斗机'].includes(core.material.enemys[Block.event.id]?.type)).length;
+				if (core.getEquip(4) || (core.getEquip(5) && [].includes.core.getEquip(5))) { //制空权检测
+					if (diji === 0) {
+						skycontrol = 1;
+					}
+				} else if (diji > 0) {
+					skycontrol = 2;
+				}
+			}
 			if (core.domStyle.isVertical) { // 竖屏
 				core.clearMap(uictx, 0, 0, 150, 480); //上部（0--480，0--150）
 				if (core.status.maps[core.status.floorId]) { // 绘制楼层名 地区 军衔
@@ -2629,9 +2641,9 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 
 
 				core.setTextAlign("outerUI", "center") //居中
-				if (core.getFlag("制空权") === 1) { //core.getFlag("制空权")===1
+				if (skycontrol === 1) { //core.getFlag("制空权")===1
 					core.fillBoldText(uictx, "制空权↑", 400, 114, "#6633FF", "#000000", "bold 20px kaiti", 100)
-				} else if (core.getFlag("制空权") === 2) { //core.getFlag("制空权")===2
+				} else if (skycontrol === 2) { //core.getFlag("制空权")===2
 					core.fillBoldText(uictx, "制空权↓", 400, 114, "#FF8844", "#000000", "bold 20px kaiti", 100) //制空权↓
 				}
 
@@ -2669,9 +2681,9 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				core.fillText(uictx, "————————————————————————", 75, 55, "#FFFFFF", "bold 16px kaiti")
 
 				core.setTextAlign("outerUI", "center") //居中
-				if (core.getFlag("制空权") === 1) { //core.getFlag("制空权")===1
+				if (skycontrol === 1) { //core.getFlag("制空权")===1
 					core.fillBoldText(uictx, "制空权↑", 75, 73, "#6633FF", "#000000", "bold 16px kaiti")
-				} else if (core.getFlag("制空权") === 2) { //core.getFlag("制空权")===2
+				} else if (skycontrol === 2) { //core.getFlag("制空权")===2
 					core.fillBoldText(uictx, "制空权↓", 75, 73, "#FF8844", "#000000", "bold 16px kaiti") //制空权↓
 				}
 
@@ -3858,7 +3870,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 
 		{ // 8
 			id: 8,
-			strategy: false,
+			strategy: true,
 			name: '剑鱼818中队',
 			cost: 80,
 			event: [],
@@ -3941,11 +3953,11 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 
 		{ // 17
 			id: 17,
-			strategy: true,
+			strategy: false,
 			name: '范弗利特弹药量',
 			cost: 60,
 			event: [],
-			description: '下一场战斗中，主角攻击力+60%'
+			description: '下一场战斗中，主角攻击力+30%'
 		},
 
 		{ // 18
@@ -3959,7 +3971,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 
 		{ // 19
 			id: 19,
-			strategy: true,
+			strategy: false,
 			name: '刺猬弹',
 			cost: 100,
 			event: [],
@@ -3986,7 +3998,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 
 		{ // 22
 			id: 22,
-			strategy: false,
+			strategy: true,
 			name: '地毯式轰炸',
 			cost: 3000,
 			event: [],
@@ -4188,8 +4200,11 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 	};
 	// 获取宝石信息 并绘制
 	this.getItemDetail = function (floorId) {
+		if (!core.status.thisMap) {
+			return;
+		}
 		floorId = floorId ?? core.status.thisMap.floorId;
-		const beforeRatio = core.status.thisMap.ratio;
+		const beforeRatio = core.status.thisMap.ratio || 1;
 		core.status.thisMap.ratio = core.status.maps[floorId].ratio;
 		let diff = {};
 		const before = core.status.hero;
