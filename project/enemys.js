@@ -46,7 +46,7 @@ var enemys_fcae963b_31c9_42b4_b48c_bb48d09f3f80 =
 	"artillery75": {"name":"75mm野战炮","hp":1000,"atk":350,"def":0,"money":2,"exp":2,"point":0,"special":15,"value":0,"range":2,"type":"榴弹炮","zone":10,"zoneSquare":true,"ap":999,"arm":2,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0,"cd":0,"ammo":0,"spd":0,"repulse":0,"laser":0,"breakArmor":0,"counterAttack":0,"vampire":0,"hpBuff":0,"atkBuff":0,"defBuff":0},
 	"howitzer105": {"name":"105mm榴弹炮","hp":1000,"atk":500,"def":0,"money":2,"exp":2,"point":0,"special":15,"value":0,"zoneSquare":true,"type":"榴弹炮","zone":200,"range":3,"ap":999,"arm":2,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0},
 	"ab41": {"name":"AB41装甲车","hp":300,"atk":30,"def":0,"money":2,"exp":2,"point":0,"special":[6],"type":"轻坦","ap":27,"arm":8,"top":0,"bom":0,"tpn":0,"gro":0,"dod":0,"n":5,"description":"主武器：20mm机炮"},
-	"transcar": {"name":"武装押运车","hp":1000,"atk":100,"def":0,"money":20,"exp":20,"point":0,"special":0,"type":"轻坦","ap":10,"arm":1,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0},
+	"transcar": {"name":"武装押运车","hp":1000,"atk":20,"def":0,"money":20,"exp":20,"point":0,"special":0,"type":"轻坦","ap":10,"arm":1,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0},
 	"panzer3e": {"name":"三号E型","hp":800,"atk":100,"def":0,"money":4,"exp":4,"point":0,"special":0,"type":"中坦","ap":30,"arm":15,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0,"description":"主武器：37mm坦克炮"},
 	"panzer5d": {"name":"豹式坦克D型","hp":500,"atk":200,"def":0,"money":0,"exp":0,"point":0,"special":[7],"type":"中坦","description":"主武器：75mm长管坦克炮","ap":173,"arm":130},
 	"panzer5g": {"name":"豹式坦克G型","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":0,"type":"中坦","ap":173,"arm":130,"description":"主武器：75mm长管坦克炮"},

@@ -288,6 +288,49 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	var special = enemy.special;
 	var type = enemy.type;
 	var todo = [];
+	let dir = core.status.hero.loc.direction,
+		locs;
+	if (dir === 'up') {
+		locs = [
+			[x - 1, y - 1],
+			[x, y - 1],
+			[x + 1, y - 1],
+			[x - 1, y],
+			[x + 1, y],
+			[x - 1, y + 1],
+			[x + 1, y + 1]
+		];
+	} else if (dir === 'down') {
+		locs = [
+			[x - 1, y - 1],
+			[x + 1, y - 1],
+			[x - 1, y],
+			[x + 1, y],
+			[x - 1, y + 1],
+			[x, y + 1],
+			[x + 1, y + 1]
+		];
+	} else if (dir === 'left') {
+		locs = [
+			[x - 1, y - 1],
+			[x, y - 1],
+			[x + 1, y - 1],
+			[x - 1, y],
+			[x - 1, y + 1],
+			[x, y + 1],
+			[x + 1, y + 1]
+		];
+	} else if (dir === 'right') {
+		locs = [
+			[x - 1, y - 1],
+			[x, y - 1],
+			[x + 1, y - 1],
+			[x + 1, y],
+			[x - 1, y + 1],
+			[x, y + 1],
+			[x + 1, y + 1]
+		];
+	}
 
 	// 播放战斗音效和动画
 	// 默认播放的动画；你也可以使用
@@ -461,11 +504,14 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		let Block = core.getBlock(core.nextX(2), core.nextY(2));
 		if (Block.event.cls === 'enemys' && ['步兵', '轻坦', '中坦', '重坦', '坦歼', '反坦克炮', '榴弹炮', '高射炮', '建筑'].includes(core.material.enemys[Block.event.id].type)) {
 			let typhoonrocket = 0,
-				skillatk = core.getStatusOrDefault({}, 'atk');
+				skillatk = core.getRealStatus('atk');
 			if (['步兵', '反坦克炮', '榴弹炮', '高射炮'].includes(core.material.enemys[Block.event.id].type)) {
 				typhoonrocket += skillatk * 0.1 * 16 * 1.2;
 			} else {
 				typhoonrocket += skillatk * 0.1 * 8;
+			}
+			if (core.hasSpecial(core.material.enemys[Block.event.id].special, 86)) {
+				typhoonrocket *= 0.6;
 			}
 			core.setEnemyOnPoint(Block.x, Block.y, Block.floorId, 'hp', typhoonrocket, "-=");
 			let target = core.getEnemyInfo(Block.event.id, null, Block.x, Block.y, Block.floorId);
@@ -488,6 +534,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 				if (core.hasSpecial(target.special, 61)) exp = 0; // 投降
 				core.status.hero.exp += exp;
 				core.status.hero.statistics.exp += exp;
+				core.drawAnimate('explore3', Block.x, Block.y);
 				if (core.status.floorId != null) {
 					core.push(todo, core.floors[core.status.floorId].afterBattle[Block.x + "," + Block.y]);
 				}
@@ -499,6 +546,33 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 				}
 			}
 		}
+	}
+	//B17空中堡垒
+	if (core.hasEquip('b17')) {
+		locs.forEach(v => {
+			let Block = core.getBlock(v[0], v[1]);
+			if (Block.event.cls === 'enemys' && ['步兵', '轻坦', '中坦', '重坦', '坦歼', '反坦克炮', '榴弹炮', '高射炮', '建筑'].includes(core.material.enemys[Block.event.id].type)) {
+				core.setEnemyOnPoint(Block.x, Block.y, Block.floorId, 'hp', 0.95, "*=");
+			}
+		})
+	}
+	//兰开斯特
+	if (core.hasEquip('lancaster')) {
+		locs.forEach(v => {
+			let Block = core.getBlock(v[0], v[1]);
+			if (Block.event.cls === 'enemys' && ['步兵', '轻坦', '中坦', '重坦', '坦歼', '反坦克炮', '榴弹炮', '高射炮', '建筑'].includes(core.material.enemys[Block.event.id].type)) {
+				core.setEnemyOnPoint(Block.x, Block.y, Block.floorId, 'hp', 0.9, "*=");
+			}
+		})
+	}
+	//B29
+	if (core.hasEquip('b29') || core.hasEquip('tu4')) {
+		locs.forEach(v => {
+			let Block = core.getBlock(v[0], v[1]);
+			if (Block.event.cls === 'enemys' && ['步兵', '轻坦', '中坦', '重坦', '坦歼', '反坦克炮', '榴弹炮', '高射炮', '建筑'].includes(core.material.enemys[Block.event.id].type)) {
+				core.setEnemyOnPoint(Block.x, Block.y, Block.floorId, 'hp', 0.85, "*=");
+			}
+		})
 	}
 
 	// 扣减体力值并记录统计数据
@@ -917,7 +991,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		mon_gro = core.getEnemyValue(enemy, 'gro', x, y, floorId),
 		skycontrol = 0;
 	let diji = core.searchBlockWithFilter(Block => Block && ['战斗机', '重型战斗机'].includes(core.material.enemys[Block.event.id]?.type), floorId).length;
-	if (core.getEquip(4) || (core.getEquip(5) && [].includes.core.getEquip(5))) { //制空权检测
+	if (core.getEquip(4) || (core.getEquip(5) && ['p38', 'typhoon', 'mosquito', 'p47d', 'p61'].includes(core.getEquip(5))) || (core.getEquip(3) && ['eagle', 'illus1941', 'illustrious', 'essex', 'enterprise'].includes(core.getEquip(3)))) { //制空权检测
 		if (diji === 0) {
 			skycontrol = 1;
 		}
@@ -930,6 +1004,15 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	var mon_id = core.getEnemyValue(enemy, 'id', x, y, floorId);
 
 	var guards = [];
+
+	//检查辐射楼层
+	if (flags.nuked && flags.nuked.includes(floorId)) {
+		if (core.hasSpecial(mon_special, 57)) {
+			mon_hp *= 0.1;
+		} else {
+			mon_hp = 0;
+		}
+	}
 
 	// 光环和支援检查
 	if (!core.status.checkBlock) core.status.checkBlock = {};
@@ -1042,7 +1125,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 						if (inRange) trap_buff += enemy.zone; // 叠加
 					}
 					// 检查【防空】技能，数字40
-					if (enemy && core.hasSpecial(enemy.special, 40)) {
+					if (enemy && core.hasSpecial(enemy.special, 40) && !(core.hasEquip('b29') || core.hasEquip('tu4'))) {
 						var range = 2,
 							inRange = false;
 						if (x != null && y != null) {
@@ -1150,7 +1233,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	floorId = floorId || core.status.floorId;
 
 	var hero_hp = core.getRealStatusOrDefault(hero, 'hp'),
-		hero_hpmax = core.getRealStatusOrDefault(hero, 'hpmax'),
+		hero_hpmax = core.getRealStatusOrDefault(hero, 'hpmax') * (core.hasItem('penicillin') ? 1.15 : 1),
 		hero_atk = core.getRealStatusOrDefault(hero, 'atk'),
 		hero_def = core.getRealStatusOrDefault(hero, 'def'),
 		hero_mdef = core.getRealStatusOrDefault(hero, 'mdef'),
@@ -1237,6 +1320,15 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		junzhong = core.plugin.Army.includes(mon_skillNum.type) ? "陆军" : core.plugin.Navy.includes(mon_skillNum.type) ? "海军" : "空军", //军种判定
 		taishi = (junzhong === "陆军" && (hero_ap > mon_arm) && (mon_ap <= hero_arm)) ? "优势" : (junzhong === "陆军" && (mon_ap > hero_arm) && (hero_ap <= mon_arm)) ? "劣势" : junzhong === "陆军" ? "均势" : "非陆军"; //陆战态势判定（是否击穿）
 
+	if (core.hasEquip('b17') && junzhong === '陆军') { //B17空中堡垒
+		guaiwu.hp *= 0.9;
+	}
+	if (core.hasEquip('lancaster') && junzhong === '陆军') { //兰开斯特
+		guaiwu.hp *= 0.8;
+	}
+	if ((core.hasEquip('b29') || core.hasEquip('tu4')) && junzhong === '陆军') { //B29
+		guaiwu.hp *= 0.7;
+	}
 	if (core.hasEquip('sheffield') && (mon_skillNum.type === '轻巡' || mon_skillNum.type === '驱逐')) { //谢菲尔德，巴伦支海
 		guaiwu.hp -= guaiwu.top * 0.3;
 		guaiwu.top *= 0.7;
@@ -1277,25 +1369,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	if (flags.ussrair === true) { //拉9·苏空集群
 		yongshi.atk *= 1.1;
 	}
-	var mon_perDamage = guaiwu.atk, //初始怪物伤害=攻击力
-		hero_perDamage = yongshi.atk; //初始勇士伤害=攻击力
 
-
-	if (core.hasSpecial(mon_special, 30)) { //技能 航炮
-		mon_perDamage *= 1.3;
-	}
-	if (core.hasSpecial(mon_special, 4)) { //技能 二连击
-		mon_perDamage *= 2;
-	}
-	if (core.hasSpecial(mon_special, 5)) { //技能 三连击
-		mon_perDamage *= 3;
-	}
-	if (core.hasSpecial(mon_special, 6)) { //技能 n连击
-		mon_perDamage *= mon_skillNum.n;
-	}
-	if (x !== null && y !== null) { //技能 防空 40
-		mon_perDamage += cache.aa_buff || 0;
-	}
 	if (core.hasSpecial(mon_special, 43) && guaiwu.ap > yongshi.arm) { //技能 潜行
 		finalDamage *= 1.4;
 	}
@@ -1348,7 +1422,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	}
 	if (core.hasSpecial(mon_special, 1) && guaiwu.hp > 0) { //技能 突袭
 		if (!['beautifighter', 'mosquito', 'p61'].includes(core.getEquip(5)) || !['essex', 'enterprise'].includes(core.getEquip(3)) || !['tbf'].includes(core.getEquip(6))) { //雷达免疫
-			damage += mon_perDamage;
+			damage += guaiwu.atk;
 		}
 	}
 	if (core.hasSpecial(mon_special, 22)) { //技能 固伤
@@ -1440,6 +1514,25 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	if (core.hasEquip('il10')) { //伊尔10
 		finalDamage *= 0.8;
 	}
+	if (core.hasEquip('b17') && (mon_skillNum.type === '高射炮' || mon_skillNum.type === '战斗机' || mon_skillNum.type === '重型战斗机')) { //B17堡垒·飞行混凝土
+		finalDamage *= 0.8;
+	}
+	if (core.hasEquip('lancaster')) { //兰开斯特·夜间空袭
+		if (mon_skillNum.type === '高射炮') {
+			finalDamage *= 0.8;
+		} else if (mon_skillNum.type === '战斗机') {
+			finalDamage *= 0.9;
+		} else if (mon_skillNum.type === '重型战斗机') {
+			finalDamage *= 1.3;
+		}
+	}
+	if (core.hasEquip('b29') || core.hasEquip('tu4')) { //B29堡垒·超高空轰炸
+		if (mon_skillNum.type === '高射炮') {
+			finalDamage *= 0.1;
+		} else if (mon_skillNum.type === '战斗机' || mon_skillNum.type === '重型战斗机') {
+			finalDamage *= 0.5;
+		}
+	}
 	//回合计算	
 	let bool = false,
 		v1 = false,
@@ -1468,10 +1561,10 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		}
 	}
 	if (core.hasEquip('sheffield')) { //谢菲尔德·额外先攻
-		guaiwu.hp -= hero_perDamage * beilv * ((['步兵', '反坦克炮', '榴弹炮', '高射炮'].includes(mon_skillNum.type) && (core.hasEquip('m4') || core.hasEquip('m4a2') || core.hasEquip('m4a3') || core.hasEquip('m4a3e2'))) ? 1.3 : 1);
+		guaiwu.hp -= yongshi.atk * beilv * ((['步兵', '反坦克炮', '榴弹炮', '高射炮'].includes(mon_skillNum.type) && (core.hasEquip('m4') || core.hasEquip('m4a2') || core.hasEquip('m4a3') || core.hasEquip('m4a3e2'))) ? 1.3 : 1);
 	}
 	if (core.hasEquip('norfolk') && mon_skillNum.type !== '潜艇' && junzhong === '海军') { //诺福克，额外先攻
-		guaiwu.hp -= hero_perDamage * beilv;
+		guaiwu.hp -= yongshi.atk * beilv;
 	}
 	//战斗过程循环
 	let norfolkattack = 0;
@@ -1487,17 +1580,17 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			mon_common = 0, //怪物伤害类型：普攻
 			mon_bomb = 0, //怪物伤害类型：炸弹
 			mon_main = 0, //怪物伤害类型：战列舰主炮
-			mon_torpedo = 0; //怪物伤害类型：鱼雷
-		damage += cache.trap_buff || 0; //陷阱
+			mon_torpedo = 0, //怪物伤害类型：鱼雷
+			hero_perDamage = 0, //初始勇士伤害=攻击力
+			mon_perDamage = 0;
+		damage += (cache.trap_buff || 0) * (core.hasEquip('mosquito') ? 0.5 : 1) * (core.hasEquip('p61') ? 0.2 : 1); //陷阱
 		if (core.getFlag("fire", 0) > 0) { // 燃烧 47
 			damage += hero_hp * 0.05;
 		}
-		guaiwu.hp -= hero_perDamage;
-		damage += guaiwu.atk;
 
 		if (a === 0) { //能出手
 
-			hero_common += hero_perDamage
+			hero_common += yongshi.atk;
 
 			if (core.hasEquip('cleveland') && core.status.maps[floorId].area === '海洋' && junzhong === '空军') { //克利夫兰·防空轻巡
 				beilv *= 1.25;
@@ -1729,7 +1822,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 					hero_bomb += yongshi.atk * 8;
 				}
 			}
-			if (core.hasEquip('essex') && junzhong !== '空军' && mon_skillNum.type !== '潜艇' && turn % 4 === 0 || turn === 1) { //埃塞克斯舰载机·地狱俯冲者
+			if (core.hasEquip('essex') && junzhong !== '空军' && mon_skillNum.type !== '潜艇' && (turn % 4 === 0 || turn === 1)) { //埃塞克斯舰载机·地狱俯冲者
 				if (junzhong === '海军') {
 					if (mon_skillNum.type === '重巡' || mon_skillNum.type === '战列' || mon_skillNum.type === '航母') {
 						hero_bomb += yongshi.atk * 8 * 1.5 * 1.5;
@@ -1740,7 +1833,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 					hero_bomb += yongshi.atk * 8;
 				}
 			}
-			if (core.hasEquip('enterprise') && junzhong !== '空军' && mon_skillNum.type !== '潜艇' && turn % 4 === 0 || turn === 1) { //企业舰载机·地狱俯冲者
+			if (core.hasEquip('enterprise') && junzhong !== '空军' && mon_skillNum.type !== '潜艇' && (turn % 4 === 0 || turn === 1)) { //企业舰载机·地狱俯冲者
 				if (junzhong === '海军') {
 					if (mon_skillNum.type === '重巡' || mon_skillNum.type === '战列' || mon_skillNum.type === '航母') {
 						hero_bomb += yongshi.atk * 8 * 1.5 * 1.5;
@@ -2057,6 +2150,12 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			if ((['beautifighter', 'mosquito', 'p61'].includes(core.getEquip(3)) || !['essex', 'enterprise'].includes(core.getEquip(3)) || !['tbf'].includes(core.getEquip(6))) && core.hasSpecial(mon_special, 1) && turn === 1) { //雷达反伤
 				hero_common *= 3;
 			}
+			if (core.hasEquip('b17') && (mon_skillNum.type === '战斗机' || mon_skillNum.type === '重型战斗机')) { //B17堡垒·飞行混凝土
+				hero_common *= 1.1;
+			}
+			if ((core.hasEquip('b29') || core.hasEquip('tu4')) && junzhong === '陆军') { //B29·李梅
+				hero_common += yongshi.mdef * 0.05;
+			}
 
 			//分类伤害计算乘区
 
@@ -2133,28 +2232,12 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			damage += guaiwu.top;
 			break;
 		}
-		if (flags.skill === 9 && junzhong === "陆军" && turn <= 7) { //抵抗运动
-			guaiwu.atk -= mon_atk * 0.1;
-			var mon_perDamage = guaiwu.atk;
-			if (core.hasSpecial(mon_special, 30)) { //技能 航炮
-				mon_perDamage *= 1.3;
-			}
-			if (core.hasSpecial(mon_special, 4)) { //技能 二连击
-				mon_perDamage *= 2;
-			}
-			if (core.hasSpecial(mon_special, 5)) { //技能 三连击
-				mon_perDamage *= 3;
-			}
-			if (core.hasSpecial(mon_special, 6)) { //技能 n连击
-				mon_perDamage *= mon_skillNum.n;
-			}
-			if (x !== null && y !== null) { //技能 防空 40
-				mon_perDamage += cache.aa_buff || 0;
-			}
-		}
 
 		//怪物回合
 		if (b === 0) {
+			if (flags.skill === 9 && junzhong === "陆军" && turn <= 7) { //抵抗运动
+				guaiwu.atk -= mon_atk * 0.1;
+			}
 			mon_common += guaiwu.atk;
 			if (core.hasSpecial(mon_special, 28)) { //技能 航弹
 				if (turn % guaiwu.spd === 0) {
@@ -2212,6 +2295,21 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			}
 			if (core.hasEquip('illustrious') && junzhong === '空军' && core.status.maps[floorId].area === '海洋') { //光辉1941炸弹减伤
 				mon_bomb *= 0.75;
+			}
+			if (core.hasSpecial(mon_special, 30)) { //技能 航炮
+				mon_common *= 1.3;
+			}
+			if (core.hasSpecial(mon_special, 4)) { //技能 二连击
+				mon_common *= 2;
+			}
+			if (core.hasSpecial(mon_special, 5)) { //技能 三连击
+				mon_common *= 3;
+			}
+			if (core.hasSpecial(mon_special, 6)) { //技能 n连击
+				mon_common *= mon_skillNum.n;
+			}
+			if (x !== null && y !== null) { //技能 防空 40
+				mon_common += cache.aa_buff || 0;
 			}
 			mon_summary += mon_common + mon_bomb + mon_torpedo;
 			mon_perDamage += mon_summary;
@@ -2641,7 +2739,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 
 	// 检查HP上限
 	if (core.flags.statusBarItems.indexOf('enableHPMax') >= 0) {
-		core.setStatus('hp', Math.min(core.getRealStatus('hpmax'), core.getStatus('hp')));
+		core.setStatus('hp', Math.min(core.getRealStatus('hpmax') * (core.hasItem('penicillin') ? 1.15 : 1), core.getStatus('hp')));
 	}
 	//更新任务状态
 	core.taskSystem.checkAll();
@@ -2692,7 +2790,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		// 血网
 		// 如需调用当前楼层的ratio可使用  core.status.maps[floorId].ratio
 		if (id == 'lavaNet' && !core.hasItem('amulet')) {
-			damage[loc] = (damage[loc] || 0) + core.values.lavaDamage;
+			damage[loc] = (damage[loc] || 0) + core.values.lavaDamage * (core.hasItem('shermancrab') ? 0.2 : 1);
 			type[loc][(block.event.name || "血网") + "伤害"] = true;
 		}
 		// 水雷
@@ -2734,7 +2832,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 					if (nx < 0 || nx >= width || ny < 0 || ny >= height) continue;
 					// 如果是十字领域，则还需要满足 |dx|+|dy|<=range
 					if (!zoneSquare && Math.abs(dx) + Math.abs(dy) > range) continue;
-					damage[currloc] = (damage[currloc] || 0) + (enemy.zone || 0) * (a ? 0.8 : 1);
+					damage[currloc] = (damage[currloc] || 0) + (enemy.zone || 0) * (a ? 1.2 : 1) * (core.hasEquip('mosquito') ? 0.5 : 1) * (core.hasEquip('p61') ? 0.2 : 1);
 					type[currloc] = type[currloc] || {};
 					type[currloc]["领域伤害"] = true;
 				}
@@ -2862,7 +2960,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 				value += core.getEnemyInfo(enemyId2, hero, x, y + 1, floorId).atk;
 			}
 			if (value > 0) {
-				damage[loc] = (damage[loc] || 0) + value;
+				damage[loc] = (damage[loc] || 0) + value * (core.hasEquip('mosquito') ? 0.5 : 1) * (core.hasEquip('p61') ? 0.2 : 1);
 				type[loc] = type[loc] || {};
 				type[loc]["包夹伤害"] = true;
 			}
@@ -2875,9 +2973,6 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		damage[loc] = Math.max(0, damage[loc] - core.getRealStatus('mdef'));
 	}
 	*/
-	if (core.hasEquip('mosquito'))
-		for (var loc in damage)
-			damage[loc] /= 2;
 
 	core.flags.canGoDeadZone = canGoDeadZone;
 	core.status.checkBlock = {

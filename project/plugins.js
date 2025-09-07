@@ -2543,7 +2543,7 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				skycontrol;
 			if (core.status.floorId) {
 				diji = core.searchBlockWithFilter(Block => Block && ['战斗机', '重型战斗机'].includes(core.material.enemys[Block.event.id]?.type)).length;
-				if (core.getEquip(4) || (core.getEquip(5) && [].includes.core.getEquip(5))) { //制空权检测
+				if (core.getEquip(4) || (core.getEquip(5) && ['p38', 'typhoon', 'mosquito', 'p47d', 'p61'].includes(core.getEquip(5))) || (core.getEquip(3) && ['eagle', 'illus1941', 'illustrious', 'essex', 'enterprise'].includes(core.getEquip(3)))) { //制空权检测
 					if (diji === 0) {
 						skycontrol = 1;
 					}
@@ -2587,9 +2587,9 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				core.setTextAlign("outerUI", "left")
 				core.drawIcon(uictx, "statusHp", 6, 55, 24, 24)
 				core.fillRect(uictx, 32, 58.5, 94, 18, "#000000") //血槽
-				core.fillRect(uictx, 34, 60.5, 90 * hero.hp / hero.hpmax, 14, "#FF0000") //血
+				core.fillRect(uictx, 34, 60.5, 90 * core.getRealStatus('hp') / (core.getRealStatus('hpmax') * (core.hasItem('penicillin') ? 1.15 : 1)), 14, "#FF0000") //血
 				core.setTextAlign("outerUI", "center")
-				core.fillText(uictx, core.formatBigNumber(hero.hp, true) + "/" + core.formatBigNumber(hero.hpmax, true), 79, 72, "#FFFFFF", "12px number", 90) //  血量数字
+				core.fillText(uictx, core.formatBigNumber(core.getRealStatus('hp'), true) + "/" + core.formatBigNumber(core.getRealStatus('hpmax') * (core.hasItem('penicillin') ? 1.15 : 1), true), 79, 72, "#FFFFFF", "12px number", 90) //  血量数字
 
 				core.setTextAlign("outerUI", "left") //左对齐
 				core.fillRoundRect(uictx, 6, 80, 148, 68, 5, "rgba(0,0,0,0.5)"); //常规状态底板
@@ -2697,8 +2697,8 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				core.setTextAlign("outerUI", "center")
 				core.drawIcon(uictx, "statusHp", 4, 103, 32, 32)
 				core.fillRect(uictx, 36, 107, 106, 24, "#000000") //血槽
-				core.fillRect(uictx, 38, 109, 102 * hero.hp / hero.hpmax, 20, "#FF0000") //血	
-				core.fillText(uictx, core.formatBigNumber(hero.hp, true) + "/" + core.formatBigNumber(hero.hpmax, true), 89, 123.5, "#FFFFFF", "12px number", 102) //  血量数字
+				core.fillRect(uictx, 38, 109, 102 * core.getRealStatus('hp') / (core.getRealStatus('hpmax') * (core.hasItem('penicillin') ? 1.15 : 1)), 20, "#FF0000") //血	
+				core.fillText(uictx, core.formatBigNumber(core.getRealStatus('hp'), true) + "/" + core.formatBigNumber(core.getRealStatus('hpmax') * (core.hasItem('penicillin') ? 1.15 : 1), true), 89, 123.5, "#FFFFFF", "12px number", 102) //  血量数字
 
 				core.fillRoundRect(uictx, 4, 133, 142, 84, 5, "rgba(0,0,0,0.5)"); //常规状态底板
 				core.drawIcon(uictx, "statusAtk", 6, 134, 24, 24) //攻击力

@@ -1337,7 +1337,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "B17空中堡垒",
 		"canUseItemEffect": "true",
-		"text": "自卫武器：9×12.7和2×7.62mm机枪。挂载：12×500磅炸弹\n被动：\n战略轰炸：无法对舰攻击。对地攻击时，初始敌人血量减少10%，且战后主角周围8格内敌方陆军血量减少5%，不可叠加。\n飞行混凝土：遭遇战斗机和高射炮攻击时，减免20%伤害，且对战斗机的每回合普攻伤害+10%。",
+		"text": "自卫武器：9×12.7和2×7.62mm机枪。挂载：12×500磅炸弹\n被动：\n战略轰炸：无法对舰攻击。对地攻击时，初始敌人血量减少10%，且战后主角周围8格内敌方陆军血量减少5%，可叠加。\n飞行混凝土：遭遇战斗机和高射炮攻击时，减免20%伤害，且对战斗机的每回合普攻伤害+10%。",
 		"equip": {
 			"type": 6,
 			"value": {},
@@ -1360,7 +1360,13 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "B29超级空中堡垒",
 		"canUseItemEffect": "true",
-		"text": "自卫武器：12×12.7mm机枪。挂载：18×1000磅炸弹。\n被动：\n战略轰炸：无法对舰攻击。对地攻击时，初始减少敌人30%血量，且战后主角周围8格内陆军血量减少15%，可叠加。\n超高空轰炸：敌人的防空技能失效，高射炮伤害-90%，战斗机伤害-50%。\n李梅之怒：与敌方陆军战斗期间，敌方每回合额外受到等同于5%后勤值的普攻伤害。\n末日审判：该机可以挂载【绝密】（也可挂载高脚柜炸弹）。"
+		"text": "自卫武器：12×12.7mm机枪。挂载：18×1000磅炸弹。\n被动：\n战略轰炸：无法对舰攻击。对地攻击时，初始减少敌人30%血量，且战后主角周围8格内陆军血量减少15%，可叠加。\n超高空轰炸：敌人的防空技能失效，高射炮伤害-90%，战斗机伤害-50%。\n李梅之怒：与敌方陆军战斗期间，敌方每回合额外受到等同于5%后勤值的普攻伤害。\n末日审判：该机可以挂载【绝密】（也可挂载高脚柜炸弹）。",
+		"useItemEffect": null,
+		"equip": {
+			"type": 6,
+			"value": {},
+			"percentage": {}
+		}
 	},
 	"tea": {
 		"cls": "tools",
@@ -2053,10 +2059,11 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"text": "永久道具类，无需装备。仅在海洋、浅滩生效。\n存在需保护的友军时，友军受到伤害减少30%。与潜艇作战时，首回合即可造成1倍攻击力的深水炸弹伤害。"
 	},
 	"nuke": {
-		"cls": "items",
+		"cls": "tools",
 		"name": "曼哈顿计划",
-		"canUseItemEffect": "true",
-		"text": "一次性道具。必须装备着具有投放核武器能力的轰炸机时才能使用。\n在当前地图投放一枚原子弹，抹除当前以及相邻两个战斗层中所有非boss敌人和可破墙壁（不获得金经），并留下永久辐射效果：boss全阶段血量降低90%，且若有新敌人出现，新敌人血量为0。"
+		"canUseItemEffect": "(function () {\n\treturn (core.hasEquip('b29') || core.hasEquip('tu4')) && !core.floors[core.status.floorId].cannotViewMap;\n})()",
+		"text": "一次性道具。必须装备着具有投放核武器能力的轰炸机时才能使用。\n在当前地图投放一枚原子弹，抹除当前以及相邻两个战斗层中所有非boss敌人和可破墙壁（不获得金经），并留下永久辐射效果：boss全阶段血量降低90%，且若有新敌人出现，新敌人血量为0。",
+		"useItemEffect": "(function () {\n\tif ((core.hasEquip('b29') || core.hasEquip('tu4')) && !core.floors[core.status.floorId].cannotViewMap) {\n\t\tconst index = core.floorIds.indexOf(core.status.floorId);\n\t\tlet nukefloor = [core.status.floorId];\n\t\tif (index + 1 < core.floorIds.length && !core.floors[core.floorIds[index + 1]].cannotViewMap) {\n\t\t\tnukefloor.push(core.floorIds[index + 1]);\n\t\t}\n\t\tif (index - 1 >= 0 && !core.floors[core.floorIds[index - 1]].cannotViewMap) {\n\t\t\tnukefloor.push(core.floorIds[index - 1]);\n\t\t}\n\t\tcore.insertAction([{ \"type\": \"showImage\", \"code\": 1, \"image\": \"aircraft6.png\", \"loc\": [20, 480], \"opacity\": 1, \"time\": 0 },\n\t\t\t{ \"type\": \"playSound\", \"name\": \"bomber1.mp3\" },\n\t\t\t{ \"type\": \"moveImage\", \"code\": 1, \"to\": [20, -330], \"time\": 2000 },\n\t\t\t{ \"type\": \"hideImage\", \"code\": 1, \"time\": 0 },\n\t\t\t{ \"type\": \"sleep\", \"time\": 2000 },\n\t\t\t{ \"type\": \"setCurtain\", \"color\": [255, 255, 255, 1], \"time\": 100, \"keep\": true }\n\t\t], null, null, () => {\n\t\t\tlet nukeblock = core.searchBlockWithFilter(block => { return (block.event.cls === 'enemy' && !core.hasSpecial(core.material.enemys[Block.event.id].special, 57)) || block.event.canBreak }, nukefloor);\n\t\t\tconsole.log(nukeblock);\n\t\t\tnukeblock.forEach(v => {\n\t\t\t\tdelete((flags.enemyOnPoint || {})[v.floorId] || {})[v.x + \",\" + v.y];\n\t\t\t\tcore.removeBlock(v.x, v.y, v.floorId);\n\t\t\t})\n\t\t\tcore.updateStatusBar();\n\t\t\tif (!flags.nuked) {\n\t\t\t\tflags.nuked = nukefloor;\n\t\t\t} else {\n\t\t\t\tflags.nuked = [...(new Set([...flags.nuked, ...nukefloor]))];\n\t\t\t}\n\t\t\tcore.insertAction([{ \"type\": \"showImage\", \"code\": 1, \"image\": \"nuke.jpg\", \"loc\": [0, 0], \"opacity\": 1, \"time\": 0 },\n\t\t\t\t{ \"type\": \"sleep\", \"time\": 1000 },\n\t\t\t\t{ \"type\": \"playSound\", \"name\": \"049-Explosion02.mp3\" },\n\t\t\t\t{ \"type\": \"vibrate\", \"direction\": \"horizontal\", \"time\": 3000, \"speed\": 10, \"power\": 10, \"async\": true },\n\t\t\t\t{ \"type\": \"setCurtain\", \"time\": 500 },\n\t\t\t\t{ \"type\": \"sleep\", \"time\": 2000 },\n\t\t\t\t{ \"type\": \"setCurtain\", \"color\": [255, 255, 255, 1], \"time\": 500, \"keep\": true },\n\t\t\t\t{ \"type\": \"hideImage\", \"code\": 1, \"time\": 0 },\n\t\t\t\t{ \"type\": \"sleep\", \"time\": 500 },\n\t\t\t\t{ \"type\": \"setCurtain\", \"time\": 500 },\n\t\t\t\t{ \"type\": \"waitAsync\" },\n\t\t\t])\n\t\t})\n\t}\n})()"
 	},
 	"penicillin": {
 		"cls": "constants",
@@ -2227,16 +2234,17 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"text": "持有时，地雷伤害-80%，但对水雷无效。\n扫雷坦克扫不了水雷不是很正常吗？"
 	},
 	"crocodile": {
-		"cls": "items",
+		"cls": "tools",
 		"name": "丘吉尔“鳄鱼”喷火坦克",
-		"canUseItemEffect": "true",
-		"text": "喷射火焰，消灭主角面前的非boss步兵、火炮或防御建筑并获得金经，无视“无法被攻击”效果。"
+		"canUseItemEffect": "(function () {\n\tlet Block = core.getBlock(core.nextX(), core.nextY());\n\treturn Block && Block.event.cls === 'enemys' && ['步兵', '反坦克炮', '榴弹炮', '高射炮', '建筑'].includes(core.material.enemys[Block.event.id].type) && !core.hasSpecial(core.material.enemys[Block.event.id].special, 57);\n})()",
+		"text": "喷射火焰，消灭主角面前的非boss步兵、火炮或防御建筑并获得金经，无视“无法被攻击”效果。",
+		"useItemEffect": "(function () {\n\tlet Block = core.getBlock(core.nextX(), core.nextY());\n\tif (Block && Block.event.cls === 'enemys' && ['步兵', '反坦克炮', '榴弹炮', '高射炮', '建筑'].includes(core.material.enemys[Block.event.id].type) && !core.hasSpecial(core.material.enemys[Block.event.id].special, 57)) {\n\t\tlet money = core.getEnemyValue(Block.event.id, 'money', Block.x, Block.y),\n\t\t\texp = core.getEnemyValue(Block.event.id, 'exp', Block.x, Block.y),\n\t\t\ttodo = [];\n\t\tif (core.hasEquip('m4') || core.hasEquip('m4a2') || core.hasEquip('m4a3') || core.hasEquip('m4a3e2') || core.hasEquip('firefly')) money += 5; //谢馒头，触发在双倍前\n\t\tif (core.hasEquip('classj')) money += 5; //J级驱逐舰\n\t\tif (flags.warmachine === true) money *= 2; //工业潜能，金币翻倍，计算在下面几个之前\n\t\tif (core.hasEquip('edinburgh')) money += 2; //爱丁堡号巡洋舰，金币+2\n\t\tif (core.hasEquip('hood')) money += 10; //胡德号，金币+10\n\t\tif (core.hasItem('coin')) money *= 2; // 幸运金币：双倍\n\t\tif (core.hasSpecial(core.material.enemys[Block.event.id].special, 61)) money = 0; // 投降\n\t\tcore.status.hero.money += money;\n\t\tcore.status.hero.statistics.money += money;\n\t\tif (core.hasEquip('classv')) exp += 2; //V级驱逐舰\n\t\tif (core.hasEquip('classj')) exp += 5; //J级驱逐舰\n\t\tif (core.hasEquip('hood')) exp += 10; //胡德号，经验+10\n\t\tif (core.hasEquip('m4a2') || core.hasEquip('m4a3') || core.hasEquip('m4a3e2') || core.hasEquip('firefly')) exp *= 2; //馒头\n\t\tif (core.hasSpecial(core.material.enemys[Block.event.id].special, 61)) exp = 0; // 投降\n\t\tcore.status.hero.exp += exp;\n\t\tcore.status.hero.statistics.exp += exp;\n\t\tcore.drawAnimate('explore3', Block.x, Block.y);\n\t\tif (core.status.floorId != null) {\n\t\t\tcore.push(todo, core.floors[core.status.floorId].afterBattle[Block.x + \",\" + Block.y]);\n\t\t}\n\t\tcore.push(todo, core.material.enemys[Block.event.id].afterBattle);\n\t\tdelete((flags.enemyOnPoint || {})[core.status.floorId] || {})[Block.x + \",\" + Block.y];\n\t\tcore.removeBlock(Block.x, Block.y);\n\t\tif (core.hasSpecial(core.material.enemys[Block.event.id].special, 84)) {\n\t\t\tcore.setBlock(\"yellowWall\", Block.x, Block.y);\n\t\t}\n\t\tif (todo.length > 0) {\n\t\t\tcore.insertAction(todo);\n\t\t}\n\t}\n})()"
 	},
 	"is3": {
 		"cls": "equips",
 		"name": "IS-3“斯大林”重型坦克",
 		"canUseItemEffect": "true",
-		"text": "攻击+n后额外+100%，穿182装140。\n被动：\n钢铁洪流：生命值大于50%时，攻击力进一步提高40%。\n装甲扫荡：对一切地面目标伤害提升30%，受到战斗伤害减少30%。无视万岁冲锋。\n乌拉：不会被惊慌debuff影响。"
+		"text": "攻击+n后额外+100%，穿215装240。\n被动：\n钢铁洪流：生命值大于50%时，攻击力进一步提高40%。\n装甲扫荡：对一切地面目标伤害提升30%，受到战斗伤害减少30%。无视万岁冲锋。\n乌拉：不会被惊慌debuff影响。"
 	},
 	"la9": {
 		"cls": "equips",
