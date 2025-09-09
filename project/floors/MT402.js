@@ -18,7 +18,6 @@ main.floors.MT402=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        
         {
             "type": "update"
         },

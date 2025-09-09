@@ -1395,6 +1395,19 @@ main.floors.MT407=
                 "name": "flag:door_MT407_5_7",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT407_5_7===13)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            5,
+                            7
+                        ]
+                    }
+                ]
             }
         ],
         "3,8": [
@@ -1403,6 +1416,19 @@ main.floors.MT407=
                 "name": "flag:door_MT407_5_7",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT407_5_7===13)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            5,
+                            7
+                        ]
+                    }
+                ]
             }
         ],
         "4,7": [
@@ -1411,6 +1437,19 @@ main.floors.MT407=
                 "name": "flag:door_MT407_5_7",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT407_5_7===13)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            5,
+                            7
+                        ]
+                    }
+                ]
             }
         ],
         "4,1": [
@@ -1419,6 +1458,19 @@ main.floors.MT407=
                 "name": "flag:door_MT407_5_7",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT407_5_7===13)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            5,
+                            7
+                        ]
+                    }
+                ]
             }
         ],
         "1,3": [
@@ -1427,6 +1479,19 @@ main.floors.MT407=
                 "name": "flag:door_MT407_5_7",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT407_5_7===13)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            5,
+                            7
+                        ]
+                    }
+                ]
             }
         ],
         "1,4": [
@@ -1435,6 +1500,19 @@ main.floors.MT407=
                 "name": "flag:door_MT407_5_7",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT407_5_7===13)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            5,
+                            7
+                        ]
+                    }
+                ]
             }
         ],
         "0,6": [
@@ -1443,6 +1521,19 @@ main.floors.MT407=
                 "name": "flag:door_MT407_5_7",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT407_5_7===13)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            5,
+                            7
+                        ]
+                    }
+                ]
             }
         ],
         "1,7": [
@@ -1451,6 +1542,19 @@ main.floors.MT407=
                 "name": "flag:door_MT407_5_7",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT407_5_7===13)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            5,
+                            7
+                        ]
+                    }
+                ]
             }
         ],
         "0,8": [
@@ -1459,6 +1563,19 @@ main.floors.MT407=
                 "name": "flag:door_MT407_5_7",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT407_5_7===13)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            5,
+                            7
+                        ]
+                    }
+                ]
             }
         ],
         "2,10": [
@@ -1467,6 +1584,19 @@ main.floors.MT407=
                 "name": "flag:door_MT407_5_7",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT407_5_7===13)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            5,
+                            7
+                        ]
+                    }
+                ]
             }
         ],
         "4,12": [
@@ -1475,6 +1605,19 @@ main.floors.MT407=
                 "name": "flag:door_MT407_5_7",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT407_5_7===13)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            5,
+                            7
+                        ]
+                    }
+                ]
             }
         ],
         "3,14": [
@@ -1483,6 +1626,19 @@ main.floors.MT407=
                 "name": "flag:door_MT407_5_7",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT407_5_7===13)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            5,
+                            7
+                        ]
+                    }
+                ]
             }
         ],
         "0,13": [
@@ -1491,6 +1647,19 @@ main.floors.MT407=
                 "name": "flag:door_MT407_5_7",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT407_5_7===13)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            5,
+                            7
+                        ]
+                    }
+                ]
             }
         ]
     },
@@ -1498,24 +1667,6 @@ main.floors.MT407=
     "afterOpenDoor": {},
     "autoEvent": {
         "5,7": {
-            "0": {
-                "condition": "flag:door_MT407_5_7==13",
-                "currentFloor": true,
-                "priority": 0,
-                "delayExecute": false,
-                "multiExecute": false,
-                "data": [
-                    {
-                        "type": "openDoor"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "flag:door_MT407_5_7",
-                        "operator": "=",
-                        "value": "null"
-                    }
-                ]
-            },
             "1": null
         },
         "7,0": {

@@ -18,7 +18,6 @@ main.floors.MT381=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        
         {
             "type": "setCurtain",
             "time": 500
