@@ -24,12 +24,9 @@ main.floors.MT5=
     "events": {
         "14,7": [
             {
-                "type": "function",
-                "function": "function(){\nflags.mission[1][0]=true\n}"
-            },
-            {
-                "type": "function",
-                "function": "function(){\nflags.skillList=[0,0,0,0,0,0,0]\n}"
+                "type": "setValue",
+                "name": "flag:第一关通关",
+                "value": "true"
             },
             {
                 "type": "update"
@@ -287,6 +284,9 @@ main.floors.MT5=
                 "type": "pauseBgm"
             },
             {
+                "type": "submitTask"
+            },
+            {
                 "type": "setValue",
                 "name": "flag:stage",
                 "value": "2"
@@ -340,6 +340,32 @@ main.floors.MT5=
                 "name": "flag:door_MT5_12_4",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT5_13_7===2)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            12,
+                            4
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT5_12_4===4)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            13,
+                            5
+                        ]
+                    }
+                ]
             }
         ],
         "13,5": [
@@ -354,6 +380,32 @@ main.floors.MT5=
                 "name": "flag:door_MT5_12_4",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT5_13_7===2)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            12,
+                            4
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT5_12_4===4)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            13,
+                            5
+                        ]
+                    }
+                ]
             }
         ],
         "11,9": [
@@ -365,9 +417,35 @@ main.floors.MT5=
             },
             {
                 "type": "setValue",
-                "name": "flag:door_MT5_12_10",
+                "name": "flag:door_MT5_12_4",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT5_13_7===2)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            12,
+                            10
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT5_12_4===4)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            13,
+                            5
+                        ]
+                    }
+                ]
             }
         ],
         "13,9": [
@@ -379,102 +457,50 @@ main.floors.MT5=
             },
             {
                 "type": "setValue",
-                "name": "flag:door_MT5_12_10",
+                "name": "flag:door_MT5_12_4",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT5_13_7===2)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            12,
+                            10
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT5_12_4===4)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            13,
+                            5
+                        ]
+                    }
+                ]
             }
         ]
     },
     "afterGetItem": {},
     "afterOpenDoor": {},
     "autoEvent": {
-        "14,12": {
-            "0": {
-                "condition": "!core.hasEnemyLeft(undefined,['MT1','MT2','MT3','MT4','MT5'])",
-                "currentFloor": false,
-                "priority": 0,
-                "delayExecute": false,
-                "multiExecute": false,
-                "data": [
-                    {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[1][2]=true\n}"
-                    }
-                ]
-            },
-            "1": {
-                "condition": "core.maps.searchBlockWithFilter(x=>['轻坦','中坦','重坦','坦歼'].includes(core.material.enemys[x?.event?.id]?.type),['MT1','MT2','MT3','MT4','MT5']).length===0",
-                "currentFloor": false,
-                "priority": 0,
-                "delayExecute": false,
-                "multiExecute": false,
-                "data": [
-                    {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[1][1]=true\n}"
-                    }
-                ]
-            }
-        },
+        "14,12": {},
         "13,7": {
-            "0": {
-                "condition": "flag:door_MT5_13_7==4",
-                "currentFloor": true,
-                "priority": 0,
-                "delayExecute": false,
-                "multiExecute": false,
-                "data": [
-                    {
-                        "type": "openDoor"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "flag:door_MT5_13_7",
-                        "value": "null"
-                    }
-                ]
-            },
             "1": null
         },
         "12,4": {
-            "0": {
-                "condition": "flag:door_MT5_12_4==2",
-                "currentFloor": true,
-                "priority": 0,
-                "delayExecute": false,
-                "multiExecute": false,
-                "data": [
-                    {
-                        "type": "openDoor"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "flag:door_MT5_12_4",
-                        "operator": "=",
-                        "value": "null"
-                    }
-                ]
-            }
+            "1": null
         },
         "12,10": {
-            "0": {
-                "condition": "flag:door_MT5_12_10==2",
-                "currentFloor": true,
-                "priority": 0,
-                "delayExecute": false,
-                "multiExecute": false,
-                "data": [
-                    {
-                        "type": "openDoor"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "flag:door_MT5_12_10",
-                        "operator": "=",
-                        "value": "null"
-                    }
-                ]
-            }
+            "1": null
         }
     },
     "cannotMove": {},

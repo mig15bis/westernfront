@@ -1827,6 +1827,10 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 				"type": "setValue",
 				"name": "flag:skill",
 				"value": "0"
+			},
+			{
+				"type": "function",
+				"function": "function(){\nflags.aoe = {}\n}"
 			}
 		],
 		"shops": [

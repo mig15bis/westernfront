@@ -3801,7 +3801,7 @@ specialBlock
     :'在楼层' EvalString? '受到' MapDamage_List '地图伤害次数' TaskOperator_List Int  '子任务描述' EvalString_Multi?   BGNL? Newline 
 /*  specialBlock
 tooltip : 在某些楼层受到一定次数的地图伤害
-default : ["地雷伤害","MT1","<",1,""]
+default : ["MT1","地雷伤害","<",1,""]
 colour : this.subColor
 EvalString_Multi_0=EvalString_Multi_0?(',"text": "'+EvalString_Multi_0+'"'): '';
 if(EvalString_0){

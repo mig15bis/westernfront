@@ -1244,9 +1244,9 @@ ActionParser.prototype.parseAction = function() {
               res,
             ]);
              }else if(one.type==="specialBlock"){
-              res = MotaActionBlocks["specialBlock"].xmlText([
-              one.specialBlock,  
+              res = MotaActionBlocks["specialBlock"].xmlText([  
               one.floorId.join(","), 
+              one.specialBlock,
               one.operator,
               one.count,
               one.text||"",

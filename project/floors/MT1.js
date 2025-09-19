@@ -89,6 +89,109 @@ main.floors.MT1=
         "\t[系统提示]特别说明：本塔允许负伤，后期提升后勤值去打弱怪会有不错的回血效果！",
         {
             "type": "callBook"
+        },
+        {
+            "type": "setValue",
+            "name": "flag:第一关通关",
+            "value": "0"
+        },
+        {
+            "type": "setTask",
+            "name": "第一关任务1",
+            "n": 1,
+            "text": "通过当前区域",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "第一关通关",
+                    "operator": "=",
+                    "text": "通过当前区域",
+                    "count": "1"
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第一关任务2",
+            "n": 4,
+            "text": "摧毁所有敌方坦克",
+            "info": [
+                {
+                    "type": "checkEnemyType",
+                    "checkEnemyType": "轻坦",
+                    "floorId": [
+                        "MT1",
+                        "MT2",
+                        "MT3",
+                        "MT4",
+                        "MT5"
+                    ],
+                    "operator": "<=",
+                    "text": "剩余轻坦",
+                    "count": 0
+                },
+                {
+                    "type": "checkEnemyType",
+                    "checkEnemyType": "中坦",
+                    "floorId": [
+                        "MT1",
+                        "MT2",
+                        "MT3",
+                        "MT4",
+                        "MT5"
+                    ],
+                    "operator": "<=",
+                    "text": "剩余中坦",
+                    "count": 0
+                },
+                {
+                    "type": "checkEnemyType",
+                    "checkEnemyType": "重坦",
+                    "floorId": [
+                        "MT1",
+                        "MT2",
+                        "MT3",
+                        "MT4",
+                        "MT5"
+                    ],
+                    "operator": "<=",
+                    "text": "剩余重坦",
+                    "count": 0
+                },
+                {
+                    "type": "checkEnemyType",
+                    "checkEnemyType": "坦歼",
+                    "floorId": [
+                        "MT1",
+                        "MT2",
+                        "MT3",
+                        "MT4",
+                        "MT5"
+                    ],
+                    "operator": "<=",
+                    "text": "剩余坦歼",
+                    "count": 0
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第一关任务3",
+            "n": 1,
+            "text": "全歼敌军",
+            "info": [
+                {
+                    "type": "killAll",
+                    "floorId": [
+                        "MT1",
+                        "MT2",
+                        "MT3",
+                        "MT4",
+                        "MT5"
+                    ],
+                    "text": "剩余敌人"
+                }
+            ]
         }
     ],
     "eachArrive": [],
