@@ -390,76 +390,11 @@ main.floors.MT25=
                 "name": "flag:door_MT25_7_6",
                 "operator": "+=",
                 "value": "1"
-            }
-        ],
-        "8,5": [
+            },
             {
-                "type": "setValue",
-                "name": "flag:door_MT25_7_6",
-                "operator": "+=",
-                "value": "1"
-            }
-        ],
-        "9,6": [
-            {
-                "type": "setValue",
-                "name": "flag:door_MT25_7_6",
-                "operator": "+=",
-                "value": "1"
-            }
-        ],
-        "9,8": [
-            {
-                "type": "setValue",
-                "name": "flag:door_MT25_7_6",
-                "operator": "+=",
-                "value": "1"
-            }
-        ],
-        "8,9": [
-            {
-                "type": "setValue",
-                "name": "flag:door_MT25_7_6",
-                "operator": "+=",
-                "value": "1"
-            }
-        ],
-        "6,9": [
-            {
-                "type": "setValue",
-                "name": "flag:door_MT25_7_6",
-                "operator": "+=",
-                "value": "1"
-            }
-        ],
-        "5,8": [
-            {
-                "type": "setValue",
-                "name": "flag:door_MT25_7_6",
-                "operator": "+=",
-                "value": "1"
-            }
-        ],
-        "5,6": [
-            {
-                "type": "setValue",
-                "name": "flag:door_MT25_7_6",
-                "operator": "+=",
-                "value": "1"
-            }
-        ]
-    },
-    "afterGetItem": {},
-    "afterOpenDoor": {},
-    "autoEvent": {
-        "7,6": {
-            "0": {
-                "condition": "flag:door_MT25_7_6==8",
-                "currentFloor": true,
-                "priority": 0,
-                "delayExecute": false,
-                "multiExecute": false,
-                "data": [
+                "type": "if",
+                "condition": "(flag:door_MT25_7_6>=8)",
+                "true": [
                     {
                         "type": "openDoor",
                         "loc": [
@@ -487,14 +422,309 @@ main.floors.MT25=
                             6,
                             7
                         ]
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "flag:door_MT25_7_6",
-                        "value": "null"
                     }
                 ]
+            }
+        ],
+        "8,5": [
+            {
+                "type": "setValue",
+                "name": "flag:door_MT25_7_6",
+                "operator": "+=",
+                "value": "1"
             },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT25_7_6>=8)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            6
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            8,
+                            7
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            8
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            6,
+                            7
+                        ]
+                    }
+                ]
+            }
+        ],
+        "9,6": [
+            {
+                "type": "setValue",
+                "name": "flag:door_MT25_7_6",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT25_7_6>=8)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            6
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            8,
+                            7
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            8
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            6,
+                            7
+                        ]
+                    }
+                ]
+            }
+        ],
+        "9,8": [
+            {
+                "type": "setValue",
+                "name": "flag:door_MT25_7_6",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT25_7_6>=8)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            6
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            8,
+                            7
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            8
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            6,
+                            7
+                        ]
+                    }
+                ]
+            }
+        ],
+        "8,9": [
+            {
+                "type": "setValue",
+                "name": "flag:door_MT25_7_6",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT25_7_6>=8)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            6
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            8,
+                            7
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            8
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            6,
+                            7
+                        ]
+                    }
+                ]
+            }
+        ],
+        "6,9": [
+            {
+                "type": "setValue",
+                "name": "flag:door_MT25_7_6",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT25_7_6>=8)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            6
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            8,
+                            7
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            8
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            6,
+                            7
+                        ]
+                    }
+                ]
+            }
+        ],
+        "5,8": [
+            {
+                "type": "setValue",
+                "name": "flag:door_MT25_7_6",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT25_7_6>=8)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            6
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            8,
+                            7
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            8
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            6,
+                            7
+                        ]
+                    }
+                ]
+            }
+        ],
+        "5,6": [
+            {
+                "type": "setValue",
+                "name": "flag:door_MT25_7_6",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT25_7_6>=8)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            6
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            8,
+                            7
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            8
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            6,
+                            7
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "afterGetItem": {},
+    "afterOpenDoor": {},
+    "autoEvent": {
+        "7,6": {
             "1": null
         },
         "8,6": {

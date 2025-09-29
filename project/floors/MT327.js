@@ -34,6 +34,366 @@ main.floors.MT327=
                 "name": "flag:MT327baseB",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT327baseB===8)",
+                "true": [
+                    {
+                        "type": "jumpHero",
+                        "loc": [
+                            7,
+                            7
+                        ],
+                        "time": 50
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "048-Explosion01.mp3"
+                    },
+                    {
+                        "type": "vibrate",
+                        "direction": "horizontal",
+                        "time": 200,
+                        "speed": 10,
+                        "power": 10,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                5,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                8,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "waitAsync"
+                    }
+                ],
+                "false": [
+                    {
+                        "type": "if",
+                        "condition": "(flag:MT327baseB===14)",
+                        "true": [
+                            {
+                                "type": "jumpHero",
+                                "loc": [
+                                    7,
+                                    7
+                                ],
+                                "time": 50
+                            },
+                            {
+                                "type": "playSound",
+                                "name": "048-Explosion01.mp3"
+                            },
+                            {
+                                "type": "vibrate",
+                                "direction": "horizontal",
+                                "time": 200,
+                                "speed": 10,
+                                "power": 10,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        5,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        5,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        7,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        8,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        7,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        6,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        9,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        9,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        6,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        5,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "waitAsync"
+                            }
+                        ],
+                        "false": [
+                            {
+                                "type": "if",
+                                "condition": "(flag:MT327baseB===30)",
+                                "true": [
+                                    {
+                                        "type": "function",
+                                        "function": "function(){\nflags.mission[45][1]=true\n}"
+                                    },
+                                    {
+                                        "type": "pauseBgm"
+                                    },
+                                    {
+                                        "type": "playSound",
+                                        "name": "getarea.mp3"
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            4
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            10,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            4,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "waitAsync"
+                                    },
+                                    {
+                                        "type": "playBgm",
+                                        "name": "cao2.mp3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ],
         "6,7": [
@@ -42,6 +402,366 @@ main.floors.MT327=
                 "name": "flag:MT327baseB",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT327baseB===8)",
+                "true": [
+                    {
+                        "type": "jumpHero",
+                        "loc": [
+                            7,
+                            7
+                        ],
+                        "time": 50
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "048-Explosion01.mp3"
+                    },
+                    {
+                        "type": "vibrate",
+                        "direction": "horizontal",
+                        "time": 200,
+                        "speed": 10,
+                        "power": 10,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                5,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                8,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "waitAsync"
+                    }
+                ],
+                "false": [
+                    {
+                        "type": "if",
+                        "condition": "(flag:MT327baseB===14)",
+                        "true": [
+                            {
+                                "type": "jumpHero",
+                                "loc": [
+                                    7,
+                                    7
+                                ],
+                                "time": 50
+                            },
+                            {
+                                "type": "playSound",
+                                "name": "048-Explosion01.mp3"
+                            },
+                            {
+                                "type": "vibrate",
+                                "direction": "horizontal",
+                                "time": 200,
+                                "speed": 10,
+                                "power": 10,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        5,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        5,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        7,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        8,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        7,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        6,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        9,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        9,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        6,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        5,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "waitAsync"
+                            }
+                        ],
+                        "false": [
+                            {
+                                "type": "if",
+                                "condition": "(flag:MT327baseB===30)",
+                                "true": [
+                                    {
+                                        "type": "function",
+                                        "function": "function(){\nflags.mission[45][1]=true\n}"
+                                    },
+                                    {
+                                        "type": "pauseBgm"
+                                    },
+                                    {
+                                        "type": "playSound",
+                                        "name": "getarea.mp3"
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            4
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            10,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            4,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "waitAsync"
+                                    },
+                                    {
+                                        "type": "playBgm",
+                                        "name": "cao2.mp3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ],
         "6,8": [
@@ -50,6 +770,366 @@ main.floors.MT327=
                 "name": "flag:MT327baseB",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT327baseB===8)",
+                "true": [
+                    {
+                        "type": "jumpHero",
+                        "loc": [
+                            7,
+                            7
+                        ],
+                        "time": 50
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "048-Explosion01.mp3"
+                    },
+                    {
+                        "type": "vibrate",
+                        "direction": "horizontal",
+                        "time": 200,
+                        "speed": 10,
+                        "power": 10,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                5,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                8,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "waitAsync"
+                    }
+                ],
+                "false": [
+                    {
+                        "type": "if",
+                        "condition": "(flag:MT327baseB===14)",
+                        "true": [
+                            {
+                                "type": "jumpHero",
+                                "loc": [
+                                    7,
+                                    7
+                                ],
+                                "time": 50
+                            },
+                            {
+                                "type": "playSound",
+                                "name": "048-Explosion01.mp3"
+                            },
+                            {
+                                "type": "vibrate",
+                                "direction": "horizontal",
+                                "time": 200,
+                                "speed": 10,
+                                "power": 10,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        5,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        5,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        7,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        8,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        7,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        6,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        9,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        9,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        6,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        5,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "waitAsync"
+                            }
+                        ],
+                        "false": [
+                            {
+                                "type": "if",
+                                "condition": "(flag:MT327baseB===30)",
+                                "true": [
+                                    {
+                                        "type": "function",
+                                        "function": "function(){\nflags.mission[45][1]=true\n}"
+                                    },
+                                    {
+                                        "type": "pauseBgm"
+                                    },
+                                    {
+                                        "type": "playSound",
+                                        "name": "getarea.mp3"
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            4
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            10,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            4,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "waitAsync"
+                                    },
+                                    {
+                                        "type": "playBgm",
+                                        "name": "cao2.mp3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ],
         "7,8": [
@@ -58,6 +1138,366 @@ main.floors.MT327=
                 "name": "flag:MT327baseB",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT327baseB===8)",
+                "true": [
+                    {
+                        "type": "jumpHero",
+                        "loc": [
+                            7,
+                            7
+                        ],
+                        "time": 50
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "048-Explosion01.mp3"
+                    },
+                    {
+                        "type": "vibrate",
+                        "direction": "horizontal",
+                        "time": 200,
+                        "speed": 10,
+                        "power": 10,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                5,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                8,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "waitAsync"
+                    }
+                ],
+                "false": [
+                    {
+                        "type": "if",
+                        "condition": "(flag:MT327baseB===14)",
+                        "true": [
+                            {
+                                "type": "jumpHero",
+                                "loc": [
+                                    7,
+                                    7
+                                ],
+                                "time": 50
+                            },
+                            {
+                                "type": "playSound",
+                                "name": "048-Explosion01.mp3"
+                            },
+                            {
+                                "type": "vibrate",
+                                "direction": "horizontal",
+                                "time": 200,
+                                "speed": 10,
+                                "power": 10,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        5,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        5,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        7,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        8,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        7,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        6,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        9,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        9,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        6,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        5,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "waitAsync"
+                            }
+                        ],
+                        "false": [
+                            {
+                                "type": "if",
+                                "condition": "(flag:MT327baseB===30)",
+                                "true": [
+                                    {
+                                        "type": "function",
+                                        "function": "function(){\nflags.mission[45][1]=true\n}"
+                                    },
+                                    {
+                                        "type": "pauseBgm"
+                                    },
+                                    {
+                                        "type": "playSound",
+                                        "name": "getarea.mp3"
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            4
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            10,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            4,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "waitAsync"
+                                    },
+                                    {
+                                        "type": "playBgm",
+                                        "name": "cao2.mp3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ],
         "8,8": [
@@ -66,6 +1506,366 @@ main.floors.MT327=
                 "name": "flag:MT327baseB",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT327baseB===8)",
+                "true": [
+                    {
+                        "type": "jumpHero",
+                        "loc": [
+                            7,
+                            7
+                        ],
+                        "time": 50
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "048-Explosion01.mp3"
+                    },
+                    {
+                        "type": "vibrate",
+                        "direction": "horizontal",
+                        "time": 200,
+                        "speed": 10,
+                        "power": 10,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                5,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                8,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "waitAsync"
+                    }
+                ],
+                "false": [
+                    {
+                        "type": "if",
+                        "condition": "(flag:MT327baseB===14)",
+                        "true": [
+                            {
+                                "type": "jumpHero",
+                                "loc": [
+                                    7,
+                                    7
+                                ],
+                                "time": 50
+                            },
+                            {
+                                "type": "playSound",
+                                "name": "048-Explosion01.mp3"
+                            },
+                            {
+                                "type": "vibrate",
+                                "direction": "horizontal",
+                                "time": 200,
+                                "speed": 10,
+                                "power": 10,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        5,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        5,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        7,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        8,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        7,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        6,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        9,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        9,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        6,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        5,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "waitAsync"
+                            }
+                        ],
+                        "false": [
+                            {
+                                "type": "if",
+                                "condition": "(flag:MT327baseB===30)",
+                                "true": [
+                                    {
+                                        "type": "function",
+                                        "function": "function(){\nflags.mission[45][1]=true\n}"
+                                    },
+                                    {
+                                        "type": "pauseBgm"
+                                    },
+                                    {
+                                        "type": "playSound",
+                                        "name": "getarea.mp3"
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            4
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            10,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            4,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "waitAsync"
+                                    },
+                                    {
+                                        "type": "playBgm",
+                                        "name": "cao2.mp3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ],
         "8,7": [
@@ -74,6 +1874,366 @@ main.floors.MT327=
                 "name": "flag:MT327baseB",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT327baseB===8)",
+                "true": [
+                    {
+                        "type": "jumpHero",
+                        "loc": [
+                            7,
+                            7
+                        ],
+                        "time": 50
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "048-Explosion01.mp3"
+                    },
+                    {
+                        "type": "vibrate",
+                        "direction": "horizontal",
+                        "time": 200,
+                        "speed": 10,
+                        "power": 10,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                5,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                8,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "waitAsync"
+                    }
+                ],
+                "false": [
+                    {
+                        "type": "if",
+                        "condition": "(flag:MT327baseB===14)",
+                        "true": [
+                            {
+                                "type": "jumpHero",
+                                "loc": [
+                                    7,
+                                    7
+                                ],
+                                "time": 50
+                            },
+                            {
+                                "type": "playSound",
+                                "name": "048-Explosion01.mp3"
+                            },
+                            {
+                                "type": "vibrate",
+                                "direction": "horizontal",
+                                "time": 200,
+                                "speed": 10,
+                                "power": 10,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        5,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        5,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        7,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        8,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        7,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        6,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        9,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        9,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        6,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        5,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "waitAsync"
+                            }
+                        ],
+                        "false": [
+                            {
+                                "type": "if",
+                                "condition": "(flag:MT327baseB===30)",
+                                "true": [
+                                    {
+                                        "type": "function",
+                                        "function": "function(){\nflags.mission[45][1]=true\n}"
+                                    },
+                                    {
+                                        "type": "pauseBgm"
+                                    },
+                                    {
+                                        "type": "playSound",
+                                        "name": "getarea.mp3"
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            4
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            10,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            4,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "waitAsync"
+                                    },
+                                    {
+                                        "type": "playBgm",
+                                        "name": "cao2.mp3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ],
         "8,6": [
@@ -82,6 +2242,366 @@ main.floors.MT327=
                 "name": "flag:MT327baseB",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT327baseB===8)",
+                "true": [
+                    {
+                        "type": "jumpHero",
+                        "loc": [
+                            7,
+                            7
+                        ],
+                        "time": 50
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "048-Explosion01.mp3"
+                    },
+                    {
+                        "type": "vibrate",
+                        "direction": "horizontal",
+                        "time": 200,
+                        "speed": 10,
+                        "power": 10,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                5,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                8,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "waitAsync"
+                    }
+                ],
+                "false": [
+                    {
+                        "type": "if",
+                        "condition": "(flag:MT327baseB===14)",
+                        "true": [
+                            {
+                                "type": "jumpHero",
+                                "loc": [
+                                    7,
+                                    7
+                                ],
+                                "time": 50
+                            },
+                            {
+                                "type": "playSound",
+                                "name": "048-Explosion01.mp3"
+                            },
+                            {
+                                "type": "vibrate",
+                                "direction": "horizontal",
+                                "time": 200,
+                                "speed": 10,
+                                "power": 10,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        5,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        5,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        7,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        8,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        7,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        6,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        9,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        9,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        6,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        5,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "waitAsync"
+                            }
+                        ],
+                        "false": [
+                            {
+                                "type": "if",
+                                "condition": "(flag:MT327baseB===30)",
+                                "true": [
+                                    {
+                                        "type": "function",
+                                        "function": "function(){\nflags.mission[45][1]=true\n}"
+                                    },
+                                    {
+                                        "type": "pauseBgm"
+                                    },
+                                    {
+                                        "type": "playSound",
+                                        "name": "getarea.mp3"
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            4
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            10,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            4,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "waitAsync"
+                                    },
+                                    {
+                                        "type": "playBgm",
+                                        "name": "cao2.mp3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ],
         "7,6": [
@@ -90,6 +2610,366 @@ main.floors.MT327=
                 "name": "flag:MT327baseB",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT327baseB===8)",
+                "true": [
+                    {
+                        "type": "jumpHero",
+                        "loc": [
+                            7,
+                            7
+                        ],
+                        "time": 50
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "048-Explosion01.mp3"
+                    },
+                    {
+                        "type": "vibrate",
+                        "direction": "horizontal",
+                        "time": 200,
+                        "speed": 10,
+                        "power": 10,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                5,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                8,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "waitAsync"
+                    }
+                ],
+                "false": [
+                    {
+                        "type": "if",
+                        "condition": "(flag:MT327baseB===14)",
+                        "true": [
+                            {
+                                "type": "jumpHero",
+                                "loc": [
+                                    7,
+                                    7
+                                ],
+                                "time": 50
+                            },
+                            {
+                                "type": "playSound",
+                                "name": "048-Explosion01.mp3"
+                            },
+                            {
+                                "type": "vibrate",
+                                "direction": "horizontal",
+                                "time": 200,
+                                "speed": 10,
+                                "power": 10,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        5,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        5,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        7,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        8,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        7,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        6,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        9,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        9,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        6,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        5,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "waitAsync"
+                            }
+                        ],
+                        "false": [
+                            {
+                                "type": "if",
+                                "condition": "(flag:MT327baseB===30)",
+                                "true": [
+                                    {
+                                        "type": "function",
+                                        "function": "function(){\nflags.mission[45][1]=true\n}"
+                                    },
+                                    {
+                                        "type": "pauseBgm"
+                                    },
+                                    {
+                                        "type": "playSound",
+                                        "name": "getarea.mp3"
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            4
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            10,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            4,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "waitAsync"
+                                    },
+                                    {
+                                        "type": "playBgm",
+                                        "name": "cao2.mp3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ],
         "5,5": [
@@ -98,6 +2978,366 @@ main.floors.MT327=
                 "name": "flag:MT327baseB",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT327baseB===8)",
+                "true": [
+                    {
+                        "type": "jumpHero",
+                        "loc": [
+                            7,
+                            7
+                        ],
+                        "time": 50
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "048-Explosion01.mp3"
+                    },
+                    {
+                        "type": "vibrate",
+                        "direction": "horizontal",
+                        "time": 200,
+                        "speed": 10,
+                        "power": 10,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                5,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                8,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "waitAsync"
+                    }
+                ],
+                "false": [
+                    {
+                        "type": "if",
+                        "condition": "(flag:MT327baseB===14)",
+                        "true": [
+                            {
+                                "type": "jumpHero",
+                                "loc": [
+                                    7,
+                                    7
+                                ],
+                                "time": 50
+                            },
+                            {
+                                "type": "playSound",
+                                "name": "048-Explosion01.mp3"
+                            },
+                            {
+                                "type": "vibrate",
+                                "direction": "horizontal",
+                                "time": 200,
+                                "speed": 10,
+                                "power": 10,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        5,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        5,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        7,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        8,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        7,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        6,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        9,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        9,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        6,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        5,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "waitAsync"
+                            }
+                        ],
+                        "false": [
+                            {
+                                "type": "if",
+                                "condition": "(flag:MT327baseB===30)",
+                                "true": [
+                                    {
+                                        "type": "function",
+                                        "function": "function(){\nflags.mission[45][1]=true\n}"
+                                    },
+                                    {
+                                        "type": "pauseBgm"
+                                    },
+                                    {
+                                        "type": "playSound",
+                                        "name": "getarea.mp3"
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            4
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            10,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            4,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "waitAsync"
+                                    },
+                                    {
+                                        "type": "playBgm",
+                                        "name": "cao2.mp3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ],
         "6,5": [
@@ -106,6 +3346,366 @@ main.floors.MT327=
                 "name": "flag:MT327baseB",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT327baseB===8)",
+                "true": [
+                    {
+                        "type": "jumpHero",
+                        "loc": [
+                            7,
+                            7
+                        ],
+                        "time": 50
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "048-Explosion01.mp3"
+                    },
+                    {
+                        "type": "vibrate",
+                        "direction": "horizontal",
+                        "time": 200,
+                        "speed": 10,
+                        "power": 10,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                5,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                8,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "waitAsync"
+                    }
+                ],
+                "false": [
+                    {
+                        "type": "if",
+                        "condition": "(flag:MT327baseB===14)",
+                        "true": [
+                            {
+                                "type": "jumpHero",
+                                "loc": [
+                                    7,
+                                    7
+                                ],
+                                "time": 50
+                            },
+                            {
+                                "type": "playSound",
+                                "name": "048-Explosion01.mp3"
+                            },
+                            {
+                                "type": "vibrate",
+                                "direction": "horizontal",
+                                "time": 200,
+                                "speed": 10,
+                                "power": 10,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        5,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        5,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        7,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        8,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        7,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        6,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        9,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        9,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        6,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        5,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "waitAsync"
+                            }
+                        ],
+                        "false": [
+                            {
+                                "type": "if",
+                                "condition": "(flag:MT327baseB===30)",
+                                "true": [
+                                    {
+                                        "type": "function",
+                                        "function": "function(){\nflags.mission[45][1]=true\n}"
+                                    },
+                                    {
+                                        "type": "pauseBgm"
+                                    },
+                                    {
+                                        "type": "playSound",
+                                        "name": "getarea.mp3"
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            4
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            10,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            4,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "waitAsync"
+                                    },
+                                    {
+                                        "type": "playBgm",
+                                        "name": "cao2.mp3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ],
         "7,5": [
@@ -114,6 +3714,366 @@ main.floors.MT327=
                 "name": "flag:MT327baseB",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT327baseB===8)",
+                "true": [
+                    {
+                        "type": "jumpHero",
+                        "loc": [
+                            7,
+                            7
+                        ],
+                        "time": 50
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "048-Explosion01.mp3"
+                    },
+                    {
+                        "type": "vibrate",
+                        "direction": "horizontal",
+                        "time": 200,
+                        "speed": 10,
+                        "power": 10,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                5,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                8,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "waitAsync"
+                    }
+                ],
+                "false": [
+                    {
+                        "type": "if",
+                        "condition": "(flag:MT327baseB===14)",
+                        "true": [
+                            {
+                                "type": "jumpHero",
+                                "loc": [
+                                    7,
+                                    7
+                                ],
+                                "time": 50
+                            },
+                            {
+                                "type": "playSound",
+                                "name": "048-Explosion01.mp3"
+                            },
+                            {
+                                "type": "vibrate",
+                                "direction": "horizontal",
+                                "time": 200,
+                                "speed": 10,
+                                "power": 10,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        5,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        5,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        7,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        8,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        7,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        6,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        9,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        9,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        6,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        5,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "waitAsync"
+                            }
+                        ],
+                        "false": [
+                            {
+                                "type": "if",
+                                "condition": "(flag:MT327baseB===30)",
+                                "true": [
+                                    {
+                                        "type": "function",
+                                        "function": "function(){\nflags.mission[45][1]=true\n}"
+                                    },
+                                    {
+                                        "type": "pauseBgm"
+                                    },
+                                    {
+                                        "type": "playSound",
+                                        "name": "getarea.mp3"
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            4
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            10,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            4,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "waitAsync"
+                                    },
+                                    {
+                                        "type": "playBgm",
+                                        "name": "cao2.mp3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ],
         "8,5": [
@@ -122,6 +4082,366 @@ main.floors.MT327=
                 "name": "flag:MT327baseB",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT327baseB===8)",
+                "true": [
+                    {
+                        "type": "jumpHero",
+                        "loc": [
+                            7,
+                            7
+                        ],
+                        "time": 50
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "048-Explosion01.mp3"
+                    },
+                    {
+                        "type": "vibrate",
+                        "direction": "horizontal",
+                        "time": 200,
+                        "speed": 10,
+                        "power": 10,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                5,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                8,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "waitAsync"
+                    }
+                ],
+                "false": [
+                    {
+                        "type": "if",
+                        "condition": "(flag:MT327baseB===14)",
+                        "true": [
+                            {
+                                "type": "jumpHero",
+                                "loc": [
+                                    7,
+                                    7
+                                ],
+                                "time": 50
+                            },
+                            {
+                                "type": "playSound",
+                                "name": "048-Explosion01.mp3"
+                            },
+                            {
+                                "type": "vibrate",
+                                "direction": "horizontal",
+                                "time": 200,
+                                "speed": 10,
+                                "power": 10,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        5,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        5,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        7,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        8,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        7,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        6,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        9,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        9,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        6,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        5,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "waitAsync"
+                            }
+                        ],
+                        "false": [
+                            {
+                                "type": "if",
+                                "condition": "(flag:MT327baseB===30)",
+                                "true": [
+                                    {
+                                        "type": "function",
+                                        "function": "function(){\nflags.mission[45][1]=true\n}"
+                                    },
+                                    {
+                                        "type": "pauseBgm"
+                                    },
+                                    {
+                                        "type": "playSound",
+                                        "name": "getarea.mp3"
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            4
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            10,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            4,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "waitAsync"
+                                    },
+                                    {
+                                        "type": "playBgm",
+                                        "name": "cao2.mp3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ],
         "9,5": [
@@ -130,6 +4450,366 @@ main.floors.MT327=
                 "name": "flag:MT327baseB",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT327baseB===8)",
+                "true": [
+                    {
+                        "type": "jumpHero",
+                        "loc": [
+                            7,
+                            7
+                        ],
+                        "time": 50
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "048-Explosion01.mp3"
+                    },
+                    {
+                        "type": "vibrate",
+                        "direction": "horizontal",
+                        "time": 200,
+                        "speed": 10,
+                        "power": 10,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                5,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                8,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "waitAsync"
+                    }
+                ],
+                "false": [
+                    {
+                        "type": "if",
+                        "condition": "(flag:MT327baseB===14)",
+                        "true": [
+                            {
+                                "type": "jumpHero",
+                                "loc": [
+                                    7,
+                                    7
+                                ],
+                                "time": 50
+                            },
+                            {
+                                "type": "playSound",
+                                "name": "048-Explosion01.mp3"
+                            },
+                            {
+                                "type": "vibrate",
+                                "direction": "horizontal",
+                                "time": 200,
+                                "speed": 10,
+                                "power": 10,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        5,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        5,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        7,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        8,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        7,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        6,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        9,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        9,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        6,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        5,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "waitAsync"
+                            }
+                        ],
+                        "false": [
+                            {
+                                "type": "if",
+                                "condition": "(flag:MT327baseB===30)",
+                                "true": [
+                                    {
+                                        "type": "function",
+                                        "function": "function(){\nflags.mission[45][1]=true\n}"
+                                    },
+                                    {
+                                        "type": "pauseBgm"
+                                    },
+                                    {
+                                        "type": "playSound",
+                                        "name": "getarea.mp3"
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            4
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            10,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            4,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "waitAsync"
+                                    },
+                                    {
+                                        "type": "playBgm",
+                                        "name": "cao2.mp3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ],
         "9,6": [
@@ -138,6 +4818,366 @@ main.floors.MT327=
                 "name": "flag:MT327baseB",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT327baseB===8)",
+                "true": [
+                    {
+                        "type": "jumpHero",
+                        "loc": [
+                            7,
+                            7
+                        ],
+                        "time": 50
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "048-Explosion01.mp3"
+                    },
+                    {
+                        "type": "vibrate",
+                        "direction": "horizontal",
+                        "time": 200,
+                        "speed": 10,
+                        "power": 10,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                5,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                8,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "waitAsync"
+                    }
+                ],
+                "false": [
+                    {
+                        "type": "if",
+                        "condition": "(flag:MT327baseB===14)",
+                        "true": [
+                            {
+                                "type": "jumpHero",
+                                "loc": [
+                                    7,
+                                    7
+                                ],
+                                "time": 50
+                            },
+                            {
+                                "type": "playSound",
+                                "name": "048-Explosion01.mp3"
+                            },
+                            {
+                                "type": "vibrate",
+                                "direction": "horizontal",
+                                "time": 200,
+                                "speed": 10,
+                                "power": 10,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        5,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        5,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        7,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        8,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        7,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        6,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        9,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        9,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        6,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        5,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "waitAsync"
+                            }
+                        ],
+                        "false": [
+                            {
+                                "type": "if",
+                                "condition": "(flag:MT327baseB===30)",
+                                "true": [
+                                    {
+                                        "type": "function",
+                                        "function": "function(){\nflags.mission[45][1]=true\n}"
+                                    },
+                                    {
+                                        "type": "pauseBgm"
+                                    },
+                                    {
+                                        "type": "playSound",
+                                        "name": "getarea.mp3"
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            4
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            10,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            4,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "waitAsync"
+                                    },
+                                    {
+                                        "type": "playBgm",
+                                        "name": "cao2.mp3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ],
         "5,6": [
@@ -146,6 +5186,366 @@ main.floors.MT327=
                 "name": "flag:MT327baseB",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT327baseB===8)",
+                "true": [
+                    {
+                        "type": "jumpHero",
+                        "loc": [
+                            7,
+                            7
+                        ],
+                        "time": 50
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "048-Explosion01.mp3"
+                    },
+                    {
+                        "type": "vibrate",
+                        "direction": "horizontal",
+                        "time": 200,
+                        "speed": 10,
+                        "power": 10,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                5,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                8,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "waitAsync"
+                    }
+                ],
+                "false": [
+                    {
+                        "type": "if",
+                        "condition": "(flag:MT327baseB===14)",
+                        "true": [
+                            {
+                                "type": "jumpHero",
+                                "loc": [
+                                    7,
+                                    7
+                                ],
+                                "time": 50
+                            },
+                            {
+                                "type": "playSound",
+                                "name": "048-Explosion01.mp3"
+                            },
+                            {
+                                "type": "vibrate",
+                                "direction": "horizontal",
+                                "time": 200,
+                                "speed": 10,
+                                "power": 10,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        5,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        5,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        7,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        8,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        7,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        6,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        9,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        9,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        6,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        5,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "waitAsync"
+                            }
+                        ],
+                        "false": [
+                            {
+                                "type": "if",
+                                "condition": "(flag:MT327baseB===30)",
+                                "true": [
+                                    {
+                                        "type": "function",
+                                        "function": "function(){\nflags.mission[45][1]=true\n}"
+                                    },
+                                    {
+                                        "type": "pauseBgm"
+                                    },
+                                    {
+                                        "type": "playSound",
+                                        "name": "getarea.mp3"
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            4
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            10,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            4,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "waitAsync"
+                                    },
+                                    {
+                                        "type": "playBgm",
+                                        "name": "cao2.mp3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ],
         "5,7": [
@@ -154,6 +5554,366 @@ main.floors.MT327=
                 "name": "flag:MT327baseB",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT327baseB===8)",
+                "true": [
+                    {
+                        "type": "jumpHero",
+                        "loc": [
+                            7,
+                            7
+                        ],
+                        "time": 50
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "048-Explosion01.mp3"
+                    },
+                    {
+                        "type": "vibrate",
+                        "direction": "horizontal",
+                        "time": 200,
+                        "speed": 10,
+                        "power": 10,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                5,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                8,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "waitAsync"
+                    }
+                ],
+                "false": [
+                    {
+                        "type": "if",
+                        "condition": "(flag:MT327baseB===14)",
+                        "true": [
+                            {
+                                "type": "jumpHero",
+                                "loc": [
+                                    7,
+                                    7
+                                ],
+                                "time": 50
+                            },
+                            {
+                                "type": "playSound",
+                                "name": "048-Explosion01.mp3"
+                            },
+                            {
+                                "type": "vibrate",
+                                "direction": "horizontal",
+                                "time": 200,
+                                "speed": 10,
+                                "power": 10,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        5,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        5,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        7,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        8,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        7,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        6,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        9,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        9,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        6,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        5,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "waitAsync"
+                            }
+                        ],
+                        "false": [
+                            {
+                                "type": "if",
+                                "condition": "(flag:MT327baseB===30)",
+                                "true": [
+                                    {
+                                        "type": "function",
+                                        "function": "function(){\nflags.mission[45][1]=true\n}"
+                                    },
+                                    {
+                                        "type": "pauseBgm"
+                                    },
+                                    {
+                                        "type": "playSound",
+                                        "name": "getarea.mp3"
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            4
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            10,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            4,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "waitAsync"
+                                    },
+                                    {
+                                        "type": "playBgm",
+                                        "name": "cao2.mp3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ],
         "5,8": [
@@ -162,6 +5922,366 @@ main.floors.MT327=
                 "name": "flag:MT327baseB",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT327baseB===8)",
+                "true": [
+                    {
+                        "type": "jumpHero",
+                        "loc": [
+                            7,
+                            7
+                        ],
+                        "time": 50
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "048-Explosion01.mp3"
+                    },
+                    {
+                        "type": "vibrate",
+                        "direction": "horizontal",
+                        "time": 200,
+                        "speed": 10,
+                        "power": 10,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                5,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                8,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "waitAsync"
+                    }
+                ],
+                "false": [
+                    {
+                        "type": "if",
+                        "condition": "(flag:MT327baseB===14)",
+                        "true": [
+                            {
+                                "type": "jumpHero",
+                                "loc": [
+                                    7,
+                                    7
+                                ],
+                                "time": 50
+                            },
+                            {
+                                "type": "playSound",
+                                "name": "048-Explosion01.mp3"
+                            },
+                            {
+                                "type": "vibrate",
+                                "direction": "horizontal",
+                                "time": 200,
+                                "speed": 10,
+                                "power": 10,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        5,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        5,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        7,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        8,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        7,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        6,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        9,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        9,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        6,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        5,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "waitAsync"
+                            }
+                        ],
+                        "false": [
+                            {
+                                "type": "if",
+                                "condition": "(flag:MT327baseB===30)",
+                                "true": [
+                                    {
+                                        "type": "function",
+                                        "function": "function(){\nflags.mission[45][1]=true\n}"
+                                    },
+                                    {
+                                        "type": "pauseBgm"
+                                    },
+                                    {
+                                        "type": "playSound",
+                                        "name": "getarea.mp3"
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            4
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            10,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            4,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "waitAsync"
+                                    },
+                                    {
+                                        "type": "playBgm",
+                                        "name": "cao2.mp3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ],
         "5,9": [
@@ -170,6 +6290,366 @@ main.floors.MT327=
                 "name": "flag:MT327baseB",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT327baseB===8)",
+                "true": [
+                    {
+                        "type": "jumpHero",
+                        "loc": [
+                            7,
+                            7
+                        ],
+                        "time": 50
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "048-Explosion01.mp3"
+                    },
+                    {
+                        "type": "vibrate",
+                        "direction": "horizontal",
+                        "time": 200,
+                        "speed": 10,
+                        "power": 10,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                5,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                8,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "waitAsync"
+                    }
+                ],
+                "false": [
+                    {
+                        "type": "if",
+                        "condition": "(flag:MT327baseB===14)",
+                        "true": [
+                            {
+                                "type": "jumpHero",
+                                "loc": [
+                                    7,
+                                    7
+                                ],
+                                "time": 50
+                            },
+                            {
+                                "type": "playSound",
+                                "name": "048-Explosion01.mp3"
+                            },
+                            {
+                                "type": "vibrate",
+                                "direction": "horizontal",
+                                "time": 200,
+                                "speed": 10,
+                                "power": 10,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        5,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        5,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        7,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        8,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        7,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        6,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        9,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        9,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        6,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        5,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "waitAsync"
+                            }
+                        ],
+                        "false": [
+                            {
+                                "type": "if",
+                                "condition": "(flag:MT327baseB===30)",
+                                "true": [
+                                    {
+                                        "type": "function",
+                                        "function": "function(){\nflags.mission[45][1]=true\n}"
+                                    },
+                                    {
+                                        "type": "pauseBgm"
+                                    },
+                                    {
+                                        "type": "playSound",
+                                        "name": "getarea.mp3"
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            4
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            10,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            4,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "waitAsync"
+                                    },
+                                    {
+                                        "type": "playBgm",
+                                        "name": "cao2.mp3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ],
         "6,9": [
@@ -178,6 +6658,366 @@ main.floors.MT327=
                 "name": "flag:MT327baseB",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT327baseB===8)",
+                "true": [
+                    {
+                        "type": "jumpHero",
+                        "loc": [
+                            7,
+                            7
+                        ],
+                        "time": 50
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "048-Explosion01.mp3"
+                    },
+                    {
+                        "type": "vibrate",
+                        "direction": "horizontal",
+                        "time": 200,
+                        "speed": 10,
+                        "power": 10,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                5,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                8,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "waitAsync"
+                    }
+                ],
+                "false": [
+                    {
+                        "type": "if",
+                        "condition": "(flag:MT327baseB===14)",
+                        "true": [
+                            {
+                                "type": "jumpHero",
+                                "loc": [
+                                    7,
+                                    7
+                                ],
+                                "time": 50
+                            },
+                            {
+                                "type": "playSound",
+                                "name": "048-Explosion01.mp3"
+                            },
+                            {
+                                "type": "vibrate",
+                                "direction": "horizontal",
+                                "time": 200,
+                                "speed": 10,
+                                "power": 10,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        5,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        5,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        7,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        8,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        7,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        6,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        9,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        9,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        6,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        5,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "waitAsync"
+                            }
+                        ],
+                        "false": [
+                            {
+                                "type": "if",
+                                "condition": "(flag:MT327baseB===30)",
+                                "true": [
+                                    {
+                                        "type": "function",
+                                        "function": "function(){\nflags.mission[45][1]=true\n}"
+                                    },
+                                    {
+                                        "type": "pauseBgm"
+                                    },
+                                    {
+                                        "type": "playSound",
+                                        "name": "getarea.mp3"
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            4
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            10,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            4,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "waitAsync"
+                                    },
+                                    {
+                                        "type": "playBgm",
+                                        "name": "cao2.mp3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ],
         "7,9": [
@@ -186,6 +7026,366 @@ main.floors.MT327=
                 "name": "flag:MT327baseB",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT327baseB===8)",
+                "true": [
+                    {
+                        "type": "jumpHero",
+                        "loc": [
+                            7,
+                            7
+                        ],
+                        "time": 50
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "048-Explosion01.mp3"
+                    },
+                    {
+                        "type": "vibrate",
+                        "direction": "horizontal",
+                        "time": 200,
+                        "speed": 10,
+                        "power": 10,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                5,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                8,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "waitAsync"
+                    }
+                ],
+                "false": [
+                    {
+                        "type": "if",
+                        "condition": "(flag:MT327baseB===14)",
+                        "true": [
+                            {
+                                "type": "jumpHero",
+                                "loc": [
+                                    7,
+                                    7
+                                ],
+                                "time": 50
+                            },
+                            {
+                                "type": "playSound",
+                                "name": "048-Explosion01.mp3"
+                            },
+                            {
+                                "type": "vibrate",
+                                "direction": "horizontal",
+                                "time": 200,
+                                "speed": 10,
+                                "power": 10,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        5,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        5,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        7,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        8,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        7,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        6,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        9,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        9,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        6,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        5,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "waitAsync"
+                            }
+                        ],
+                        "false": [
+                            {
+                                "type": "if",
+                                "condition": "(flag:MT327baseB===30)",
+                                "true": [
+                                    {
+                                        "type": "function",
+                                        "function": "function(){\nflags.mission[45][1]=true\n}"
+                                    },
+                                    {
+                                        "type": "pauseBgm"
+                                    },
+                                    {
+                                        "type": "playSound",
+                                        "name": "getarea.mp3"
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            4
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            10,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            4,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "waitAsync"
+                                    },
+                                    {
+                                        "type": "playBgm",
+                                        "name": "cao2.mp3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ],
         "8,9": [
@@ -194,6 +7394,366 @@ main.floors.MT327=
                 "name": "flag:MT327baseB",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT327baseB===8)",
+                "true": [
+                    {
+                        "type": "jumpHero",
+                        "loc": [
+                            7,
+                            7
+                        ],
+                        "time": 50
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "048-Explosion01.mp3"
+                    },
+                    {
+                        "type": "vibrate",
+                        "direction": "horizontal",
+                        "time": 200,
+                        "speed": 10,
+                        "power": 10,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                5,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                8,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "waitAsync"
+                    }
+                ],
+                "false": [
+                    {
+                        "type": "if",
+                        "condition": "(flag:MT327baseB===14)",
+                        "true": [
+                            {
+                                "type": "jumpHero",
+                                "loc": [
+                                    7,
+                                    7
+                                ],
+                                "time": 50
+                            },
+                            {
+                                "type": "playSound",
+                                "name": "048-Explosion01.mp3"
+                            },
+                            {
+                                "type": "vibrate",
+                                "direction": "horizontal",
+                                "time": 200,
+                                "speed": 10,
+                                "power": 10,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        5,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        5,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        7,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        8,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        7,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        6,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        9,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        9,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        6,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        5,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "waitAsync"
+                            }
+                        ],
+                        "false": [
+                            {
+                                "type": "if",
+                                "condition": "(flag:MT327baseB===30)",
+                                "true": [
+                                    {
+                                        "type": "function",
+                                        "function": "function(){\nflags.mission[45][1]=true\n}"
+                                    },
+                                    {
+                                        "type": "pauseBgm"
+                                    },
+                                    {
+                                        "type": "playSound",
+                                        "name": "getarea.mp3"
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            4
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            10,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            4,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "waitAsync"
+                                    },
+                                    {
+                                        "type": "playBgm",
+                                        "name": "cao2.mp3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ],
         "9,9": [
@@ -202,6 +7762,366 @@ main.floors.MT327=
                 "name": "flag:MT327baseB",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT327baseB===8)",
+                "true": [
+                    {
+                        "type": "jumpHero",
+                        "loc": [
+                            7,
+                            7
+                        ],
+                        "time": 50
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "048-Explosion01.mp3"
+                    },
+                    {
+                        "type": "vibrate",
+                        "direction": "horizontal",
+                        "time": 200,
+                        "speed": 10,
+                        "power": 10,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                5,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                8,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "waitAsync"
+                    }
+                ],
+                "false": [
+                    {
+                        "type": "if",
+                        "condition": "(flag:MT327baseB===14)",
+                        "true": [
+                            {
+                                "type": "jumpHero",
+                                "loc": [
+                                    7,
+                                    7
+                                ],
+                                "time": 50
+                            },
+                            {
+                                "type": "playSound",
+                                "name": "048-Explosion01.mp3"
+                            },
+                            {
+                                "type": "vibrate",
+                                "direction": "horizontal",
+                                "time": 200,
+                                "speed": 10,
+                                "power": 10,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        5,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        5,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        7,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        8,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        7,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        6,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        9,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        9,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        6,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        5,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "waitAsync"
+                            }
+                        ],
+                        "false": [
+                            {
+                                "type": "if",
+                                "condition": "(flag:MT327baseB===30)",
+                                "true": [
+                                    {
+                                        "type": "function",
+                                        "function": "function(){\nflags.mission[45][1]=true\n}"
+                                    },
+                                    {
+                                        "type": "pauseBgm"
+                                    },
+                                    {
+                                        "type": "playSound",
+                                        "name": "getarea.mp3"
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            4
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            10,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            4,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "waitAsync"
+                                    },
+                                    {
+                                        "type": "playBgm",
+                                        "name": "cao2.mp3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ],
         "9,8": [
@@ -210,6 +8130,366 @@ main.floors.MT327=
                 "name": "flag:MT327baseB",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT327baseB===8)",
+                "true": [
+                    {
+                        "type": "jumpHero",
+                        "loc": [
+                            7,
+                            7
+                        ],
+                        "time": 50
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "048-Explosion01.mp3"
+                    },
+                    {
+                        "type": "vibrate",
+                        "direction": "horizontal",
+                        "time": 200,
+                        "speed": 10,
+                        "power": 10,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                5,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                8,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "waitAsync"
+                    }
+                ],
+                "false": [
+                    {
+                        "type": "if",
+                        "condition": "(flag:MT327baseB===14)",
+                        "true": [
+                            {
+                                "type": "jumpHero",
+                                "loc": [
+                                    7,
+                                    7
+                                ],
+                                "time": 50
+                            },
+                            {
+                                "type": "playSound",
+                                "name": "048-Explosion01.mp3"
+                            },
+                            {
+                                "type": "vibrate",
+                                "direction": "horizontal",
+                                "time": 200,
+                                "speed": 10,
+                                "power": 10,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        5,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        5,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        7,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        8,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        7,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        6,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        9,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        9,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        6,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        5,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "waitAsync"
+                            }
+                        ],
+                        "false": [
+                            {
+                                "type": "if",
+                                "condition": "(flag:MT327baseB===30)",
+                                "true": [
+                                    {
+                                        "type": "function",
+                                        "function": "function(){\nflags.mission[45][1]=true\n}"
+                                    },
+                                    {
+                                        "type": "pauseBgm"
+                                    },
+                                    {
+                                        "type": "playSound",
+                                        "name": "getarea.mp3"
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            4
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            10,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            4,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "waitAsync"
+                                    },
+                                    {
+                                        "type": "playBgm",
+                                        "name": "cao2.mp3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ],
         "9,7": [
@@ -218,6 +8498,366 @@ main.floors.MT327=
                 "name": "flag:MT327baseB",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT327baseB===8)",
+                "true": [
+                    {
+                        "type": "jumpHero",
+                        "loc": [
+                            7,
+                            7
+                        ],
+                        "time": 50
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "048-Explosion01.mp3"
+                    },
+                    {
+                        "type": "vibrate",
+                        "direction": "horizontal",
+                        "time": 200,
+                        "speed": 10,
+                        "power": 10,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                5,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                8,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "waitAsync"
+                    }
+                ],
+                "false": [
+                    {
+                        "type": "if",
+                        "condition": "(flag:MT327baseB===14)",
+                        "true": [
+                            {
+                                "type": "jumpHero",
+                                "loc": [
+                                    7,
+                                    7
+                                ],
+                                "time": 50
+                            },
+                            {
+                                "type": "playSound",
+                                "name": "048-Explosion01.mp3"
+                            },
+                            {
+                                "type": "vibrate",
+                                "direction": "horizontal",
+                                "time": 200,
+                                "speed": 10,
+                                "power": 10,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        5,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak40",
+                                "loc": [
+                                    [
+                                        5,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        7,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        8,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        7,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
+                                "loc": [
+                                    [
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        6,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        9,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        9,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        6,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "grenadier",
+                                "loc": [
+                                    [
+                                        5,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "waitAsync"
+                            }
+                        ],
+                        "false": [
+                            {
+                                "type": "if",
+                                "condition": "(flag:MT327baseB===30)",
+                                "true": [
+                                    {
+                                        "type": "function",
+                                        "function": "function(){\nflags.mission[45][1]=true\n}"
+                                    },
+                                    {
+                                        "type": "pauseBgm"
+                                    },
+                                    {
+                                        "type": "playSound",
+                                        "name": "getarea.mp3"
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            4
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            10,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            4,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "waitAsync"
+                                    },
+                                    {
+                                        "type": "playBgm",
+                                        "name": "cao2.mp3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ]
     },
@@ -376,374 +9016,8 @@ main.floors.MT327=
         ]
     },
     "autoEvent": {
-        "4,4": {
-            "0": {
-                "condition": "flag:MT327baseB===8",
-                "currentFloor": true,
-                "priority": 0,
-                "delayExecute": false,
-                "multiExecute": false,
-                "data": [
-                    {
-                        "type": "jumpHero",
-                        "loc": [
-                            7,
-                            7
-                        ],
-                        "time": 50
-                    },
-                    {
-                        "type": "playSound",
-                        "name": "048-Explosion01.mp3"
-                    },
-                    {
-                        "type": "vibrate",
-                        "direction": "horizontal",
-                        "time": 200,
-                        "speed": 10,
-                        "power": 10,
-                        "async": true
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "me109k6",
-                        "loc": [
-                            [
-                                6,
-                                6
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "me109k6",
-                        "loc": [
-                            [
-                                6,
-                                8
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "me109k6",
-                        "loc": [
-                            [
-                                5,
-                                7
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "fw190f8",
-                        "loc": [
-                            [
-                                8,
-                                6
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "fw190f8",
-                        "loc": [
-                            [
-                                8,
-                                8
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "fw190f8",
-                        "loc": [
-                            [
-                                9,
-                                7
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "waitAsync"
-                    }
-                ]
-            },
-            "1": {
-                "condition": "flag:MT327baseB===14",
-                "currentFloor": true,
-                "priority": 0,
-                "delayExecute": false,
-                "multiExecute": false,
-                "data": [
-                    {
-                        "type": "jumpHero",
-                        "loc": [
-                            7,
-                            7
-                        ],
-                        "time": 50
-                    },
-                    {
-                        "type": "playSound",
-                        "name": "048-Explosion01.mp3"
-                    },
-                    {
-                        "type": "vibrate",
-                        "direction": "horizontal",
-                        "time": 200,
-                        "speed": 10,
-                        "power": 10,
-                        "async": true
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "pak40",
-                        "loc": [
-                            [
-                                5,
-                                5
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "pak40",
-                        "loc": [
-                            [
-                                9,
-                                5
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "pak40",
-                        "loc": [
-                            [
-                                9,
-                                9
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "pak40",
-                        "loc": [
-                            [
-                                5,
-                                9
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "panzer4h",
-                        "loc": [
-                            [
-                                7,
-                                6
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "panzer4h",
-                        "loc": [
-                            [
-                                8,
-                                7
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "panzer4h",
-                        "loc": [
-                            [
-                                7,
-                                8
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "panzer4h",
-                        "loc": [
-                            [
-                                6,
-                                7
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "grenadier",
-                        "loc": [
-                            [
-                                5,
-                                8
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "grenadier",
-                        "loc": [
-                            [
-                                6,
-                                9
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "grenadier",
-                        "loc": [
-                            [
-                                8,
-                                9
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "grenadier",
-                        "loc": [
-                            [
-                                9,
-                                8
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "grenadier",
-                        "loc": [
-                            [
-                                9,
-                                6
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "grenadier",
-                        "loc": [
-                            [
-                                8,
-                                5
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "grenadier",
-                        "loc": [
-                            [
-                                6,
-                                5
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "grenadier",
-                        "loc": [
-                            [
-                                5,
-                                6
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "waitAsync"
-                    }
-                ]
-            }
-        },
+        "4,4": {},
         "4,5": {
-            "0": {
-                "condition": "flag:MT327baseB===30",
-                "currentFloor": true,
-                "priority": 0,
-                "delayExecute": false,
-                "multiExecute": false,
-                "data": [
-                    {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[45][1]=true\n}"
-                    },
-                    {
-                        "type": "pauseBgm"
-                    },
-                    {
-                        "type": "playSound",
-                        "name": "getarea.mp3"
-                    },
-                    {
-                        "type": "openDoor",
-                        "loc": [
-                            7,
-                            4
-                        ],
-                        "async": true
-                    },
-                    {
-                        "type": "openDoor",
-                        "loc": [
-                            10,
-                            7
-                        ],
-                        "async": true
-                    },
-                    {
-                        "type": "openDoor",
-                        "loc": [
-                            7,
-                            10
-                        ],
-                        "async": true
-                    },
-                    {
-                        "type": "openDoor",
-                        "loc": [
-                            4,
-                            7
-                        ],
-                        "async": true
-                    },
-                    {
-                        "type": "waitAsync"
-                    },
-                    {
-                        "type": "playBgm",
-                        "name": "cao2.mp3"
-                    }
-                ]
-            },
             "1": null
         }
     },

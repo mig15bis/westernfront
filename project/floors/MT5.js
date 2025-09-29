@@ -26,7 +26,7 @@ main.floors.MT5=
             {
                 "type": "setValue",
                 "name": "flag:第一关通关",
-                "value": "true"
+                "value": "1"
             },
             {
                 "type": "update"
@@ -79,7 +79,7 @@ main.floors.MT5=
             },
             {
                 "type": "function",
-                "function": "function(){\nvar a = flags.mission[core.getFlag('stage')];\ncore.setFlag('@temp@A', a[0] + a[1] + a[2]);\n}"
+                "function": "function(){\nvar a = core.taskSystem.checkTask(0) ? 1 : 0,\n\tb = core.taskSystem.checkTask(1) ? 1 : 0,\n\tc = core.taskSystem.checkTask(2) ? 1 : 0;\ncore.setFlag('@temp@A', a + b + c);\n}"
             },
             {
                 "type": "if",
@@ -362,7 +362,7 @@ main.floors.MT5=
                         "type": "openDoor",
                         "loc": [
                             13,
-                            5
+                            7
                         ]
                     }
                 ]
@@ -402,7 +402,7 @@ main.floors.MT5=
                         "type": "openDoor",
                         "loc": [
                             13,
-                            5
+                            7
                         ]
                     }
                 ]
@@ -411,7 +411,7 @@ main.floors.MT5=
         "11,9": [
             {
                 "type": "setValue",
-                "name": "flag:door_MT5_13_7",
+                "name": "flag:door_MT5_13_8",
                 "operator": "+=",
                 "value": "1"
             },
@@ -423,7 +423,7 @@ main.floors.MT5=
             },
             {
                 "type": "if",
-                "condition": "(flag:door_MT5_13_7===2)",
+                "condition": "(flag:door_MT5_13_8===2)",
                 "true": [
                     {
                         "type": "openDoor",
@@ -442,7 +442,7 @@ main.floors.MT5=
                         "type": "openDoor",
                         "loc": [
                             13,
-                            5
+                            7
                         ]
                     }
                 ]
@@ -451,7 +451,7 @@ main.floors.MT5=
         "13,9": [
             {
                 "type": "setValue",
-                "name": "flag:door_MT5_13_7",
+                "name": "flag:door_MT5_13_8",
                 "operator": "+=",
                 "value": "1"
             },
@@ -463,7 +463,7 @@ main.floors.MT5=
             },
             {
                 "type": "if",
-                "condition": "(flag:door_MT5_13_7===2)",
+                "condition": "(flag:door_MT5_13_8===2)",
                 "true": [
                     {
                         "type": "openDoor",
@@ -482,7 +482,7 @@ main.floors.MT5=
                         "type": "openDoor",
                         "loc": [
                             13,
-                            5
+                            7
                         ]
                     }
                 ]
@@ -494,12 +494,15 @@ main.floors.MT5=
     "autoEvent": {
         "14,12": {},
         "13,7": {
+            "0": null,
             "1": null
         },
         "12,4": {
+            "0": null,
             "1": null
         },
         "12,10": {
+            "0": null,
             "1": null
         }
     },

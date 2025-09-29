@@ -371,6 +371,216 @@ main.floors.MT329=
                 "name": "flag:MT329baseA",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT329baseA===8)",
+                "true": [
+                    {
+                        "type": "jumpHero",
+                        "loc": [
+                            7,
+                            7
+                        ],
+                        "time": 50
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "048-Explosion01.mp3"
+                    },
+                    {
+                        "type": "vibrate",
+                        "direction": "horizontal",
+                        "time": 200,
+                        "speed": 10,
+                        "power": 10,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                6,
+                                9
+                            ],
+                            [
+                                8,
+                                9
+                            ],
+                            [
+                                6,
+                                11
+                            ],
+                            [
+                                8,
+                                11
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                8
+                            ],
+                            [
+                                9,
+                                8
+                            ],
+                            [
+                                5,
+                                12
+                            ],
+                            [
+                                9,
+                                12
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "waitAsync"
+                    }
+                ],
+                "false": [
+                    {
+                        "type": "if",
+                        "condition": "(flag:MT329baseA===16)",
+                        "true": [
+                            {
+                                "type": "jumpHero",
+                                "loc": [
+                                    7,
+                                    7
+                                ],
+                                "time": 50
+                            },
+                            {
+                                "type": "playSound",
+                                "name": "048-Explosion01.mp3"
+                            },
+                            {
+                                "type": "vibrate",
+                                "direction": "horizontal",
+                                "time": 200,
+                                "speed": 10,
+                                "power": 10,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        7,
+                                        8
+                                    ],
+                                    [
+                                        5,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        12
+                                    ],
+                                    [
+                                        9,
+                                        10
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "me109k6",
+                                "loc": [
+                                    [
+                                        6,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        9
+                                    ],
+                                    [
+                                        8,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        11
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "waitAsync"
+                            }
+                        ],
+                        "false": [
+                            {
+                                "type": "if",
+                                "condition": "(flag:MT329baseA===24)",
+                                "true": [
+                                    {
+                                        "type": "function",
+                                        "function": "function(){\nflags.mission[45][0]=true\n}"
+                                    },
+                                    {
+                                        "type": "pauseBgm"
+                                    },
+                                    {
+                                        "type": "playSound",
+                                        "name": "getarea.mp3"
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            4,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            10,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            13
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "waitAsync"
+                                    },
+                                    {
+                                        "type": "playBgm",
+                                        "name": "cao2.mp3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ],
         "6,9": [
@@ -379,6 +589,216 @@ main.floors.MT329=
                 "name": "flag:MT329baseA",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT329baseA===8)",
+                "true": [
+                    {
+                        "type": "jumpHero",
+                        "loc": [
+                            7,
+                            7
+                        ],
+                        "time": 50
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "048-Explosion01.mp3"
+                    },
+                    {
+                        "type": "vibrate",
+                        "direction": "horizontal",
+                        "time": 200,
+                        "speed": 10,
+                        "power": 10,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                6,
+                                9
+                            ],
+                            [
+                                8,
+                                9
+                            ],
+                            [
+                                6,
+                                11
+                            ],
+                            [
+                                8,
+                                11
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                8
+                            ],
+                            [
+                                9,
+                                8
+                            ],
+                            [
+                                5,
+                                12
+                            ],
+                            [
+                                9,
+                                12
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "waitAsync"
+                    }
+                ],
+                "false": [
+                    {
+                        "type": "if",
+                        "condition": "(flag:MT329baseA===16)",
+                        "true": [
+                            {
+                                "type": "jumpHero",
+                                "loc": [
+                                    7,
+                                    7
+                                ],
+                                "time": 50
+                            },
+                            {
+                                "type": "playSound",
+                                "name": "048-Explosion01.mp3"
+                            },
+                            {
+                                "type": "vibrate",
+                                "direction": "horizontal",
+                                "time": 200,
+                                "speed": 10,
+                                "power": 10,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        7,
+                                        8
+                                    ],
+                                    [
+                                        5,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        12
+                                    ],
+                                    [
+                                        9,
+                                        10
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "me109k6",
+                                "loc": [
+                                    [
+                                        6,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        9
+                                    ],
+                                    [
+                                        8,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        11
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "waitAsync"
+                            }
+                        ],
+                        "false": [
+                            {
+                                "type": "if",
+                                "condition": "(flag:MT329baseA===24)",
+                                "true": [
+                                    {
+                                        "type": "function",
+                                        "function": "function(){\nflags.mission[45][0]=true\n}"
+                                    },
+                                    {
+                                        "type": "pauseBgm"
+                                    },
+                                    {
+                                        "type": "playSound",
+                                        "name": "getarea.mp3"
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            4,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            10,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            13
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "waitAsync"
+                                    },
+                                    {
+                                        "type": "playBgm",
+                                        "name": "cao2.mp3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ],
         "6,10": [
@@ -387,6 +807,216 @@ main.floors.MT329=
                 "name": "flag:MT329baseA",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT329baseA===8)",
+                "true": [
+                    {
+                        "type": "jumpHero",
+                        "loc": [
+                            7,
+                            7
+                        ],
+                        "time": 50
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "048-Explosion01.mp3"
+                    },
+                    {
+                        "type": "vibrate",
+                        "direction": "horizontal",
+                        "time": 200,
+                        "speed": 10,
+                        "power": 10,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                6,
+                                9
+                            ],
+                            [
+                                8,
+                                9
+                            ],
+                            [
+                                6,
+                                11
+                            ],
+                            [
+                                8,
+                                11
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                8
+                            ],
+                            [
+                                9,
+                                8
+                            ],
+                            [
+                                5,
+                                12
+                            ],
+                            [
+                                9,
+                                12
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "waitAsync"
+                    }
+                ],
+                "false": [
+                    {
+                        "type": "if",
+                        "condition": "(flag:MT329baseA===16)",
+                        "true": [
+                            {
+                                "type": "jumpHero",
+                                "loc": [
+                                    7,
+                                    7
+                                ],
+                                "time": 50
+                            },
+                            {
+                                "type": "playSound",
+                                "name": "048-Explosion01.mp3"
+                            },
+                            {
+                                "type": "vibrate",
+                                "direction": "horizontal",
+                                "time": 200,
+                                "speed": 10,
+                                "power": 10,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        7,
+                                        8
+                                    ],
+                                    [
+                                        5,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        12
+                                    ],
+                                    [
+                                        9,
+                                        10
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "me109k6",
+                                "loc": [
+                                    [
+                                        6,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        9
+                                    ],
+                                    [
+                                        8,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        11
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "waitAsync"
+                            }
+                        ],
+                        "false": [
+                            {
+                                "type": "if",
+                                "condition": "(flag:MT329baseA===24)",
+                                "true": [
+                                    {
+                                        "type": "function",
+                                        "function": "function(){\nflags.mission[45][0]=true\n}"
+                                    },
+                                    {
+                                        "type": "pauseBgm"
+                                    },
+                                    {
+                                        "type": "playSound",
+                                        "name": "getarea.mp3"
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            4,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            10,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            13
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "waitAsync"
+                                    },
+                                    {
+                                        "type": "playBgm",
+                                        "name": "cao2.mp3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ],
         "8,9": [
@@ -395,6 +1025,216 @@ main.floors.MT329=
                 "name": "flag:MT329baseA",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT329baseA===8)",
+                "true": [
+                    {
+                        "type": "jumpHero",
+                        "loc": [
+                            7,
+                            7
+                        ],
+                        "time": 50
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "048-Explosion01.mp3"
+                    },
+                    {
+                        "type": "vibrate",
+                        "direction": "horizontal",
+                        "time": 200,
+                        "speed": 10,
+                        "power": 10,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                6,
+                                9
+                            ],
+                            [
+                                8,
+                                9
+                            ],
+                            [
+                                6,
+                                11
+                            ],
+                            [
+                                8,
+                                11
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                8
+                            ],
+                            [
+                                9,
+                                8
+                            ],
+                            [
+                                5,
+                                12
+                            ],
+                            [
+                                9,
+                                12
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "waitAsync"
+                    }
+                ],
+                "false": [
+                    {
+                        "type": "if",
+                        "condition": "(flag:MT329baseA===16)",
+                        "true": [
+                            {
+                                "type": "jumpHero",
+                                "loc": [
+                                    7,
+                                    7
+                                ],
+                                "time": 50
+                            },
+                            {
+                                "type": "playSound",
+                                "name": "048-Explosion01.mp3"
+                            },
+                            {
+                                "type": "vibrate",
+                                "direction": "horizontal",
+                                "time": 200,
+                                "speed": 10,
+                                "power": 10,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        7,
+                                        8
+                                    ],
+                                    [
+                                        5,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        12
+                                    ],
+                                    [
+                                        9,
+                                        10
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "me109k6",
+                                "loc": [
+                                    [
+                                        6,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        9
+                                    ],
+                                    [
+                                        8,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        11
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "waitAsync"
+                            }
+                        ],
+                        "false": [
+                            {
+                                "type": "if",
+                                "condition": "(flag:MT329baseA===24)",
+                                "true": [
+                                    {
+                                        "type": "function",
+                                        "function": "function(){\nflags.mission[45][0]=true\n}"
+                                    },
+                                    {
+                                        "type": "pauseBgm"
+                                    },
+                                    {
+                                        "type": "playSound",
+                                        "name": "getarea.mp3"
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            4,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            10,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            13
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "waitAsync"
+                                    },
+                                    {
+                                        "type": "playBgm",
+                                        "name": "cao2.mp3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ],
         "8,10": [
@@ -403,6 +1243,216 @@ main.floors.MT329=
                 "name": "flag:MT329baseA",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT329baseA===8)",
+                "true": [
+                    {
+                        "type": "jumpHero",
+                        "loc": [
+                            7,
+                            7
+                        ],
+                        "time": 50
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "048-Explosion01.mp3"
+                    },
+                    {
+                        "type": "vibrate",
+                        "direction": "horizontal",
+                        "time": 200,
+                        "speed": 10,
+                        "power": 10,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                6,
+                                9
+                            ],
+                            [
+                                8,
+                                9
+                            ],
+                            [
+                                6,
+                                11
+                            ],
+                            [
+                                8,
+                                11
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                8
+                            ],
+                            [
+                                9,
+                                8
+                            ],
+                            [
+                                5,
+                                12
+                            ],
+                            [
+                                9,
+                                12
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "waitAsync"
+                    }
+                ],
+                "false": [
+                    {
+                        "type": "if",
+                        "condition": "(flag:MT329baseA===16)",
+                        "true": [
+                            {
+                                "type": "jumpHero",
+                                "loc": [
+                                    7,
+                                    7
+                                ],
+                                "time": 50
+                            },
+                            {
+                                "type": "playSound",
+                                "name": "048-Explosion01.mp3"
+                            },
+                            {
+                                "type": "vibrate",
+                                "direction": "horizontal",
+                                "time": 200,
+                                "speed": 10,
+                                "power": 10,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        7,
+                                        8
+                                    ],
+                                    [
+                                        5,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        12
+                                    ],
+                                    [
+                                        9,
+                                        10
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "me109k6",
+                                "loc": [
+                                    [
+                                        6,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        9
+                                    ],
+                                    [
+                                        8,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        11
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "waitAsync"
+                            }
+                        ],
+                        "false": [
+                            {
+                                "type": "if",
+                                "condition": "(flag:MT329baseA===24)",
+                                "true": [
+                                    {
+                                        "type": "function",
+                                        "function": "function(){\nflags.mission[45][0]=true\n}"
+                                    },
+                                    {
+                                        "type": "pauseBgm"
+                                    },
+                                    {
+                                        "type": "playSound",
+                                        "name": "getarea.mp3"
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            4,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            10,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            13
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "waitAsync"
+                                    },
+                                    {
+                                        "type": "playBgm",
+                                        "name": "cao2.mp3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ],
         "8,11": [
@@ -411,6 +1461,216 @@ main.floors.MT329=
                 "name": "flag:MT329baseA",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT329baseA===8)",
+                "true": [
+                    {
+                        "type": "jumpHero",
+                        "loc": [
+                            7,
+                            7
+                        ],
+                        "time": 50
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "048-Explosion01.mp3"
+                    },
+                    {
+                        "type": "vibrate",
+                        "direction": "horizontal",
+                        "time": 200,
+                        "speed": 10,
+                        "power": 10,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                6,
+                                9
+                            ],
+                            [
+                                8,
+                                9
+                            ],
+                            [
+                                6,
+                                11
+                            ],
+                            [
+                                8,
+                                11
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                8
+                            ],
+                            [
+                                9,
+                                8
+                            ],
+                            [
+                                5,
+                                12
+                            ],
+                            [
+                                9,
+                                12
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "waitAsync"
+                    }
+                ],
+                "false": [
+                    {
+                        "type": "if",
+                        "condition": "(flag:MT329baseA===16)",
+                        "true": [
+                            {
+                                "type": "jumpHero",
+                                "loc": [
+                                    7,
+                                    7
+                                ],
+                                "time": 50
+                            },
+                            {
+                                "type": "playSound",
+                                "name": "048-Explosion01.mp3"
+                            },
+                            {
+                                "type": "vibrate",
+                                "direction": "horizontal",
+                                "time": 200,
+                                "speed": 10,
+                                "power": 10,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        7,
+                                        8
+                                    ],
+                                    [
+                                        5,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        12
+                                    ],
+                                    [
+                                        9,
+                                        10
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "me109k6",
+                                "loc": [
+                                    [
+                                        6,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        9
+                                    ],
+                                    [
+                                        8,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        11
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "waitAsync"
+                            }
+                        ],
+                        "false": [
+                            {
+                                "type": "if",
+                                "condition": "(flag:MT329baseA===24)",
+                                "true": [
+                                    {
+                                        "type": "function",
+                                        "function": "function(){\nflags.mission[45][0]=true\n}"
+                                    },
+                                    {
+                                        "type": "pauseBgm"
+                                    },
+                                    {
+                                        "type": "playSound",
+                                        "name": "getarea.mp3"
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            4,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            10,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            13
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "waitAsync"
+                                    },
+                                    {
+                                        "type": "playBgm",
+                                        "name": "cao2.mp3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ],
         "7,11": [
@@ -419,6 +1679,216 @@ main.floors.MT329=
                 "name": "flag:MT329baseA",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT329baseA===8)",
+                "true": [
+                    {
+                        "type": "jumpHero",
+                        "loc": [
+                            7,
+                            7
+                        ],
+                        "time": 50
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "048-Explosion01.mp3"
+                    },
+                    {
+                        "type": "vibrate",
+                        "direction": "horizontal",
+                        "time": 200,
+                        "speed": 10,
+                        "power": 10,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                6,
+                                9
+                            ],
+                            [
+                                8,
+                                9
+                            ],
+                            [
+                                6,
+                                11
+                            ],
+                            [
+                                8,
+                                11
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                8
+                            ],
+                            [
+                                9,
+                                8
+                            ],
+                            [
+                                5,
+                                12
+                            ],
+                            [
+                                9,
+                                12
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "waitAsync"
+                    }
+                ],
+                "false": [
+                    {
+                        "type": "if",
+                        "condition": "(flag:MT329baseA===16)",
+                        "true": [
+                            {
+                                "type": "jumpHero",
+                                "loc": [
+                                    7,
+                                    7
+                                ],
+                                "time": 50
+                            },
+                            {
+                                "type": "playSound",
+                                "name": "048-Explosion01.mp3"
+                            },
+                            {
+                                "type": "vibrate",
+                                "direction": "horizontal",
+                                "time": 200,
+                                "speed": 10,
+                                "power": 10,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        7,
+                                        8
+                                    ],
+                                    [
+                                        5,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        12
+                                    ],
+                                    [
+                                        9,
+                                        10
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "me109k6",
+                                "loc": [
+                                    [
+                                        6,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        9
+                                    ],
+                                    [
+                                        8,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        11
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "waitAsync"
+                            }
+                        ],
+                        "false": [
+                            {
+                                "type": "if",
+                                "condition": "(flag:MT329baseA===24)",
+                                "true": [
+                                    {
+                                        "type": "function",
+                                        "function": "function(){\nflags.mission[45][0]=true\n}"
+                                    },
+                                    {
+                                        "type": "pauseBgm"
+                                    },
+                                    {
+                                        "type": "playSound",
+                                        "name": "getarea.mp3"
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            4,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            10,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            13
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "waitAsync"
+                                    },
+                                    {
+                                        "type": "playBgm",
+                                        "name": "cao2.mp3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ],
         "6,11": [
@@ -427,6 +1897,216 @@ main.floors.MT329=
                 "name": "flag:MT329baseA",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT329baseA===8)",
+                "true": [
+                    {
+                        "type": "jumpHero",
+                        "loc": [
+                            7,
+                            7
+                        ],
+                        "time": 50
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "048-Explosion01.mp3"
+                    },
+                    {
+                        "type": "vibrate",
+                        "direction": "horizontal",
+                        "time": 200,
+                        "speed": 10,
+                        "power": 10,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                6,
+                                9
+                            ],
+                            [
+                                8,
+                                9
+                            ],
+                            [
+                                6,
+                                11
+                            ],
+                            [
+                                8,
+                                11
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                8
+                            ],
+                            [
+                                9,
+                                8
+                            ],
+                            [
+                                5,
+                                12
+                            ],
+                            [
+                                9,
+                                12
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "waitAsync"
+                    }
+                ],
+                "false": [
+                    {
+                        "type": "if",
+                        "condition": "(flag:MT329baseA===16)",
+                        "true": [
+                            {
+                                "type": "jumpHero",
+                                "loc": [
+                                    7,
+                                    7
+                                ],
+                                "time": 50
+                            },
+                            {
+                                "type": "playSound",
+                                "name": "048-Explosion01.mp3"
+                            },
+                            {
+                                "type": "vibrate",
+                                "direction": "horizontal",
+                                "time": 200,
+                                "speed": 10,
+                                "power": 10,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        7,
+                                        8
+                                    ],
+                                    [
+                                        5,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        12
+                                    ],
+                                    [
+                                        9,
+                                        10
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "me109k6",
+                                "loc": [
+                                    [
+                                        6,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        9
+                                    ],
+                                    [
+                                        8,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        11
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "waitAsync"
+                            }
+                        ],
+                        "false": [
+                            {
+                                "type": "if",
+                                "condition": "(flag:MT329baseA===24)",
+                                "true": [
+                                    {
+                                        "type": "function",
+                                        "function": "function(){\nflags.mission[45][0]=true\n}"
+                                    },
+                                    {
+                                        "type": "pauseBgm"
+                                    },
+                                    {
+                                        "type": "playSound",
+                                        "name": "getarea.mp3"
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            4,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            10,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            13
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "waitAsync"
+                                    },
+                                    {
+                                        "type": "playBgm",
+                                        "name": "cao2.mp3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ],
         "5,8": [
@@ -435,6 +2115,216 @@ main.floors.MT329=
                 "name": "flag:MT329baseA",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT329baseA===8)",
+                "true": [
+                    {
+                        "type": "jumpHero",
+                        "loc": [
+                            7,
+                            7
+                        ],
+                        "time": 50
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "048-Explosion01.mp3"
+                    },
+                    {
+                        "type": "vibrate",
+                        "direction": "horizontal",
+                        "time": 200,
+                        "speed": 10,
+                        "power": 10,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                6,
+                                9
+                            ],
+                            [
+                                8,
+                                9
+                            ],
+                            [
+                                6,
+                                11
+                            ],
+                            [
+                                8,
+                                11
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                8
+                            ],
+                            [
+                                9,
+                                8
+                            ],
+                            [
+                                5,
+                                12
+                            ],
+                            [
+                                9,
+                                12
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "waitAsync"
+                    }
+                ],
+                "false": [
+                    {
+                        "type": "if",
+                        "condition": "(flag:MT329baseA===16)",
+                        "true": [
+                            {
+                                "type": "jumpHero",
+                                "loc": [
+                                    7,
+                                    7
+                                ],
+                                "time": 50
+                            },
+                            {
+                                "type": "playSound",
+                                "name": "048-Explosion01.mp3"
+                            },
+                            {
+                                "type": "vibrate",
+                                "direction": "horizontal",
+                                "time": 200,
+                                "speed": 10,
+                                "power": 10,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        7,
+                                        8
+                                    ],
+                                    [
+                                        5,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        12
+                                    ],
+                                    [
+                                        9,
+                                        10
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "me109k6",
+                                "loc": [
+                                    [
+                                        6,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        9
+                                    ],
+                                    [
+                                        8,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        11
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "waitAsync"
+                            }
+                        ],
+                        "false": [
+                            {
+                                "type": "if",
+                                "condition": "(flag:MT329baseA===24)",
+                                "true": [
+                                    {
+                                        "type": "function",
+                                        "function": "function(){\nflags.mission[45][0]=true\n}"
+                                    },
+                                    {
+                                        "type": "pauseBgm"
+                                    },
+                                    {
+                                        "type": "playSound",
+                                        "name": "getarea.mp3"
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            4,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            10,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            13
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "waitAsync"
+                                    },
+                                    {
+                                        "type": "playBgm",
+                                        "name": "cao2.mp3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ],
         "6,8": [
@@ -443,6 +2333,216 @@ main.floors.MT329=
                 "name": "flag:MT329baseA",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT329baseA===8)",
+                "true": [
+                    {
+                        "type": "jumpHero",
+                        "loc": [
+                            7,
+                            7
+                        ],
+                        "time": 50
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "048-Explosion01.mp3"
+                    },
+                    {
+                        "type": "vibrate",
+                        "direction": "horizontal",
+                        "time": 200,
+                        "speed": 10,
+                        "power": 10,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                6,
+                                9
+                            ],
+                            [
+                                8,
+                                9
+                            ],
+                            [
+                                6,
+                                11
+                            ],
+                            [
+                                8,
+                                11
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                8
+                            ],
+                            [
+                                9,
+                                8
+                            ],
+                            [
+                                5,
+                                12
+                            ],
+                            [
+                                9,
+                                12
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "waitAsync"
+                    }
+                ],
+                "false": [
+                    {
+                        "type": "if",
+                        "condition": "(flag:MT329baseA===16)",
+                        "true": [
+                            {
+                                "type": "jumpHero",
+                                "loc": [
+                                    7,
+                                    7
+                                ],
+                                "time": 50
+                            },
+                            {
+                                "type": "playSound",
+                                "name": "048-Explosion01.mp3"
+                            },
+                            {
+                                "type": "vibrate",
+                                "direction": "horizontal",
+                                "time": 200,
+                                "speed": 10,
+                                "power": 10,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        7,
+                                        8
+                                    ],
+                                    [
+                                        5,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        12
+                                    ],
+                                    [
+                                        9,
+                                        10
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "me109k6",
+                                "loc": [
+                                    [
+                                        6,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        9
+                                    ],
+                                    [
+                                        8,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        11
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "waitAsync"
+                            }
+                        ],
+                        "false": [
+                            {
+                                "type": "if",
+                                "condition": "(flag:MT329baseA===24)",
+                                "true": [
+                                    {
+                                        "type": "function",
+                                        "function": "function(){\nflags.mission[45][0]=true\n}"
+                                    },
+                                    {
+                                        "type": "pauseBgm"
+                                    },
+                                    {
+                                        "type": "playSound",
+                                        "name": "getarea.mp3"
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            4,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            10,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            13
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "waitAsync"
+                                    },
+                                    {
+                                        "type": "playBgm",
+                                        "name": "cao2.mp3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ],
         "7,8": [
@@ -451,6 +2551,216 @@ main.floors.MT329=
                 "name": "flag:MT329baseA",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT329baseA===8)",
+                "true": [
+                    {
+                        "type": "jumpHero",
+                        "loc": [
+                            7,
+                            7
+                        ],
+                        "time": 50
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "048-Explosion01.mp3"
+                    },
+                    {
+                        "type": "vibrate",
+                        "direction": "horizontal",
+                        "time": 200,
+                        "speed": 10,
+                        "power": 10,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                6,
+                                9
+                            ],
+                            [
+                                8,
+                                9
+                            ],
+                            [
+                                6,
+                                11
+                            ],
+                            [
+                                8,
+                                11
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                8
+                            ],
+                            [
+                                9,
+                                8
+                            ],
+                            [
+                                5,
+                                12
+                            ],
+                            [
+                                9,
+                                12
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "waitAsync"
+                    }
+                ],
+                "false": [
+                    {
+                        "type": "if",
+                        "condition": "(flag:MT329baseA===16)",
+                        "true": [
+                            {
+                                "type": "jumpHero",
+                                "loc": [
+                                    7,
+                                    7
+                                ],
+                                "time": 50
+                            },
+                            {
+                                "type": "playSound",
+                                "name": "048-Explosion01.mp3"
+                            },
+                            {
+                                "type": "vibrate",
+                                "direction": "horizontal",
+                                "time": 200,
+                                "speed": 10,
+                                "power": 10,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        7,
+                                        8
+                                    ],
+                                    [
+                                        5,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        12
+                                    ],
+                                    [
+                                        9,
+                                        10
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "me109k6",
+                                "loc": [
+                                    [
+                                        6,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        9
+                                    ],
+                                    [
+                                        8,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        11
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "waitAsync"
+                            }
+                        ],
+                        "false": [
+                            {
+                                "type": "if",
+                                "condition": "(flag:MT329baseA===24)",
+                                "true": [
+                                    {
+                                        "type": "function",
+                                        "function": "function(){\nflags.mission[45][0]=true\n}"
+                                    },
+                                    {
+                                        "type": "pauseBgm"
+                                    },
+                                    {
+                                        "type": "playSound",
+                                        "name": "getarea.mp3"
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            4,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            10,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            13
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "waitAsync"
+                                    },
+                                    {
+                                        "type": "playBgm",
+                                        "name": "cao2.mp3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ],
         "8,8": [
@@ -459,6 +2769,216 @@ main.floors.MT329=
                 "name": "flag:MT329baseA",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT329baseA===8)",
+                "true": [
+                    {
+                        "type": "jumpHero",
+                        "loc": [
+                            7,
+                            7
+                        ],
+                        "time": 50
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "048-Explosion01.mp3"
+                    },
+                    {
+                        "type": "vibrate",
+                        "direction": "horizontal",
+                        "time": 200,
+                        "speed": 10,
+                        "power": 10,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                6,
+                                9
+                            ],
+                            [
+                                8,
+                                9
+                            ],
+                            [
+                                6,
+                                11
+                            ],
+                            [
+                                8,
+                                11
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                8
+                            ],
+                            [
+                                9,
+                                8
+                            ],
+                            [
+                                5,
+                                12
+                            ],
+                            [
+                                9,
+                                12
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "waitAsync"
+                    }
+                ],
+                "false": [
+                    {
+                        "type": "if",
+                        "condition": "(flag:MT329baseA===16)",
+                        "true": [
+                            {
+                                "type": "jumpHero",
+                                "loc": [
+                                    7,
+                                    7
+                                ],
+                                "time": 50
+                            },
+                            {
+                                "type": "playSound",
+                                "name": "048-Explosion01.mp3"
+                            },
+                            {
+                                "type": "vibrate",
+                                "direction": "horizontal",
+                                "time": 200,
+                                "speed": 10,
+                                "power": 10,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        7,
+                                        8
+                                    ],
+                                    [
+                                        5,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        12
+                                    ],
+                                    [
+                                        9,
+                                        10
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "me109k6",
+                                "loc": [
+                                    [
+                                        6,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        9
+                                    ],
+                                    [
+                                        8,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        11
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "waitAsync"
+                            }
+                        ],
+                        "false": [
+                            {
+                                "type": "if",
+                                "condition": "(flag:MT329baseA===24)",
+                                "true": [
+                                    {
+                                        "type": "function",
+                                        "function": "function(){\nflags.mission[45][0]=true\n}"
+                                    },
+                                    {
+                                        "type": "pauseBgm"
+                                    },
+                                    {
+                                        "type": "playSound",
+                                        "name": "getarea.mp3"
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            4,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            10,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            13
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "waitAsync"
+                                    },
+                                    {
+                                        "type": "playBgm",
+                                        "name": "cao2.mp3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ],
         "9,8": [
@@ -467,6 +2987,216 @@ main.floors.MT329=
                 "name": "flag:MT329baseA",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT329baseA===8)",
+                "true": [
+                    {
+                        "type": "jumpHero",
+                        "loc": [
+                            7,
+                            7
+                        ],
+                        "time": 50
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "048-Explosion01.mp3"
+                    },
+                    {
+                        "type": "vibrate",
+                        "direction": "horizontal",
+                        "time": 200,
+                        "speed": 10,
+                        "power": 10,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                6,
+                                9
+                            ],
+                            [
+                                8,
+                                9
+                            ],
+                            [
+                                6,
+                                11
+                            ],
+                            [
+                                8,
+                                11
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                8
+                            ],
+                            [
+                                9,
+                                8
+                            ],
+                            [
+                                5,
+                                12
+                            ],
+                            [
+                                9,
+                                12
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "waitAsync"
+                    }
+                ],
+                "false": [
+                    {
+                        "type": "if",
+                        "condition": "(flag:MT329baseA===16)",
+                        "true": [
+                            {
+                                "type": "jumpHero",
+                                "loc": [
+                                    7,
+                                    7
+                                ],
+                                "time": 50
+                            },
+                            {
+                                "type": "playSound",
+                                "name": "048-Explosion01.mp3"
+                            },
+                            {
+                                "type": "vibrate",
+                                "direction": "horizontal",
+                                "time": 200,
+                                "speed": 10,
+                                "power": 10,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        7,
+                                        8
+                                    ],
+                                    [
+                                        5,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        12
+                                    ],
+                                    [
+                                        9,
+                                        10
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "me109k6",
+                                "loc": [
+                                    [
+                                        6,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        9
+                                    ],
+                                    [
+                                        8,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        11
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "waitAsync"
+                            }
+                        ],
+                        "false": [
+                            {
+                                "type": "if",
+                                "condition": "(flag:MT329baseA===24)",
+                                "true": [
+                                    {
+                                        "type": "function",
+                                        "function": "function(){\nflags.mission[45][0]=true\n}"
+                                    },
+                                    {
+                                        "type": "pauseBgm"
+                                    },
+                                    {
+                                        "type": "playSound",
+                                        "name": "getarea.mp3"
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            4,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            10,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            13
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "waitAsync"
+                                    },
+                                    {
+                                        "type": "playBgm",
+                                        "name": "cao2.mp3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ],
         "9,9": [
@@ -475,6 +3205,216 @@ main.floors.MT329=
                 "name": "flag:MT329baseA",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT329baseA===8)",
+                "true": [
+                    {
+                        "type": "jumpHero",
+                        "loc": [
+                            7,
+                            7
+                        ],
+                        "time": 50
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "048-Explosion01.mp3"
+                    },
+                    {
+                        "type": "vibrate",
+                        "direction": "horizontal",
+                        "time": 200,
+                        "speed": 10,
+                        "power": 10,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                6,
+                                9
+                            ],
+                            [
+                                8,
+                                9
+                            ],
+                            [
+                                6,
+                                11
+                            ],
+                            [
+                                8,
+                                11
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                8
+                            ],
+                            [
+                                9,
+                                8
+                            ],
+                            [
+                                5,
+                                12
+                            ],
+                            [
+                                9,
+                                12
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "waitAsync"
+                    }
+                ],
+                "false": [
+                    {
+                        "type": "if",
+                        "condition": "(flag:MT329baseA===16)",
+                        "true": [
+                            {
+                                "type": "jumpHero",
+                                "loc": [
+                                    7,
+                                    7
+                                ],
+                                "time": 50
+                            },
+                            {
+                                "type": "playSound",
+                                "name": "048-Explosion01.mp3"
+                            },
+                            {
+                                "type": "vibrate",
+                                "direction": "horizontal",
+                                "time": 200,
+                                "speed": 10,
+                                "power": 10,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        7,
+                                        8
+                                    ],
+                                    [
+                                        5,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        12
+                                    ],
+                                    [
+                                        9,
+                                        10
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "me109k6",
+                                "loc": [
+                                    [
+                                        6,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        9
+                                    ],
+                                    [
+                                        8,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        11
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "waitAsync"
+                            }
+                        ],
+                        "false": [
+                            {
+                                "type": "if",
+                                "condition": "(flag:MT329baseA===24)",
+                                "true": [
+                                    {
+                                        "type": "function",
+                                        "function": "function(){\nflags.mission[45][0]=true\n}"
+                                    },
+                                    {
+                                        "type": "pauseBgm"
+                                    },
+                                    {
+                                        "type": "playSound",
+                                        "name": "getarea.mp3"
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            4,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            10,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            13
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "waitAsync"
+                                    },
+                                    {
+                                        "type": "playBgm",
+                                        "name": "cao2.mp3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ],
         "9,10": [
@@ -483,6 +3423,216 @@ main.floors.MT329=
                 "name": "flag:MT329baseA",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT329baseA===8)",
+                "true": [
+                    {
+                        "type": "jumpHero",
+                        "loc": [
+                            7,
+                            7
+                        ],
+                        "time": 50
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "048-Explosion01.mp3"
+                    },
+                    {
+                        "type": "vibrate",
+                        "direction": "horizontal",
+                        "time": 200,
+                        "speed": 10,
+                        "power": 10,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                6,
+                                9
+                            ],
+                            [
+                                8,
+                                9
+                            ],
+                            [
+                                6,
+                                11
+                            ],
+                            [
+                                8,
+                                11
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                8
+                            ],
+                            [
+                                9,
+                                8
+                            ],
+                            [
+                                5,
+                                12
+                            ],
+                            [
+                                9,
+                                12
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "waitAsync"
+                    }
+                ],
+                "false": [
+                    {
+                        "type": "if",
+                        "condition": "(flag:MT329baseA===16)",
+                        "true": [
+                            {
+                                "type": "jumpHero",
+                                "loc": [
+                                    7,
+                                    7
+                                ],
+                                "time": 50
+                            },
+                            {
+                                "type": "playSound",
+                                "name": "048-Explosion01.mp3"
+                            },
+                            {
+                                "type": "vibrate",
+                                "direction": "horizontal",
+                                "time": 200,
+                                "speed": 10,
+                                "power": 10,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        7,
+                                        8
+                                    ],
+                                    [
+                                        5,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        12
+                                    ],
+                                    [
+                                        9,
+                                        10
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "me109k6",
+                                "loc": [
+                                    [
+                                        6,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        9
+                                    ],
+                                    [
+                                        8,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        11
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "waitAsync"
+                            }
+                        ],
+                        "false": [
+                            {
+                                "type": "if",
+                                "condition": "(flag:MT329baseA===24)",
+                                "true": [
+                                    {
+                                        "type": "function",
+                                        "function": "function(){\nflags.mission[45][0]=true\n}"
+                                    },
+                                    {
+                                        "type": "pauseBgm"
+                                    },
+                                    {
+                                        "type": "playSound",
+                                        "name": "getarea.mp3"
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            4,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            10,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            13
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "waitAsync"
+                                    },
+                                    {
+                                        "type": "playBgm",
+                                        "name": "cao2.mp3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ],
         "9,11": [
@@ -491,6 +3641,216 @@ main.floors.MT329=
                 "name": "flag:MT329baseA",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT329baseA===8)",
+                "true": [
+                    {
+                        "type": "jumpHero",
+                        "loc": [
+                            7,
+                            7
+                        ],
+                        "time": 50
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "048-Explosion01.mp3"
+                    },
+                    {
+                        "type": "vibrate",
+                        "direction": "horizontal",
+                        "time": 200,
+                        "speed": 10,
+                        "power": 10,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                6,
+                                9
+                            ],
+                            [
+                                8,
+                                9
+                            ],
+                            [
+                                6,
+                                11
+                            ],
+                            [
+                                8,
+                                11
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                8
+                            ],
+                            [
+                                9,
+                                8
+                            ],
+                            [
+                                5,
+                                12
+                            ],
+                            [
+                                9,
+                                12
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "waitAsync"
+                    }
+                ],
+                "false": [
+                    {
+                        "type": "if",
+                        "condition": "(flag:MT329baseA===16)",
+                        "true": [
+                            {
+                                "type": "jumpHero",
+                                "loc": [
+                                    7,
+                                    7
+                                ],
+                                "time": 50
+                            },
+                            {
+                                "type": "playSound",
+                                "name": "048-Explosion01.mp3"
+                            },
+                            {
+                                "type": "vibrate",
+                                "direction": "horizontal",
+                                "time": 200,
+                                "speed": 10,
+                                "power": 10,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        7,
+                                        8
+                                    ],
+                                    [
+                                        5,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        12
+                                    ],
+                                    [
+                                        9,
+                                        10
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "me109k6",
+                                "loc": [
+                                    [
+                                        6,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        9
+                                    ],
+                                    [
+                                        8,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        11
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "waitAsync"
+                            }
+                        ],
+                        "false": [
+                            {
+                                "type": "if",
+                                "condition": "(flag:MT329baseA===24)",
+                                "true": [
+                                    {
+                                        "type": "function",
+                                        "function": "function(){\nflags.mission[45][0]=true\n}"
+                                    },
+                                    {
+                                        "type": "pauseBgm"
+                                    },
+                                    {
+                                        "type": "playSound",
+                                        "name": "getarea.mp3"
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            4,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            10,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            13
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "waitAsync"
+                                    },
+                                    {
+                                        "type": "playBgm",
+                                        "name": "cao2.mp3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ],
         "9,12": [
@@ -499,6 +3859,216 @@ main.floors.MT329=
                 "name": "flag:MT329baseA",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT329baseA===8)",
+                "true": [
+                    {
+                        "type": "jumpHero",
+                        "loc": [
+                            7,
+                            7
+                        ],
+                        "time": 50
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "048-Explosion01.mp3"
+                    },
+                    {
+                        "type": "vibrate",
+                        "direction": "horizontal",
+                        "time": 200,
+                        "speed": 10,
+                        "power": 10,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                6,
+                                9
+                            ],
+                            [
+                                8,
+                                9
+                            ],
+                            [
+                                6,
+                                11
+                            ],
+                            [
+                                8,
+                                11
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                8
+                            ],
+                            [
+                                9,
+                                8
+                            ],
+                            [
+                                5,
+                                12
+                            ],
+                            [
+                                9,
+                                12
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "waitAsync"
+                    }
+                ],
+                "false": [
+                    {
+                        "type": "if",
+                        "condition": "(flag:MT329baseA===16)",
+                        "true": [
+                            {
+                                "type": "jumpHero",
+                                "loc": [
+                                    7,
+                                    7
+                                ],
+                                "time": 50
+                            },
+                            {
+                                "type": "playSound",
+                                "name": "048-Explosion01.mp3"
+                            },
+                            {
+                                "type": "vibrate",
+                                "direction": "horizontal",
+                                "time": 200,
+                                "speed": 10,
+                                "power": 10,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        7,
+                                        8
+                                    ],
+                                    [
+                                        5,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        12
+                                    ],
+                                    [
+                                        9,
+                                        10
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "me109k6",
+                                "loc": [
+                                    [
+                                        6,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        9
+                                    ],
+                                    [
+                                        8,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        11
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "waitAsync"
+                            }
+                        ],
+                        "false": [
+                            {
+                                "type": "if",
+                                "condition": "(flag:MT329baseA===24)",
+                                "true": [
+                                    {
+                                        "type": "function",
+                                        "function": "function(){\nflags.mission[45][0]=true\n}"
+                                    },
+                                    {
+                                        "type": "pauseBgm"
+                                    },
+                                    {
+                                        "type": "playSound",
+                                        "name": "getarea.mp3"
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            4,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            10,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            13
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "waitAsync"
+                                    },
+                                    {
+                                        "type": "playBgm",
+                                        "name": "cao2.mp3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ],
         "8,12": [
@@ -507,6 +4077,216 @@ main.floors.MT329=
                 "name": "flag:MT329baseA",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT329baseA===8)",
+                "true": [
+                    {
+                        "type": "jumpHero",
+                        "loc": [
+                            7,
+                            7
+                        ],
+                        "time": 50
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "048-Explosion01.mp3"
+                    },
+                    {
+                        "type": "vibrate",
+                        "direction": "horizontal",
+                        "time": 200,
+                        "speed": 10,
+                        "power": 10,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                6,
+                                9
+                            ],
+                            [
+                                8,
+                                9
+                            ],
+                            [
+                                6,
+                                11
+                            ],
+                            [
+                                8,
+                                11
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                8
+                            ],
+                            [
+                                9,
+                                8
+                            ],
+                            [
+                                5,
+                                12
+                            ],
+                            [
+                                9,
+                                12
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "waitAsync"
+                    }
+                ],
+                "false": [
+                    {
+                        "type": "if",
+                        "condition": "(flag:MT329baseA===16)",
+                        "true": [
+                            {
+                                "type": "jumpHero",
+                                "loc": [
+                                    7,
+                                    7
+                                ],
+                                "time": 50
+                            },
+                            {
+                                "type": "playSound",
+                                "name": "048-Explosion01.mp3"
+                            },
+                            {
+                                "type": "vibrate",
+                                "direction": "horizontal",
+                                "time": 200,
+                                "speed": 10,
+                                "power": 10,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        7,
+                                        8
+                                    ],
+                                    [
+                                        5,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        12
+                                    ],
+                                    [
+                                        9,
+                                        10
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "me109k6",
+                                "loc": [
+                                    [
+                                        6,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        9
+                                    ],
+                                    [
+                                        8,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        11
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "waitAsync"
+                            }
+                        ],
+                        "false": [
+                            {
+                                "type": "if",
+                                "condition": "(flag:MT329baseA===24)",
+                                "true": [
+                                    {
+                                        "type": "function",
+                                        "function": "function(){\nflags.mission[45][0]=true\n}"
+                                    },
+                                    {
+                                        "type": "pauseBgm"
+                                    },
+                                    {
+                                        "type": "playSound",
+                                        "name": "getarea.mp3"
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            4,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            10,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            13
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "waitAsync"
+                                    },
+                                    {
+                                        "type": "playBgm",
+                                        "name": "cao2.mp3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ],
         "7,12": [
@@ -515,6 +4295,216 @@ main.floors.MT329=
                 "name": "flag:MT329baseA",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT329baseA===8)",
+                "true": [
+                    {
+                        "type": "jumpHero",
+                        "loc": [
+                            7,
+                            7
+                        ],
+                        "time": 50
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "048-Explosion01.mp3"
+                    },
+                    {
+                        "type": "vibrate",
+                        "direction": "horizontal",
+                        "time": 200,
+                        "speed": 10,
+                        "power": 10,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                6,
+                                9
+                            ],
+                            [
+                                8,
+                                9
+                            ],
+                            [
+                                6,
+                                11
+                            ],
+                            [
+                                8,
+                                11
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                8
+                            ],
+                            [
+                                9,
+                                8
+                            ],
+                            [
+                                5,
+                                12
+                            ],
+                            [
+                                9,
+                                12
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "waitAsync"
+                    }
+                ],
+                "false": [
+                    {
+                        "type": "if",
+                        "condition": "(flag:MT329baseA===16)",
+                        "true": [
+                            {
+                                "type": "jumpHero",
+                                "loc": [
+                                    7,
+                                    7
+                                ],
+                                "time": 50
+                            },
+                            {
+                                "type": "playSound",
+                                "name": "048-Explosion01.mp3"
+                            },
+                            {
+                                "type": "vibrate",
+                                "direction": "horizontal",
+                                "time": 200,
+                                "speed": 10,
+                                "power": 10,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        7,
+                                        8
+                                    ],
+                                    [
+                                        5,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        12
+                                    ],
+                                    [
+                                        9,
+                                        10
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "me109k6",
+                                "loc": [
+                                    [
+                                        6,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        9
+                                    ],
+                                    [
+                                        8,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        11
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "waitAsync"
+                            }
+                        ],
+                        "false": [
+                            {
+                                "type": "if",
+                                "condition": "(flag:MT329baseA===24)",
+                                "true": [
+                                    {
+                                        "type": "function",
+                                        "function": "function(){\nflags.mission[45][0]=true\n}"
+                                    },
+                                    {
+                                        "type": "pauseBgm"
+                                    },
+                                    {
+                                        "type": "playSound",
+                                        "name": "getarea.mp3"
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            4,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            10,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            13
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "waitAsync"
+                                    },
+                                    {
+                                        "type": "playBgm",
+                                        "name": "cao2.mp3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ],
         "6,12": [
@@ -523,6 +4513,216 @@ main.floors.MT329=
                 "name": "flag:MT329baseA",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT329baseA===8)",
+                "true": [
+                    {
+                        "type": "jumpHero",
+                        "loc": [
+                            7,
+                            7
+                        ],
+                        "time": 50
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "048-Explosion01.mp3"
+                    },
+                    {
+                        "type": "vibrate",
+                        "direction": "horizontal",
+                        "time": 200,
+                        "speed": 10,
+                        "power": 10,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                6,
+                                9
+                            ],
+                            [
+                                8,
+                                9
+                            ],
+                            [
+                                6,
+                                11
+                            ],
+                            [
+                                8,
+                                11
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                8
+                            ],
+                            [
+                                9,
+                                8
+                            ],
+                            [
+                                5,
+                                12
+                            ],
+                            [
+                                9,
+                                12
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "waitAsync"
+                    }
+                ],
+                "false": [
+                    {
+                        "type": "if",
+                        "condition": "(flag:MT329baseA===16)",
+                        "true": [
+                            {
+                                "type": "jumpHero",
+                                "loc": [
+                                    7,
+                                    7
+                                ],
+                                "time": 50
+                            },
+                            {
+                                "type": "playSound",
+                                "name": "048-Explosion01.mp3"
+                            },
+                            {
+                                "type": "vibrate",
+                                "direction": "horizontal",
+                                "time": 200,
+                                "speed": 10,
+                                "power": 10,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        7,
+                                        8
+                                    ],
+                                    [
+                                        5,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        12
+                                    ],
+                                    [
+                                        9,
+                                        10
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "me109k6",
+                                "loc": [
+                                    [
+                                        6,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        9
+                                    ],
+                                    [
+                                        8,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        11
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "waitAsync"
+                            }
+                        ],
+                        "false": [
+                            {
+                                "type": "if",
+                                "condition": "(flag:MT329baseA===24)",
+                                "true": [
+                                    {
+                                        "type": "function",
+                                        "function": "function(){\nflags.mission[45][0]=true\n}"
+                                    },
+                                    {
+                                        "type": "pauseBgm"
+                                    },
+                                    {
+                                        "type": "playSound",
+                                        "name": "getarea.mp3"
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            4,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            10,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            13
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "waitAsync"
+                                    },
+                                    {
+                                        "type": "playBgm",
+                                        "name": "cao2.mp3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ],
         "5,12": [
@@ -531,6 +4731,216 @@ main.floors.MT329=
                 "name": "flag:MT329baseA",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT329baseA===8)",
+                "true": [
+                    {
+                        "type": "jumpHero",
+                        "loc": [
+                            7,
+                            7
+                        ],
+                        "time": 50
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "048-Explosion01.mp3"
+                    },
+                    {
+                        "type": "vibrate",
+                        "direction": "horizontal",
+                        "time": 200,
+                        "speed": 10,
+                        "power": 10,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                6,
+                                9
+                            ],
+                            [
+                                8,
+                                9
+                            ],
+                            [
+                                6,
+                                11
+                            ],
+                            [
+                                8,
+                                11
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                8
+                            ],
+                            [
+                                9,
+                                8
+                            ],
+                            [
+                                5,
+                                12
+                            ],
+                            [
+                                9,
+                                12
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "waitAsync"
+                    }
+                ],
+                "false": [
+                    {
+                        "type": "if",
+                        "condition": "(flag:MT329baseA===16)",
+                        "true": [
+                            {
+                                "type": "jumpHero",
+                                "loc": [
+                                    7,
+                                    7
+                                ],
+                                "time": 50
+                            },
+                            {
+                                "type": "playSound",
+                                "name": "048-Explosion01.mp3"
+                            },
+                            {
+                                "type": "vibrate",
+                                "direction": "horizontal",
+                                "time": 200,
+                                "speed": 10,
+                                "power": 10,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        7,
+                                        8
+                                    ],
+                                    [
+                                        5,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        12
+                                    ],
+                                    [
+                                        9,
+                                        10
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "me109k6",
+                                "loc": [
+                                    [
+                                        6,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        9
+                                    ],
+                                    [
+                                        8,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        11
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "waitAsync"
+                            }
+                        ],
+                        "false": [
+                            {
+                                "type": "if",
+                                "condition": "(flag:MT329baseA===24)",
+                                "true": [
+                                    {
+                                        "type": "function",
+                                        "function": "function(){\nflags.mission[45][0]=true\n}"
+                                    },
+                                    {
+                                        "type": "pauseBgm"
+                                    },
+                                    {
+                                        "type": "playSound",
+                                        "name": "getarea.mp3"
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            4,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            10,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            13
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "waitAsync"
+                                    },
+                                    {
+                                        "type": "playBgm",
+                                        "name": "cao2.mp3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ],
         "5,11": [
@@ -539,6 +4949,216 @@ main.floors.MT329=
                 "name": "flag:MT329baseA",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT329baseA===8)",
+                "true": [
+                    {
+                        "type": "jumpHero",
+                        "loc": [
+                            7,
+                            7
+                        ],
+                        "time": 50
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "048-Explosion01.mp3"
+                    },
+                    {
+                        "type": "vibrate",
+                        "direction": "horizontal",
+                        "time": 200,
+                        "speed": 10,
+                        "power": 10,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                6,
+                                9
+                            ],
+                            [
+                                8,
+                                9
+                            ],
+                            [
+                                6,
+                                11
+                            ],
+                            [
+                                8,
+                                11
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                8
+                            ],
+                            [
+                                9,
+                                8
+                            ],
+                            [
+                                5,
+                                12
+                            ],
+                            [
+                                9,
+                                12
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "waitAsync"
+                    }
+                ],
+                "false": [
+                    {
+                        "type": "if",
+                        "condition": "(flag:MT329baseA===16)",
+                        "true": [
+                            {
+                                "type": "jumpHero",
+                                "loc": [
+                                    7,
+                                    7
+                                ],
+                                "time": 50
+                            },
+                            {
+                                "type": "playSound",
+                                "name": "048-Explosion01.mp3"
+                            },
+                            {
+                                "type": "vibrate",
+                                "direction": "horizontal",
+                                "time": 200,
+                                "speed": 10,
+                                "power": 10,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        7,
+                                        8
+                                    ],
+                                    [
+                                        5,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        12
+                                    ],
+                                    [
+                                        9,
+                                        10
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "me109k6",
+                                "loc": [
+                                    [
+                                        6,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        9
+                                    ],
+                                    [
+                                        8,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        11
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "waitAsync"
+                            }
+                        ],
+                        "false": [
+                            {
+                                "type": "if",
+                                "condition": "(flag:MT329baseA===24)",
+                                "true": [
+                                    {
+                                        "type": "function",
+                                        "function": "function(){\nflags.mission[45][0]=true\n}"
+                                    },
+                                    {
+                                        "type": "pauseBgm"
+                                    },
+                                    {
+                                        "type": "playSound",
+                                        "name": "getarea.mp3"
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            4,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            10,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            13
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "waitAsync"
+                                    },
+                                    {
+                                        "type": "playBgm",
+                                        "name": "cao2.mp3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ],
         "5,10": [
@@ -547,6 +5167,216 @@ main.floors.MT329=
                 "name": "flag:MT329baseA",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT329baseA===8)",
+                "true": [
+                    {
+                        "type": "jumpHero",
+                        "loc": [
+                            7,
+                            7
+                        ],
+                        "time": 50
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "048-Explosion01.mp3"
+                    },
+                    {
+                        "type": "vibrate",
+                        "direction": "horizontal",
+                        "time": 200,
+                        "speed": 10,
+                        "power": 10,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                6,
+                                9
+                            ],
+                            [
+                                8,
+                                9
+                            ],
+                            [
+                                6,
+                                11
+                            ],
+                            [
+                                8,
+                                11
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                8
+                            ],
+                            [
+                                9,
+                                8
+                            ],
+                            [
+                                5,
+                                12
+                            ],
+                            [
+                                9,
+                                12
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "waitAsync"
+                    }
+                ],
+                "false": [
+                    {
+                        "type": "if",
+                        "condition": "(flag:MT329baseA===16)",
+                        "true": [
+                            {
+                                "type": "jumpHero",
+                                "loc": [
+                                    7,
+                                    7
+                                ],
+                                "time": 50
+                            },
+                            {
+                                "type": "playSound",
+                                "name": "048-Explosion01.mp3"
+                            },
+                            {
+                                "type": "vibrate",
+                                "direction": "horizontal",
+                                "time": 200,
+                                "speed": 10,
+                                "power": 10,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        7,
+                                        8
+                                    ],
+                                    [
+                                        5,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        12
+                                    ],
+                                    [
+                                        9,
+                                        10
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "me109k6",
+                                "loc": [
+                                    [
+                                        6,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        9
+                                    ],
+                                    [
+                                        8,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        11
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "waitAsync"
+                            }
+                        ],
+                        "false": [
+                            {
+                                "type": "if",
+                                "condition": "(flag:MT329baseA===24)",
+                                "true": [
+                                    {
+                                        "type": "function",
+                                        "function": "function(){\nflags.mission[45][0]=true\n}"
+                                    },
+                                    {
+                                        "type": "pauseBgm"
+                                    },
+                                    {
+                                        "type": "playSound",
+                                        "name": "getarea.mp3"
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            4,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            10,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            13
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "waitAsync"
+                                    },
+                                    {
+                                        "type": "playBgm",
+                                        "name": "cao2.mp3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ],
         "5,9": [
@@ -555,6 +5385,216 @@ main.floors.MT329=
                 "name": "flag:MT329baseA",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT329baseA===8)",
+                "true": [
+                    {
+                        "type": "jumpHero",
+                        "loc": [
+                            7,
+                            7
+                        ],
+                        "time": 50
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "048-Explosion01.mp3"
+                    },
+                    {
+                        "type": "vibrate",
+                        "direction": "horizontal",
+                        "time": 200,
+                        "speed": 10,
+                        "power": 10,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                6,
+                                9
+                            ],
+                            [
+                                8,
+                                9
+                            ],
+                            [
+                                6,
+                                11
+                            ],
+                            [
+                                8,
+                                11
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                8
+                            ],
+                            [
+                                9,
+                                8
+                            ],
+                            [
+                                5,
+                                12
+                            ],
+                            [
+                                9,
+                                12
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "waitAsync"
+                    }
+                ],
+                "false": [
+                    {
+                        "type": "if",
+                        "condition": "(flag:MT329baseA===16)",
+                        "true": [
+                            {
+                                "type": "jumpHero",
+                                "loc": [
+                                    7,
+                                    7
+                                ],
+                                "time": 50
+                            },
+                            {
+                                "type": "playSound",
+                                "name": "048-Explosion01.mp3"
+                            },
+                            {
+                                "type": "vibrate",
+                                "direction": "horizontal",
+                                "time": 200,
+                                "speed": 10,
+                                "power": 10,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        7,
+                                        8
+                                    ],
+                                    [
+                                        5,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        12
+                                    ],
+                                    [
+                                        9,
+                                        10
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "me109k6",
+                                "loc": [
+                                    [
+                                        6,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        9
+                                    ],
+                                    [
+                                        8,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        11
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "waitAsync"
+                            }
+                        ],
+                        "false": [
+                            {
+                                "type": "if",
+                                "condition": "(flag:MT329baseA===24)",
+                                "true": [
+                                    {
+                                        "type": "function",
+                                        "function": "function(){\nflags.mission[45][0]=true\n}"
+                                    },
+                                    {
+                                        "type": "pauseBgm"
+                                    },
+                                    {
+                                        "type": "playSound",
+                                        "name": "getarea.mp3"
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            7
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            4,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            10,
+                                            10
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "openDoor",
+                                        "loc": [
+                                            7,
+                                            13
+                                        ],
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "waitAsync"
+                                    },
+                                    {
+                                        "type": "playBgm",
+                                        "name": "cao2.mp3"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ]
     },
@@ -656,224 +5696,9 @@ main.floors.MT329=
         ]
     },
     "autoEvent": {
-        "6,13": {
-            "0": {
-                "condition": "flag:MT329baseA===8",
-                "currentFloor": true,
-                "priority": 0,
-                "delayExecute": false,
-                "multiExecute": false,
-                "data": [
-                    {
-                        "type": "jumpHero",
-                        "loc": [
-                            7,
-                            7
-                        ],
-                        "time": 50
-                    },
-                    {
-                        "type": "playSound",
-                        "name": "048-Explosion01.mp3"
-                    },
-                    {
-                        "type": "vibrate",
-                        "direction": "horizontal",
-                        "time": 200,
-                        "speed": 10,
-                        "power": 10,
-                        "async": true
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "pak40",
-                        "loc": [
-                            [
-                                6,
-                                9
-                            ],
-                            [
-                                8,
-                                9
-                            ],
-                            [
-                                6,
-                                11
-                            ],
-                            [
-                                8,
-                                11
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "flak88",
-                        "loc": [
-                            [
-                                5,
-                                8
-                            ],
-                            [
-                                9,
-                                8
-                            ],
-                            [
-                                5,
-                                12
-                            ],
-                            [
-                                9,
-                                12
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "waitAsync"
-                    }
-                ]
-            },
-            "1": {
-                "condition": "flag:MT329baseA===16",
-                "currentFloor": true,
-                "priority": 0,
-                "delayExecute": false,
-                "multiExecute": false,
-                "data": [
-                    {
-                        "type": "jumpHero",
-                        "loc": [
-                            7,
-                            7
-                        ],
-                        "time": 50
-                    },
-                    {
-                        "type": "playSound",
-                        "name": "048-Explosion01.mp3"
-                    },
-                    {
-                        "type": "vibrate",
-                        "direction": "horizontal",
-                        "time": 200,
-                        "speed": 10,
-                        "power": 10,
-                        "async": true
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "howitzer150",
-                        "loc": [
-                            [
-                                7,
-                                8
-                            ],
-                            [
-                                5,
-                                10
-                            ],
-                            [
-                                7,
-                                12
-                            ],
-                            [
-                                9,
-                                10
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "me109k6",
-                        "loc": [
-                            [
-                                6,
-                                10
-                            ],
-                            [
-                                7,
-                                9
-                            ],
-                            [
-                                8,
-                                10
-                            ],
-                            [
-                                7,
-                                11
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "waitAsync"
-                    }
-                ]
-            }
-        },
+        "6,13": {},
         "5,13": {
-            "0": {
-                "condition": "flag:MT329baseA===24",
-                "currentFloor": true,
-                "priority": 0,
-                "delayExecute": false,
-                "multiExecute": false,
-                "data": [
-                    {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[45][0]=true\n}"
-                    },
-                    {
-                        "type": "pauseBgm"
-                    },
-                    {
-                        "type": "playSound",
-                        "name": "getarea.mp3"
-                    },
-                    {
-                        "type": "openDoor",
-                        "loc": [
-                            7,
-                            7
-                        ],
-                        "async": true
-                    },
-                    {
-                        "type": "openDoor",
-                        "loc": [
-                            4,
-                            10
-                        ],
-                        "async": true
-                    },
-                    {
-                        "type": "openDoor",
-                        "loc": [
-                            10,
-                            10
-                        ],
-                        "async": true
-                    },
-                    {
-                        "type": "openDoor",
-                        "loc": [
-                            7,
-                            13
-                        ],
-                        "async": true
-                    },
-                    {
-                        "type": "waitAsync"
-                    },
-                    {
-                        "type": "playBgm",
-                        "name": "cao2.mp3"
-                    }
-                ]
-            }
+            "1": null
         }
     },
     "cannotMove": {},

@@ -397,6 +397,33 @@ main.floors.MT38=
                 "name": "flag:door_MT38_7_12",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT38_7_12>=5)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            12
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            5,
+                            12
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            9,
+                            12
+                        ]
+                    }
+                ]
             }
         ],
         "5,11": [
@@ -405,6 +432,33 @@ main.floors.MT38=
                 "name": "flag:door_MT38_7_12",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT38_7_12>=5)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            12
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            5,
+                            12
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            9,
+                            12
+                        ]
+                    }
+                ]
             }
         ],
         "7,11": [
@@ -413,6 +467,33 @@ main.floors.MT38=
                 "name": "flag:door_MT38_7_12",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT38_7_12>=5)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            12
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            5,
+                            12
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            9,
+                            12
+                        ]
+                    }
+                ]
             }
         ],
         "8,10": [
@@ -421,6 +502,33 @@ main.floors.MT38=
                 "name": "flag:door_MT38_7_12",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT38_7_12>=5)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            12
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            5,
+                            12
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            9,
+                            12
+                        ]
+                    }
+                ]
             }
         ],
         "9,11": [
@@ -429,6 +537,33 @@ main.floors.MT38=
                 "name": "flag:door_MT38_7_12",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT38_7_12>=5)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            12
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            5,
+                            12
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            9,
+                            12
+                        ]
+                    }
+                ]
             }
         ]
     },
@@ -436,51 +571,6 @@ main.floors.MT38=
     "afterOpenDoor": {},
     "autoEvent": {
         "7,12": {
-            "0": {
-                "condition": "flag:door_MT38_7_12==5",
-                "currentFloor": true,
-                "priority": 0,
-                "delayExecute": false,
-                "multiExecute": false,
-                "data": [
-                    {
-                        "type": "openDoor",
-                        "async": true
-                    },
-                    {
-                        "type": "openDoor",
-                        "loc": [
-                            9,
-                            12
-                        ],
-                        "async": true
-                    },
-                    {
-                        "type": "openDoor",
-                        "loc": [
-                            5,
-                            12
-                        ],
-                        "async": true
-                    },
-                    {
-                        "type": "openDoor",
-                        "loc": [
-                            7,
-                            9
-                        ],
-                        "async": true
-                    },
-                    {
-                        "type": "waitAsync"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "flag:door_MT38_7_12",
-                        "value": "null"
-                    }
-                ]
-            },
             "1": null
         },
         "7,14": {

@@ -210,7 +210,7 @@ main.floors.prepare1=
             },
             {
                 "type": "sleep",
-                "time": 500
+                "time": 300
             },
             {
                 "type": "playSound",
@@ -218,7 +218,7 @@ main.floors.prepare1=
             },
             {
                 "type": "sleep",
-                "time": 500
+                "time": 300
             },
             {
                 "type": "playSound",
@@ -3120,7 +3120,7 @@ main.floors.prepare1=
                             null
                         ],
                         "loc": [
-                            140,
+                            70,
                             100,
                             360,
                             90
@@ -3138,7 +3138,7 @@ main.floors.prepare1=
                             null
                         ],
                         "loc": [
-                            140,
+                            70,
                             190,
                             350,
                             120

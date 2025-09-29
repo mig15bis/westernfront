@@ -16,7 +16,7 @@ main.floors.MT1=
         {
             "type": "setValue",
             "name": "flag:cri",
-            "value": "false"
+            "value": "true"
         },
         {
             "type": "setValue",
@@ -117,60 +117,48 @@ main.floors.MT1=
             "text": "摧毁所有敌方坦克",
             "info": [
                 {
-                    "type": "checkEnemyType",
-                    "checkEnemyType": "轻坦",
+                    "type": "killType",
+                    "killType": "步兵",
                     "floorId": [
-                        "MT1",
-                        "MT2",
-                        "MT3",
-                        "MT4",
-                        "MT5"
+                        "MT1"
                     ],
-                    "operator": "<=",
-                    "text": "剩余轻坦",
-                    "count": 0
+                    "operator": ">=",
+                    "count": 1
                 },
                 {
                     "type": "checkEnemyType",
-                    "checkEnemyType": "中坦",
+                    "checkEnemyType": "战斗机",
                     "floorId": [
-                        "MT1",
-                        "MT2",
-                        "MT3",
-                        "MT4",
-                        "MT5"
+                        "MT3"
                     ],
                     "operator": "<=",
-                    "text": "剩余中坦",
                     "count": 0
                 },
                 {
-                    "type": "checkEnemyType",
-                    "checkEnemyType": "重坦",
-                    "floorId": [
-                        "MT1",
-                        "MT2",
-                        "MT3",
-                        "MT4",
-                        "MT5"
+                    "type": "killLocs",
+                    "loc": [
+                        [
+                            6,
+                            6
+                        ]
                     ],
-                    "operator": "<=",
-                    "text": "剩余重坦",
-                    "count": 0
+                    "floorId": "MT1",
+                    "operator": ">=",
+                    "count": 1
                 },
                 {
-                    "type": "checkEnemyType",
-                    "checkEnemyType": "坦歼",
+                    "type": "killSpecial",
+                    "killSpecial": "1",
                     "floorId": [
                         "MT1",
-                        "MT2",
-                        "MT3",
-                        "MT4",
-                        "MT5"
+                        "MT2"
                     ],
-                    "operator": "<=",
-                    "text": "剩余坦歼",
-                    "count": 0
+                    "operator": ">=",
+                    "count": 1
+                },
+                {
+                    "type": "arrival",
+                    "floorId": "MT2"
                 }
             ]
         },
@@ -189,7 +177,7 @@ main.floors.MT1=
                         "MT4",
                         "MT5"
                     ],
-                    "text": "剩余敌人"
+                    "text": "剩余敌人数量"
                 }
             ]
         }
@@ -310,6 +298,13 @@ main.floors.MT1=
         ],
         "1,8": [
             "\t[伊吹萃香]\f[specialnpc.jpg,30,200,150,300]你好！咱是完结版新加的NPC，负责在适当的时候给出一点提示。现在的话，咱建议去看一下上面的木牌哦！"
+        ],
+        "3,7": [
+            {
+                "type": "setValue",
+                "name": "flag:第一关通关",
+                "value": "1"
+            }
         ]
     },
     "changeFloor": {

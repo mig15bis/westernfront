@@ -59,6 +59,24 @@ main.floors.MT189=
                 "name": "flag:door_MT189_12_11",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT189_12_11===2)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            12,
+                            11
+                        ]
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "flag:door_MT189_12_11",
+                        "value": "0"
+                    }
+                ]
             }
         ],
         "13,10": [
@@ -67,6 +85,24 @@ main.floors.MT189=
                 "name": "flag:door_MT189_12_11",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT189_12_11===2)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            12,
+                            11
+                        ]
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "flag:door_MT189_12_11",
+                        "value": "0"
+                    }
+                ]
             }
         ]
     },
@@ -74,24 +110,7 @@ main.floors.MT189=
     "afterOpenDoor": {},
     "autoEvent": {
         "12,11": {
-            "0": {
-                "condition": "flag:door_MT189_12_11==2",
-                "currentFloor": true,
-                "priority": 0,
-                "delayExecute": false,
-                "multiExecute": false,
-                "data": [
-                    {
-                        "type": "openDoor"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "flag:door_MT189_12_11",
-                        "operator": "=",
-                        "value": "null"
-                    }
-                ]
-            }
+            "1": null
         }
     },
     "cannotMove": {},

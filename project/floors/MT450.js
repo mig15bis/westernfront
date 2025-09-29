@@ -279,6 +279,24 @@ main.floors.MT450=
                 "name": "flag:door_MT450_7_9",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT450_7_9===9)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            9
+                        ]
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "flag:door_MT450_7_9",
+                        "value": "0"
+                    }
+                ]
             }
         ],
         "7,6": [
@@ -287,6 +305,24 @@ main.floors.MT450=
                 "name": "flag:door_MT450_7_9",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT450_7_9===9)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            9
+                        ]
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "flag:door_MT450_7_9",
+                        "value": "0"
+                    }
+                ]
             }
         ],
         "8,6": [
@@ -295,6 +331,24 @@ main.floors.MT450=
                 "name": "flag:door_MT450_7_9",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT450_7_9===9)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            9
+                        ]
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "flag:door_MT450_7_9",
+                        "value": "0"
+                    }
+                ]
             }
         ],
         "6,7": [
@@ -303,6 +357,24 @@ main.floors.MT450=
                 "name": "flag:door_MT450_7_9",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT450_7_9===9)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            9
+                        ]
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "flag:door_MT450_7_9",
+                        "value": "0"
+                    }
+                ]
             }
         ],
         "7,7": [
@@ -311,6 +383,24 @@ main.floors.MT450=
                 "name": "flag:door_MT450_7_9",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT450_7_9===9)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            9
+                        ]
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "flag:door_MT450_7_9",
+                        "value": "0"
+                    }
+                ]
             }
         ],
         "8,7": [
@@ -319,6 +409,24 @@ main.floors.MT450=
                 "name": "flag:door_MT450_7_9",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT450_7_9===9)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            9
+                        ]
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "flag:door_MT450_7_9",
+                        "value": "0"
+                    }
+                ]
             }
         ],
         "6,8": [
@@ -327,6 +435,24 @@ main.floors.MT450=
                 "name": "flag:door_MT450_7_9",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT450_7_9===9)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            9
+                        ]
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "flag:door_MT450_7_9",
+                        "value": "0"
+                    }
+                ]
             }
         ],
         "7,8": [
@@ -335,6 +461,24 @@ main.floors.MT450=
                 "name": "flag:door_MT450_7_9",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT450_7_9===9)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            9
+                        ]
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "flag:door_MT450_7_9",
+                        "value": "0"
+                    }
+                ]
             }
         ],
         "8,8": [
@@ -343,6 +487,24 @@ main.floors.MT450=
                 "name": "flag:door_MT450_7_9",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT450_7_9===9)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            9
+                        ]
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "flag:door_MT450_7_9",
+                        "value": "0"
+                    }
+                ]
             }
         ]
     },
@@ -350,24 +512,7 @@ main.floors.MT450=
     "afterOpenDoor": {},
     "autoEvent": {
         "7,9": {
-            "0": {
-                "condition": "flag:door_MT450_7_9==9",
-                "currentFloor": true,
-                "priority": 0,
-                "delayExecute": false,
-                "multiExecute": false,
-                "data": [
-                    {
-                        "type": "openDoor"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "flag:door_MT450_7_9",
-                        "operator": "=",
-                        "value": "null"
-                    }
-                ]
-            }
+            "1": null
         },
         "6,10": {
             "0": {

@@ -70,6 +70,19 @@ main.floors.MT104=
                 "name": "flag:door_MT104_5_10",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT104_5_10===2)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            5,
+                            10
+                        ]
+                    }
+                ]
             }
         ],
         "6,9": [
@@ -78,6 +91,19 @@ main.floors.MT104=
                 "name": "flag:door_MT104_5_10",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT104_5_10===2)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            5,
+                            10
+                        ]
+                    }
+                ]
             }
         ],
         "4,11": [
@@ -86,6 +112,19 @@ main.floors.MT104=
                 "name": "flag:door_MT104_5_12",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT104_5_12===2)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            5,
+                            12
+                        ]
+                    }
+                ]
             }
         ],
         "6,11": [
@@ -94,6 +133,19 @@ main.floors.MT104=
                 "name": "flag:door_MT104_5_12",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT104_5_12===2)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            5,
+                            12
+                        ]
+                    }
+                ]
             }
         ],
         "6,5": [
@@ -225,44 +277,10 @@ main.floors.MT104=
     "afterOpenDoor": {},
     "autoEvent": {
         "5,10": {
-            "0": {
-                "condition": "flag:door_MT104_5_10==2",
-                "currentFloor": true,
-                "priority": 0,
-                "delayExecute": false,
-                "multiExecute": false,
-                "data": [
-                    {
-                        "type": "openDoor"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "flag:door_MT104_5_10",
-                        "operator": "=",
-                        "value": "null"
-                    }
-                ]
-            }
+            "1": null
         },
         "5,12": {
-            "0": {
-                "condition": "flag:door_MT104_5_12==2",
-                "currentFloor": true,
-                "priority": 0,
-                "delayExecute": false,
-                "multiExecute": false,
-                "data": [
-                    {
-                        "type": "openDoor"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "flag:door_MT104_5_12",
-                        "operator": "=",
-                        "value": "null"
-                    }
-                ]
-            }
+            "1": null
         }
     },
     "cannotMove": {},

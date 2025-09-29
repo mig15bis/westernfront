@@ -382,6 +382,24 @@ main.floors.MT347=
                 "name": "flag:door_MT347_5_10",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT347_5_10===2)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            5,
+                            10
+                        ]
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "flag:door_MT347_5_10",
+                        "value": "0"
+                    }
+                ]
             }
         ],
         "6,11": [
@@ -390,6 +408,24 @@ main.floors.MT347=
                 "name": "flag:door_MT347_5_10",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT347_5_10===2)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            5,
+                            10
+                        ]
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "flag:door_MT347_5_10",
+                        "value": "0"
+                    }
+                ]
             }
         ]
     },
@@ -397,24 +433,7 @@ main.floors.MT347=
     "afterOpenDoor": {},
     "autoEvent": {
         "5,10": {
-            "0": {
-                "condition": "flag:door_MT347_5_10==2",
-                "currentFloor": true,
-                "priority": 0,
-                "delayExecute": false,
-                "multiExecute": false,
-                "data": [
-                    {
-                        "type": "openDoor"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "flag:door_MT347_5_10",
-                        "operator": "=",
-                        "value": "null"
-                    }
-                ]
-            }
+            "1": null
         },
         "14,8": {
             "0": {

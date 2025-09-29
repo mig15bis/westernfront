@@ -954,6 +954,8 @@ action
     |   successTaskByName_s    
     |   clearTask_s
     |   submitTask_s
+    |   hideui_s
+    |   showui_s
     |   pass_s
     ;
 
@@ -1764,6 +1766,28 @@ var code = '{"type": "update"'+Bool_0+'},\n';
 return code;
 */;
 
+showui_s
+    :   '新·显示状态栏' Newline
+
+
+/* showui_s
+tooltip : showui: 新·显示状态栏
+helpUrl : /_docs/#/instruction
+colour : this.soundColor
+var code = '{"type": "showui"},\n';
+return code;
+*/;
+hideui_s
+    :   '新·隐藏状态栏' Newline
+
+
+/* hideui_s
+tooltip : hideui: 新·隐藏状态栏
+helpUrl : /_docs/#/instruction
+colour : this.soundColor
+var code = '{"type": "hideui"},\n';
+return code;
+*/;
 showStatusBar_s
     :   '显示状态栏' Newline
 

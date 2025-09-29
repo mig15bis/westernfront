@@ -77,6 +77,24 @@ main.floors.MT279=
                 "name": "flag:door_MT279_7_8",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT279_7_8===6)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            8
+                        ]
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "flag:door_MT279_7_8",
+                        "value": "0"
+                    }
+                ]
             }
         ],
         "5,9": [
@@ -85,6 +103,24 @@ main.floors.MT279=
                 "name": "flag:door_MT279_7_8",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT279_7_8===6)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            8
+                        ]
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "flag:door_MT279_7_8",
+                        "value": "0"
+                    }
+                ]
             }
         ],
         "6,9": [
@@ -93,6 +129,24 @@ main.floors.MT279=
                 "name": "flag:door_MT279_7_8",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT279_7_8===6)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            8
+                        ]
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "flag:door_MT279_7_8",
+                        "value": "0"
+                    }
+                ]
             }
         ],
         "8,9": [
@@ -101,6 +155,24 @@ main.floors.MT279=
                 "name": "flag:door_MT279_7_8",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT279_7_8===6)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            8
+                        ]
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "flag:door_MT279_7_8",
+                        "value": "0"
+                    }
+                ]
             }
         ],
         "9,9": [
@@ -109,6 +181,24 @@ main.floors.MT279=
                 "name": "flag:door_MT279_7_8",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT279_7_8===6)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            8
+                        ]
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "flag:door_MT279_7_8",
+                        "value": "0"
+                    }
+                ]
             }
         ],
         "10,9": [
@@ -117,6 +207,24 @@ main.floors.MT279=
                 "name": "flag:door_MT279_7_8",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT279_7_8===6)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            8
+                        ]
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "flag:door_MT279_7_8",
+                        "value": "0"
+                    }
+                ]
             }
         ],
         "6,7": [
@@ -125,6 +233,24 @@ main.floors.MT279=
                 "name": "flag:door_MT279_7_6",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT279_7_6===2)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            6
+                        ]
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "flag:door_MT279_7_6",
+                        "value": "0"
+                    }
+                ]
             }
         ],
         "8,7": [
@@ -133,6 +259,24 @@ main.floors.MT279=
                 "name": "flag:door_MT279_7_6",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT279_7_6===2)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            6
+                        ]
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "flag:door_MT279_7_6",
+                        "value": "0"
+                    }
+                ]
             }
         ],
         "6,4": [
@@ -141,6 +285,24 @@ main.floors.MT279=
                 "name": "flag:door_MT279_7_3",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT279_7_3===7)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            3
+                        ]
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "flag:door_MT279_7_3",
+                        "value": "0"
+                    }
+                ]
             }
         ],
         "7,4": [
@@ -149,6 +311,24 @@ main.floors.MT279=
                 "name": "flag:door_MT279_7_3",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT279_7_3===7)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            3
+                        ]
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "flag:door_MT279_7_3",
+                        "value": "0"
+                    }
+                ]
             }
         ],
         "8,4": [
@@ -157,6 +337,24 @@ main.floors.MT279=
                 "name": "flag:door_MT279_7_3",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT279_7_3===7)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            3
+                        ]
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "flag:door_MT279_7_3",
+                        "value": "0"
+                    }
+                ]
             }
         ],
         "5,5": [
@@ -165,6 +363,24 @@ main.floors.MT279=
                 "name": "flag:door_MT279_7_3",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT279_7_3===7)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            3
+                        ]
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "flag:door_MT279_7_3",
+                        "value": "0"
+                    }
+                ]
             }
         ],
         "6,5": [
@@ -173,6 +389,24 @@ main.floors.MT279=
                 "name": "flag:door_MT279_7_3",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT279_7_3===7)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            3
+                        ]
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "flag:door_MT279_7_3",
+                        "value": "0"
+                    }
+                ]
             }
         ],
         "8,5": [
@@ -181,6 +415,24 @@ main.floors.MT279=
                 "name": "flag:door_MT279_7_3",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT279_7_3===7)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            3
+                        ]
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "flag:door_MT279_7_3",
+                        "value": "0"
+                    }
+                ]
             }
         ],
         "9,5": [
@@ -189,6 +441,24 @@ main.floors.MT279=
                 "name": "flag:door_MT279_7_3",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT279_7_3===7)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            3
+                        ]
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "flag:door_MT279_7_3",
+                        "value": "0"
+                    }
+                ]
             }
         ]
     },
@@ -196,64 +466,12 @@ main.floors.MT279=
     "afterOpenDoor": {},
     "autoEvent": {
         "7,8": {
-            "0": {
-                "condition": "flag:door_MT279_7_8==6",
-                "currentFloor": true,
-                "priority": 0,
-                "delayExecute": false,
-                "multiExecute": false,
-                "data": [
-                    {
-                        "type": "openDoor"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "flag:door_MT279_7_8",
-                        "operator": "=",
-                        "value": "null"
-                    }
-                ]
-            }
+            "1": null
         },
         "7,6": {
-            "0": {
-                "condition": "flag:door_MT279_7_6==2",
-                "currentFloor": true,
-                "priority": 0,
-                "delayExecute": false,
-                "multiExecute": false,
-                "data": [
-                    {
-                        "type": "openDoor"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "flag:door_MT279_7_6",
-                        "operator": "=",
-                        "value": "null"
-                    }
-                ]
-            }
+            "1": null
         },
         "7,3": {
-            "0": {
-                "condition": "flag:door_MT279_7_3==7",
-                "currentFloor": true,
-                "priority": 0,
-                "delayExecute": false,
-                "multiExecute": false,
-                "data": [
-                    {
-                        "type": "openDoor"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "flag:door_MT279_7_3",
-                        "operator": "=",
-                        "value": "null"
-                    }
-                ]
-            },
             "1": null
         }
     },

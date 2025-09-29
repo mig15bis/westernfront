@@ -25,7 +25,6 @@ main.floors.MT267=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        
         "\r[yellow]Mission 38 黑色星期四",
         {
             "type": "setValue",
@@ -202,7 +201,7 @@ main.floors.MT267=
             "floorId": "MT268",
             "loc": [
                 7,
-                7
+                14
             ]
         }
     },

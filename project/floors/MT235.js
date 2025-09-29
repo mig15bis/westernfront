@@ -51,10 +51,119 @@ main.floors.MT235=
         }
     },
     "beforeBattle": {},
-    "afterBattle": {},
+    "afterBattle": {
+        "13,11": [
+            {
+                "type": "setValue",
+                "name": "flag:door_MT235_12_11",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT235_12_11===4)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            12,
+                            11
+                        ]
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "flag:door_MT235_12_11",
+                        "value": "0"
+                    }
+                ]
+            }
+        ],
+        "14,11": [
+            {
+                "type": "setValue",
+                "name": "flag:door_MT235_12_11",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT235_12_11===4)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            12,
+                            11
+                        ]
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "flag:door_MT235_12_11",
+                        "value": "0"
+                    }
+                ]
+            }
+        ],
+        "13,12": [
+            {
+                "type": "setValue",
+                "name": "flag:door_MT235_12_11",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT235_12_11===4)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            12,
+                            11
+                        ]
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "flag:door_MT235_12_11",
+                        "value": "0"
+                    }
+                ]
+            }
+        ],
+        "14,12": [
+            {
+                "type": "setValue",
+                "name": "flag:door_MT235_12_11",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT235_12_11===4)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            12,
+                            11
+                        ]
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "flag:door_MT235_12_11",
+                        "value": "0"
+                    }
+                ]
+            }
+        ]
+    },
     "afterGetItem": {},
     "afterOpenDoor": {},
-    "autoEvent": {},
+    "autoEvent": {
+        "12,11": {
+            "1": null
+        }
+    },
     "cannotMove": {},
     "cannotMoveIn": {},
     "map": [

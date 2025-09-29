@@ -4344,7 +4344,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 		submitTask() {
 			if (!flags.score) flags.score = 0
 			for (let i = 0; i < this.tasksInfo.length; i++) {
-				flags.score += Number(this.tasksInfo[i].complter) * 100
+				flags.score += Number(this.checkTask(i)) * 100
 			}
 			this.clearTask()
 		}
@@ -4392,7 +4392,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 				this.has = info.has ?? core.getRealStatus(this.checkStatus)
 			} else if (info.type === "checkFlag") {
 				this.checkFlag = info.checkFlag
-				this.count = info.count
+				this.count = core.calValue(info.count)
 				this.operator = info.operator
 				this.has = info.has ?? core.getFlag(this.checkFlag)
 			} else if (info.type === "checkBlock") { //剩余图块
@@ -4421,13 +4421,13 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 				this.operator = info.operator
 			} else if (info.type === "killType") {
 				this.floorId = info.floorId
-				this.killType = info.killTpye
+				this.killType = info.killType
 				this.count = info.count
 				this.has = info.has ?? 0
 				this.operator = info.operator
 			} else if (info.type === "killSpecial") {
 				this.floorId = info.floorId
-				this.killSpecial = info.killSpecial
+				this.killSpecial = core.calValue(info.killSpecial)
 				this.count = info.count
 				this.has = info.has ?? 0
 				this.operator = info.operator
@@ -4457,7 +4457,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 			else if (this.type === "checkStatus") return this.checkInfo(this.count, this.has = core.getRealStatus(this.checkStatus))
 			else if (this.type === "checkFlag") return this.checkInfo(this.count, this.has = core.getFlag(this.checkFlag))
 			else if (this.type === "checkBlock") return this.checkInfo(this.count, this.has = core.searchBlock(this.checkBlock, this.floorId).length)
-			else if (this.type === "checkEnemyType") return this.checkInfo(this.count, this.has = core.searchBlockWithFilter(block => block.event.cls.startsWith("enemy") && block.event.type === this.checkEnemyType, this.floorId).length)
+			else if (this.type === "checkEnemyType") return this.checkInfo(this.count, this.has = core.searchBlockWithFilter(block => block.event.cls.startsWith("enemy") && core.material.enemys[block.event.id].type === this.checkEnemyType, this.floorId).length)
 			else if (this.type === "killAll") return this.has = core.searchBlockWithFilter(block => block.event.cls.startsWith("enemy"), this.floorId).length, this.has === 0
 			else if (this.type === "specialBlock" || this.type === "gosthFloor" || this.type === "kill" || this.type === "killSpecial" || this.type === "killLocs" || this.type === "killType") return this.checkInfo(this.count, this.has)
 			else if (this.type === "arrival") return Boolean(this.has)
@@ -4582,6 +4582,16 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 
 	core.registerEvent("submitTask", () => {
 		core.taskSystem.submitTask()
+		core.doAction()
+	})
+
+	core.registerEvent("hideui", () => {
+		core.ui.statusBar.hidetheui()
+		core.doAction()
+	})
+
+	core.registerEvent("showui", () => {
+		core.ui.statusBar.showmetheui()
 		core.doAction()
 	})
 }
