@@ -114,6 +114,77 @@ main.floors.MT34=
         "\t[任务目标]⭐通过当前区域\n⭐击落所有轰炸机\n⭐通关时至少持有20个“下午茶”",
         {
             "type": "callBook"
+        },
+        {
+            "type": "setValue",
+            "name": "flag:第六关通关",
+            "value": "0"
+        },
+        {
+            "type": "setTask",
+            "name": "第六关任务1",
+            "n": 1,
+            "text": "通过当前区域",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "第六关通关",
+                    "operator": "=",
+                    "text": "抵达终点",
+                    "count": "1"
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第六关任务2",
+            "n": 2,
+            "text": "击落所有轰炸机",
+            "info": [
+                {
+                    "type": "checkEnemyType",
+                    "checkEnemyType": "俯冲轰炸机",
+                    "floorId": [
+                        "MT34",
+                        "MT35",
+                        "MT36",
+                        "MT37",
+                        "MT38"
+                    ],
+                    "operator": "<=",
+                    "text": "剩余的俯冲轰炸机",
+                    "count": 0
+                },
+                {
+                    "type": "checkEnemyType",
+                    "checkEnemyType": "中型轰炸机",
+                    "floorId": [
+                        "MT34",
+                        "MT35",
+                        "MT36",
+                        "MT37",
+                        "MT38"
+                    ],
+                    "operator": "<=",
+                    "text": "剩余的中型轰炸机",
+                    "count": 0
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第六关任务3",
+            "n": 1,
+            "text": "通关时至少持有20个“下午茶”",
+            "info": [
+                {
+                    "type": "checkItem",
+                    "checkItem": "tea",
+                    "operator": ">=",
+                    "text": "当前持有的下午茶",
+                    "count": 20
+                }
+            ]
         }
     ],
     "eachArrive": [],

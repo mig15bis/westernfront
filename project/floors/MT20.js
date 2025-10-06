@@ -34,6 +34,9 @@ main.floors.MT20=
             "time": 500
         },
         {
+            "type": "showui"
+        },
+        {
             "type": "playSound",
             "name": "xinxinmagic.mp3"
         },
@@ -256,7 +259,7 @@ main.floors.MT20=
                 "type": "playSound",
                 "name": "xinxinmagic.mp3"
             },
-            "\t[系统提示]当前区域敌人特点：除了海军，其他的全都有\n推荐携带技能：战壕、紧急补给、防空弹幕\n推荐出战装备：哈奇开斯H35、飓风MKI、贼鸥式轰炸机、剑鱼式鱼雷机（只能二选一的情况下，推荐选后者）。"
+            "\t[系统提示]当前区域敌人特点：除了海军，其他的全都有\n推荐携带技能：战壕、紧急补给、防空弹幕\n推荐出战装备：雷诺FT17、P40B战斧、剑鱼式鱼雷机。"
         ]
     },
     "changeFloor": {},

@@ -30,6 +30,9 @@ main.floors.MT13=
             "time": 500
         },
         {
+            "type": "showui"
+        },
+        {
             "type": "playSound",
             "name": "xinxinmagic.mp3"
         },
@@ -52,7 +55,7 @@ main.floors.MT13=
             "type": "function",
             "function": "function(){\nflags.learned[2]=true\n}"
         },
-        "\t[系统提示]紧急补给（100指挥点）：战略技能。立即恢复等同于当前血量上限20%的血量。"
+        "\t[系统提示]紧急补给（100指挥点）：战略技能。立即恢复等同于当前血量上限25%的血量。"
     ],
     "eachArrive": [],
     "parallelDo": "",
@@ -208,7 +211,7 @@ main.floors.MT13=
                 "type": "playSound",
                 "name": "xinxinmagic.mp3"
             },
-            "\t[系统提示]当前区域敌人特点：步兵、坦克、火炮与空军都有，但整体实力较弱。\n推荐携带技能：战壕、紧急补给\n推荐出战装备：玛蒂尔达步兵坦克，其他随意。"
+            "\t[系统提示]当前区域敌人特点：步兵、坦克、火炮与空军都有，但整体实力较弱。\n推荐携带技能：战壕、紧急补给\n推荐出战装备：玛蒂尔达步兵坦克、斗士MK2、剑鱼式鱼雷机。"
         ]
     },
     "changeFloor": {},

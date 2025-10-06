@@ -250,9 +250,63 @@ main.floors.MT14=
             "type": "playSound",
             "name": "xinxinmagic.mp3"
         },
-        "\t[任务目标]⭐击败隆美尔\n⭐通关时至少保有10个“下午茶”道具\n⭐消灭所有敌人",
+        "\t[任务目标]⭐与隆美尔交战\n⭐通关时至少保有10个“下午茶”道具\n⭐消灭所有敌人",
         {
             "type": "callBook"
+        },
+        {
+            "type": "setValue",
+            "name": "flag:第三关通关",
+            "value": "0"
+        },
+        {
+            "type": "setTask",
+            "name": "第三关任务1",
+            "n": 1,
+            "text": "与隆美尔交战",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "第三关通关",
+                    "operator": "=",
+                    "text": "主线boss击破",
+                    "count": "1"
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第三关任务2",
+            "n": 1,
+            "text": "通关时至少保有10个“下午茶”道具",
+            "info": [
+                {
+                    "type": "checkItem",
+                    "checkItem": "tea",
+                    "operator": ">=",
+                    "text": "当前持有的“下午茶”",
+                    "count": 10
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第三关任务3",
+            "n": 1,
+            "text": "消灭所有敌人",
+            "info": [
+                {
+                    "type": "killAll",
+                    "floorId": [
+                        "MT14",
+                        "MT15",
+                        "MT16",
+                        "MT17",
+                        "MT18"
+                    ],
+                    "text": "敌军剩余"
+                }
+            ]
         }
     ],
     "eachArrive": [],

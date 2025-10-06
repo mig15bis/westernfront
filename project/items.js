@@ -586,15 +586,15 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	},
 	"ft17": {
 		"cls": "equips",
-		"name": "雷诺FT17",
+		"name": "雷诺FT17机枪型",
 		"canUseItemEffect": "true",
-		"text": "攻10，穿5装3。",
+		"text": "攻10，穿10装22。\n被动：\n机枪：对步兵伤害+5%",
 		"equip": {
 			"type": 0,
 			"value": {
 				"atk": 10,
-				"arm": 3,
-				"ap": 5
+				"ap": 10,
+				"arm": 22
 			},
 			"percentage": {}
 		}
@@ -603,13 +603,13 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "哈奇开斯H35",
 		"canUseItemEffect": "true",
-		"text": "攻+20，穿20装5",
+		"text": "攻+20，穿26装24",
 		"equip": {
 			"type": 0,
 			"value": {
 				"atk": 20,
-				"arm": 5,
-				"ap": 20
+				"arm": 24,
+				"ap": 26
 			},
 			"percentage": {}
 		}
@@ -624,13 +624,13 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "十字军巡洋坦克",
 		"canUseItemEffect": "true",
-		"text": "攻+50，穿50，装20。\n被动技能：\n机动：我方被敌人单向击穿时，敌方先攻次数-2",
+		"text": "攻+50，穿52，装20。\n被动技能：\n机动：我方被敌人单向击穿时，敌方先攻次数-2",
 		"equip": {
 			"type": 0,
 			"value": {
 				"atk": 50,
-				"ap": 50,
-				"arm": 20
+				"arm": 20,
+				"ap": 52
 			},
 			"percentage": {}
 		}
@@ -1610,7 +1610,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	},
 	"p40c": {
 		"cls": "equips",
-		"name": "P40C战斧",
+		"name": "P40B战斧",
 		"canUseItemEffect": "true",
 		"text": "主武器：2×12.7mm和4×7.62mm机枪\n攻+30。挂载：2×100磅和1×500磅炸弹\n仅第2回合投弹，造成两次0.4倍攻击力的伤害和1次2倍攻击力的伤害",
 		"equip": {

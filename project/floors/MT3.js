@@ -23,8 +23,90 @@ main.floors.MT3=
             "name": "xinxinmagic.mp3"
         },
         "\t[系统提示]本层楼出现新道具：下午茶\\i[tea]和勋章\\i[medal]。",
-        "\t[系统提示]下午茶：相当于便携血瓶，每瓶恢复25%血量，快捷键为8。数量会显示在状态栏里面。\n勋章：全属性提升。",
-        "\t[系统提示]另外，你可能会发现，即便是在这样的陆战地图，也会有增加雷击值的橙色宝石出现。这个属性在当前区域用不上，但长远考虑，最好还是拿了。"
+        "\t[系统提示]下午茶\\i[tea]：相当于便携血瓶，每瓶恢复25%血量，快捷键为8。数量会显示在状态栏里面（可以点击状态栏以使用）。\n勋章\\i[medal]：全属性提升。",
+        "\t[系统提示]另外，你可能会发现，即便是在这样的陆战地图，也会有增加雷击值的橙色宝石出现。这个属性在当前区域用不上，但长远考虑，最好还是拿了。",
+        {
+            "type": "sleep",
+            "time": 500
+        },
+        {
+            "type": "showImage",
+            "code": 1,
+            "image": "teach2.png",
+            "sloc": [
+                0,
+                0,
+                null
+            ],
+            "loc": [
+                20,
+                102,
+                440,
+                275
+            ],
+            "opacity": 1,
+            "time": 500
+        },
+        {
+            "type": "wait"
+        },
+        {
+            "type": "hideImage",
+            "code": 1,
+            "time": 500
+        },
+        {
+            "type": "showImage",
+            "code": 1,
+            "image": "teach3.png",
+            "sloc": [
+                0,
+                0,
+                null
+            ],
+            "loc": [
+                20,
+                102,
+                440,
+                275
+            ],
+            "opacity": 1,
+            "time": 500
+        },
+        {
+            "type": "wait"
+        },
+        {
+            "type": "hideImage",
+            "code": 1,
+            "time": 500
+        },
+        {
+            "type": "showImage",
+            "code": 1,
+            "image": "teach4.png",
+            "sloc": [
+                0,
+                0,
+                null
+            ],
+            "loc": [
+                20,
+                102,
+                440,
+                275
+            ],
+            "opacity": 1,
+            "time": 500
+        },
+        {
+            "type": "wait"
+        },
+        {
+            "type": "hideImage",
+            "code": 1,
+            "time": 500
+        }
     ],
     "eachArrive": [],
     "parallelDo": "",

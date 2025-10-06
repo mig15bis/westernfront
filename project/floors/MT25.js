@@ -19,6 +19,11 @@ main.floors.MT25=
     "events": {
         "7,7": [
             {
+                "type": "setValue",
+                "name": "flag:第四关通关",
+                "value": "1"
+            },
+            {
                 "type": "unloadEquip",
                 "pos": 0
             },
@@ -47,24 +52,6 @@ main.floors.MT25=
                 "pos": 6
             },
             {
-                "type": "function",
-                "function": "function(){\nflags.mission[4][0]=true\n}"
-            },
-            {
-                "type": "if",
-                "condition": "(item:yellowKey>=15)",
-                "true": [
-                    {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[4][1]=true\n}"
-                    }
-                ]
-            },
-            {
-                "type": "function",
-                "function": "function(){\nflags.skillList=[0,0,0,0,0,0,0]\n}"
-            },
-            {
                 "type": "update"
             },
             {
@@ -72,7 +59,7 @@ main.floors.MT25=
                 "time": 500
             },
             {
-                "type": "hideStatusBar"
+                "type": "hideui"
             },
             {
                 "type": "update"
@@ -115,7 +102,7 @@ main.floors.MT25=
             },
             {
                 "type": "function",
-                "function": "function(){\nvar a = flags.mission[core.getFlag('stage')];\ncore.setFlag('@temp@A', a[0] + a[1] + a[2]);\n}"
+                "function": "function(){\nvar a = core.taskSystem.checkTask(0) ? 1 : 0,\n\tb = core.taskSystem.checkTask(1) ? 1 : 0,\n\tc = core.taskSystem.checkTask(2) ? 1 : 0;\ncore.setFlag('@temp@A', a + b + c);\n}"
             },
             {
                 "type": "if",
@@ -141,11 +128,6 @@ main.floors.MT25=
                             90
                         ],
                         "opacity": 1,
-                        "time": 500,
-                        "async": true
-                    },
-                    {
-                        "type": "sleep",
                         "time": 500
                     },
                     {
@@ -172,11 +154,6 @@ main.floors.MT25=
                                     90
                                 ],
                                 "opacity": 1,
-                                "time": 500,
-                                "async": true
-                            },
-                            {
-                                "type": "sleep",
                                 "time": 500
                             },
                             {
@@ -203,11 +180,6 @@ main.floors.MT25=
                                             90
                                         ],
                                         "opacity": 1,
-                                        "time": 500,
-                                        "async": true
-                                    },
-                                    {
-                                        "type": "sleep",
                                         "time": 500
                                     }
                                 ],
@@ -318,6 +290,9 @@ main.floors.MT25=
             },
             {
                 "type": "pauseBgm"
+            },
+            {
+                "type": "submitTask"
             },
             {
                 "type": "setValue",
@@ -728,19 +703,6 @@ main.floors.MT25=
             "1": null
         },
         "8,6": {
-            "0": {
-                "condition": "!core.hasEnemyLeft(undefined,['MT21','MT22','MT23','MT24','MT25'])",
-                "currentFloor": false,
-                "priority": 0,
-                "delayExecute": false,
-                "multiExecute": false,
-                "data": [
-                    {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[4][2]=true\n}"
-                    }
-                ]
-            },
             "1": null
         }
     },

@@ -328,6 +328,60 @@ main.floors.MT21=
         "\t[任务目标]⭐通过当前区域\n⭐通关时黄钥匙数量≥15\n⭐消灭所有敌人",
         {
             "type": "callBook"
+        },
+        {
+            "type": "setValue",
+            "name": "flag:第四关通关",
+            "value": "0"
+        },
+        {
+            "type": "setTask",
+            "name": "第四关任务1",
+            "n": 1,
+            "text": "通过当前区域",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "第四关通关",
+                    "operator": "=",
+                    "text": "抵达终点",
+                    "count": "1"
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第四关任务2",
+            "n": 1,
+            "text": "通关时黄钥匙数量≥15",
+            "info": [
+                {
+                    "type": "checkItem",
+                    "checkItem": "yellowKey",
+                    "operator": ">=",
+                    "text": "当前持有的“黄钥匙”",
+                    "count": 15
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第四关任务3",
+            "n": 1,
+            "text": "消灭所有敌人",
+            "info": [
+                {
+                    "type": "killAll",
+                    "floorId": [
+                        "MT21",
+                        "MT22",
+                        "MT23",
+                        "MT24",
+                        "MT25"
+                    ],
+                    "text": "敌军剩余"
+                }
+            ]
         }
     ],
     "eachArrive": [],

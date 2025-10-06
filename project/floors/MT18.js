@@ -223,6 +223,11 @@ main.floors.MT18=
     "events": {
         "1,1": [
             {
+                "type": "setValue",
+                "name": "flag:第三关通关",
+                "value": "1"
+            },
+            {
                 "type": "unloadEquip",
                 "pos": 0
             },
@@ -251,28 +256,10 @@ main.floors.MT18=
                 "pos": 6
             },
             {
-                "type": "function",
-                "function": "function(){\nflags.mission[3][0]=true\n}"
-            },
-            {
                 "type": "setValue",
                 "name": "item:matilda",
                 "operator": "-=",
                 "value": "1"
-            },
-            {
-                "type": "if",
-                "condition": "(item:tea>=10)",
-                "true": [
-                    {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[3][1]=true\n}"
-                    }
-                ]
-            },
-            {
-                "type": "function",
-                "function": "function(){\nflags.skillList=[0,0,0,0,0,0,0]\n}"
             },
             {
                 "type": "update"
@@ -282,7 +269,7 @@ main.floors.MT18=
                 "time": 500
             },
             {
-                "type": "hideStatusBar"
+                "type": "hideui"
             },
             {
                 "type": "update"
@@ -325,7 +312,7 @@ main.floors.MT18=
             },
             {
                 "type": "function",
-                "function": "function(){\nvar a = flags.mission[core.getFlag('stage')];\ncore.setFlag('@temp@A', a[0] + a[1] + a[2]);\n}"
+                "function": "function(){\nvar a = core.taskSystem.checkTask(0) ? 1 : 0,\n\tb = core.taskSystem.checkTask(1) ? 1 : 0,\n\tc = core.taskSystem.checkTask(2) ? 1 : 0;\ncore.setFlag('@temp@A', a + b + c);\n}"
             },
             {
                 "type": "if",
@@ -351,11 +338,6 @@ main.floors.MT18=
                             90
                         ],
                         "opacity": 1,
-                        "time": 500,
-                        "async": true
-                    },
-                    {
-                        "type": "sleep",
                         "time": 500
                     },
                     {
@@ -382,11 +364,6 @@ main.floors.MT18=
                                     90
                                 ],
                                 "opacity": 1,
-                                "time": 500,
-                                "async": true
-                            },
-                            {
-                                "type": "sleep",
                                 "time": 500
                             },
                             {
@@ -413,11 +390,6 @@ main.floors.MT18=
                                             90
                                         ],
                                         "opacity": 1,
-                                        "time": 500,
-                                        "async": true
-                                    },
-                                    {
-                                        "type": "sleep",
                                         "time": 500
                                     }
                                 ],
@@ -533,6 +505,9 @@ main.floors.MT18=
                 "type": "setValue",
                 "name": "flag:stage",
                 "value": "4"
+            },
+            {
+                "type": "submitTask"
             },
             {
                 "type": "confirm",
@@ -755,7 +730,7 @@ main.floors.MT18=
                             },
                             {
                                 "type": "text",
-                                "text": "\t[隆美尔]\f[rommel.png,0,310]敌人的坦克正逐渐减少……是88mm高射炮打的吗？高炮团，把88mm炮都拉过来！",
+                                "text": "\t[隆美尔]\f[rommel.png,0,310]88毫米高射炮的攻击效果最好，把它们都拉过来！",
                                 "pos": [
                                     100,
                                     300,
@@ -1068,19 +1043,6 @@ main.floors.MT18=
     "afterOpenDoor": {},
     "autoEvent": {
         "1,0": {
-            "0": {
-                "condition": "!core.hasEnemyLeft(undefined,['MT14','MT15','MT16','MT17','MT18'])",
-                "currentFloor": false,
-                "priority": 0,
-                "delayExecute": false,
-                "multiExecute": false,
-                "data": [
-                    {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[3][2]=true\n}"
-                    }
-                ]
-            },
             "1": null
         }
     },

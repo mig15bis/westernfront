@@ -3803,6 +3803,15 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 			name: '紧急补给',
 			cost: 100,
 			event: [{ "type": "setValue", "name": "status:hp", "operator": "+=", "value": "status:hpmax/4" }],
+			func: function () {
+				core.status.hero.hp += Math.floor(core.status.hero.hpmax / 4);
+				if (core.status.hero.hp > core.status.hero.hpmax) {
+					core.status.hero.hp = core.status.hero.hpmax;
+					core.drawHeroAnimate('hpfull');
+				} else {
+					core.drawHeroAnimate('heal');
+				}
+			},
 			description: '血量立即恢复25%'
 		},
 
@@ -3823,7 +3832,181 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 			event: [
 				{ "type": "setValue", "name": "flag:空战王牌", "value": "core.getBlockId(core.nextX(),core.nextY())" }, { "type": "if", "condition": "core.plugin.Luftwaffe.includes(core.material.enemys[flags.空战王牌]?.type)&&!core.material.enemys[flag:空战王牌].notBomb&&core.material.enemys[flags.空战王牌]?.type!=='导弹'&&!core.hasSpecial(flags['空战王牌'], 65)", "true": [{ "type": "playSound", "name": "fighter.mp3" }, { "type": "showImage", "code": 1, "image": "aircraft1.png", "loc": [643, "32*core.nextY()+16-125"], "opacity": 1, "time": 0 }, { "type": "moveImage", "code": 1, "to": [-195, "32*core.nextY()+16-125"], "time": 500, "async": true }, { "type": "battle", "loc": ["core.nextX()", "core.nextY()"] }, { "type": "waitAsync" }, { "type": "hideImage", "code": 1, "time": 0 }], "false": [{ "type": "tip", "text": "目标无法击杀！" }, { "type": "playSound", "name": "操作失败" }, { "type": "setValue", "name": "status:mana", "operator": "+=", "value": "100" }, { "type": "setValue", "name": "flag:空战王牌", "value": "null" }] }
 			],
-			description: '秒杀面前的非boss空军。如果无法秒杀对方，则改为“造成3倍攻击力的伤害”'
+			func: function () {
+				let X = core.nextX(),
+					Y = core.nextY(),
+					floorId = core.status.floorId,
+					范围伤害目标 = X + '，' + Y + '，' + floorId,
+					nextair = core.getBlockId(X, Y);
+				let todo = [];
+				if (core.isReplaying() || main.replayChecking) { //录像播放
+					if (nextair && core.getBlockCls(X, Y) === "enemys" && core.plugin.Luftwaffe.includes(core.material.enemys[nextair].type)) {
+						if (core.hasSpecial(nextair, 57)) {
+							hero.mana += 100;
+							core.drawTip("无法对敌方boss使用");
+						} else if (core.hasSpecial(nextair, 65)) {
+							if (flags.aoe[范围伤害目标]) {
+								flags.aoe[范围伤害目标] += core.getRealStatus('atk') * 3;
+							} else {
+								flags.aoe[范围伤害目标] = core.getRealStatus('atk') * 3;
+							}
+							if (core.getEnemyInfo(nextair, hero, X, Y, floorId).hp <= 0) {
+								let money = core.getEnemyValue(nextair, 'money', X, Y),
+									exp = core.getEnemyValue(nextair, 'exp', X, Y);
+								if (core.hasEquip('m4') || core.hasEquip('m4a2') || core.hasEquip('m4a3') || core.hasEquip('m4a3e2') || core.hasEquip('firefly')) money += 5; //谢馒头，触发在双倍前
+								if (core.hasEquip('classj')) money += 5; //J级驱逐舰
+								if (flags.warmachine === true) money *= 2; //工业潜能，金币翻倍，计算在下面几个之前
+								if (core.hasEquip('edinburgh')) money += 2; //爱丁堡号巡洋舰，金币+2
+								if (core.hasEquip('hood')) money += 10; //胡德号，金币+10
+								if (core.hasItem('coin')) money *= 2; // 幸运金币：双倍
+								if (core.hasSpecial(nextair, 61)) money = 0; // 投降
+								core.status.hero.money += money;
+								core.status.hero.statistics.money += money;
+								if (core.hasEquip('classv')) exp += 2; //V级驱逐舰
+								if (core.hasEquip('classj')) exp += 5; //J级驱逐舰
+								if (core.hasEquip('hood')) exp += 10; //胡德号，经验+10
+								if (core.hasEquip('m4a2') || core.hasEquip('m4a3') || core.hasEquip('m4a3e2') || core.hasEquip('firefly')) exp *= 2; //馒头
+								if (core.hasSpecial(nextair, 61)) exp = 0; // 投降
+								core.status.hero.exp += exp;
+								core.status.hero.statistics.exp += exp;
+								core.push(todo, core.floors[floorId].afterBattle[X + "," + Y]);
+								core.push(todo, core.material.enemys[nextair].afterBattle);
+								delete((flags.enemyOnPoint || {})[floorId] || {})[X + "," + Y];
+								delete flags.aoe[范围伤害目标];
+								core.removeBlock(X, Y);
+								core.insertAction(todo);
+							}
+						} else {
+							let money = core.getEnemyValue(nextair, 'money', X, Y),
+								exp = core.getEnemyValue(nextair, 'exp', X, Y);
+							if (core.hasEquip('m4') || core.hasEquip('m4a2') || core.hasEquip('m4a3') || core.hasEquip('m4a3e2') || core.hasEquip('firefly')) money += 5; //谢馒头，触发在双倍前
+							if (core.hasEquip('classj')) money += 5; //J级驱逐舰
+							if (flags.warmachine === true) money *= 2; //工业潜能，金币翻倍，计算在下面几个之前
+							if (core.hasEquip('edinburgh')) money += 2; //爱丁堡号巡洋舰，金币+2
+							if (core.hasEquip('hood')) money += 10; //胡德号，金币+10
+							if (core.hasItem('coin')) money *= 2; // 幸运金币：双倍
+							if (core.hasSpecial(nextair, 61)) money = 0; // 投降
+							core.status.hero.money += money;
+							core.status.hero.statistics.money += money;
+							if (core.hasEquip('classv')) exp += 2; //V级驱逐舰
+							if (core.hasEquip('classj')) exp += 5; //J级驱逐舰
+							if (core.hasEquip('hood')) exp += 10; //胡德号，经验+10
+							if (core.hasEquip('m4a2') || core.hasEquip('m4a3') || core.hasEquip('m4a3e2') || core.hasEquip('firefly')) exp *= 2; //馒头
+							if (core.hasSpecial(nextair, 61)) exp = 0; // 投降
+							core.status.hero.exp += exp;
+							core.status.hero.statistics.exp += exp;
+							core.push(todo, core.floors[floorId].afterBattle[X + "," + Y]);
+							core.push(todo, core.material.enemys[nextair].afterBattle);
+							delete((flags.enemyOnPoint || {})[floorId] || {})[X + "," + Y];
+							delete flags.aoe[范围伤害目标];
+							core.removeBlock(X, Y);
+							core.insertAction(todo);
+						}
+					} else {
+						hero.mana += 100;
+						core.drawTip("只能对空中目标使用");
+					}
+				} else { //正常执行
+					core.lockControl();
+					if (nextair && core.getBlockCls(X, Y) === "enemys" && core.plugin.Luftwaffe.includes(core.material.enemys[nextair].type)) {
+						if (core.hasSpecial(nextair, 57)) {
+							hero.mana += 100;
+							core.drawTip("无法对敌方boss使用");
+						} else if (core.hasSpecial(nextair, 65)) {
+							//动画
+							core.playSound('fighter.mp3');
+							core.showImage(1, 'aircraft1.png', null, [480, 32 * Y - 109], 1, 0, () => {
+								setTimeout(() => {
+									core.drawAnimate('shootair', X, Y);
+									if (flags.aoe[范围伤害目标]) {
+										flags.aoe[范围伤害目标] += core.getRealStatus('atk') * 3;
+									} else {
+										flags.aoe[范围伤害目标] = core.getRealStatus('atk') * 3;
+									}
+									if (core.getEnemyInfo(nextair, hero, X, Y, floorId).hp <= 0) {
+										core.playSound('crash2.mp3');
+										let money = core.getEnemyValue(nextair, 'money', X, Y),
+											exp = core.getEnemyValue(nextair, 'exp', X, Y);
+										if (core.hasEquip('m4') || core.hasEquip('m4a2') || core.hasEquip('m4a3') || core.hasEquip('m4a3e2') || core.hasEquip('firefly')) money += 5; //谢馒头，触发在双倍前
+										if (core.hasEquip('classj')) money += 5; //J级驱逐舰
+										if (flags.warmachine === true) money *= 2; //工业潜能，金币翻倍，计算在下面几个之前
+										if (core.hasEquip('edinburgh')) money += 2; //爱丁堡号巡洋舰，金币+2
+										if (core.hasEquip('hood')) money += 10; //胡德号，金币+10
+										if (core.hasItem('coin')) money *= 2; // 幸运金币：双倍
+										if (core.hasSpecial(nextair, 61)) money = 0; // 投降
+										core.status.hero.money += money;
+										core.status.hero.statistics.money += money;
+										if (core.hasEquip('classv')) exp += 2; //V级驱逐舰
+										if (core.hasEquip('classj')) exp += 5; //J级驱逐舰
+										if (core.hasEquip('hood')) exp += 10; //胡德号，经验+10
+										if (core.hasEquip('m4a2') || core.hasEquip('m4a3') || core.hasEquip('m4a3e2') || core.hasEquip('firefly')) exp *= 2; //馒头
+										if (core.hasSpecial(nextair, 61)) exp = 0; // 投降
+										core.status.hero.exp += exp;
+										core.status.hero.statistics.exp += exp;
+										core.push(todo, core.floors[floorId].afterBattle[X + "," + Y]);
+										core.push(todo, core.material.enemys[nextair].afterBattle);
+										delete((flags.enemyOnPoint || {})[floorId] || {})[X + "," + Y];
+										delete flags.aoe[范围伤害目标];
+										core.removeBlock(X, Y);
+									}
+								}, (18 - X) / 21 * 500);
+								core.moveImage(1, [-195, 32 * Y - 109], 1, null, 500, () => {
+									core.hideImage(1, 0);
+									if (todo.length > 0) {
+										core.insertAction(todo);
+									} else {
+										core.unlockControl();
+									}
+								})
+							});
+						} else {
+							core.playSound('fighter.mp3');
+							core.showImage(1, 'aircraft1.png', null, [480, 32 * Y - 109], 1, 0, () => {
+								setTimeout(() => {
+									core.drawAnimate('shootair', X, Y);
+									core.playSound('crash2.mp3');
+									let money = core.getEnemyValue(nextair, 'money', X, Y),
+										exp = core.getEnemyValue(nextair, 'exp', X, Y);
+									if (core.hasEquip('m4') || core.hasEquip('m4a2') || core.hasEquip('m4a3') || core.hasEquip('m4a3e2') || core.hasEquip('firefly')) money += 5; //谢馒头，触发在双倍前
+									if (core.hasEquip('classj')) money += 5; //J级驱逐舰
+									if (flags.warmachine === true) money *= 2; //工业潜能，金币翻倍，计算在下面几个之前
+									if (core.hasEquip('edinburgh')) money += 2; //爱丁堡号巡洋舰，金币+2
+									if (core.hasEquip('hood')) money += 10; //胡德号，金币+10
+									if (core.hasItem('coin')) money *= 2; // 幸运金币：双倍
+									if (core.hasSpecial(nextair, 61)) money = 0; // 投降
+									core.status.hero.money += money;
+									core.status.hero.statistics.money += money;
+									if (core.hasEquip('classv')) exp += 2; //V级驱逐舰
+									if (core.hasEquip('classj')) exp += 5; //J级驱逐舰
+									if (core.hasEquip('hood')) exp += 10; //胡德号，经验+10
+									if (core.hasEquip('m4a2') || core.hasEquip('m4a3') || core.hasEquip('m4a3e2') || core.hasEquip('firefly')) exp *= 2; //馒头
+									if (core.hasSpecial(nextair, 61)) exp = 0; // 投降
+									core.status.hero.exp += exp;
+									core.status.hero.statistics.exp += exp;
+									core.push(todo, core.floors[floorId].afterBattle[X + "," + Y]);
+									core.push(todo, core.material.enemys[nextair].afterBattle);
+									delete((flags.enemyOnPoint || {})[floorId] || {})[X + "," + Y];
+									delete flags.aoe[范围伤害目标];
+									core.removeBlock(X, Y);
+								}, (18 - X) / 21 * 500);
+								core.moveImage(1, [-195, 32 * Y - 109], 1, null, 500, () => {
+									core.hideImage(1, 0);
+									if (todo.length > 0) {
+										core.insertAction(todo)
+									} else {
+										core.unlockControl();
+									}
+								})
+							});
+						}
+					} else {
+						hero.mana += 100;
+						core.unlockControl();
+						core.drawTip("只能对空中目标使用");
+					}
+				}
+			},
+			description: '只能对面前的非boss空军使用，将其秒杀。如果无法秒杀对方，则效果改为“造成3倍攻击力的伤害”'
 		},
 
 		{ // 5
@@ -3865,6 +4048,17 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 					]
 				},
 			],
+			func: function () {
+				let 排雷 = core.getBlockId(core.nextX(), core.nextY());
+				if (['lavaNet', 'mine'].includes(排雷)) {
+					core.removeBlock(core.nextX(), core.nextY());
+					core.playSound('005-System05.mp3');
+				} else {
+					core.playSound('error.mp3');
+					hero.mana += 20;
+					core.drawTip('仅能对地雷或水雷使用');
+				}
+			},
 			description: '立即清除主角面前的地雷或水雷'
 		},
 
@@ -3872,8 +4066,124 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 			id: 8,
 			strategy: true,
 			name: '剑鱼818中队',
-			cost: 80,
+			cost: 150,
 			event: [],
+			func: function () {
+				let X = core.nextX(),
+					Y = core.nextY(),
+					floorId = core.status.floorId,
+					范围伤害目标 = X + '，' + Y + '，' + floorId,
+					next = core.getBlockId(X, Y);
+				let todo = [];
+				if (core.isReplaying() || main.replayChecking) { //录像播放
+					if (next && core.getBlockCls(X, Y) === "enemys" && core.plugin.Navy.includes(core.material.enemys[next].type) && core.material.enemys[next].type !== '潜艇') {
+						let dod = core.getEnemyInfo(next, hero, X, Y, floorId).dod;
+						if (flags.aoe[范围伤害目标]) {
+							if (core.hasSpecial(next, 35)) {
+								flags.aoe[范围伤害目标] += dod >= 5 ? hero.top : hero.top * (5 - dod);
+							} else {
+								flags.aoe[范围伤害目标] += hero.top * 5;
+							}
+						} else {
+							if (core.hasSpecial(next, 35)) {
+								flags.aoe[范围伤害目标] = dod >= 5 ? hero.top : hero.top * (5 - dod);
+							} else {
+								flags.aoe[范围伤害目标] = hero.top * 5;
+							}
+						}
+						if (core.getEnemyInfo(next, hero, X, Y, floorId).hp <= 0) {
+							let money = core.getEnemyValue(next, 'money', X, Y),
+								exp = core.getEnemyValue(next, 'exp', X, Y);
+							if (core.hasEquip('m4') || core.hasEquip('m4a2') || core.hasEquip('m4a3') || core.hasEquip('m4a3e2') || core.hasEquip('firefly')) money += 5; //谢馒头，触发在双倍前
+							if (core.hasEquip('classj')) money += 5; //J级驱逐舰
+							if (flags.warmachine === true) money *= 2; //工业潜能，金币翻倍，计算在下面几个之前
+							if (core.hasEquip('edinburgh')) money += 2; //爱丁堡号巡洋舰，金币+2
+							if (core.hasEquip('hood')) money += 10; //胡德号，金币+10
+							if (core.hasItem('coin')) money *= 2; // 幸运金币：双倍
+							if (core.hasSpecial(next, 61)) money = 0; // 投降
+							core.status.hero.money += money;
+							core.status.hero.statistics.money += money;
+							if (core.hasEquip('classv')) exp += 2; //V级驱逐舰
+							if (core.hasEquip('classj')) exp += 5; //J级驱逐舰
+							if (core.hasEquip('hood')) exp += 10; //胡德号，经验+10
+							if (core.hasEquip('m4a2') || core.hasEquip('m4a3') || core.hasEquip('m4a3e2') || core.hasEquip('firefly')) exp *= 2; //馒头
+							if (core.hasSpecial(next, 61)) exp = 0; // 投降
+							core.status.hero.exp += exp;
+							core.status.hero.statistics.exp += exp;
+							core.push(todo, core.floors[floorId].afterBattle[X + "," + Y]);
+							core.push(todo, core.material.enemys[next].afterBattle);
+							delete((flags.enemyOnPoint || {})[floorId] || {})[X + "," + Y];
+							delete flags.aoe[范围伤害目标];
+							core.removeBlock(X, Y);
+							core.insertAction(todo);
+						}
+					} else {
+						hero.mana += 150;
+						core.drawTip("只能对水面舰艇使用");
+					}
+				} else { //正常执行
+					core.lockControl();
+					if (next && core.getBlockCls(X, Y) === "enemys" && core.plugin.Navy.includes(core.material.enemys[next].type) && core.material.enemys[next].type !== '潜艇') {
+						let dod = core.getEnemyInfo(next, hero, X, Y, floorId).dod;
+						//动画
+						core.playSound('bomber2.mp3');
+						core.showImage(1, 'aircraft7.png', null, [480, 32 * Y - 109], 1, 0, () => {
+							setTimeout(() => {
+								core.drawAnimate('xinxinwater', X, Y);
+								if (flags.aoe[范围伤害目标]) {
+									if (core.hasSpecial(next, 35)) {
+										flags.aoe[范围伤害目标] += dod >= 5 ? hero.top : hero.top * (5 - dod);
+									} else {
+										flags.aoe[范围伤害目标] += hero.top * 5;
+									}
+								} else {
+									if (core.hasSpecial(next, 35)) {
+										flags.aoe[范围伤害目标] = dod >= 5 ? hero.top : hero.top * (5 - dod);
+									} else {
+										flags.aoe[范围伤害目标] = hero.top * 5;
+									}
+								}
+								if (core.getEnemyInfo(next, hero, X, Y, floorId).hp <= 0) {
+									let money = core.getEnemyValue(next, 'money', X, Y),
+										exp = core.getEnemyValue(next, 'exp', X, Y);
+									if (core.hasEquip('m4') || core.hasEquip('m4a2') || core.hasEquip('m4a3') || core.hasEquip('m4a3e2') || core.hasEquip('firefly')) money += 5; //谢馒头，触发在双倍前
+									if (core.hasEquip('classj')) money += 5; //J级驱逐舰
+									if (flags.warmachine === true) money *= 2; //工业潜能，金币翻倍，计算在下面几个之前
+									if (core.hasEquip('edinburgh')) money += 2; //爱丁堡号巡洋舰，金币+2
+									if (core.hasEquip('hood')) money += 10; //胡德号，金币+10
+									if (core.hasItem('coin')) money *= 2; // 幸运金币：双倍
+									if (core.hasSpecial(next, 61)) money = 0; // 投降
+									core.status.hero.money += money;
+									core.status.hero.statistics.money += money;
+									if (core.hasEquip('classv')) exp += 2; //V级驱逐舰
+									if (core.hasEquip('classj')) exp += 5; //J级驱逐舰
+									if (core.hasEquip('hood')) exp += 10; //胡德号，经验+10
+									if (core.hasEquip('m4a2') || core.hasEquip('m4a3') || core.hasEquip('m4a3e2') || core.hasEquip('firefly')) exp *= 2; //馒头
+									if (core.hasSpecial(next, 61)) exp = 0; // 投降
+									core.status.hero.exp += exp;
+									core.status.hero.statistics.exp += exp;
+									core.push(todo, core.floors[floorId].afterBattle[X + "," + Y]);
+									core.push(todo, core.material.enemys[next].afterBattle);
+									delete((flags.enemyOnPoint || {})[floorId] || {})[X + "," + Y];
+									delete flags.aoe[范围伤害目标];
+									core.removeBlock(X, Y);
+								}
+							}, (18 - X) / 21 * 500);
+							core.moveImage(1, [-195, 32 * Y - 109], 1, null, 500, () => {
+								core.hideImage(1, 0);
+								if (todo.length > 0) {
+									core.insertAction(todo);
+								} else {
+									core.unlockControl();
+								}
+							})
+						});
+					} else {
+						hero.mana += 150;
+						core.drawTip("只能对水面舰艇使用");
+					}
+				}
+			},
 			description: '对面前的敌军舰艇发射5枚鱼雷，且至少会命中1枚（潜艇除外），除造成正常的鱼雷伤害外，对手闪避鱼雷数-2。可重复空袭，但不会再降低对方的闪避'
 		},
 
@@ -3903,7 +4213,179 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 			event: [
 				{ "type": "setValue", "name": "flag:空中打击", "value": "core.getBlockId(core.nextX(),core.nextY())" }, { "type": "if", "condition": "['轻坦','中坦','重坦','坦歼'].includes(core.material.enemys[flag:空中打击]?.type)&&!core.material.enemys[flag:空中打击]?.notBomb&&!core.hasSpecial(flags['空中打击'], 65)", "true": [{ "type": "playSound", "name": "bomber3.mp3" }, { "type": "showImage", "code": 1, "image": "aircraft2.png", "loc": [643, "32*core.nextY()+16-125"], "opacity": 1, "time": 0 }, { "type": "moveImage", "code": 1, "to": [-195, "32*core.nextY()+16-125"], "time": 500, "async": true }, { "type": "battle", "loc": ["core.nextX()", "core.nextY()"] }, { "type": "waitAsync" }, { "type": "hideImage", "code": 1, "time": 0 }], "false": [{ "type": "tip", "text": "目标无法击杀！" }, { "type": "playSound", "name": "操作失败" }, { "type": "setValue", "name": "status:mana", "operator": "+=", "value": "200" }, { "type": "setValue", "name": "flag:空中打击", "value": "null" }] }
 			],
-			description: '秒杀面前的非boss坦克，如无法秒杀，改为“投掷一轮伤害为4倍攻击力的炸弹攻击”'
+			func: function () {
+				let X = core.nextX(),
+					Y = core.nextY(),
+					floorId = core.status.floorId,
+					范围伤害目标 = X + '，' + Y + '，' + floorId,
+					nextair = core.getBlockId(X, Y);
+				let todo = [];
+				if (core.isReplaying() || main.replayChecking) { //录像播放
+					if (nextair && core.getBlockCls(X, Y) === "enemys" && core.plugin.Army.includes(core.material.enemys[nextair].type)) {
+						if (core.hasSpecial(nextair, 57)) {
+							hero.mana += 200;
+							core.drawTip("无法对敌方boss使用");
+						} else if (!['轻坦', '中坦', '重坦', '坦歼'].includes(core.material.enemys[nextair].type) || core.hasSpecial(nextair, 65)) {
+							if (flags.aoe[范围伤害目标]) {
+								flags.aoe[范围伤害目标] += core.getRealStatus('atk') * 4;
+							} else {
+								flags.aoe[范围伤害目标] = core.getRealStatus('atk') * 4;
+							}
+							if (core.getEnemyInfo(nextair, hero, X, Y, floorId).hp <= 0) {
+								let money = core.getEnemyValue(nextair, 'money', X, Y),
+									exp = core.getEnemyValue(nextair, 'exp', X, Y);
+								if (core.hasEquip('m4') || core.hasEquip('m4a2') || core.hasEquip('m4a3') || core.hasEquip('m4a3e2') || core.hasEquip('firefly')) money += 5; //谢馒头，触发在双倍前
+								if (core.hasEquip('classj')) money += 5; //J级驱逐舰
+								if (flags.warmachine === true) money *= 2; //工业潜能，金币翻倍，计算在下面几个之前
+								if (core.hasEquip('edinburgh')) money += 2; //爱丁堡号巡洋舰，金币+2
+								if (core.hasEquip('hood')) money += 10; //胡德号，金币+10
+								if (core.hasItem('coin')) money *= 2; // 幸运金币：双倍
+								if (core.hasSpecial(nextair, 61)) money = 0; // 投降
+								core.status.hero.money += money;
+								core.status.hero.statistics.money += money;
+								if (core.hasEquip('classv')) exp += 2; //V级驱逐舰
+								if (core.hasEquip('classj')) exp += 5; //J级驱逐舰
+								if (core.hasEquip('hood')) exp += 10; //胡德号，经验+10
+								if (core.hasEquip('m4a2') || core.hasEquip('m4a3') || core.hasEquip('m4a3e2') || core.hasEquip('firefly')) exp *= 2; //馒头
+								if (core.hasSpecial(nextair, 61)) exp = 0; // 投降
+								core.status.hero.exp += exp;
+								core.status.hero.statistics.exp += exp;
+								core.push(todo, core.floors[floorId].afterBattle[X + "," + Y]);
+								core.push(todo, core.material.enemys[nextair].afterBattle);
+								delete((flags.enemyOnPoint || {})[floorId] || {})[X + "," + Y];
+								delete flags.aoe[范围伤害目标];
+								core.removeBlock(X, Y);
+								core.insertAction(todo);
+							}
+						} else {
+							let money = core.getEnemyValue(nextair, 'money', X, Y),
+								exp = core.getEnemyValue(nextair, 'exp', X, Y);
+							if (core.hasEquip('m4') || core.hasEquip('m4a2') || core.hasEquip('m4a3') || core.hasEquip('m4a3e2') || core.hasEquip('firefly')) money += 5; //谢馒头，触发在双倍前
+							if (core.hasEquip('classj')) money += 5; //J级驱逐舰
+							if (flags.warmachine === true) money *= 2; //工业潜能，金币翻倍，计算在下面几个之前
+							if (core.hasEquip('edinburgh')) money += 2; //爱丁堡号巡洋舰，金币+2
+							if (core.hasEquip('hood')) money += 10; //胡德号，金币+10
+							if (core.hasItem('coin')) money *= 2; // 幸运金币：双倍
+							if (core.hasSpecial(nextair, 61)) money = 0; // 投降
+							core.status.hero.money += money;
+							core.status.hero.statistics.money += money;
+							if (core.hasEquip('classv')) exp += 2; //V级驱逐舰
+							if (core.hasEquip('classj')) exp += 5; //J级驱逐舰
+							if (core.hasEquip('hood')) exp += 10; //胡德号，经验+10
+							if (core.hasEquip('m4a2') || core.hasEquip('m4a3') || core.hasEquip('m4a3e2') || core.hasEquip('firefly')) exp *= 2; //馒头
+							if (core.hasSpecial(nextair, 61)) exp = 0; // 投降
+							core.status.hero.exp += exp;
+							core.status.hero.statistics.exp += exp;
+							core.push(todo, core.floors[floorId].afterBattle[X + "," + Y]);
+							core.push(todo, core.material.enemys[nextair].afterBattle);
+							delete((flags.enemyOnPoint || {})[floorId] || {})[X + "," + Y];
+							delete flags.aoe[范围伤害目标];
+							core.removeBlock(X, Y);
+							core.insertAction(todo);
+						}
+					} else {
+						hero.mana += 200;
+						core.drawTip("只能对地面目标使用");
+					}
+				} else { //正常执行
+					core.lockControl();
+					if (nextair && core.getBlockCls(X, Y) === "enemys" && core.plugin.Army.includes(core.material.enemys[nextair].type)) {
+						if (core.hasSpecial(nextair, 57)) {
+							hero.mana += 200;
+							core.drawTip("无法对敌方boss使用");
+						} else if (!['轻坦', '中坦', '重坦', '坦歼'].includes(core.material.enemys[nextair].type) || core.hasSpecial(nextair, 65)) {
+							//动画
+							core.playSound('bomber3.mp3');
+							core.showImage(1, 'aircraft2.png', null, [480, 32 * Y - 109], 1, 0, () => {
+								setTimeout(() => {
+									core.drawAnimate('explore', X, Y);
+									if (flags.aoe[范围伤害目标]) {
+										flags.aoe[范围伤害目标] += core.getRealStatus('atk') * 3;
+									} else {
+										flags.aoe[范围伤害目标] = core.getRealStatus('atk') * 3;
+									}
+									if (core.getEnemyInfo(nextair, hero, X, Y, floorId).hp <= 0) {
+										let money = core.getEnemyValue(nextair, 'money', X, Y),
+											exp = core.getEnemyValue(nextair, 'exp', X, Y);
+										if (core.hasEquip('m4') || core.hasEquip('m4a2') || core.hasEquip('m4a3') || core.hasEquip('m4a3e2') || core.hasEquip('firefly')) money += 5; //谢馒头，触发在双倍前
+										if (core.hasEquip('classj')) money += 5; //J级驱逐舰
+										if (flags.warmachine === true) money *= 2; //工业潜能，金币翻倍，计算在下面几个之前
+										if (core.hasEquip('edinburgh')) money += 2; //爱丁堡号巡洋舰，金币+2
+										if (core.hasEquip('hood')) money += 10; //胡德号，金币+10
+										if (core.hasItem('coin')) money *= 2; // 幸运金币：双倍
+										if (core.hasSpecial(nextair, 61)) money = 0; // 投降
+										core.status.hero.money += money;
+										core.status.hero.statistics.money += money;
+										if (core.hasEquip('classv')) exp += 2; //V级驱逐舰
+										if (core.hasEquip('classj')) exp += 5; //J级驱逐舰
+										if (core.hasEquip('hood')) exp += 10; //胡德号，经验+10
+										if (core.hasEquip('m4a2') || core.hasEquip('m4a3') || core.hasEquip('m4a3e2') || core.hasEquip('firefly')) exp *= 2; //馒头
+										if (core.hasSpecial(nextair, 61)) exp = 0; // 投降
+										core.status.hero.exp += exp;
+										core.status.hero.statistics.exp += exp;
+										core.push(todo, core.floors[floorId].afterBattle[X + "," + Y]);
+										core.push(todo, core.material.enemys[nextair].afterBattle);
+										delete((flags.enemyOnPoint || {})[floorId] || {})[X + "," + Y];
+										delete flags.aoe[范围伤害目标];
+										core.removeBlock(X, Y);
+									}
+								}, (18 - X) / 21 * 500);
+								core.moveImage(1, [-195, 32 * Y - 109], 1, null, 500, () => {
+									core.hideImage(1, 0);
+									if (todo.length > 0) {
+										core.insertAction(todo);
+									} else {
+										core.unlockControl();
+									}
+								})
+							});
+						} else {
+							core.playSound('bomber3.mp3');
+							core.showImage(1, 'aircraft2.png', null, [480, 32 * Y - 109], 1, 0, () => {
+								setTimeout(() => {
+									core.drawAnimate('vehicleexplore', X, Y);
+									let money = core.getEnemyValue(nextair, 'money', X, Y),
+										exp = core.getEnemyValue(nextair, 'exp', X, Y);
+									if (core.hasEquip('m4') || core.hasEquip('m4a2') || core.hasEquip('m4a3') || core.hasEquip('m4a3e2') || core.hasEquip('firefly')) money += 5; //谢馒头，触发在双倍前
+									if (core.hasEquip('classj')) money += 5; //J级驱逐舰
+									if (flags.warmachine === true) money *= 2; //工业潜能，金币翻倍，计算在下面几个之前
+									if (core.hasEquip('edinburgh')) money += 2; //爱丁堡号巡洋舰，金币+2
+									if (core.hasEquip('hood')) money += 10; //胡德号，金币+10
+									if (core.hasItem('coin')) money *= 2; // 幸运金币：双倍
+									if (core.hasSpecial(nextair, 61)) money = 0; // 投降
+									core.status.hero.money += money;
+									core.status.hero.statistics.money += money;
+									if (core.hasEquip('classv')) exp += 2; //V级驱逐舰
+									if (core.hasEquip('classj')) exp += 5; //J级驱逐舰
+									if (core.hasEquip('hood')) exp += 10; //胡德号，经验+10
+									if (core.hasEquip('m4a2') || core.hasEquip('m4a3') || core.hasEquip('m4a3e2') || core.hasEquip('firefly')) exp *= 2; //馒头
+									if (core.hasSpecial(nextair, 61)) exp = 0; // 投降
+									core.status.hero.exp += exp;
+									core.status.hero.statistics.exp += exp;
+									core.push(todo, core.floors[floorId].afterBattle[X + "," + Y]);
+									core.push(todo, core.material.enemys[nextair].afterBattle);
+									delete((flags.enemyOnPoint || {})[floorId] || {})[X + "," + Y];
+									delete flags.aoe[范围伤害目标];
+									core.removeBlock(X, Y);
+								}, (18 - X) / 21 * 500);
+								core.moveImage(1, [-195, 32 * Y - 109], 1, null, 500, () => {
+									core.hideImage(1, 0);
+									if (todo.length > 0) {
+										core.insertAction(todo)
+									} else {
+										core.unlockControl();
+									}
+								})
+							});
+						}
+					} else {
+						hero.mana += 200;
+						core.unlockControl();
+						core.drawTip("只能对地面目标使用");
+					}
+				}
+			},
+			description: '只能对面前的非boss地面部队使用。如果是坦克，则直接将其摧毁；如果无法摧毁，改为投掷一轮伤害为4倍攻击力的炸弹攻击'
 		},
 
 		{ // 12
@@ -4594,5 +5076,59 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 		core.ui.statusBar.showmetheui()
 		core.doAction()
 	})
+},
+    "战后动画": function () {
+	// 在此增加新插件
+	this.battleAnimate = {
+		步兵: "shoot",
+		轻坦: "vehicleexplore",
+		中坦: "vehicleexplore",
+		坦歼: "vehicleexplore",
+		重坦: "vehicleexplore",
+		反坦克炮: "vehicleexplore",
+		榴弹炮: "vehicleexplore",
+		高射炮: "flak",
+		建筑: "zone",
+		潜艇: "xinxinwater",
+		驱逐: "xinxinwater",
+		轻巡: "xinxinwater",
+		重巡: "xinxinwater",
+		战列: "xinxinwater",
+		商船: "xinxinwater",
+		战斗机: "shootair",
+		重型战斗机: "shootair",
+		俯冲轰炸机: "shootair",
+		鱼雷轰炸机: "shootair",
+		中型轰炸机: "shootair",
+		导弹: "explore3"
+	};
+	this.battleSound = {
+		步兵: "",
+		轻坦: "move2.mp3",
+		中坦: "move2.mp3",
+		坦歼: "move2.mp3",
+		重坦: "move3.mp3",
+		反坦克炮: "bomb.mp3",
+		榴弹炮: "zone2.mp3",
+		高射炮: "bomb.mp3",
+		建筑: "",
+		潜艇: "Sonar.wav",
+		驱逐: "",
+		轻巡: "",
+		重巡: "seabattle.mp3",
+		战列: "seabattle.mp3",
+		商船: "",
+		战斗机1: "fighter.mp3",
+		战斗机2: "crash2.mp3",
+		重型战斗机1: "fighter.mp3",
+		重型战斗机2: "crash2.mp3",
+		俯冲轰炸机1: "stukadive.mp3",
+		俯冲轰炸机2: "crash2.mp3",
+		鱼雷轰炸机1: "bomber1.mp3",
+		鱼雷轰炸机2: "crash2.mp3",
+		中型轰炸机1: "bomber1.mp3",
+		中型轰炸机2: "crash2.mp3",
+		导弹: "v_jet_pass.mp3"
+	};
 }
 }

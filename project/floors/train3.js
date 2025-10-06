@@ -173,10 +173,10 @@ main.floors.train3=
                 "type": "pauseBgm"
             },
             {
-                "type": "hideStatusBar"
+                "type": "update"
             },
             {
-                "type": "update"
+                "type": "hideui"
             },
             {
                 "type": "setHeroOpacity",

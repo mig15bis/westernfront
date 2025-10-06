@@ -18,7 +18,6 @@ main.floors.MT40=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        
         {
             "type": "update"
         },
@@ -29,6 +28,9 @@ main.floors.MT40=
         {
             "type": "sleep",
             "time": 500
+        },
+        {
+            "type": "showui"
         }
     ],
     "eachArrive": [],

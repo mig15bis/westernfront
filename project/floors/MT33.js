@@ -30,6 +30,9 @@ main.floors.MT33=
             "time": 500
         },
         {
+            "type": "showui"
+        },
+        {
             "type": "playSound",
             "name": "xinxinmagic.mp3"
         },
@@ -159,7 +162,7 @@ main.floors.MT33=
                 "type": "playSound",
                 "name": "xinxinmagic.mp3"
             },
-            "\t[系统提示]当前区域敌人特点：只有空军，轰炸机数量较多\n推荐携带技能：紧急补给、防空弹幕\n推荐出战装备：飓风MK1"
+            "\t[系统提示]当前区域敌人特点：只有空军，轰炸机数量较多\n推荐携带技能：紧急补给、防空弹幕\n推荐出战装备：喷火MK1"
         ]
     },
     "changeFloor": {},

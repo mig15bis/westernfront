@@ -91,6 +91,9 @@ main.floors.prepare1=
             "time": 500
         },
         {
+            "type": "showui"
+        },
+        {
             "type": "sleep",
             "time": 500
         },

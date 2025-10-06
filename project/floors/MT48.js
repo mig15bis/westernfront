@@ -28,16 +28,15 @@ main.floors.MT48=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        
         {
             "type": "setCurtain",
             "time": 500
         },
         "\r[yellow]Mission 8 燃烧的天空",
         "\t[地面指挥部]红色长机，收到请回答！",
-        "\t[盟军指挥官,hero]我听着呢！有事快点说，天上到处都是德国佬！",
+        "\t[盟军指挥官,hero]收到，请讲。",
         "\t[地面指挥部]赶快干掉这附近所有的轰炸机，不然等他们飞到机场，我们都得玩完！",
-        "\t[盟军指挥官,hero]我知道！没其他事了就别分散我们注意力！",
+        "\t[盟军指挥官,hero]明白！",
         "\t[系统提示]敌人战力重置中",
         {
             "type": "setEnemy",
@@ -148,9 +147,66 @@ main.floors.MT48=
             "type": "playSound",
             "name": "xinxinmagic.mp3"
         },
+        {
+            "type": "setValue",
+            "name": "flag:第八关通关",
+            "value": "0"
+        },
         "\t[任务目标]⭐通过当前区域\n⭐击落所有轰炸机\n⭐友军剩余血量大于20000",
         {
             "type": "callBook"
+        },
+        {
+            "type": "setTask",
+            "name": "第八关任务1",
+            "n": 1,
+            "text": "通过当前区域",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "第八关通关",
+                    "operator": "=",
+                    "text": "抵达终点",
+                    "count": "1"
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第八关任务2",
+            "n": 1,
+            "text": "击落所有轰炸机",
+            "info": [
+                {
+                    "type": "checkEnemyType",
+                    "checkEnemyType": "中型轰炸机",
+                    "floorId": [
+                        "MT48",
+                        "MT49",
+                        "MT50",
+                        "MT51",
+                        "MT52"
+                    ],
+                    "operator": "<=",
+                    "text": "剩余的轰炸机",
+                    "count": 0
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第八关任务3",
+            "n": 1,
+            "text": "友军剩余血量大于20000",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "友军血量",
+                    "operator": ">=",
+                    "text": "友军血量剩余",
+                    "count": "20000"
+                }
+            ]
         },
         {
             "type": "playSound",
@@ -250,7 +306,8 @@ main.floors.MT48=
                         ]
                     }
                 ]
-            }
+            },
+            "1": null
         }
     },
     "cannotMove": {},

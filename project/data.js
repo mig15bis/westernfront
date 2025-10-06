@@ -910,6 +910,16 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"tassigne.png",
 			"tbd.jpg",
 			"tbf.jpg",
+			"teach1.png",
+			"teach10.png",
+			"teach2.png",
+			"teach3.png",
+			"teach4.png",
+			"teach5.png",
+			"teach6.png",
+			"teach7.png",
+			"teach8.png",
+			"teach9.png",
 			"tirpitzsunk.jpg",
 			"title1.png",
 			"title10.png",
@@ -1383,6 +1393,9 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 				"type": "hideui"
 			},
 			{
+				"type": "pauseBgm"
+			},
+			{
 				"type": "setText",
 				"position": "down",
 				"offset": 10,
@@ -1797,7 +1810,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 				"name": "flag:itemDetail",
 				"value": "true"
 			},
-			"\t[系统提示]本游戏目前为测试版，手机端玩家可以先尝试横屏，如果横屏仍然不能正常游戏，那就是仅支持PC端游玩。本游戏无任何盈利成分，如果您在游玩之前或过程中被要求氪金或开会员，那么请前往https://h5mota.com寻找正版游戏。大部分音频和图片素材均非原创，素材来源将在游戏中注明，侵权必删（除非忘写了）。如发现任何疑似bug的情况，请在评论区向作者反馈。",
+			"\t[系统提示]本游戏已完结，现已支持手机与PC双端游玩。本游戏无任何盈利成分，如果您在游玩之前或过程中被要求氪金或开会员，那么请前往https://h5mota.com寻找正版游戏（需先注册账号）。大部分音频和图片素材均非原创，素材来源将在游戏中注明，侵权必删（除非忘写了）。如发现任何疑似bug的情况，请在评论区向作者反馈。",
 			{
 				"type": "function",
 				"function": "function(){\ncore.addItem('book');core.addItem('fly');core.addItem('wand')\n}"
@@ -1805,10 +1818,6 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			{
 				"type": "sleep",
 				"time": 500
-			},
-			{
-				"type": "function",
-				"function": "function(){\nflags.mission = eval('[' + '[false,false,false],'.repeat(100) + ']')\n}"
 			},
 			"1918年，第一次世界大战终于以德国的战败而告终。",
 			"但，那似乎也是悲剧的开端。",
@@ -1845,7 +1854,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 				"disablePreview": true,
 				"choices": [
 					{
-						"text": "雷诺FT17（100）",
+						"text": "雷诺FT17机枪型（100）",
 						"need": "true",
 						"icon": "ft17",
 						"condition": "!core.hasEquip('ft17')&&!core.hasItem('ft17')",
@@ -1855,7 +1864,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"text": "新版商店中需要手动扣减金币和增加访问次数"
 							},
 							"\f[ft17.jpg,90,50]法国雷诺FT-17轻型坦克于第一次世界大战时期研制成功。它是世界上第一种装有可360度旋转炮塔的坦克，而且动力舱后置、车体前设驾驶席，这种设计自那以后就成了坦克设计的标配，直到现在。虽然雷诺坦克具有划时代的意义，但到了二战开始时，它们已经过时，在德军新型坦克面前不堪一击。",
-							"\f[ft17.jpg,90,50]装备属性：攻击+10，5穿甲，3装甲",
+							"\f[ft17.jpg,90,50]装备属性：攻击+10，10穿甲，22装甲。\n被动：\n机枪：对步兵伤害+5%。",
 							{
 								"type": "confirm",
 								"text": "确定购买？",
@@ -1899,7 +1908,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						"condition": "!core.hasEquip('h35')&&!core.hasItem('h35')",
 						"action": [
 							"\f[h35.jpg,90,50]哈奇开斯H35是法国在1934年研发的轻型坦克。作为一款步兵支援坦克，其火炮穿甲能力和机动性都很差，无法与敌军坦克正面对抗。法国战役结束后，绝大多数H35都被德军缴获，为敌人效力。",
-							"\f[h35.jpg,90,50]装备属性：攻击+20，20穿甲，5装甲",
+							"\f[h35.jpg,90,50]装备属性：攻击+20，26穿甲，24装甲",
 							{
 								"type": "confirm",
 								"text": "确定购买？",
@@ -2078,7 +2087,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 				"disablePreview": true,
 				"choices": [
 					{
-						"text": "P40C“战斧”式战斗机（350）",
+						"text": "P40B“战斧”式战斗机（350）",
 						"need": "true",
 						"icon": "p40c",
 						"condition": "!core.hasEquip('p40c')&&!core.hasItem('p40c')",
@@ -2481,7 +2490,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"text": "新版商店中需要手动扣减金币和增加访问次数"
 							},
 							"\f[crusades.jpg,90,50]十字军是二战早期的英国巡洋坦克。十字军坦克车体相对较轻，速度可达45km/h，配备一门QF2磅炮（40mm口径）。在北非战役中，十字军坦克充当着轻骑兵的角色，凭借机动优势袭扰敌方侧翼。但这种坦克的缺陷也很明显，装甲薄弱，故障率高，早期型的2磅炮威力也不太够，直到改进型配备了6磅炮（57mm）才有所好转。北非战役结束后，其他新型坦克代替十字军成为装甲主力，十字军则在改造后担任防空、侦察等任务。",
-							"\f[crusades.jpg,90,50]装备属性：攻+50，穿50，装20。\n被动技能：\n机动：我方被敌人单向击穿时，敌方先攻次数-2",
+							"\f[crusades.jpg,90,50]装备属性：攻+50，穿52，装20。\n被动技能：\n机动：我方被敌人单向击穿时，敌方先攻次数-2",
 							{
 								"type": "confirm",
 								"text": "确定购买？",

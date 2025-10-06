@@ -19,6 +19,11 @@ main.floors.MT52=
     "events": {
         "7,14": [
             {
+                "type": "setValue",
+                "name": "flag:第八关通关",
+                "value": "1"
+            },
+            {
                 "type": "unloadEquip",
                 "pos": 0
             },
@@ -47,24 +52,6 @@ main.floors.MT52=
                 "pos": 6
             },
             {
-                "type": "function",
-                "function": "function(){\nflags.mission[8][0]=true\n}"
-            },
-            {
-                "type": "if",
-                "condition": "(flag:友军血量>=20000)",
-                "true": [
-                    {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[8][2]=true\n}"
-                    }
-                ]
-            },
-            {
-                "type": "function",
-                "function": "function(){\nflags.skillList=[0,0,0,0,0,0,0]\n}"
-            },
-            {
                 "type": "update"
             },
             {
@@ -72,7 +59,7 @@ main.floors.MT52=
                 "time": 500
             },
             {
-                "type": "hideStatusBar"
+                "type": "hideui"
             },
             {
                 "type": "update"
@@ -115,7 +102,7 @@ main.floors.MT52=
             },
             {
                 "type": "function",
-                "function": "function(){\nvar a = flags.mission[core.getFlag('stage')];\ncore.setFlag('@temp@A', a[0] + a[1] + a[2]);\n}"
+                "function": "function(){\nvar a = core.taskSystem.checkTask(0) ? 1 : 0,\n\tb = core.taskSystem.checkTask(1) ? 1 : 0,\n\tc = core.taskSystem.checkTask(2) ? 1 : 0;\ncore.setFlag('@temp@A', a + b + c);\n}"
             },
             {
                 "type": "if",
@@ -141,11 +128,6 @@ main.floors.MT52=
                             90
                         ],
                         "opacity": 1,
-                        "time": 500,
-                        "async": true
-                    },
-                    {
-                        "type": "sleep",
                         "time": 500
                     },
                     {
@@ -172,11 +154,6 @@ main.floors.MT52=
                                     90
                                 ],
                                 "opacity": 1,
-                                "time": 500,
-                                "async": true
-                            },
-                            {
-                                "type": "sleep",
                                 "time": 500
                             },
                             {
@@ -203,11 +180,6 @@ main.floors.MT52=
                                             90
                                         ],
                                         "opacity": 1,
-                                        "time": 500,
-                                        "async": true
-                                    },
-                                    {
-                                        "type": "sleep",
                                         "time": 500
                                     }
                                 ],
@@ -318,6 +290,9 @@ main.floors.MT52=
             },
             {
                 "type": "pauseBgm"
+            },
+            {
+                "type": "submitTask"
             },
             {
                 "type": "setValue",
@@ -445,19 +420,6 @@ main.floors.MT52=
     "afterOpenDoor": {},
     "autoEvent": {
         "6,14": {
-            "0": {
-                "condition": "core.maps.searchBlockWithFilter(x=>['中型轰炸机'].includes(core.material.enemys[x?.event?.id]?.type),['MT48','MT49','MT50','MT51','MT52']).length===0",
-                "currentFloor": false,
-                "priority": 0,
-                "delayExecute": false,
-                "multiExecute": false,
-                "data": [
-                    {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[8][1]=true\n}"
-                    }
-                ]
-            },
             "1": null
         }
     },

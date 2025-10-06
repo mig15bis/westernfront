@@ -55,6 +55,9 @@ main.floors.train1=
             ],
             "no": [
                 {
+                    "type": "showui"
+                },
+                {
                     "type": "setValue",
                     "name": "status:hp",
                     "value": "500"
@@ -91,7 +94,7 @@ main.floors.train1=
                 },
                 {
                     "type": "text",
-                    "text": "\t[奥金莱克]\f[auchinleck.png,0,310]本游戏的操作方式与常规魔塔游戏相同，但或许你已经发现了，右侧的状态栏里有很多以前不认识的名词。",
+                    "text": "\t[奥金莱克]\f[auchinleck.png,0,310]本游戏的操作方式与常规魔塔游戏相同，但或许你已经发现了，状态栏里有很多以前不认识的名词。",
                     "pos": [
                         100,
                         300,

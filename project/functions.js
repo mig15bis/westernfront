@@ -329,76 +329,24 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 
 	// 播放战斗音效和动画
 	// 默认播放的动画；你也可以使用
-	var animate = 'hand'; // 默认动画
-	// 检查当前装备是否存在攻击动画
-	var equipId = core.getEquip(0);
-	if (equipId && (core.material.items[equipId].equip || {}).animate)
-		animate = core.material.items[equipId].equip.animate;
-	// 你也可以在这里根据自己的需要，比如enemyId或special或flag来修改播放的动画效果
-	// if (enemyId == '...') animate = '...';
-	if (type === '步兵') {
-		animate = 'shoot';
+	let animate = core.plugin.battleAnimate[type]; // 默认动画
+	let sound = "";
+	if (['战斗机', '重型战斗机', '俯冲轰炸机', '鱼雷轰炸机', '中型轰炸机'].includes(type)) {
+		let random = Math.random() < 0.4 ? 2 : 1;
+		sound = core.plugin.battleSound[type + random];
+	} else {
+		sound = core.plugin.battleSound[type];
 	}
-	if (type === '轻坦' || type === '中坦' || type === '坦歼') {
-		animate = 'vehicleexplore';
-		if (flags.closesound !== true)
-			core.playSound("move2.mp3");
+	//播放音效
+	if (!flags.closesound && sound) {
+		core.playSound(sound);
 	}
-	if (type === '重坦') {
-		animate = 'vehicleexplore';
-		if (flags.closesound !== true)
-			core.playSound("move3.mp3");
-	}
-	if (type === '反坦克炮' || type === '榴弹炮' || type === '高射炮') {
-		animate = "vehicleexplore";
-		if (flags.closesound !== true)
-			core.playSound("bomb.mp3");
-	}
-	if (type === '建筑') {
-		animate = 'zone';
-	}
-	if (type === '潜艇') {
-		animate = 'xinxinwater';
-		if (flags.closesound !== true)
-			core.playSound("Sonar.wav");
-	}
-	if (type === '驱逐' || type === '轻巡' || type === '重巡' || type === '战列' || type === '商船') {
-		animate = "xinxinwater";
-	}
-	if (type === '重巡' || type === '战列') {
-		core.playSound("seabattle.mp3");
-	}
-	if (type === '战斗机' || type === '重型战斗机') {
-		animate = "shootair";
-		if (flags.closesound !== true)
-			core.playSound("fighter.mp3");
-	}
-	if (type === '俯冲轰炸机') {
-		animate = "shootair";
-		if (flags.closesound !== true)
-			core.playSound("stukadive.mp3");
-	}
-	if (type === '鱼雷轰炸机' || type === '中型轰炸机') {
-		animate = "shootair";
-		if (flags.closesound !== true)
-			core.playSound("bomber1.mp3");
-	}
-	if (type === '导弹') {
-		animate = "explore2";
-		core.drawHeroAnimate("explore3");
-		if (flags.closesound !== true)
-			core.playSound("v_jet_pass.mp3");
-	}
-
-	// 检查该动画是否存在SE，如果不存在则使用默认音效
-	if (!(core.material.animates[animate] || {}).se)
-		core.playSound('attack.mp3');
-
 	// 播放动画；如果不存在坐标（强制战斗）则播放到勇士自身
-	if (x != null && y != null)
+	if (x != null && y != null && type !== '导弹') {
 		core.drawAnimate(animate, x, y);
-	else
+	} else {
 		core.drawHeroAnimate(animate);
+	}
 
 	// 获得战斗伤害信息
 	var damageInfo = core.getDamageInfo(enemyId, null, x, y) || {};
@@ -681,6 +629,9 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		if (core.status.hero.def < 0) core.status.hero.def = 0;
 	}
 	// 谍报
+	if (flags.spy) { //消buff
+		flags.spy -= 1;
+	}
 	if (core.hasSpecial(special, 41)) {
 		flags.spy = (flags.spy ?? 0) + 1;
 	}
@@ -1195,6 +1146,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		mon_top *= (1 + top_buff / 100);
 		mon_bom *= (1 + bom_buff / 100);
 	}
+	mon_hp -= flags.aoe[x + '，' + y + '，' + floorId] || 0;
 
 	// TODO：可以在这里新增其他的怪物数据变化
 	// 比如仿攻（怪物攻击不低于勇士攻击）：
@@ -1404,7 +1356,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 
 	//空军特判
 	else {
-		if (flags.skill === 3) { //防空弹幕
+		if (flags.skill === 3 && !flags.spy) { //防空弹幕
 			yongshi.atk *= 1.2;
 		}
 		if (fb === 'mosquito' && isfighter && !core.hasSpecial(mon_special, 73)) { //蚊子·木制奇迹
@@ -1477,11 +1429,11 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			}
 		}
 	}
-	if (flags.skill === 5) { //技能5：预警
+	if (flags.skill === 5 && !flags.spy) { //技能5：预警
 		guaiwu.tpn = Math.max(0, guaiwu.tpn - 6)
-	} else if (flags.skill === 6) { //技能6：Z字规避
+	} else if (flags.skill === 6 && !flags.spy) { //技能6：Z字规避
 		guaiwu.tpn = Math.max(0, guaiwu.tpn - 3)
-	} else if (flags.skill === 12) { //从海底出击
+	} else if (flags.skill === 12 && !flags.spy) { //从海底出击
 		guaiwu.hp -= yongshi.top * Math.max(1, 8 - guaiwu.dod);
 	}
 	//战斗伤害计算
@@ -1515,7 +1467,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		if (core.searchBlockWithFilter(block => {
 				if (!block || !block.event.cls.startsWith("enemy"))
 					return false;
-				if (!core.hasSpecial(block.event.special, 57))
+				if (!core.hasSpecial(block.event.id, 57))
 					return true;
 			}).length > 0) {
 			return null;
@@ -1613,6 +1565,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		nodud = flags.引信改良 || core.hasItem('hard1'),
 		topwork = nodud || !(['mahan', 'benson', 'flecher'].includes(dd) || ca === "cleveland"),
 		havecv = ['eagle', 'illus1941', 'illustrious', 'raider', 'essex', 'enterprise'].includes(bb),
+		ft17 = (tk === 'ft17' && mon_skillNum.type === '步兵') ? 1.05 : 1,
 		independencefly = core.hasItem('independence') && !havecv,
 		swordfish = ['eagle', 'illus1941', 'illustrious'].includes(bb),
 		hvar = ['步兵', '反坦克炮', '榴弹炮', '高射炮', '驱逐舰'].includes(mon_skillNum.type),
@@ -2005,9 +1958,10 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 
 		//普攻
 		if (a === 0) { //地面战允许普攻时
-			hero_common += hero_atk;
+			hero_common += yongshi.atk;
 		}
 		hero_common *= 杀伤榴弹; //谢馒头榴弹
+		hero_common *= ft17; //雷诺FT17机枪
 		if (ff === 'hurricanemk1') { //飓风MK1
 			if (isbomber) {
 				hero_common += 80;
@@ -2218,7 +2172,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 
 		//怪物回合
 		if (b === 0) {
-			if (flags.skill === 9 && junzhong === "陆军" && turn <= 7) { //抵抗运动
+			if (flags.skill === 9 && junzhong === "陆军" && turn <= 7 && !flags.spy) { //抵抗运动
 				guaiwu.atk -= mon_atk * 0.1;
 			}
 			mon_common += guaiwu.atk;
@@ -2319,13 +2273,13 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		if (core.hasSpecial(block.event.special, 42) || core.hasSpecial(block.event.special, 39))
 			return true;
 	}
-	if (flags.skill === 14) { //补给线
+	if (flags.skill === 14 && !flags.spy) { //补给线
 		yongshi.mdef *= 10;
 	}
-	if (flags.skill === 5) { //预警
+	if (flags.skill === 5 && !flags.spy) { //预警
 		finalDamage *= 0.7;
 	}
-	if (flags.skill === 10) { //破译
+	if (flags.skill === 10 && !flags.spy) { //破译
 		finalDamage *= 0.8;
 	}
 	if ((tk === 'matilda' || tk === 'm3grant') && hero_arm > mon_ap) { //马蒂尔达 压制
@@ -2334,7 +2288,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	if (junzhong === "陆军" && hero_ap <= mon_arm && hero_arm >= mon_ap && tk === 'm4a3e2') {
 		finalDamage *= 0.8;
 	}
-	if (flags.skill === 1 && junzhong === "陆军") { //战壕
+	if (flags.skill === 1 && junzhong === "陆军" && !flags.spy) { //战壕
 		finalDamage *= 0.9;
 	}
 	if (flags.dry) {
@@ -2487,16 +2441,15 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 						core.insertAction(info.event);
 					}
 				}
-			else
-			if (hero.mana < info.cost) {
-				core.playSound('error.mp3');
-				core.drawTip('指挥点不足，无法启用战术指令' + info.name);
-			} else if ((flags.spy ?? 0) > 0) {
-				flags.spy--;
-			} else {
-				flags.skill = info.id;
-			}
+			else {
+				if (hero.mana < info.cost) {
+					core.playSound('error.mp3');
+					core.drawTip('指挥点不足，无法启用战术指令' + info.name);
+				} else {
+					flags.skill = info.id;
+				}
 
+			}
 		}
 		core.updateStatusBar(true, true);
 	}
@@ -2626,6 +2579,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	// TODO：增加自己的一些读档处理
 	core.taskSystem.load(data.tasksInfo);
 	core.ui.statusBar.update();
+	core.ui.statusBar.showmetheui();
 
 	// 切换到对应的楼层
 	core.changeFloor(data.floorId, null, data.hero.loc, 0, function () {

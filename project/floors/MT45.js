@@ -26,6 +26,11 @@ main.floors.MT45=
     "events": {
         "7,0": [
             {
+                "type": "setValue",
+                "name": "flag:第七关通关",
+                "value": "1"
+            },
+            {
                 "type": "unloadEquip",
                 "pos": 0
             },
@@ -54,14 +59,6 @@ main.floors.MT45=
                 "pos": 6
             },
             {
-                "type": "function",
-                "function": "function(){\nflags.mission[7][0]=true\n}"
-            },
-            {
-                "type": "function",
-                "function": "function(){\nflags.skillList=[0,0,0,0,0,0,0]\n}"
-            },
-            {
                 "type": "update"
             },
             {
@@ -69,7 +66,7 @@ main.floors.MT45=
                 "time": 500
             },
             {
-                "type": "hideStatusBar"
+                "type": "hideui"
             },
             {
                 "type": "update"
@@ -112,7 +109,7 @@ main.floors.MT45=
             },
             {
                 "type": "function",
-                "function": "function(){\nvar a = flags.mission[core.getFlag('stage')];\ncore.setFlag('@temp@A', a[0] + a[1] + a[2]);\n}"
+                "function": "function(){\nvar a = core.taskSystem.checkTask(0) ? 1 : 0,\n\tb = core.taskSystem.checkTask(1) ? 1 : 0,\n\tc = core.taskSystem.checkTask(2) ? 1 : 0;\ncore.setFlag('@temp@A', a + b + c);\n}"
             },
             {
                 "type": "if",
@@ -138,11 +135,6 @@ main.floors.MT45=
                             90
                         ],
                         "opacity": 1,
-                        "time": 500,
-                        "async": true
-                    },
-                    {
-                        "type": "sleep",
                         "time": 500
                     },
                     {
@@ -169,11 +161,6 @@ main.floors.MT45=
                                     90
                                 ],
                                 "opacity": 1,
-                                "time": 500,
-                                "async": true
-                            },
-                            {
-                                "type": "sleep",
                                 "time": 500
                             },
                             {
@@ -200,11 +187,6 @@ main.floors.MT45=
                                             90
                                         ],
                                         "opacity": 1,
-                                        "time": 500,
-                                        "async": true
-                                    },
-                                    {
-                                        "type": "sleep",
                                         "time": 500
                                     }
                                 ],
@@ -322,6 +304,9 @@ main.floors.MT45=
                 "value": "8"
             },
             {
+                "type": "submitTask"
+            },
+            {
                 "type": "confirm",
                 "text": "跳过剧情吗？",
                 "yes": [
@@ -363,34 +348,7 @@ main.floors.MT45=
     "afterGetItem": {},
     "afterOpenDoor": {},
     "autoEvent": {
-        "8,0": {
-            "0": {
-                "condition": "core.maps.searchBlockWithFilter(x=>['俯冲轰炸机','中型轰炸机'].includes(core.material.enemys[x?.event?.id]?.type),['MT41','MT42','MT43','MT44','MT45']).length===0",
-                "currentFloor": false,
-                "priority": 0,
-                "delayExecute": false,
-                "multiExecute": false,
-                "data": [
-                    {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[7][2]=true\n}"
-                    }
-                ]
-            },
-            "1": {
-                "condition": "core.maps.searchBlockWithFilter(x=>['战斗机','重型战斗机'].includes(core.material.enemys[x?.event?.id]?.type),['MT41','MT42','MT43','MT44','MT45']).length===0",
-                "currentFloor": false,
-                "priority": 0,
-                "delayExecute": false,
-                "multiExecute": false,
-                "data": [
-                    {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[7][1]=true\n}"
-                    }
-                ]
-            }
-        }
+        "8,0": {}
     },
     "cannotMove": {},
     "cannotMoveIn": {},

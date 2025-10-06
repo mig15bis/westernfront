@@ -18,7 +18,6 @@ main.floors.MT55=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        
         "\r[yellow]Mission 9 伦敦上空的鹰",
         {
             "type": "playSound",
@@ -201,10 +200,91 @@ main.floors.MT55=
             "type": "callSave"
         },
         {
+            "type": "setValue",
+            "name": "flag:第九关通关",
+            "value": "0"
+        },
+        {
             "type": "playSound",
             "name": "xinxinmagic.mp3"
         },
         "\t[任务目标]⭐通过当前区域\n⭐击落所有轰炸机\n⭐击落所有战斗机",
+        {
+            "type": "setTask",
+            "name": "第九关任务1",
+            "n": 1,
+            "text": "通过当前区域",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "第九关通关",
+                    "operator": "=",
+                    "text": "抵达终点",
+                    "count": "1"
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第九关任务2",
+            "n": 1,
+            "text": "击落所有轰炸机",
+            "info": [
+                {
+                    "type": "checkEnemyType",
+                    "checkEnemyType": "中型轰炸机",
+                    "floorId": [
+                        "MT55",
+                        "MT56",
+                        "MT57",
+                        "MT58",
+                        "MT59",
+                        "MT60"
+                    ],
+                    "operator": "<=",
+                    "text": "剩余的轰炸机",
+                    "count": 0
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第九关任务3",
+            "n": 2,
+            "text": "击落所有战斗机",
+            "info": [
+                {
+                    "type": "checkEnemyType",
+                    "checkEnemyType": "战斗机",
+                    "floorId": [
+                        "MT55",
+                        "MT56",
+                        "MT57",
+                        "MT58",
+                        "MT59",
+                        "MT60"
+                    ],
+                    "operator": "<=",
+                    "text": "剩余的战斗机",
+                    "count": 0
+                },
+                {
+                    "type": "checkEnemyType",
+                    "checkEnemyType": "重型战斗机",
+                    "floorId": [
+                        "MT55",
+                        "MT56",
+                        "MT57",
+                        "MT58",
+                        "MT59",
+                        "MT60"
+                    ],
+                    "operator": "<=",
+                    "text": "剩余的重型战斗机",
+                    "count": 0
+                }
+            ]
+        },
         {
             "type": "playSound",
             "name": "xinxinmagic.mp3"

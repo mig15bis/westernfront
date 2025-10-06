@@ -34,16 +34,7 @@ main.floors.MT10=
         }
     },
     "beforeBattle": {},
-    "afterBattle": {
-        "10,10": [
-            {
-                "type": "setValue",
-                "name": "flag:st2tsk3",
-                "operator": "+=",
-                "value": "1"
-            }
-        ]
-    },
+    "afterBattle": {},
     "afterGetItem": {},
     "afterOpenDoor": {},
     "autoEvent": {},

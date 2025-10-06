@@ -22,6 +22,11 @@ main.floors.MT11=
     "events": {
         "7,0": [
             {
+                "type": "setValue",
+                "name": "flag:第二关通关",
+                "value": "1"
+            },
+            {
                 "type": "unloadEquip",
                 "pos": 0
             },
@@ -50,14 +55,6 @@ main.floors.MT11=
                 "pos": 6
             },
             {
-                "type": "function",
-                "function": "function(){\nflags.mission[2][0]=true\n}"
-            },
-            {
-                "type": "function",
-                "function": "function(){\nflags.skillList=[0,0,0,0,0,0,0]\n}"
-            },
-            {
                 "type": "update"
             },
             {
@@ -65,7 +62,7 @@ main.floors.MT11=
                 "time": 500
             },
             {
-                "type": "hideStatusBar"
+                "type": "hideui"
             },
             {
                 "type": "update"
@@ -108,7 +105,7 @@ main.floors.MT11=
             },
             {
                 "type": "function",
-                "function": "function(){\nvar a = flags.mission[core.getFlag('stage')];\ncore.setFlag('@temp@A', a[0] + a[1] + a[2]);\n}"
+                "function": "function(){\nvar a = core.taskSystem.checkTask(0) ? 1 : 0,\n\tb = core.taskSystem.checkTask(1) ? 1 : 0,\n\tc = core.taskSystem.checkTask(2) ? 1 : 0;\ncore.setFlag('@temp@A', a + b + c);\n}"
             },
             {
                 "type": "if",
@@ -134,11 +131,6 @@ main.floors.MT11=
                             90
                         ],
                         "opacity": 1,
-                        "time": 500,
-                        "async": true
-                    },
-                    {
-                        "type": "sleep",
                         "time": 500
                     },
                     {
@@ -165,11 +157,6 @@ main.floors.MT11=
                                     90
                                 ],
                                 "opacity": 1,
-                                "time": 500,
-                                "async": true
-                            },
-                            {
-                                "type": "sleep",
                                 "time": 500
                             },
                             {
@@ -196,11 +183,6 @@ main.floors.MT11=
                                             90
                                         ],
                                         "opacity": 1,
-                                        "time": 500,
-                                        "async": true
-                                    },
-                                    {
-                                        "type": "sleep",
                                         "time": 500
                                     }
                                 ],
@@ -318,6 +300,9 @@ main.floors.MT11=
                 "value": "3"
             },
             {
+                "type": "submitTask"
+            },
+            {
                 "type": "confirm",
                 "text": "跳过剧情吗？",
                 "yes": [
@@ -374,63 +359,11 @@ main.floors.MT11=
         }
     },
     "beforeBattle": {},
-    "afterBattle": {
-        "0,4": [
-            {
-                "type": "setValue",
-                "name": "flag:st2tsk3",
-                "operator": "+=",
-                "value": "1"
-            }
-        ],
-        "5,9": [
-            {
-                "type": "setValue",
-                "name": "flag:st2tsk3",
-                "operator": "+=",
-                "value": "1"
-            }
-        ],
-        "9,7": [
-            {
-                "type": "setValue",
-                "name": "flag:st2tsk3",
-                "operator": "+=",
-                "value": "1"
-            }
-        ]
-    },
+    "afterBattle": {},
     "afterGetItem": {},
     "afterOpenDoor": {},
     "autoEvent": {
-        "6,0": {
-            "0": {
-                "condition": "flag:二区杀敌>=40",
-                "currentFloor": false,
-                "priority": 0,
-                "delayExecute": false,
-                "multiExecute": false,
-                "data": [
-                    {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[2][1]=true\n}"
-                    }
-                ]
-            },
-            "1": {
-                "condition": "flag:st2tsk3>=1",
-                "currentFloor": false,
-                "priority": 0,
-                "delayExecute": false,
-                "multiExecute": false,
-                "data": [
-                    {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[2][2]=true\n}"
-                    }
-                ]
-            }
-        }
+        "6,0": {}
     },
     "cannotMove": {},
     "cannotMoveIn": {},

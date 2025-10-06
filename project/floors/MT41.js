@@ -25,17 +25,16 @@ main.floors.MT41=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        
         {
             "type": "setCurtain",
             "time": 500
         },
         "\r[yellow]Mission 7 鹰击长空",
-        "\t[地面指挥部]指挥官阁下，根据我们的计算，你们已经接近敌机群，请注意对空搜索，他们大约在4000米高空。",
+        "\t[地面指挥部]指挥官阁下，根据我们的计算，你们已经接近敌机群，请注意对空搜索。",
         "\t[盟军指挥官,hero]看见了，一大群德国佬，我们已经占据有利高度，随时可以攻击。",
-        "\t[地面指挥部]那就立即攻击，按预定计划行事！",
+        "\t[地面指挥部]收到，准许开火！",
         "\t[盟军指挥官,hero]收到！所有战机分组行动，红队去打掉轰炸机，蓝队随我来，支开敌人的战斗机！",
-        "\t[德国战斗机飞行员,me109e4]6点钟方向！上方！发现喷火战斗机！立刻做闪避机动，重复，立刻……",
+        "\t[德国战斗机飞行员,me109e4]6点钟方向！上方！发现敌机！立刻做闪避机动，重复，立刻……",
         {
             "type": "moveHero",
             "time": 100,
@@ -68,6 +67,10 @@ main.floors.MT41=
             "type": "waitAsync"
         },
         {
+            "type": "playSound",
+            "name": "crash2.mp3"
+        },
+        {
             "type": "hide",
             "loc": [
                 [
@@ -90,7 +93,7 @@ main.floors.MT41=
             "type": "playSound",
             "name": "dogfight.mp3"
         },
-        "\t[德国战斗机队长,me109e4]没时间摆成防御阵型了，所有人脱离编队，迎敌！",
+        "\t[德国战斗机队长,me109e4]所有人脱离编队，迎敌！",
         "\t[系统提示]敌人战力重置中",
         {
             "type": "setEnemy",
@@ -204,6 +207,98 @@ main.floors.MT41=
         "\t[任务目标]⭐通过当前区域\n⭐击落所有战斗机\n⭐击落所有轰炸机",
         {
             "type": "callBook"
+        },
+        {
+            "type": "setValue",
+            "name": "flag:第七关通关",
+            "value": "0"
+        },
+        {
+            "type": "setTask",
+            "name": "第七关任务1",
+            "n": 1,
+            "text": "通过当前区域",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "第七关通关",
+                    "operator": "=",
+                    "text": "抵达终点",
+                    "count": "1"
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第七关任务2",
+            "n": 2,
+            "text": "任务描述",
+            "info": [
+                {
+                    "type": "checkEnemyType",
+                    "checkEnemyType": "战斗机",
+                    "floorId": [
+                        "MT41",
+                        "MT42",
+                        "MT43",
+                        "MT44",
+                        "MT45"
+                    ],
+                    "operator": "<=",
+                    "text": "剩余的战斗机",
+                    "count": 0
+                },
+                {
+                    "type": "checkEnemyType",
+                    "checkEnemyType": "重型战斗机",
+                    "floorId": [
+                        "MT41",
+                        "MT42",
+                        "MT43",
+                        "MT44",
+                        "MT45"
+                    ],
+                    "operator": "<=",
+                    "text": "剩余的重型战斗机",
+                    "count": 0
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第七关任务3",
+            "n": 2,
+            "text": "任务描述",
+            "info": [
+                {
+                    "type": "checkEnemyType",
+                    "checkEnemyType": "俯冲轰炸机",
+                    "floorId": [
+                        "MT41",
+                        "MT42",
+                        "MT43",
+                        "MT44",
+                        "MT45"
+                    ],
+                    "operator": "<=",
+                    "text": "剩余的俯冲轰炸机",
+                    "count": 0
+                },
+                {
+                    "type": "checkEnemyType",
+                    "checkEnemyType": "中型轰炸机",
+                    "floorId": [
+                        "MT41",
+                        "MT42",
+                        "MT43",
+                        "MT44",
+                        "MT45"
+                    ],
+                    "operator": "<=",
+                    "text": "剩余的中型轰炸机",
+                    "count": 0
+                }
+            ]
         }
     ],
     "eachArrive": [],

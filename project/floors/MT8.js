@@ -129,6 +129,67 @@ main.floors.MT8=
         "\t[任务目标]⭐通过当前区域\n⭐至少击杀40个敌人\n⭐至少摧毁一辆四号坦克",
         {
             "type": "callBook"
+        },
+        {
+            "type": "setValue",
+            "name": "flag:第二关通关",
+            "value": "0"
+        },
+        {
+            "type": "setTask",
+            "name": "第二关任务1",
+            "n": 1,
+            "text": "通过当前区域",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "第二关通关",
+                    "operator": "=",
+                    "text": "抵达终点",
+                    "count": "1"
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第二关任务2",
+            "n": 1,
+            "text": "至少击杀70个敌人",
+            "info": [
+                {
+                    "type": "kill",
+                    "floorId": [
+                        "MT8",
+                        "MT9",
+                        "MT10",
+                        "MT11"
+                    ],
+                    "operator": ">=",
+                    "text": "杀敌数",
+                    "count": 70
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第二关任务3",
+            "n": 1,
+            "text": "至少摧毁一辆四号坦克",
+            "info": [
+                {
+                    "type": "kill",
+                    "kill": "panzer4c",
+                    "floorId": [
+                        "MT8",
+                        "MT9",
+                        "MT10",
+                        "MT11"
+                    ],
+                    "operator": ">=",
+                    "text": "四号坦克已摧毁",
+                    "count": 1
+                }
+            ]
         }
     ],
     "eachArrive": [],

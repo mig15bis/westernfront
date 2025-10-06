@@ -25,7 +25,87 @@ main.floors.MT7=
             "type": "setCurtain",
             "time": 500
         },
-        "\t[盟军指挥官,hero]敌人马上就来了，稍做准备就出发吧。"
+        {
+            "type": "showui"
+        },
+        {
+            "type": "showImage",
+            "code": 1,
+            "image": "teach5.png",
+            "sloc": [
+                0,
+                0,
+                null
+            ],
+            "loc": [
+                20,
+                102,
+                440,
+                275
+            ],
+            "opacity": 1,
+            "time": 500
+        },
+        {
+            "type": "wait"
+        },
+        {
+            "type": "hideImage",
+            "code": 1,
+            "time": 500
+        },
+        {
+            "type": "showImage",
+            "code": 1,
+            "image": "teach6.png",
+            "sloc": [
+                0,
+                0,
+                null
+            ],
+            "loc": [
+                20,
+                102,
+                440,
+                275
+            ],
+            "opacity": 1,
+            "time": 500
+        },
+        {
+            "type": "wait"
+        },
+        {
+            "type": "hideImage",
+            "code": 1,
+            "time": 500
+        },
+        {
+            "type": "showImage",
+            "code": 1,
+            "image": "teach7.png",
+            "sloc": [
+                0,
+                0,
+                null
+            ],
+            "loc": [
+                20,
+                102,
+                440,
+                275
+            ],
+            "opacity": 1,
+            "time": 500
+        },
+        {
+            "type": "wait"
+        },
+        {
+            "type": "hideImage",
+            "code": 1,
+            "time": 500
+        }
     ],
     "eachArrive": [],
     "parallelDo": "",
@@ -172,7 +252,7 @@ main.floors.MT7=
                 "type": "playSound",
                 "name": "xinxinmagic.mp3"
             },
-            "\t[系统提示]当前区域敌人特点：大量装甲车辆，有步兵伴随。\n推荐携带技能：战壕\n推荐出战装备：哈奇开斯H35"
+            "\t[系统提示]当前区域敌人特点：大量装甲车辆，有步兵伴随。\n推荐携带技能：战壕\n推荐出战装备：雷诺FT17机枪型、斗士MK2"
         ]
     },
     "changeFloor": {},
