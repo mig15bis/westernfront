@@ -663,20 +663,6 @@ main.floors.MT99=
                                                 "type": "clearMap"
                                             },
                                             {
-                                                "type": "function",
-                                                "function": "function(){\nflags.mission[15][0]=true\n}"
-                                            },
-                                            {
-                                                "type": "if",
-                                                "condition": "(status:money>=2000)",
-                                                "true": [
-                                                    {
-                                                        "type": "function",
-                                                        "function": "function(){\nflags.mission[15][2]=true\n}"
-                                                    }
-                                                ]
-                                            },
-                                            {
                                                 "type": "hide",
                                                 "loc": [
                                                     [
@@ -689,6 +675,11 @@ main.floors.MT99=
                                             },
                                             {
                                                 "type": "update"
+                                            },
+                                            {
+                                                "type": "setValue",
+                                                "name": "flag:第15关通关",
+                                                "value": "1"
                                             },
                                             {
                                                 "type": "unloadEquip",
@@ -719,15 +710,11 @@ main.floors.MT99=
                                                 "pos": 6
                                             },
                                             {
-                                                "type": "function",
-                                                "function": "function(){\nflags.skillList=[0,0,0,0,0,0,0]\n}"
-                                            },
-                                            {
                                                 "type": "sleep",
                                                 "time": 500
                                             },
                                             {
-                                                "type": "hideStatusBar"
+                                                "type": "hideui"
                                             },
                                             {
                                                 "type": "update"
@@ -770,7 +757,7 @@ main.floors.MT99=
                                             },
                                             {
                                                 "type": "function",
-                                                "function": "function(){\nvar a = flags.mission[core.getFlag('stage')];\ncore.setFlag('@temp@A', a[0] + a[1] + a[2]);\n}"
+                                                "function": "function(){\nvar a = core.taskSystem.checkTask(0) ? 1 : 0,\n\tb = core.taskSystem.checkTask(1) ? 1 : 0,\n\tc = core.taskSystem.checkTask(2) ? 1 : 0;\ncore.setFlag('@temp@A', a + b + c);\n}"
                                             },
                                             {
                                                 "type": "if",
@@ -796,11 +783,6 @@ main.floors.MT99=
                                                             90
                                                         ],
                                                         "opacity": 1,
-                                                        "time": 500,
-                                                        "async": true
-                                                    },
-                                                    {
-                                                        "type": "sleep",
                                                         "time": 500
                                                     },
                                                     {
@@ -827,11 +809,6 @@ main.floors.MT99=
                                                                     90
                                                                 ],
                                                                 "opacity": 1,
-                                                                "time": 500,
-                                                                "async": true
-                                                            },
-                                                            {
-                                                                "type": "sleep",
                                                                 "time": 500
                                                             },
                                                             {
@@ -858,11 +835,6 @@ main.floors.MT99=
                                                                             90
                                                                         ],
                                                                         "opacity": 1,
-                                                                        "time": 500,
-                                                                        "async": true
-                                                                    },
-                                                                    {
-                                                                        "type": "sleep",
                                                                         "time": 500
                                                                     }
                                                                 ],
@@ -973,6 +945,9 @@ main.floors.MT99=
                                             },
                                             {
                                                 "type": "forbidSave"
+                                            },
+                                            {
+                                                "type": "submitTask"
                                             },
                                             {
                                                 "type": "setValue",

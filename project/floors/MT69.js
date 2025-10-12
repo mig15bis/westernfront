@@ -18,7 +18,6 @@ main.floors.MT69=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        
         {
             "type": "update"
         },
@@ -31,6 +30,9 @@ main.floors.MT69=
             "time": 500
         },
         {
+            "type": "showui"
+        },
+        {
             "type": "playSound",
             "name": "xinxinmagic.mp3"
         },
@@ -40,7 +42,37 @@ main.floors.MT69=
             "operator": "+=",
             "value": "1"
         },
-        "\t[系统提示]已获得试用装备：光辉1941（主力舰）"
+        "\t[系统提示]已获得试用装备：光辉1941（主力舰）",
+        {
+            "type": "sleep",
+            "time": 500
+        },
+        {
+            "type": "showImage",
+            "code": 1,
+            "image": "teach10.png",
+            "sloc": [
+                0,
+                0,
+                null
+            ],
+            "loc": [
+                20,
+                102,
+                440,
+                275
+            ],
+            "opacity": 1,
+            "time": 500
+        },
+        {
+            "type": "wait"
+        },
+        {
+            "type": "hideImage",
+            "code": 1,
+            "time": 500
+        }
     ],
     "eachArrive": [],
     "parallelDo": "",
@@ -195,7 +227,7 @@ main.floors.MT69=
                 "type": "playSound",
                 "name": "xinxinmagic.mp3"
             },
-            "\t[系统提示]当前区域敌人特点：大量海军和空军，没有潜艇\n推荐携带技能：紧急补给、防空弹幕、空战王牌、烟幕、Z字规避\n推荐出战装备：E级驱逐舰、爱丁堡号轻巡洋舰、光辉1941（试用）"
+            "\t[系统提示]当前区域敌人特点：大量海军和空军，没有潜艇\n推荐携带技能：紧急补给、防空弹幕、空战王牌、预警、Z字规避\n推荐出战装备：E级驱逐舰、爱丁堡号轻巡洋舰、光辉1941（试用）"
         ]
     },
     "changeFloor": {},

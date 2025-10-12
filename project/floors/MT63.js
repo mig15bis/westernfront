@@ -28,26 +28,12 @@ main.floors.MT63=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        
         {
             "type": "setCurtain",
             "time": 500
         },
         "\r[yellow]Mission 10 保卫船队",
         "\t[盟军指挥官,hero]已完成任务交接，所有舰船保持队形，注意搜索敌人。",
-        {
-            "type": "sleep",
-            "time": 500
-        },
-        {
-            "type": "animate",
-            "name": "wonder",
-            "loc": [
-                0,
-                7
-            ]
-        },
-        "\t[盟军指挥官,hero]雷达和声纳均捕捉到数个不明信号，极有可能是敌军。所有人进入战斗岗位！",
         {
             "type": "playSound",
             "name": "xinxinmagic.mp3"
@@ -85,12 +71,99 @@ main.floors.MT63=
             "type": "callSave"
         },
         {
+            "type": "setValue",
+            "name": "flag:第十关通关",
+            "value": "0"
+        },
+        {
             "type": "playSound",
             "name": "xinxinmagic.mp3"
         },
         "\t[任务目标]⭐通过当前区域\n⭐友军剩余血量大于15w\n⭐击退至少1艘敌军重型巡洋舰",
         {
             "type": "callBook"
+        },
+        {
+            "type": "setTask",
+            "name": "第十关任务1",
+            "n": 1,
+            "text": "通过当前区域",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "第十关通关",
+                    "operator": "=",
+                    "text": "抵达终点",
+                    "count": "1"
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第十关任务2",
+            "n": 1,
+            "text": "友军剩余血量大于15w",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "友军血量",
+                    "operator": ">=",
+                    "text": "友军血量剩余",
+                    "count": "150000"
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第十关任务3",
+            "n": 1,
+            "text": "击退至少1艘重巡",
+            "info": [
+                {
+                    "type": "killType",
+                    "killType": "重巡",
+                    "floorId": [
+                        "MT63",
+                        "MT64",
+                        "MT65",
+                        "MT66",
+                        "MT67"
+                    ],
+                    "operator": ">=",
+                    "text": "已击退的重巡洋舰",
+                    "count": 1
+                }
+            ]
+        },
+        {
+            "type": "sleep",
+            "time": 500
+        },
+        {
+            "type": "showImage",
+            "code": 1,
+            "image": "teach9.png",
+            "sloc": [
+                0,
+                0,
+                null
+            ],
+            "loc": [
+                20,
+                102,
+                440,
+                275
+            ],
+            "opacity": 1,
+            "time": 500
+        },
+        {
+            "type": "wait"
+        },
+        {
+            "type": "hideImage",
+            "code": 1,
+            "time": 500
         }
     ],
     "eachArrive": [],

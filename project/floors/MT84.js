@@ -18,15 +18,14 @@ main.floors.MT84=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        
         {
             "type": "setCurtain",
             "time": 500
         },
         "\r[yellow]Mission 13 胡德的绝唱",
         "\t[盟军指挥官,hero]该死的鬼天气，这么低的能见度，不降低速度很容易迷航。",
-        "\t[盟军指挥官,hero]必须以最快的速度突破封锁，赶往丹麦海峡，否则很有可能错失拦截俾斯麦号的绝佳机会。",
-        "\t[盟军指挥官,hero]（奇怪，怎么有种不祥的预感？但愿是我想多了）",
+        "\t[盟军指挥官,hero]必须尽快突破封锁，赶往丹麦海峡，否则很有可能错失拦截俾斯麦号的绝佳机会。",
+        "\t[盟军指挥官,hero]（怎么有种不祥的预感？但愿是我想多了）",
         {
             "type": "playSound",
             "name": "xinxinmagic.mp3"
@@ -307,19 +306,69 @@ main.floors.MT84=
             "type": "callSave"
         },
         {
+            "type": "setValue",
+            "name": "flag:第13关通关",
+            "value": "0"
+        },
+        {
             "type": "playSound",
             "name": "xinxinmagic.mp3"
         },
         "\t[任务目标]⭐攻击俾斯麦号战列舰（boss战）\n⭐通关时黄钥匙不少于20\n⭐通关时指挥点数不少于300",
         {
             "type": "callBook"
+        },
+        {
+            "type": "setTask",
+            "name": "第13关任务1",
+            "n": 1,
+            "text": "攻击俾斯麦号战列舰",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "第13关通关",
+                    "operator": "=",
+                    "text": "主线boss击破",
+                    "count": "1"
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第13关任务2",
+            "n": 1,
+            "text": "通关时黄钥匙不少于20",
+            "info": [
+                {
+                    "type": "checkItem",
+                    "checkItem": "yellowKey",
+                    "operator": ">=",
+                    "text": "黄钥匙数量",
+                    "count": 20
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第13关任务3",
+            "n": 1,
+            "text": "通关时指挥点数不少于300",
+            "info": [
+                {
+                    "type": "checkStatus",
+                    "checkStatus": "atk",
+                    "operator": ">=",
+                    "text": "指挥点数",
+                    "count": 300
+                }
+            ]
         }
     ],
     "eachArrive": [],
     "parallelDo": "",
     "events": {
         "9,13": [
-            "\t[伊吹萃香]\f[specialnpc.jpg,30,200,150,300]本关击败boss后有个小小的剧情杀，并且在不给重新换装和技能的前提下直接进入下一关。希望你是按照木牌提示去选择技能和装备的哦~"
+            "\t[伊吹萃香]\f[specialnpc.jpg,30,200,150,300]本关击败boss后有个小小的剧情杀，并且在不给重新换装和技能的前提下直接进入下一关。希望你是按照牌子上的提示去选择技能和装备的哦~"
         ]
     },
     "changeFloor": {

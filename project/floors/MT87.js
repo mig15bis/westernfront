@@ -20,7 +20,7 @@ main.floors.MT87=
         "7,0": [
             {
                 "type": "choices",
-                "text": "\t[WARNING]前方似乎很危险，是否继续前进？",
+                "text": "\t[WARNING]浓雾中隐约浮现出两艘巨舰的身影，准备好决战了吗？",
                 "choices": [
                     {
                         "text": "前进",

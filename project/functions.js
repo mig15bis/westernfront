@@ -956,7 +956,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		mon_gro = core.getEnemyValue(enemy, 'gro', x, y, floorId),
 		skycontrol = 0;
 	let diji = core.searchBlockWithFilter(Block => Block && ['战斗机', '重型战斗机'].includes(core.material.enemys[Block.event.id]?.type), floorId).length;
-	if (core.getEquip(4) || (core.getEquip(5) && ['p38', 'typhoon', 'mosquito', 'p47d', 'p61'].includes(core.getEquip(5))) || (core.getEquip(3) && ['eagle', 'illus1941', 'illustrious', 'essex', 'enterprise'].includes(core.getEquip(3)))) { //制空权检测
+	if (core.getEquip(4) || (core.getEquip(5) && ['p38', 'typhoon', 'mosquito', 'p47d', 'p61'].includes(core.getEquip(5))) || (core.getEquip(3) && ['eagle', 'illus1941', 'illustrious', 'raider', 'essex', 'enterprise'].includes(core.getEquip(3)))) { //制空权检测
 		if (diji === 0) {
 			skycontrol = 1;
 		}

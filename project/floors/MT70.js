@@ -18,7 +18,6 @@ main.floors.MT70=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        
         {
             "type": "setCurtain",
             "time": 500
@@ -154,19 +153,77 @@ main.floors.MT70=
             "type": "callSave"
         },
         {
+            "type": "setValue",
+            "name": "flag:第11关通关",
+            "value": "0"
+        },
+        {
+            "type": "setValue",
+            "name": "flag:装备光辉号",
+            "value": "0"
+        },
+        {
             "type": "playSound",
             "name": "xinxinmagic.mp3"
         },
         "\t[任务目标]⭐成功袭击塔兰托港\n⭐击败所有拦路之敌\n⭐光辉号航空母舰全程参与战斗",
         {
             "type": "callBook"
+        },
+        {
+            "type": "setTask",
+            "name": "第11关任务1",
+            "n": 1,
+            "text": "成功袭击塔兰托港",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "第11关通关",
+                    "operator": "=",
+                    "text": "空袭结束",
+                    "count": "1"
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第11关任务2",
+            "n": 1,
+            "text": "击败所有拦路之敌",
+            "info": [
+                {
+                    "type": "killAll",
+                    "floorId": [
+                        "MT70",
+                        "MT71",
+                        "MT72",
+                        "MT73"
+                    ],
+                    "text": "剩余的拦路之敌"
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第11关任务3",
+            "n": 1,
+            "text": "光辉号航空母舰全程参与战斗",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "装备光辉号",
+                    "operator": "=",
+                    "text": "装备光辉号完成战斗",
+                    "count": "1"
+                }
+            ]
         }
     ],
     "eachArrive": [],
     "parallelDo": "",
     "events": {
         "1,8": [
-            "\f[cr42.jpg,170,50]菲亚特CR.42“猎鹰”战斗机是二战时期意大利空军最好的双翼战斗机。研发时，意大利空军的思想仍停留在一战，认为转弯能力优秀的双翼机比高速的单翼战斗机更重要。在双翼飞机中，CR.42确实优秀，但二战已经是单翼战斗机的主场，在北非作战的CR.42在与英国“飓风”等单翼战斗机作战时明显处于下风。最终在1942年停产。"
+            "\f[cr42.jpg,90,50]菲亚特CR.42“猎鹰”战斗机是二战时期意大利空军最好的双翼战斗机。研发时，意大利空军的思想仍停留在一战，认为转弯能力优秀的双翼机比高速的单翼战斗机更重要。在双翼飞机中，CR.42确实优秀，但二战已经是单翼战斗机的主场，在北非作战的CR.42在与英国“飓风”等单翼战斗机作战时明显处于下风。最终在1942年停产。"
         ]
     },
     "changeFloor": {

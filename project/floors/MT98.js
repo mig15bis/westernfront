@@ -20,7 +20,7 @@ main.floors.MT98=
         "7,0": [
             {
                 "type": "choices",
-                "text": "\t[WARNING]前方似乎很危险，是否继续前进？",
+                "text": "\t[WARNING]俾斯麦号似乎就在前方。准备好终结她了吗？",
                 "choices": [
                     {
                         "text": "前进",
@@ -66,19 +66,6 @@ main.floors.MT98=
     "afterOpenDoor": {},
     "autoEvent": {
         "6,0": {
-            "0": {
-                "condition": "!core.hasEnemyLeft(undefined,['MT95','MT96','MT97','MT98'])",
-                "currentFloor": false,
-                "priority": 0,
-                "delayExecute": false,
-                "multiExecute": false,
-                "data": [
-                    {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[15][1]=true\n}"
-                    }
-                ]
-            },
             "1": null
         }
     },

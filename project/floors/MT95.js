@@ -18,7 +18,6 @@ main.floors.MT95=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        
         {
             "type": "setCurtain",
             "time": 500
@@ -374,12 +373,65 @@ main.floors.MT95=
             "type": "callSave"
         },
         {
+            "type": "setValue",
+            "name": "flag:第15关通关",
+            "value": "0"
+        },
+        {
             "type": "playSound",
             "name": "xinxinmagic.mp3"
         },
-        "\t[任务目标]⭐击沉俾斯麦号战列舰（boss战）\n⭐歼灭所有敌人\n⭐通关时至少持有2000黄金",
+        "\t[任务目标]⭐击沉俾斯麦号战列舰（boss战）\n⭐歼灭所有敌人\n⭐通关时至少持有3000黄金",
         {
             "type": "callBook"
+        },
+        {
+            "type": "setTask",
+            "name": "第15关任务1",
+            "n": 1,
+            "text": "击沉俾斯麦号战列舰",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "第15关通关",
+                    "operator": "=",
+                    "text": "击沉俾斯麦号战列舰",
+                    "count": "1"
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第15关任务2",
+            "n": 1,
+            "text": "歼灭所有敌人",
+            "info": [
+                {
+                    "type": "killAll",
+                    "floorId": [
+                        "MT95",
+                        "MT96",
+                        "MT97",
+                        "MT98"
+                    ],
+                    "text": "剩余敌人数量"
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第15关任务3",
+            "n": 1,
+            "text": "通关时至少持有2000黄金",
+            "info": [
+                {
+                    "type": "checkStatus",
+                    "checkStatus": "money",
+                    "operator": ">=",
+                    "text": "持有的黄金",
+                    "count": 3000
+                }
+            ]
         }
     ],
     "eachArrive": [],

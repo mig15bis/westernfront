@@ -19,6 +19,11 @@ main.floors.MT67=
     "events": {
         "14,7": [
             {
+                "type": "setValue",
+                "name": "flag:第十关通关",
+                "value": "1"
+            },
+            {
                 "type": "unloadEquip",
                 "pos": 0
             },
@@ -47,24 +52,6 @@ main.floors.MT67=
                 "pos": 6
             },
             {
-                "type": "function",
-                "function": "function(){\nflags.mission[10][0]=true\n}"
-            },
-            {
-                "type": "if",
-                "condition": "(flag:友军血量>=150000)",
-                "true": [
-                    {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[10][1]=true\n}"
-                    }
-                ]
-            },
-            {
-                "type": "function",
-                "function": "function(){\nflags.skillList=[0,0,0,0,0,0,0]\n}"
-            },
-            {
                 "type": "update"
             },
             {
@@ -72,7 +59,7 @@ main.floors.MT67=
                 "time": 500
             },
             {
-                "type": "hideStatusBar"
+                "type": "hideui"
             },
             {
                 "type": "update"
@@ -115,7 +102,7 @@ main.floors.MT67=
             },
             {
                 "type": "function",
-                "function": "function(){\nvar a = flags.mission[core.getFlag('stage')];\ncore.setFlag('@temp@A', a[0] + a[1] + a[2]);\n}"
+                "function": "function(){\nvar a = core.taskSystem.checkTask(0) ? 1 : 0,\n\tb = core.taskSystem.checkTask(1) ? 1 : 0,\n\tc = core.taskSystem.checkTask(2) ? 1 : 0;\ncore.setFlag('@temp@A', a + b + c);\n}"
             },
             {
                 "type": "if",
@@ -141,11 +128,6 @@ main.floors.MT67=
                             90
                         ],
                         "opacity": 1,
-                        "time": 500,
-                        "async": true
-                    },
-                    {
-                        "type": "sleep",
                         "time": 500
                     },
                     {
@@ -172,11 +154,6 @@ main.floors.MT67=
                                     90
                                 ],
                                 "opacity": 1,
-                                "time": 500,
-                                "async": true
-                            },
-                            {
-                                "type": "sleep",
                                 "time": 500
                             },
                             {
@@ -203,11 +180,6 @@ main.floors.MT67=
                                             90
                                         ],
                                         "opacity": 1,
-                                        "time": 500,
-                                        "async": true
-                                    },
-                                    {
-                                        "type": "sleep",
                                         "time": 500
                                     }
                                 ],
@@ -320,6 +292,9 @@ main.floors.MT67=
                 "type": "pauseBgm"
             },
             {
+                "type": "submitTask"
+            },
+            {
                 "type": "setValue",
                 "name": "flag:escort",
                 "value": "false"
@@ -354,7 +329,7 @@ main.floors.MT67=
                     "但意大利的海军实力不容小觑。当德国用潜艇在大西洋里打游击时，手握重兵的意大利海军则牢牢把控着地中海的制海权。",
                     "英国在地中海的运输船队经常遭到意大利海军的袭击，使得在埃及和巴尔干半岛作战的英军陷入补给困境。要想保证补给线安全，就必须拿下地中海的制海权。",
                     "意大利海军的主力常常驻扎在塔兰托港。这是亚平宁半岛（意大利本土）的一个重要军港，如果能对塔兰托港发起一次成功的袭击，必定会严重打击意大利的海军实力。",
-                    "但这毕竟是敌人家门口。如果把战舰开进去炮轰，不仅要面对港内的大量战舰，还有来自岸防炮和敌方空军的威胁，搞不好就会伤敌一千，自损八百。",
+                    "但这毕竟是敌人家门口。如果把战舰开进去炮轰，不仅要面对港内的大量战舰，还有来自岸防炮和敌方空军的威胁，搞不好就会伤敌一千，自损八万。",
                     "传统的方法肯定行不通。于是，英国海军坎宁安上将把目光放在了一种新型武器上——航空母舰。",
                     "在当时，几乎没人意识到航空母舰的潜力，“只是个移动的海上飞机场而已，还是只能放出小型飞机的那种”，大多数人都这样想。",
                     "但眼下，这却是最可行的方案。这将会是航空母舰第一次参与大型战役，一次大胆的尝试。在此前，人们甚至不知道这种新型军舰的正确用法。一切都是未知数。",
@@ -387,19 +362,6 @@ main.floors.MT67=
     "afterOpenDoor": {},
     "autoEvent": {
         "14,6": {
-            "0": {
-                "condition": "flag:st10tsk3>=1",
-                "currentFloor": false,
-                "priority": 0,
-                "delayExecute": false,
-                "multiExecute": false,
-                "data": [
-                    {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[10][2]=true\n}"
-                    }
-                ]
-            },
             "1": null
         }
     },

@@ -19,6 +19,11 @@ main.floors.MT92=
     "events": {
         "0,7": [
             {
+                "type": "setValue",
+                "name": "flag:第14关通关",
+                "value": "1"
+            },
+            {
                 "type": "unloadEquip",
                 "pos": 0
             },
@@ -47,34 +52,6 @@ main.floors.MT92=
                 "pos": 6
             },
             {
-                "type": "function",
-                "function": "function(){\nflags.mission[14][0]=true\n}"
-            },
-            {
-                "type": "if",
-                "condition": "(item:tea>=30)",
-                "true": [
-                    {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[14][1]=true\n}"
-                    }
-                ]
-            },
-            {
-                "type": "if",
-                "condition": "(item:blueKey>=10)",
-                "true": [
-                    {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[14][2]=true\n}"
-                    }
-                ]
-            },
-            {
-                "type": "function",
-                "function": "function(){\nflags.skillList=[0,0,0,0,0,0,0]\n}"
-            },
-            {
                 "type": "update"
             },
             {
@@ -82,7 +59,7 @@ main.floors.MT92=
                 "time": 500
             },
             {
-                "type": "hideStatusBar"
+                "type": "hideui"
             },
             {
                 "type": "update"
@@ -125,7 +102,7 @@ main.floors.MT92=
             },
             {
                 "type": "function",
-                "function": "function(){\nvar a = flags.mission[core.getFlag('stage')];\ncore.setFlag('@temp@A', a[0] + a[1] + a[2]);\n}"
+                "function": "function(){\nvar a = core.taskSystem.checkTask(0) ? 1 : 0,\n\tb = core.taskSystem.checkTask(1) ? 1 : 0,\n\tc = core.taskSystem.checkTask(2) ? 1 : 0;\ncore.setFlag('@temp@A', a + b + c);\n}"
             },
             {
                 "type": "if",
@@ -151,11 +128,6 @@ main.floors.MT92=
                             90
                         ],
                         "opacity": 1,
-                        "time": 500,
-                        "async": true
-                    },
-                    {
-                        "type": "sleep",
                         "time": 500
                     },
                     {
@@ -182,11 +154,6 @@ main.floors.MT92=
                                     90
                                 ],
                                 "opacity": 1,
-                                "time": 500,
-                                "async": true
-                            },
-                            {
-                                "type": "sleep",
                                 "time": 500
                             },
                             {
@@ -213,11 +180,6 @@ main.floors.MT92=
                                             90
                                         ],
                                         "opacity": 1,
-                                        "time": 500,
-                                        "async": true
-                                    },
-                                    {
-                                        "type": "sleep",
                                         "time": 500
                                     }
                                 ],
@@ -263,6 +225,9 @@ main.floors.MT92=
                 "type": "hideImage",
                 "code": 4,
                 "time": 0
+            },
+            {
+                "type": "submitTask"
             },
             {
                 "type": "setHeroOpacity",

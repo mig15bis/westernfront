@@ -18,13 +18,15 @@ main.floors.MT94=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        
         {
             "type": "update"
         },
         {
             "type": "setCurtain",
             "time": 500
+        },
+        {
+            "type": "showui"
         },
         {
             "type": "playSound",
@@ -352,7 +354,7 @@ main.floors.MT94=
                 "type": "playSound",
                 "name": "xinxinmagic.mp3"
             },
-            "\t[系统提示]当前区域敌人特点：大量潜艇和军舰，存在少量大型军舰\n推荐携带技能：紧急补给、烟幕、Z字规避、扫雷、剑鱼818中队\n推荐出战装备：V级驱逐舰、诺福克号重巡洋舰、厌战号战列舰、F4F野猫、SBD无畏、剑鱼式鱼雷机"
+            "\t[系统提示]当前区域敌人特点：大量潜艇和军舰，存在少量大型军舰\n推荐携带技能：紧急补给、预警、Z字规避、扫雷、剑鱼818中队\n推荐出战装备：V级驱逐舰、诺福克号重巡洋舰、厌战号战列舰、F4F野猫、SBD无畏、剑鱼式鱼雷机"
         ]
     },
     "changeFloor": {},

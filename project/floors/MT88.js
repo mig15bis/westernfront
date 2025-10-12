@@ -184,6 +184,7 @@ main.floors.MT88=
                 "type": "if",
                 "condition": "(flag:MT88boss>=4)",
                 "true": [
+                    "真·欧根亲王号重巡洋舰",
                     "\t[盟军指挥官,hero]我们在欧根亲王号上浪费太多炮弹了，立刻集火俾斯麦！"
                 ],
                 "false": []
@@ -811,28 +812,9 @@ main.floors.MT88=
                                                 "type": "clearMap"
                                             },
                                             {
-                                                "type": "function",
-                                                "function": "function(){\nflags.mission[13][0]=true\n}"
-                                            },
-                                            {
-                                                "type": "if",
-                                                "condition": "(item:yellowKey>=20)",
-                                                "true": [
-                                                    {
-                                                        "type": "function",
-                                                        "function": "function(){\nflags.mission[13][1]=true\n}"
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "type": "if",
-                                                "condition": "(status:mana>=300)",
-                                                "true": [
-                                                    {
-                                                        "type": "function",
-                                                        "function": "function(){\nflags.mission[13][2]=true\n}"
-                                                    }
-                                                ]
+                                                "type": "setValue",
+                                                "name": "flag:第13关通关",
+                                                "value": "1"
                                             },
                                             {
                                                 "type": "update"
@@ -842,7 +824,7 @@ main.floors.MT88=
                                                 "time": 500
                                             },
                                             {
-                                                "type": "hideStatusBar"
+                                                "type": "hideui"
                                             },
                                             {
                                                 "type": "update"
@@ -885,7 +867,7 @@ main.floors.MT88=
                                             },
                                             {
                                                 "type": "function",
-                                                "function": "function(){\nvar a = flags.mission[core.getFlag('stage')];\ncore.setFlag('@temp@A', a[0] + a[1] + a[2]);\n}"
+                                                "function": "function(){\nvar a = core.taskSystem.checkTask(0) ? 1 : 0,\n\tb = core.taskSystem.checkTask(1) ? 1 : 0,\n\tc = core.taskSystem.checkTask(2) ? 1 : 0;\ncore.setFlag('@temp@A', a + b + c);\n}"
                                             },
                                             {
                                                 "type": "if",
@@ -911,11 +893,6 @@ main.floors.MT88=
                                                             90
                                                         ],
                                                         "opacity": 1,
-                                                        "time": 500,
-                                                        "async": true
-                                                    },
-                                                    {
-                                                        "type": "sleep",
                                                         "time": 500
                                                     },
                                                     {
@@ -942,11 +919,6 @@ main.floors.MT88=
                                                                     90
                                                                 ],
                                                                 "opacity": 1,
-                                                                "time": 500,
-                                                                "async": true
-                                                            },
-                                                            {
-                                                                "type": "sleep",
                                                                 "time": 500
                                                             },
                                                             {
@@ -973,11 +945,6 @@ main.floors.MT88=
                                                                             90
                                                                         ],
                                                                         "opacity": 1,
-                                                                        "time": 500,
-                                                                        "async": true
-                                                                    },
-                                                                    {
-                                                                        "type": "sleep",
                                                                         "time": 500
                                                                     }
                                                                 ],
@@ -1179,6 +1146,9 @@ main.floors.MT88=
                                                 "name": "item:hood",
                                                 "operator": "-=",
                                                 "value": "1"
+                                            },
+                                            {
+                                                "type": "submitTask"
                                             },
                                             {
                                                 "type": "sleep",

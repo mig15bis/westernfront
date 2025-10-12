@@ -204,6 +204,11 @@ main.floors.MT74=
         },
         "7,14": [
             {
+                "type": "setValue",
+                "name": "flag:第11关通关",
+                "value": "1"
+            },
+            {
                 "type": "setCurtain",
                 "color": [
                     0,
@@ -239,7 +244,7 @@ main.floors.MT74=
             },
             "1940年11月11日，来自英国“光辉”号航空母舰的攻击机群，分两个波次，于午夜时分袭击了塔兰托港。",
             "意军对此没有任何防备，慌乱中组织起来的防空火力零零散散，根本构不成威胁。",
-            "短短65分钟内，3艘战列舰、2艘巡洋舰和2艘驱逐舰燃起大火，整个军港一片狼藉，一些岸上设施也遭到损毁。而英军仅仅损失2架“剑鱼”式轰炸机。",
+            "65分钟内，3艘战列舰、2艘巡洋舰和2艘驱逐舰燃起大火，整个军港一片狼藉，一些岸上设施也遭到损毁。而英军仅仅损失2架“剑鱼”式轰炸机。",
             {
                 "type": "setCurtain",
                 "color": [
@@ -295,14 +300,6 @@ main.floors.MT74=
                 "pos": 6
             },
             {
-                "type": "function",
-                "function": "function(){\nflags.mission[11][0]=true\n}"
-            },
-            {
-                "type": "function",
-                "function": "function(){\nflags.skillList=[0,0,0,0,0,0,0]\n}"
-            },
-            {
                 "type": "update"
             },
             {
@@ -310,7 +307,7 @@ main.floors.MT74=
                 "time": 500
             },
             {
-                "type": "hideStatusBar"
+                "type": "hideui"
             },
             {
                 "type": "update"
@@ -353,7 +350,7 @@ main.floors.MT74=
             },
             {
                 "type": "function",
-                "function": "function(){\nvar a = flags.mission[core.getFlag('stage')];\ncore.setFlag('@temp@A', a[0] + a[1] + a[2]);\n}"
+                "function": "function(){\nvar a = core.taskSystem.checkTask(0) ? 1 : 0,\n\tb = core.taskSystem.checkTask(1) ? 1 : 0,\n\tc = core.taskSystem.checkTask(2) ? 1 : 0;\ncore.setFlag('@temp@A', a + b + c);\n}"
             },
             {
                 "type": "if",
@@ -379,11 +376,6 @@ main.floors.MT74=
                             90
                         ],
                         "opacity": 1,
-                        "time": 500,
-                        "async": true
-                    },
-                    {
-                        "type": "sleep",
                         "time": 500
                     },
                     {
@@ -410,11 +402,6 @@ main.floors.MT74=
                                     90
                                 ],
                                 "opacity": 1,
-                                "time": 500,
-                                "async": true
-                            },
-                            {
-                                "type": "sleep",
                                 "time": 500
                             },
                             {
@@ -441,11 +428,6 @@ main.floors.MT74=
                                             90
                                         ],
                                         "opacity": 1,
-                                        "time": 500,
-                                        "async": true
-                                    },
-                                    {
-                                        "type": "sleep",
                                         "time": 500
                                     }
                                 ],
@@ -556,6 +538,9 @@ main.floors.MT74=
             },
             {
                 "type": "pauseBgm"
+            },
+            {
+                "type": "submitTask"
             },
             {
                 "type": "setValue",
@@ -828,6 +813,7 @@ main.floors.MT74=
     "afterOpenDoor": {},
     "autoEvent": {
         "7,13": {
+            "0": null,
             "1": null
         }
     },

@@ -30,8 +30,9 @@ main.floors.MT73=
                                 "condition": "core.hasEquip('illus1941')",
                                 "true": [
                                     {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[11][2]=true\n}"
+                                        "type": "setValue",
+                                        "name": "flag:装备光辉号",
+                                        "value": "1"
                                     }
                                 ]
                             },
@@ -119,19 +120,7 @@ main.floors.MT73=
     "afterOpenDoor": {},
     "autoEvent": {
         "14,6": {
-            "0": {
-                "condition": "!core.hasEnemyLeft(undefined,['MT70','MT71','MT72','MT73'])",
-                "currentFloor": false,
-                "priority": 0,
-                "delayExecute": false,
-                "multiExecute": false,
-                "data": [
-                    {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[11][1]=true\n}"
-                    }
-                ]
-            }
+            "1": null
         }
     },
     "cannotMove": {},

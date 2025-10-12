@@ -18,10 +18,12 @@ main.floors.MT89=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        
         {
             "type": "setCurtain",
             "time": 500
+        },
+        {
+            "type": "showui"
         },
         {
             "type": "forbidSave"
@@ -39,12 +41,62 @@ main.floors.MT89=
             "type": "callSave"
         },
         {
+            "type": "setValue",
+            "name": "flag:第14关通关",
+            "value": "0"
+        },
+        {
             "type": "playSound",
             "name": "xinxinmagic.mp3"
         },
         "\t[任务目标]⭐跟踪俾斯麦号战列舰\n⭐通关时至少持有30个下午茶\n⭐通关时至少持有10把蓝钥匙",
         {
             "type": "callBook"
+        },
+        {
+            "type": "setTask",
+            "name": "第14关任务1",
+            "n": 1,
+            "text": "跟踪俾斯麦号战列舰",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "第14关通关",
+                    "operator": "=",
+                    "text": "抵达指定地点",
+                    "count": "1"
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第14关任务2",
+            "n": 1,
+            "text": "关时至少持有30个下午茶",
+            "info": [
+                {
+                    "type": "checkItem",
+                    "checkItem": "tea",
+                    "operator": ">=",
+                    "text": "下午茶数量",
+                    "count": 30
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第14关任务3",
+            "n": 1,
+            "text": "通关时至少持有10把蓝钥匙",
+            "info": [
+                {
+                    "type": "checkItem",
+                    "checkItem": "blueKey",
+                    "operator": ">=",
+                    "text": "蓝钥匙数量",
+                    "count": 10
+                }
+            ]
         }
     ],
     "eachArrive": [],
@@ -52,7 +104,7 @@ main.floors.MT89=
     "events": {
         "14,5": [
             "\t[伊吹萃香]\f[specialnpc.jpg,30,200,150,300]是不是感觉潜艇的伤害降低了些？因为大型战舰难以躲避鱼雷，当你装备着大型战舰的时候，受到潜艇的雷击伤害就会大幅提升。而现在失去了胡德号，你剩下的小型舰艇就更容易躲开鱼雷，所以潜艇的伤害就没那么恐怖了。",
-            "\t[伊吹萃香]\f[specialnpc.jpg,30,200,150,300]但凡事借有利弊。失去大型战舰的强大火力，其他敌舰的伤害反而被大幅提升。所以说，以后可不能因为害怕潜艇，就干脆不装备大型军舰了，因噎废食的事可别干。"
+            "\t[伊吹萃香]\f[specialnpc.jpg,30,200,150,300]但凡事皆有利弊。失去大型战舰的强大火力，其他敌舰的伤害反而被大幅提升。所以说，以后可不能因为害怕潜艇，就干脆不装备大型军舰了，因噎废食的事可别干。"
         ]
     },
     "changeFloor": {

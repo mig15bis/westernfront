@@ -34,16 +34,7 @@ main.floors.MT65=
         }
     },
     "beforeBattle": {},
-    "afterBattle": {
-        "4,0": [
-            {
-                "type": "setValue",
-                "name": "flag:st10tsk3",
-                "operator": "+=",
-                "value": "1"
-            }
-        ]
-    },
+    "afterBattle": {},
     "afterGetItem": {},
     "afterOpenDoor": {},
     "autoEvent": {},

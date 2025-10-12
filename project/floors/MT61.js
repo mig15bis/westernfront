@@ -90,8 +90,8 @@ main.floors.MT61=
             "type": "changeFloor",
             "floorId": "MT62",
             "loc": [
-                10,
-                9
+                6,
+                3
             ],
             "direction": "down"
         }

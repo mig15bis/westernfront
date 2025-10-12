@@ -21,6 +21,11 @@ main.floors.MT81=
     "events": {
         "14,7": [
             {
+                "type": "setValue",
+                "name": "flag:第12关通关",
+                "value": "1"
+            },
+            {
                 "type": "unloadEquip",
                 "pos": 0
             },
@@ -49,24 +54,6 @@ main.floors.MT81=
                 "pos": 6
             },
             {
-                "type": "function",
-                "function": "function(){\nflags.mission[12][0]=true\n}"
-            },
-            {
-                "type": "if",
-                "condition": "(flag:友军血量>=20000)",
-                "true": [
-                    {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[12][1]=true\n}"
-                    }
-                ]
-            },
-            {
-                "type": "function",
-                "function": "function(){\nflags.skillList=[0,0,0,0,0,0,0]\n}"
-            },
-            {
                 "type": "update"
             },
             {
@@ -74,7 +61,7 @@ main.floors.MT81=
                 "time": 500
             },
             {
-                "type": "hideStatusBar"
+                "type": "hideui"
             },
             {
                 "type": "update"
@@ -117,7 +104,7 @@ main.floors.MT81=
             },
             {
                 "type": "function",
-                "function": "function(){\nvar a = flags.mission[core.getFlag('stage')];\ncore.setFlag('@temp@A', a[0] + a[1] + a[2]);\n}"
+                "function": "function(){\nvar a = core.taskSystem.checkTask(0) ? 1 : 0,\n\tb = core.taskSystem.checkTask(1) ? 1 : 0,\n\tc = core.taskSystem.checkTask(2) ? 1 : 0;\ncore.setFlag('@temp@A', a + b + c);\n}"
             },
             {
                 "type": "if",
@@ -143,11 +130,6 @@ main.floors.MT81=
                             90
                         ],
                         "opacity": 1,
-                        "time": 500,
-                        "async": true
-                    },
-                    {
-                        "type": "sleep",
                         "time": 500
                     },
                     {
@@ -174,11 +156,6 @@ main.floors.MT81=
                                     90
                                 ],
                                 "opacity": 1,
-                                "time": 500,
-                                "async": true
-                            },
-                            {
-                                "type": "sleep",
                                 "time": 500
                             },
                             {
@@ -205,11 +182,6 @@ main.floors.MT81=
                                             90
                                         ],
                                         "opacity": 1,
-                                        "time": 500,
-                                        "async": true
-                                    },
-                                    {
-                                        "type": "sleep",
                                         "time": 500
                                     }
                                 ],
@@ -322,6 +294,9 @@ main.floors.MT81=
                 "type": "pauseBgm"
             },
             {
+                "type": "submitTask"
+            },
+            {
                 "type": "setValue",
                 "name": "flag:escort",
                 "value": "false"
@@ -372,7 +347,7 @@ main.floors.MT81=
             }
         ],
         "0,8": [
-            "\f[scharnhorst.jpg,170,50]沙恩霍斯特级战列舰是德国撕毁《凡尔赛条约》后建造的一型战列舰，共建造2艘，分别为“沙恩霍斯特”号和“格奈森瑙”号。与同时期其他国家的战列舰相比，沙恩霍斯特级的主炮口径很小（280mm），航速较高（31节），性能并不出众。战争爆发时，这两艘战舰是当时德国仅有的战列舰，常常在大西洋海上袭扰盟军船队，并一起击沉了英国“光荣”号航母。“沙恩霍斯特”号于1943年被英国“约克公爵”号战舰击沉，“格奈森瑙”号于1945年被德军自己凿沉，当作阻塞舰使用。"
+            "\f[scharnhorst.jpg,90,50]沙恩霍斯特级战列舰是德国撕毁《凡尔赛条约》后建造的一型战列舰，共建造2艘，分别为“沙恩霍斯特”号和“格奈森瑙”号。与同时期其他国家的战列舰相比，沙恩霍斯特级的主炮口径很小（280mm），航速较高（31节），性能并不出众。战争爆发时，这两艘战舰是当时德国仅有的战列舰，常常在大西洋海上袭扰盟军船队，并一起击沉了英国“光荣”号航母。“沙恩霍斯特”号于1943年被英国“约克公爵”号战舰击沉，“格奈森瑙”号于1945年被德军自己凿沉，当作阻塞舰使用。"
         ]
     },
     "changeFloor": {
@@ -407,19 +382,6 @@ main.floors.MT81=
     "afterOpenDoor": {},
     "autoEvent": {
         "14,8": {
-            "0": {
-                "condition": "flag:st12tsk3>=5",
-                "currentFloor": false,
-                "priority": 0,
-                "delayExecute": false,
-                "multiExecute": false,
-                "data": [
-                    {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[12][2]=true\n}"
-                    }
-                ]
-            },
             "1": null
         }
     },
