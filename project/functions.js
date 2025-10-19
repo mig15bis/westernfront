@@ -285,6 +285,14 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	var todo = [];
 	let dir = core.status.hero.loc.direction,
 		locs;
+	let equipped = core.status.hero.equipment;
+	let tk = equipped[0],
+		dd = equipped[1],
+		ca = equipped[2],
+		bb = equipped[3],
+		ff = equipped[4],
+		fb = equipped[5],
+		lb = equipped[6];
 	if (dir === 'up') {
 		locs = [
 			[x - 1, y - 1],
@@ -331,7 +339,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	// 默认播放的动画；你也可以使用
 	let animate = core.plugin.battleAnimate[type]; // 默认动画
 	let sound = "";
-	if (['战斗机', '重型战斗机', '俯冲轰炸机', '鱼雷轰炸机', '中型轰炸机'].includes(type)) {
+	if (type === '战斗机' || type === '重型战斗机' || type === '俯冲轰炸机' || type === '鱼雷轰炸机' || type === '攻击机' || type === '中型轰炸机') {
 		let random = Math.random() < 0.4 ? 2 : 1;
 		sound = core.plugin.battleSound[type + random];
 	} else {
@@ -365,16 +373,16 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	}
 
 	//地狱猫·安全返航
-	if (core.hasEquip('f6f5') && core.status.hero.hp < core.status.hero.hpmax * 0.3) {
+	if (ff === 'f6f5' && core.status.hero.hp < core.status.hero.hpmax * 0.3) {
 		core.status.hero.hp += core.status.hero.hpmax * 0.05;
 	}
-	if (core.hasEquip('exxex') && core.status.hero.hp < core.status.hero.hpmax * 0.3) { //埃塞克斯舰载机
+	if (bb === 'exxex' && core.status.hero.hp < core.status.hero.hpmax * 0.3) { //埃塞克斯舰载机
 		core.status.hero.hp += core.status.hero.hpmax * 0.05;
 	}
 	if (flags.ussrair === true) {
 		flags.ussrair = false;
 	}
-	if (core.hasEquip('la9') && core.status.hero.hp < core.status.hero.hpmax * 0.3) {
+	if (ff === 'la9' && core.status.hero.hp < core.status.hero.hpmax * 0.3) {
 		core.status.hero.hp += core.status.hero.hpmax * 0.1;
 		flags.ussrair = true;
 	}
@@ -428,7 +436,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	if (flags.skill !== 18) { //孟菲斯美女号
 		if (flags.escort && damage >= 0) { //拦截
 			var fredamage = (core.hasSpecial(enemyId, 64) ? 2 : 0.4) * damage;
-			if (core.hasEquip('classj')) { fredamage *= 0.5 } //检测到装备（J驱），友伤减半
+			if (dd === 'classj') { fredamage *= 0.5 } //检测到装备（J驱），友伤减半
 			if (core.hasItem('casablanca') && (core.status.maps[floorId].area === '浅滩' || core.status.maps[floorId].area === '海洋')) { //卡萨布兰卡
 				fredamage *= 0.7;
 			}
@@ -443,12 +451,13 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		}
 	}
 	//台风攻击机·纵深打击
-	if (core.hasEquip('typhoon')) {
+	if (fb === 'typhoon') {
 		let Block = core.getBlock(core.nextX(2), core.nextY(2));
-		if (Block.event.cls === 'enemys' && ['步兵', '轻坦', '中坦', '重坦', '坦歼', '反坦克炮', '榴弹炮', '高射炮', '建筑'].includes(core.material.enemys[Block.event.id].type)) {
+		let blocktype = core.material.enemys[Block.event.id].type;
+		if (Block.event.cls === 'enemys' && (blocktype === '步兵' || blocktype === '轻坦' || blocktype === '中坦' || blocktype === '重坦' || blocktype === '坦歼' || blocktype === '反坦克炮' || blocktype === '榴弹炮' || blocktype === '高射炮' || blocktype === '建筑')) {
 			let typhoonrocket = 0,
 				skillatk = core.getRealStatus('atk');
-			if (['步兵', '反坦克炮', '榴弹炮', '高射炮'].includes(core.material.enemys[Block.event.id].type)) {
+			if (blocktype === '步兵' || blocktype === '反坦克炮' || blocktype === '榴弹炮' || blocktype === '高射炮') {
 				typhoonrocket += skillatk * 0.1 * 16 * 1.2;
 			} else {
 				typhoonrocket += skillatk * 0.1 * 8;
@@ -466,19 +475,19 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 				delete flags.aoe[Block.x + '，' + Block.y + '，' + Block.floorId];
 				let money = core.getEnemyValue(Block.event.id, 'money', Block.x, Block.y),
 					exp = core.getEnemyValue(Block.event.id, 'exp', Block.x, Block.y);
-				if (core.hasEquip('m4') || core.hasEquip('m4a2') || core.hasEquip('m4a3') || core.hasEquip('m4a3e2') || core.hasEquip('firefly')) money += 5; //谢馒头，触发在双倍前
-				if (core.hasEquip('classj')) money += 5; //J级驱逐舰
+				if (tk === 'm4' || tk === 'm4a2' || tk === 'm4a3' || tk === 'm4a3e2' || tk === 'firefly') money += 5; //谢馒头，触发在双倍前
+				if (dd === 'classj') money += 5; //J级驱逐舰
 				if (flags.warmachine === true) money *= 2; //工业潜能，金币翻倍，计算在下面几个之前
-				if (core.hasEquip('edinburgh')) money += 2; //爱丁堡号巡洋舰，金币+2
-				if (core.hasEquip('hood')) money += 10; //胡德号，金币+10
+				if (ca === 'edinburgh') money += 2; //爱丁堡号巡洋舰，金币+2
+				if (bb === 'hood') money += 10; //胡德号，金币+10
 				if (core.hasItem('coin')) money *= 2; // 幸运金币：双倍
 				if (core.hasSpecial(target.special, 61)) money = 0; // 投降
 				core.status.hero.money += money;
 				core.status.hero.statistics.money += money;
-				if (core.hasEquip('classv')) exp += 2; //V级驱逐舰
-				if (core.hasEquip('classj')) exp += 5; //J级驱逐舰
-				if (core.hasEquip('hood')) exp += 10; //胡德号，经验+10
-				if (core.hasEquip('m4a2') || core.hasEquip('m4a3') || core.hasEquip('m4a3e2') || core.hasEquip('firefly')) exp *= 2; //馒头
+				if (dd === 'classv') exp += 2; //V级驱逐舰
+				if (dd === 'classj') exp += 5; //J级驱逐舰
+				if (bb === 'hood') exp += 10; //胡德号，经验+10
+				if (tk === 'm4a2' || tk === 'm4a3' || tk === 'm4a3e2' || tk === 'firefly') exp *= 2; //馒头
 				if (core.hasSpecial(target.special, 61)) exp = 0; // 投降
 				core.status.hero.exp += exp;
 				core.status.hero.statistics.exp += exp;
@@ -496,10 +505,11 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		}
 	}
 	//B17空中堡垒
-	if (core.hasEquip('b17')) {
+	if (lb === 'b17') {
 		locs.forEach(v => {
 			let Block = core.getBlock(v[0], v[1]);
-			if (Block.event.cls === 'enemys' && ['步兵', '轻坦', '中坦', '重坦', '坦歼', '反坦克炮', '榴弹炮', '高射炮', '建筑'].includes(core.material.enemys[Block.event.id].type)) {
+			let blocktype = core.material.enemys[Block.event.id].type;
+			if (Block.event.cls === 'enemys' && (blocktype === '步兵' || blocktype === '轻坦' || blocktype === '中坦' || blocktype === '重坦' || blocktype === '坦歼' || blocktype === '反坦克炮' || blocktype === '榴弹炮' || blocktype === '高射炮' || blocktype === '建筑')) {
 				//core.setEnemyOnPoint(Block.x, Block.y, Block.floorId, 'hp', 0.95, "*=");
 				if (!flags.aoe[Block.x + '，' + Block.y + '，' + Block.floorId]) {
 					flags.aoe[Block.x + '，' + Block.y + '，' + Block.floorId] = Math.floor(core.getEnemyInfo(Block.event.id, hero, Block.x, Block.y, Block.floorId).hp * 0.05);
@@ -510,10 +520,11 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		})
 	}
 	//兰开斯特
-	if (core.hasEquip('lancaster')) {
+	if (lb === 'lancaster') {
 		locs.forEach(v => {
 			let Block = core.getBlock(v[0], v[1]);
-			if (Block.event.cls === 'enemys' && ['步兵', '轻坦', '中坦', '重坦', '坦歼', '反坦克炮', '榴弹炮', '高射炮', '建筑'].includes(core.material.enemys[Block.event.id].type)) {
+			let blocktype = core.material.enemys[Block.event.id].type;
+			if (Block.event.cls === 'enemys' && (blocktype === '步兵' || blocktype === '轻坦' || blocktype === '中坦' || blocktype === '重坦' || blocktype === '坦歼' || blocktype === '反坦克炮' || blocktype === '榴弹炮' || blocktype === '高射炮' || blocktype === '建筑')) {
 				if (!flags.aoe[Block.x + '，' + Block.y + '，' + Block.floorId]) {
 					flags.aoe[Block.x + '，' + Block.y + '，' + Block.floorId] = Math.floor(core.getEnemyInfo(Block.event.id, hero, Block.x, Block.y, Block.floorId).hp * 0.1);
 				} else {
@@ -526,7 +537,8 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	if (core.hasEquip('b29') || core.hasEquip('tu4')) {
 		locs.forEach(v => {
 			let Block = core.getBlock(v[0], v[1]);
-			if (Block.event.cls === 'enemys' && ['步兵', '轻坦', '中坦', '重坦', '坦歼', '反坦克炮', '榴弹炮', '高射炮', '建筑'].includes(core.material.enemys[Block.event.id].type)) {
+			let blocktype = core.material.enemys[Block.event.id].type;
+			if (Block.event.cls === 'enemys' && (blocktype === '步兵' || blocktype === '轻坦' || blocktype === '中坦' || blocktype === '重坦' || blocktype === '坦歼' || blocktype === '反坦克炮' || blocktype === '榴弹炮' || blocktype === '高射炮' || blocktype === '建筑')) {
 				if (!flags.aoe[Block.x + '，' + Block.y + '，' + Block.floorId]) {
 					flags.aoe[Block.x + '，' + Block.y + '，' + Block.floorId] = Math.floor(core.getEnemyInfo(Block.event.id, hero, Block.x, Block.y, Block.floorId).hp * 0.15);
 				} else {
@@ -553,11 +565,11 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	var money = guards.reduce(function (curr, g) {
 		return curr + core.material.enemys[g[2]].money;
 	}, core.getEnemyValue(enemy, "money", x, y));
-	if (core.hasEquip('m4') || core.hasEquip('m4a2') || core.hasEquip('m4a3') || core.hasEquip('m4a3e2') || core.hasEquip('firefly')) money += 5; //谢馒头，触发在双倍前
-	if (core.hasEquip('classj')) money += 5; //J级驱逐舰
+	if (tk === 'm4' || tk === 'm4a2' || tk === 'm4a3' || tk === 'm4a3e2' || tk === 'firefly') money += 5; //谢馒头，触发在双倍前
+	if (dd === 'classj') money += 5; //J级驱逐舰
 	if (flags.warmachine === true) money *= 2; //工业潜能，金币翻倍，计算在下面几个之前
-	if (core.hasEquip('edinburgh')) money += 2; //爱丁堡号巡洋舰，金币+2
-	if (core.hasEquip('hood')) money += 10; //胡德号，金币+10
+	if (ca === 'edinburgh') money += 2; //爱丁堡号巡洋舰，金币+2
+	if (bb === 'hood') money += 10; //胡德号，金币+10
 	if (core.hasItem('coin')) money *= 2; // 幸运金币：双倍
 	if (core.hasSpecial(enemyId, 61)) money = 0; // 投降
 	core.status.hero.money += money;
@@ -567,10 +579,10 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	var exp = guards.reduce(function (curr, g) {
 		return curr + core.material.enemys[g[2]].exp;
 	}, core.getEnemyValue(enemy, "exp", x, y));
-	if (core.hasEquip('classv')) exp += 2; //V级驱逐舰
-	if (core.hasEquip('classj')) exp += 5; //J级驱逐舰
-	if (core.hasEquip('hood')) exp += 10; //胡德号，经验+10
-	if (core.hasEquip('m4a2') || core.hasEquip('m4a3') || core.hasEquip('m4a3e2') || core.hasEquip('firefly')) exp *= 2; //馒头
+	if (dd === 'classv') exp += 2; //V级驱逐舰
+	if (dd === 'classj') exp += 5; //J级驱逐舰
+	if (bb === 'hood') exp += 10; //胡德号，经验+10
+	if (tk === 'm4a2' || tk === 'm4a3' || tk === 'm4a3e2' || tk === 'firefly') exp *= 2; //馒头
 	if (core.hasSpecial(enemyId, 61)) exp = 0; // 投降
 	core.status.hero.exp += exp;
 	core.status.hero.statistics.exp += exp;
@@ -1297,12 +1309,12 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		v1 = false,
 		a = 0, //敌方先攻
 		b = 0, //我方先攻
-		hugeship = ['重巡', '战列', '航母'].includes(mon_skillNum.type),
-		lightship = ['轻巡', '驱逐'].includes(mon_skillNum.type),
-		isbomber = ['俯冲轰炸机', '鱼雷轰炸机', '攻击机', '中型轰炸机'].includes(mon_skillNum.type),
-		isfighter = ['战斗机', '重型战斗机'].includes(mon_skillNum.type),
-		istank = ['轻坦', '中坦', '重坦', '坦歼'].includes(mon_skillNum.type),
-		isgun = ['反坦克炮', '榴弹炮', '高射炮'].includes(mon_skillNum.type);
+		hugeship = mon_skillNum.type === '重巡' || mon_skillNum.type === '战列' || mon_skillNum.type === '航母',
+		lightship = mon_skillNum.type === '轻巡' || mon_skillNum.type === '驱逐',
+		isbomber = mon_skillNum.type === '俯冲轰炸机' || mon_skillNum.type === '鱼雷轰炸机' || mon_skillNum.type === '攻击机' || mon_skillNum.type === '中型轰炸机',
+		isfighter = mon_skillNum.type === '战斗机' || mon_skillNum.type === '重型战斗机',
+		istank = mon_skillNum.type === '轻坦' || mon_skillNum.type === '中坦' || mon_skillNum.type === '重坦' || mon_skillNum.type === '坦歼',
+		isgun = mon_skillNum.type === '反坦克炮' || mon_skillNum.type === '榴弹炮' || mon_skillNum.type === '高射炮';
 
 	//陆军特判
 	if (junzhong === '陆军') {
@@ -1310,14 +1322,14 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			guaiwu.hp *= 0.9;
 		} else if (lb === 'lancaster') { //兰开斯特
 			guaiwu.hp *= 0.8;
-		} else if (['b29', 'tu4'].includes(lb)) { //B29
+		} else if (lb === 'b29' || lb === 'tu4') { //B29
 			guaiwu.hp *= 0.7;
 		}
-		if (taishi === "劣势" && ['m4', 'm4a2', 'm4a3'].includes(tk)) { //谢馒头
+		if (taishi === "劣势" && (tk === 'm4' || tk === 'm4a2' || tk === 'm4a3')) { //谢馒头
 			yongshi.atk *= 1.15;
-		} else if (tk === 'm26pershing' && ['panzer5d', 'panzer5g', 'tigere', 'japtank6'].includes(enemyInfo.enemyId)) { //潘兴·驯兽师
+		} else if (tk === 'm26pershing' && (enemyInfo.enemyId === 'panzer5d' || enemyInfo.enemyId === 'panzer5g' || enemyInfo.enemyId === 'tigere' || enemyInfo.enemyId === 'japtank6')) { //潘兴·驯兽师
 			yongshi.atk *= 1.3;
-		} else if (tk === 'm26pershing' && ['步兵', '反坦克炮', '榴弹炮', '高射炮'].includes(mon_skillNum.type)) { //潘兴
+		} else if (tk === 'm26pershing' && (mon_skillNum.type === '步兵' || mon_skillNum.type === '反坦克炮' || mon_skillNum.type === '榴弹炮' || mon_skillNum.type === '高射炮')) { //潘兴
 			beilv *= 1.5;
 			finalDamage *= 0.6;
 		}
@@ -2438,7 +2450,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 					if ((flags.spy ?? 0) > 0) {
 						flags.spy--;
 					} else {
-						core.insertAction(info.event);
+						info.func();
 					}
 				}
 			else {

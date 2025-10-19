@@ -1159,7 +1159,7 @@ ui.prototype._drawTextContent_draw = function (ctx, tempCtx, content, config) {
         var block = config.blocks[config.index++];
         if (block != null) {
             // It works, why?
-            const scale = config.isHD ? devicePixelRatio * core.domStyle.scale : 1;
+            const scale = config.isHD ? devicePixelRatio * core.domStyle.ratio : 1;
             core.drawImage(
                 ctx,
                 tempCtx.canvas,
@@ -2572,6 +2572,31 @@ ui.prototype._drawCenterFly = function () {
     core.status.event.data = { "x": toX, "y": toY, "posX": toX - offsetX, "posY": toY - offsetY };
     core.playSound('打开界面');
     core.drawTip("请确认当前" + core.material.items['centerFly'].name + "的位置", 'centerFly');
+    return;
+}
+ui.prototype._drawc47 = function () {
+    core.lockControl();
+    core.status.event.id = 'c47';
+    var toX = core.bigmap.width - 1 - core.getHeroLoc('x'), toY = core.bigmap.height - 1 - core.getHeroLoc('y');
+    let Blockc47 = core.plugin.c47[toX + ',' + toY];
+    var fillstyle = 'rgba(255,0,0,0.5)';
+    if (!core.getBlockId(toX, toY)) {
+        if (Blockc47 === 0){
+            fillstyle = 'rgba(0,255,0,0.5)';
+        }
+        else {
+            fillstyle = 'rgba(255,255,0,0.5)';
+        }
+    }
+    this.clearUI();
+    core.fillRect('ui', 0, 0, core._PX_, core._PY_, '#000000');
+    core.drawThumbnail(null, null, { heroLoc: core.status.hero.loc, heroIcon: core.status.hero.image, ctx: 'ui', centerX: toX, centerY: toY });
+    var offsetX = core.clamp(toX - core._HALF_WIDTH_, 0, core.bigmap.width - core._WIDTH_),
+        offsetY = core.clamp(toY - core._HALF_HEIGHT_, 0, core.bigmap.height - core._HEIGHT_);
+    core.fillRect('ui', (toX - offsetX) * 32, (toY - offsetY) * 32, 32, 32, fillstyle);
+    core.status.event.data = { "x": toX, "y": toY, "posX": toX - offsetX, "posY": toY - offsetY };
+    core.playSound('打开界面');
+    core.drawTip("请确认当前空降位置");
     return;
 }
 

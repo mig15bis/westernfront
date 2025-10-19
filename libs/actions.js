@@ -435,6 +435,9 @@ actions.prototype._sys_keyUp_lockControl = function (keyCode, altKey) {
         case 'centerFly':
             this._keyUpCenterFly(keyCode);
             break;
+            case 'c47':
+            this._keyUpc47(keyCode);
+            break;
     }
     return true;
 }
@@ -461,6 +464,9 @@ actions.prototype._sys_ondown_lockControl = function (x, y, px, py) {
     if (core.status.played && !core.status.lockControl) return false;
 
     switch (core.status.event.id) {
+        case 'c47':
+            this._clickc47(x, y, px, py);
+            break;
         case 'centerFly':
             this._clickCenterFly(x, y, px, py);
             break;
@@ -971,6 +977,105 @@ actions.prototype._keyUpCenterFly = function (keycode) {
         else {
             core.playSound('操作失败');
             core.drawTip('当前不能使用' + core.material.items['centerFly'].name, 'centerFly');
+        }
+    }
+}
+actions.prototype._clickc47 = function (x, y) {
+    var posX = core.status.event.data.posX, posY = core.status.event.data.posY;
+    core.ui.closePanel();
+    if (x == posX && y == posY) {
+        if (!core.getBlockId(x, y)) {
+    if (core.plugin.c47[x + ',' + y] === 1){
+        core.status.hero.hp -= core.status.hero.hpmax * 0.8;
+    }
+    if (!core.isReplaying() && !main.replayChecking){
+        core.lockControl();
+        core.playSound('bomber.mp3');
+		core.showImage(1, 'aircraft5.png', null, [480, 32 * y - 109], 1, 0, () => {
+            core.clearMap('hero');
+            core.moveImage(1, [-195, 32 * y - 109], 1, null, 500, () => {
+									core.hideImage(1, 0);
+                                    core.unlockControl();
+core.setHeroLoc('x', core.bigmap.width - 1 - core.getHeroLoc('x'));
+core.setHeroLoc('y', core.bigmap.height - 1 - core.getHeroLoc('y'));
+core.drawHero();
+                                    if (core.plugin.c47[x + ',' + y] === 1){
+                                        core.drawAnimate('flak', x, y, null, ()=>{
+                                            core.updateStatusBar();
+                                            if(core.status.hero.hp <= 0){
+                                        core.lose();
+                                    }
+                                        });
+                                    }
+								})
+        });
+    }
+    else {
+        core.clearMap('hero');
+core.setHeroLoc('x', core.bigmap.width - 1 - core.getHeroLoc('x'));
+core.setHeroLoc('y', core.bigmap.height - 1 - core.getHeroLoc('y'));
+core.drawHero();
+        if (core.plugin.c47[x + ',' + y] === 1){
+                                            core.updateStatusBar();
+                                            if(core.status.hero.hp <= 0){
+                                        core.lose();
+                                    }
+                                    }
+                                }
+        }
+        else {
+            core.playSound('操作失败');
+            core.drawTip('空降地点存在障碍物！');
+        }
+    }
+}
+actions.prototype._keyUpc47 = function (keycode) {
+    var x = core.bigmap.width - 1 - core.getHeroLoc('x'),
+    y = core.bigmap.height - 1 - core.getHeroLoc('y');
+    core.ui.closePanel();
+    if (keycode == 51 || keycode == 13 || keycode == 32 || keycode == 67) {
+        if (!core.getBlockId(x, y)) {
+    if (core.plugin.c47[x + ',' + y] === 1){
+        core.status.hero.hp -= core.status.hero.hpmax * 0.8;
+    }
+    if (!core.isReplaying() && !main.replayChecking){
+        core.lockControl();
+        core.playSound('bomber.mp3');
+		core.showImage(1, 'aircraft5.png', null, [480, 32 * y - 109], 1, 0, () => {
+            core.clearMap('hero');
+            core.moveImage(1, [-195, 32 * y - 109], 1, null, 500, () => {
+									core.hideImage(1, 0);
+                                    core.unlockControl();
+core.setHeroLoc('x', core.bigmap.width - 1 - core.getHeroLoc('x'));
+core.setHeroLoc('y', core.bigmap.height - 1 - core.getHeroLoc('y'));
+core.drawHero();
+                                    if (core.plugin.c47[x + ',' + y] === 1){
+                                        core.drawAnimate('flak', x, y, null, ()=>{
+                                            core.updateStatusBar();
+                                            if(core.status.hero.hp <= 0){
+                                        core.lose();
+                                    }
+                                        });
+                                    }
+								})
+        });
+    }
+    else {
+        core.clearMap('hero');
+core.setHeroLoc('x', core.bigmap.width - 1 - core.getHeroLoc('x'));
+core.setHeroLoc('y', core.bigmap.height - 1 - core.getHeroLoc('y'));
+core.drawHero();
+        if (core.plugin.c47[x + ',' + y] === 1){
+                                            core.updateStatusBar();
+                                            if(core.status.hero.hp <= 0){
+                                        core.lose();
+                                    }
+                                    }
+                                }
+        }
+        else {
+            core.playSound('操作失败');
+            core.drawTip('空降地点存在障碍物！');
         }
     }
 }

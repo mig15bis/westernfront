@@ -3784,7 +3784,6 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 			strategy: false,
 			name: '无',
 			cost: 0,
-			event: [],
 			description: '无'
 		},
 
@@ -3793,7 +3792,6 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 			strategy: false,
 			name: '战壕',
 			cost: 20,
-			event: [],
 			description: '挖掘战壕，与敌方陆军战斗时，受到的伤害减少10%'
 		},
 
@@ -3802,7 +3800,6 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 			strategy: true,
 			name: '紧急补给',
 			cost: 100,
-			event: [{ "type": "setValue", "name": "status:hp", "operator": "+=", "value": "status:hpmax/4" }],
 			func: function () {
 				core.status.hero.hp += Math.floor(core.status.hero.hpmax / 4);
 				if (core.status.hero.hp > core.status.hero.hpmax) {
@@ -3820,7 +3817,6 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 			strategy: false,
 			name: '防空弹幕',
 			cost: 50,
-			event: [],
 			description: '下一次与敌方空军的战斗中，攻击力提升20%'
 		},
 
@@ -3829,9 +3825,6 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 			strategy: true,
 			name: '空战王牌',
 			cost: 100,
-			event: [
-				{ "type": "setValue", "name": "flag:空战王牌", "value": "core.getBlockId(core.nextX(),core.nextY())" }, { "type": "if", "condition": "core.plugin.Luftwaffe.includes(core.material.enemys[flags.空战王牌]?.type)&&!core.material.enemys[flag:空战王牌].notBomb&&core.material.enemys[flags.空战王牌]?.type!=='导弹'&&!core.hasSpecial(flags['空战王牌'], 65)", "true": [{ "type": "playSound", "name": "fighter.mp3" }, { "type": "showImage", "code": 1, "image": "aircraft1.png", "loc": [643, "32*core.nextY()+16-125"], "opacity": 1, "time": 0 }, { "type": "moveImage", "code": 1, "to": [-195, "32*core.nextY()+16-125"], "time": 500, "async": true }, { "type": "battle", "loc": ["core.nextX()", "core.nextY()"] }, { "type": "waitAsync" }, { "type": "hideImage", "code": 1, "time": 0 }], "false": [{ "type": "tip", "text": "目标无法击杀！" }, { "type": "playSound", "name": "操作失败" }, { "type": "setValue", "name": "status:mana", "operator": "+=", "value": "100" }, { "type": "setValue", "name": "flag:空战王牌", "value": "null" }] }
-			],
 			func: function () {
 				let X = core.nextX(),
 					Y = core.nextY(),
@@ -4014,7 +4007,6 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 			strategy: false,
 			name: '预警',
 			cost: 240,
-			event: [],
 			description: '下一场战斗中，闪避鱼雷数+6，受到伤害-30%'
 		},
 
@@ -4023,7 +4015,6 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 			strategy: false,
 			name: 'Z字规避',
 			cost: 80,
-			event: [],
 			description: '下一场战斗中，闪避鱼雷数+3'
 		},
 
@@ -4032,22 +4023,6 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 			strategy: true,
 			name: '扫雷',
 			cost: 20,
-			event: [
-				{ "type": "setValue", "name": "temp:A", "value": "core.getBlockId(core.nextX(), core.nextY())" },
-				{
-					"type": "if",
-					"condition": "((temp:A==='lavaNet')||(temp:A==='mine'))",
-					"true": [
-						{ "type": "playSound", "name": "005-System05.mp3" },
-						{ "type": "hide", "loc": ["core.nextX()", "core.nextY()"], "remove": true },
-					],
-					"false": [
-						{ "type": "playSound", "name": "error.mp3" },
-						{ "type": "setValue", "name": "status:mana", "operator": "+=", "value": "20" },
-						{ "type": "tip", "text": "操作失败！" },
-					]
-				},
-			],
 			func: function () {
 				let 排雷 = core.getBlockId(core.nextX(), core.nextY());
 				if (['lavaNet', 'mine'].includes(排雷)) {
@@ -4067,7 +4042,6 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 			strategy: true,
 			name: '剑鱼818中队',
 			cost: 150,
-			event: [],
 			func: function () {
 				let X = core.nextX(),
 					Y = core.nextY(),
@@ -4192,7 +4166,6 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 			strategy: false,
 			name: '抵抗运动',
 			cost: 100,
-			event: [],
 			description: '下一场战斗中，敌方陆军攻击力随回合数增加而减少，每回合减少原攻击力的10%。当敌人攻击力不足原来的30%时，则不会继续减少'
 		},
 
@@ -4201,7 +4174,6 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 			strategy: false,
 			name: '破译',
 			cost: 40,
-			event: [],
 			description: '下一场战斗中，获得20%减伤'
 		},
 
@@ -4210,9 +4182,6 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 			strategy: true,
 			name: '空中打击',
 			cost: 200,
-			event: [
-				{ "type": "setValue", "name": "flag:空中打击", "value": "core.getBlockId(core.nextX(),core.nextY())" }, { "type": "if", "condition": "['轻坦','中坦','重坦','坦歼'].includes(core.material.enemys[flag:空中打击]?.type)&&!core.material.enemys[flag:空中打击]?.notBomb&&!core.hasSpecial(flags['空中打击'], 65)", "true": [{ "type": "playSound", "name": "bomber3.mp3" }, { "type": "showImage", "code": 1, "image": "aircraft2.png", "loc": [643, "32*core.nextY()+16-125"], "opacity": 1, "time": 0 }, { "type": "moveImage", "code": 1, "to": [-195, "32*core.nextY()+16-125"], "time": 500, "async": true }, { "type": "battle", "loc": ["core.nextX()", "core.nextY()"] }, { "type": "waitAsync" }, { "type": "hideImage", "code": 1, "time": 0 }], "false": [{ "type": "tip", "text": "目标无法击杀！" }, { "type": "playSound", "name": "操作失败" }, { "type": "setValue", "name": "status:mana", "operator": "+=", "value": "200" }, { "type": "setValue", "name": "flag:空中打击", "value": "null" }] }
-			],
 			func: function () {
 				let X = core.nextX(),
 					Y = core.nextY(),
@@ -4393,7 +4362,6 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 			strategy: false,
 			name: '从海底出击',
 			cost: 100,
-			event: [],
 			description: '下一场战斗中，派遣一艘潜艇支援：在战斗开始时发射8枚鱼雷，随后潜艇撤退'
 		},
 
@@ -4402,7 +4370,6 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 			strategy: false,
 			name: '金牌损管',
 			cost: 180,
-			event: [],
 			description: '下一场战斗结束后，回满血量，清除所有负面效果，获得20%当前后勤值的临时后勤值'
 		},
 
@@ -4411,7 +4378,6 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 			strategy: false,
 			name: '补给线',
 			cost: 250,
-			event: [],
 			description: '下一场战斗中，后勤值提升10倍'
 		},
 
@@ -4420,7 +4386,64 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 			strategy: true,
 			name: 'C-47空中列车',
 			cost: 300,
-			event: [{ "type": "if", "condition": "(!['陆地','浅滩'].includes(core.status.thisMap.area))", "true": [{ "type": "playSound", "name": "操作失败" }, { "type": "tip", "text": "当前地图不可使用该技能！" }, { "type": "setValue", "name": "status:mana", "operator": "+=", "value": "300" }], "false": [{ "type": "function", "function": "function(){\nflags.X = core.bigmap.width - 1 - hero.loc.x;\nflags.Y = core.bigmap.height - 1 - hero.loc.y;\nflags.C = '#00FF00';\nif (core.getBlockNumber(flags.X, flags.Y) > 0) {\n\tflags.C = 'red';\n} else {\n\tfor (let dx = -2; dx <= 2; ++dx)\n\t\tfor (let dy = -2; dy <= +2; ++dy) {\n\t\t\tlet x = flags.X + dx,\n\t\t\t\ty = flags.Y + dy,\n\t\t\t\tid = core.getBlockId(x, y);\n\t\t\tif (core.enemyExists(x, y)) {\n\t\t\t\tif (core.hasSpecial(id, 40)) flags.C = 'yellow';\n\t\t\t\tif (Math.abs(dx) <= 1 && Math.abs(dy) <= 1 && core.material.enemys[id].type.endsWith('战斗机')) flags.C = 'yellow';\n\t\t\t}\n\t\t}\n}\ncore.ui._createUIEvent();\ncore.ui.fillRect('uievent', 32 * flags.X, 32 * flags.Y, 32, 32, flags.C);\n}" }, { "type": "tip", "text": "请确认空降位置" }, { "type": "wait" }, { "type": "if", "condition": "(((flags.type===1)&&((flags.x!==flags.X)||(flags.y!==flags.Y)))||((flags.type===0)&&((flags.keycode!==32)&&(flags.keycode!==13))))", "true": [{ "type": "playSound", "name": "取消" }, { "type": "tip", "text": "已取消空降" }, { "type": "setValue", "name": "status:mana", "operator": "+=", "value": "300" }], "false": [{ "type": "if", "condition": "(flags.C==='red')", "true": [{ "type": "playSound", "name": "操作失败" }, { "type": "tip", "text": "空降落点有障碍物存在，无法着陆！" }, { "type": "setValue", "name": "status:mana", "operator": "+=", "value": "300" }], "false": [{ "type": "playSound", "name": "bomber.mp3" }, { "type": "showImage", "code": 1, "image": "aircraft5.png", "loc": [480, "32 * flags.Y - 125"], "opacity": 1, "time": 0 }, { "type": "moveImage", "code": 1, "to": [-195, "32 * flags.Y - 125"], "time": 500 }, { "type": "hideImage", "code": 1, "time": 0 }, { "type": "changePos", "loc": ["flags.X", "flags.Y"] }, { "type": "if", "condition": "(flags.C==='yellow')", "true": [{ "type": "animate", "name": "explore", "loc": "hero" }, { "type": "setValue", "name": "status:hp", "operator": "-=", "value": "0.8*status:hpmax" }] }] }] }, { "type": "clearMap" }] }],
+			func: function () {
+				//action.js和ui.js可优化：把遍历全图改成找周围两圈
+				if (core.status.thisMap.area !== '陆地' && core.status.thisMap.area !== '浅滩') {
+					core.status.hero.mana += 300;
+					core.drawTip('只能在陆地或浅滩使用');
+					return;
+				}
+				let blocks = core.searchBlockWithFilter((block) => {
+					if (block.event.cls === 'enemys') {
+						let Type = core.material.enemys[block.event.id].type;
+						if (core.hasSpecial(block.event.id, 40) || Type === '战斗机' || Type === '重型战斗机') {
+							return true;
+						}
+					}
+				})
+				console.log(blocks);
+				core.plugin.c47 = {};
+				for (let N = 0; N < 15; N++) {
+					for (let M = 0; M < 15; M++) {
+						core.plugin.c47[N + ',' + M] = 0;
+					}
+				}
+				blocks.forEach(v => {
+					let ID = v.block.event.id,
+						TYPE = core.material.enemys[ID].type;
+					if (core.hasSpecial(ID, 40)) {
+						for (let A = -2; A < 3; A++) {
+							if (A + v.x < 0 || A + v.x > 14) {
+								continue;
+							}
+							for (let B = -2; B < 3; B++) {
+								if (B + v.y < 0 || B + v.y > 14) {
+									continue;
+								}
+								let C47X = A + v.x,
+									C47Y = B + v.y;
+								core.plugin.c47[C47X + ',' + C47Y] = 1;
+							}
+						}
+					}
+					if (TYPE === '战斗机' || TYPE === '重型战斗机') {
+						for (let A = -1; A < 2; A++) {
+							if (A + v.x < 0 || A + v.x > 14) {
+								continue;
+							}
+							for (let B = -1; B < 2; B++) {
+								if (B + v.y < 0 || B + v.y > 14) {
+									continue;
+								}
+								let C47X = A + v.x,
+									C47Y = B + v.y;
+								core.plugin.c47[C47X + ',' + C47Y] = 1;
+							}
+						}
+					}
+				})
+				core.ui._drawc47();
+			},
 			description: '只能在陆地或浅滩使用，空降至当前地图的中心对称落点。如果目标地点处于“防空”范围内或敌方战斗机周围8格内，会失去等同于80%血限的生命值。（确认空降坐标时，点击目标点或空格进行空降，重新按对应快捷键则取消空降）'
 		},
 
@@ -4429,7 +4452,6 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 			strategy: true,
 			name: '海上霸主',
 			cost: 1000,
-			event: [],
 			description: '只能在海上使用且必须装备着航空母舰。舰载机发动空袭，使全图除潜艇外的敌方海军损失50%生命值，同时我方损失等同于20%血限的hp作为飞机损失。每张地图仅限使用一次，对boss无效'
 		},
 
@@ -4438,7 +4460,6 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 			strategy: false,
 			name: '范弗利特弹药量',
 			cost: 60,
-			event: [],
 			description: '下一场战斗中，主角攻击力+30%'
 		},
 
@@ -4447,7 +4468,6 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 			strategy: false,
 			name: '孟菲斯美女号',
 			cost: 50,
-			event: [],
 			description: '下一场战斗中，友军不会受到任何伤害'
 		},
 
@@ -4456,7 +4476,6 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 			strategy: false,
 			name: '刺猬弹',
 			cost: 100,
-			event: [],
 			description: '下一场战斗中发射“刺猬”反潜迫击炮，在首回合对潜艇造成5倍攻击力的伤害，战后无视狼群协同攻击'
 		},
 
@@ -4465,7 +4484,6 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 			strategy: true,
 			name: '红色尾翼',
 			cost: 1000,
-			event: [],
 			description: '获得第332战斗机大队的支援。无条件直接夺取当前地图制空权，且制空权效果改为20%。主角在当前地图行动期间，友军不会受到任何损失，对敌方空军伤害+30%'
 		},
 
@@ -4474,7 +4492,6 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 			strategy: true,
 			name: 'T34谢尔曼风琴',
 			cost: 600,
-			event: [],
 			description: '仅可在地面使用。呼叫火箭炮覆盖打击，打击目标为以自身为中心7×7正方形区域，其中的敌人陆军受到不同程度的损失：步兵失去70%生命值，炮兵失去50%，装甲失去20%'
 		},
 
@@ -4483,7 +4500,6 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 			strategy: true,
 			name: '地毯式轰炸',
 			cost: 3000,
-			event: [],
 			description: '仅可在地面使用。呼叫大规模轰炸机群展开全图轰炸，全体敌方陆军损失70%生命值，空军损失15%生命值。'
 		},
 
@@ -4492,7 +4508,6 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 			strategy: true,
 			name: '铝箔条',
 			cost: 1200,
-			event: [],
 			description: '抛洒铝箔条，干扰敌方雷达。在使用过该技能的地图中，光环类（指挥、截断）、协同攻击类（陷阱、防空）等技能无效'
 		},
 
@@ -4501,7 +4516,6 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 			strategy: true,
 			name: '翼尖挑衅',
 			cost: 200,
-			event: [],
 			description: '将面前的V1导弹向前推1格并引爆。如果引爆地点是可破墙壁或非boss敌人，可将其摧毁（不获得金经）'
 		},
 
@@ -4510,7 +4524,6 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 			strategy: true,
 			name: '高脚柜炸弹',
 			cost: 1000,
-			event: [],
 			description: '只能在陆地或浅滩使用，且必须装备着特定轰炸机。使用后在前方一格投下一枚“高脚柜”炸弹，直接摧毁面前的非boss陆军（无视抗破），并在爆炸地点九宫格3格半径内引发小范围地震，摧毁可破墙壁，范围内其他敌方陆军损失80%血量'
 		},
 
@@ -4519,7 +4532,6 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 			strategy: true,
 			name: '钳形攻势',
 			cost: 2000,
-			event: [],
 			description: '主角能够从当前地图任意出口通行时可用。发动此技能后，在当前地图战斗时攻击力+50%，伤害减免40%。'
 		}
 	]
