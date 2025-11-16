@@ -335,10 +335,10 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	},
 	"icePickaxe": {
 		"cls": "tools",
-		"name": "破冰镐",
-		"text": "可以破坏勇士面前的一堵冰墙",
-		"useItemEffect": "(function () {\n\tcore.drawTip(core.material.items[itemId].name + '使用成功', itemId);\n\tcore.insertAction({ \"type\": \"openDoor\", \"loc\": [\"core.nextX()\", \"core.nextY()\"] });\n})();",
-		"canUseItemEffect": "(function () {\n\treturn core.getBlockId(core.nextX(), core.nextY()) == 'ice';\n})();"
+		"name": "破冰",
+		"text": "消耗200指挥点数，破坏主角面前的一块浮冰。\n注意！这是个消耗道具！省着点用！另外，通关后会回收剩余破冰道具。",
+		"useItemEffect": "(function () {\n\tcore.drawTip(core.material.items[itemId].name + '使用成功', itemId);\n\tcore.insertAction({ \"type\": \"openDoor\", \"loc\": [\"core.nextX()\", \"core.nextY()\"] });\n\tcore.status.hero.mana -= 200;\n})();",
+		"canUseItemEffect": "(function () {\n\treturn core.getBlockId(core.nextX(), core.nextY()) == 'ice' && core.status.hero.mana >= 200;\n})();"
 	},
 	"bomb": {
 		"cls": "tools",

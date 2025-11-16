@@ -2539,15 +2539,17 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 		}
 		// 更新属性
 		_update_props() {
-			let diji,
-				skycontrol;
+			let skycontrol;
 			if (core.status.floorId) {
-				diji = core.searchBlockWithFilter(Block => Block && ['战斗机', '重型战斗机'].includes(core.material.enemys[Block.event.id]?.type)).length;
-				if (core.getEquip(4) || (core.getEquip(5) && ['p38', 'typhoon', 'mosquito', 'p47d', 'p61'].includes(core.getEquip(5))) || (core.getEquip(3) && ['eagle', 'illus1941', 'illustrious', 'essex', 'enterprise'].includes(core.getEquip(3)))) { //制空权检测
-					if (diji === 0) {
-						skycontrol = 1;
-					}
-				} else if (diji > 0) {
+				let bb = core.getEquip(3),
+					ff = core.getEquip(4),
+					fb = core.getEquip(5),
+					cacheFloor = core.status.checkBlock.cache?.cacheFloor;
+				let hasFighter = ff || fb === 'p38' || fb === 'typhoon' || fb === 'mosquito' || fb === 'p47d' || fb === 'p61' || bb === 'eagle' || bb === 'illustrious' || bb === 'raider' || bb === 'essex' || bb === 'enterprise' || bb === 'illus1941' || core.hasItem('independence'),
+					enemyFighter = cacheFloor?.战斗机 || cacheFloor?.重型战斗机;
+				if (hasFighter && !enemyFighter) {
+					skycontrol = 1;
+				} else if (!hasFighter && enemyFighter) {
 					skycontrol = 2;
 				}
 			}
@@ -4015,7 +4017,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 			strategy: false,
 			name: 'Z字规避',
 			cost: 80,
-			description: '下一场战斗中，闪避鱼雷数+3'
+			description: '下一场战斗中，闪避鱼雷数+2'
 		},
 
 		{ // 7

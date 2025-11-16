@@ -57,7 +57,7 @@ main.floors.MT77=
             "type": "setEnemy",
             "id": "ju87b",
             "name": "hp",
-            "value": "9000",
+            "value": "7000",
             "norefresh": true
         },
         {
@@ -71,21 +71,21 @@ main.floors.MT77=
             "type": "setEnemy",
             "id": "ju87b",
             "name": "special",
-            "value": "[28,36]",
+            "value": "[28]",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "ju87b",
             "name": "bom",
-            "value": "2000",
+            "value": "4000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "he111",
             "name": "hp",
-            "value": "15000",
+            "value": "8000",
             "norefresh": true
         },
         {
