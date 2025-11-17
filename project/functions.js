@@ -924,7 +924,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		[79, "航空支援", "在场期间，所有空军单位血量提升20%，攻击力提升10%，雷击和空袭提升50%。"],
 		[80, "410mm舰炮", "每\r[red]4\r回合额外发射一轮主炮，伤害等于8倍攻击力"],
 		[81, "460mm舰炮", "大和级专用。每\r[red]5\r回合额外发射一轮主炮，伤害等于12倍攻击力"],
-		[82, "万岁冲锋", "将对手高于10%的减伤效果降为10%"],
+		[82, "万岁冲锋", "主角的减伤效果合计不会超过10%"],
 		[83, "对空火箭", function (enemy) { return "回合开始时，发射\r[red]" + enemy.ammo ?? 0 + "\r枚火箭弹，每发火箭弹对受保护的目标造成5%攻击力的伤害" }],
 		[84, "永久工事", "战败后化作可破土墙阻拦道路"],
 		[85, "狼群·改", "与身周5×5范围内其他潜艇组成狼群。自身被击败后，主角遭受其他狼群成员潜艇的一轮30%倍率鱼雷齐射。"],
@@ -991,8 +991,10 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 
 	//检查辐射楼层
 	if (flags.nuked && flags.nuked.includes(floorId)) {
-		if (core.hasSpecial(mon_special, 57)) {
+		if (core.hasSpecial(mon_special, 57)) { //主将
 			mon_hp *= 0.1;
+		} else if (core.hasSpecial(mon_special, 78)) { //雪风（写个mon_hp *= 1纯粹是因为感觉啥也不写看着别扭）
+			mon_hp *= 1;
 		} else {
 			mon_hp = 0;
 		}
@@ -1017,7 +1019,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		var index = x != null && y != null ? (x + "," + y) : floorId;
 		if (!core.status.checkBlock.cache) core.status.checkBlock.cache = {};
 		var cache = core.status.checkBlock.cache[index];
-		let cacheFloor = { 陆军: 0, 海军: 0, 空军: 0, 缓存: false, 航空支援: 0 };
+		let cacheFloor = { 陆军: 0, 海军: 0, 空军: 0, 缓存: false, 航空支援: 0, 主将: 0, 截断: 0, 遥控: 0, 点杀: 0, 包抄: 0, 直掩: 0, 观测: 0, 火力覆盖: 0, 防御大师: 0 };
 		if (!cache) {
 			// 没有该点的缓存，则遍历每个图块
 			core.extractBlocks(floorId);
@@ -1039,6 +1041,33 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 						} else { cacheFloor.空军++ }
 						if (core.hasSpecial(enemy.special, 79)) {
 							cacheFloor.航空支援++;
+						}
+						if (core.hasSpecial(enemy.special, 57)) {
+							cacheFloor.主将++;
+						}
+						if (core.hasSpecial(enemy.special, 42) || core.hasSpecial(enemy.special, 39)) {
+							cacheFloor.截断++;
+						}
+						if (core.hasSpecial(enemy.special, 50)) {
+							cacheFloor.遥控++;
+						}
+						if (core.hasSpecial(enemy.special, 66)) {
+							cacheFloor.点杀++;
+						}
+						if (core.hasSpecial(enemy.special, 69)) {
+							cacheFloor.包抄++;
+						}
+						if (core.hasSpecial(enemy.special, 70)) {
+							cacheFloor.直掩++;
+						}
+						if (core.hasSpecial(enemy.special, 71)) {
+							cacheFloor.观测++;
+						}
+						if (core.hasSpecial(enemy.special, 72)) {
+							cacheFloor.火力覆盖++;
+						}
+						if (core.hasSpecial(enemy.special, 77)) {
+							cacheFloor.防御大师++;
 						}
 					}
 					// 检查【光环】技能，数字25
@@ -1157,12 +1186,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		}
 
 		// 增加比例；如果要增加数值可以直接在这里修改
-		if (core.searchBlockWithFilter((block => { //祥瑞之舰
-				if (!block || !block.event.cls.startsWith("enemy"))
-					return false;
-				if (core.hasSpecial(block.event.special, 78))
-					return true;
-			})).length > 0) {
+		if (core.status.floorId === 'MT428') { //祥瑞之舰
 			mon_hp *= 0.6;
 			atk_buff -= 30;
 			top_buff -= 60;
@@ -1267,9 +1291,6 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	hero_dod = Math.max(0, hero_dod);
 	hero_cd = Math.max(1, hero_cd);
 
-
-	/*if (core.searchBlockWithFilter(block => core.hasSpecial(block.event.id, 42)).length > 0) hero_mdef = 0; // 截断：勇士护盾失效 */
-
 	// 怪物的各项数据
 	// 对坚固模仿等处理扔到了脚本编辑-getEnemyInfo之中
 	var mon_hp = enemyInfo.hp,
@@ -1314,7 +1335,10 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			"v1": false
 		}
 	}
-	if (core.hasSpecial(mon_special, 76)) {
+	if (core.hasSpecial(mon_special, 76)) { //北宅
+		return null;
+	}
+	if (core.hasSpecial(mon_special, 78)) { //雪亲王可是无敌的nanoda！
 		return null;
 	}
 
@@ -1498,16 +1522,17 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	if (core.hasSpecial(mon_special, 56)) { //技能 狙击
 		damage += guaiwu.atk * 2;
 	}
-	if (core.hasSpecial(mon_special, 57)) { //技能 主将
-		if (core.searchBlockWithFilter(block => {
-				if (!block || !block.event.cls.startsWith("enemy"))
-					return false;
-				if (!core.hasSpecial(block.event.id, 57))
-					return true;
-			}).length > 0) {
-			return null;
-		}
+	if (core.hasSpecial(mon_special, 57) && (cacheFloor.陆军 + cacheFloor.海军 + cacheFloor.空军 > cacheFloor.主将)) { //技能 主将
+		return null;
 	}
+	/*if (core.searchBlockWithFilter(block => {
+			if (!block || !block.event.cls.startsWith("enemy"))
+				return false;
+			if (!core.hasSpecial(block.event.id, 57))
+				return true;
+		}).length > 0) {
+		return null;
+	}*/
 	if (flags.dry && (core.hasSpecial(mon_special, 55) || core.hasSpecial(mon_special, 62))) { //炎热
 		beilv *= 1.2;
 	}
@@ -2298,12 +2323,12 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	}
 
 
-	const fn = block => { //截断
+	/*const fn = block => { //截断
 		if (!block || !block.event.cls.startsWith("enemy"))
 			return false;
 		if (core.hasSpecial(block.event.special, 42) || core.hasSpecial(block.event.special, 39))
 			return true;
-	}
+	}*/
 	if (flags.skill === 14 && !flags.spy) { //补给线
 		yongshi.mdef *= 10;
 	}
@@ -2340,9 +2365,12 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	} else if (core.hasItem('hard2')) {
 		damage *= 0.8;
 	}
-	if (core.searchBlockWithFilter(fn).length === 0) { //后勤
+	if (!cacheFloor.截断) { //后勤
 		damage -= yongshi.mdef;
 	}
+	/*if (core.searchBlockWithFilter(fn).length === 0) { //后勤
+		damage -= yongshi.mdef;
+	}*/
 	if (core.hasItem('unicorn') && damage < 0 && (core.status.maps[floorId].area === '海洋' || core.status.maps[floorId].area === '浅滩')) { //独角兽号
 		damage *= 1.2;
 	}
