@@ -18,7 +18,6 @@ main.floors.MT180=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        
         {
             "type": "setCurtain",
             "time": 500
@@ -191,7 +190,14 @@ main.floors.MT180=
             "type": "setEnemy",
             "id": "motorinf",
             "name": "special",
-            "value": "[1,4,52,55]",
+            "value": "[1,6,52,55]",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "motorinf",
+            "name": "n",
+            "value": "2",
             "norefresh": true
         },
         {

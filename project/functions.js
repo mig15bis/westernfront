@@ -286,6 +286,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	let dir = core.status.hero.loc.direction,
 		locs;
 	let equipped = core.status.hero.equipment;
+	let cacheFloor = core.status.checkBlock.cacheFloor;
 	let tk = equipped[0],
 		dd = equipped[1],
 		ca = equipped[2],
@@ -387,7 +388,8 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		flags.ussrair = true;
 	}
 	//直掩
-	core.searchBlockWithFilter(block => {
+	hero.hp -= cacheFloor.直掩;
+	/*core.searchBlockWithFilter(block => {
 		if (!block || !block.event.cls.startsWith("enemy"))
 			return false;
 		if (core.hasSpecial(block.event.special, 70))
@@ -404,7 +406,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			number *= v.event.n;
 		}
 		hero.hp -= v.event.atk * number;
-	})
+	})*/
 	//狼群改
 	if (core.hasSpecial(special, 85) && x !== null && y !== null) {
 		for (let m = -2; m <= 2; m++) {
@@ -418,14 +420,15 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		}
 	}
 	//火力覆盖
-	core.searchBlockWithFilter(block => {
+	hero.hp -= cacheFloor.火力覆盖;
+	/*core.searchBlockWithFilter(block => {
 		if (!block || !block.event.cls.startsWith("enemy"))
 			return false;
 		if (core.hasSpecial(block.event.special, 72))
 			return true;
 	}).forEach(v => {
 		hero.hp -= v.event.atk * 3;
-	})
+	})*/
 	if (damage == null || damage >= core.status.hero.hp) {
 		core.status.hero.hp = 0;
 		core.updateStatusBar(false, true);
@@ -1019,7 +1022,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		var index = x != null && y != null ? (x + "," + y) : floorId;
 		if (!core.status.checkBlock.cache) core.status.checkBlock.cache = {};
 		var cache = core.status.checkBlock.cache[index];
-		let cacheFloor = { 陆军: 0, 海军: 0, 空军: 0, 缓存: false, 航空支援: 0, 主将: 0, 截断: 0, 遥控: 0, 点杀: 0, 包抄: 0, 直掩: 0, 观测: 0, 火力覆盖: 0, 防御大师: 0 };
+		let cacheFloor = { 陆军: 0, 海军: 0, 空军: 0, 缓存: false, 航空支援: 0, 主将: 0, 截断: 0, 遥控: 0, 点杀: 0, 直掩: 0, 观测: 0, 火力覆盖: 0, 防御大师: 0 };
 		if (!cache) {
 			// 没有该点的缓存，则遍历每个图块
 			core.extractBlocks(floorId);
@@ -1054,17 +1057,16 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 						if (core.hasSpecial(enemy.special, 66)) {
 							cacheFloor.点杀++;
 						}
-						if (core.hasSpecial(enemy.special, 69)) {
-							cacheFloor.包抄++;
-						}
 						if (core.hasSpecial(enemy.special, 70)) {
-							cacheFloor.直掩++;
+							if (core.hasSpecial(enemy.special, 6)) {
+								cacheFloor.直掩 += enemy.atk * enemy.n;
+							} else { cacheFloor.直掩 += enemy.atk; }
 						}
 						if (core.hasSpecial(enemy.special, 71)) {
 							cacheFloor.观测++;
 						}
 						if (core.hasSpecial(enemy.special, 72)) {
-							cacheFloor.火力覆盖++;
+							cacheFloor.火力覆盖 += enemy.atk * 3;
 						}
 						if (core.hasSpecial(enemy.special, 77)) {
 							cacheFloor.防御大师++;
@@ -1186,7 +1188,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		}
 
 		// 增加比例；如果要增加数值可以直接在这里修改
-		if (core.status.floorId === 'MT428') { //祥瑞之舰
+		if (floorId === 'MT428') { //祥瑞之舰
 			mon_hp *= 0.6;
 			atk_buff -= 30;
 			top_buff -= 60;
@@ -1211,12 +1213,13 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	//     mon_atk = hero_atk;
 	// }		
 	// 也可以按需增加各种自定义内容
-	damage_debuff = core.searchBlockWithFilter((block => { //防御大师
+	damage_debuff = core.status.checkBlock.cache.cacheFloor.防御大师 > 0 ? damage_debuff + 0.3 : damage_debuff; //防御大师
+	/*damage_debuff = core.searchBlockWithFilter((block => { //防御大师
 		if (!block || !block.event.cls.startsWith("enemy"))
 			return false;
 		if (!core.hasSpecial(block.event.special, 77))
 			return true;
-	})).length > 0 ? damage_debuff + 0.3 : damage_debuff;
+	})).length > 0 ? damage_debuff + 0.3 : damage_debuff;*/
 
 	return {
 		"hp": Math.floor(mon_hp),
@@ -2775,12 +2778,13 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	core.flags.canGoDeadZone = true;
 
 	// 计算血网和领域、阻击、激光的伤害，计算捕捉信息
-	let a = core.searchBlockWithFilter(block => { //71
+	let a = core.status.checkBlock.cache.cacheFloor.观测 > 0;
+	/*let a = core.searchBlockWithFilter(block => { //71
 		if (!block || !block.event.cls.startsWith("enemy"))
 			return false;
 		if (core.hasSpecial(block.event.special, 71))
 			return true;
-	}).length > 0;
+	}).length > 0;*/
 	for (var loc in blocks) {
 		var block = blocks[loc],
 			x = block.x,

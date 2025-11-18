@@ -175,7 +175,14 @@ main.floors.MT84=
             "type": "setEnemy",
             "id": "italycl1",
             "name": "special",
-            "value": "[4,29,35]",
+            "value": "[6,29,35]",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "italycl1",
+            "name": "n",
+            "value": "2",
             "norefresh": true
         },
         {
@@ -203,7 +210,14 @@ main.floors.MT84=
             "type": "setEnemy",
             "id": "italycl2",
             "name": "special",
-            "value": "[4,29,35]",
+            "value": "[6,29,35]",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "italycl2",
+            "name": "n",
+            "value": "2",
             "norefresh": true
         },
         {

@@ -18,7 +18,6 @@ main.floors.MT179=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        
         {
             "type": "update"
         },
@@ -39,7 +38,7 @@ main.floors.MT179=
             "type": "playSound",
             "name": "xinxinmagic.mp3"
         },
-        "\t[系统提示]下一关是夜间行动，所以大部分空军无法正常出战。如果不喜欢夜间灯光效果，请在设置中将其关闭。"
+        "\t[系统提示]下一关是夜间行动，所以大部分空军无法正常出战。另外，如果不喜欢夜间灯光效果，请在设置中将其关闭。"
     ],
     "eachArrive": [],
     "parallelDo": "",

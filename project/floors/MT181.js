@@ -16,7 +16,7 @@ main.floors.MT181=
     "firstArrive": [
         {
             "type": "choices",
-            "text": "\t[突发事件]意大利部队向你发出了投降请求。是否同意他们的投降？（投降的敌人伤害均为0，但不会获得金经。拒绝投降可能反倒会激发敌人斗志）",
+            "text": "\t[突发事件]意大利部队向你发出了投降请求。是否同意他们的投降？（投降的敌人伤害均为0，但不会获得金经。拒绝投降有时可能反倒会激发敌人斗志）",
             "choices": [
                 {
                     "text": "接受投降",
@@ -82,123 +82,7 @@ main.floors.MT181=
                 {
                     "text": "不接受投降",
                     "action": [
-                        {
-                            "type": "playSound",
-                            "name": "xinxinmagic.mp3"
-                        },
-                        "\t[系统提示]意军对你不接受投降请求的行为感到不满，战斗力提升了！",
-                        {
-                            "type": "setEnemy",
-                            "id": "italyinf2",
-                            "name": "hp",
-                            "value": "110000",
-                            "norefresh": true
-                        },
-                        {
-                            "type": "setEnemy",
-                            "id": "italyinf2",
-                            "name": "atk",
-                            "value": "1700",
-                            "norefresh": true
-                        },
-                        {
-                            "type": "setEnemy",
-                            "id": "italyinf3",
-                            "name": "hp",
-                            "value": "105000",
-                            "norefresh": true
-                        },
-                        {
-                            "type": "setEnemy",
-                            "id": "italyinf3",
-                            "name": "atk",
-                            "value": "1700",
-                            "norefresh": true
-                        },
-                        {
-                            "type": "setEnemy",
-                            "id": "italyinf4",
-                            "name": "hp",
-                            "value": "100000",
-                            "norefresh": true
-                        },
-                        {
-                            "type": "setEnemy",
-                            "id": "italyinf4",
-                            "name": "atk",
-                            "value": "5500",
-                            "norefresh": true
-                        },
-                        {
-                            "type": "setEnemy",
-                            "id": "italyinf5",
-                            "name": "hp",
-                            "value": "95000",
-                            "norefresh": true
-                        },
-                        {
-                            "type": "setEnemy",
-                            "id": "italyinf5",
-                            "name": "atk",
-                            "value": "2000",
-                            "norefresh": true
-                        },
-                        {
-                            "type": "setEnemy",
-                            "id": "italyinf6",
-                            "name": "hp",
-                            "value": "90000",
-                            "norefresh": true
-                        },
-                        {
-                            "type": "setEnemy",
-                            "id": "italyinf6",
-                            "name": "atk",
-                            "value": "2100",
-                            "norefresh": true
-                        },
-                        {
-                            "type": "setEnemy",
-                            "id": "l640",
-                            "name": "hp",
-                            "value": "40000",
-                            "norefresh": true
-                        },
-                        {
-                            "type": "setEnemy",
-                            "id": "l640",
-                            "name": "atk",
-                            "value": "2500",
-                            "norefresh": true
-                        },
-                        {
-                            "type": "setEnemy",
-                            "id": "m1340",
-                            "name": "hp",
-                            "value": "35000",
-                            "norefresh": true
-                        },
-                        {
-                            "type": "setEnemy",
-                            "id": "m1340",
-                            "name": "atk",
-                            "value": "7500",
-                            "norefresh": true
-                        },
-                        {
-                            "type": "setEnemy",
-                            "id": "da90",
-                            "name": "hp",
-                            "value": "20000",
-                            "norefresh": true
-                        },
-                        {
-                            "type": "setEnemy",
-                            "id": "da90",
-                            "name": "atk",
-                            "value": "18000",
-                            "norefresh": true
-                        }
+                        "\t[系统提示]无事发生"
                     ]
                 }
             ]

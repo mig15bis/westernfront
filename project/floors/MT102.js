@@ -18,7 +18,6 @@ main.floors.MT102=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        
         {
             "type": "setCurtain",
             "time": 500
@@ -140,7 +139,13 @@ main.floors.MT102=
             "type": "setEnemy",
             "id": "ab41",
             "name": "special",
-            "value": "[5,60]"
+            "value": "[6,60]"
+        },
+        {
+            "type": "setEnemy",
+            "id": "ab41",
+            "name": "n",
+            "value": "3"
         },
         "\t[系统提示]敌人战力重置完成",
         "\t[系统提示]即将进入存档界面",

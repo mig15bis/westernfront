@@ -232,7 +232,13 @@ main.floors.MT21=
             "type": "setEnemy",
             "id": "sdkfz222",
             "name": "special",
-            "value": "[4]"
+            "value": "[6]"
+        },
+        {
+            "type": "setEnemy",
+            "id": "sdkfz222",
+            "name": "n",
+            "value": "2"
         },
         {
             "type": "setEnemy",
@@ -250,7 +256,13 @@ main.floors.MT21=
             "type": "setEnemy",
             "id": "panzer2c",
             "name": "special",
-            "value": "[4]"
+            "value": "[6]"
+        },
+        {
+            "type": "setEnemy",
+            "id": "panzer2c",
+            "name": "n",
+            "value": "2"
         },
         {
             "type": "setEnemy",

@@ -18,7 +18,6 @@ main.floors.MT109=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        
         {
             "type": "setCurtain",
             "time": 500
@@ -220,7 +219,13 @@ main.floors.MT109=
             "type": "setEnemy",
             "id": "motorinf",
             "name": "special",
-            "value": "[1,4,55]"
+            "value": "[1,6,55]"
+        },
+        {
+            "type": "setEnemy",
+            "id": "motorinf",
+            "name": "n",
+            "value": "2"
         },
         {
             "type": "setEnemy",
@@ -274,7 +279,13 @@ main.floors.MT109=
             "type": "setEnemy",
             "id": "sdkfz222",
             "name": "special",
-            "value": "[4,55,60]"
+            "value": "[6,55,60]"
+        },
+        {
+            "type": "setEnemy",
+            "id": "sdkfz222",
+            "name": "n",
+            "value": "2"
         },
         {
             "type": "setEnemy",
@@ -292,7 +303,13 @@ main.floors.MT109=
             "type": "setEnemy",
             "id": "panzer2c",
             "name": "special",
-            "value": "[4,55,60]"
+            "value": "[6,55,60]"
+        },
+        {
+            "type": "setEnemy",
+            "id": "panzer2c",
+            "name": "n",
+            "value": "2"
         },
         {
             "type": "setEnemy",

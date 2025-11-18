@@ -68,7 +68,13 @@ main.floors.MT27=
             "type": "setEnemy",
             "id": "me109e4",
             "name": "special",
-            "value": "[5,28]"
+            "value": "[6,28]"
+        },
+        {
+            "type": "setEnemy",
+            "id": "me109e4",
+            "name": "n",
+            "value": "3"
         },
         {
             "type": "setEnemy",

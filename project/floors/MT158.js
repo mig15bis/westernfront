@@ -28,7 +28,6 @@ main.floors.MT158=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        
         {
             "type": "setCurtain",
             "time": 500
@@ -156,7 +155,14 @@ main.floors.MT158=
             "type": "setEnemy",
             "id": "konesburg",
             "name": "special",
-            "value": "[5,29,35,42]",
+            "value": "[6,29,35,42]",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "konesburg",
+            "name": "n",
+            "value": "3",
             "norefresh": true
         },
         {

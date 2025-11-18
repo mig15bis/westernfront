@@ -23,7 +23,6 @@ main.floors.MT165=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        
         {
             "type": "setCurtain",
             "time": 500
@@ -144,7 +143,14 @@ main.floors.MT165=
             "type": "setEnemy",
             "id": "flak37",
             "name": "special",
-            "value": "[5,15,40,55]",
+            "value": "[6,15,40,55]",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "flak37",
+            "name": "n",
+            "value": "3",
             "norefresh": true
         },
         {

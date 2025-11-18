@@ -227,7 +227,218 @@ main.floors.MT48=
         }
     },
     "beforeBattle": {},
-    "afterBattle": {},
+    "afterBattle": {
+        "4,3": [
+            {
+                "type": "setValue",
+                "name": "flag:MT48bomber",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT48bomber===10)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            13
+                        ]
+                    }
+                ]
+            }
+        ],
+        "10,3": [
+            {
+                "type": "setValue",
+                "name": "flag:MT48bomber",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT48bomber===10)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            13
+                        ]
+                    }
+                ]
+            }
+        ],
+        "11,5": [
+            {
+                "type": "setValue",
+                "name": "flag:MT48bomber",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT48bomber===10)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            13
+                        ]
+                    }
+                ]
+            }
+        ],
+        "9,5": [
+            {
+                "type": "setValue",
+                "name": "flag:MT48bomber",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT48bomber===10)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            13
+                        ]
+                    }
+                ]
+            }
+        ],
+        "9,7": [
+            {
+                "type": "setValue",
+                "name": "flag:MT48bomber",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT48bomber===10)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            13
+                        ]
+                    }
+                ]
+            }
+        ],
+        "14,8": [
+            {
+                "type": "setValue",
+                "name": "flag:MT48bomber",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT48bomber===10)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            13
+                        ]
+                    }
+                ]
+            }
+        ],
+        "0,9": [
+            {
+                "type": "setValue",
+                "name": "flag:MT48bomber",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT48bomber===10)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            13
+                        ]
+                    }
+                ]
+            }
+        ],
+        "11,11": [
+            {
+                "type": "setValue",
+                "name": "flag:MT48bomber",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT48bomber===10)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            13
+                        ]
+                    }
+                ]
+            }
+        ],
+        "13,12": [
+            {
+                "type": "setValue",
+                "name": "flag:MT48bomber",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT48bomber===10)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            13
+                        ]
+                    }
+                ]
+            }
+        ],
+        "10,14": [
+            {
+                "type": "setValue",
+                "name": "flag:MT48bomber",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT48bomber===10)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            13
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
     "afterGetItem": {},
     "afterOpenDoor": {
         "7,3": [
@@ -291,22 +502,6 @@ main.floors.MT48=
     },
     "autoEvent": {
         "6,14": {
-            "0": {
-                "condition": "core.maps.searchBlockWithFilter(x=>['中型轰炸机'].includes(core.material.enemys[x?.event?.id]?.type),['MT48']).length===0",
-                "currentFloor": true,
-                "priority": 0,
-                "delayExecute": false,
-                "multiExecute": false,
-                "data": [
-                    {
-                        "type": "openDoor",
-                        "loc": [
-                            7,
-                            13
-                        ]
-                    }
-                ]
-            },
             "1": null
         }
     },

@@ -188,124 +188,516 @@ main.floors.MT50=
         }
     },
     "beforeBattle": {},
-    "afterBattle": {},
-    "afterGetItem": {},
-    "afterOpenDoor": {},
-    "autoEvent": {
-        "6,14": {
-            "0": {
-                "condition": "core.maps.searchBlockWithFilter(x=>['战斗机'].includes(core.material.enemys[x?.event?.id]?.type),['MT50']).length===0",
-                "currentFloor": true,
-                "priority": 0,
-                "delayExecute": false,
-                "multiExecute": false,
-                "data": [
+    "afterBattle": {
+        "0,0": [
+            {
+                "type": "setValue",
+                "name": "flag:MT50fighter",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT50fighter===24)",
+                "true": [
                     {
                         "type": "openDoor",
                         "loc": [
                             7,
                             13
                         ]
-                    },
-                    {
-                        "type": "hide",
-                        "loc": [
-                            [
-                                6,
-                                6
-                            ]
-                        ],
-                        "remove": true,
-                        "time": 500
-                    },
-                    {
-                        "type": "playSound",
-                        "name": "fighter1.mp3"
-                    },
-                    {
-                        "type": "move",
-                        "loc": [
-                            1,
-                            6
-                        ],
-                        "time": 100,
-                        "steps": [
-                            "right:13"
-                        ]
-                    },
-                    {
-                        "type": "playSound",
-                        "name": "fighter1.mp3"
-                    },
-                    {
-                        "type": "move",
-                        "loc": [
-                            1,
-                            5
-                        ],
-                        "time": 100,
-                        "steps": [
-                            "down:1",
-                            "right:13"
-                        ]
-                    },
-                    {
-                        "type": "playSound",
-                        "name": "fighter1.mp3"
-                    },
-                    {
-                        "type": "move",
-                        "loc": [
-                            1,
-                            7
-                        ],
-                        "time": 100,
-                        "steps": [
-                            "up:1",
-                            "right:13"
-                        ]
-                    },
-                    {
-                        "type": "playSound",
-                        "name": "fighter1.mp3"
-                    },
-                    {
-                        "type": "move",
-                        "loc": [
-                            3,
-                            7
-                        ],
-                        "time": 100,
-                        "steps": [
-                            "up:1",
-                            "right:11"
-                        ]
-                    },
-                    {
-                        "type": "playSound",
-                        "name": "fighter1.mp3"
-                    },
-                    {
-                        "type": "move",
-                        "loc": [
-                            4,
-                            5
-                        ],
-                        "time": 100,
-                        "steps": [
-                            "down:1",
-                            "right:10"
-                        ]
-                    },
-                    "\t[系统提示]成功保护机场，获得奖励：攻击+10",
-                    {
-                        "type": "setValue",
-                        "name": "status:atk",
-                        "operator": "+=",
-                        "value": "10"
                     }
                 ]
+            }
+        ],
+        "1,0": [
+            {
+                "type": "setValue",
+                "name": "flag:MT50fighter",
+                "operator": "+=",
+                "value": "1"
             },
+            {
+                "type": "if",
+                "condition": "(flag:MT50fighter===24)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            13
+                        ]
+                    }
+                ]
+            }
+        ],
+        "2,0": [
+            {
+                "type": "setValue",
+                "name": "flag:MT50fighter",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT50fighter===24)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            13
+                        ]
+                    }
+                ]
+            }
+        ],
+        "0,1": [
+            {
+                "type": "setValue",
+                "name": "flag:MT50fighter",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT50fighter===24)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            13
+                        ]
+                    }
+                ]
+            }
+        ],
+        "1,1": [
+            {
+                "type": "setValue",
+                "name": "flag:MT50fighter",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT50fighter===24)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            13
+                        ]
+                    }
+                ]
+            }
+        ],
+        "2,1": [
+            {
+                "type": "setValue",
+                "name": "flag:MT50fighter",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT50fighter===24)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            13
+                        ]
+                    }
+                ]
+            }
+        ],
+        "12,0": [
+            {
+                "type": "setValue",
+                "name": "flag:MT50fighter",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT50fighter===24)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            13
+                        ]
+                    }
+                ]
+            }
+        ],
+        "13,0": [
+            {
+                "type": "setValue",
+                "name": "flag:MT50fighter",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT50fighter===24)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            13
+                        ]
+                    }
+                ]
+            }
+        ],
+        "14,0": [
+            {
+                "type": "setValue",
+                "name": "flag:MT50fighter",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT50fighter===24)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            13
+                        ]
+                    }
+                ]
+            }
+        ],
+        "12,1": [
+            {
+                "type": "setValue",
+                "name": "flag:MT50fighter",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT50fighter===24)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            13
+                        ]
+                    }
+                ]
+            }
+        ],
+        "13,1": [
+            {
+                "type": "setValue",
+                "name": "flag:MT50fighter",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT50fighter===24)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            13
+                        ]
+                    }
+                ]
+            }
+        ],
+        "14,1": [
+            {
+                "type": "setValue",
+                "name": "flag:MT50fighter",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT50fighter===24)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            13
+                        ]
+                    }
+                ]
+            }
+        ],
+        "0,13": [
+            {
+                "type": "setValue",
+                "name": "flag:MT50fighter",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT50fighter===24)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            13
+                        ]
+                    }
+                ]
+            }
+        ],
+        "1,13": [
+            {
+                "type": "setValue",
+                "name": "flag:MT50fighter",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT50fighter===24)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            13
+                        ]
+                    }
+                ]
+            }
+        ],
+        "2,13": [
+            {
+                "type": "setValue",
+                "name": "flag:MT50fighter",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT50fighter===24)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            13
+                        ]
+                    }
+                ]
+            }
+        ],
+        "0,14": [
+            {
+                "type": "setValue",
+                "name": "flag:MT50fighter",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT50fighter===24)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            13
+                        ]
+                    }
+                ]
+            }
+        ],
+        "1,14": [
+            {
+                "type": "setValue",
+                "name": "flag:MT50fighter",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT50fighter===24)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            13
+                        ]
+                    }
+                ]
+            }
+        ],
+        "2,14": [
+            {
+                "type": "setValue",
+                "name": "flag:MT50fighter",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT50fighter===24)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            13
+                        ]
+                    }
+                ]
+            }
+        ],
+        "12,13": [
+            {
+                "type": "setValue",
+                "name": "flag:MT50fighter",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT50fighter===24)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            13
+                        ]
+                    }
+                ]
+            }
+        ],
+        "13,13": [
+            {
+                "type": "setValue",
+                "name": "flag:MT50fighter",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT50fighter===24)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            13
+                        ]
+                    }
+                ]
+            }
+        ],
+        "14,13": [
+            {
+                "type": "setValue",
+                "name": "flag:MT50fighter",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT50fighter===24)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            13
+                        ]
+                    }
+                ]
+            }
+        ],
+        "12,14": [
+            {
+                "type": "setValue",
+                "name": "flag:MT50fighter",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT50fighter===24)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            13
+                        ]
+                    }
+                ]
+            }
+        ],
+        "13,14": [
+            {
+                "type": "setValue",
+                "name": "flag:MT50fighter",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT50fighter===24)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            13
+                        ]
+                    }
+                ]
+            }
+        ],
+        "14,14": [
+            {
+                "type": "setValue",
+                "name": "flag:MT50fighter",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT50fighter===24)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            13
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "afterGetItem": {},
+    "afterOpenDoor": {},
+    "autoEvent": {
+        "6,14": {
             "1": null
         }
     },

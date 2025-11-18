@@ -18,7 +18,6 @@ main.floors.MT123=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        
         {
             "type": "setCurtain",
             "time": 500
@@ -67,7 +66,13 @@ main.floors.MT123=
             "type": "setEnemy",
             "id": "commandos",
             "name": "special",
-            "value": "[4,55]"
+            "value": "[6,55]"
+        },
+        {
+            "type": "setEnemy",
+            "id": "commandos",
+            "name": "n",
+            "value": "2"
         },
         {
             "type": "setEnemy",
@@ -157,7 +162,13 @@ main.floors.MT123=
             "type": "setEnemy",
             "id": "sdkfz222",
             "name": "special",
-            "value": "[4,55,60]"
+            "value": "[6,55,60]"
+        },
+        {
+            "type": "setEnemy",
+            "id": "sdkfz222",
+            "name": "n",
+            "value": "2"
         },
         {
             "type": "setEnemy",
@@ -193,7 +204,13 @@ main.floors.MT123=
             "type": "setEnemy",
             "id": "panzer2c",
             "name": "special",
-            "value": "[5,55,60]"
+            "value": "[6,55,60]"
+        },
+        {
+            "type": "setEnemy",
+            "id": "panzer2c",
+            "name": "n",
+            "value": "3"
         },
         {
             "type": "setEnemy",

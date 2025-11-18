@@ -18,7 +18,6 @@ main.floors.MT202=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        
         {
             "type": "setCurtain",
             "time": 500
@@ -96,7 +95,14 @@ main.floors.MT202=
             "type": "setEnemy",
             "id": "italyinf3",
             "name": "special",
-            "value": "[1,4]",
+            "value": "[1,6]",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "italyinf3",
+            "name": "n",
+            "value": "2",
             "norefresh": true
         },
         {
@@ -138,7 +144,14 @@ main.floors.MT202=
             "type": "setEnemy",
             "id": "italyinf5",
             "name": "special",
-            "value": "[5]",
+            "value": "[6]",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "italyinf5",
+            "name": "n",
+            "value": "3",
             "norefresh": true
         },
         {
@@ -180,7 +193,14 @@ main.floors.MT202=
             "type": "setEnemy",
             "id": "l640",
             "name": "special",
-            "value": "[5,60]",
+            "value": "[6,60]",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "l640",
+            "name": "n",
+            "value": "3",
             "norefresh": true
         },
         {
@@ -264,7 +284,14 @@ main.floors.MT202=
             "type": "setEnemy",
             "id": "c200",
             "name": "special",
-            "value": "[5]",
+            "value": "[6]",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "c200",
+            "name": "n",
+            "value": "3",
             "norefresh": true
         },
         {
