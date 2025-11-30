@@ -341,8 +341,13 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	let animate = core.plugin.battleAnimate[type]; // 默认动画
 	let sound = "";
 	if (type === '战斗机' || type === '重型战斗机' || type === '俯冲轰炸机' || type === '鱼雷轰炸机' || type === '攻击机' || type === '中型轰炸机') {
-		let random = Math.random() < 0.4 ? 2 : 1;
-		sound = core.plugin.battleSound[type + random];
+		if (core.hasSpecial(special, 73)) {
+			let random = Math.random() < 0.3 ? 2 : 3;
+			sound = core.plugin.battleSound[type + random];
+		} else {
+			let random = Math.random() < 0.3 ? 2 : 1;
+			sound = core.plugin.battleSound[type + random];
+		}
 	} else {
 		sound = core.plugin.battleSound[type];
 	}
@@ -388,7 +393,6 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		flags.ussrair = true;
 	}
 	//直掩
-	hero.hp -= cacheFloor.直掩;
 	/*core.searchBlockWithFilter(block => {
 		if (!block || !block.event.cls.startsWith("enemy"))
 			return false;
@@ -420,7 +424,6 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		}
 	}
 	//火力覆盖
-	hero.hp -= cacheFloor.火力覆盖;
 	/*core.searchBlockWithFilter(block => {
 		if (!block || !block.event.cls.startsWith("enemy"))
 			return false;
@@ -499,6 +502,33 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 					core.push(todo, core.floors[core.status.floorId].afterBattle[Block.x + "," + Block.y]);
 				}
 				core.push(todo, core.material.enemys[Block.event.id].afterBattle);
+				//战后任务检测
+				core.taskSystem.tasksInfo.forEach(v => v.tasks.forEach(a => {
+					if (a.type === "kill" && (!a.floorId || a.floorId.includes(core.status.floorId))) {
+						if (a.kill && a.kill === core.material.enemys[Block.event.id].id) {
+							a.has++;
+						} else if (!a.kill) {
+							a.has++;
+						}
+
+					} else if (a.type === "killSpecial" && (!a.floorId || a.floorId.includes(core.status.floorId))) {
+						if (core.hasSpecial(core.material.enemys[Block.event.id].special, a.killSpecial))
+							a.has++;
+					} else if (a.type === "killLocs" && a.floorId === core.status.floorId) {
+						if (a.loc[0] instanceof Array) {
+							a.loc.forEach(v => {
+								if (Block.x === v[0] && Block.y === v[1] && (!a.floorId || a.floorId.includes(core.status.floorId)))
+									a.has++;
+							})
+						} else {
+							if (Block.x === a.loc[0] && Block.y === a.loc[1] && (!a.floorId || a.floorId.includes(core.status.floorId)))
+								a.has++;
+						}
+					} else if (a.type === "killType" && (!a.floorId || a.floorId.includes(core.status.floorId))) {
+						if (a.killType === blocktype)
+							a.has++;
+					}
+				}));
 				delete((flags.enemyOnPoint || {})[core.status.floorId] || {})[Block.x + "," + Block.y];
 				core.removeBlock(Block.x, Block.y);
 				if (core.hasSpecial(target.special, 84)) {
@@ -745,22 +775,6 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	delete((flags.enemyOnPoint || {})[core.status.floorId] || {})[x + "," + y];
 	delete flags.aoe[x + '，' + y + '，' + core.status.floorId];
 
-
-	// 因为removeBlock和hideBlock都会刷新状态栏，因此将删除部分移动到这里并保证刷新只执行一次，以提升效率
-	if (core.getBlock(x, y) != null) {
-		// 检查是否是重生怪物；如果是则仅隐藏不删除
-		if (core.hasSpecial(enemy.special, 23)) {
-			core.hideBlock(x, y);
-		} else {
-			core.removeBlock(x, y);
-		}
-	} else {
-		core.updateStatusBar();
-	}
-	if (core.hasSpecial(special, 84)) {
-		core.setBlock("yellowWall", x, y);
-	}
-
 	//战后任务检测
 	core.taskSystem.tasksInfo.forEach(v => v.tasks.forEach(a => {
 		if (a.type === "kill" && (!a.floorId || a.floorId.includes(core.status.floorId))) {
@@ -789,6 +803,23 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 				a.has++;
 		}
 	}));
+
+
+	// 因为removeBlock和hideBlock都会刷新状态栏，因此将删除部分移动到这里并保证刷新只执行一次，以提升效率
+	if (core.getBlock(x, y) != null) {
+		// 检查是否是重生怪物；如果是则仅隐藏不删除
+		if (core.hasSpecial(enemy.special, 23)) {
+			core.hideBlock(x, y);
+		} else {
+			core.removeBlock(x, y);
+		}
+	} else {
+		core.updateStatusBar();
+	}
+	if (core.hasSpecial(special, 84)) {
+		core.setBlock("yellowWall", x, y);
+	}
+
 	// 如果已有事件正在处理中
 	if (core.status.event.id == null)
 		core.continueAutomaticRoute();
@@ -1013,6 +1044,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			top_buff = 0,
 			bom_buff = 0,
 			trap_buff = 0,
+			hp_buff = 0,
 			aa_buff = 0;
 		// 已经计算过的光环怪ID列表，用于判定叠加
 		var usedEnemyIds = {},
@@ -1022,7 +1054,10 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		var index = x != null && y != null ? (x + "," + y) : floorId;
 		if (!core.status.checkBlock.cache) core.status.checkBlock.cache = {};
 		var cache = core.status.checkBlock.cache[index];
-		let cacheFloor = { 陆军: 0, 海军: 0, 空军: 0, 缓存: false, 航空支援: 0, 主将: 0, 截断: 0, 遥控: 0, 点杀: 0, 直掩: 0, 观测: 0, 火力覆盖: 0, 防御大师: 0 };
+		let cacheFloor;
+		if (!core.status.checkBlock.cache.cacheFloor?.缓存) { cacheFloor = { 陆军: 0, 海军: 0, 空军: 0, 缓存: false, 航空支援: 0, 主将: 0, 截断: 0, 遥控: 0, 点杀: 0, 直掩: 0, 观测: 0, 火力覆盖: 0, 防御大师: 0 } } else {
+			cacheFloor = core.status.checkBlock.cache.cacheFloor;
+		}
 		if (!cache) {
 			// 没有该点的缓存，则遍历每个图块
 			core.extractBlocks(floorId);
@@ -1171,13 +1206,27 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 					// 注：新增新的类光环属性（需要遍历全图的）需要在特殊属性定义那里的第五项写1，参见光环和支援的特殊属性定义。
 				}
 			});
+			if (floorId === 'MT428') { //祥瑞之舰
+				hp_buff -= 40;
+				atk_buff -= 30;
+				top_buff -= 60;
+			}
+			if (cacheFloor.航空支援) {
+				if (core.plugin.Luftwaffe.includes(core.getEnemyValue(enemy, 'type', x, y, floorId))) {
+					hp_buff += 20;
+					atk_buff += 10;
+					top_buff += 50;
+					bom_buff += 50;
+				}
+			}
+			damage_debuff = (cacheFloor.防御大师 > 0) ? damage_debuff + 0.3 : damage_debuff; //防御大师
 
-			core.status.checkBlock.cache[index] = { "atk_buff": atk_buff, "top_buff": top_buff, "bom_buff": bom_buff, "trap_buff": trap_buff, "aa_buff": aa_buff, "guards": guards, "damage_debuff": damage_debuff };
+			core.status.checkBlock.cache[index] = { hp_buff, atk_buff, top_buff, bom_buff, trap_buff, aa_buff, guards, damage_debuff };
 			cacheFloor.缓存 = true;
-			core.status.checkBlock.needCache = false;
 			core.status.checkBlock.cache.cacheFloor = cacheFloor;
 		} else {
 			// 直接使用缓存数据
+			hp_buff = cache.hp_buff;
 			atk_buff = cache.atk_buff;
 			top_buff = cache.top_buff;
 			bom_buff = cache.bom_buff;
@@ -1188,19 +1237,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		}
 
 		// 增加比例；如果要增加数值可以直接在这里修改
-		if (floorId === 'MT428') { //祥瑞之舰
-			mon_hp *= 0.6;
-			atk_buff -= 30;
-			top_buff -= 60;
-		}
-		if (core.status.checkBlock.cache.cacheFloor.航空支援) {
-			if (core.plugin.Luftwaffe.includes(core.getEnemyValue(enemy, 'type', x, y, floorId))) {
-				mon_hp *= 1.2;
-				atk_buff += 10;
-				top_buff += 50;
-				bom_buff += 50;
-			}
-		}
+		mon_hp *= (1 + hp_buff / 100);
 		mon_atk *= (1 + atk_buff / 100);
 		mon_top *= (1 + top_buff / 100);
 		mon_bom *= (1 + bom_buff / 100);
@@ -1213,7 +1250,6 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	//     mon_atk = hero_atk;
 	// }		
 	// 也可以按需增加各种自定义内容
-	damage_debuff = core.status.checkBlock.cache.cacheFloor.防御大师 > 0 ? damage_debuff + 0.3 : damage_debuff; //防御大师
 	/*damage_debuff = core.searchBlockWithFilter((block => { //防御大师
 		if (!block || !block.event.cls.startsWith("enemy"))
 			return false;
@@ -1536,7 +1572,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		}).length > 0) {
 		return null;
 	}*/
-	if (flags.dry && (core.hasSpecial(mon_special, 55) || core.hasSpecial(mon_special, 62))) { //炎热
+	if (flags.dry && !(core.hasSpecial(mon_special, 55) || core.hasSpecial(mon_special, 62))) { //炎热（主角伤害倍率）
 		beilv *= 1.2;
 	}
 	if ((core.hasSpecial(mon_special, 38) || core.hasSpecial(mon_special, 57)) && tk === 'firefly') { //萤火虫
@@ -2353,13 +2389,14 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	if (flags.dry) {
 		finalDamage *= 1.2;
 	}
-	if (flags.dry && core.hasSpecial(mon_special, 55)) { //沙漠之狐
+	if (flags.dry && core.hasSpecial(mon_special, 62)) { //沙漠之狐
 		finalDamage *= 1.25;
 	}
 	if (core.hasSpecial(mon_special, 82) && tk !== 'is3') { //万岁冲锋
 		finalDamage = Math.min(0.9, finalDamage);
 	}
 	damage *= finalDamage;
+	damage += cacheFloor.直掩 + cacheFloor.火力覆盖;
 	if (core.getFlag("xijun", 0) > 0) { //细菌弹
 		damage += flags.xijun * hero_hpmax / 100;
 	}
@@ -2750,13 +2787,13 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	}
 	//更新任务状态
 	core.taskSystem.checkAll();
-	// 更新状态栏
-	core.ui.statusBar.update();
 
 	// 更新阻激夹域的伤害值
 	core.updateCheckBlock();
 	// 更新全地图显伤
 	core.updateDamage();
+	// 更新状态栏
+	core.ui.statusBar.update();
 
 },
         "updateCheckBlock": function (floorId) {
@@ -2778,13 +2815,12 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	core.flags.canGoDeadZone = true;
 
 	// 计算血网和领域、阻击、激光的伤害，计算捕捉信息
-	let a = core.status.checkBlock.cache.cacheFloor.观测 > 0;
-	/*let a = core.searchBlockWithFilter(block => { //71
+	let a = core.searchBlockWithFilter(block => { //71
 		if (!block || !block.event.cls.startsWith("enemy"))
 			return false;
 		if (core.hasSpecial(block.event.special, 71))
 			return true;
-	}).length > 0;*/
+	}).length > 0;
 	for (var loc in blocks) {
 		var block = blocks[loc],
 			x = block.x,
@@ -2993,68 +3029,68 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	};
 },
         "moveOneStep": function (callback) {
-			// 勇士每走一步后执行的操作。callback为行走完毕后的回调
-			// 这个函数执行在“刚走完”的时候，即还没有检查该点的事件和领域伤害等。
-			// 请注意：瞬间移动不会执行该函数。如果要控制能否瞬间移动有三种方法：
-			// 1. 将全塔属性中的cannotMoveDirectly这个开关勾上，即可在全塔中全程禁止使用瞬移。
-			// 2, 将楼层属性中的cannotMoveDirectly这个开关勾上，即禁止在该层楼使用瞬移。
-			// 3. 将flag:cannotMoveDirectly置为true，即可使用flag控制在某段剧情范围内禁止瞬移。
+	// 勇士每走一步后执行的操作。callback为行走完毕后的回调
+	// 这个函数执行在“刚走完”的时候，即还没有检查该点的事件和领域伤害等。
+	// 请注意：瞬间移动不会执行该函数。如果要控制能否瞬间移动有三种方法：
+	// 1. 将全塔属性中的cannotMoveDirectly这个开关勾上，即可在全塔中全程禁止使用瞬移。
+	// 2, 将楼层属性中的cannotMoveDirectly这个开关勾上，即禁止在该层楼使用瞬移。
+	// 3. 将flag:cannotMoveDirectly置为true，即可使用flag控制在某段剧情范围内禁止瞬移。
 
-			// 增加步数
-			core.status.hero.steps++;
-			// 更新跟随者状态，并绘制
-			core.updateFollowers();
-			core.drawHero();
-			// 检查中毒状态的扣血和死亡
-			if (core.hasFlag('poison')) {
-				core.status.hero.statistics.poisonDamage += core.values.poisonDamage;
-				core.status.hero.hp -= core.values.poisonDamage;
-				if (core.status.hero.hp <= 0) {
-					core.status.hero.hp = 0;
-					core.updateStatusBar(false, true);
-					core.events.lose();
-					return;
-				} else {
-					core.updateStatusBar(false, true);
-				}
-			}
+	// 增加步数
+	core.status.hero.steps++;
+	// 更新跟随者状态，并绘制
+	core.updateFollowers();
+	core.drawHero();
+	// 检查中毒状态的扣血和死亡
+	if (core.hasFlag('poison')) {
+		core.status.hero.statistics.poisonDamage += core.values.poisonDamage;
+		core.status.hero.hp -= core.values.poisonDamage;
+		if (core.status.hero.hp <= 0) {
+			core.status.hero.hp = 0;
+			core.updateStatusBar(false, true);
+			core.events.lose();
+			return;
+		} else {
+			core.updateStatusBar(false, true);
+		}
+	}
 
-			// 从v2.7开始，每一步行走不会再刷新状态栏。
-			// 如果有特殊要求（如每走一步都加buff之类），可手动取消注释下面这一句：
-			// core.updateStatusBar(true, true);
+	// 从v2.7开始，每一步行走不会再刷新状态栏。
+	// 如果有特殊要求（如每走一步都加buff之类），可手动取消注释下面这一句：
+	// core.updateStatusBar(true, true);
 
-			// 检查自动事件
-			core.checkAutoEvents();
+	// 检查自动事件
+	core.checkAutoEvents();
 
-			// ------ 检查目标点事件 ------ //
-			// 无事件的道具（如血瓶）需要优先于阻激夹域判定
-			var nowx = core.getHeroLoc('x'),
-				nowy = core.getHeroLoc('y');
-			var block = core.getBlock(nowx, nowy);
-			var hasTrigger = false;
-			if (block != null && block.event.trigger == 'getItem' &&
-				!core.floors[core.status.floorId].afterGetItem[nowx + "," + nowy]) {
-				hasTrigger = true;
-				core.trigger(nowx, nowy, callback);
-			}
-			// 执行目标点的阻激夹域事件
-			core.checkBlock();
+	// ------ 检查目标点事件 ------ //
+	// 无事件的道具（如血瓶）需要优先于阻激夹域判定
+	var nowx = core.getHeroLoc('x'),
+		nowy = core.getHeroLoc('y');
+	var block = core.getBlock(nowx, nowy);
+	var hasTrigger = false;
+	if (block != null && block.event.trigger == 'getItem' &&
+		!core.floors[core.status.floorId].afterGetItem[nowx + "," + nowy]) {
+		hasTrigger = true;
+		core.trigger(nowx, nowy, callback);
+	}
+	// 执行目标点的阻激夹域事件
+	core.checkBlock();
 
-			// 执行目标点的script和事件
-			if (!hasTrigger)
-				core.trigger(nowx, nowy, callback);
+	// 执行目标点的script和事件
+	if (!hasTrigger)
+		core.trigger(nowx, nowy, callback);
 
-			// 检查该点是否是滑冰
-			if (core.onSki()) {
-				// 延迟到事件最后执行，因为这之前可能有阻激夹域动画
-				core.insertAction({ "type": "moveAction" }, null, null, null, true);
-			}
+	// 检查该点是否是滑冰
+	if (core.onSki()) {
+		// 延迟到事件最后执行，因为这之前可能有阻激夹域动画
+		core.insertAction({ "type": "moveAction" }, null, null, null, true);
+	}
 
-			// ------ 检查目标点事件 END ------ //
+	// ------ 检查目标点事件 END ------ //
 
-			// 如需强行终止行走可以在这里条件判定：
-			// core.stopAutomaticRoute();
-		},
+	// 如需强行终止行走可以在这里条件判定：
+	// core.stopAutomaticRoute();
+},
         "moveDirectly": function (x, y, ignoreSteps) {
 	// 瞬间移动；x,y为要瞬间移动的点；ignoreSteps为减少的步数，可能之前已经被计算过
 	// 返回true代表成功瞬移，false代表没有成功瞬移
@@ -3190,11 +3226,11 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	if (flags.skill > 0) core.ui.fillText(ctx, core.plugin.skillInfo[flags.skill].name, 6, 404, 'orange') // 技能名
 	core.ui.setFont(ctx, '18px Aaknife'); // 字体字号（钥匙）
 	core.ui.fillText(ctx, core.replaceText('\r[#FFD700]${core.setTwoDigits(item:yellowKey)}  \r[#66CCFF]${core.setTwoDigits(item:blueKey)}  \r[#FF0000]${core.setTwoDigits(item:redKey)}'), 10, 428); // 钥匙
-	if (flags.stage >= 0) {
+	/*if (flags.stage >= 0) {
 		core.ui.drawIcon(ctx, flags.mission[core.getFlag('stage', 0)][0] ? 'star2' : 'star1', 124, 320, 32, 32);
 		core.ui.drawIcon(ctx, flags.mission[core.getFlag('stage', 0)][1] ? 'star2' : 'star1', 124, 356, 32, 32);
 		core.ui.drawIcon(ctx, flags.mission[core.getFlag('stage', 0)][2] ? 'star2' : 'star1', 124, 392, 32, 32);
-	}
+	}*/
 	core.ui.setFont(ctx, '16px Aaknife'); // 字体字号（buff和光环）
 	if (flags.dry === true) {
 		core.ui.fillText(ctx, '炎热', 5, 450, 'orange')

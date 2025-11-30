@@ -351,14 +351,14 @@ main.floors.MT84=
             "type": "setTask",
             "name": "第13关任务2",
             "n": 1,
-            "text": "通关时黄钥匙不少于20",
+            "text": "通关时黄钥匙不少于30",
             "info": [
                 {
                     "type": "checkItem",
                     "checkItem": "yellowKey",
                     "operator": ">=",
                     "text": "黄钥匙数量",
-                    "count": 20
+                    "count": 30
                 }
             ]
         },
@@ -366,14 +366,14 @@ main.floors.MT84=
             "type": "setTask",
             "name": "第13关任务3",
             "n": 1,
-            "text": "通关时指挥点数不少于300",
+            "text": "通关时指挥点数不少于500",
             "info": [
                 {
                     "type": "checkStatus",
-                    "checkStatus": "atk",
+                    "checkStatus": "mana",
                     "operator": ">=",
                     "text": "指挥点数",
-                    "count": 300
+                    "count": 500
                 }
             ]
         }

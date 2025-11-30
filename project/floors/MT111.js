@@ -545,19 +545,6 @@ main.floors.MT111=
     "afterOpenDoor": {},
     "autoEvent": {
         "4,14": {
-            "0": {
-                "condition": "!core.hasEnemyLeft(undefined,['MT109','MT110','MT111'])",
-                "currentFloor": false,
-                "priority": 0,
-                "delayExecute": false,
-                "multiExecute": false,
-                "data": [
-                    {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[17][1]=true\n}"
-                    }
-                ]
-            },
             "1": null
         }
     },

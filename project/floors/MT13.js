@@ -55,7 +55,7 @@ main.floors.MT13=
             "type": "function",
             "function": "function(){\nflags.learned[2]=true\n}"
         },
-        "\t[系统提示]紧急补给（100指挥点）：战略技能。立即恢复等同于当前血量上限25%的血量。"
+        "\t[系统提示]紧急补给（150指挥点）：战略技能。立即恢复等同于当前血量上限25%的血量。"
     ],
     "eachArrive": [],
     "parallelDo": "",

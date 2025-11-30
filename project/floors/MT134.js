@@ -159,6 +159,11 @@ main.floors.MT134=
         "0,4": [
             {
                 "type": "setValue",
+                "name": "flag:第20关通关",
+                "value": "1"
+            },
+            {
+                "type": "setValue",
                 "name": "flag:dry",
                 "value": "false"
             },
@@ -189,14 +194,6 @@ main.floors.MT134=
             {
                 "type": "unloadEquip",
                 "pos": 6
-            },
-            {
-                "type": "function",
-                "function": "function(){\nflags.mission[20][0]=true\n}"
-            },
-            {
-                "type": "function",
-                "function": "function(){\nflags.skillList=[0,0,0,0,0,0,0]\n}"
             },
             {
                 "type": "update"
@@ -249,7 +246,7 @@ main.floors.MT134=
             },
             {
                 "type": "function",
-                "function": "function(){\nvar a = flags.mission[core.getFlag('stage')];\ncore.setFlag('@temp@A', a[0] + a[1] + a[2]);\n}"
+                "function": "function(){\nvar a = core.taskSystem.checkTask(0) ? 1 : 0,\n\tb = core.taskSystem.checkTask(1) ? 1 : 0,\n\tc = core.taskSystem.checkTask(2) ? 1 : 0;\ncore.setFlag('@temp@A', a + b + c);\n}"
             },
             {
                 "type": "if",
@@ -275,8 +272,7 @@ main.floors.MT134=
                             90
                         ],
                         "opacity": 1,
-                        "time": 500,
-                        "async": true
+                        "time": 500
                     },
                     {
                         "type": "sleep",
@@ -306,8 +302,7 @@ main.floors.MT134=
                                     90
                                 ],
                                 "opacity": 1,
-                                "time": 500,
-                                "async": true
+                                "time": 500
                             },
                             {
                                 "type": "sleep",
@@ -337,8 +332,7 @@ main.floors.MT134=
                                             90
                                         ],
                                         "opacity": 1,
-                                        "time": 500,
-                                        "async": true
+                                        "time": 500
                                     },
                                     {
                                         "type": "sleep",
@@ -563,34 +557,7 @@ main.floors.MT134=
     "afterGetItem": {},
     "afterOpenDoor": {},
     "autoEvent": {
-        "0,5": {
-            "0": {
-                "condition": "!core.hasEnemyLeft(undefined,['MT130','MT131','MT132','MT133','MT134'])",
-                "currentFloor": false,
-                "priority": 0,
-                "delayExecute": false,
-                "multiExecute": false,
-                "data": [
-                    {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[20][2]=true\n}"
-                    }
-                ]
-            },
-            "1": {
-                "condition": "core.maps.searchBlockWithFilter(x=>['轻坦','中坦','重坦','坦歼'].includes(core.material.enemys[x?.event?.id]?.type),['MT130','MT131','MT132','MT133','MT134']).length===0",
-                "currentFloor": false,
-                "priority": 0,
-                "delayExecute": false,
-                "multiExecute": false,
-                "data": [
-                    {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[20][1]=true\n}"
-                    }
-                ]
-            }
-        }
+        "0,5": {}
     },
     "cannotMove": {},
     "cannotMoveIn": {},

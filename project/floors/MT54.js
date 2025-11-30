@@ -55,7 +55,7 @@ main.floors.MT54=
                         ]
                     },
                     {
-                        "text": "装备 P40C战斧",
+                        "text": "装备 P40B战斧",
                         "icon": "p40c",
                         "need": "core.hasItem('p40c')&&!core.hasEquip('p40c')",
                         "condition": "core.hasItem('p40c')&&!core.hasEquip('p40c')",
@@ -111,7 +111,7 @@ main.floors.MT54=
                 "type": "playSound",
                 "name": "xinxinmagic.mp3"
             },
-            "\t[系统提示]当前区域敌人特点：只有空军，轰炸机居多\n推荐携带技能：紧急补给、防空弹幕、空战王牌\n推荐出战装备：喷火MK1或飓风MK1均可"
+            "\t[系统提示]当前区域敌人特点：只有空军，轰炸机居多\n推荐携带技能：紧急补给、防空弹幕、空战王牌\n推荐出战装备：喷火MK1"
         ],
         "4,10": [
             "\t[参谋,N517]长官，请下达指示！",

@@ -18,13 +18,15 @@ main.floors.MT101=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        
         {
             "type": "update"
         },
         {
             "type": "setCurtain",
             "time": 500
+        },
+        {
+            "type": "showui"
         }
     ],
     "eachArrive": [],
@@ -37,10 +39,10 @@ main.floors.MT101=
                 "text": "\t[机场后勤,N516]请选择出战空军",
                 "choices": [
                     {
-                        "text": "装备 P40C战斧",
+                        "text": "装备 P40B战斧",
                         "icon": "p40c",
                         "need": "core.hasItem('p40c')&&!core.hasEquip('p40c')",
-                        "condition": "core.hasItem('spitfiremk1')&&!core.hasEquip('spitfiremk1')",
+                        "condition": "core.hasItem('p40c')&&!core.hasEquip('p40c')",
                         "action": [
                             {
                                 "type": "loadEquip",
@@ -251,7 +253,7 @@ main.floors.MT101=
                 "type": "playSound",
                 "name": "xinxinmagic.mp3"
             },
-            "\t[系统提示]当前区域敌人特点：大量意大利陆军和空军，步兵为主，少量装甲部队\n推荐携带技能：战壕、紧急补给、防空弹幕、空战王牌\n推荐出战装备：瓦伦丁步兵坦克，空军随意带"
+            "\t[系统提示]当前区域敌人特点：大量意大利陆军和空军，步兵为主，少量装甲部队\n推荐携带技能：战壕、紧急补给、防空弹幕、空战王牌、预警\n推荐出战装备：瓦伦丁步兵坦克、P40B战斧、贼鸥式轰炸机、剑鱼式轰炸机"
         ]
     },
     "changeFloor": {},

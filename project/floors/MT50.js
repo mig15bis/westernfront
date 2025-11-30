@@ -206,6 +206,103 @@ main.floors.MT50=
                             7,
                             13
                         ]
+                    },
+                    {
+                        "type": "hide",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "remove": true,
+                        "time": 500
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            6
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            5
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "down:1",
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            7
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "up:1",
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            3,
+                            7
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "up:1",
+                            "right:11"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            4,
+                            5
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "down:1",
+                            "right:10"
+                        ]
+                    },
+                    "\t[系统提示]成功保护机场，获得奖励：攻击+10",
+                    {
+                        "type": "setValue",
+                        "name": "status:atk",
+                        "operator": "+=",
+                        "value": "10"
                     }
                 ]
             }
@@ -227,6 +324,103 @@ main.floors.MT50=
                             7,
                             13
                         ]
+                    },
+                    {
+                        "type": "hide",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "remove": true,
+                        "time": 500
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            6
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            5
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "down:1",
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            7
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "up:1",
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            3,
+                            7
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "up:1",
+                            "right:11"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            4,
+                            5
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "down:1",
+                            "right:10"
+                        ]
+                    },
+                    "\t[系统提示]成功保护机场，获得奖励：攻击+10",
+                    {
+                        "type": "setValue",
+                        "name": "status:atk",
+                        "operator": "+=",
+                        "value": "10"
                     }
                 ]
             }
@@ -248,6 +442,103 @@ main.floors.MT50=
                             7,
                             13
                         ]
+                    },
+                    {
+                        "type": "hide",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "remove": true,
+                        "time": 500
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            6
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            5
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "down:1",
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            7
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "up:1",
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            3,
+                            7
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "up:1",
+                            "right:11"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            4,
+                            5
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "down:1",
+                            "right:10"
+                        ]
+                    },
+                    "\t[系统提示]成功保护机场，获得奖励：攻击+10",
+                    {
+                        "type": "setValue",
+                        "name": "status:atk",
+                        "operator": "+=",
+                        "value": "10"
                     }
                 ]
             }
@@ -269,6 +560,103 @@ main.floors.MT50=
                             7,
                             13
                         ]
+                    },
+                    {
+                        "type": "hide",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "remove": true,
+                        "time": 500
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            6
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            5
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "down:1",
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            7
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "up:1",
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            3,
+                            7
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "up:1",
+                            "right:11"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            4,
+                            5
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "down:1",
+                            "right:10"
+                        ]
+                    },
+                    "\t[系统提示]成功保护机场，获得奖励：攻击+10",
+                    {
+                        "type": "setValue",
+                        "name": "status:atk",
+                        "operator": "+=",
+                        "value": "10"
                     }
                 ]
             }
@@ -290,6 +678,103 @@ main.floors.MT50=
                             7,
                             13
                         ]
+                    },
+                    {
+                        "type": "hide",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "remove": true,
+                        "time": 500
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            6
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            5
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "down:1",
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            7
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "up:1",
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            3,
+                            7
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "up:1",
+                            "right:11"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            4,
+                            5
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "down:1",
+                            "right:10"
+                        ]
+                    },
+                    "\t[系统提示]成功保护机场，获得奖励：攻击+10",
+                    {
+                        "type": "setValue",
+                        "name": "status:atk",
+                        "operator": "+=",
+                        "value": "10"
                     }
                 ]
             }
@@ -311,6 +796,103 @@ main.floors.MT50=
                             7,
                             13
                         ]
+                    },
+                    {
+                        "type": "hide",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "remove": true,
+                        "time": 500
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            6
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            5
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "down:1",
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            7
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "up:1",
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            3,
+                            7
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "up:1",
+                            "right:11"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            4,
+                            5
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "down:1",
+                            "right:10"
+                        ]
+                    },
+                    "\t[系统提示]成功保护机场，获得奖励：攻击+10",
+                    {
+                        "type": "setValue",
+                        "name": "status:atk",
+                        "operator": "+=",
+                        "value": "10"
                     }
                 ]
             }
@@ -332,6 +914,103 @@ main.floors.MT50=
                             7,
                             13
                         ]
+                    },
+                    {
+                        "type": "hide",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "remove": true,
+                        "time": 500
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            6
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            5
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "down:1",
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            7
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "up:1",
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            3,
+                            7
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "up:1",
+                            "right:11"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            4,
+                            5
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "down:1",
+                            "right:10"
+                        ]
+                    },
+                    "\t[系统提示]成功保护机场，获得奖励：攻击+10",
+                    {
+                        "type": "setValue",
+                        "name": "status:atk",
+                        "operator": "+=",
+                        "value": "10"
                     }
                 ]
             }
@@ -353,6 +1032,103 @@ main.floors.MT50=
                             7,
                             13
                         ]
+                    },
+                    {
+                        "type": "hide",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "remove": true,
+                        "time": 500
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            6
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            5
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "down:1",
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            7
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "up:1",
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            3,
+                            7
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "up:1",
+                            "right:11"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            4,
+                            5
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "down:1",
+                            "right:10"
+                        ]
+                    },
+                    "\t[系统提示]成功保护机场，获得奖励：攻击+10",
+                    {
+                        "type": "setValue",
+                        "name": "status:atk",
+                        "operator": "+=",
+                        "value": "10"
                     }
                 ]
             }
@@ -374,6 +1150,103 @@ main.floors.MT50=
                             7,
                             13
                         ]
+                    },
+                    {
+                        "type": "hide",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "remove": true,
+                        "time": 500
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            6
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            5
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "down:1",
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            7
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "up:1",
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            3,
+                            7
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "up:1",
+                            "right:11"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            4,
+                            5
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "down:1",
+                            "right:10"
+                        ]
+                    },
+                    "\t[系统提示]成功保护机场，获得奖励：攻击+10",
+                    {
+                        "type": "setValue",
+                        "name": "status:atk",
+                        "operator": "+=",
+                        "value": "10"
                     }
                 ]
             }
@@ -395,6 +1268,103 @@ main.floors.MT50=
                             7,
                             13
                         ]
+                    },
+                    {
+                        "type": "hide",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "remove": true,
+                        "time": 500
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            6
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            5
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "down:1",
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            7
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "up:1",
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            3,
+                            7
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "up:1",
+                            "right:11"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            4,
+                            5
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "down:1",
+                            "right:10"
+                        ]
+                    },
+                    "\t[系统提示]成功保护机场，获得奖励：攻击+10",
+                    {
+                        "type": "setValue",
+                        "name": "status:atk",
+                        "operator": "+=",
+                        "value": "10"
                     }
                 ]
             }
@@ -416,6 +1386,103 @@ main.floors.MT50=
                             7,
                             13
                         ]
+                    },
+                    {
+                        "type": "hide",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "remove": true,
+                        "time": 500
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            6
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            5
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "down:1",
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            7
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "up:1",
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            3,
+                            7
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "up:1",
+                            "right:11"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            4,
+                            5
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "down:1",
+                            "right:10"
+                        ]
+                    },
+                    "\t[系统提示]成功保护机场，获得奖励：攻击+10",
+                    {
+                        "type": "setValue",
+                        "name": "status:atk",
+                        "operator": "+=",
+                        "value": "10"
                     }
                 ]
             }
@@ -437,6 +1504,103 @@ main.floors.MT50=
                             7,
                             13
                         ]
+                    },
+                    {
+                        "type": "hide",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "remove": true,
+                        "time": 500
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            6
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            5
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "down:1",
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            7
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "up:1",
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            3,
+                            7
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "up:1",
+                            "right:11"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            4,
+                            5
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "down:1",
+                            "right:10"
+                        ]
+                    },
+                    "\t[系统提示]成功保护机场，获得奖励：攻击+10",
+                    {
+                        "type": "setValue",
+                        "name": "status:atk",
+                        "operator": "+=",
+                        "value": "10"
                     }
                 ]
             }
@@ -458,6 +1622,103 @@ main.floors.MT50=
                             7,
                             13
                         ]
+                    },
+                    {
+                        "type": "hide",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "remove": true,
+                        "time": 500
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            6
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            5
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "down:1",
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            7
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "up:1",
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            3,
+                            7
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "up:1",
+                            "right:11"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            4,
+                            5
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "down:1",
+                            "right:10"
+                        ]
+                    },
+                    "\t[系统提示]成功保护机场，获得奖励：攻击+10",
+                    {
+                        "type": "setValue",
+                        "name": "status:atk",
+                        "operator": "+=",
+                        "value": "10"
                     }
                 ]
             }
@@ -479,6 +1740,103 @@ main.floors.MT50=
                             7,
                             13
                         ]
+                    },
+                    {
+                        "type": "hide",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "remove": true,
+                        "time": 500
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            6
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            5
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "down:1",
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            7
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "up:1",
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            3,
+                            7
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "up:1",
+                            "right:11"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            4,
+                            5
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "down:1",
+                            "right:10"
+                        ]
+                    },
+                    "\t[系统提示]成功保护机场，获得奖励：攻击+10",
+                    {
+                        "type": "setValue",
+                        "name": "status:atk",
+                        "operator": "+=",
+                        "value": "10"
                     }
                 ]
             }
@@ -500,6 +1858,103 @@ main.floors.MT50=
                             7,
                             13
                         ]
+                    },
+                    {
+                        "type": "hide",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "remove": true,
+                        "time": 500
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            6
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            5
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "down:1",
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            7
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "up:1",
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            3,
+                            7
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "up:1",
+                            "right:11"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            4,
+                            5
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "down:1",
+                            "right:10"
+                        ]
+                    },
+                    "\t[系统提示]成功保护机场，获得奖励：攻击+10",
+                    {
+                        "type": "setValue",
+                        "name": "status:atk",
+                        "operator": "+=",
+                        "value": "10"
                     }
                 ]
             }
@@ -521,6 +1976,103 @@ main.floors.MT50=
                             7,
                             13
                         ]
+                    },
+                    {
+                        "type": "hide",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "remove": true,
+                        "time": 500
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            6
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            5
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "down:1",
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            7
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "up:1",
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            3,
+                            7
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "up:1",
+                            "right:11"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            4,
+                            5
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "down:1",
+                            "right:10"
+                        ]
+                    },
+                    "\t[系统提示]成功保护机场，获得奖励：攻击+10",
+                    {
+                        "type": "setValue",
+                        "name": "status:atk",
+                        "operator": "+=",
+                        "value": "10"
                     }
                 ]
             }
@@ -542,6 +2094,103 @@ main.floors.MT50=
                             7,
                             13
                         ]
+                    },
+                    {
+                        "type": "hide",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "remove": true,
+                        "time": 500
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            6
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            5
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "down:1",
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            7
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "up:1",
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            3,
+                            7
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "up:1",
+                            "right:11"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            4,
+                            5
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "down:1",
+                            "right:10"
+                        ]
+                    },
+                    "\t[系统提示]成功保护机场，获得奖励：攻击+10",
+                    {
+                        "type": "setValue",
+                        "name": "status:atk",
+                        "operator": "+=",
+                        "value": "10"
                     }
                 ]
             }
@@ -563,6 +2212,103 @@ main.floors.MT50=
                             7,
                             13
                         ]
+                    },
+                    {
+                        "type": "hide",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "remove": true,
+                        "time": 500
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            6
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            5
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "down:1",
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            7
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "up:1",
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            3,
+                            7
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "up:1",
+                            "right:11"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            4,
+                            5
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "down:1",
+                            "right:10"
+                        ]
+                    },
+                    "\t[系统提示]成功保护机场，获得奖励：攻击+10",
+                    {
+                        "type": "setValue",
+                        "name": "status:atk",
+                        "operator": "+=",
+                        "value": "10"
                     }
                 ]
             }
@@ -584,6 +2330,103 @@ main.floors.MT50=
                             7,
                             13
                         ]
+                    },
+                    {
+                        "type": "hide",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "remove": true,
+                        "time": 500
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            6
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            5
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "down:1",
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            7
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "up:1",
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            3,
+                            7
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "up:1",
+                            "right:11"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            4,
+                            5
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "down:1",
+                            "right:10"
+                        ]
+                    },
+                    "\t[系统提示]成功保护机场，获得奖励：攻击+10",
+                    {
+                        "type": "setValue",
+                        "name": "status:atk",
+                        "operator": "+=",
+                        "value": "10"
                     }
                 ]
             }
@@ -605,6 +2448,103 @@ main.floors.MT50=
                             7,
                             13
                         ]
+                    },
+                    {
+                        "type": "hide",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "remove": true,
+                        "time": 500
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            6
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            5
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "down:1",
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            7
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "up:1",
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            3,
+                            7
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "up:1",
+                            "right:11"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            4,
+                            5
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "down:1",
+                            "right:10"
+                        ]
+                    },
+                    "\t[系统提示]成功保护机场，获得奖励：攻击+10",
+                    {
+                        "type": "setValue",
+                        "name": "status:atk",
+                        "operator": "+=",
+                        "value": "10"
                     }
                 ]
             }
@@ -626,6 +2566,103 @@ main.floors.MT50=
                             7,
                             13
                         ]
+                    },
+                    {
+                        "type": "hide",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "remove": true,
+                        "time": 500
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            6
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            5
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "down:1",
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            7
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "up:1",
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            3,
+                            7
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "up:1",
+                            "right:11"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            4,
+                            5
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "down:1",
+                            "right:10"
+                        ]
+                    },
+                    "\t[系统提示]成功保护机场，获得奖励：攻击+10",
+                    {
+                        "type": "setValue",
+                        "name": "status:atk",
+                        "operator": "+=",
+                        "value": "10"
                     }
                 ]
             }
@@ -647,6 +2684,103 @@ main.floors.MT50=
                             7,
                             13
                         ]
+                    },
+                    {
+                        "type": "hide",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "remove": true,
+                        "time": 500
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            6
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            5
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "down:1",
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            7
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "up:1",
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            3,
+                            7
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "up:1",
+                            "right:11"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            4,
+                            5
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "down:1",
+                            "right:10"
+                        ]
+                    },
+                    "\t[系统提示]成功保护机场，获得奖励：攻击+10",
+                    {
+                        "type": "setValue",
+                        "name": "status:atk",
+                        "operator": "+=",
+                        "value": "10"
                     }
                 ]
             }
@@ -668,6 +2802,103 @@ main.floors.MT50=
                             7,
                             13
                         ]
+                    },
+                    {
+                        "type": "hide",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "remove": true,
+                        "time": 500
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            6
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            5
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "down:1",
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            7
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "up:1",
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            3,
+                            7
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "up:1",
+                            "right:11"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            4,
+                            5
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "down:1",
+                            "right:10"
+                        ]
+                    },
+                    "\t[系统提示]成功保护机场，获得奖励：攻击+10",
+                    {
+                        "type": "setValue",
+                        "name": "status:atk",
+                        "operator": "+=",
+                        "value": "10"
                     }
                 ]
             }
@@ -689,6 +2920,103 @@ main.floors.MT50=
                             7,
                             13
                         ]
+                    },
+                    {
+                        "type": "hide",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "remove": true,
+                        "time": 500
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            6
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            5
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "down:1",
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            1,
+                            7
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "up:1",
+                            "right:13"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            3,
+                            7
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "up:1",
+                            "right:11"
+                        ]
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "move",
+                        "loc": [
+                            4,
+                            5
+                        ],
+                        "time": 100,
+                        "steps": [
+                            "down:1",
+                            "right:10"
+                        ]
+                    },
+                    "\t[系统提示]成功保护机场，获得奖励：攻击+10",
+                    {
+                        "type": "setValue",
+                        "name": "status:atk",
+                        "operator": "+=",
+                        "value": "10"
                     }
                 ]
             }

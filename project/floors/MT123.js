@@ -415,12 +415,62 @@ main.floors.MT123=
             "type": "callSave"
         },
         {
+            "type": "setValue",
+            "name": "flag:第19关通关",
+            "value": "0"
+        },
+        {
             "type": "playSound",
             "name": "xinxinmagic.mp3"
         },
-        "\t[任务目标]⭐通过当前关卡\n⭐通关时至少持有20个“下午茶”道具\n⭐通关时剩余指挥点数达到100",
+        "\t[任务目标]⭐通过当前区域\n⭐通关时至少持有20个“下午茶”道具\n⭐通关时剩余指挥点数达到100",
         {
             "type": "callBook"
+        },
+        {
+            "type": "setTask",
+            "name": "第19关任务1",
+            "n": 1,
+            "text": "通过当前区域",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "第19关通关",
+                    "operator": "=",
+                    "text": "通过当前区域",
+                    "count": "1"
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第19关任务2",
+            "n": 1,
+            "text": "通关时至少持有20个“下午茶”道具",
+            "info": [
+                {
+                    "type": "checkItem",
+                    "checkItem": "tea",
+                    "operator": ">=",
+                    "text": "持有的“下午茶”",
+                    "count": 20
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第19关任务3",
+            "n": 1,
+            "text": "通关时剩余指挥点数达到100",
+            "info": [
+                {
+                    "type": "checkStatus",
+                    "checkStatus": "mana",
+                    "operator": ">=",
+                    "text": "剩余指挥点数",
+                    "count": 100
+                }
+            ]
         }
     ],
     "eachArrive": [],

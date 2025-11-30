@@ -173,7 +173,7 @@ main.floors.MT20=
                         ]
                     },
                     {
-                        "text": "装备 P40C战斧",
+                        "text": "装备 P40B战斧",
                         "icon": "p40c",
                         "need": "core.hasItem('p40c')&&!core.hasEquip('p40c')",
                         "condition": "core.hasItem('p40c')&&!core.hasEquip('p40c')",

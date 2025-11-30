@@ -18,13 +18,15 @@ main.floors.MT122=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        
         {
             "type": "update"
         },
         {
             "type": "setCurtain",
             "time": 500
+        },
+        {
+            "type": "showui"
         },
         {
             "type": "setValue",
@@ -124,10 +126,10 @@ main.floors.MT122=
                 "text": "\t[机场后勤,N516]请选择出战空军",
                 "choices": [
                     {
-                        "text": "装备 P40C战斧",
+                        "text": "装备 P40B战斧",
                         "icon": "p40c",
                         "need": "core.hasItem('p40c')&&!core.hasEquip('p40c')",
-                        "condition": "core.hasItem('spitfiremk1')&&!core.hasEquip('spitfiremk1')",
+                        "condition": "core.hasItem('p40c')&&!core.hasEquip('p40c')",
                         "action": [
                             {
                                 "type": "loadEquip",

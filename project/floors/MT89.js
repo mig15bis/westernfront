@@ -49,7 +49,7 @@ main.floors.MT89=
             "type": "playSound",
             "name": "xinxinmagic.mp3"
         },
-        "\t[任务目标]⭐跟踪俾斯麦号战列舰\n⭐通关时至少持有30个下午茶\n⭐通关时至少持有10把蓝钥匙",
+        "\t[任务目标]⭐跟踪俾斯麦号战列舰\n⭐通关时至少持有50个下午茶\n⭐通关时至少持有20把蓝钥匙",
         {
             "type": "callBook"
         },
@@ -72,14 +72,14 @@ main.floors.MT89=
             "type": "setTask",
             "name": "第14关任务2",
             "n": 1,
-            "text": "关时至少持有30个下午茶",
+            "text": "关时至少持有50个下午茶",
             "info": [
                 {
                     "type": "checkItem",
                     "checkItem": "tea",
                     "operator": ">=",
                     "text": "下午茶数量",
-                    "count": 30
+                    "count": 50
                 }
             ]
         },
@@ -87,14 +87,14 @@ main.floors.MT89=
             "type": "setTask",
             "name": "第14关任务3",
             "n": 1,
-            "text": "通关时至少持有10把蓝钥匙",
+            "text": "通关时至少持有20把蓝钥匙",
             "info": [
                 {
                     "type": "checkItem",
                     "checkItem": "blueKey",
                     "operator": ">=",
                     "text": "蓝钥匙数量",
-                    "count": 10
+                    "count": 20
                 }
             ]
         }

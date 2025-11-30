@@ -18,7 +18,6 @@ main.floors.MT116=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        
         {
             "type": "setCurtain",
             "time": 500
@@ -203,12 +202,76 @@ main.floors.MT116=
             "type": "callSave"
         },
         {
+            "type": "setValue",
+            "name": "flag:第18关通关",
+            "value": "0"
+        },
+        {
             "type": "playSound",
             "name": "xinxinmagic.mp3"
         },
         "\t[任务目标]⭐通过当前区域\n⭐消灭所有步兵\n⭐击落所有中型轰炸机",
         {
             "type": "callBook"
+        },
+        {
+            "type": "setTask",
+            "name": "第18关任务1",
+            "n": 1,
+            "text": "通过当前区域",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "第18关通关",
+                    "operator": "=",
+                    "text": "通过当前区域",
+                    "count": "1"
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第18关任务2",
+            "n": 1,
+            "text": "消灭所有步兵",
+            "info": [
+                {
+                    "type": "checkEnemyType",
+                    "checkEnemyType": "步兵",
+                    "floorId": [
+                        "MT116",
+                        "MT117",
+                        "MT118",
+                        "MT119",
+                        "MT120"
+                    ],
+                    "operator": "<=",
+                    "text": "剩余的步兵",
+                    "count": 0
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第18关任务3",
+            "n": 1,
+            "text": "击落所有中型轰炸机",
+            "info": [
+                {
+                    "type": "checkEnemyType",
+                    "checkEnemyType": "中型轰炸机",
+                    "floorId": [
+                        "MT116",
+                        "MT117",
+                        "MT118",
+                        "MT119",
+                        "MT120"
+                    ],
+                    "operator": "<=",
+                    "text": "剩余的中型轰炸机",
+                    "count": 0
+                }
+            ]
         }
     ],
     "eachArrive": [],

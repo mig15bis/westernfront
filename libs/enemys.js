@@ -440,11 +440,11 @@ enemys.prototype._getCurrentEnemys_addEnemy = function (enemyId, enemys, used, x
     var enemyInfo = this.getEnemyInfo(enemy, null, null, null, floorId);
     var locEnemyInfo = this.getEnemyInfo(enemy, null, x, y, floorId);
 
-    if (!core.flags.enableEnemyPoint ||
+    /*if (!core.flags.enableEnemyPoint ||
         (locEnemyInfo.atk == enemyInfo.atk && locEnemyInfo.def == enemyInfo.def && locEnemyInfo.hp == enemyInfo.hp)) {
         x = null;
         y = null;
-    } else {
+    }*/ 
         // 检查enemys里面是否使用了存在的内容
         for (var i = 0; i < enemys.length; ++i) {
             var one = enemys[i];
@@ -455,7 +455,6 @@ enemys.prototype._getCurrentEnemys_addEnemy = function (enemyId, enemys, used, x
             }
         }
         enemyInfo = locEnemyInfo;
-    }
     var id = enemy.id + ":" + x + ":" + y;
     if (used[id]) return;
     used[id] = true;

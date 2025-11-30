@@ -18,7 +18,6 @@ main.floors.MT130=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        
         {
             "type": "setCurtain",
             "time": 500
@@ -273,12 +272,101 @@ main.floors.MT130=
             "type": "callSave"
         },
         {
+            "type": "setValue",
+            "name": "flag:第20关通关",
+            "value": "0"
+        },
+        {
             "type": "playSound",
             "name": "xinxinmagic.mp3"
         },
-        "\t[任务目标]⭐通过当前关卡\n⭐摧毁所有敌方坦克\n⭐消灭所有敌人",
+        "\t[任务目标]⭐通过当前区域\n⭐摧毁所有敌方坦克\n⭐消灭所有敌人",
         {
             "type": "callBook"
+        },
+        {
+            "type": "setTask",
+            "name": "第20关任务1",
+            "n": 1,
+            "text": "通过当前区域",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "第20关通关",
+                    "operator": "=",
+                    "text": "通过当前区域",
+                    "count": "1"
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第20关任务2",
+            "n": 3,
+            "text": "摧毁所有敌方坦克",
+            "info": [
+                {
+                    "type": "checkEnemyType",
+                    "checkEnemyType": "轻坦",
+                    "floorId": [
+                        "MT130",
+                        "MT131",
+                        "MT132",
+                        "MT133",
+                        "MT134"
+                    ],
+                    "operator": "<=",
+                    "text": "剩余的轻型坦克",
+                    "count": 0
+                },
+                {
+                    "type": "checkEnemyType",
+                    "checkEnemyType": "中坦",
+                    "floorId": [
+                        "MT130",
+                        "MT131",
+                        "MT132",
+                        "MT133",
+                        "MT134"
+                    ],
+                    "operator": "<=",
+                    "text": "剩余的中型坦克",
+                    "count": 0
+                },
+                {
+                    "type": "checkEnemyType",
+                    "checkEnemyType": "坦歼",
+                    "floorId": [
+                        "MT130",
+                        "MT131",
+                        "MT132",
+                        "MT133",
+                        "MT134"
+                    ],
+                    "operator": "<=",
+                    "text": "剩余的坦克歼击车",
+                    "count": 0
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第20关任务3",
+            "n": 1,
+            "text": "消灭所有敌人",
+            "info": [
+                {
+                    "type": "killAll",
+                    "floorId": [
+                        "MT130",
+                        "MT131",
+                        "MT132",
+                        "MT133",
+                        "MT134"
+                    ],
+                    "text": "敌军残余"
+                }
+            ]
         },
         {
             "type": "playSound",

@@ -2102,13 +2102,8 @@ ui.prototype._drawCursor = function () {
 ////// 绘制怪物手册 //////
 ui.prototype.drawBook = function (index) {
     var floorId = core.floorIds[(core.status.event.ui || {}).index] || core.status.floorId;
-    // 清除浏览地图时的光环缓存
-    if (floorId != core.status.floorId && core.status.checkBlock) {
-        core.status.checkBlock.cache = {};
-    }
     var enemys = core.enemys.getCurrentEnemys(floorId);
     core.clearUI();
-    core.updateStatusBar();
     core.clearMap('data');
     // 生成groundPattern
     core.maps.generateGroundPattern(floorId);
@@ -2623,7 +2618,7 @@ ui.prototype._drawViewMaps = function (index, x, y) {
     var textX = 16, textY = 18, width = textX + core.calWidth('data', text) + 16, height = 42;
     core.fillRect('data', 5, 5, width, height, 'rgba(0,0,0,0.4)');
     core.fillText('data', text, textX + 5, textY + 15, 'rgba(255,255,255,0.6)');
-    core.updateStatusBar();
+    core.ui.statusBar.update();
 }
 
 ui.prototype._drawViewMaps_drawHint = function () {

@@ -323,7 +323,7 @@ main.floors.MT99=
                         "type": "setEnemy",
                         "id": "bismark",
                         "name": "hp",
-                        "value": "200000"
+                        "value": "250000"
                     }
                 ],
                 "false": [
@@ -424,7 +424,7 @@ main.floors.MT99=
                                 "type": "setEnemy",
                                 "id": "bismark",
                                 "name": "atk",
-                                "value": "1000"
+                                "value": "1200"
                             }
                         ],
                         "false": [
@@ -588,13 +588,13 @@ main.floors.MT99=
                                         "type": "setEnemy",
                                         "id": "bismark",
                                         "name": "hp",
-                                        "value": "60000"
+                                        "value": "150000"
                                     },
                                     {
                                         "type": "setEnemy",
                                         "id": "bismark",
                                         "name": "atk",
-                                        "value": "500"
+                                        "value": "800"
                                     },
                                     {
                                         "type": "setEnemy",
@@ -661,6 +661,10 @@ main.floors.MT99=
                                             },
                                             {
                                                 "type": "clearMap"
+                                            },
+                                            {
+                                                "type": "playSound",
+                                                "name": "torpeodoexplo.wav"
                                             },
                                             {
                                                 "type": "hide",

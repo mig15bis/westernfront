@@ -39,7 +39,7 @@ main.floors.MT112=
             "type": "playSound",
             "name": "xinxinmagic.mp3"
         },
-        "\t[系统提示]在沙漠地区，所有德军部队都有特殊技能“沙漠军团”，可以免疫炎热buff对自身的负面影响。请小心！"
+        "\t[系统提示]在沙漠地区，所有德军部队都有特殊技能“沙漠军团”，可以免疫炎热buff对自身的负面影响！"
     ],
     "eachArrive": [],
     "parallelDo": "",

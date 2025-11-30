@@ -29,6 +29,11 @@ main.floors.MT113=
     "events": {
         "14,5": [
             {
+                "type": "setValue",
+                "name": "flag:第17关通关",
+                "value": "1"
+            },
+            {
                 "type": "unloadEquip",
                 "pos": 0
             },
@@ -55,14 +60,6 @@ main.floors.MT113=
             {
                 "type": "unloadEquip",
                 "pos": 6
-            },
-            {
-                "type": "function",
-                "function": "function(){\nflags.mission[17][0]=true\n}"
-            },
-            {
-                "type": "function",
-                "function": "function(){\nflags.skillList=[0,0,0,0,0,0,0]\n}"
             },
             {
                 "type": "update"
@@ -115,7 +112,7 @@ main.floors.MT113=
             },
             {
                 "type": "function",
-                "function": "function(){\nvar a = flags.mission[core.getFlag('stage')];\ncore.setFlag('@temp@A', a[0] + a[1] + a[2]);\n}"
+                "function": "function(){\nvar a = core.taskSystem.checkTask(0) ? 1 : 0,\n\tb = core.taskSystem.checkTask(1) ? 1 : 0,\n\tc = core.taskSystem.checkTask(2) ? 1 : 0;\ncore.setFlag('@temp@A', a + b + c);\n}"
             },
             {
                 "type": "if",
@@ -141,8 +138,7 @@ main.floors.MT113=
                             90
                         ],
                         "opacity": 1,
-                        "time": 500,
-                        "async": true
+                        "time": 500
                     },
                     {
                         "type": "sleep",
@@ -172,8 +168,7 @@ main.floors.MT113=
                                     90
                                 ],
                                 "opacity": 1,
-                                "time": 500,
-                                "async": true
+                                "time": 500
                             },
                             {
                                 "type": "sleep",
@@ -203,8 +198,7 @@ main.floors.MT113=
                                             90
                                         ],
                                         "opacity": 1,
-                                        "time": 500,
-                                        "async": true
+                                        "time": 500
                                     },
                                     {
                                         "type": "sleep",
@@ -376,49 +370,12 @@ main.floors.MT113=
         }
     },
     "beforeBattle": {},
-    "afterBattle": {
-        "8,7": [
-            {
-                "type": "setValue",
-                "name": "flag:st17tsk3",
-                "operator": "+=",
-                "value": "1"
-            }
-        ],
-        "5,13": [
-            {
-                "type": "setValue",
-                "name": "flag:st17tsk3",
-                "operator": "+=",
-                "value": "1"
-            }
-        ],
-        "8,14": [
-            {
-                "type": "setValue",
-                "name": "flag:st17tsk3",
-                "operator": "+=",
-                "value": "1"
-            }
-        ]
-    },
+    "afterBattle": {},
     "afterGetItem": {},
     "afterOpenDoor": {},
     "autoEvent": {
         "14,4": {
-            "0": {
-                "condition": "flag:st17tsk3>=3",
-                "currentFloor": false,
-                "priority": 0,
-                "delayExecute": false,
-                "multiExecute": false,
-                "data": [
-                    {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[17][2]=true\n}"
-                    }
-                ]
-            }
+            "1": null
         }
     },
     "cannotMove": {},

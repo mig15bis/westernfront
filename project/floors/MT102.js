@@ -97,7 +97,7 @@ main.floors.MT102=
             "type": "setEnemy",
             "id": "artillery75",
             "name": "hp",
-            "value": "5000"
+            "value": "8000"
         },
         {
             "type": "setEnemy",
@@ -109,7 +109,7 @@ main.floors.MT102=
             "type": "setEnemy",
             "id": "artillery75",
             "name": "zone",
-            "value": "1000"
+            "value": "400"
         },
         {
             "type": "setEnemy",
@@ -127,13 +127,13 @@ main.floors.MT102=
             "type": "setEnemy",
             "id": "ab41",
             "name": "hp",
-            "value": "6000"
+            "value": "10000"
         },
         {
             "type": "setEnemy",
             "id": "ab41",
             "name": "atk",
-            "value": "1500"
+            "value": "1800"
         },
         {
             "type": "setEnemy",
@@ -153,12 +153,86 @@ main.floors.MT102=
             "type": "callSave"
         },
         {
+            "type": "setValue",
+            "name": "flag:第16关通关",
+            "value": "0"
+        },
+        {
+            "type": "setValue",
+            "name": "flag:mission16tsk2",
+            "value": "0"
+        },
+        {
             "type": "playSound",
             "name": "xinxinmagic.mp3"
         },
         "\t[任务目标]⭐通过当前区域\n⭐击败格拉齐亚尼（支线boss）\n⭐击毁所有敌方坦克（不包括支线boss战）",
         {
             "type": "callBook"
+        },
+        {
+            "type": "setTask",
+            "name": "第16关任务1",
+            "n": 1,
+            "text": "通过当前区域",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "第16关通关",
+                    "operator": "=",
+                    "text": "通过当前区域",
+                    "count": "1"
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第16关任务2",
+            "n": 1,
+            "text": "击败格拉齐亚尼（支线boss）",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "mission16tsk2",
+                    "operator": "=",
+                    "text": "击败支线boss",
+                    "count": "1"
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第16关任务3",
+            "n": 2,
+            "text": "击毁所有敌方坦克（不包括支线boss战）",
+            "info": [
+                {
+                    "type": "checkEnemyType",
+                    "checkEnemyType": "轻坦",
+                    "floorId": [
+                        "MT102",
+                        "MT103",
+                        "MT104",
+                        "MT106"
+                    ],
+                    "operator": "<=",
+                    "text": "剩余的轻型坦克",
+                    "count": 0
+                },
+                {
+                    "type": "checkEnemyType",
+                    "checkEnemyType": "中坦",
+                    "floorId": [
+                        "MT102",
+                        "MT103",
+                        "MT104",
+                        "MT106"
+                    ],
+                    "operator": "<=",
+                    "text": "剩余的中型坦克",
+                    "count": 0
+                }
+            ]
         }
     ],
     "eachArrive": [],

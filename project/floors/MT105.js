@@ -378,6 +378,11 @@ main.floors.MT105=
                                 "condition": "(flag:MT105boss===2)",
                                 "true": [
                                     {
+                                        "type": "setValue",
+                                        "name": "flag:mission16tsk2",
+                                        "value": "1"
+                                    },
+                                    {
                                         "type": "clearMap",
                                         "x": 130,
                                         "y": 64,
@@ -410,10 +415,6 @@ main.floors.MT105=
                                         "name": "xinxinmagic.mp3"
                                     },
                                     "\t[系统提示]支线boss战 胜利！",
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[16][1]=true\n}"
-                                    },
                                     {
                                         "type": "openDoor",
                                         "loc": [

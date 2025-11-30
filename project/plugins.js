@@ -2916,12 +2916,21 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 		}
 
 		_update_state() { //异常状态
+			let Debuff = [];
+			if (flags.dry) {
+				Debuff.push('\r[#FF8C00]炎热\r');
+			}
 			if (core.domStyle.isVertical) { //竖屏
 				core.clearMap(uictx, 161, 681, 160, 50);
 				core.fillRoundRect(uictx, 168, 688, 135, 35, 15, "rgba(0,0,0,0.5)") //任务底板								 
 				core.setTextAlign("outerUI", "center");
-				if (true) { //异常状态检测需改动
-					core.fillText(uictx, "异常状态", 235.5, 710, "#FFAACC", "16px number", 130) //异常状态文字显示
+				if (Debuff.length > 0) { //异常状态检测需改动
+					if (Debuff.length < 4) {
+						core.drawTextContent(uictx, Debuff.join(" "), { left: 168, top: 696, align: 'center', maxWidth: 130, color: "#FFAACC", fontSize: 16, font: 'number' })
+					} else {
+						core.drawTextContent(uictx, Debuff.join(" "), { left: 183, top: 688, align: 'center', maxWidth: 100, color: "#FFAACC", fontSize: 12, font: 'number' })
+					}
+					//core.fillText(uictx, Debuff.join(" "), 235.5, 710, "#FF0000", "16px number", 130) //异常状态文字显示
 				} else {
 					core.fillText(uictx, "暂无异常状态", 235.5, 710, "#FFAACC", "16px number", 130)
 				}
@@ -2929,8 +2938,13 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				core.clearMap(uictx, 630, 261, 150, 40);
 				core.fillRoundRect(uictx, 637, 261, 131, 35, 15, "rgba(0,0,0,0.5)"); //异常状态底板
 				core.setTextAlign("outerUI", "center");
-				if (true) { //异常状态检测需改动
-					core.fillText(uictx, "异常状态", 702.5, 283, "#FFAACC", "16px number", 120) //异常状态文字显示
+				if (Debuff.length > 0) { //异常状态检测需改动
+					if (Debuff.length < 4) {
+						core.drawTextContent(uictx, Debuff.join(" "), { left: 637, top: 269, align: 'center', maxWidth: 130, color: "#FFAACC", fontSize: 16, font: 'number' })
+					} else {
+						core.drawTextContent(uictx, Debuff.join(" "), { left: 652, top: 261, align: 'center', maxWidth: 100, color: "#FFAACC", fontSize: 12, font: 'number' })
+					}
+					//core.fillText(uictx, Debuff.join(" "), 702.5, 283, "#FFAACC", "16px number", 120) //异常状态文字显示
 				} else {
 					core.fillText(uictx, "暂无异常状态", 702.5, 283, "#FFAACC", "16px number", 120)
 				}
@@ -3801,7 +3815,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 			id: 2,
 			strategy: true,
 			name: '紧急补给',
-			cost: 100,
+			cost: 150,
 			func: function () {
 				core.status.hero.hp += Math.floor(core.status.hero.hpmax / 4);
 				if (core.status.hero.hp > core.status.hero.hpmax) {
@@ -4157,6 +4171,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 					} else {
 						hero.mana += 150;
 						core.drawTip("只能对水面舰艇使用");
+						core.unlockControl();
 					}
 				}
 			},
@@ -5017,7 +5032,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 				info.operator = this.operator
 			} else if (info.type === "killType") {
 				info.floorId = this.floorId
-				info.killType = this.killTpye
+				info.killType = this.killType
 				info.count = this.count
 				info.has = this.has
 				info.operator = this.operator
@@ -5100,7 +5115,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 		坦歼: "vehicleexplore",
 		重坦: "vehicleexplore",
 		反坦克炮: "vehicleexplore",
-		榴弹炮: "vehicleexplore",
+		榴弹炮: "howitzer",
 		高射炮: "flak",
 		建筑: "zone",
 		潜艇: "xinxinwater",
@@ -5134,6 +5149,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 		商船: "",
 		战斗机1: "fighter.mp3",
 		战斗机2: "crash2.mp3",
+		战斗机3: "jet.mp3",
 		重型战斗机1: "fighter.mp3",
 		重型战斗机2: "crash2.mp3",
 		俯冲轰炸机1: "stukadive.mp3",

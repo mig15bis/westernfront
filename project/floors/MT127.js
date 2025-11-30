@@ -29,6 +29,11 @@ main.floors.MT127=
     "events": {
         "14,14": [
             {
+                "type": "setValue",
+                "name": "flag:第19关通关",
+                "value": "0"
+            },
+            {
                 "type": "unloadEquip",
                 "pos": 0
             },
@@ -55,34 +60,6 @@ main.floors.MT127=
             {
                 "type": "unloadEquip",
                 "pos": 6
-            },
-            {
-                "type": "function",
-                "function": "function(){\nflags.mission[19][0]=true\n}"
-            },
-            {
-                "type": "if",
-                "condition": "(item:tea>=20)",
-                "true": [
-                    {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[19][1]=true\n}"
-                    }
-                ]
-            },
-            {
-                "type": "if",
-                "condition": "(status:mana>=100)",
-                "true": [
-                    {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[19][2]=true\n}"
-                    }
-                ]
-            },
-            {
-                "type": "function",
-                "function": "function(){\nflags.skillList=[0,0,0,0,0,0,0]\n}"
             },
             {
                 "type": "update"
@@ -135,7 +112,7 @@ main.floors.MT127=
             },
             {
                 "type": "function",
-                "function": "function(){\nvar a = flags.mission[core.getFlag('stage')];\ncore.setFlag('@temp@A', a[0] + a[1] + a[2]);\n}"
+                "function": "function(){\nvar a = core.taskSystem.checkTask(0) ? 1 : 0,\n\tb = core.taskSystem.checkTask(1) ? 1 : 0,\n\tc = core.taskSystem.checkTask(2) ? 1 : 0;\ncore.setFlag('@temp@A', a + b + c);\n}"
             },
             {
                 "type": "if",
@@ -161,8 +138,7 @@ main.floors.MT127=
                             90
                         ],
                         "opacity": 1,
-                        "time": 500,
-                        "async": true
+                        "time": 500
                     },
                     {
                         "type": "sleep",
@@ -192,8 +168,7 @@ main.floors.MT127=
                                     90
                                 ],
                                 "opacity": 1,
-                                "time": 500,
-                                "async": true
+                                "time": 500
                             },
                             {
                                 "type": "sleep",
@@ -223,8 +198,7 @@ main.floors.MT127=
                                             90
                                         ],
                                         "opacity": 1,
-                                        "time": 500,
-                                        "async": true
+                                        "time": 500
                                     },
                                     {
                                         "type": "sleep",

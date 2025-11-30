@@ -329,14 +329,14 @@ main.floors.MT95=
             "type": "setEnemy",
             "id": "bismark",
             "name": "hp",
-            "value": "250000",
+            "value": "300000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "bismark",
             "name": "atk",
-            "value": "1200",
+            "value": "1500",
             "norefresh": true
         },
         {

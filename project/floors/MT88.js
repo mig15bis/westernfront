@@ -619,7 +619,7 @@ main.floors.MT88=
                         "type": "setEnemy",
                         "id": "bismark",
                         "name": "atk",
-                        "value": "850"
+                        "value": "1300"
                     }
                 ],
                 "false": [
@@ -681,19 +681,7 @@ main.floors.MT88=
                                 "type": "setEnemy",
                                 "id": "bismark",
                                 "name": "hp",
-                                "value": "120000"
-                            },
-                            {
-                                "type": "setEnemy",
-                                "id": "bismark",
-                                "name": "money",
-                                "value": "50"
-                            },
-                            {
-                                "type": "setEnemy",
-                                "id": "bismark",
-                                "name": "exp",
-                                "value": "50"
+                                "value": "180000"
                             }
                         ],
                         "false": [
@@ -755,13 +743,25 @@ main.floors.MT88=
                                         "type": "setEnemy",
                                         "id": "bismark",
                                         "name": "hp",
-                                        "value": "150000"
+                                        "value": "200000"
                                     },
                                     {
                                         "type": "setEnemy",
                                         "id": "bismark",
                                         "name": "atk",
-                                        "value": "1000"
+                                        "value": "1500"
+                                    },
+                                    {
+                                        "type": "setEnemy",
+                                        "id": "bismark",
+                                        "name": "money",
+                                        "value": "50"
+                                    },
+                                    {
+                                        "type": "setEnemy",
+                                        "id": "bismark",
+                                        "name": "exp",
+                                        "value": "50"
                                     }
                                 ],
                                 "false": [

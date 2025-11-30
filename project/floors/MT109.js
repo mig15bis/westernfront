@@ -389,12 +389,68 @@ main.floors.MT109=
             "type": "callSave"
         },
         {
+            "type": "setValue",
+            "name": "flag:第17关通关",
+            "value": "0"
+        },
+        {
             "type": "playSound",
             "name": "xinxinmagic.mp3"
         },
         "\t[任务目标]⭐通过当前区域\n⭐击溃所有意军\n⭐击毁3辆“三号坦克F型”",
         {
             "type": "callBook"
+        },
+        {
+            "type": "setTask",
+            "name": "第17关任务1",
+            "n": 1,
+            "text": "通过当前区域",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "第17关通关",
+                    "operator": "=",
+                    "text": "通过当前区域",
+                    "count": "1"
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第17关任务2",
+            "n": 1,
+            "text": "击溃所有意军",
+            "info": [
+                {
+                    "type": "killAll",
+                    "floorId": [
+                        "MT109",
+                        "MT110",
+                        "MT111"
+                    ],
+                    "text": "意大利部队剩余"
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第17关任务3",
+            "n": 1,
+            "text": "击毁3辆“三号坦克F型”",
+            "info": [
+                {
+                    "type": "kill",
+                    "kill": "panzer3f",
+                    "floorId": [
+                        "MT112",
+                        "MT113"
+                    ],
+                    "operator": ">=",
+                    "text": "已击毁的三号坦克F型",
+                    "count": 3
+                }
+            ]
         }
     ],
     "eachArrive": [],
