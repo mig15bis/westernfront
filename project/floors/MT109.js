@@ -63,319 +63,372 @@ main.floors.MT109=
             "type": "setEnemy",
             "id": "italyinf1",
             "name": "hp",
-            "value": "30000"
+            "value": "38000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italyinf1",
             "name": "atk",
-            "value": "800"
+            "value": "1200",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italyinf2",
             "name": "hp",
-            "value": "30000"
+            "value": "38000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italyinf2",
             "name": "atk",
-            "value": "900"
+            "value": "1400",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italyinf3",
             "name": "hp",
-            "value": "25000"
+            "value": "35000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italyinf3",
             "name": "atk",
-            "value": "1100"
+            "value": "1600",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italyinf4",
             "name": "hp",
-            "value": "20000"
+            "value": "32000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italyinf4",
             "name": "atk",
-            "value": "1500"
+            "value": "3000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italyinf5",
             "name": "hp",
-            "value": "15000"
+            "value": "28000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italyinf5",
             "name": "atk",
-            "value": "900"
+            "value": "1200",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italyinf6",
             "name": "hp",
-            "value": "17000"
+            "value": "27000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italyinf6",
             "name": "atk",
-            "value": "1100"
+            "value": "1600",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "ab41",
             "name": "hp",
-            "value": "7000"
+            "value": "16000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "ab41",
             "name": "atk",
-            "value": "1400"
+            "value": "1600",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "l640",
             "name": "hp",
-            "value": "8000"
+            "value": "19000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "l640",
             "name": "atk",
-            "value": "2500"
+            "value": "2500",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "m1340",
             "name": "hp",
-            "value": "12000"
+            "value": "22000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "m1340",
             "name": "atk",
-            "value": "8000"
+            "value": "8000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "commandos",
             "name": "hp",
-            "value": "35000"
+            "value": "38000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "commandos",
             "name": "atk",
-            "value": "1100"
+            "value": "1300",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "commandos",
             "name": "special",
-            "value": "[55]"
+            "value": "[55]",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "grenadier",
             "name": "hp",
-            "value": "25000"
+            "value": "28000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "grenadier",
             "name": "atk",
-            "value": "3000"
+            "value": "3500",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "grenadier",
             "name": "special",
-            "value": "[55]"
+            "value": "[55]",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "motorinf",
             "name": "hp",
-            "value": "25000"
+            "value": "28000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "motorinf",
             "name": "atk",
-            "value": "1300"
+            "value": "1600",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "motorinf",
             "name": "special",
-            "value": "[1,6,55]"
+            "value": "[1,6,55]",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "motorinf",
             "name": "n",
-            "value": "2"
+            "value": "2",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "lightmg",
             "name": "hp",
-            "value": "17000"
+            "value": "22000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "lightmg",
             "name": "atk",
-            "value": "1300"
+            "value": "1600",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "lightmg",
             "name": "special",
-            "value": "[6,55]"
+            "value": "[6,55]",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "sniper",
             "name": "hp",
-            "value": "5000"
+            "value": "12000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "sniper",
             "name": "atk",
-            "value": "6000"
+            "value": "6000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "sniper",
             "name": "special",
-            "value": "[55,56]"
+            "value": "[55,56]",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "sdkfz222",
             "name": "hp",
-            "value": "12000"
+            "value": "15000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "sdkfz222",
             "name": "atk",
-            "value": "1800"
+            "value": "1800",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "sdkfz222",
             "name": "special",
-            "value": "[6,55,60]"
+            "value": "[6,55,60]",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "sdkfz222",
             "name": "n",
-            "value": "2"
+            "value": "2",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer2c",
             "name": "hp",
-            "value": "10000"
+            "value": "15000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer2c",
             "name": "atk",
-            "value": "2000"
+            "value": "2000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer2c",
             "name": "special",
-            "value": "[6,55,60]"
+            "value": "[6,55,60]",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer2c",
             "name": "n",
-            "value": "2"
+            "value": "2",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer35t",
             "name": "hp",
-            "value": "10000"
+            "value": "15000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer35t",
             "name": "atk",
-            "value": "5000"
+            "value": "5000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer35t",
             "name": "special",
-            "value": "[55,60]"
+            "value": "[55,60]",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer38t",
             "name": "hp",
-            "value": "12000"
+            "value": "16000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer38t",
             "name": "atk",
-            "value": "5000"
+            "value": "5000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer38t",
             "name": "special",
-            "value": "[55,60]"
+            "value": "[55,60]",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer3e",
             "name": "hp",
-            "value": "15000"
+            "value": "17000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer3e",
             "name": "atk",
-            "value": "7000"
+            "value": "7000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer3e",
             "name": "special",
-            "value": "[55]"
+            "value": "[55]",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer4c",
             "name": "hp",
-            "value": "13000"
+            "value": "20000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer4c",
             "name": "atk",
-            "value": "13000"
+            "value": "18000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
@@ -437,7 +490,7 @@ main.floors.MT109=
             "type": "setTask",
             "name": "第17关任务3",
             "n": 1,
-            "text": "击毁3辆“三号坦克F型”",
+            "text": "击毁3辆“三号坦克J型”",
             "info": [
                 {
                     "type": "kill",
@@ -447,7 +500,7 @@ main.floors.MT109=
                         "MT113"
                     ],
                     "operator": ">=",
-                    "text": "已击毁的三号坦克F型",
+                    "text": "已击毁的三号坦克J型",
                     "count": 3
                 }
             ]

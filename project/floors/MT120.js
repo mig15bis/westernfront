@@ -304,6 +304,9 @@ main.floors.MT120=
                 "type": "pauseBgm"
             },
             {
+                "type": "submitTask"
+            },
+            {
                 "type": "setValue",
                 "name": "flag:stage",
                 "value": "19"

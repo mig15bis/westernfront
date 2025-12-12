@@ -22,12 +22,12 @@ main.floors.MT102=
             "type": "setCurtain",
             "time": 500
         },
-        "\r[yellow]Mission 16 罗盘行动",
         {
             "type": "setValue",
             "name": "flag:dry",
             "value": "true"
         },
+        "\r[yellow]Mission 16 罗盘行动",
         {
             "type": "text",
             "text": "\t[奥金莱克]\f[auchinleck.png,0,310]虽然我们先前没能料到敌人的突袭导致丢失了大片占领地，但现在夺回来还不算晚。",
@@ -67,79 +67,92 @@ main.floors.MT102=
             "type": "setEnemy",
             "id": "cr42",
             "name": "hp",
-            "value": "6500"
+            "value": "6500",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "cr42",
             "name": "atk",
-            "value": "500"
+            "value": "500",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "cr42",
             "name": "n",
-            "value": "3"
+            "value": "3",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "g50",
             "name": "hp",
-            "value": "8500"
+            "value": "8500",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "g50",
             "name": "atk",
-            "value": "900"
+            "value": "900",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "artillery75",
             "name": "hp",
-            "value": "8000"
+            "value": "8000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "artillery75",
             "name": "atk",
-            "value": "4000"
+            "value": "4000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "artillery75",
             "name": "zone",
-            "value": "400"
+            "value": "400",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "da90",
             "name": "hp",
-            "value": "5000"
+            "value": "5000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "da90",
             "name": "atk",
-            "value": "5000"
+            "value": "5000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "ab41",
             "name": "hp",
-            "value": "10000"
+            "value": "10000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "ab41",
             "name": "atk",
-            "value": "1800"
+            "value": "1800",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "ab41",
             "name": "special",
-            "value": "[6,60]"
+            "value": "[6,60]",
+            "norefresh": true
         },
         {
             "type": "setEnemy",

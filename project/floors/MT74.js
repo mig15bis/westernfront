@@ -561,7 +561,7 @@ main.floors.MT74=
                         "type": "changeFloor",
                         "floorId": "MT76",
                         "loc": [
-                            7,
+                            1,
                             7
                         ],
                         "direction": "down"

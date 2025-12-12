@@ -445,6 +445,9 @@ main.floors.MT134=
                 "opacity": 0
             },
             {
+                "type": "submitTask"
+            },
+            {
                 "type": "confirm",
                 "text": "跳过剧情吗？",
                 "yes": [],

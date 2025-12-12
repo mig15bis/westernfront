@@ -2589,9 +2589,19 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				core.setTextAlign("outerUI", "left")
 				core.drawIcon(uictx, "statusHp", 6, 55, 24, 24)
 				core.fillRect(uictx, 32, 58.5, 94, 18, "#000000") //血槽
-				core.fillRect(uictx, 34, 60.5, 90 * core.getRealStatus('hp') / (core.getRealStatus('hpmax') * (core.hasItem('penicillin') ? 1.15 : 1)), 14, "#FF0000") //血
+				let bloodmax = core.getRealStatus('hpmax') * (core.hasItem("penicillin") ? 1.12 : 1),
+					blood = core.getRealStatus('hp');
+				if (blood >= bloodmax * 0.8) { //变色血
+					core.fillRect(uictx, 34, 60.5, 90 * blood / bloodmax, 14, "#00FF00");
+				} else if (blood >= bloodmax * 0.6) {
+					core.fillRect(uictx, 34, 60.5, 90 * blood / bloodmax, 14, "#9ACD32");
+				} else if (blood >= bloodmax * 0.4) {
+					core.fillRect(uictx, 34, 60.5, 90 * blood / bloodmax, 14, "#FFD700");
+				} else if (blood >= bloodmax * 0.2) {
+					core.fillRect(uictx, 34, 60.5, 90 * blood / bloodmax, 14, "#FFA500");
+				} else { core.fillRect(uictx, 34, 60.5, 90 * blood / bloodmax, 14, "#FF0000"); }
 				core.setTextAlign("outerUI", "center")
-				core.fillText(uictx, core.formatBigNumber(core.getRealStatus('hp'), true) + "/" + core.formatBigNumber(core.getRealStatus('hpmax') * (core.hasItem('penicillin') ? 1.15 : 1), true), 79, 72, "#FFFFFF", "12px number", 90) //  血量数字
+				core.fillText(uictx, core.formatBigNumber(blood, true) + "/" + core.formatBigNumber(bloodmax, true), 79, 72, "#FFFFFF", "12px number", 90) //  血量数字
 
 				core.setTextAlign("outerUI", "left") //左对齐
 				core.fillRoundRect(uictx, 6, 80, 148, 68, 5, "rgba(0,0,0,0.5)"); //常规状态底板
@@ -2699,8 +2709,18 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				core.setTextAlign("outerUI", "center")
 				core.drawIcon(uictx, "statusHp", 4, 103, 32, 32)
 				core.fillRect(uictx, 36, 107, 106, 24, "#000000") //血槽
-				core.fillRect(uictx, 38, 109, 102 * core.getRealStatus('hp') / (core.getRealStatus('hpmax') * (core.hasItem('penicillin') ? 1.15 : 1)), 20, "#FF0000") //血	
-				core.fillText(uictx, core.formatBigNumber(core.getRealStatus('hp'), true) + "/" + core.formatBigNumber(core.getRealStatus('hpmax') * (core.hasItem('penicillin') ? 1.15 : 1), true), 89, 123.5, "#FFFFFF", "12px number", 102) //  血量数字
+				let bloodmax = core.getRealStatus('hpmax') * (core.hasItem("penicillin") ? 1.12 : 1),
+					blood = core.getRealStatus('hp');
+				if (blood >= bloodmax * 0.8) { //变色血
+					core.fillRect(uictx, 38, 109, 102 * blood / blood, 20, "#00FF00");
+				} else if (blood >= bloodmax * 0.6) {
+					core.fillRect(uictx, 38, 109, 102 * blood / bloodmax, 20, "#9ACD32");
+				} else if (blood >= bloodmax * 0.4) {
+					core.fillRect(uictx, 38, 109, 102 * blood / bloodmax, 20, "#FFD700");
+				} else if (blood >= bloodmax * 0.2) {
+					core.fillRect(uictx, 38, 109, 102 * blood / bloodmax, 20, "#FFA500");
+				} else { core.fillRect(uictx, 38, 109, 102 * blood / bloodmax, 20, "#FF0000"); }
+				core.fillText(uictx, core.formatBigNumber(blood, true) + "/" + core.formatBigNumber(bloodmax, true), 89, 123.5, "#FFFFFF", "12px number", 102) //  血量数字
 
 				core.fillRoundRect(uictx, 4, 133, 142, 84, 5, "rgba(0,0,0,0.5)"); //常规状态底板
 				core.drawIcon(uictx, "statusAtk", 6, 134, 24, 24) //攻击力

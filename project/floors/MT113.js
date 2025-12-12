@@ -69,7 +69,7 @@ main.floors.MT113=
                 "time": 500
             },
             {
-                "type": "hideStatusBar"
+                "type": "hideui"
             },
             {
                 "type": "update"
@@ -141,10 +141,6 @@ main.floors.MT113=
                         "time": 500
                     },
                     {
-                        "type": "sleep",
-                        "time": 500
-                    },
-                    {
                         "type": "if",
                         "condition": "(temp:A>=2)",
                         "true": [
@@ -171,10 +167,6 @@ main.floors.MT113=
                                 "time": 500
                             },
                             {
-                                "type": "sleep",
-                                "time": 500
-                            },
-                            {
                                 "type": "if",
                                 "condition": "(temp:A>=3)",
                                 "true": [
@@ -198,10 +190,6 @@ main.floors.MT113=
                                             90
                                         ],
                                         "opacity": 1,
-                                        "time": 500
-                                    },
-                                    {
-                                        "type": "sleep",
                                         "time": 500
                                     }
                                 ],
@@ -312,6 +300,9 @@ main.floors.MT113=
             },
             {
                 "type": "pauseBgm"
+            },
+            {
+                "type": "submitTask"
             },
             {
                 "type": "setValue",

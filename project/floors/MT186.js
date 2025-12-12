@@ -18,7 +18,6 @@ main.floors.MT186=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        
         {
             "type": "update"
         },
@@ -30,7 +29,213 @@ main.floors.MT186=
     "eachArrive": [],
     "parallelDo": "",
     "events": {
-        "11,10": [
+        "2,7": [
+            "\t[参谋,N517]长官，请下达指示！",
+            "\t[系统提示]即将进入存档界面",
+            {
+                "type": "callSave"
+            },
+            {
+                "type": "insert",
+                "name": "选择技能"
+            },
+            {
+                "type": "choices",
+                "text": "是否立即前往战场？",
+                "choices": [
+                    {
+                        "text": "还没准备好",
+                        "action": []
+                    },
+                    {
+                        "text": "现在出发",
+                        "action": [
+                            {
+                                "type": "setCurtain",
+                                "color": [
+                                    0,
+                                    0,
+                                    0,
+                                    1
+                                ],
+                                "time": 500,
+                                "keep": true
+                            },
+                            {
+                                "type": "changeFloor",
+                                "floorId": "MT187",
+                                "loc": [
+                                    12,
+                                    0
+                                ],
+                                "direction": "down"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "13,7": [
+            "\t[海军参谋,N515]长官，所有军舰待命中！",
+            {
+                "type": "choices",
+                "text": "\t[海军参谋,N515]请选择出战海军舰艇",
+                "choices": [
+                    {
+                        "text": "装备 E级驱逐舰",
+                        "icon": "classe",
+                        "need": "core.hasItem('classe')&&!core.hasEquip('classe')",
+                        "condition": "core.hasItem('classe')&&!core.hasEquip('classe')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "classe"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 V级驱逐舰",
+                        "icon": "classv",
+                        "need": "core.hasItem('classv')&&!core.hasEquip('classv')",
+                        "condition": "core.hasItem('classv')&&!core.hasEquip('classv')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "classv"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 马汉级驱逐舰",
+                        "icon": "mahan",
+                        "need": "core.hasItem('mahan')&&!core.hasEquip('mahan')",
+                        "condition": "core.hasItem('mahan')&&!core.hasEquip('mahan')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "mahan"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 本森级驱逐舰",
+                        "icon": "benson",
+                        "need": "core.hasItem('benson')&&!core.hasEquip('benson')",
+                        "condition": "core.hasItem('benson')&&!core.hasEquip('benson')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "benson"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 爱丁堡号轻巡洋舰",
+                        "icon": "edinburgh",
+                        "need": "core.hasItem('edinburgh')&&!core.hasEquip('edinburgh')",
+                        "condition": "core.hasItem('edinburgh')&&!core.hasEquip('edinburgh')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "edinburgh"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 谢菲尔德号轻巡洋舰",
+                        "icon": "sheffield",
+                        "need": "core.hasItem('sheffield')&&!core.hasEquip('sheffield')",
+                        "condition": "core.hasItem('sheffield')&&!core.hasEquip('sheffield')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "sheffield"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 诺福克号重巡洋舰",
+                        "icon": "norfolk",
+                        "need": "core.hasItem('norfolk')&&!core.hasEquip('norfolk')",
+                        "condition": "core.hasItem('norfolk')&&!core.hasEquip('norfolk')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "norfolk"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 厌战号战列舰",
+                        "icon": "warspite",
+                        "need": "core.hasItem('warspite')&&!core.hasEquip('warspite')",
+                        "condition": "core.hasItem('warspite')&&!core.hasEquip('warspite')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "warspite"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 鹰号航空母舰",
+                        "icon": "eagle",
+                        "need": "core.hasItem('eagle')&&!core.hasEquip('eagle')",
+                        "condition": "core.hasItem('eagle')&&!core.hasEquip('eagle')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "eagle"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 突击者号航空母舰",
+                        "icon": "raider",
+                        "need": "core.hasItem('raider')&&!core.hasEquip('raider')",
+                        "condition": "core.hasItem('raider')&&!core.hasEquip('raider')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "raider"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "卸下当前驱逐舰",
+                        "action": [
+                            {
+                                "type": "unloadEquip",
+                                "pos": 1
+                            }
+                        ]
+                    },
+                    {
+                        "text": "卸下当前巡洋舰",
+                        "action": [
+                            {
+                                "type": "unloadEquip",
+                                "pos": 2
+                            }
+                        ]
+                    },
+                    {
+                        "text": "卸下当前主力舰",
+                        "action": [
+                            {
+                                "type": "unloadEquip",
+                                "pos": 3
+                            }
+                        ]
+                    },
+                    {
+                        "text": "返回",
+                        "action": []
+                    }
+                ]
+            }
+        ],
+        "14,7": [
             "\t[机场后勤,N516]长官，我方空军已就绪！",
             {
                 "type": "choices",
@@ -274,625 +479,14 @@ main.floors.MT186=
                 ]
             }
         ],
-        "4,12": [
+        "8,7": [
             {
-                "type": "choices",
-                "text": "\t[退役装备,N599]破烂换钱~收破烂嘞~",
-                "choices": [
-                    {
-                        "text": "退役 雷诺FT17",
-                        "icon": "ft17",
-                        "need": "core.hasItem('ft17')&&!core.hasEquip('ft17')",
-                        "condition": "core.hasItem('ft17')&&!core.hasEquip('ft17')",
-                        "action": [
-                            {
-                                "type": "playSound",
-                                "name": "shop.mp3"
-                            },
-                            {
-                                "type": "setValue",
-                                "name": "item:ft17",
-                                "operator": "-=",
-                                "value": "1"
-                            },
-                            {
-                                "type": "setValue",
-                                "name": "status:money",
-                                "operator": "+=",
-                                "value": "50"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "退役 哈奇开斯H35",
-                        "icon": "h35",
-                        "need": "core.hasItem('h35')&&!core.hasEquip('h35')",
-                        "condition": "core.hasItem('h35')&&!core.hasEquip('h35')",
-                        "action": [
-                            {
-                                "type": "playSound",
-                                "name": "shop.mp3"
-                            },
-                            {
-                                "type": "setValue",
-                                "name": "item:h35",
-                                "operator": "-=",
-                                "value": "1"
-                            },
-                            {
-                                "type": "setValue",
-                                "name": "status:money",
-                                "operator": "+=",
-                                "value": "100"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "退役 十字军巡洋坦克",
-                        "icon": "crusades",
-                        "need": "core.hasItem('crusades')&&!core.hasEquip('crusades')",
-                        "condition": "core.hasItem('crusades')&&!core.hasEquip('crusades')",
-                        "action": [
-                            {
-                                "type": "playSound",
-                                "name": "shop.mp3"
-                            },
-                            {
-                                "type": "setValue",
-                                "name": "item:crusades",
-                                "operator": "-=",
-                                "value": "1"
-                            },
-                            {
-                                "type": "setValue",
-                                "name": "status:money",
-                                "operator": "+=",
-                                "value": "600"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "退役 瓦伦丁步兵坦克",
-                        "icon": "valentine",
-                        "need": "core.hasItem('valentine')&&!core.hasEquip('valentine')",
-                        "condition": "core.hasItem('valentine')&&!core.hasEquip('valentine')",
-                        "action": [
-                            {
-                                "type": "playSound",
-                                "name": "shop.mp3"
-                            },
-                            {
-                                "type": "setValue",
-                                "name": "item:valentine",
-                                "operator": "-=",
-                                "value": "1"
-                            },
-                            {
-                                "type": "setValue",
-                                "name": "status:money",
-                                "operator": "+=",
-                                "value": "700"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "退役 玛蒂尔达步兵坦克",
-                        "icon": "matilda",
-                        "need": "core.hasItem('matilda')&&!core.hasEquip('matilda')",
-                        "condition": "core.hasItem('matilda')&&!core.hasEquip('matilda')",
-                        "action": [
-                            {
-                                "type": "playSound",
-                                "name": "shop.mp3"
-                            },
-                            {
-                                "type": "setValue",
-                                "name": "item:matilda",
-                                "operator": "-=",
-                                "value": "1"
-                            },
-                            {
-                                "type": "setValue",
-                                "name": "status:money",
-                                "operator": "+=",
-                                "value": "900"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "退役 M3格兰特中型坦克",
-                        "icon": "m3grant",
-                        "need": "core.hasItem('m3grant')&&!core.hasEquip('m3grant')",
-                        "condition": "core.hasItem('m3grant')&&!core.hasEquip('m3grant')",
-                        "action": [
-                            {
-                                "type": "playSound",
-                                "name": "shop.mp3"
-                            },
-                            {
-                                "type": "setValue",
-                                "name": "item:m3grant",
-                                "operator": "-=",
-                                "value": "1"
-                            },
-                            {
-                                "type": "setValue",
-                                "name": "status:money",
-                                "operator": "+=",
-                                "value": "1100"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "下一页",
-                        "action": [
-                            {
-                                "type": "choices",
-                                "text": "\t[退役装备,N599]破烂换钱~收破烂嘞~",
-                                "choices": [
-                                    {
-                                        "text": "退役 E级驱逐舰",
-                                        "icon": "classe",
-                                        "need": "core.hasItem('classe')&&!core.hasEquip('classe')",
-                                        "condition": "core.hasItem('classe')&&!core.hasEquip('classe')",
-                                        "action": [
-                                            {
-                                                "type": "playSound",
-                                                "name": "shop.mp3"
-                                            },
-                                            {
-                                                "type": "setValue",
-                                                "name": "item:classe",
-                                                "operator": "-=",
-                                                "value": "1"
-                                            },
-                                            {
-                                                "type": "setValue",
-                                                "name": "status:money",
-                                                "operator": "+=",
-                                                "value": "250"
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "text": "退役 V级驱逐舰",
-                                        "icon": "classv",
-                                        "need": "core.hasItem('classv')&&!core.hasEquip('classv')",
-                                        "condition": "core.hasItem('classv')&&!core.hasEquip('classv')",
-                                        "action": [
-                                            {
-                                                "type": "playSound",
-                                                "name": "shop.mp3"
-                                            },
-                                            {
-                                                "type": "setValue",
-                                                "name": "item:classv",
-                                                "operator": "-=",
-                                                "value": "1"
-                                            },
-                                            {
-                                                "type": "setValue",
-                                                "name": "status:money",
-                                                "operator": "+=",
-                                                "value": "300"
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "text": "退役 马汉级驱逐舰",
-                                        "icon": "mahan",
-                                        "need": "core.hasItem('mahan')&&!core.hasEquip('mahan')",
-                                        "condition": "core.hasItem('mahan')&&!core.hasEquip('mahan')",
-                                        "action": [
-                                            {
-                                                "type": "playSound",
-                                                "name": "shop.mp3"
-                                            },
-                                            {
-                                                "type": "setValue",
-                                                "name": "item:mahan",
-                                                "operator": "-=",
-                                                "value": "1"
-                                            },
-                                            {
-                                                "type": "setValue",
-                                                "name": "status:money",
-                                                "operator": "+=",
-                                                "value": "260"
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "text": "退役 本森级驱逐舰",
-                                        "icon": "benson",
-                                        "need": "core.hasItem('benson')&&!core.hasEquip('benson')",
-                                        "condition": "core.hasItem('benson')&&!core.hasEquip('benson')",
-                                        "action": [
-                                            {
-                                                "type": "playSound",
-                                                "name": "shop.mp3"
-                                            },
-                                            {
-                                                "type": "setValue",
-                                                "name": "item:benson",
-                                                "operator": "-=",
-                                                "value": "1"
-                                            },
-                                            {
-                                                "type": "setValue",
-                                                "name": "status:money",
-                                                "operator": "+=",
-                                                "value": "325"
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "text": "退役 爱丁堡号轻巡洋舰",
-                                        "icon": "edinburgh",
-                                        "need": "core.hasItem('edinburgh')&&!core.hasEquip('edinburgh')",
-                                        "condition": "core.hasItem('edinburgh')&&!core.hasEquip('edinburgh')",
-                                        "action": [
-                                            {
-                                                "type": "playSound",
-                                                "name": "shop.mp3"
-                                            },
-                                            {
-                                                "type": "setValue",
-                                                "name": "item:edinburgh",
-                                                "operator": "-=",
-                                                "value": "1"
-                                            },
-                                            {
-                                                "type": "setValue",
-                                                "name": "status:money",
-                                                "operator": "+=",
-                                                "value": "600"
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "text": "退役 诺福克号重巡洋舰",
-                                        "icon": "norfolk",
-                                        "need": "core.hasItem('norfolk')&&!core.hasEquip('norfolk')",
-                                        "condition": "core.hasItem('norfolk')&&!core.hasEquip('norfolk')",
-                                        "action": [
-                                            {
-                                                "type": "playSound",
-                                                "name": "shop.mp3"
-                                            },
-                                            {
-                                                "type": "setValue",
-                                                "name": "item:norfolk",
-                                                "operator": "-=",
-                                                "value": "1"
-                                            },
-                                            {
-                                                "type": "setValue",
-                                                "name": "status:money",
-                                                "operator": "+=",
-                                                "value": "750"
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "text": "退役 鹰号航空母舰",
-                                        "icon": "eagle",
-                                        "need": "core.hasItem('eagle')&&!core.hasEquip('eagle')",
-                                        "condition": "core.hasItem('eagle')&&!core.hasEquip('eagle')",
-                                        "action": [
-                                            {
-                                                "type": "playSound",
-                                                "name": "shop.mp3"
-                                            },
-                                            {
-                                                "type": "setValue",
-                                                "name": "item:eagle",
-                                                "operator": "-=",
-                                                "value": "1"
-                                            },
-                                            {
-                                                "type": "setValue",
-                                                "name": "status:money",
-                                                "operator": "+=",
-                                                "value": "1000"
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "text": "下一页",
-                                        "action": [
-                                            {
-                                                "type": "choices",
-                                                "text": "\t[退役装备,N599]破烂换钱~收破烂嘞~",
-                                                "choices": [
-                                                    {
-                                                        "text": "退役 斗士MK2",
-                                                        "icon": "wrestler",
-                                                        "need": "core.hasItem('wrestler')&&!core.hasEquip('wrestler')",
-                                                        "condition": "core.hasItem('spitfiremk1')&&!core.hasEquip('spitfiremk1')",
-                                                        "action": [
-                                                            {
-                                                                "type": "playSound",
-                                                                "name": "shop.mp3"
-                                                            },
-                                                            {
-                                                                "type": "setValue",
-                                                                "name": "item:wrestler",
-                                                                "operator": "-=",
-                                                                "value": "1"
-                                                            },
-                                                            {
-                                                                "type": "setValue",
-                                                                "name": "status:money",
-                                                                "operator": "+=",
-                                                                "value": "32"
-                                                            }
-                                                        ]
-                                                    },
-                                                    {
-                                                        "text": "退役 喷火MK1型",
-                                                        "icon": "spitfiremk1",
-                                                        "need": "core.hasItem('spitfiremk1')&&!core.hasEquip('spitfiremk1')",
-                                                        "condition": "core.hasItem('spitfiremk1')&&!core.hasEquip('spitfiremk1')",
-                                                        "action": [
-                                                            {
-                                                                "type": "playSound",
-                                                                "name": "shop.mp3"
-                                                            },
-                                                            {
-                                                                "type": "setValue",
-                                                                "name": "item:spitfiremk1",
-                                                                "operator": "-=",
-                                                                "value": "1"
-                                                            },
-                                                            {
-                                                                "type": "setValue",
-                                                                "name": "status:money",
-                                                                "operator": "+=",
-                                                                "value": "350"
-                                                            }
-                                                        ]
-                                                    },
-                                                    {
-                                                        "text": "退役 飓风MK1型",
-                                                        "icon": "hurricanemk1",
-                                                        "need": "core.hasItem('hurricanemk1')&&!core.hasEquip('hurricanemk1')",
-                                                        "condition": "core.hasItem('hurricanemk2')&&!core.hasEquip('hurricanemk2')",
-                                                        "action": [
-                                                            {
-                                                                "type": "playSound",
-                                                                "name": "shop.mp3"
-                                                            },
-                                                            {
-                                                                "type": "setValue",
-                                                                "name": "item:hurricanemk1",
-                                                                "operator": "-=",
-                                                                "value": "1"
-                                                            },
-                                                            {
-                                                                "type": "setValue",
-                                                                "name": "status:money",
-                                                                "operator": "+=",
-                                                                "value": "200"
-                                                            }
-                                                        ]
-                                                    },
-                                                    {
-                                                        "text": "退役 P40C战斧",
-                                                        "icon": "p40c",
-                                                        "need": "core.hasItem('p40c')&&!core.hasEquip('p40c')",
-                                                        "condition": "core.hasItem('hurricanemk2')&&!core.hasEquip('hurricanemk2')",
-                                                        "action": [
-                                                            {
-                                                                "type": "playSound",
-                                                                "name": "shop.mp3"
-                                                            },
-                                                            {
-                                                                "type": "setValue",
-                                                                "name": "item:p40c",
-                                                                "operator": "-=",
-                                                                "value": "1"
-                                                            },
-                                                            {
-                                                                "type": "setValue",
-                                                                "name": "status:money",
-                                                                "operator": "+=",
-                                                                "value": "175"
-                                                            }
-                                                        ]
-                                                    },
-                                                    {
-                                                        "text": "退役 飓风MK2型",
-                                                        "icon": "hurricanemk2",
-                                                        "need": "core.hasItem('hurricanemk2')&&!core.hasEquip('hurricanemk2')",
-                                                        "condition": "core.hasItem('hurricanemk2')&&!core.hasEquip('hurricanemk2')",
-                                                        "action": [
-                                                            {
-                                                                "type": "playSound",
-                                                                "name": "shop.mp3"
-                                                            },
-                                                            {
-                                                                "type": "setValue",
-                                                                "name": "item:hurricanemk2",
-                                                                "operator": "-=",
-                                                                "value": "1"
-                                                            },
-                                                            {
-                                                                "type": "setValue",
-                                                                "name": "status:money",
-                                                                "operator": "+=",
-                                                                "value": "600"
-                                                            }
-                                                        ]
-                                                    },
-                                                    {
-                                                        "text": "退役 F4F野猫战斗机",
-                                                        "icon": "f4f3",
-                                                        "need": "core.hasItem('f4f3')&&!core.hasEquip('f4f3')",
-                                                        "condition": "core.hasItem('f4f3')&&!core.hasEquip('f4f3')",
-                                                        "action": [
-                                                            {
-                                                                "type": "playSound",
-                                                                "name": "shop.mp3"
-                                                            },
-                                                            {
-                                                                "type": "setValue",
-                                                                "name": "item:f4f3",
-                                                                "operator": "-=",
-                                                                "value": "1"
-                                                            },
-                                                            {
-                                                                "type": "setValue",
-                                                                "name": "status:money",
-                                                                "operator": "+=",
-                                                                "value": "600"
-                                                            }
-                                                        ]
-                                                    },
-                                                    {
-                                                        "text": "退役 贼鸥式轰炸机",
-                                                        "icon": "skua",
-                                                        "need": "core.hasItem('skua')&&!core.hasEquip('skua')",
-                                                        "condition": "core.hasItem('skua')&&!core.hasEquip('skua')",
-                                                        "action": [
-                                                            {
-                                                                "type": "playSound",
-                                                                "name": "shop.mp3"
-                                                            },
-                                                            {
-                                                                "type": "setValue",
-                                                                "name": "item:skua",
-                                                                "operator": "-=",
-                                                                "value": "1"
-                                                            },
-                                                            {
-                                                                "type": "setValue",
-                                                                "name": "status:money",
-                                                                "operator": "+=",
-                                                                "value": "150"
-                                                            }
-                                                        ]
-                                                    },
-                                                    {
-                                                        "text": "退役 SBD无畏式轰炸机",
-                                                        "icon": "sbd3",
-                                                        "need": "core.hasItem('sbd3')&&!core.hasEquip('sbd3')",
-                                                        "condition": "core.hasItem('sbd3')&&!core.hasEquip('sbd3')",
-                                                        "action": [
-                                                            {
-                                                                "type": "playSound",
-                                                                "name": "shop.mp3"
-                                                            },
-                                                            {
-                                                                "type": "setValue",
-                                                                "name": "item:sbd3",
-                                                                "operator": "-=",
-                                                                "value": "1"
-                                                            },
-                                                            {
-                                                                "type": "setValue",
-                                                                "name": "status:money",
-                                                                "operator": "+=",
-                                                                "value": "500"
-                                                            }
-                                                        ]
-                                                    },
-                                                    {
-                                                        "text": "退役 布伦海姆轰炸机",
-                                                        "icon": "blenheim",
-                                                        "need": "core.hasItem('blenheim')&&!core.hasEquip('blenheim')",
-                                                        "condition": "core.hasItem('swordfish')&&!core.hasEquip('swordfish')",
-                                                        "action": [
-                                                            {
-                                                                "type": "playSound",
-                                                                "name": "shop.mp3"
-                                                            },
-                                                            {
-                                                                "type": "setValue",
-                                                                "name": "item:blenheim",
-                                                                "operator": "-=",
-                                                                "value": "1"
-                                                            },
-                                                            {
-                                                                "type": "setValue",
-                                                                "name": "status:money",
-                                                                "operator": "+=",
-                                                                "value": "350"
-                                                            }
-                                                        ]
-                                                    },
-                                                    {
-                                                        "text": "退役 剑鱼式鱼雷机",
-                                                        "icon": "swordfish",
-                                                        "need": "core.hasItem('swordfish')&&!core.hasEquip('swordfish')",
-                                                        "condition": "core.hasItem('swordfish')&&!core.hasEquip('swordfish')",
-                                                        "action": [
-                                                            {
-                                                                "type": "playSound",
-                                                                "name": "shop.mp3"
-                                                            },
-                                                            {
-                                                                "type": "setValue",
-                                                                "name": "item:swordfish",
-                                                                "operator": "-=",
-                                                                "value": "1"
-                                                            },
-                                                            {
-                                                                "type": "setValue",
-                                                                "name": "status:money",
-                                                                "operator": "+=",
-                                                                "value": "125"
-                                                            }
-                                                        ]
-                                                    },
-                                                    {
-                                                        "text": "退役 TBD蹂躏者鱼雷机",
-                                                        "icon": "tbd",
-                                                        "need": "core.hasItem('tbd')&&!core.hasEquip('tbd')",
-                                                        "condition": "core.hasItem('tbd')&&!core.hasEquip('tbd')",
-                                                        "action": [
-                                                            {
-                                                                "type": "playSound",
-                                                                "name": "shop.mp3"
-                                                            },
-                                                            {
-                                                                "type": "setValue",
-                                                                "name": "item:tbd",
-                                                                "operator": "-=",
-                                                                "value": "1"
-                                                            },
-                                                            {
-                                                                "type": "setValue",
-                                                                "name": "status:money",
-                                                                "operator": "+=",
-                                                                "value": "400"
-                                                            }
-                                                        ]
-                                                    },
-                                                    {
-                                                        "text": "返回",
-                                                        "action": []
-                                                    }
-                                                ]
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "text": "返回",
-                                        "action": []
-                                    }
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        "text": "返回",
-                        "action": []
-                    }
-                ]
-            }
+                "type": "playSound",
+                "name": "xinxinmagic.mp3"
+            },
+            "\t[系统提示]当前区域敌人特点：意大利海空军，伴随少量德军潜艇。\n推荐携带技能：防空弹幕、空战王牌、Z字规避、扫雷、破译、从海底出击、金牌损管。\n推荐出战装备：V级驱逐舰、谢菲尔德号轻巡洋舰、厌战号战列舰、喷火5、SBD无畏、B25米切尔"
         ],
-        "1,10": [
+        "0,7": [
             "\t[参谋,N517]长官，请下达指示！",
             "\t[系统提示]即将进入存档界面",
             {
@@ -937,173 +531,6 @@ main.floors.MT186=
                     }
                 ]
             }
-        ],
-        "8,9": [
-            "\t[海军参谋,N515]长官，所有军舰待命中！",
-            {
-                "type": "choices",
-                "text": "\t[海军参谋,N515]请选择出战海军舰艇",
-                "choices": [
-                    {
-                        "text": "装备 E级驱逐舰",
-                        "icon": "classe",
-                        "need": "core.hasItem('classe')&&!core.hasEquip('classe')",
-                        "condition": "core.hasItem('classe')&&!core.hasEquip('classe')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "classe"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 V级驱逐舰",
-                        "icon": "classv",
-                        "need": "core.hasItem('classv')&&!core.hasEquip('classv')",
-                        "condition": "core.hasItem('classv')&&!core.hasEquip('classv')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "classv"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 马汉级驱逐舰",
-                        "icon": "mahan",
-                        "need": "core.hasItem('mahan')&&!core.hasEquip('mahan')",
-                        "condition": "core.hasItem('mahan')&&!core.hasEquip('mahan')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "mahan"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 本森级驱逐舰",
-                        "icon": "benson",
-                        "need": "core.hasItem('benson')&&!core.hasEquip('benson')",
-                        "condition": "core.hasItem('benson')&&!core.hasEquip('benson')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "benson"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 爱丁堡号轻巡洋舰",
-                        "icon": "edinburgh",
-                        "need": "core.hasItem('edinburgh')&&!core.hasEquip('edinburgh')",
-                        "condition": "core.hasItem('edinburgh')&&!core.hasEquip('edinburgh')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "edinburgh"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 谢菲尔德号轻巡洋舰",
-                        "icon": "sheffield",
-                        "need": "core.hasItem('sheffield')&&!core.hasEquip('sheffield')",
-                        "condition": "core.hasItem('sheffield')&&!core.hasEquip('sheffield')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "sheffield"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 诺福克号重巡洋舰",
-                        "icon": "norfolk",
-                        "need": "core.hasItem('norfolk')&&!core.hasEquip('norfolk')",
-                        "condition": "core.hasItem('norfolk')&&!core.hasEquip('norfolk')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "norfolk"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 厌战号战列舰",
-                        "icon": "warspite",
-                        "need": "core.hasItem('warspite')&&!core.hasEquip('warspite')",
-                        "condition": "core.hasItem('warspite')&&!core.hasEquip('warspite')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "warspite"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 鹰号航空母舰",
-                        "icon": "eagle",
-                        "need": "core.hasItem('eagle')&&!core.hasEquip('eagle')",
-                        "condition": "core.hasItem('eagle')&&!core.hasEquip('eagle')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "eagle"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 突击者号航空母舰",
-                        "icon": "raider",
-                        "need": "core.hasItem('raider')&&!core.hasEquip('raider')",
-                        "condition": "core.hasItem('raider')&&!core.hasEquip('raider')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "raider"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "卸下当前驱逐舰",
-                        "action": [
-                            {
-                                "type": "unloadEquip",
-                                "pos": 1
-                            }
-                        ]
-                    },
-                    {
-                        "text": "卸下当前巡洋舰",
-                        "action": [
-                            {
-                                "type": "unloadEquip",
-                                "pos": 2
-                            }
-                        ]
-                    },
-                    {
-                        "text": "卸下当前主力舰",
-                        "action": [
-                            {
-                                "type": "unloadEquip",
-                                "pos": 3
-                            }
-                        ]
-                    },
-                    {
-                        "text": "返回",
-                        "action": []
-                    }
-                ]
-            }
-        ],
-        "11,11": [
-            {
-                "type": "playSound",
-                "name": "xinxinmagic.mp3"
-            },
-            "\t[系统提示]当前区域敌人特点：意大利海空军，伴随少量德军潜艇。\n推荐携带技能：防空弹幕、空战王牌、Z字规避、扫雷、破译、从海底出击、金牌损管。\n推荐出战装备：V级驱逐舰、谢菲尔德号轻巡洋舰、厌战号战列舰、喷火5、SBD无畏、B25米切尔"
         ]
     },
     "changeFloor": {},
@@ -1115,41 +542,55 @@ main.floors.MT186=
     "cannotMove": {},
     "cannotMoveIn": {},
     "map": [
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,120330,120331,120332,120333,120334,120335],
+    [120333,120334,120335,120336,120337,120338,120339,120340,  0,120374,120375,120376,120377,120378,120379],
+    [120377,120378,120379,120380,120381,120382,120383,120384,  0,120418,120419,120420,120421,120422,120423],
+    [120465,120466,120467,120468,120469,120470,120471,120472,  0,120462,120463,120464,120465,120466,120467],
+    [120509,120510,120511,120512,120513,120514,120515,120516,  0,120506,120507,120508,120509,120510,120511],
+    [120553,120554,120555,120556,120557,120558,120559,120560,  0,120550,120551,120552,120553,120554,120555],
+    [120597,120598,120599,120600,120601,120602,120603,120604,  0,120594,120595,120596,120597,120598,120599],
+    [599,  0,517,  0,  0,120646,120647,120648,10289,120638,120639,120640,  0,515,516],
+    [559,  0,559,  0,  0,  0,  0,  0,559,  0,  0,  0,  0,559,559],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
-    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
-    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
-    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
-    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
-    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
-    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
-    [  0,  0,  0,  0,  0,  0,  0,573,556,  0,573,  0,  0,573,  0],
-    [  0,556,  0,  0,  0,  0,  0,  0,515,  0,  0,  0,  0,  0,  0],
-    [  0,517,  0,  0,  0,  0,30395,30395,30395,30396,558,516,30395,30395,30395],
-    [30360,30361,30362,  0,  0,  0,30395,30395,30395,30396,558,80242,30395,30395,30395],
-    [30368,30369,30370,  0,599,  0,30395,30395,30395,30396,  0,  0,30395,30395,30395],
-    [30376,30377,30378,  0,  0,  0,30395,30395,30395,30396,  0,  0,30395,30395,30395],
-    [30384,30385,30386,  0,  0,  0,30395,30395,30395,30396,  0,  0,30395,30395,30395]
+    [120067,120068,120069,120070,120071,  0,  0,  0,  0,120067,120068,120069,120070,120071,  0],
+    [120111,120112,120113,120114,120115,  0,  0,  0,  0,120111,120112,120113,120114,120115,  0],
+    [120155,120156,120157,120158,120159,  0,  0,  0,  0,120155,120156,120157,120158,120159,  0],
+    [120199,120200,120201,120202,120203,  0,  0,  0,  0,120199,120200,120201,120202,120203,  0]
 ],
     "bgmap": [
-    [513,513,359,359,513,513,513,513,513,359,359,513,513,513,513],
-    [359,359,359,359,359,359,359,359,359,359,359,359,359,359,359],
-    [359,513,513,359,359,513,513,359,359,513,513,359,359,513,513],
-    [359,359,359,359,359,359,359,359,359,359,359,359,359,359,359],
-    [  0,359,359,359,  0,  0,  0,  0,359,359,359,  0,  0,  0,  0],
-    [  0,  0,359,359,359,  0,  0,  0,  0,359,359,359,  0,  0,  0],
-    [  0,  0,  0,359,359,359,  0,  0,  0,  0,359,359,359,  0,  0],
-    [  0,  0,  0,  0,359,359,359,  0,  0,  0,  0,359,359,359,  0],
-    [359,359,359,359,359,359,359,359,359,359,359,359,359,359,359],
-    [359,359,359,359,359,359,359,359,359,359,359,359,359,359,359],
-    [359,359,359,359,359,359,359,359,359,359,359,359,359,359,359],
-    [359,359,359,359,359,359,359,359,359,359,359,359,359,359,359],
-    [359,359,359,359,359,359,359,359,359,359,359,359,359,359,359],
-    [359,359,359,359,359,359,359,359,359,359,359,359,359,359,359],
-    [359,359,359,359,359,359,359,359,359,359,359,359,359,359,359]
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [120641,120642,120643,120644,120645,  0,  0,  0,  0,  0,  0,  0,120641,120642,120643],
+    [120760,120760,120760,120760,120760,120760,120760,120760,120760,120760,120760,120760,120760,120760,120760],
+    [120804,120804,120804,120804,120804,120804,120804,120804,120804,120804,120804,120804,120804,120804,120804],
+    [120849,120849,120892,120849,120849,120849,120892,120849,120849,120849,120892,120849,120849,120849,120892],
+    [120892,120892,120892,120892,120892,120892,120892,120892,120892,120892,120892,120892,120892,120892,120892],
+    [120892,120849,120849,120849,120892,120849,120849,120849,120892,120849,120849,120849,120892,120849,120849],
+    [120892,120892,120892,120892,120892,120892,120892,120892,120892,120892,120892,120892,120892,120892,120892],
+    [120849,120849,120892,120849,120849,120849,120892,120849,120849,120849,120892,120849,120849,120849,120892]
 ],
     "fgmap": [
-
+    [120289,120290,120291,120292,120293,120294,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0]
 ],
     "area": "陆地"
 }

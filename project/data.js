@@ -974,7 +974,11 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"vxmota.png",
 			"Holy.png",
 			"017-MineTown01.png",
-			"008-Snowfield01.png"
+			"008-Snowfield01.png",
+			"airfield.png",
+			"download3.png",
+			"download4.png",
+			"download5.png"
 		],
 		"animates": [
 			"aim",

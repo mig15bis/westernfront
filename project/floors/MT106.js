@@ -292,6 +292,9 @@ main.floors.MT106=
                 "type": "pauseBgm"
             },
             {
+                "type": "submitTask"
+            },
+            {
                 "type": "setValue",
                 "name": "flag:stage",
                 "value": "17"
