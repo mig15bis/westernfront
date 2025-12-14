@@ -18,7 +18,6 @@ main.floors.MT137=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        
         {
             "type": "setCurtain",
             "time": 500
@@ -48,6 +47,9 @@ main.floors.MT137=
             "time": 500
         },
         {
+            "type": "showui"
+        },
+        {
             "type": "setValue",
             "name": "item:p40c",
             "operator": "+=",
@@ -57,7 +59,7 @@ main.floors.MT137=
             "type": "loadEquip",
             "id": "p40c"
         },
-        "\t[地面通信]上帝啊！天上到处都是日本飞机！快往出口方向飞，当心零式战斗机！",
+        "\t[地面通信]上帝啊！天上到处都是日本飞机！快往出口方向飞，当心那些零式战斗机！",
         "\t[系统提示]即将进入存档界面",
         {
             "type": "callSave"
@@ -69,6 +71,66 @@ main.floors.MT137=
         "\t[任务目标]⭐逃离珍珠港\n⭐解救友军巡逻机\n⭐尝试挽救亚利桑那号战列舰",
         {
             "type": "callBook"
+        },
+        {
+            "type": "setValue",
+            "name": "flag:珍珠港通关",
+            "value": "0"
+        },
+        {
+            "type": "setValue",
+            "name": "flag:MT139tsk",
+            "value": "0"
+        },
+        {
+            "type": "setValue",
+            "name": "flag:MT140tsk",
+            "value": "0"
+        },
+        {
+            "type": "setTask",
+            "name": "间章任务1",
+            "n": 1,
+            "text": "逃离珍珠港",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "珍珠港通关",
+                    "operator": "=",
+                    "text": "通过当前区域",
+                    "count": "1"
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "间章任务2",
+            "n": 1,
+            "text": "解救友军巡逻机",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "MT139tsk",
+                    "operator": ">=",
+                    "text": "解围进度",
+                    "count": "5"
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "间章任务3",
+            "n": 1,
+            "text": "尝试挽救亚利桑那号战列舰",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "MT140tsk",
+                    "operator": ">=",
+                    "text": "解围进度",
+                    "count": "9"
+                }
+            ]
         }
     ],
     "eachArrive": [],
@@ -101,7 +163,7 @@ main.floors.MT137=
     [  2, 81,  2,  2,594,  2,  0, 82,  0,  0,  0,  0,593,  0,594],
     [  0,  0,  0,  0,  0, 81,  0,  2,  2,594,  2,  2,  2, 81,  2],
     [  2,  2,  2,594,  0,  2,  0,593, 21, 27,528,  2,  0,593,  0],
-    [ 34,  0,  2,  0, 33,  2,  0,  2,  2,528,  2,  2, 21,  2,566],
+    [566,  0,  2,  0, 33,  2,  0,  2,  2,528,  2,  2, 21,  2,566],
     [ 27,593, 81, 33,  0,  2, 81,  2, 27,  2,  2,525, 29,525,  2],
     [ 27,  0,  2,  0,594,  0,  0, 27, 29, 27,  0,  2, 27,  2,  2],
     [  2,  2,  2,  0,  2,  2,  2,594,  2,  2, 81,  2,  2, 21, 21],

@@ -64,259 +64,302 @@ main.floors.MT21=
             "type": "setEnemy",
             "id": "lightinf",
             "name": "hp",
-            "value": "1000"
+            "value": "1000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "lightinf",
             "name": "atk",
-            "value": "100"
+            "value": "100",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "commandos",
             "name": "hp",
-            "value": "1000"
+            "value": "1000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "commandos",
             "name": "atk",
-            "value": "120"
+            "value": "120",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "motorinf",
             "name": "hp",
-            "value": "1000"
+            "value": "1000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "motorinf",
             "name": "atk",
-            "value": "120"
+            "value": "120",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "grenadier",
             "name": "hp",
-            "value": "800"
+            "value": "800",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "grenadier",
             "name": "atk",
-            "value": "200"
+            "value": "200",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "mortar",
             "name": "hp",
-            "value": "500"
+            "value": "500",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "mortar",
             "name": "atk",
-            "value": "500"
+            "value": "500",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "mortar",
             "name": "special",
-            "value": "[]"
+            "value": "[]",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "lightmg",
             "name": "hp",
-            "value": "600"
+            "value": "600",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "lightmg",
             "name": "atk",
-            "value": "110"
+            "value": "110",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "mg42",
             "name": "hp",
-            "value": "600"
+            "value": "600",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "mg42",
             "name": "atk",
-            "value": "150"
+            "value": "150",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "me109e4",
             "name": "hp",
-            "value": "1000"
+            "value": "1000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "me109e4",
             "name": "atk",
-            "value": "170"
+            "value": "170",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "ju87b",
             "name": "hp",
-            "value": "1100"
+            "value": "1100",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "pak36",
             "name": "hp",
-            "value": "1000"
+            "value": "1000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "pak36",
             "name": "atk",
-            "value": "220"
+            "value": "220",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "flak37",
             "name": "hp",
-            "value": "600"
+            "value": "600",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "flak37",
             "name": "atk",
-            "value": "150"
+            "value": "150",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "flak88",
             "name": "hp",
-            "value": "600"
+            "value": "600",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "flak88",
             "name": "atk",
-            "value": "1200"
+            "value": "1200",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "artillery75",
             "name": "hp",
-            "value": "600"
+            "value": "600",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "artillery75",
             "name": "atk",
-            "value": "400"
+            "value": "400",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "sdkfz222",
             "name": "hp",
-            "value": "800"
+            "value": "800",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "sdkfz222",
             "name": "atk",
-            "value": "100"
+            "value": "100",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "sdkfz222",
             "name": "special",
-            "value": "[6]"
+            "value": "[6]",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "sdkfz222",
             "name": "n",
-            "value": "2"
+            "value": "2",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer2c",
             "name": "hp",
-            "value": "1000"
+            "value": "1000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer2c",
             "name": "atk",
-            "value": "100"
+            "value": "100",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer2c",
             "name": "special",
-            "value": "[6]"
+            "value": "[6]",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer2c",
             "name": "n",
-            "value": "2"
+            "value": "2",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer35t",
             "name": "hp",
-            "value": "1000"
+            "value": "1000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer35t",
             "name": "atk",
-            "value": "180"
+            "value": "180",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer35t",
             "name": "special",
-            "value": "[]"
+            "value": "[]",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer38t",
             "name": "hp",
-            "value": "1300"
+            "value": "1300",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer38t",
             "name": "atk",
-            "value": "180"
+            "value": "180",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer38t",
             "name": "special",
-            "value": "[]"
+            "value": "[]",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer3e",
             "name": "hp",
-            "value": "1800"
+            "value": "1800",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer3e",
             "name": "atk",
-            "value": "280"
+            "value": "280",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer4c",
             "name": "hp",
-            "value": "1800"
+            "value": "1800",
+            "norefresh": true
         },
         {
             "type": "setEnemy",

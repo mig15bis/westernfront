@@ -33,122 +33,7 @@ main.floors.MT140=
                 "shadow": 0
             },
             "data": []
-        },
-        "6,5": [
-            {
-                "type": "setTask",
-                "name": "mission name",
-                "n": 1,
-                "text": "任务描述",
-                "info": [
-                    {
-                        "type": "checkItem",
-                        "checkItem": "yellowKey",
-                        "operator": ">=",
-                        "count": 0
-                    },
-                    {
-                        "type": "checkStatus",
-                        "checkStatus": "atk",
-                        "operator": ">=",
-                        "count": 10
-                    },
-                    {
-                        "type": "checkFlag",
-                        "checkFlag": "flag1",
-                        "operator": "=",
-                        "count": "\"value\""
-                    },
-                    {
-                        "type": "checkBlock",
-                        "checkBlock": "ju87b",
-                        "floorId": [
-                            "MT1",
-                            "MT2"
-                        ],
-                        "operator": "<=",
-                        "count": 0
-                    },
-                    {
-                        "type": "checkEnemyType",
-                        "checkEnemyType": "战斗机",
-                        "floorId": [
-                            "MT1",
-                            "MT2"
-                        ],
-                        "operator": "<=",
-                        "count": 0
-                    },
-                    {
-                        "type": "kill",
-                        "operator": ">=",
-                        "count": 0
-                    },
-                    {
-                        "type": "killLocs",
-                        "loc": [
-                            [
-                                1,
-                                1
-                            ]
-                        ],
-                        "floorId": "MT1",
-                        "operator": ">=",
-                        "count": 1
-                    },
-                    {
-                        "type": "killType",
-                        "killType": "战斗机",
-                        "floorId": [
-                            "MT1",
-                            "MT2"
-                        ],
-                        "operator": ">=",
-                        "count": 1
-                    },
-                    {
-                        "type": "killSpecial",
-                        "killSpecial": "61",
-                        "floorId": [
-                            "MT1",
-                            "MT2"
-                        ],
-                        "operator": ">=",
-                        "count": 1
-                    },
-                    {
-                        "type": "killAll",
-                        "floorId": [
-                            "MT1"
-                        ]
-                    },
-                    {
-                        "type": "specialBlock",
-                        "specialBlock": "MT1",
-                        "floorId": [
-                            "地雷伤害"
-                        ],
-                        "operator": "<",
-                        "count": 1
-                    },
-                    {
-                        "type": "gosthFloor",
-                        "floorId": [
-                            "MT1"
-                        ],
-                        "operator": "<",
-                        "count": 1
-                    },
-                    {
-                        "type": "arrival",
-                        "floorId": "MT1"
-                    },
-                    {
-                        "type": "outer"
-                    }
-                ]
-            }
-        ]
+        }
     },
     "changeFloor": {
         "14,2": {
@@ -179,10 +64,6 @@ main.floors.MT140=
                 "type": "if",
                 "condition": "(flag:MT140tsk===9)",
                 "true": [
-                    {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[21][2]=true\n}"
-                    },
                     {
                         "type": "show",
                         "loc": [
@@ -276,10 +157,6 @@ main.floors.MT140=
                 "condition": "(flag:MT140tsk===9)",
                 "true": [
                     {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[21][2]=true\n}"
-                    },
-                    {
                         "type": "show",
                         "loc": [
                             [
@@ -371,10 +248,6 @@ main.floors.MT140=
                 "type": "if",
                 "condition": "(flag:MT140tsk===9)",
                 "true": [
-                    {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[21][2]=true\n}"
-                    },
                     {
                         "type": "show",
                         "loc": [
@@ -468,10 +341,6 @@ main.floors.MT140=
                 "condition": "(flag:MT140tsk===9)",
                 "true": [
                     {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[21][2]=true\n}"
-                    },
-                    {
                         "type": "show",
                         "loc": [
                             [
@@ -563,10 +432,6 @@ main.floors.MT140=
                 "type": "if",
                 "condition": "(flag:MT140tsk===9)",
                 "true": [
-                    {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[21][2]=true\n}"
-                    },
                     {
                         "type": "show",
                         "loc": [
@@ -660,10 +525,6 @@ main.floors.MT140=
                 "condition": "(flag:MT140tsk===9)",
                 "true": [
                     {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[21][2]=true\n}"
-                    },
-                    {
                         "type": "show",
                         "loc": [
                             [
@@ -755,10 +616,6 @@ main.floors.MT140=
                 "type": "if",
                 "condition": "(flag:MT140tsk===9)",
                 "true": [
-                    {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[21][2]=true\n}"
-                    },
                     {
                         "type": "show",
                         "loc": [
@@ -852,10 +709,6 @@ main.floors.MT140=
                 "condition": "(flag:MT140tsk===9)",
                 "true": [
                     {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[21][2]=true\n}"
-                    },
-                    {
                         "type": "show",
                         "loc": [
                             [
@@ -948,10 +801,6 @@ main.floors.MT140=
                 "condition": "(flag:MT140tsk===9)",
                 "true": [
                     {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[21][2]=true\n}"
-                    },
-                    {
                         "type": "show",
                         "loc": [
                             [
@@ -1039,13 +888,13 @@ main.floors.MT140=
     "cannotMove": {},
     "cannotMoveIn": {},
     "map": [
-    [ 33,140, 91,140,593, 81,  0,140, 27, 22,140,  0, 31, 31, 21],
-    [ 32,140,  0,140,  0,140,  0,140,594,140,140,594,140,140,140],
-    [ 32,140,  0,595,  0,140,  0,140, 32,  0,140,  0,  0,  0, 94],
+    [566,140, 91,140,593, 81,  0,140, 27, 22,140,  0, 33,566, 21],
+    [566,140,  0,140,  0,140,  0,140,594,140,140,594,140,140,140],
+    [566,140,  0,595,  0,140,  0,140, 33,  0,140,  0,  0,  0, 94],
     [595,140, 82,140,140,140,595,140,  0,593, 81,  0,140,140,140],
     [  0,593,  0,140, 21,140,  0,140,140,140,140,  0, 31, 31, 21],
     [140, 81,140,140,  0,594,  0,  0,  0,  0,  0,594,140,140,140],
-    [  0,594,  0,140,  0,140,140, 81,140,140,140,  0, 31, 31, 21],
+    [  0,594,  0,140,  0,140,140, 81,140,140,140,  0, 33,566, 21],
     [ 27,140,  0,140,525,140,  0,594,  0, 21,140,  0,311,311,311],
     [ 22,140,  0, 81,525,140,311,311,311,311,311, 82,311,311,499],
     [311,311, 86,311,311,311,311,574, 21, 21,594,  0,574,498,574],

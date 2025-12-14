@@ -55,181 +55,211 @@ main.floors.MT14=
             "type": "setEnemy",
             "id": "lightinf",
             "name": "hp",
-            "value": "1200"
+            "value": "1200",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "lightinf",
             "name": "atk",
-            "value": "50"
+            "value": "50",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "commandos",
             "name": "hp",
-            "value": "1200"
+            "value": "1200",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "commandos",
             "name": "atk",
-            "value": "70"
+            "value": "70",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "motorinf",
             "name": "hp",
-            "value": "1100"
+            "value": "1100",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "motorinf",
             "name": "atk",
-            "value": "70"
+            "value": "70",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "grenadier",
             "name": "hp",
-            "value": "1000"
+            "value": "1000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "grenadier",
             "name": "atk",
-            "value": "300"
+            "value": "300",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "mortar",
             "name": "hp",
-            "value": "500"
+            "value": "500",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "mortar",
             "name": "atk",
-            "value": "400"
+            "value": "400",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "lightmg",
             "name": "hp",
-            "value": "1000"
+            "value": "1000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "lightmg",
             "name": "atk",
-            "value": "80"
+            "value": "80",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "mg42",
             "name": "hp",
-            "value": "600"
+            "value": "600",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "mg42",
             "name": "atk",
-            "value": "100"
+            "value": "100",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "me109e4",
             "name": "hp",
-            "value": "1200"
+            "value": "1200",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "me109e4",
             "name": "atk",
-            "value": "120"
+            "value": "120",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "ju87b",
             "name": "hp",
-            "value": "1000"
+            "value": "1000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "pak36",
             "name": "hp",
-            "value": "1000"
+            "value": "1000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "pak36",
             "name": "atk",
-            "value": "180"
+            "value": "180",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "sdkfz222",
             "name": "hp",
-            "value": "1200"
+            "value": "1200",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "sdkfz222",
             "name": "atk",
-            "value": "70"
+            "value": "70",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer2c",
             "name": "hp",
-            "value": "1200"
+            "value": "1200",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer2c",
             "name": "atk",
-            "value": "100"
+            "value": "100",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer35t",
             "name": "hp",
-            "value": "1500"
+            "value": "1500",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer35t",
             "name": "atk",
-            "value": "150"
+            "value": "150",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer38t",
             "name": "hp",
-            "value": "1500"
+            "value": "1500",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer38t",
             "name": "atk",
-            "value": "150"
+            "value": "150",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer3e",
             "name": "hp",
-            "value": "2000"
+            "value": "2000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer3e",
             "name": "atk",
-            "value": "250"
+            "value": "250",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer4c",
             "name": "hp",
-            "value": "2500"
+            "value": "2500",
+            "norefresh": true
         },
         {
             "type": "setEnemy",

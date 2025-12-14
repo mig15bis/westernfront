@@ -79,7 +79,15 @@ main.floors.MT136=
         },
         {
             "type": "sleep",
-            "time": 500
+            "time": 2000
+        },
+        {
+            "type": "playSound",
+            "name": "dogfight.mp3"
+        },
+        {
+            "type": "playSound",
+            "name": "airalarm.mp3"
         },
         {
             "type": "setCurtain",
@@ -216,7 +224,7 @@ main.floors.MT136=
                 {
                     "type": "setValue",
                     "name": "status:hpmax",
-                    "value": "5000",
+                    "value": "10000",
                     "norefresh": true
                 },
                 {

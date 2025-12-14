@@ -2936,9 +2936,11 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 		}
 
 		_update_state() { //异常状态
-			let Debuff = [];
+			let Debuff = [],
+				Debuffcolor = [];
 			if (flags.dry) {
-				Debuff.push('\r[#FF8C00]炎热\r');
+				Debuff.push('炎热');
+				Debuffcolor.push('#FF8C00');
 			}
 			if (core.domStyle.isVertical) { //竖屏
 				core.clearMap(uictx, 161, 681, 160, 50);
@@ -2946,13 +2948,23 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				core.setTextAlign("outerUI", "center");
 				if (Debuff.length > 0) { //异常状态检测需改动
 					if (Debuff.length < 4) {
-						core.drawTextContent(uictx, Debuff.join(" "), { left: 168, top: 696, align: 'center', maxWidth: 130, color: "#FFAACC", fontSize: 16, font: 'number' })
+						for (let debuffn = 0, debuffx = 193; debuffn <= Debuff.length - 1; debuffn++, debuffx += 40) {
+							core.fillText(uictx, Debuff[debuffn], debuffx, 712, Debuffcolor[debuffn], "16px number", 130);
+						}
+						//core.drawTextContent(uictx, Debuff.join(" "), { left: 168, top: 696, align: 'center', maxWidth: 130, color: "#FFAACC", fontSize: 16, font: 'number' })
 					} else {
-						core.drawTextContent(uictx, Debuff.join(" "), { left: 183, top: 688, align: 'center', maxWidth: 100, color: "#FFAACC", fontSize: 12, font: 'number' })
+						for (let debuffn = 0, debuffx = 184, debuffy = 704; debuffn <= Debuff.length - 1; debuffn++, debuffx += 30) {
+							if (debuffn === 4) {
+								debuffx = 184;
+								debuffy = 716;
+							}
+							core.fillText(uictx, Debuff[debuffn], debuffx, debuffy, Debuffcolor[debuffn], "12px number", 130);
+						}
+						//core.drawTextContent(uictx, Debuff.join(" "), { left: 183, top: 688, align: 'center', maxWidth: 100, color: "#FFAACC", fontSize: 12, font: 'number' })
 					}
 					//core.fillText(uictx, Debuff.join(" "), 235.5, 710, "#FF0000", "16px number", 130) //异常状态文字显示
 				} else {
-					core.fillText(uictx, "暂无异常状态", 235.5, 710, "#FFAACC", "16px number", 130)
+					core.fillText(uictx, "异常状态", 235.5, 710, "#FFAACC", "16px number", 130)
 				}
 			} else { //横屏	
 				core.clearMap(uictx, 630, 261, 150, 40);
@@ -2960,13 +2972,23 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				core.setTextAlign("outerUI", "center");
 				if (Debuff.length > 0) { //异常状态检测需改动
 					if (Debuff.length < 4) {
-						core.drawTextContent(uictx, Debuff.join(" "), { left: 637, top: 269, align: 'center', maxWidth: 130, color: "#FFAACC", fontSize: 16, font: 'number' })
+						for (let debuffn = 0, debuffx = 660; debuffn <= Debuff.length - 1; debuffn++, debuffx += 40) {
+							core.fillText(uictx, Debuff[debuffn], debuffx, 283, Debuffcolor[debuffn], "16px number", 130);
+						}
+						//core.drawTextContent(uictx, Debuff.join(" "), { left: 637, top: 269, align: 'center', maxWidth: 130, color: "#FFAACC", fontSize: 16, font: 'number' })
 					} else {
-						core.drawTextContent(uictx, Debuff.join(" "), { left: 652, top: 261, align: 'center', maxWidth: 100, color: "#FFAACC", fontSize: 12, font: 'number' })
+						for (let debuffn = 0, debuffx = 658, debuffy = 276; debuffn <= Debuff.length - 1; debuffn++, debuffx += 30) {
+							if (debuffn === 4) {
+								debuffx = 658;
+								debuffy = 288;
+							}
+							core.fillText(uictx, Debuff[debuffn], debuffx, debuffy, Debuffcolor[debuffn], "12px number", 130);
+						}
+						//core.drawTextContent(uictx, Debuff.join(" "), { left: 652, top: 261, align: 'center', maxWidth: 100, color: "#FFAACC", fontSize: 12, font: 'number' })
 					}
 					//core.fillText(uictx, Debuff.join(" "), 702.5, 283, "#FFAACC", "16px number", 120) //异常状态文字显示
 				} else {
-					core.fillText(uictx, "暂无异常状态", 702.5, 283, "#FFAACC", "16px number", 120)
+					core.fillText(uictx, "异常状态", 702.5, 283, "#FFAACC", "16px number", 120)
 				}
 			}
 		}
@@ -3128,21 +3150,21 @@ ${core.taskSystem.tasksInfo[1].text}
 ${core.taskSystem.checkTask(2)?"\\i[star2]":"\\i[star1]"}${core.taskSystem.tasksInfo[2].name}
 ${core.taskSystem.tasksInfo[2].text}`;*/
 					let text = ""
-					text += (core.taskSystem.checkTask(0) ? "\\i[star2]" : "\\i[star1]") + core.taskSystem.tasksInfo[0].name + "\\n"
+					text += (core.taskSystem.checkTask(0) ? "\\i[star2]" : "\\i[star1]") + core.taskSystem.tasksInfo[0].name + "：" + core.taskSystem.tasksInfo[0].text + "\\n"
 					core.taskSystem.tasksInfo[0].tasks.forEach(v => {
 						if (v.type === "arrival") text += v.text + "(" + v.has + "/1)\\n"
 						else if (v.type === "killAll") text += v.text + "(剩余" + v.has + ")\\n"
 						else if (v.type === "outer") text += v.text + "\\n"
 						else text += v.text + "(" + v.has + "/" + v.count + ")\\n"
 					})
-					text += (core.taskSystem.checkTask(1) ? "\\i[star2]" : "\\i[star1]") + core.taskSystem.tasksInfo[1].name + "\\n"
+					text += (core.taskSystem.checkTask(1) ? "\\i[star2]" : "\\i[star1]") + core.taskSystem.tasksInfo[1].name + "：" + core.taskSystem.tasksInfo[1].text + "\\n"
 					core.taskSystem.tasksInfo[1].tasks.forEach(v => {
 						if (v.type === "arrival") text += v.text + "(" + v.has + "/1)\\n"
 						else if (v.type === "killAll") text += v.text + "(剩余" + v.has + ")\\n"
 						else if (v.type === "outer") text += v.text + "\\n"
 						else text += v.text + "(" + v.has + "/" + v.count + ")\\n"
 					})
-					text += (core.taskSystem.checkTask(2) ? "\\i[star2]" : "\\i[star1]") + core.taskSystem.tasksInfo[2].name + "\\n"
+					text += (core.taskSystem.checkTask(2) ? "\\i[star2]" : "\\i[star1]") + core.taskSystem.tasksInfo[2].name + "：" + core.taskSystem.tasksInfo[2].text + "\\n"
 					core.taskSystem.tasksInfo[2].tasks.forEach(v => {
 						if (v.type === "arrival") text += v.text + "(" + v.has + "/1)\\n"
 						else if (v.type === "killAll") text += v.text + "(剩余" + v.has + ")\\n"
@@ -3276,21 +3298,21 @@ ${core.taskSystem.tasksInfo[1].text}
 ${core.taskSystem.checkTask(2)?"\\i[star2]":"\\i[star1]"}${core.taskSystem.tasksInfo[2].name}
 ${core.taskSystem.tasksInfo[2].text}`;*/
 					let text = ""
-					text += (core.taskSystem.checkTask(0) ? "\\i[star2]" : "\\i[star1]") + core.taskSystem.tasksInfo[0].name + "\\n"
+					text += (core.taskSystem.checkTask(0) ? "\\i[star2]" : "\\i[star1]") + core.taskSystem.tasksInfo[0].name + "：" + core.taskSystem.tasksInfo[0].text + "\\n"
 					core.taskSystem.tasksInfo[0].tasks.forEach(v => {
 						if (v.type === "arrival") text += v.text + "(" + v.has + "/1)\\n"
 						else if (v.type === "killAll") text += v.text + "(剩余" + v.has + ")\\n"
 						else if (v.type === "outer") text += v.text + "\\n"
 						else text += v.text + "(" + v.has + "/" + v.count + ")\\n"
 					})
-					text += (core.taskSystem.checkTask(1) ? "\\i[star2]" : "\\i[star1]") + core.taskSystem.tasksInfo[1].name + "\\n"
+					text += (core.taskSystem.checkTask(1) ? "\\i[star2]" : "\\i[star1]") + core.taskSystem.tasksInfo[1].name + "：" + core.taskSystem.tasksInfo[1].text + "\\n"
 					core.taskSystem.tasksInfo[1].tasks.forEach(v => {
 						if (v.type === "arrival") text += v.text + "(" + v.has + "/1)\\n"
 						else if (v.type === "killAll") text += v.text + "(剩余" + v.has + ")\\n"
 						else if (v.type === "outer") text += v.text + "\\n"
 						else text += v.text + "(" + v.has + "/" + v.count + ")\\n"
 					})
-					text += (core.taskSystem.checkTask(2) ? "\\i[star2]" : "\\i[star1]") + core.taskSystem.tasksInfo[2].name + "\\n"
+					text += (core.taskSystem.checkTask(2) ? "\\i[star2]" : "\\i[star1]") + core.taskSystem.tasksInfo[2].name + "：" + core.taskSystem.tasksInfo[2].text + "\\n"
 					core.taskSystem.tasksInfo[2].tasks.forEach(v => {
 						if (v.type === "arrival") text += v.text + "(" + v.has + "/1)\\n"
 						else if (v.type === "killAll") text += v.text + "(剩余" + v.has + ")\\n"

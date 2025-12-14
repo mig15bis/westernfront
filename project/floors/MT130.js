@@ -54,217 +54,252 @@ main.floors.MT130=
             "type": "setEnemy",
             "id": "commandos",
             "name": "hp",
-            "value": "40000"
+            "value": "40000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "commandos",
             "name": "atk",
-            "value": "1500"
+            "value": "1500",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "mortar",
             "name": "hp",
-            "value": "32000"
+            "value": "22000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "mortar",
             "name": "atk",
-            "value": "8000"
+            "value": "8000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "grenadier",
             "name": "hp",
-            "value": "32000"
+            "value": "32000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "grenadier",
             "name": "atk",
-            "value": "6000"
+            "value": "6000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "motorinf",
             "name": "hp",
-            "value": "36000"
+            "value": "36000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "motorinf",
             "name": "atk",
-            "value": "2000"
+            "value": "2000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "lightmg",
             "name": "hp",
-            "value": "30000"
+            "value": "30000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "lightmg",
             "name": "atk",
-            "value": "2000"
+            "value": "2000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "mg42",
             "name": "hp",
-            "value": "30000"
+            "value": "30000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "mg42",
             "name": "atk",
-            "value": "2200"
+            "value": "2200",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "sdkfz222",
             "name": "hp",
-            "value": "13000"
+            "value": "10000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "sdkfz222",
             "name": "atk",
-            "value": "2400"
+            "value": "2400",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "sdkfz234",
             "name": "hp",
-            "value": "10000"
+            "value": "10000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "sdkfz234",
             "name": "atk",
-            "value": "8000"
+            "value": "8000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer2c",
             "name": "hp",
-            "value": "15000"
+            "value": "12000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer2c",
             "name": "atk",
-            "value": "2400"
+            "value": "2400",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer35t",
             "name": "hp",
-            "value": "12000"
+            "value": "14000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer35t",
             "name": "atk",
-            "value": "7000"
+            "value": "7000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer38t",
             "name": "hp",
-            "value": "12000"
+            "value": "15000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer38t",
             "name": "atk",
-            "value": "8000"
+            "value": "8000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer3f",
             "name": "hp",
-            "value": "8000"
+            "value": "15000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer3f",
             "name": "atk",
-            "value": "10000"
+            "value": "10000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer4c",
             "name": "hp",
-            "value": "12000"
+            "value": "24000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer4c",
             "name": "atk",
-            "value": "12000"
+            "value": "12000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer4e",
             "name": "hp",
-            "value": "15000"
+            "value": "25000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer4e",
             "name": "atk",
-            "value": "12000"
+            "value": "12000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "stug3a",
             "name": "hp",
-            "value": "7000"
+            "value": "24000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "stug3a",
             "name": "atk",
-            "value": "15000"
+            "value": "15000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "flak88",
             "name": "hp",
-            "value": "6000"
+            "value": "6000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "flak88",
             "name": "atk",
-            "value": "12000"
+            "value": "12000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "howitzer105",
             "name": "hp",
-            "value": "3000"
+            "value": "3000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "howitzer105",
             "name": "atk",
-            "value": "16000"
+            "value": "16000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "howitzer105",
             "name": "special",
-            "value": "[15,55]"
+            "value": "[15,55]",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "howitzer105",
             "name": "zone",
-            "value": "6000"
+            "value": "1000"
         },
         "\t[系统提示]敌人战力重置完成",
         "\t[系统提示]即将进入存档界面",
@@ -394,7 +429,7 @@ main.floors.MT130=
     "cannotMove": {},
     "cannotMoveIn": {},
     "map": [
-    [ 21,588,60028,533,150,580,60034, 22,60034,580,150,518,518,518,250],
+    [ 21,588,60028,533,150,580,60034,531,60034,580,150,518,518,518,250],
     [530, 21,60036,533,150,  0,244,  0,244,  0,150,150,150,150, 81],
     [254,  0,150,203,150,150,150, 82,150,150,150,204,533,533,530],
     [ 81,150,150,  0,534,  0, 11,  0,204,  0,60032, 81,150,150,150],

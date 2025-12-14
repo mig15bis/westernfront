@@ -59,7 +59,7 @@ main.floors.MT120=
                 "time": 500
             },
             {
-                "type": "hideStatusBar"
+                "type": "hideui"
             },
             {
                 "type": "update"
@@ -131,10 +131,6 @@ main.floors.MT120=
                         "time": 500
                     },
                     {
-                        "type": "sleep",
-                        "time": 500
-                    },
-                    {
                         "type": "if",
                         "condition": "(temp:A>=2)",
                         "true": [
@@ -161,10 +157,6 @@ main.floors.MT120=
                                 "time": 500
                             },
                             {
-                                "type": "sleep",
-                                "time": 500
-                            },
-                            {
                                 "type": "if",
                                 "condition": "(temp:A>=3)",
                                 "true": [
@@ -188,10 +180,6 @@ main.floors.MT120=
                                             90
                                         ],
                                         "opacity": 1,
-                                        "time": 500
-                                    },
-                                    {
-                                        "type": "sleep",
                                         "time": 500
                                     }
                                 ],

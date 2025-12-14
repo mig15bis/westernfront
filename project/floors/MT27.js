@@ -56,67 +56,78 @@ main.floors.MT27=
             "type": "setEnemy",
             "id": "me109e4",
             "name": "hp",
-            "value": "1000"
+            "value": "1000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "me109e4",
             "name": "atk",
-            "value": "200"
+            "value": "200",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "me109e4",
             "name": "special",
-            "value": "[6,28]"
+            "value": "[6,28]",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "me109e4",
             "name": "n",
-            "value": "3"
+            "value": "3",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "me109e4",
             "name": "bom",
-            "value": "300"
+            "value": "300",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "me110c",
             "name": "hp",
-            "value": "1500"
+            "value": "1500",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "me110c",
             "name": "atk",
-            "value": "240"
+            "value": "240",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "me110c",
             "name": "bom",
-            "value": "300"
+            "value": "300",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "ju87b",
             "name": "hp",
-            "value": "1350"
+            "value": "1350",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "u7",
             "name": "hp",
-            "value": "100"
+            "value": "100",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "u7",
             "name": "top",
-            "value": "2000"
+            "value": "2000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",

@@ -99,91 +99,106 @@ main.floors.MT41=
             "type": "setEnemy",
             "id": "me109e4",
             "name": "hp",
-            "value": "2500"
+            "value": "2500",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "me109e4",
             "name": "atk",
-            "value": "300"
+            "value": "300",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "me110c",
             "name": "hp",
-            "value": "4000"
+            "value": "4000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "me110c",
             "name": "atk",
-            "value": "400"
+            "value": "400",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "ju87b",
             "name": "hp",
-            "value": "2500"
+            "value": "2500",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "ju87b",
             "name": "atk",
-            "value": "70"
+            "value": "70",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "ju87b",
             "name": "special",
-            "value": "[]"
+            "value": "[]",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "ju88a",
             "name": "hp",
-            "value": "5500"
+            "value": "5500",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "ju88a",
             "name": "atk",
-            "value": "50"
+            "value": "50",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "ju88a",
             "name": "special",
-            "value": "[]"
+            "value": "[]",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "he111",
             "name": "hp",
-            "value": "5000"
+            "value": "5000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "he111",
             "name": "atk",
-            "value": "50"
+            "value": "50",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "he111",
             "name": "special",
-            "value": "[]"
+            "value": "[]",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "do17z",
             "name": "hp",
-            "value": "5300"
+            "value": "5300",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "do17z",
             "name": "atk",
-            "value": "50"
+            "value": "50",
+            "norefresh": true
         },
         {
             "type": "setEnemy",

@@ -51,7 +51,8 @@ main.floors.MT77=
             "type": "setEnemy",
             "id": "u7",
             "name": "top",
-            "value": "4000"
+            "value": "4000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
@@ -127,7 +128,8 @@ main.floors.MT77=
             "type": "setEnemy",
             "id": "fw200",
             "name": "special",
-            "value": "[28]"
+            "value": "[28]",
+            "norefresh": true
         },
         {
             "type": "setEnemy",

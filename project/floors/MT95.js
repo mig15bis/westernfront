@@ -343,19 +343,22 @@ main.floors.MT95=
             "type": "setEnemy",
             "id": "bismark",
             "name": "special",
-            "value": "[32,37,57]"
+            "value": "[32,37,57]",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "bismark",
             "name": "dod",
-            "value": "0"
+            "value": "0",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "bismark",
             "name": "money",
-            "value": "0"
+            "value": "0",
+            "norefresh": true
         },
         {
             "type": "setEnemy",

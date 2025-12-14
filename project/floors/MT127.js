@@ -31,7 +31,7 @@ main.floors.MT127=
             {
                 "type": "setValue",
                 "name": "flag:第19关通关",
-                "value": "0"
+                "value": "1"
             },
             {
                 "type": "unloadEquip",
@@ -69,7 +69,7 @@ main.floors.MT127=
                 "time": 500
             },
             {
-                "type": "hideStatusBar"
+                "type": "hideui"
             },
             {
                 "type": "update"
@@ -141,10 +141,6 @@ main.floors.MT127=
                         "time": 500
                     },
                     {
-                        "type": "sleep",
-                        "time": 500
-                    },
-                    {
                         "type": "if",
                         "condition": "(temp:A>=2)",
                         "true": [
@@ -171,10 +167,6 @@ main.floors.MT127=
                                 "time": 500
                             },
                             {
-                                "type": "sleep",
-                                "time": 500
-                            },
-                            {
                                 "type": "if",
                                 "condition": "(temp:A>=3)",
                                 "true": [
@@ -198,10 +190,6 @@ main.floors.MT127=
                                             90
                                         ],
                                         "opacity": 1,
-                                        "time": 500
-                                    },
-                                    {
-                                        "type": "sleep",
                                         "time": 500
                                     }
                                 ],

@@ -88,10 +88,6 @@ main.floors.MT139=
                 "type": "if",
                 "condition": "(flag:MT139tsk===5)",
                 "true": [
-                    {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[21][1]=true\n}"
-                    },
                     "\t[巡逻的SBD飞行员,N496]我们得救了！万分感谢！我们现在就返回企业号航空母舰去汇报情况",
                     {
                         "type": "hide",
@@ -147,10 +143,6 @@ main.floors.MT139=
                 "type": "if",
                 "condition": "(flag:MT139tsk===5)",
                 "true": [
-                    {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[21][1]=true\n}"
-                    },
                     "\t[巡逻的SBD飞行员,N496]我们得救了！万分感谢！我们现在就返回企业号航空母舰去汇报情况",
                     {
                         "type": "hide",
@@ -206,10 +198,6 @@ main.floors.MT139=
                 "type": "if",
                 "condition": "(flag:MT139tsk===5)",
                 "true": [
-                    {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[21][1]=true\n}"
-                    },
                     "\t[巡逻的SBD飞行员,N496]我们得救了！万分感谢！我们现在就返回企业号航空母舰去汇报情况",
                     {
                         "type": "hide",
@@ -265,10 +253,6 @@ main.floors.MT139=
                 "type": "if",
                 "condition": "(flag:MT139tsk===5)",
                 "true": [
-                    {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[21][1]=true\n}"
-                    },
                     "\t[巡逻的SBD飞行员,N496]我们得救了！万分感谢！我们现在就返回企业号航空母舰去汇报情况",
                     {
                         "type": "hide",
@@ -324,10 +308,6 @@ main.floors.MT139=
                 "type": "if",
                 "condition": "(flag:MT139tsk===5)",
                 "true": [
-                    {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[21][1]=true\n}"
-                    },
                     "\t[巡逻的SBD飞行员,N496]我们得救了！万分感谢！我们现在就返回企业号航空母舰去汇报情况",
                     {
                         "type": "hide",
@@ -379,7 +359,7 @@ main.floors.MT139=
     "cannotMove": {},
     "cannotMoveIn": {},
     "map": [
-    [ 21,140, 21,140,  0,593,  0, 22,  0,593,  0,140,525, 29,525],
+    [ 21,140, 21,140,566,593,  0, 22,  0,593,566,140,525, 29,525],
     [ 21,140, 21,140,496,  0,  0,593,  0,  0,496,140,528,593,528],
     [595,140,595,140,  0,496,  0,496,  0,496,  0,140,140, 81,140],
     [  0,593,  0,140,566,  0,593,  0,593,  0,566,140,  0,  0,525],

@@ -36,115 +36,134 @@ main.floors.MT134=
             "type": "setEnemy",
             "id": "motorinf",
             "name": "hp",
-            "value": "25000"
+            "value": "25000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "motorinf",
             "name": "atk",
-            "value": "1300"
+            "value": "1300",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "sdkfz222",
             "name": "hp",
-            "value": "4000"
+            "value": "4000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "sdkfz222",
             "name": "atk",
-            "value": "1500"
+            "value": "1500",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "sdkfz234",
             "name": "hp",
-            "value": "4000"
+            "value": "4000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "sdkfz234",
             "name": "atk",
-            "value": "7000"
+            "value": "7000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer2c",
             "name": "hp",
-            "value": "6000"
+            "value": "6000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer2c",
             "name": "atk",
-            "value": "1500"
+            "value": "1500",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer35t",
             "name": "hp",
-            "value": "6000"
+            "value": "6000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer35t",
             "name": "atk",
-            "value": "4000"
+            "value": "4000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer38t",
             "name": "hp",
-            "value": "6000"
+            "value": "6000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer38t",
             "name": "atk",
-            "value": "4500"
+            "value": "4500",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer3f",
             "name": "hp",
-            "value": "8000"
+            "value": "8000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer3f",
             "name": "atk",
-            "value": "7000"
+            "value": "7000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer4c",
             "name": "hp",
-            "value": "6000"
+            "value": "6000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer4c",
             "name": "atk",
-            "value": "10000"
+            "value": "10000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer4e",
             "name": "hp",
-            "value": "6000"
+            "value": "6000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer4e",
             "name": "atk",
-            "value": "10000"
+            "value": "10000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "stug3a",
             "name": "hp",
-            "value": "2000"
+            "value": "2000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
@@ -203,7 +222,7 @@ main.floors.MT134=
                 "time": 500
             },
             {
-                "type": "hideStatusBar"
+                "type": "hideui"
             },
             {
                 "type": "update"
@@ -275,10 +294,6 @@ main.floors.MT134=
                         "time": 500
                     },
                     {
-                        "type": "sleep",
-                        "time": 500
-                    },
-                    {
                         "type": "if",
                         "condition": "(temp:A>=2)",
                         "true": [
@@ -305,10 +320,6 @@ main.floors.MT134=
                                 "time": 500
                             },
                             {
-                                "type": "sleep",
-                                "time": 500
-                            },
-                            {
                                 "type": "if",
                                 "condition": "(temp:A>=3)",
                                 "true": [
@@ -332,10 +343,6 @@ main.floors.MT134=
                                             90
                                         ],
                                         "opacity": 1,
-                                        "time": 500
-                                    },
-                                    {
-                                        "type": "sleep",
                                         "time": 500
                                     }
                                 ],
@@ -452,7 +459,7 @@ main.floors.MT134=
                 "text": "跳过剧情吗？",
                 "yes": [],
                 "no": [
-                    "一开始，英军的行动相对顺利，只有装甲主力遭到炮火攻击，损失惨重，没能及时与其他辅助部队会合。",
+                    "一开始，英军的行动相对顺利，只是装甲主力遭到炮火攻击，损失惨重，没能及时与其他辅助部队会合。",
                     "德军第15和21装甲师由于受到情报误导，开往了卡普措小路这个错误方向。在那里，他们没有发现任何敌人，想回撤时，第21装甲师已经没油了。",
                     "第15装甲师返回路上迎头撞上了英国第4装甲旅，久违地打了一场装甲对决。等英国援军赶到时，第4装甲旅已经损失惨重。",
                     "隆美尔指挥的两个装甲旅也拦住了英国第7装甲旅，把后者痛扁了一顿，直到援军赶到，倒霉的第7装甲旅才避免了全军覆没的命运。",
@@ -579,7 +586,7 @@ main.floors.MT134=
     [150,150,150,150,150, 81,150,150,150,150, 11,60027,  0,  0,569],
     [580,150,520,232,534,534,404,520,150,532,265,60035,60034, 81,60034],
     [  0,271,530,150,150,150,150,530,150,532,532,60027,  0,232,  0],
-    [581,150,520,232,534,534,404,520,150,518,60034,60035,518,518,518]
+    [580,150,520,232,534,534,404,520,150,518,60034,60035,518,518,518]
 ],
     "bgmap": [
 
