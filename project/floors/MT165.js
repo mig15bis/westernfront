@@ -201,9 +201,54 @@ main.floors.MT165=
             "type": "playSound",
             "name": "xinxinmagic.mp3"
         },
-        "\t[任务目标]⭐摧毁押运车队\n⭐通关时不少于500指挥点数\n⭐通关时黄钥匙不少于20",
+        "\t[任务目标]⭐摧毁押运车队\n⭐通关时不少于500指挥点数\n⭐通关时至少持有80个“下午茶”道具",
         {
             "type": "callBook"
+        },
+        {
+            "type": "setTask",
+            "name": "第24关任务1",
+            "n": 1,
+            "text": "摧毁押运车队",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "door_MT169_7_1",
+                    "operator": "=",
+                    "text": "车队成员已歼灭",
+                    "count": "14"
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第24关任务2",
+            "n": 1,
+            "text": "通关时至少剩余500指挥点数",
+            "info": [
+                {
+                    "type": "checkStatus",
+                    "checkStatus": "mana",
+                    "operator": ">=",
+                    "text": "当前指挥点",
+                    "count": 500
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第24关任务3",
+            "n": 1,
+            "text": "通关时至少持有80个“下午茶”道具",
+            "info": [
+                {
+                    "type": "checkItem",
+                    "checkItem": "tea",
+                    "operator": ">=",
+                    "text": "持有的“下午茶”",
+                    "count": 80
+                }
+            ]
         }
     ],
     "eachArrive": [],

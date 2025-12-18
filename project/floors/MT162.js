@@ -24,11 +24,11 @@ main.floors.MT162=
         "\t[系统提示]船队已解散，不再有需要保护的友军目标。",
         {
             "type": "if",
-            "condition": "(flag:友军血量>=200000)",
+            "condition": "(flag:友军血量>=600000)",
             "true": [
                 {
-                    "type": "function",
-                    "function": "function(){\nflags.mission[24][2]=true\n}"
+                    "type": "successTask",
+                    "index": 1
                 }
             ]
         },
@@ -37,8 +37,8 @@ main.floors.MT162=
             "condition": "(flag:友军血量>=400000)",
             "true": [
                 {
-                    "type": "function",
-                    "function": "function(){\nflags.mission[24][1]=true\n}"
+                    "type": "successTask",
+                    "index": 2
                 }
             ]
         },
@@ -52,6 +52,11 @@ main.floors.MT162=
     "parallelDo": "",
     "events": {
         "14,7": [
+            {
+                "type": "setValue",
+                "name": "flag:第23关通关",
+                "value": "1"
+            },
             {
                 "type": "unloadEquip",
                 "pos": 0
@@ -81,14 +86,6 @@ main.floors.MT162=
                 "pos": 6
             },
             {
-                "type": "function",
-                "function": "function(){\nflags.mission[24][0]=true\n}"
-            },
-            {
-                "type": "function",
-                "function": "function(){\nflags.skillList=[0,0,0,0,0,0,0]\n}"
-            },
-            {
                 "type": "update"
             },
             {
@@ -96,7 +93,7 @@ main.floors.MT162=
                 "time": 500
             },
             {
-                "type": "hideStatusBar"
+                "type": "hideui"
             },
             {
                 "type": "update"
@@ -139,7 +136,7 @@ main.floors.MT162=
             },
             {
                 "type": "function",
-                "function": "function(){\nvar a = flags.mission[core.getFlag('stage')];\ncore.setFlag('@temp@A', a[0] + a[1] + a[2]);\n}"
+                "function": "function(){\nvar a = core.taskSystem.checkTask(0) ? 1 : 0,\n\tb = core.taskSystem.checkTask(1) ? 1 : 0,\n\tc = core.taskSystem.checkTask(2) ? 1 : 0;\ncore.setFlag('@temp@A', a + b + c);\n}"
             },
             {
                 "type": "if",
@@ -165,11 +162,6 @@ main.floors.MT162=
                             90
                         ],
                         "opacity": 1,
-                        "time": 500,
-                        "async": true
-                    },
-                    {
-                        "type": "sleep",
                         "time": 500
                     },
                     {
@@ -196,11 +188,6 @@ main.floors.MT162=
                                     90
                                 ],
                                 "opacity": 1,
-                                "time": 500,
-                                "async": true
-                            },
-                            {
-                                "type": "sleep",
                                 "time": 500
                             },
                             {
@@ -227,11 +214,6 @@ main.floors.MT162=
                                             90
                                         ],
                                         "opacity": 1,
-                                        "time": 500,
-                                        "async": true
-                                    },
-                                    {
-                                        "type": "sleep",
                                         "time": 500
                                     }
                                 ],
@@ -369,7 +351,7 @@ main.floors.MT162=
                     "盟军打击舰队是击沉提尔皮茨号的唯一希望，但他们却在关键时刻被浮冰阻挡了去路，没法及时与船队会合。在这种情况下，提尔皮茨号甚至不需要与英军展开激烈的炮战，只需要在英军射程之外用380mm的主炮逐个点名，就能轻松灭掉整个船队。",
                     "7月5日，盟军收到了苏联潜艇的报告，提尔皮茨号、舍尔海军上将号和希佩尔海军上将号组成的致命舰队已经离开了挪威。苏军潜艇虽然发起了攻击，但随后的英军潜艇却发现，他们的攻击没有起到效果。",
                     "提尔皮茨号先不提，另外两艘重巡洋舰面对船队里这些小型护航舰也能照样如入无人之境。这三艘船一起出动，PQ-17绝无任何生还的可能。",
-                    "提尔皮茨号只需10个小时就可以进入射程。远在伦敦的庞德上将担心PQ-17会全军覆没，于是痛苦地下令解散PQ-17，护航队原路返回，商船分散自行前往苏联。这样虽然全军覆没的概率变小了，但哪艘船能活着抵达，全看运气。",
+                    "提尔皮茨号只需10个小时就可以进入射程。远在伦敦的庞德上将担心PQ-17会全军覆没，于是痛苦地下令解散PQ-17，护航队原路返回，商船分散自行前往苏联。这样虽然全军覆没的概率变小了，但哪艘船能活着抵达苏联，全看运气。",
                     "接到命令的商船队水兵们气的直骂娘，但他们还是表现出了视死如归的气概，没有一艘选择逃避，相继分开前往苏联。",
                     "结果显而易见，他们遭到了海运史上最恐怖的屠杀。商船速度缓慢，没有任何装甲保护，用于自保的手段仅有可怜的几挺高射机枪，甚至有的连高射机枪都没有，随便几架战斗机的扫射就可以使整艘船千疮百孔。",
                     {
@@ -430,7 +412,8 @@ main.floors.MT162=
                     }
                 ]
             }
-        ]
+        ],
+        "1,10": []
     },
     "changeFloor": {
         "0,7": {
@@ -442,7 +425,14 @@ main.floors.MT162=
         }
     },
     "beforeBattle": {},
-    "afterBattle": {},
+    "afterBattle": {
+        "1,10": [
+            {
+                "type": "successTask",
+                "index": 2
+            }
+        ]
+    },
     "afterGetItem": {},
     "afterOpenDoor": {},
     "autoEvent": {},

@@ -72,7 +72,7 @@ main.floors.MT158=
             "type": "setEnemy",
             "id": "z1934",
             "name": "hp",
-            "value": "80000",
+            "value": "60000",
             "norefresh": true
         },
         {
@@ -92,7 +92,7 @@ main.floors.MT158=
             "type": "setEnemy",
             "id": "z1934a",
             "name": "hp",
-            "value": "80000",
+            "value": "70000",
             "norefresh": true
         },
         {
@@ -113,7 +113,7 @@ main.floors.MT158=
             "type": "setEnemy",
             "id": "z1936",
             "name": "hp",
-            "value": "85000",
+            "value": "80000",
             "norefresh": true
         },
         {
@@ -225,7 +225,7 @@ main.floors.MT158=
             "type": "setEnemy",
             "id": "scharnhost",
             "name": "hp",
-            "value": "800000",
+            "value": "2500000",
             "norefresh": true
         },
         {
@@ -288,7 +288,7 @@ main.floors.MT158=
             "type": "setEnemy",
             "id": "ju87b",
             "name": "special",
-            "value": "[28,36]",
+            "value": "[28]",
             "norefresh": true
         },
         {
@@ -421,9 +421,59 @@ main.floors.MT158=
             "type": "playSound",
             "name": "xinxinmagic.mp3"
         },
-        "\t[任务目标]⭐通过当前区域\n⭐友军剩余血量不少于40w\n⭐友军剩余血量不少于20w",
+        "\t[任务目标]⭐通过当前区域\n⭐友军剩余血量不少于60w\n⭐友军剩余血量不少于40w",
         {
             "type": "callBook"
+        },
+        {
+            "type": "setValue",
+            "name": "flag:第23关通关",
+            "value": "0"
+        },
+        {
+            "type": "setTask",
+            "name": "第23关任务1",
+            "n": 1,
+            "text": "通过当前区域",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "第23关通关",
+                    "operator": "=",
+                    "text": "通过当前区域",
+                    "count": "1"
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第23关任务2",
+            "n": 1,
+            "text": "友军剩余血量不少于60w",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "友军血量",
+                    "operator": ">=",
+                    "text": "友军血量剩余",
+                    "count": "600000"
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第23关任务3",
+            "n": 1,
+            "text": "友军剩余血量不少于40w",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "友军血量",
+                    "operator": ">=",
+                    "text": "友军血量剩余",
+                    "count": "400000"
+                }
+            ]
         }
     ],
     "eachArrive": [],
@@ -464,7 +514,7 @@ main.floors.MT158=
     [533,  3,  0,360,368,216,530,534,  3,393,534,  3,360,  3,360],
     [  3,  3,  6, 81,  6,534,530,  6,534,  0,360,216,  0,533,531],
     [ 21,  3,  0,255,  0,  3,  3,  3,  3,  3, 82,  3,  6,385,  3],
-    [ 21,  0,207,  3,  0, 22,  6,530,530,530,530,  3,533,533,533]
+    [ 21,  0,207,  3, 48, 22,  6,530,530,530,530,  3,533,533,533]
 ],
     "bgmap": [
     [ 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16],

@@ -121,34 +121,6 @@ main.floors.MT169=
                 "pos": 6
             },
             {
-                "type": "function",
-                "function": "function(){\nflags.mission[25][0]=true\n}"
-            },
-            {
-                "type": "if",
-                "condition": "(status:mana>=500)",
-                "true": [
-                    {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[25][1]=true\n}"
-                    }
-                ]
-            },
-            {
-                "type": "if",
-                "condition": "(item:yellowKey>=20)",
-                "true": [
-                    {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[25][2]=true\n}"
-                    }
-                ]
-            },
-            {
-                "type": "function",
-                "function": "function(){\nflags.skillList=[0,0,0,0,0,0,0]\n}"
-            },
-            {
                 "type": "update"
             },
             {
@@ -199,7 +171,7 @@ main.floors.MT169=
             },
             {
                 "type": "function",
-                "function": "function(){\nvar a = flags.mission[core.getFlag('stage')];\ncore.setFlag('@temp@A', a[0] + a[1] + a[2]);\n}"
+                "function": "function(){\nvar a = core.taskSystem.checkTask(0) ? 1 : 0,\n\tb = core.taskSystem.checkTask(1) ? 1 : 0,\n\tc = core.taskSystem.checkTask(2) ? 1 : 0;\ncore.setFlag('@temp@A', a + b + c);\n}"
             },
             {
                 "type": "if",
@@ -225,11 +197,6 @@ main.floors.MT169=
                             90
                         ],
                         "opacity": 1,
-                        "time": 500,
-                        "async": true
-                    },
-                    {
-                        "type": "sleep",
                         "time": 500
                     },
                     {
@@ -256,11 +223,6 @@ main.floors.MT169=
                                     90
                                 ],
                                 "opacity": 1,
-                                "time": 500,
-                                "async": true
-                            },
-                            {
-                                "type": "sleep",
                                 "time": 500
                             },
                             {
@@ -287,11 +249,6 @@ main.floors.MT169=
                                             90
                                         ],
                                         "opacity": 1,
-                                        "time": 500,
-                                        "async": true
-                                    },
-                                    {
-                                        "type": "sleep",
                                         "time": 500
                                     }
                                 ],
@@ -329,7 +286,7 @@ main.floors.MT169=
             },
             {
                 "type": "drawTextContent",
-                "text": "   指挥官阁下发起了一次成功的空袭\n。所有的德军补给车，一辆不剩的全都\n被炸飞到天上去了。\n   即便德军夺取了托布鲁克，只要地\n中海的主要制海权还在我们手上，敌人\n的补给就始终成大问题。从空中攻击他\n们的补给线，隆美尔的处境会雪上加霜\n，我们的胜算也会增加一成。",
+                "text": "   指挥官阁下发起了一次成功的空袭\n。所有的德军补给车，一辆不剩的全都\n被炸飞到天上去了。\n   即便德军夺取了托布鲁克，只要地\n中海的主要制海权还在我们手上，敌人\n的补给就始终成大问题。从空中攻击他\n们的补给线，隆美尔的处境会雪上加霜\n，我们的胜算也会增加一些。",
                 "left": 60,
                 "top": 100,
                 "align": "left",
@@ -346,6 +303,9 @@ main.floors.MT169=
             },
             {
                 "type": "clearMap"
+            },
+            {
+                "type": "submitTask"
             },
             {
                 "type": "moveImage",

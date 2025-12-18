@@ -24,6 +24,9 @@ main.floors.MT164=
         {
             "type": "setCurtain",
             "time": 500
+        },
+        {
+            "type": "showui"
         }
     ],
     "eachArrive": [],
@@ -252,7 +255,19 @@ main.floors.MT164=
                 "type": "playSound",
                 "name": "xinxinmagic.mp3"
             },
-            "\t[系统提示]当前区域敌人特点：大量空军，包括战斗机和重型战斗机，少量高射炮\n推荐携带技能：防空弹幕、空战王牌、破译。\n推荐出战装备：F4F野猫、英俊战士（可不带），轰炸机随便带"
+            "\t[系统提示]当前区域敌人特点：大量空军，包括战斗机和重型战斗机，少量高射炮\n推荐携带技能：防空弹幕、空战王牌、预警、破译。\n推荐出战装备：F4F野猫、英俊战士，轰炸机随便带",
+            "可以在此清空技能槽，以便于玩家重新选择技能",
+            {
+                "type": "confirm",
+                "text": "清空技能槽？",
+                "yes": [
+                    {
+                        "type": "function",
+                        "function": "function(){\nflags.skillList=[0,0,0,0,0,0,0]\n}"
+                    }
+                ],
+                "no": []
+            }
         ]
     },
     "changeFloor": {},

@@ -1,8 +1,8 @@
 main.floors.MT146=
 {
     "floorId": "MT146",
-    "title": "贾扎拉防线",
-    "name": "贾扎拉防线",
+    "title": "加查拉防线",
+    "name": "加查拉防线",
     "width": 15,
     "height": 15,
     "canFlyTo": true,

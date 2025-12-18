@@ -1,8 +1,8 @@
 main.floors.MT148=
 {
     "floorId": "MT148",
-    "title": "贾扎拉防线",
-    "name": "贾扎拉防线",
+    "title": "加查拉防线",
+    "name": "加查拉防线",
     "width": 15,
     "height": 15,
     "canFlyTo": true,
@@ -38,6 +38,11 @@ main.floors.MT148=
     "events": {
         "14,3": [
             {
+                "type": "setValue",
+                "name": "flag:第21关通关",
+                "value": "1"
+            },
+            {
                 "type": "unloadEquip",
                 "pos": 0
             },
@@ -66,18 +71,6 @@ main.floors.MT148=
                 "pos": 6
             },
             {
-                "type": "function",
-                "function": "function(){\nflags.mission[22][0]=true\n}"
-            },
-            {
-                "type": "function",
-                "function": "function(){\nif(core.searchBlock('lavaNet',['MT144','MT145','MT146','MT147','MT148']).length>=20)flags.mission[22][1]=true\n}"
-            },
-            {
-                "type": "function",
-                "function": "function(){\nflags.skillList=[0,0,0,0,0,0,0]\n}"
-            },
-            {
                 "type": "update"
             },
             {
@@ -85,7 +78,7 @@ main.floors.MT148=
                 "time": 500
             },
             {
-                "type": "hideStatusBar"
+                "type": "hideui"
             },
             {
                 "type": "update"
@@ -128,7 +121,7 @@ main.floors.MT148=
             },
             {
                 "type": "function",
-                "function": "function(){\nvar a = flags.mission[core.getFlag('stage')];\ncore.setFlag('@temp@A', a[0] + a[1] + a[2]);\n}"
+                "function": "function(){\nvar a = core.taskSystem.checkTask(0) ? 1 : 0,\n\tb = core.taskSystem.checkTask(1) ? 1 : 0,\n\tc = core.taskSystem.checkTask(2) ? 1 : 0;\ncore.setFlag('@temp@A', a + b + c);\n}"
             },
             {
                 "type": "if",
@@ -154,11 +147,6 @@ main.floors.MT148=
                             90
                         ],
                         "opacity": 1,
-                        "time": 500,
-                        "async": true
-                    },
-                    {
-                        "type": "sleep",
                         "time": 500
                     },
                     {
@@ -185,11 +173,6 @@ main.floors.MT148=
                                     90
                                 ],
                                 "opacity": 1,
-                                "time": 500,
-                                "async": true
-                            },
-                            {
-                                "type": "sleep",
                                 "time": 500
                             },
                             {
@@ -216,11 +199,6 @@ main.floors.MT148=
                                             90
                                         ],
                                         "opacity": 1,
-                                        "time": 500,
-                                        "async": true
-                                    },
-                                    {
-                                        "type": "sleep",
                                         "time": 500
                                     }
                                 ],
@@ -258,7 +236,7 @@ main.floors.MT148=
             },
             {
                 "type": "drawTextContent",
-                "text": "   纵使贾扎拉防线被指挥官阁下防守\n的很好，但后方的失守迫使我们再一次\n撤退了。\n   我们不得不承认隆美尔的军事才能\n。一次两次就算了，每一次都能精准出\n现在我们最意想不到的地方，并以巨大\n的劣势屡次击退我们，这绝非巧合。为\n什么这样的天才没有出现在我们国家？",
+                "text": "   纵使加查拉防线被指挥官阁下防守\n的很好，但后方的失守迫使我们再一次\n撤退了。\n   我们不得不承认隆美尔的军事才能\n。一次两次就算了，每一次都能精准出\n现在我们最意想不到的地方，并以巨大\n的劣势屡次击退我们，这绝非巧合。为\n什么这样的天才没有出现在我们国家？",
                 "left": 60,
                 "top": 100,
                 "align": "left",
@@ -275,6 +253,9 @@ main.floors.MT148=
             },
             {
                 "type": "clearMap"
+            },
+            {
+                "type": "submitTask"
             },
             {
                 "type": "moveImage",
@@ -358,7 +339,7 @@ main.floors.MT148=
                         "type": "playBgm",
                         "name": "gaijin4.mp3"
                     },
-                    "面对贾扎拉防线，隆美尔兵分两路：战斗力较弱的意大利军队负责正面佯攻，引开英军注意力，隆美尔亲自率领主力部队趁夜色迂回穿插。",
+                    "面对加查拉防线，隆美尔兵分两路：战斗力较弱的意大利军队负责正面佯攻，引开英军注意力，隆美尔亲自率领主力部队趁夜色迂回穿插。",
                     "这一行动非常冒险，他的补给线和撤退路线也从英军防线当中横穿过去，稍有不慎便会全军覆没。",
                     "但英军又一次没把握住这个机会。他们没有把大量兵力投入到阻击行动中，前来阻击的装甲部队像葫芦娃救爷爷一样被隆美尔逐个击破。",
                     "截至1942年6月12日，隆美尔已经包围歼灭了不少英军，这时英军连数量优势也不复存在了，只好全线撤退。不是撤退至托布鲁克重新防守，而是直接退到了埃及边界。他们已经没有足够的力量保护托布鲁克了。",

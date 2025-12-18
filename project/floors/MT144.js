@@ -1,8 +1,8 @@
 main.floors.MT144=
 {
     "floorId": "MT144",
-    "title": "贾扎拉防线",
-    "name": "贾扎拉防线",
+    "title": "加查拉防线",
+    "name": "加查拉防线",
     "width": 15,
     "height": 15,
     "canFlyTo": true,
@@ -18,7 +18,6 @@ main.floors.MT144=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        
         {
             "type": "setCurtain",
             "time": 500
@@ -28,7 +27,7 @@ main.floors.MT144=
             "name": "flag:dry",
             "value": "true"
         },
-        "\r[yellow]Mission 22 贾扎拉防线",
+        "\r[yellow]Mission 21 加查拉防线",
         {
             "type": "text",
             "text": "\t[奥金莱克]\f[auchinleck.png,0,310]指挥官阁下，请务必挡住敌人的进攻。如果防线失守，我们就不得不全线撤退了。",
@@ -69,217 +68,253 @@ main.floors.MT144=
             "type": "setEnemy",
             "id": "italyinf1",
             "name": "hp",
-            "value": "50000"
+            "value": "50000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italyinf1",
             "name": "atk",
-            "value": "1000"
+            "value": "1000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italyinf2",
             "name": "hp",
-            "value": "50000"
+            "value": "50000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italyinf2",
             "name": "atk",
-            "value": "1100"
+            "value": "1100",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italyinf3",
             "name": "hp",
-            "value": "45000"
+            "value": "45000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italyinf3",
             "name": "atk",
-            "value": "1300"
+            "value": "1300",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italyinf4",
             "name": "hp",
-            "value": "40000"
+            "value": "40000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italyinf4",
             "name": "atk",
-            "value": "2000"
+            "value": "2000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "ab41",
             "name": "hp",
-            "value": "18000"
+            "value": "18000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "ab41",
             "name": "atk",
-            "value": "1800"
+            "value": "1800",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "l640",
             "name": "hp",
-            "value": "22000"
+            "value": "22000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "l640",
             "name": "atk",
-            "value": "2500"
+            "value": "2500",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "m1340",
             "name": "hp",
-            "value": "15000"
+            "value": "15000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "m1340",
             "name": "atk",
-            "value": "10000"
+            "value": "10000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "g50",
             "name": "hp",
-            "value": "8000"
+            "value": "8000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "g50",
             "name": "atk",
-            "value": "1300"
+            "value": "1300",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "sm79",
             "name": "hp",
-            "value": "16000"
+            "value": "16000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "sm79",
             "name": "atk",
-            "value": "500"
+            "value": "500",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "sm79",
             "name": "bom",
-            "value": "6000"
+            "value": "6000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "motorinf",
             "name": "hp",
-            "value": "56000"
+            "value": "56000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "motorinf",
             "name": "atk",
-            "value": "2000"
+            "value": "2000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer2c",
             "name": "hp",
-            "value": "22000"
+            "value": "22000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer2c",
             "name": "atk",
-            "value": "2400"
+            "value": "2400",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "me109f4",
             "name": "hp",
-            "value": "10000"
+            "value": "10000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "me109f4",
             "name": "atk",
-            "value": "1500"
+            "value": "1500",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "me110c",
             "name": "hp",
-            "value": "13000"
+            "value": "13000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "me110c",
             "name": "atk",
-            "value": "2500"
+            "value": "2500",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "fw190a1",
             "name": "hp",
-            "value": "13000"
+            "value": "13000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "fw190a1",
             "name": "atk",
-            "value": "1800"
+            "value": "1800",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "fw190a1",
             "name": "special",
-            "value": "[6,55]"
+            "value": "[6,55]",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "ju87b",
             "name": "hp",
-            "value": "8000"
+            "value": "8000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "ju87b",
             "name": "atk",
-            "value": "300"
+            "value": "300",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "ju87b",
             "name": "bom",
-            "value": "10000"
+            "value": "10000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "do17z",
             "name": "hp",
-            "value": "19000"
+            "value": "19000",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "do17z",
             "name": "atk",
-            "value": "300"
+            "value": "300",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "do17z",
             "name": "special",
-            "value": "[28,55]"
+            "value": "[28,55]",
+            "norefresh": true
         },
         {
             "type": "setEnemy",
@@ -296,15 +331,71 @@ main.floors.MT144=
             "type": "playSound",
             "name": "xinxinmagic.mp3"
         },
-        "\t[任务目标]⭐通过当前关卡\n⭐通关时至少保留20个地雷\n⭐击败梅塞（支线boss战）",
+        "\t[任务目标]⭐通过当前区域\n⭐通关时至少保留20个地雷\n⭐击败梅塞（支线boss战）",
         {
             "type": "callBook"
         },
         {
-            "type": "playSound",
-            "name": "xinxinmagic.mp3"
+            "type": "setValue",
+            "name": "flag:第21关通关",
+            "value": "0"
         },
-        "\t[系统提示]由于本区域任务要求是保留地雷，建议提前用“浏览地图”探查前方路线，确定绕路方案。"
+        {
+            "type": "setValue",
+            "name": "flag:第21关任务3",
+            "value": "0"
+        },
+        {
+            "type": "setTask",
+            "name": "第21关任务1",
+            "n": 1,
+            "text": "通过当前区域",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "第21关通关",
+                    "operator": "=",
+                    "text": "通过当前区域",
+                    "count": "1"
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第21关任务2",
+            "n": 1,
+            "text": "通关时至少保留20个地雷",
+            "info": [
+                {
+                    "type": "checkBlock",
+                    "checkBlock": "lavaNet",
+                    "floorId": [
+                        "MT144",
+                        "MT145",
+                        "MT146",
+                        "MT148"
+                    ],
+                    "operator": ">=",
+                    "text": "剩余地雷数量",
+                    "count": 20
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第21关任务3",
+            "n": 1,
+            "text": "击败梅塞（支线boss）",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "第21关任务3",
+                    "operator": "=",
+                    "text": "击败支线boss",
+                    "count": "1"
+                }
+            ]
+        }
     ],
     "eachArrive": [],
     "parallelDo": "",

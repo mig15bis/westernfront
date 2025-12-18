@@ -2942,6 +2942,10 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				Debuff.push('炎热');
 				Debuffcolor.push('#FF8C00');
 			}
+			if (core.status.checkBlock.cache?.cacheFloor?.截断) {
+				Debuff.push('截断');
+				Debuffcolor.push('#00FF00');
+			}
 			if (core.domStyle.isVertical) { //竖屏
 				core.clearMap(uictx, 161, 681, 160, 50);
 				core.fillRoundRect(uictx, 168, 688, 135, 35, 15, "rgba(0,0,0,0.5)") //任务底板								 
@@ -3962,6 +3966,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 					if (nextair && core.getBlockCls(X, Y) === "enemys" && core.plugin.Luftwaffe.includes(core.material.enemys[nextair].type)) {
 						if (core.hasSpecial(nextair, 57)) {
 							hero.mana += 100;
+							core.unlockControl();
 							core.drawTip("无法对敌方boss使用");
 						} else if (core.hasSpecial(nextair, 65)) {
 							//动画
@@ -4320,6 +4325,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 					if (nextair && core.getBlockCls(X, Y) === "enemys" && core.plugin.Army.includes(core.material.enemys[nextair].type)) {
 						if (core.hasSpecial(nextair, 57)) {
 							hero.mana += 200;
+							core.unlockControl();
 							core.drawTip("无法对敌方boss使用");
 						} else if (!['轻坦', '中坦', '重坦', '坦歼'].includes(core.material.enemys[nextair].type) || core.hasSpecial(nextair, 65)) {
 							//动画
@@ -4420,7 +4426,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 			id: 12,
 			strategy: false,
 			name: '从海底出击',
-			cost: 100,
+			cost: 150,
 			description: '下一场战斗中，派遣一艘潜艇支援：在战斗开始时发射8枚鱼雷，随后潜艇撤退'
 		},
 
@@ -4658,43 +4664,43 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 							"choices": [{
 									"text": "数字1:" + core.plugin.skillInfo[flags.skillList[0]].name + (core.plugin.skillInfo[flags.skillList[0]].strategy ? '（即时）' : '') + '，消耗：' + core.plugin.skillInfo[flags.skillList[0]].cost,
 									"action": [
-										{ "type": "function", "function": "function(){\n var index = flags.skillList.indexOf(" + info.id + ")\n if (index >= 0) flags.skillList[index] = flags.skillList[0]\n flags.skillList[0] = " + info.id + "\n core.ui.statusBar._update_skills()}" },
+										{ "type": "function", "function": "function(){\n var index = flags.skillList.indexOf(" + info.id + ")\n if (index >= 0) flags.skillList[index] = flags.skillList[0]\n flags.skillList[0] = " + info.id + "\n core.ui.statusBar._update_skills()\n core.insertAction(core.plugin.bindSkills())}" },
 									]
 								},
 								{
 									"text": "数字2:" + core.plugin.skillInfo[flags.skillList[1]].name + (core.plugin.skillInfo[flags.skillList[1]].strategy ? '（即时）' : '') + '，消耗：' + core.plugin.skillInfo[flags.skillList[1]].cost,
 									"action": [
-										{ "type": "function", "function": "function(){\nvar index = flags.skillList.indexOf(" + info.id + ")\nif (index >= 0) flags.skillList[index] = flags.skillList[1]\nflags.skillList[1] = " + info.id + "\n core.ui.statusBar._update_skills()}" },
+										{ "type": "function", "function": "function(){\nvar index = flags.skillList.indexOf(" + info.id + ")\nif (index >= 0) flags.skillList[index] = flags.skillList[1]\nflags.skillList[1] = " + info.id + "\n core.ui.statusBar._update_skills()\n core.insertAction(core.plugin.bindSkills())}" },
 									]
 								},
 								{
 									"text": "数字3:" + core.plugin.skillInfo[flags.skillList[2]].name + (core.plugin.skillInfo[flags.skillList[2]].strategy ? '（即时）' : '') + '，消耗：' + core.plugin.skillInfo[flags.skillList[2]].cost,
 									"action": [
-										{ "type": "function", "function": "function(){\nvar index = flags.skillList.indexOf(" + info.id + ")\nif (index >= 0) flags.skillList[index] = flags.skillList[2]\nflags.skillList[2] = " + info.id + "\n core.ui.statusBar._update_skills()}" },
+										{ "type": "function", "function": "function(){\nvar index = flags.skillList.indexOf(" + info.id + ")\nif (index >= 0) flags.skillList[index] = flags.skillList[2]\nflags.skillList[2] = " + info.id + "\n core.ui.statusBar._update_skills()\n core.insertAction(core.plugin.bindSkills())}" },
 									]
 								},
 								{
 									"text": "数字4:" + core.plugin.skillInfo[flags.skillList[3]].name + (core.plugin.skillInfo[flags.skillList[3]].strategy ? '（即时）' : '') + '，消耗：' + core.plugin.skillInfo[flags.skillList[3]].cost,
 									"action": [
-										{ "type": "function", "function": "function(){\nvar index = flags.skillList.indexOf(" + info.id + ")\nif (index >= 0) flags.skillList[index] = flags.skillList[3]\nflags.skillList[3] = " + info.id + "\n core.ui.statusBar._update_skills()}" },
+										{ "type": "function", "function": "function(){\nvar index = flags.skillList.indexOf(" + info.id + ")\nif (index >= 0) flags.skillList[index] = flags.skillList[3]\nflags.skillList[3] = " + info.id + "\n core.ui.statusBar._update_skills()\n core.insertAction(core.plugin.bindSkills())}" },
 									]
 								},
 								{
 									"text": "数字5:" + core.plugin.skillInfo[flags.skillList[4]].name + (core.plugin.skillInfo[flags.skillList[4]].strategy ? '（即时）' : '') + '，消耗：' + core.plugin.skillInfo[flags.skillList[4]].cost,
 									"action": [
-										{ "type": "function", "function": "function(){\nvar index = flags.skillList.indexOf(" + info.id + ")\nif (index >= 0) flags.skillList[index] = flags.skillList[4]\nflags.skillList[4] = " + info.id + "\n core.ui.statusBar._update_skills()}" },
+										{ "type": "function", "function": "function(){\nvar index = flags.skillList.indexOf(" + info.id + ")\nif (index >= 0) flags.skillList[index] = flags.skillList[4]\nflags.skillList[4] = " + info.id + "\n core.ui.statusBar._update_skills()\n core.insertAction(core.plugin.bindSkills())}" },
 									]
 								},
 								{
 									"text": "数字6:" + core.plugin.skillInfo[flags.skillList[5]].name + (core.plugin.skillInfo[flags.skillList[5]].strategy ? '（即时）' : '') + '，消耗：' + core.plugin.skillInfo[flags.skillList[5]].cost,
 									"action": [
-										{ "type": "function", "function": "function(){\nvar index = flags.skillList.indexOf(" + info.id + ")\nif (index >= 0) flags.skillList[index] = flags.skillList[5]\nflags.skillList[5] = " + info.id + "\n core.ui.statusBar._update_skills()}" },
+										{ "type": "function", "function": "function(){\nvar index = flags.skillList.indexOf(" + info.id + ")\nif (index >= 0) flags.skillList[index] = flags.skillList[5]\nflags.skillList[5] = " + info.id + "\n core.ui.statusBar._update_skills()\n core.insertAction(core.plugin.bindSkills())}" },
 									]
 								},
 								{
 									"text": "数字7:" + core.plugin.skillInfo[flags.skillList[6]].name + (core.plugin.skillInfo[flags.skillList[6]].strategy ? '（即时）' : '') + '，消耗：' + core.plugin.skillInfo[flags.skillList[6]].cost,
 									"action": [
-										{ "type": "function", "function": "function(){\nvar index = flags.skillList.indexOf(" + info.id + ")\nif (index >= 0) flags.skillList[index] = flags.skillList[6]\nflags.skillList[6] = " + info.id + "\n core.ui.statusBar._update_skills()}" },
+										{ "type": "function", "function": "function(){\nvar index = flags.skillList.indexOf(" + info.id + ")\nif (index >= 0) flags.skillList[index] = flags.skillList[6]\nflags.skillList[6] = " + info.id + "\n core.ui.statusBar._update_skills()\n core.insertAction(core.plugin.bindSkills())}" },
 									]
 								},
 							]

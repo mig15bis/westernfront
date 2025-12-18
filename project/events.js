@@ -259,14 +259,8 @@ var events_c12a15a8_c380_4b28_8144_256cba95f760 =
 		],
 		"选择技能": [
 			{
-				"type": "while",
-				"condition": "true",
-				"data": [
-					{
-						"type": "function",
-						"function": "function(){\ncore.insertAction(core.plugin.bindSkills())\n}"
-					}
-				]
+				"type": "function",
+				"function": "function(){\ncore.insertAction(core.plugin.bindSkills())\n}"
 			}
 		]
 	}

@@ -22,18 +22,17 @@ main.floors.MT151=
         {
             "type": "setValue",
             "name": "flag:友军血量",
-            "value": "500000"
+            "value": "600000"
         },
         {
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        
         {
             "type": "setCurtain",
             "time": 500
         },
-        "\r[yellow]Mission 23 深海群狼",
+        "\r[yellow]Mission 22 深海群狼",
         {
             "type": "playSound",
             "name": "Sonar.wav"
@@ -128,7 +127,7 @@ main.floors.MT151=
             "type": "setEnemy",
             "id": "u7",
             "name": "hp",
-            "value": "3000",
+            "value": "3800",
             "norefresh": true
         },
         {
@@ -149,7 +148,7 @@ main.floors.MT151=
             "type": "setEnemy",
             "id": "u9",
             "name": "hp",
-            "value": "3000",
+            "value": "3900",
             "norefresh": true
         },
         {
@@ -170,7 +169,7 @@ main.floors.MT151=
             "type": "setEnemy",
             "id": "italydd1",
             "name": "hp",
-            "value": "65000",
+            "value": "60000",
             "norefresh": true
         },
         {
@@ -191,14 +190,14 @@ main.floors.MT151=
             "type": "setEnemy",
             "id": "italydd2",
             "name": "hp",
-            "value": "70000",
+            "value": "76000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italydd2",
             "name": "atk",
-            "value": "300",
+            "value": "400",
             "norefresh": true
         },
         {
@@ -212,7 +211,7 @@ main.floors.MT151=
             "type": "setEnemy",
             "id": "italydd3",
             "name": "hp",
-            "value": "75000",
+            "value": "64000",
             "norefresh": true
         },
         {
@@ -233,7 +232,7 @@ main.floors.MT151=
             "type": "setEnemy",
             "id": "italydd4",
             "name": "hp",
-            "value": "80000",
+            "value": "65000",
             "norefresh": true
         },
         {
@@ -254,7 +253,7 @@ main.floors.MT151=
             "type": "setEnemy",
             "id": "italycl1",
             "name": "hp",
-            "value": "180000",
+            "value": "210000",
             "norefresh": true
         },
         {
@@ -275,14 +274,14 @@ main.floors.MT151=
             "type": "setEnemy",
             "id": "italycl2",
             "name": "hp",
-            "value": "200000",
+            "value": "215000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italycl2",
             "name": "atk",
-            "value": "600",
+            "value": "800",
             "norefresh": true
         },
         {
@@ -296,7 +295,7 @@ main.floors.MT151=
             "type": "setEnemy",
             "id": "italyca1",
             "name": "hp",
-            "value": "450000",
+            "value": "480000",
             "norefresh": true
         },
         {
@@ -317,7 +316,7 @@ main.floors.MT151=
             "type": "setEnemy",
             "id": "italyca2",
             "name": "hp",
-            "value": "500000",
+            "value": "600000",
             "norefresh": true
         },
         {
@@ -338,14 +337,14 @@ main.floors.MT151=
             "type": "setEnemy",
             "id": "veneto",
             "name": "hp",
-            "value": "800000",
+            "value": "1500000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "veneto",
             "name": "atk",
-            "value": "1500",
+            "value": "1800",
             "norefresh": true
         },
         {
@@ -359,21 +358,21 @@ main.floors.MT151=
             "type": "setEnemy",
             "id": "g50",
             "name": "hp",
-            "value": "10000",
+            "value": "18000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "g50",
             "name": "atk",
-            "value": "1100",
+            "value": "1300",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "c200",
             "name": "hp",
-            "value": "12000",
+            "value": "20000",
             "norefresh": true
         },
         {
@@ -387,7 +386,7 @@ main.floors.MT151=
             "type": "setEnemy",
             "id": "sm79",
             "name": "hp",
-            "value": "18500",
+            "value": "22000",
             "norefresh": true
         },
         {
@@ -408,7 +407,7 @@ main.floors.MT151=
             "type": "setEnemy",
             "id": "z1007",
             "name": "hp",
-            "value": "23000",
+            "value": "26000",
             "norefresh": true
         },
         {
@@ -429,7 +428,7 @@ main.floors.MT151=
             "type": "setEnemy",
             "id": "z1934",
             "name": "hp",
-            "value": "80000",
+            "value": "65000",
             "norefresh": true
         },
         {
@@ -444,6 +443,27 @@ main.floors.MT151=
             "id": "z1934",
             "name": "top",
             "value": "8000"
+        },
+        {
+            "type": "setEnemy",
+            "id": "konesburg",
+            "name": "hp",
+            "value": "210000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "konesburg",
+            "name": "atk",
+            "value": "800",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "konesburg",
+            "name": "top",
+            "value": "8000",
+            "norefresh": true
         },
         {
             "type": "setGlobalValue",
@@ -466,14 +486,63 @@ main.floors.MT151=
         "\t[任务目标]⭐掩护友军商船抵达目的地\n⭐通关时剩余蓝钥匙不少于5把\n⭐通关时至少持有4000黄金",
         {
             "type": "callBook"
+        },
+        {
+            "type": "setValue",
+            "name": "flag:第22关通关",
+            "value": "0"
+        },
+        {
+            "type": "setTask",
+            "name": "第22关任务1",
+            "n": 1,
+            "text": "掩护友军商船抵达目的地",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "第22关通关",
+                    "operator": "=",
+                    "text": "通过当前区域",
+                    "count": "1"
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第22关任务2",
+            "n": 1,
+            "text": "通关时剩余蓝钥匙不少于5把",
+            "info": [
+                {
+                    "type": "checkItem",
+                    "checkItem": "blueKey",
+                    "operator": ">=",
+                    "text": "持有的蓝钥匙数",
+                    "count": 5
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第22关任务3",
+            "n": 1,
+            "text": "通关时至少持有4000黄金",
+            "info": [
+                {
+                    "type": "checkStatus",
+                    "checkStatus": "money",
+                    "operator": ">=",
+                    "text": "当前黄金数",
+                    "count": 4000
+                }
+            ]
         }
     ],
     "eachArrive": [],
     "parallelDo": "",
     "events": {
         "0,9": [
-            "\t[伊吹萃香]\f[specialnpc.jpg,30,200,150,300]新技能“狼群”只会在潜艇上出现，当前地图中每一艘潜艇都会为全体潜艇增加攻击力。尝试在最开始使用技能，以较低损耗击沉一些潜艇，可以有效压下其他潜艇的伤害。",
-            "\t[伊吹萃香]\f[specialnpc.jpg,30,200,150,300]另外，受不明原因影响，具有“狼群”属性的敌人回合数会显示为0，但伤害是正常的。具体回合数只能麻烦玩家自己算了哦"
+            "\t[伊吹萃香]\f[specialnpc.jpg,30,200,150,300]新技能“狼群”只会在潜艇上出现，当前地图中每一艘潜艇都会为全体潜艇增加攻击力。尝试在最开始使用技能，以较低损耗击沉一些潜艇，可以有效压下其他潜艇的伤害。"
         ]
     },
     "changeFloor": {

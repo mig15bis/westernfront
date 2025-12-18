@@ -919,7 +919,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		[39, "装甲之父", "曼施坦因专属技能，在场时全体德军装甲部队获得20%增伤，无视主角后勤值，并且包括自身在内每个装甲单位战败时额外造成一次2倍攻击力的亡语"],
 		[40, "防空", "以自身为中心5*5范围内（包括自身）张开防空领域，主角与防空领域内的轴心国部队战斗时，每回合额外受到该防空炮20%攻击力的伤害", "#e6e099", 1],
 		[41, "谍报", "战后主角获得1层“谍报”debuff。“谍报”存在期间，主角使用的下一个任意技能无效化，随后消除一层debuff。可叠加。", "#d3d3d3"],
-		[42, "截断", "当前地图中，该敌人在场时，主角后勤值失效", "#d3d3d3"],
+		[42, "截断", "当前地图中，该敌人在场时，主角后勤值失效", "#228b22"],
 		[43, "超压", "该陆军单位的穿甲值大于主角装甲值时，造成的回合伤害额外提升40%", "#ff8c00"],
 		[44, "神风特攻", function (enemy) { return "丧心病狂且泯灭人性的碳基制导系统。不攻击，" + (enemy.spd ?? 0) + "回合后撞击主角，造成1倍雷击伤害和2层惊慌debuff。", "#e6e099" }],
 		[45, "警戒", "若主角与该敌人发生战斗，则永久为全图轴心国部队提供10%的攻击力加成", "#e6e099"],
@@ -1531,8 +1531,6 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		guaiwu.tpn = Math.max(0, guaiwu.tpn - 6)
 	} else if (flags.skill === 6 && !flags.spy) { //技能6：Z字规避
 		guaiwu.tpn = Math.max(0, guaiwu.tpn - 2)
-	} else if (flags.skill === 12 && !flags.spy) { //从海底出击
-		guaiwu.hp -= yongshi.top * Math.max(1, 8 - guaiwu.dod);
 	}
 	//战斗伤害计算
 	//总伤害计算（先攻、倍率调整等）
@@ -1710,6 +1708,9 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		if (junzhong === '海军') { //海军鱼雷生效
 			if (turn % yongshi.cd === 0 && topwork) {
 				hero_torpedo += yongshi.top * Math.max(0, (yongshi.tpn - realdod)); //鱼雷闪避
+			}
+			if (flags.skill === 12 && turn === 1 && !flags.spy) { //从海底出击
+				hero_torpedo += yongshi.top * Math.max(0, (8 - realdod));
 			}
 			if (fb === 'beautifighter' && turn === 3) { //英俊战士
 				hero_skytorpedo += yongshi.top * Math.max(0, (3 - realdod));
