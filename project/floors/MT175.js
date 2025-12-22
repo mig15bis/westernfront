@@ -27,8 +27,8 @@ main.floors.MT175=
                 "function": "function(){\nflags.learned[13]=true\n}"
             },
             "\t[系统提示]习得新技能：金牌损管",
-            "\t[系统提示]\f[skill13.jpg,170,50]金牌损管（180指挥点）：下一场与敌人海军的战斗结束后，如果剩余血量不足10%，则恢复全部血量（战术技能）。",
-            "\t[历史来源]\f[skill13.jpg,170,50]二战时期，美国海军的损害管制人员（简称损管）实力惊人，经常像开了挂一样的把奄奄一息的战舰奇迹般的抢救回来。例如，美军“约克城”号航空母舰在珊瑚海海战中遭受重创，日军预计这艘航母最起码要修三个月才能出海，可美军的损管硬是在3天之内就修好了航母并送上中途岛战场。在中途岛战役中，约克城号又被日军轰炸机击中数次，可当天下午日军飞机再次赶来，却发现约克城号就像崭新出厂一样，让他们误以为这是另一艘同型号航母。类似的案例数不胜数。于是，人们便把二战期间的美国海军损管人员称为“氪金损管”。",
+            "\t[系统提示]\f[skill13.jpg,90,50]金牌损管（180指挥点）：下一场与敌人海军的战斗结束后，如果剩余血量不足10%，则恢复全部血量（战术技能）。",
+            "\t[历史来源]\f[skill13.jpg,90,50]二战时期，美国海军的损害管制人员（简称损管）实力惊人，经常像开了挂一样的把奄奄一息的战舰奇迹般的抢救回来。例如，美军“约克城”号航空母舰在珊瑚海海战中遭受重创，日军预计这艘航母最起码要修三个月才能出海，可美军的损管硬是在3天之内就修好了航母并送上中途岛战场。在中途岛战役中，约克城号又被日军轰炸机击中数次，可当天下午日军飞机再次赶来，却发现约克城号就像崭新出厂一样，让他们误以为这是另一艘同型号航母。类似的案例数不胜数。于是，人们便把二战期间的美国海军损管人员称为“氪金损管”。不过，现在的美军损管似乎从“氪佬”变成了“零充”，工作效率大不如前。2020年，美国“好人理查德”号两栖攻击舰起火，结果这把火烧了4天才被扑灭，“好人理查德”就这样变成了“熟人理查德”，宣告报废。",
             {
                 "type": "hide",
                 "remove": true
@@ -77,6 +77,19 @@ main.floors.MT175=
                 "name": "flag:door_MT175_1_4",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT175_1_4===5)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            1,
+                            4
+                        ]
+                    }
+                ]
             }
         ],
         "4,3": [
@@ -85,6 +98,19 @@ main.floors.MT175=
                 "name": "flag:door_MT175_1_4",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT175_1_4===5)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            1,
+                            4
+                        ]
+                    }
+                ]
             }
         ],
         "3,4": [
@@ -93,6 +119,19 @@ main.floors.MT175=
                 "name": "flag:door_MT175_1_4",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT175_1_4===5)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            1,
+                            4
+                        ]
+                    }
+                ]
             }
         ],
         "2,5": [
@@ -101,6 +140,19 @@ main.floors.MT175=
                 "name": "flag:door_MT175_1_4",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT175_1_4===5)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            1,
+                            4
+                        ]
+                    }
+                ]
             }
         ],
         "4,5": [
@@ -109,6 +161,19 @@ main.floors.MT175=
                 "name": "flag:door_MT175_1_4",
                 "operator": "+=",
                 "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:door_MT175_1_4===5)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            1,
+                            4
+                        ]
+                    }
+                ]
             }
         ]
     },
@@ -116,24 +181,7 @@ main.floors.MT175=
     "afterOpenDoor": {},
     "autoEvent": {
         "1,4": {
-            "0": {
-                "condition": "flag:door_MT175_1_4==5",
-                "currentFloor": true,
-                "priority": 0,
-                "delayExecute": false,
-                "multiExecute": false,
-                "data": [
-                    {
-                        "type": "openDoor"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "flag:door_MT175_1_4",
-                        "operator": "=",
-                        "value": "null"
-                    }
-                ]
-            }
+            "1": null
         }
     },
     "cannotMove": {},

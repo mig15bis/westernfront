@@ -5,8 +5,8 @@ main.floors.MT177=
     "name": "阿拉曼",
     "width": 15,
     "height": 15,
-    "canFlyTo": true,
-    "canFlyFrom": true,
+    "canFlyTo": false,
+    "canFlyFrom": false,
     "canUseQuickShop": true,
     "cannotViewMap": false,
     "images": [],
@@ -46,14 +46,24 @@ main.floors.MT177=
             "type": "previewUI",
             "action": [
                 {
+                    "type": "setValue",
+                    "name": "flag:bosshp",
+                    "value": "4"
+                },
+                {
+                    "type": "setValue",
+                    "name": "flag:bosshpmax",
+                    "value": "4"
+                },
+                {
                     "type": "strokeRect",
                     "x": 130,
                     "y": 64,
-                    "width": 64,
+                    "width": 256,
                     "height": 16,
                     "style": [
                         255,
-                        165,
+                        255,
                         0,
                         1
                     ],
@@ -63,7 +73,7 @@ main.floors.MT177=
                     "type": "fillRect",
                     "x": 130,
                     "y": 64,
-                    "width": 64,
+                    "width": 256,
                     "height": 16,
                     "style": [
                         255,
@@ -73,85 +83,23 @@ main.floors.MT177=
                     ]
                 },
                 {
-                    "type": "strokeRect",
-                    "x": 194,
-                    "y": 64,
-                    "width": 64,
-                    "height": 16,
+                    "type": "fillBoldText",
+                    "x": 130,
+                    "y": 48,
                     "style": [
                         255,
-                        165,
+                        0,
                         0,
                         1
                     ],
-                    "lineWidth": 5
-                },
-                {
-                    "type": "fillRect",
-                    "x": 194,
-                    "y": 64,
-                    "width": 64,
-                    "height": 16,
-                    "style": [
+                    "strokeStyle": [
                         255,
-                        0,
-                        0,
-                        1
-                    ]
-                },
-                {
-                    "type": "strokeRect",
-                    "x": 258,
-                    "y": 64,
-                    "width": 64,
-                    "height": 16,
-                    "style": [
-                        255,
-                        165,
+                        140,
                         0,
                         1
                     ],
-                    "lineWidth": 5
-                },
-                {
-                    "type": "fillRect",
-                    "x": 258,
-                    "y": 64,
-                    "width": 64,
-                    "height": 16,
-                    "style": [
-                        255,
-                        0,
-                        0,
-                        1
-                    ]
-                },
-                {
-                    "type": "strokeRect",
-                    "x": 322,
-                    "y": 64,
-                    "width": 64,
-                    "height": 16,
-                    "style": [
-                        255,
-                        165,
-                        0,
-                        1
-                    ],
-                    "lineWidth": 5
-                },
-                {
-                    "type": "fillRect",
-                    "x": 322,
-                    "y": 64,
-                    "width": 64,
-                    "height": 16,
-                    "style": [
-                        255,
-                        0,
-                        0,
-                        1
-                    ]
+                    "font": "20px number",
+                    "text": "4/4"
                 }
             ]
         },
@@ -163,64 +111,6 @@ main.floors.MT177=
                 300,
                 380
             ]
-        },
-        {
-            "type": "setBlock",
-            "number": "panzer38t",
-            "loc": [
-                [
-                    5,
-                    7
-                ]
-            ],
-            "async": true
-        },
-        {
-            "type": "setBlock",
-            "number": "panzer3f",
-            "loc": [
-                [
-                    7,
-                    6
-                ]
-            ],
-            "async": true
-        },
-        {
-            "type": "setBlock",
-            "number": "panzer3f",
-            "loc": [
-                [
-                    7,
-                    8
-                ]
-            ],
-            "async": true
-        },
-        {
-            "type": "setBlock",
-            "number": "motorinf",
-            "loc": [
-                [
-                    5,
-                    5
-                ]
-            ],
-            "async": true
-        },
-        {
-            "type": "setBlock",
-            "number": "motorinf",
-            "loc": [
-                [
-                    5,
-                    9
-                ]
-            ],
-            "async": true
-        },
-        {
-            "type": "waitAsync"
         }
     ],
     "eachArrive": [],
@@ -256,10 +146,6 @@ main.floors.MT177=
                 "pos": 6
             },
             {
-                "type": "function",
-                "function": "function(){\nflags.skillList=[0,0,0,0,0,0,0]\n}"
-            },
-            {
                 "type": "update"
             },
             {
@@ -267,7 +153,7 @@ main.floors.MT177=
                 "time": 500
             },
             {
-                "type": "hideStatusBar"
+                "type": "hideui"
             },
             {
                 "type": "update"
@@ -310,7 +196,7 @@ main.floors.MT177=
             },
             {
                 "type": "function",
-                "function": "function(){\nvar a = flags.mission[core.getFlag('stage')];\ncore.setFlag('@temp@A', a[0] + a[1] + a[2]);\n}"
+                "function": "function(){\nvar a = core.taskSystem.checkTask(0) ? 1 : 0,\n\tb = core.taskSystem.checkTask(1) ? 1 : 0,\n\tc = core.taskSystem.checkTask(2) ? 1 : 0;\ncore.setFlag('@temp@A', a + b + c);\n}"
             },
             {
                 "type": "if",
@@ -336,11 +222,6 @@ main.floors.MT177=
                             90
                         ],
                         "opacity": 1,
-                        "time": 500,
-                        "async": true
-                    },
-                    {
-                        "type": "sleep",
                         "time": 500
                     },
                     {
@@ -367,11 +248,6 @@ main.floors.MT177=
                                     90
                                 ],
                                 "opacity": 1,
-                                "time": 500,
-                                "async": true
-                            },
-                            {
-                                "type": "sleep",
                                 "time": 500
                             },
                             {
@@ -398,11 +274,6 @@ main.floors.MT177=
                                             90
                                         ],
                                         "opacity": 1,
-                                        "time": 500,
-                                        "async": true
-                                    },
-                                    {
-                                        "type": "sleep",
                                         "time": 500
                                     }
                                 ],
@@ -457,6 +328,9 @@ main.floors.MT177=
             },
             {
                 "type": "clearMap"
+            },
+            {
+                "type": "submitTask"
             },
             {
                 "type": "moveImage",
@@ -522,7 +396,7 @@ main.floors.MT177=
                     "隆美尔的部队也损失惨重，双方谁都没有能力再打下去。就这样，阿拉曼防线的战局进入了僵持状态。",
                     "虽然看上去英军损失更大，但英军在一开始就成功阻止隆美尔占领亚历山大港，已经取得了战略上的胜利，只是没能继续扩大战果罢了。",
                     "第一次阿拉曼战役是一次实打实的消耗战，英军靠着巨大的数量优势挺了过来，在接下来一段时间内，他们会尽量恢复战力。但隆美尔就没那么幸运了，遭受重创的他短时间内得不到更多的补给。",
-                    "几个月后，盟军将在第二次阿拉曼战役中，一举扭转整个北非战场的形式。"
+                    "沙漠之狐，现在终于陷入了危机。"
                 ]
             },
             {
@@ -565,12 +439,12 @@ main.floors.MT177=
                             },
                             "英军在北非的连续溃败，使国内民众和前线士兵逐渐失去信心。第一次阿拉曼战役后，虽然英军取得了战略上的胜利，与德军进入僵持状态，但在战术上，英国领导层对于英军承受的巨大损失感到非常不满。",
                             "尽管奥金莱克并没有犯什么特别严重的错误，但高层还是决定将他换下，由一位新的指挥官代替。这个新上任的指挥官，名叫伯纳德·劳·蒙哥马利。",
-                            "蒙哥马利是一位老将，曾参与过第一次世界大战。在二战前期，他曾带领部队与法军一同作战，并从敦刻尔克撤回本土。经过他本人独特军事理解和练兵手段，他的部队是英军中军事素养较高的一批。",
+                            "蒙哥马利是一位老将，曾参与过第一次世界大战。在二战前期，他曾带领部队与法军一同作战，并从敦刻尔克撤回本土。经过他本人独特的军事理解和练兵手段，他的部队是英军中军事素养较高的一批。",
                             "此时的蒙哥马利已经是一位中将。他来到北非担任司令官后，发现守卫这里的英国第8军已经被隆美尔吓破了胆，士气低落。于是他到这里第一件事就是发表演讲，努力提振士气，撤掉不称职的军官，重整军备。",
                             "在蒙哥马利的领导下，英军的战力正在迅速恢复，而隆美尔这边的状况却很糟，德意联军的各种条件都非常差，物资也很匮乏，之后又在阿拉姆哈勒法战役中被蒙哥马利击败，情况更加雪上加霜。",
                             "隆美尔本人也没好到哪去。他患上了严重的胃病，不得不回国治疗，他的部队失去了这位强力核心，不再敢轻举妄动，于是在前线埋下大量地雷，转为防御。",
                             "蒙哥马利认识到，一举击溃德军的机会来了。在充分积聚兵力后，英军展开了行动。",
-                            "英军士兵并没有意识到，他们即将面对的，将是“魔鬼的花园”。",
+                            "自认为准备充分的英军，一脚踩进了德军为其精心准备的，“魔鬼的花园”。",
                             {
                                 "type": "sleep",
                                 "time": 500
@@ -646,11 +520,48 @@ main.floors.MT177=
                 "condition": "(flag:MT177boss===0)",
                 "true": [
                     {
-                        "type": "clearMap",
-                        "x": 322,
-                        "y": 64,
-                        "width": 64,
-                        "height": 16
+                        "type": "previewUI",
+                        "action": [
+                            {
+                                "type": "setValue",
+                                "name": "flag:bosshp",
+                                "operator": "-=",
+                                "value": "1"
+                            },
+                            {
+                                "type": "clearMap",
+                                "x": 128,
+                                "y": 30,
+                                "width": 100,
+                                "height": 30
+                            },
+                            {
+                                "type": "clearMap",
+                                "x": "386 - ((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                "y": 64,
+                                "width": "((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                "height": 16
+                            },
+                            {
+                                "type": "fillBoldText",
+                                "x": 130,
+                                "y": 48,
+                                "style": [
+                                    255,
+                                    0,
+                                    0,
+                                    1
+                                ],
+                                "strokeStyle": [
+                                    255,
+                                    140,
+                                    0,
+                                    1
+                                ],
+                                "font": "20px number",
+                                "text": "3/4"
+                            }
+                        ]
                     },
                     {
                         "type": "setBlock",
@@ -704,8 +615,8 @@ main.floors.MT177=
                         "number": "me109g6",
                         "loc": [
                             [
-                                12,
-                                6
+                                5,
+                                4
                             ]
                         ],
                         "time": 0,
@@ -716,8 +627,32 @@ main.floors.MT177=
                         "number": "me109g6",
                         "loc": [
                             [
-                                12,
-                                8
+                                6,
+                                4
+                            ]
+                        ],
+                        "time": 0,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109g6",
+                        "loc": [
+                            [
+                                5,
+                                10
+                            ]
+                        ],
+                        "time": 0,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109g6",
+                        "loc": [
+                            [
+                                6,
+                                10
                             ]
                         ],
                         "time": 0,
@@ -728,7 +663,7 @@ main.floors.MT177=
                         "number": "ju88a",
                         "loc": [
                             [
-                                13,
+                                7,
                                 7
                             ]
                         ],
@@ -740,7 +675,31 @@ main.floors.MT177=
                         "number": "motorinf",
                         "loc": [
                             [
-                                7,
+                                5,
+                                9
+                            ]
+                        ],
+                        "time": 0,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "motorinf",
+                        "loc": [
+                            [
+                                6,
+                                9
+                            ]
+                        ],
+                        "time": 0,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "motorinf",
+                        "loc": [
+                            [
+                                5,
                                 5
                             ]
                         ],
@@ -752,8 +711,8 @@ main.floors.MT177=
                         "number": "motorinf",
                         "loc": [
                             [
-                                7,
-                                9
+                                6,
+                                5
                             ]
                         ],
                         "time": 0,
@@ -764,8 +723,44 @@ main.floors.MT177=
                         "number": "panzer3f",
                         "loc": [
                             [
-                                8,
-                                7
+                                5,
+                                6
+                            ]
+                        ],
+                        "time": 0,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer3f",
+                        "loc": [
+                            [
+                                5,
+                                8
+                            ]
+                        ],
+                        "time": 0,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4f",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4f",
+                        "loc": [
+                            [
+                                6,
+                                8
                             ]
                         ],
                         "time": 0,
@@ -781,11 +776,48 @@ main.floors.MT177=
                         "condition": "(flag:MT177boss===1)",
                         "true": [
                             {
-                                "type": "clearMap",
-                                "x": 258,
-                                "y": 64,
-                                "width": 64,
-                                "height": 16
+                                "type": "previewUI",
+                                "action": [
+                                    {
+                                        "type": "setValue",
+                                        "name": "flag:bosshp",
+                                        "operator": "-=",
+                                        "value": "1"
+                                    },
+                                    {
+                                        "type": "clearMap",
+                                        "x": 128,
+                                        "y": 30,
+                                        "width": 100,
+                                        "height": 30
+                                    },
+                                    {
+                                        "type": "clearMap",
+                                        "x": "386 - ((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                        "y": 64,
+                                        "width": "((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                        "height": 16
+                                    },
+                                    {
+                                        "type": "fillBoldText",
+                                        "x": 130,
+                                        "y": 48,
+                                        "style": [
+                                            255,
+                                            0,
+                                            0,
+                                            1
+                                        ],
+                                        "strokeStyle": [
+                                            255,
+                                            140,
+                                            0,
+                                            1
+                                        ],
+                                        "font": "20px number",
+                                        "text": "2/4"
+                                    }
+                                ]
                             },
                             {
                                 "type": "setBlock",
@@ -846,7 +878,7 @@ main.floors.MT177=
                                 "loc": [
                                     [
                                         10,
-                                        5
+                                        4
                                     ]
                                 ],
                                 "time": 0,
@@ -858,7 +890,7 @@ main.floors.MT177=
                                 "loc": [
                                     [
                                         10,
-                                        9
+                                        10
                                     ]
                                 ],
                                 "time": 0,
@@ -869,8 +901,8 @@ main.floors.MT177=
                                 "number": "howitzer105",
                                 "loc": [
                                     [
-                                        8,
-                                        7
+                                        10,
+                                        2
                                     ]
                                 ],
                                 "time": 0,
@@ -879,10 +911,46 @@ main.floors.MT177=
                             {
                                 "type": "setBlock",
                                 "number": "howitzer105",
+                                "loc": [
+                                    [
+                                        10,
+                                        12
+                                    ]
+                                ],
+                                "time": 0,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4f",
+                                "loc": [
+                                    [
+                                        13,
+                                        11
+                                    ]
+                                ],
+                                "time": 0,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4f",
+                                "loc": [
+                                    [
+                                        13,
+                                        3
+                                    ]
+                                ],
+                                "time": 0,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer3f",
                                 "loc": [
                                     [
                                         12,
-                                        7
+                                        2
                                     ]
                                 ],
                                 "time": 0,
@@ -890,23 +958,11 @@ main.floors.MT177=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4f",
+                                "number": "panzer3f",
                                 "loc": [
                                     [
-                                        7,
-                                        6
-                                    ]
-                                ],
-                                "time": 0,
-                                "async": true
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "panzer4f",
-                                "loc": [
-                                    [
-                                        7,
-                                        8
+                                        12,
+                                        12
                                     ]
                                 ],
                                 "time": 0,
@@ -917,8 +973,44 @@ main.floors.MT177=
                                 "number": "me109g6",
                                 "loc": [
                                     [
-                                        13,
-                                        7
+                                        10,
+                                        1
+                                    ]
+                                ],
+                                "time": 0,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "me109g6",
+                                "loc": [
+                                    [
+                                        10,
+                                        13
+                                    ]
+                                ],
+                                "time": 0,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "mg42",
+                                "loc": [
+                                    [
+                                        12,
+                                        1
+                                    ]
+                                ],
+                                "time": 0,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "mg42",
+                                "loc": [
+                                    [
+                                        12,
+                                        13
                                     ]
                                 ],
                                 "time": 0,
@@ -934,11 +1026,48 @@ main.floors.MT177=
                                 "condition": "(flag:MT177boss===2)",
                                 "true": [
                                     {
-                                        "type": "clearMap",
-                                        "x": 194,
-                                        "y": 64,
-                                        "width": 64,
-                                        "height": 16
+                                        "type": "previewUI",
+                                        "action": [
+                                            {
+                                                "type": "setValue",
+                                                "name": "flag:bosshp",
+                                                "operator": "-=",
+                                                "value": "1"
+                                            },
+                                            {
+                                                "type": "clearMap",
+                                                "x": 128,
+                                                "y": 30,
+                                                "width": 100,
+                                                "height": 30
+                                            },
+                                            {
+                                                "type": "clearMap",
+                                                "x": "386 - ((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                                "y": 64,
+                                                "width": "((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                                "height": 16
+                                            },
+                                            {
+                                                "type": "fillBoldText",
+                                                "x": 130,
+                                                "y": 48,
+                                                "style": [
+                                                    255,
+                                                    0,
+                                                    0,
+                                                    1
+                                                ],
+                                                "strokeStyle": [
+                                                    255,
+                                                    140,
+                                                    0,
+                                                    1
+                                                ],
+                                                "font": "20px number",
+                                                "text": "1/4"
+                                            }
+                                        ]
                                     },
                                     {
                                         "type": "setBlock",
@@ -993,8 +1122,8 @@ main.floors.MT177=
                                         "number": "panzer3f",
                                         "loc": [
                                             [
-                                                9,
-                                                5
+                                                8,
+                                                9
                                             ]
                                         ],
                                         "time": 0,
@@ -1005,8 +1134,8 @@ main.floors.MT177=
                                         "number": "panzer3f",
                                         "loc": [
                                             [
-                                                9,
-                                                9
+                                                8,
+                                                5
                                             ]
                                         ],
                                         "time": 0,
@@ -1016,7 +1145,21 @@ main.floors.MT177=
                                         "type": "setEnemy",
                                         "id": "rommel",
                                         "name": "special",
-                                        "value": "[25,38,57,62]",
+                                        "value": "[25,38,57,59,62]",
+                                        "norefresh": true
+                                    },
+                                    {
+                                        "type": "setEnemy",
+                                        "id": "rommel",
+                                        "name": "zone",
+                                        "value": "5000",
+                                        "norefresh": true
+                                    },
+                                    {
+                                        "type": "setEnemy",
+                                        "id": "rommel",
+                                        "name": "range",
+                                        "value": "3",
                                         "norefresh": true
                                     },
                                     {
@@ -1042,11 +1185,54 @@ main.floors.MT177=
                                         "condition": "(flag:MT177boss===3)",
                                         "true": [
                                             {
-                                                "type": "clearMap",
-                                                "x": 130,
-                                                "y": 64,
-                                                "width": 64,
-                                                "height": 16
+                                                "type": "previewUI",
+                                                "action": [
+                                                    {
+                                                        "type": "setValue",
+                                                        "name": "flag:bosshp",
+                                                        "operator": "-=",
+                                                        "value": "1"
+                                                    },
+                                                    {
+                                                        "type": "clearMap",
+                                                        "x": 128,
+                                                        "y": 30,
+                                                        "width": 100,
+                                                        "height": 30
+                                                    },
+                                                    {
+                                                        "type": "clearMap",
+                                                        "x": "386 - ((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                                        "y": 64,
+                                                        "width": "((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                                        "height": 16
+                                                    },
+                                                    {
+                                                        "type": "fillBoldText",
+                                                        "x": 130,
+                                                        "y": 48,
+                                                        "style": [
+                                                            255,
+                                                            0,
+                                                            0,
+                                                            1
+                                                        ],
+                                                        "strokeStyle": [
+                                                            255,
+                                                            140,
+                                                            0,
+                                                            1
+                                                        ],
+                                                        "font": "20px number",
+                                                        "text": "0/4"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "type": "setValue",
+                                                "name": "flag:MT177boss",
+                                                "operator": "+=",
+                                                "value": "1"
                                             },
                                             {
                                                 "type": "setBlock",
@@ -1058,12 +1244,6 @@ main.floors.MT177=
                                                     ]
                                                 ],
                                                 "time": 0
-                                            },
-                                            {
-                                                "type": "setValue",
-                                                "name": "flag:MT177boss",
-                                                "operator": "+=",
-                                                "value": "1"
                                             },
                                             {
                                                 "type": "sleep",
@@ -1079,10 +1259,6 @@ main.floors.MT177=
                                                 ]
                                             },
                                             "\t[系统提示]主线boss战 胜利！",
-                                            {
-                                                "type": "function",
-                                                "function": "function(){\nflags.mission[26][0]=true\n}"
-                                            },
                                             {
                                                 "type": "hide",
                                                 "loc": [
@@ -1109,6 +1285,20 @@ main.floors.MT177=
                                                 ]
                                             },
                                             {
+                                                "type": "openDoor",
+                                                "loc": [
+                                                    8,
+                                                    3
+                                                ]
+                                            },
+                                            {
+                                                "type": "openDoor",
+                                                "loc": [
+                                                    8,
+                                                    11
+                                                ]
+                                            },
+                                            {
                                                 "type": "clearMap",
                                                 "x": 0,
                                                 "y": 0,
@@ -1127,25 +1317,572 @@ main.floors.MT177=
                     }
                 ]
             }
+        ],
+        "10,12": [
+            {
+                "type": "setValue",
+                "name": "flag:MT177door",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT177door===10)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            11,
+                            4
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            11,
+                            10
+                        ]
+                    }
+                ]
+            }
+        ],
+        "10,13": [
+            {
+                "type": "setValue",
+                "name": "flag:MT177door",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT177door===10)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            11,
+                            4
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            11,
+                            10
+                        ]
+                    }
+                ]
+            }
+        ],
+        "11,12": [
+            {
+                "type": "setValue",
+                "name": "flag:MT177door",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT177door===10)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            11,
+                            4
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            11,
+                            10
+                        ]
+                    }
+                ]
+            }
+        ],
+        "11,13": [
+            {
+                "type": "setValue",
+                "name": "flag:MT177door",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT177door===10)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            11,
+                            4
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            11,
+                            10
+                        ]
+                    }
+                ]
+            }
+        ],
+        "12,12": [
+            {
+                "type": "setValue",
+                "name": "flag:MT177door",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT177door===10)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            11,
+                            4
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            11,
+                            10
+                        ]
+                    }
+                ]
+            }
+        ],
+        "12,13": [
+            {
+                "type": "setValue",
+                "name": "flag:MT177door",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT177door===10)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            11,
+                            4
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            11,
+                            10
+                        ]
+                    }
+                ]
+            }
+        ],
+        "13,13": [
+            {
+                "type": "setValue",
+                "name": "flag:MT177door",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT177door===10)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            11,
+                            4
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            11,
+                            10
+                        ]
+                    }
+                ]
+            }
+        ],
+        "13,12": [
+            {
+                "type": "setValue",
+                "name": "flag:MT177door",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT177door===10)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            11,
+                            4
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            11,
+                            10
+                        ]
+                    }
+                ]
+            }
+        ],
+        "13,11": [
+            {
+                "type": "setValue",
+                "name": "flag:MT177door",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT177door===10)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            11,
+                            4
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            11,
+                            10
+                        ]
+                    }
+                ]
+            }
+        ],
+        "13,10": [
+            {
+                "type": "setValue",
+                "name": "flag:MT177door",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT177door===10)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            11,
+                            4
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            11,
+                            10
+                        ]
+                    }
+                ]
+            }
+        ],
+        "13,4": [
+            {
+                "type": "setValue",
+                "name": "flag:MT177door",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT177door===10)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            11,
+                            4
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            11,
+                            10
+                        ]
+                    }
+                ]
+            }
+        ],
+        "13,3": [
+            {
+                "type": "setValue",
+                "name": "flag:MT177door",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT177door===10)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            11,
+                            4
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            11,
+                            10
+                        ]
+                    }
+                ]
+            }
+        ],
+        "13,2": [
+            {
+                "type": "setValue",
+                "name": "flag:MT177door",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT177door===10)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            11,
+                            4
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            11,
+                            10
+                        ]
+                    }
+                ]
+            }
+        ],
+        "13,1": [
+            {
+                "type": "setValue",
+                "name": "flag:MT177door",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT177door===10)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            11,
+                            4
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            11,
+                            10
+                        ]
+                    }
+                ]
+            }
+        ],
+        "12,1": [
+            {
+                "type": "setValue",
+                "name": "flag:MT177door",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT177door===10)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            11,
+                            4
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            11,
+                            10
+                        ]
+                    }
+                ]
+            }
+        ],
+        "12,2": [
+            {
+                "type": "setValue",
+                "name": "flag:MT177door",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT177door===10)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            11,
+                            4
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            11,
+                            10
+                        ]
+                    }
+                ]
+            }
+        ],
+        "11,2": [
+            {
+                "type": "setValue",
+                "name": "flag:MT177door",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT177door===10)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            11,
+                            4
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            11,
+                            10
+                        ]
+                    }
+                ]
+            }
+        ],
+        "11,1": [
+            {
+                "type": "setValue",
+                "name": "flag:MT177door",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT177door===10)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            11,
+                            4
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            11,
+                            10
+                        ]
+                    }
+                ]
+            }
+        ],
+        "10,1": [
+            {
+                "type": "setValue",
+                "name": "flag:MT177door",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT177door===10)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            11,
+                            4
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            11,
+                            10
+                        ]
+                    }
+                ]
+            }
+        ],
+        "10,2": [
+            {
+                "type": "setValue",
+                "name": "flag:MT177door",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT177door===10)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            11,
+                            4
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            11,
+                            10
+                        ]
+                    }
+                ]
+            }
         ]
     },
     "afterGetItem": {},
     "afterOpenDoor": {},
     "autoEvent": {
         "0,0": {
-            "0": {
-                "condition": "core.searchBlock('panzer4f',['MT172','MT173','MT174','MT175']).length === 0",
-                "currentFloor": false,
-                "priority": 0,
-                "delayExecute": false,
-                "multiExecute": false,
-                "data": [
-                    {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[26][2]=true\n}"
-                    }
-                ]
-            },
             "1": null
         }
     },
@@ -1153,19 +1890,19 @@ main.floors.MT177=
     "cannotMoveIn": {},
     "map": [
     [150,150,150,150,150,150,150, 89,150,150,150,150,150,150,150],
-    [150,  0,  0,  0,  0,  0,  0, 85,  0,  0,  0,  0,  0,  0,150],
-    [150,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,150],
-    [150,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,150],
-    [150,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,150],
-    [150,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,150],
-    [150,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,150],
-    [ 92,  0,  0,  0,  0,  0,  0,  0,  0,  0,552,  0,  0,  0,150],
-    [150,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,150],
-    [150,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,150],
-    [150,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,150],
-    [150,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,150],
-    [150,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,150],
-    [150,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,150],
+    [150,  0,232,  0,  0,150,571, 85,571,150,  0,  0,  0,  0,150],
+    [150,404,150,  0,  0,150,518,518,518,150,  0,  0,  0,  0,150],
+    [150,  0,150,  0,150,150,150,150, 85,150,150,150,150,  0,150],
+    [150,250,150,404,150,  0,  0,150,  0,150,  0, 85,  0,  0,150],
+    [150,390,150,  0,150,  0,  0,150,  0,150,150,150,  0,  0,150],
+    [150,150,150,  0,150,  0,  0,150,  0,  0,  0,  0,  0,  0,150],
+    [ 92,  0,  0,403,  0,  0,  0,  0,  0,  0,552,  0,  0,  0,150],
+    [150,150,150,  0,150,  0,  0,150,  0,  0,  0,  0,  0,  0,150],
+    [150,390,150,  0,150,  0,  0,150,  0,150,150,150,  0,  0,150],
+    [150,250,150,404,150,  0,  0,150,  0,150,  0, 85,  0,  0,150],
+    [150,  0,150,  0,150,150,150,150, 85,150,150,150,150,  0,150],
+    [150,404,150,  0,  0,150,588,588,588,150,  0,  0,  0,  0,150],
+    [150,  0,232,  0,  0,150,588,588,588,150,  0,  0,  0,  0,150],
     [150,150,150,150,150,150,150,150,150,150,150,150,150,150,150]
 ],
     "bgmap": [

@@ -5,8 +5,8 @@ main.floors.MT169=
     "name": "利比亚",
     "width": 15,
     "height": 15,
-    "canFlyTo": true,
-    "canFlyFrom": true,
+    "canFlyTo": false,
+    "canFlyFrom": false,
     "canUseQuickShop": true,
     "cannotViewMap": false,
     "images": [],
@@ -128,7 +128,7 @@ main.floors.MT169=
                 "time": 500
             },
             {
-                "type": "hideStatusBar"
+                "type": "hideui"
             },
             {
                 "type": "update"
@@ -286,7 +286,7 @@ main.floors.MT169=
             },
             {
                 "type": "drawTextContent",
-                "text": "   指挥官阁下发起了一次成功的空袭\n。所有的德军补给车，一辆不剩的全都\n被炸飞到天上去了。\n   即便德军夺取了托布鲁克，只要地\n中海的主要制海权还在我们手上，敌人\n的补给就始终成大问题。从空中攻击他\n们的补给线，隆美尔的处境会雪上加霜\n，我们的胜算也会增加一些。",
+                "text": "   指挥官阁下发起了一次成功的空袭\n。所有的德军补给车，一辆不剩的全都\n被炸成了废铁。\n   即便德军夺取了托布鲁克，只要地\n中海的主要制海权还在我们手上，敌人\n的补给就始终成大问题。从空中攻击他\n们的补给线，隆美尔的处境会雪上加霜\n，我们的胜算也会增加一些。",
                 "left": 60,
                 "top": 100,
                 "align": "left",
@@ -423,9 +423,11 @@ main.floors.MT169=
                         ]
                     },
                     {
-                        "type": "setValue",
-                        "name": "flag:door_MT169_7_1",
-                        "value": "0"
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            13
+                        ]
                     }
                 ]
             }
@@ -449,9 +451,11 @@ main.floors.MT169=
                         ]
                     },
                     {
-                        "type": "setValue",
-                        "name": "flag:door_MT169_7_1",
-                        "value": "0"
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            13
+                        ]
                     }
                 ]
             }
@@ -475,9 +479,11 @@ main.floors.MT169=
                         ]
                     },
                     {
-                        "type": "setValue",
-                        "name": "flag:door_MT169_7_1",
-                        "value": "0"
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            13
+                        ]
                     }
                 ]
             }
@@ -501,9 +507,11 @@ main.floors.MT169=
                         ]
                     },
                     {
-                        "type": "setValue",
-                        "name": "flag:door_MT169_7_1",
-                        "value": "0"
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            13
+                        ]
                     }
                 ]
             }
@@ -527,9 +535,11 @@ main.floors.MT169=
                         ]
                     },
                     {
-                        "type": "setValue",
-                        "name": "flag:door_MT169_7_1",
-                        "value": "0"
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            13
+                        ]
                     }
                 ]
             }
@@ -553,9 +563,11 @@ main.floors.MT169=
                         ]
                     },
                     {
-                        "type": "setValue",
-                        "name": "flag:door_MT169_7_1",
-                        "value": "0"
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            13
+                        ]
                     }
                 ]
             }
@@ -579,9 +591,11 @@ main.floors.MT169=
                         ]
                     },
                     {
-                        "type": "setValue",
-                        "name": "flag:door_MT169_7_1",
-                        "value": "0"
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            13
+                        ]
                     }
                 ]
             }
@@ -605,9 +619,11 @@ main.floors.MT169=
                         ]
                     },
                     {
-                        "type": "setValue",
-                        "name": "flag:door_MT169_7_1",
-                        "value": "0"
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            13
+                        ]
                     }
                 ]
             }
@@ -631,9 +647,11 @@ main.floors.MT169=
                         ]
                     },
                     {
-                        "type": "setValue",
-                        "name": "flag:door_MT169_7_1",
-                        "value": "0"
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            13
+                        ]
                     }
                 ]
             }
@@ -657,9 +675,11 @@ main.floors.MT169=
                         ]
                     },
                     {
-                        "type": "setValue",
-                        "name": "flag:door_MT169_7_1",
-                        "value": "0"
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            13
+                        ]
                     }
                 ]
             }
@@ -683,9 +703,11 @@ main.floors.MT169=
                         ]
                     },
                     {
-                        "type": "setValue",
-                        "name": "flag:door_MT169_7_1",
-                        "value": "0"
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            13
+                        ]
                     }
                 ]
             }
@@ -709,9 +731,11 @@ main.floors.MT169=
                         ]
                     },
                     {
-                        "type": "setValue",
-                        "name": "flag:door_MT169_7_1",
-                        "value": "0"
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            13
+                        ]
                     }
                 ]
             }
@@ -735,9 +759,11 @@ main.floors.MT169=
                         ]
                     },
                     {
-                        "type": "setValue",
-                        "name": "flag:door_MT169_7_1",
-                        "value": "0"
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            13
+                        ]
                     }
                 ]
             }
@@ -761,9 +787,11 @@ main.floors.MT169=
                         ]
                     },
                     {
-                        "type": "setValue",
-                        "name": "flag:door_MT169_7_1",
-                        "value": "0"
+                        "type": "openDoor",
+                        "loc": [
+                            7,
+                            13
+                        ]
                     }
                 ]
             }

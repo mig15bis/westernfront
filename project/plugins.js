@@ -3772,6 +3772,8 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 				damage += "X";
 			if (core.enemys.hasSpecial(enemy, 63))
 				damage += "阵";
+			if (core.enemys.hasSpecial(enemy, 66))
+				damage += "狙";
 		}
 
 		return {
@@ -3867,8 +3869,26 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 				if (core.status.hero.hp > core.status.hero.hpmax) {
 					core.status.hero.hp = core.status.hero.hpmax;
 					core.drawHeroAnimate('hpfull');
+					if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
+						core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
+						if (!core.isReplaying() && !main.replayChecking) {
+							core.drawHeroAnimate('sniper');
+						}
+						if (hero.hp <= 0) {
+							core.events.lose();
+						}
+					}
 				} else {
 					core.drawHeroAnimate('heal');
+					if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
+						core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
+						if (!core.isReplaying() && !main.replayChecking) {
+							core.drawHeroAnimate('sniper');
+						}
+						if (hero.hp <= 0) {
+							core.events.lose();
+						}
+					}
 				}
 			},
 			description: '血量立即恢复25%'
@@ -3929,6 +3949,12 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 								delete((flags.enemyOnPoint || {})[floorId] || {})[X + "," + Y];
 								delete flags.aoe[范围伤害目标];
 								core.removeBlock(X, Y);
+								if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
+									core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
+									if (hero.hp <= 0) {
+										core.events.lose();
+									}
+								}
 								core.insertAction(todo);
 							}
 						} else {
@@ -3956,6 +3982,12 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 							delete flags.aoe[范围伤害目标];
 							core.removeBlock(X, Y);
 							core.insertAction(todo);
+							if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
+								core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
+								if (hero.hp <= 0) {
+									core.events.lose();
+								}
+							}
 						}
 					} else {
 						hero.mana += 100;
@@ -4010,11 +4042,19 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 									core.hideImage(1, 0);
 									if (todo.length > 0) {
 										core.insertAction(todo);
+										core.unlockControl();
 									} else {
 										core.unlockControl();
 									}
 								})
 							});
+							if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
+								core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
+								core.drawHeroAnimate('sniper');
+								if (hero.hp <= 0) {
+									core.events.lose();
+								}
+							}
 						} else {
 							core.playSound('fighter.mp3');
 							core.showImage(1, 'aircraft1.png', null, [480, 32 * Y - 109], 1, 0, () => {
@@ -4048,12 +4088,22 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 								core.moveImage(1, [-195, 32 * Y - 109], 1, null, 500, () => {
 									core.hideImage(1, 0);
 									if (todo.length > 0) {
-										core.insertAction(todo)
+										core.insertAction(todo);
+										core.unlockControl();
 									} else {
 										core.unlockControl();
 									}
 								})
 							});
+							if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
+								core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
+								if (!core.isReplaying() && !main.replayChecking) {
+									core.drawHeroAnimate('sniper');
+								}
+								if (hero.hp <= 0) {
+									core.events.lose();
+								}
+							}
 						}
 					} else {
 						hero.mana += 100;
@@ -4091,6 +4141,15 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 				if (['lavaNet', 'mine'].includes(排雷)) {
 					core.removeBlock(core.nextX(), core.nextY());
 					core.playSound('005-System05.mp3');
+					if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
+						core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
+						if (!core.isReplaying() && !main.replayChecking) {
+							core.drawHeroAnimate('sniper');
+						}
+						if (hero.hp <= 0) {
+							core.events.lose();
+						}
+					}
 				} else {
 					core.playSound('error.mp3');
 					hero.mana += 20;
@@ -4154,6 +4213,12 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 							core.removeBlock(X, Y);
 							core.insertAction(todo);
 						}
+						if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
+							core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
+							if (hero.hp <= 0) {
+								core.events.lose();
+							}
+						}
 					} else {
 						hero.mana += 150;
 						core.drawTip("只能对水面舰艇使用");
@@ -4215,6 +4280,13 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 								}
 							})
 						});
+						if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
+							core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
+							core.drawHeroAnimate('sniper');
+							if (hero.hp <= 0) {
+								core.events.lose();
+							}
+						}
 					} else {
 						hero.mana += 150;
 						core.drawTip("只能对水面舰艇使用");
@@ -4290,6 +4362,12 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 								core.removeBlock(X, Y);
 								core.insertAction(todo);
 							}
+							if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
+								core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
+								if (hero.hp <= 0) {
+									core.events.lose();
+								}
+							}
 						} else {
 							let money = core.getEnemyValue(nextair, 'money', X, Y),
 								exp = core.getEnemyValue(nextair, 'exp', X, Y);
@@ -4315,6 +4393,12 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 							delete flags.aoe[范围伤害目标];
 							core.removeBlock(X, Y);
 							core.insertAction(todo);
+							if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
+								core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
+								if (hero.hp <= 0) {
+									core.events.lose();
+								}
+							}
 						}
 					} else {
 						hero.mana += 200;
@@ -4368,11 +4452,19 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 									core.hideImage(1, 0);
 									if (todo.length > 0) {
 										core.insertAction(todo);
+										core.unlockControl();
 									} else {
 										core.unlockControl();
 									}
 								})
 							});
+							if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
+								core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
+								core.drawHeroAnimate('sniper');
+								if (hero.hp <= 0) {
+									core.events.lose();
+								}
+							}
 						} else {
 							core.playSound('bomber3.mp3');
 							core.showImage(1, 'aircraft2.png', null, [480, 32 * Y - 109], 1, 0, () => {
@@ -4411,6 +4503,13 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 									}
 								})
 							});
+							if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
+								core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
+								core.drawHeroAnimate('sniper');
+								if (hero.hp <= 0) {
+									core.events.lose();
+								}
+							}
 						}
 					} else {
 						hero.mana += 200;

@@ -18,7 +18,6 @@ main.floors.MT172=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        
         {
             "type": "setCurtain",
             "time": 500
@@ -93,7 +92,7 @@ main.floors.MT172=
             "type": "setEnemy",
             "id": "italyinf5",
             "name": "hp",
-            "value": "65000",
+            "value": "55000",
             "norefresh": true
         },
         {
@@ -107,7 +106,7 @@ main.floors.MT172=
             "type": "setEnemy",
             "id": "italyinf6",
             "name": "hp",
-            "value": "60000",
+            "value": "50000",
             "norefresh": true
         },
         {
@@ -135,7 +134,7 @@ main.floors.MT172=
             "type": "setEnemy",
             "id": "l640",
             "name": "hp",
-            "value": "20000",
+            "value": "23000",
             "norefresh": true
         },
         {
@@ -149,7 +148,7 @@ main.floors.MT172=
             "type": "setEnemy",
             "id": "m1340",
             "name": "hp",
-            "value": "16000",
+            "value": "27000",
             "norefresh": true
         },
         {
@@ -163,7 +162,7 @@ main.floors.MT172=
             "type": "setEnemy",
             "id": "graziani",
             "name": "hp",
-            "value": "60000",
+            "value": "100000",
             "norefresh": true
         },
         {
@@ -198,7 +197,7 @@ main.floors.MT172=
             "type": "setEnemy",
             "id": "sm79",
             "name": "hp",
-            "value": "21850",
+            "value": "33000",
             "norefresh": true
         },
         {
@@ -219,7 +218,7 @@ main.floors.MT172=
             "type": "setEnemy",
             "id": "z1007",
             "name": "hp",
-            "value": "25000",
+            "value": "36000",
             "norefresh": true
         },
         {
@@ -338,7 +337,7 @@ main.floors.MT172=
             "type": "setEnemy",
             "id": "howitzer105",
             "name": "hp",
-            "value": "6000",
+            "value": "10000",
             "norefresh": true
         },
         {
@@ -359,7 +358,7 @@ main.floors.MT172=
             "type": "setEnemy",
             "id": "howitzer105",
             "name": "zone",
-            "value": "20000",
+            "value": "4000",
             "norefresh": true
         },
         {
@@ -394,7 +393,7 @@ main.floors.MT172=
             "type": "setEnemy",
             "id": "panzer3f",
             "name": "hp",
-            "value": "20000",
+            "value": "28000",
             "norefresh": true
         },
         {
@@ -408,7 +407,7 @@ main.floors.MT172=
             "type": "setEnemy",
             "id": "panzer4e",
             "name": "hp",
-            "value": "20000",
+            "value": "38000",
             "norefresh": true
         },
         {
@@ -422,7 +421,7 @@ main.floors.MT172=
             "type": "setEnemy",
             "id": "stug3a",
             "name": "hp",
-            "value": "10000",
+            "value": "22000",
             "norefresh": true
         },
         {
@@ -458,6 +457,13 @@ main.floors.MT172=
             "id": "me110c",
             "name": "atk",
             "value": "2500",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "me110c",
+            "name": "special",
+            "value": "[1,55]",
             "norefresh": true
         },
         {
@@ -520,7 +526,7 @@ main.floors.MT172=
             "type": "setEnemy",
             "id": "da90",
             "name": "hp",
-            "value": "6000",
+            "value": "8000",
             "norefresh": true
         },
         {
@@ -541,7 +547,7 @@ main.floors.MT172=
             "type": "setEnemy",
             "id": "flak88",
             "name": "hp",
-            "value": "6000",
+            "value": "12000",
             "norefresh": true
         },
         {
@@ -636,6 +642,69 @@ main.floors.MT172=
         "\t[任务目标]⭐击败隆美尔（主线boss）\n⭐击败格拉齐亚尼（支线boss）\n⭐击毁所有四号F2型坦克",
         {
             "type": "callBook"
+        },
+        {
+            "type": "setValue",
+            "name": "flag:MT176boss",
+            "value": "0"
+        },
+        {
+            "type": "setValue",
+            "name": "flag:MT177boss",
+            "value": "0"
+        },
+        {
+            "type": "setTask",
+            "name": "第25关任务1",
+            "n": 1,
+            "text": "击败隆美尔",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "MT177boss",
+                    "operator": "=",
+                    "text": "boss血量",
+                    "count": "4"
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第25关任务2",
+            "n": 1,
+            "text": "击败格拉齐亚尼",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "MT176boss",
+                    "operator": "=",
+                    "text": "boss血量",
+                    "count": "3"
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第25关任务3",
+            "n": 1,
+            "text": "击毁所有四号F2型坦克",
+            "info": [
+                {
+                    "type": "checkBlock",
+                    "checkBlock": "panzer4f",
+                    "floorId": [
+                        "MT172",
+                        "MT173",
+                        "MT174",
+                        "MT175",
+                        "MT176",
+                        "MT177"
+                    ],
+                    "operator": "<=",
+                    "text": "四号F2型剩余",
+                    "count": 0
+                }
+            ]
         }
     ],
     "eachArrive": [],

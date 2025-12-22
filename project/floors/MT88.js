@@ -8,7 +8,7 @@ main.floors.MT88=
     "canFlyTo": false,
     "canFlyFrom": false,
     "canUseQuickShop": true,
-    "cannotViewMap": false,
+    "cannotViewMap": true,
     "images": [],
     "ratio": 1,
     "defaultGround": "water",

@@ -12,7 +12,7 @@ main.floors.MT179=
     "images": [],
     "ratio": 1,
     "defaultGround": "sand",
-    "bgm": "wots5.mp3",
+    "bgm": "cao6.mp3",
     "firstArrive": [
         {
             "type": "setHeroOpacity",
@@ -24,6 +24,9 @@ main.floors.MT179=
         {
             "type": "setCurtain",
             "time": 500
+        },
+        {
+            "type": "showui"
         },
         {
             "type": "openShop",
@@ -288,7 +291,19 @@ main.floors.MT179=
                 "type": "playSound",
                 "name": "xinxinmagic.mp3"
             },
-            "\t[系统提示]当前区域敌人特点：德意联军，炮兵威胁较大，少量装甲部队。\n推荐携带技能：防空弹幕、空战王牌、抵抗运动、破译、空中打击。\n推荐出战装备：M4谢尔曼、英俊战士、B25米切尔（有闲钱的情况下）"
+            "\t[系统提示]当前区域敌人特点：德意联军，协同攻击类技能较多。\n推荐携带技能：防空弹幕、空战王牌、预警、扫雷、抵抗运动、破译、空中打击。\n推荐出战装备：M4谢尔曼、英俊战士、B25米切尔",
+            "可以在此清空技能槽，以便于玩家重新选择技能",
+            {
+                "type": "confirm",
+                "text": "清空技能槽？",
+                "yes": [
+                    {
+                        "type": "function",
+                        "function": "function(){\nflags.skillList=[0,0,0,0,0,0,0]\n}"
+                    }
+                ],
+                "no": []
+            }
         ],
         "0,13": [
             {
@@ -316,7 +331,7 @@ main.floors.MT179=
                 "text": "\t[退役装备,N599]破烂换钱~收破烂嘞~",
                 "choices": [
                     {
-                        "text": "退役 雷诺FT17",
+                        "text": "退役 雷诺FT17（50）",
                         "icon": "ft17",
                         "need": "core.hasItem('ft17')&&!core.hasEquip('ft17')",
                         "condition": "core.hasItem('ft17')&&!core.hasEquip('ft17')",
@@ -340,7 +355,7 @@ main.floors.MT179=
                         ]
                     },
                     {
-                        "text": "退役 哈奇开斯H35",
+                        "text": "退役 哈奇开斯H35（100）",
                         "icon": "h35",
                         "need": "core.hasItem('h35')&&!core.hasEquip('h35')",
                         "condition": "core.hasItem('h35')&&!core.hasEquip('h35')",
@@ -364,7 +379,7 @@ main.floors.MT179=
                         ]
                     },
                     {
-                        "text": "退役 十字军巡洋坦克",
+                        "text": "退役 十字军巡洋坦克（600）",
                         "icon": "crusades",
                         "need": "core.hasItem('crusades')&&!core.hasEquip('crusades')",
                         "condition": "core.hasItem('crusades')&&!core.hasEquip('crusades')",
@@ -388,7 +403,7 @@ main.floors.MT179=
                         ]
                     },
                     {
-                        "text": "退役 瓦伦丁步兵坦克",
+                        "text": "退役 瓦伦丁步兵坦克（700）",
                         "icon": "valentine",
                         "need": "core.hasItem('valentine')&&!core.hasEquip('valentine')",
                         "condition": "core.hasItem('valentine')&&!core.hasEquip('valentine')",
@@ -412,7 +427,7 @@ main.floors.MT179=
                         ]
                     },
                     {
-                        "text": "退役 玛蒂尔达步兵坦克",
+                        "text": "退役 玛蒂尔达步兵坦克（900）",
                         "icon": "matilda",
                         "need": "core.hasItem('matilda')&&!core.hasEquip('matilda')",
                         "condition": "core.hasItem('matilda')&&!core.hasEquip('matilda')",
@@ -436,7 +451,7 @@ main.floors.MT179=
                         ]
                     },
                     {
-                        "text": "退役 M3格兰特中型坦克",
+                        "text": "退役 M3格兰特中型坦克（1100）",
                         "icon": "m3grant",
                         "need": "core.hasItem('m3grant')&&!core.hasEquip('m3grant')",
                         "condition": "core.hasItem('m3grant')&&!core.hasEquip('m3grant')",
@@ -460,14 +475,14 @@ main.floors.MT179=
                         ]
                     },
                     {
-                        "text": "下一页",
+                        "text": "下一页（舰船）",
                         "action": [
                             {
                                 "type": "choices",
                                 "text": "\t[退役装备,N599]破烂换钱~收破烂嘞~",
                                 "choices": [
                                     {
-                                        "text": "退役 E级驱逐舰",
+                                        "text": "退役 E级驱逐舰（250）",
                                         "icon": "classe",
                                         "need": "core.hasItem('classe')&&!core.hasEquip('classe')",
                                         "condition": "core.hasItem('classe')&&!core.hasEquip('classe')",
@@ -491,7 +506,7 @@ main.floors.MT179=
                                         ]
                                     },
                                     {
-                                        "text": "退役 V级驱逐舰",
+                                        "text": "退役 V级驱逐舰（300）",
                                         "icon": "classv",
                                         "need": "core.hasItem('classv')&&!core.hasEquip('classv')",
                                         "condition": "core.hasItem('classv')&&!core.hasEquip('classv')",
@@ -515,7 +530,7 @@ main.floors.MT179=
                                         ]
                                     },
                                     {
-                                        "text": "退役 马汉级驱逐舰",
+                                        "text": "退役 马汉级驱逐舰（260）",
                                         "icon": "mahan",
                                         "need": "core.hasItem('mahan')&&!core.hasEquip('mahan')",
                                         "condition": "core.hasItem('mahan')&&!core.hasEquip('mahan')",
@@ -539,7 +554,7 @@ main.floors.MT179=
                                         ]
                                     },
                                     {
-                                        "text": "退役 本森级驱逐舰",
+                                        "text": "退役 本森级驱逐舰（325）",
                                         "icon": "benson",
                                         "need": "core.hasItem('benson')&&!core.hasEquip('benson')",
                                         "condition": "core.hasItem('benson')&&!core.hasEquip('benson')",
@@ -563,7 +578,7 @@ main.floors.MT179=
                                         ]
                                     },
                                     {
-                                        "text": "退役 爱丁堡号轻巡洋舰",
+                                        "text": "退役 爱丁堡号轻巡洋舰（600）",
                                         "icon": "edinburgh",
                                         "need": "core.hasItem('edinburgh')&&!core.hasEquip('edinburgh')",
                                         "condition": "core.hasItem('edinburgh')&&!core.hasEquip('edinburgh')",
@@ -587,7 +602,7 @@ main.floors.MT179=
                                         ]
                                     },
                                     {
-                                        "text": "退役 诺福克号重巡洋舰",
+                                        "text": "退役 诺福克号重巡洋舰（750）",
                                         "icon": "norfolk",
                                         "need": "core.hasItem('norfolk')&&!core.hasEquip('norfolk')",
                                         "condition": "core.hasItem('norfolk')&&!core.hasEquip('norfolk')",
@@ -611,7 +626,7 @@ main.floors.MT179=
                                         ]
                                     },
                                     {
-                                        "text": "退役 鹰号航空母舰",
+                                        "text": "退役 鹰号航空母舰（1000）",
                                         "icon": "eagle",
                                         "need": "core.hasItem('eagle')&&!core.hasEquip('eagle')",
                                         "condition": "core.hasItem('eagle')&&!core.hasEquip('eagle')",
@@ -635,14 +650,14 @@ main.floors.MT179=
                                         ]
                                     },
                                     {
-                                        "text": "下一页",
+                                        "text": "下一页（飞机）",
                                         "action": [
                                             {
                                                 "type": "choices",
                                                 "text": "\t[退役装备,N599]破烂换钱~收破烂嘞~",
                                                 "choices": [
                                                     {
-                                                        "text": "退役 斗士MK2",
+                                                        "text": "退役 斗士MK2（32）",
                                                         "icon": "wrestler",
                                                         "need": "core.hasItem('wrestler')&&!core.hasEquip('wrestler')",
                                                         "condition": "core.hasItem('spitfiremk1')&&!core.hasEquip('spitfiremk1')",
@@ -666,7 +681,7 @@ main.floors.MT179=
                                                         ]
                                                     },
                                                     {
-                                                        "text": "退役 喷火MK1型",
+                                                        "text": "退役 喷火MK1型（350）",
                                                         "icon": "spitfiremk1",
                                                         "need": "core.hasItem('spitfiremk1')&&!core.hasEquip('spitfiremk1')",
                                                         "condition": "core.hasItem('spitfiremk1')&&!core.hasEquip('spitfiremk1')",
@@ -690,7 +705,7 @@ main.floors.MT179=
                                                         ]
                                                     },
                                                     {
-                                                        "text": "退役 飓风MK1型",
+                                                        "text": "退役 飓风MK1型（200）",
                                                         "icon": "hurricanemk1",
                                                         "need": "core.hasItem('hurricanemk1')&&!core.hasEquip('hurricanemk1')",
                                                         "condition": "core.hasItem('hurricanemk2')&&!core.hasEquip('hurricanemk2')",
@@ -714,7 +729,7 @@ main.floors.MT179=
                                                         ]
                                                     },
                                                     {
-                                                        "text": "退役 P40C战斧",
+                                                        "text": "退役 P40B战斧（175）",
                                                         "icon": "p40c",
                                                         "need": "core.hasItem('p40c')&&!core.hasEquip('p40c')",
                                                         "condition": "core.hasItem('hurricanemk2')&&!core.hasEquip('hurricanemk2')",
@@ -738,7 +753,7 @@ main.floors.MT179=
                                                         ]
                                                     },
                                                     {
-                                                        "text": "退役 飓风MK2型",
+                                                        "text": "退役 飓风MK2型（600）",
                                                         "icon": "hurricanemk2",
                                                         "need": "core.hasItem('hurricanemk2')&&!core.hasEquip('hurricanemk2')",
                                                         "condition": "core.hasItem('hurricanemk2')&&!core.hasEquip('hurricanemk2')",
@@ -762,7 +777,7 @@ main.floors.MT179=
                                                         ]
                                                     },
                                                     {
-                                                        "text": "退役 F4F野猫战斗机",
+                                                        "text": "退役 F4F野猫战斗机（600）",
                                                         "icon": "f4f3",
                                                         "need": "core.hasItem('f4f3')&&!core.hasEquip('f4f3')",
                                                         "condition": "core.hasItem('f4f3')&&!core.hasEquip('f4f3')",
@@ -978,8 +993,8 @@ main.floors.MT179=
     [60120,60121,60122,60123,  0,  0,60120,60121,60122,60123,  0,  0,60120,60121,60122],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
-    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
-    [  0,20105,20106,20107,  0,  0,20105,20106,20107,  0,  0,20105,20106,20107,  0],
+    [  0,  0,  0,  0,  0,130042,  0,  0,  0,  0,130042,  0,  0,  0,  0],
+    [  0,20105,20106,20107,  0,130063,20105,20106,20107,  0,130063,20105,20106,20107,  0],
     [20112,20113,  0,20115,20116,20112,20113,  0,20115,20116,20112,20113,  0,20115,20116],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],

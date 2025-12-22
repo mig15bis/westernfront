@@ -50,7 +50,7 @@ main.floors.MT180=
             "type": "setEnemy",
             "id": "italyinf2",
             "name": "hp",
-            "value": "90000",
+            "value": "100000",
             "norefresh": true
         },
         {
@@ -64,7 +64,7 @@ main.floors.MT180=
             "type": "setEnemy",
             "id": "italyinf3",
             "name": "hp",
-            "value": "85000",
+            "value": "95000",
             "norefresh": true
         },
         {
@@ -78,7 +78,7 @@ main.floors.MT180=
             "type": "setEnemy",
             "id": "italyinf4",
             "name": "hp",
-            "value": "80000",
+            "value": "90000",
             "norefresh": true
         },
         {
@@ -92,7 +92,7 @@ main.floors.MT180=
             "type": "setEnemy",
             "id": "italyinf5",
             "name": "hp",
-            "value": "75000",
+            "value": "85000",
             "norefresh": true
         },
         {
@@ -106,7 +106,7 @@ main.floors.MT180=
             "type": "setEnemy",
             "id": "italyinf6",
             "name": "hp",
-            "value": "70000",
+            "value": "80000",
             "norefresh": true
         },
         {
@@ -134,7 +134,7 @@ main.floors.MT180=
             "type": "setEnemy",
             "id": "m1340",
             "name": "hp",
-            "value": "25000",
+            "value": "35000",
             "norefresh": true
         },
         {
@@ -148,7 +148,7 @@ main.floors.MT180=
             "type": "setEnemy",
             "id": "commandos",
             "name": "hp",
-            "value": "90000",
+            "value": "120000",
             "norefresh": true
         },
         {
@@ -162,7 +162,7 @@ main.floors.MT180=
             "type": "setEnemy",
             "id": "mortar",
             "name": "hp",
-            "value": "80000",
+            "value": "100000",
             "norefresh": true
         },
         {
@@ -176,7 +176,7 @@ main.floors.MT180=
             "type": "setEnemy",
             "id": "motorinf",
             "name": "hp",
-            "value": "75000",
+            "value": "105000",
             "norefresh": true
         },
         {
@@ -204,7 +204,7 @@ main.floors.MT180=
             "type": "setEnemy",
             "id": "lightmg",
             "name": "hp",
-            "value": "75000",
+            "value": "85000",
             "norefresh": true
         },
         {
@@ -218,7 +218,7 @@ main.floors.MT180=
             "type": "setEnemy",
             "id": "mg42",
             "name": "hp",
-            "value": "70000",
+            "value": "80000",
             "norefresh": true
         },
         {
@@ -226,6 +226,27 @@ main.floors.MT180=
             "id": "mg42",
             "name": "atk",
             "value": "2200",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "sniper",
+            "name": "hp",
+            "value": "10000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "sniper",
+            "name": "atk",
+            "value": "15000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "sniper",
+            "name": "special",
+            "value": "[55,56,66]",
             "norefresh": true
         },
         {
@@ -260,7 +281,7 @@ main.floors.MT180=
             "type": "setEnemy",
             "id": "panzer3f",
             "name": "hp",
-            "value": "29000",
+            "value": "30000",
             "norefresh": true
         },
         {
@@ -274,7 +295,7 @@ main.floors.MT180=
             "type": "setEnemy",
             "id": "stug3a",
             "name": "hp",
-            "value": "20000",
+            "value": "30000",
             "norefresh": true
         },
         {
@@ -288,28 +309,28 @@ main.floors.MT180=
             "type": "setEnemy",
             "id": "panzer4e",
             "name": "hp",
-            "value": "28000",
+            "value": "35000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer4e",
             "name": "atk",
-            "value": "11000",
+            "value": "12000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer4f",
             "name": "hp",
-            "value": "28000",
+            "value": "35000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer4f",
             "name": "atk",
-            "value": "12500",
+            "value": "15000",
             "norefresh": true
         },
         {
@@ -330,7 +351,7 @@ main.floors.MT180=
             "type": "setEnemy",
             "id": "he111",
             "name": "hp",
-            "value": "33000",
+            "value": "48000",
             "norefresh": true
         },
         {
@@ -344,7 +365,7 @@ main.floors.MT180=
             "type": "setEnemy",
             "id": "he111",
             "name": "bom",
-            "value": "15000",
+            "value": "25000",
             "norefresh": true
         },
         {
@@ -365,7 +386,7 @@ main.floors.MT180=
             "type": "setEnemy",
             "id": "pak38",
             "name": "atk",
-            "value": "6500",
+            "value": "10000",
             "norefresh": true
         },
         {
@@ -379,7 +400,7 @@ main.floors.MT180=
             "type": "setEnemy",
             "id": "pak38",
             "name": "zone",
-            "value": "6500",
+            "value": "8500",
             "norefresh": true
         },
         {
@@ -414,14 +435,14 @@ main.floors.MT180=
             "type": "setEnemy",
             "id": "flak88",
             "name": "atk",
-            "value": "15000",
+            "value": "20000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "flak88",
             "name": "special",
-            "value": "[55,59]"
+            "value": "[40,55,59]"
         },
         {
             "type": "setEnemy",
@@ -447,17 +468,86 @@ main.floors.MT180=
             "type": "playSound",
             "name": "xinxinmagic.mp3"
         },
-        "\t[任务目标]⭐通过当前区域\n⭐全程没有受到地雷伤害\n⭐通关时至少持有20瓶下午茶",
+        "\t[任务目标]⭐通过当前区域\n⭐全程没有受到地雷伤害\n⭐摧毁所有88毫米高射炮",
         {
             "type": "callBook"
+        },
+        {
+            "type": "setValue",
+            "name": "flag:第26关通关",
+            "value": "0"
+        },
+        {
+            "type": "playSound",
+            "name": "xinxinmagic.mp3"
+        },
+        "\t[系统提示]\r[red]作者不会做没有意义的紫塔。所以当你觉得一个关卡很恶心的时候，说明在真实的历史上，盟军的高层做出了错误的决定，而以服从命令为天职的士兵们只能迎着密集的炮火，头也不回地冲锋。作为玩家，你可以点击右上角的红叉来回避这一切。但他们，则从来没有选择的权利。他们将目睹身边的人一个个倒在血泊中，他们不知道自己会不会成为下一个，他们血肉模糊的尸体将难以辨认，他们英勇无畏的牺牲在这场错误的行动中显得毫无意义。\r",
+        {
+            "type": "setTask",
+            "name": "第26关任务1",
+            "n": 1,
+            "text": "通过当前区域",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "第26关通关",
+                    "operator": "=",
+                    "text": "抵达终点",
+                    "count": "1"
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第26关任务2",
+            "n": 1,
+            "text": "全程没有受到地雷伤害",
+            "info": [
+                {
+                    "type": "specialBlock",
+                    "specialBlock": "地雷伤害",
+                    "floorId": [
+                        "MT180",
+                        "MT181",
+                        "MT182",
+                        "MT183",
+                        "MT184"
+                    ],
+                    "operator": "<=",
+                    "text": "不要踩地雷！",
+                    "count": 0
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第26关任务3",
+            "n": 1,
+            "text": "摧毁所有88毫米高射炮",
+            "info": [
+                {
+                    "type": "checkBlock",
+                    "checkBlock": "flak88",
+                    "floorId": [
+                        "MT180",
+                        "MT181",
+                        "MT182",
+                        "MT183",
+                        "MT184"
+                    ],
+                    "operator": "<=",
+                    "text": "剩余的88炮",
+                    "count": 0
+                }
+            ]
         }
     ],
     "eachArrive": [],
     "parallelDo": "",
     "events": {
         "9,14": [
-            "\t[伊吹萃香]\f[specialnpc.jpg,30,200,150,300]这关很不亲民，所有的空地都被塞满了地雷！希望你的指挥点数足够充裕吧。",
-            "\t[伊吹萃香]\f[specialnpc.jpg,30,200,150,300]此外，本区域出现了新的“阵地”属性。这是一种双向光环，阵地怪本身可以给周围的怪物提供增益，周围的怪物反过来又可以为阵地本身提供增益。看起来是很烧脑的局面，但其实，这也就意味着你既可以先清杂兵，又可以先杀光环本体，两个都可以选哦！"
+            "\t[伊吹萃香]\f[specialnpc.jpg,30,200,150,300]最后再看一眼我们面前的这一小片空地吧，本关所有的空地上都塞满了大量的地雷。如果要达成三星通关的话，那么但愿你指挥点数和血量都很充足吧。记得优先干掉那些狙击手！",
+            "\t[伊吹萃香]\f[specialnpc.jpg,30,200,150,300]此外，本区域出现了新的“阵地”属性。这是一种双向光环，阵地怪本身可以给周围的怪物提供增益，周围的怪反过来又可以为阵地本身提供增益。先清杂兵，还是先摧毁阵地核心，要根据实际情况自主判断。"
         ]
     },
     "changeFloor": {
@@ -478,7 +568,7 @@ main.floors.MT180=
     "cannotMoveIn": {},
     "map": [
     [150,150,150,518,518,150,150, 91,150,522,150,521,521,521,150],
-    [534,362, 11,150,203,569,150,366,150,405,150,150,203,150,150],
+    [534,362, 11,150,248,569,150,366,150,405,150,150,203,150,150],
     [530,150,265,404, 81,150,362, 81,250, 11, 11,363, 81,203, 11],
     [534,362, 11,150, 11,150,570,362,150,150,150,362,150, 11,533],
     [150,150,150,150,362, 81, 11,150,534,534,534,534,150,150,150],

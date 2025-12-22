@@ -270,6 +270,9 @@ main.floors.MT162=
                 "type": "clearMap"
             },
             {
+                "type": "submitTask"
+            },
+            {
                 "type": "moveImage",
                 "code": 5,
                 "to": [
