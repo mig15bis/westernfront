@@ -2946,6 +2946,10 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				Debuff.push('截断');
 				Debuffcolor.push('#00FF00');
 			}
+			if (core.status.checkBlock.cache?.cacheFloor?.点杀) {
+				Debuff.push('点杀');
+				Debuffcolor.push('#C677DD');
+			}
 			if (core.domStyle.isVertical) { //竖屏
 				core.clearMap(uictx, 161, 681, 160, 50);
 				core.fillRoundRect(uictx, 168, 688, 135, 35, 15, "rgba(0,0,0,0.5)") //任务底板								 
@@ -4047,14 +4051,14 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 										core.unlockControl();
 									}
 								})
-							});
-							if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
-								core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
-								core.drawHeroAnimate('sniper');
-								if (hero.hp <= 0) {
-									core.events.lose();
+								if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
+									core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
+									core.drawHeroAnimate('sniper');
+									if (hero.hp <= 0) {
+										core.events.lose();
+									}
 								}
-							}
+							});
 						} else {
 							core.playSound('fighter.mp3');
 							core.showImage(1, 'aircraft1.png', null, [480, 32 * Y - 109], 1, 0, () => {
@@ -4094,16 +4098,14 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 										core.unlockControl();
 									}
 								})
-							});
-							if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
-								core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
-								if (!core.isReplaying() && !main.replayChecking) {
+								if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
+									core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
 									core.drawHeroAnimate('sniper');
+									if (hero.hp <= 0) {
+										core.events.lose();
+									}
 								}
-								if (hero.hp <= 0) {
-									core.events.lose();
-								}
-							}
+							});
 						}
 					} else {
 						hero.mana += 100;
@@ -4279,14 +4281,14 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 									core.unlockControl();
 								}
 							})
-						});
-						if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
-							core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
-							core.drawHeroAnimate('sniper');
-							if (hero.hp <= 0) {
-								core.events.lose();
+							if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
+								core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
+								core.drawHeroAnimate('sniper');
+								if (hero.hp <= 0) {
+									core.events.lose();
+								}
 							}
-						}
+						});
 					} else {
 						hero.mana += 150;
 						core.drawTip("只能对水面舰艇使用");
@@ -4456,15 +4458,15 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 									} else {
 										core.unlockControl();
 									}
+									if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
+										core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
+										core.drawHeroAnimate('sniper');
+										if (hero.hp <= 0) {
+											core.events.lose();
+										}
+									}
 								})
 							});
-							if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
-								core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
-								core.drawHeroAnimate('sniper');
-								if (hero.hp <= 0) {
-									core.events.lose();
-								}
-							}
 						} else {
 							core.playSound('bomber3.mp3');
 							core.showImage(1, 'aircraft2.png', null, [480, 32 * Y - 109], 1, 0, () => {
@@ -4501,15 +4503,15 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 									} else {
 										core.unlockControl();
 									}
+									if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
+										core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
+										core.drawHeroAnimate('sniper');
+										if (hero.hp <= 0) {
+											core.events.lose();
+										}
+									}
 								})
 							});
-							if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
-								core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
-								core.drawHeroAnimate('sniper');
-								if (hero.hp <= 0) {
-									core.events.lose();
-								}
-							}
 						}
 					} else {
 						hero.mana += 200;

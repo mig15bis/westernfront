@@ -1124,6 +1124,7 @@ control.prototype.checkBlock = function () {
     var x = core.getHeroLoc('x'), y = core.getHeroLoc('y'), loc = x + "," + y;
     var damage = core.status.checkBlock.damage[loc];
     if (damage) {
+        debugger
         core.taskSystem.tasksInfo.forEach(v => v.tasks.forEach(a => {
 			if (a.type === "specialBlock" ) {
                 if((core.status.checkBlock.type[loc] || {})[a.specialType]&&(!a.floorIds||a.floorIds.includes(core.status.floorId)))

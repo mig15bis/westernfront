@@ -3835,7 +3835,7 @@ var floorstr=',"floorId":['+thisFloorId.join(",")+']'
 }else {
 var floorstr=""    
 }
-var code = '{"type":"specialBlock","specialBlock":"'+MapDamage_List_0+'"'+floorstr+',"operator":"'+TaskOperator_List_0+'"'+EvalString_Multi_0+',"count":'+Int_0+'},'
+var code = '{"type":"specialBlock","specialType":"'+MapDamage_List_0+'"'+floorstr+',"operator":"'+TaskOperator_List_0+'"'+EvalString_Multi_0+',"count":'+Int_0+'},'
 return code;
 */;
 

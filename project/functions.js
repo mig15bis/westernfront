@@ -963,7 +963,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		[84, "永久工事", "战败后化作可破土墙阻拦道路"],
 		[85, "狼群·改", "与身周5×5范围内其他潜艇组成狼群。自身被击败后，主角遭受其他狼群成员潜艇的一轮30%倍率鱼雷齐射。"],
 		[86, "重型装甲", "受到普攻和火箭弹伤害减少40%"],
-		[87, "隐蔽", "受到炸弹伤害减少90%"]
+		[87, "隐蔽", "受到炸弹伤害减少70%"]
 	];
 },
         "getEnemyInfo": function (enemy, hero, x, y, floorId) {
@@ -1681,7 +1681,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	if (core.hasSpecial(mon_special, 30)) { monsk30 *= 1.3 } //技能30：航炮
 	if (core.hasSpecial(mon_special, 36)) { monsk36 *= 0.5 } //技能36：防雷带
 	if (core.hasSpecial(mon_special, 86)) { monsk86 *= 0.6 } //技能86：重型装甲
-	if (core.hasSpecial(mon_special, 87)) { monsk87 *= 0.1 } //技能87：隐蔽
+	if (core.hasSpecial(mon_special, 87)) { monsk87 *= 0.3 } //技能87：隐蔽
 	if (core.hasSpecial(mon_special, 4)) { lianji *= 2 }
 	if (core.hasSpecial(mon_special, 5)) { lianji *= 3 }
 	if (core.hasSpecial(mon_special, 6)) { lianji *= mon_skillNum.n }

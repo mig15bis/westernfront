@@ -50,7 +50,7 @@ main.floors.MT172=
             "type": "setEnemy",
             "id": "italyinf2",
             "name": "hp",
-            "value": "70000",
+            "value": "90000",
             "norefresh": true
         },
         {
@@ -64,7 +64,7 @@ main.floors.MT172=
             "type": "setEnemy",
             "id": "italyinf3",
             "name": "hp",
-            "value": "65000",
+            "value": "85000",
             "norefresh": true
         },
         {
@@ -78,7 +78,7 @@ main.floors.MT172=
             "type": "setEnemy",
             "id": "italyinf4",
             "name": "hp",
-            "value": "60000",
+            "value": "80000",
             "norefresh": true
         },
         {
@@ -92,7 +92,7 @@ main.floors.MT172=
             "type": "setEnemy",
             "id": "italyinf5",
             "name": "hp",
-            "value": "55000",
+            "value": "75000",
             "norefresh": true
         },
         {
@@ -106,7 +106,7 @@ main.floors.MT172=
             "type": "setEnemy",
             "id": "italyinf6",
             "name": "hp",
-            "value": "50000",
+            "value": "70000",
             "norefresh": true
         },
         {
@@ -120,7 +120,7 @@ main.floors.MT172=
             "type": "setEnemy",
             "id": "italyinf7",
             "name": "hp",
-            "value": "120000",
+            "value": "150000",
             "norefresh": true
         },
         {
@@ -134,7 +134,7 @@ main.floors.MT172=
             "type": "setEnemy",
             "id": "l640",
             "name": "hp",
-            "value": "23000",
+            "value": "25000",
             "norefresh": true
         },
         {
@@ -148,7 +148,7 @@ main.floors.MT172=
             "type": "setEnemy",
             "id": "m1340",
             "name": "hp",
-            "value": "27000",
+            "value": "35000",
             "norefresh": true
         },
         {
@@ -162,7 +162,7 @@ main.floors.MT172=
             "type": "setEnemy",
             "id": "graziani",
             "name": "hp",
-            "value": "100000",
+            "value": "120000",
             "norefresh": true
         },
         {
@@ -197,7 +197,7 @@ main.floors.MT172=
             "type": "setEnemy",
             "id": "sm79",
             "name": "hp",
-            "value": "33000",
+            "value": "34000",
             "norefresh": true
         },
         {
@@ -218,7 +218,7 @@ main.floors.MT172=
             "type": "setEnemy",
             "id": "z1007",
             "name": "hp",
-            "value": "36000",
+            "value": "37000",
             "norefresh": true
         },
         {
@@ -239,7 +239,7 @@ main.floors.MT172=
             "type": "setEnemy",
             "id": "commandos",
             "name": "hp",
-            "value": "70000",
+            "value": "100000",
             "norefresh": true
         },
         {
@@ -253,7 +253,7 @@ main.floors.MT172=
             "type": "setEnemy",
             "id": "mortar",
             "name": "hp",
-            "value": "60000",
+            "value": "90000",
             "norefresh": true
         },
         {
@@ -274,7 +274,7 @@ main.floors.MT172=
             "type": "setEnemy",
             "id": "motorinf",
             "name": "hp",
-            "value": "65000",
+            "value": "95000",
             "norefresh": true
         },
         {
@@ -288,7 +288,7 @@ main.floors.MT172=
             "type": "setEnemy",
             "id": "lightmg",
             "name": "hp",
-            "value": "65000",
+            "value": "85000",
             "norefresh": true
         },
         {
@@ -302,7 +302,7 @@ main.floors.MT172=
             "type": "setEnemy",
             "id": "mg42",
             "name": "hp",
-            "value": "60000",
+            "value": "80000",
             "norefresh": true
         },
         {
@@ -365,7 +365,7 @@ main.floors.MT172=
             "type": "setEnemy",
             "id": "panzer38t",
             "name": "hp",
-            "value": "22000",
+            "value": "28000",
             "norefresh": true
         },
         {
@@ -379,7 +379,7 @@ main.floors.MT172=
             "type": "setEnemy",
             "id": "sdkfz234",
             "name": "hp",
-            "value": "22000",
+            "value": "25000",
             "norefresh": true
         },
         {
@@ -393,7 +393,7 @@ main.floors.MT172=
             "type": "setEnemy",
             "id": "panzer3f",
             "name": "hp",
-            "value": "28000",
+            "value": "38000",
             "norefresh": true
         },
         {
@@ -407,7 +407,7 @@ main.floors.MT172=
             "type": "setEnemy",
             "id": "panzer4e",
             "name": "hp",
-            "value": "38000",
+            "value": "45000",
             "norefresh": true
         },
         {
@@ -421,7 +421,7 @@ main.floors.MT172=
             "type": "setEnemy",
             "id": "stug3a",
             "name": "hp",
-            "value": "22000",
+            "value": "35000",
             "norefresh": true
         },
         {
@@ -568,7 +568,7 @@ main.floors.MT172=
             "type": "setEnemy",
             "id": "rommel",
             "name": "hp",
-            "value": "20000",
+            "value": "23000",
             "norefresh": true
         },
         {

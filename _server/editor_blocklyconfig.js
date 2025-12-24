@@ -159,7 +159,7 @@ editor_blocklyconfig=(function(){
         {"type":"killType","killType":"战斗机","floorId":["MT1","MT2"],"operator":">=","count":1},
         {"type":"killSpecial","killType":61,"floorId":["MT1","MT2"],"operator":">=","count":1},
         {"type":"killAll","floorId":["MT1"]},
-        {"type":"specialBlock","specialBlock":"地雷伤害","floorId":["MT1"],"operator":"<","count":1},
+        {"type":"specialBlock","specialType":"地雷伤害","floorId":["MT1"],"operator":"<","count":1},
         {"type":"gosthFloor","floorId":["MT1"],"operator":"<","count":1},
         {"type":"arrival","floorId":"MT1"},
         {"type":"outer"},
