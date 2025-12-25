@@ -18,7 +18,6 @@ main.floors.MT187=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        
         {
             "type": "setCurtain",
             "time": 500
@@ -39,14 +38,14 @@ main.floors.MT187=
             "type": "setEnemy",
             "id": "u7",
             "name": "hp",
-            "value": "3000",
+            "value": "10400",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "u7",
             "name": "top",
-            "value": "12000",
+            "value": "20000",
             "norefresh": true
         },
         {
@@ -60,14 +59,21 @@ main.floors.MT187=
             "type": "setEnemy",
             "id": "u9",
             "name": "hp",
-            "value": "3000",
+            "value": "10480",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "u9",
             "name": "top",
-            "value": "12000",
+            "value": "20000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "u9",
+            "name": "cd",
+            "value": "5",
             "norefresh": true
         },
         {
@@ -81,7 +87,7 @@ main.floors.MT187=
             "type": "setEnemy",
             "id": "italydd1",
             "name": "hp",
-            "value": "180000",
+            "value": "148000",
             "norefresh": true
         },
         {
@@ -95,14 +101,14 @@ main.floors.MT187=
             "type": "setEnemy",
             "id": "italydd1",
             "name": "top",
-            "value": "8000",
+            "value": "15000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italydd2",
             "name": "hp",
-            "value": "185000",
+            "value": "149000",
             "norefresh": true
         },
         {
@@ -116,14 +122,14 @@ main.floors.MT187=
             "type": "setEnemy",
             "id": "italydd2",
             "name": "top",
-            "value": "8000",
+            "value": "15000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italydd3",
             "name": "hp",
-            "value": "185000",
+            "value": "150000",
             "norefresh": true
         },
         {
@@ -137,14 +143,14 @@ main.floors.MT187=
             "type": "setEnemy",
             "id": "italydd3",
             "name": "top",
-            "value": "8000",
+            "value": "15000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italydd4",
             "name": "hp",
-            "value": "190000",
+            "value": "150000",
             "norefresh": true
         },
         {
@@ -158,112 +164,112 @@ main.floors.MT187=
             "type": "setEnemy",
             "id": "italydd4",
             "name": "top",
-            "value": "8000",
+            "value": "15000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italycl1",
             "name": "hp",
-            "value": "450000",
+            "value": "500000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italycl1",
-            "name": "atk",
-            "value": "1000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "italycl1",
-            "name": "top",
-            "value": "5000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "italycl2",
-            "name": "hp",
-            "value": "480000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "italycl2",
-            "name": "atk",
-            "value": "1000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "italycl2",
-            "name": "top",
-            "value": "5000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "italyca1",
-            "name": "hp",
-            "value": "750000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "italyca1",
             "name": "atk",
             "value": "1500",
             "norefresh": true
         },
         {
             "type": "setEnemy",
+            "id": "italycl1",
+            "name": "top",
+            "value": "12000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "italycl2",
+            "name": "hp",
+            "value": "580000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "italycl2",
+            "name": "atk",
+            "value": "1500",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "italycl2",
+            "name": "top",
+            "value": "12000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "italyca1",
+            "name": "hp",
+            "value": "1500000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "italyca1",
+            "name": "atk",
+            "value": "2500",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
             "id": "italyca1",
             "name": "top",
-            "value": "3000",
+            "value": "8000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "c200",
             "name": "hp",
-            "value": "25000",
+            "value": "35000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "c200",
             "name": "atk",
-            "value": "1800",
+            "value": "2000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "c202",
             "name": "hp",
-            "value": "28000",
+            "value": "40000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "c202",
             "name": "atk",
-            "value": "2100",
+            "value": "2500",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "sm79",
             "name": "hp",
-            "value": "34800",
+            "value": "53500",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "sm79",
             "name": "atk",
-            "value": "500",
+            "value": "1000",
             "norefresh": true
         },
         {
@@ -277,7 +283,7 @@ main.floors.MT187=
             "type": "setEnemy",
             "id": "sm79",
             "name": "top",
-            "value": "12000",
+            "value": "20000",
             "norefresh": true
         },
         {
@@ -291,14 +297,14 @@ main.floors.MT187=
             "type": "setEnemy",
             "id": "z1007",
             "name": "hp",
-            "value": "41650",
+            "value": "62500",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "z1007",
             "name": "atk",
-            "value": "500",
+            "value": "1000",
             "norefresh": true
         },
         {
@@ -320,9 +326,124 @@ main.floors.MT187=
             "type": "playSound",
             "name": "xinxinmagic.mp3"
         },
-        "\t[任务目标]⭐击沉敌军油船\n⭐拾取所有宝石\n⭐通关时持有600指挥点数和40下午茶",
+        "\t[任务目标]⭐击沉敌军油船\n⭐拾取所有宝石\n⭐通关时至少持有900指挥点数和90下午茶",
         {
             "type": "callBook"
+        },
+        {
+            "type": "setValue",
+            "name": "flag:第27关通关",
+            "value": "0"
+        },
+        {
+            "type": "setTask",
+            "name": "第27关任务1",
+            "n": 1,
+            "text": "击沉敌军油船",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "第27关通关",
+                    "operator": "=",
+                    "text": "击沉油船",
+                    "count": "1"
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第27关任务2",
+            "n": 5,
+            "text": "拾取所有宝石",
+            "info": [
+                {
+                    "type": "checkBlock",
+                    "checkBlock": "red4Gem",
+                    "floorId": [
+                        "MT187",
+                        "MT188",
+                        "MT189",
+                        "MT190"
+                    ],
+                    "operator": "<=",
+                    "text": "剩余红宝石",
+                    "count": 0
+                },
+                {
+                    "type": "checkBlock",
+                    "checkBlock": "blue4Gem",
+                    "floorId": [
+                        "MT187",
+                        "MT188",
+                        "MT189",
+                        "MT190"
+                    ],
+                    "operator": "<=",
+                    "text": "剩余蓝宝石",
+                    "count": 0
+                },
+                {
+                    "type": "checkBlock",
+                    "checkBlock": "green4Gem",
+                    "floorId": [
+                        "MT187",
+                        "MT188",
+                        "MT189",
+                        "MT190"
+                    ],
+                    "operator": "<=",
+                    "text": "剩余绿宝石",
+                    "count": 0
+                },
+                {
+                    "type": "checkBlock",
+                    "checkBlock": "yellow4Gem",
+                    "floorId": [
+                        "MT187",
+                        "MT188",
+                        "MT189",
+                        "MT190"
+                    ],
+                    "operator": "<=",
+                    "text": "剩余黄宝石",
+                    "count": 0
+                },
+                {
+                    "type": "checkBlock",
+                    "checkBlock": "orange4Gem",
+                    "floorId": [
+                        "MT187",
+                        "MT188",
+                        "MT189",
+                        "MT190"
+                    ],
+                    "operator": "<=",
+                    "text": "剩余橙宝石",
+                    "count": 0
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第27关任务3",
+            "n": 2,
+            "text": "通关时至少持有900指挥点数和90下午茶",
+            "info": [
+                {
+                    "type": "checkItem",
+                    "checkItem": "tea",
+                    "operator": ">=",
+                    "text": "当前持有的下午茶",
+                    "count": 90
+                },
+                {
+                    "type": "checkStatus",
+                    "checkStatus": "mana",
+                    "operator": ">=",
+                    "text": "当前指挥点数",
+                    "count": 900
+                }
+            ]
         }
     ],
     "eachArrive": [],
@@ -355,8 +476,8 @@ main.floors.MT187=
     [ 21, 81,216,360,518,539,  3,518,536,578,  3,  3,  3,360,518],
     [ 21,  3,570,  3,210,  3,  3,360,  3,  3,387, 81,  0,210,  3],
     [  3,  3,  3,  3,578, 81,381,  0,397,536,518,  3,537,  0,  0],
-    [578,360,216,360,210,  3,360,  3,  3,  3,  3,  3,  3,  3, 81],
-    [537,  3, 82,  3,360,  3,  0,  0,216,536,  3,518,578,  0,211],
+    [210,360,216,360,210,  3,360,  3,  3,  3,  3,  3,  3,  3, 81],
+    [537,  3, 82,  3,360,  3,  0,  0,216,536,  3,518,387,  0,211],
     [537,  3,234,  3,535,  3,536, 81,  3, 81,  3,  3,360,  3,  3],
     [  3,  3,360,  3,  3,  3,  3,212,  3,538,538,  3,  0,210,518],
     [570,360, 93,360,570,  3, 22, 21,  3,538,538, 81,381,  3,518]

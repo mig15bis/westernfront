@@ -18,7 +18,6 @@ main.floors.MT193=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        
         {
             "type": "update"
         },
@@ -30,6 +29,9 @@ main.floors.MT193=
             "type": "setValue",
             "name": "flag:dry",
             "value": "true"
+        },
+        {
+            "type": "showui"
         }
     ],
     "eachArrive": [],
@@ -448,7 +450,7 @@ main.floors.MT193=
                 "type": "playSound",
                 "name": "xinxinmagic.mp3"
             },
-            "\t[系统提示]当前区域敌人特点：德意联军，步兵和炮兵居多，没有空中支援。\n推荐携带技能：防空弹幕、空战王牌、扫雷、抵抗运动、破译、空中打击、补给线。\n推荐出战装备：M4谢尔曼、喷火5或P47B、英俊战士或P38、B25米切尔"
+            "\t[系统提示]当前区域敌人特点：德意联军，步兵和炮兵居多，没有空中支援。\n推荐携带技能：防空弹幕、空战王牌、扫雷、抵抗运动、破译、空中打击、补给线。\n推荐出战装备：M4谢尔曼、喷火5或P47、P38闪电、B25米切尔"
         ],
         "0,13": [
             {

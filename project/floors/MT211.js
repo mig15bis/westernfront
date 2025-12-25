@@ -41,12 +41,7 @@ main.floors.MT211=
             ],
             "remove": true,
             "time": 500
-        },
-        {
-            "type": "playSound",
-            "name": "xinxinmagic.mp3"
-        },
-        "\t[系统提示]主角当前处于高空，无法攻击地面上的高射炮，故本区域所有高射炮均为不可攻击状态（表现为：具有“主将”属性）。"
+        }
     ],
     "eachArrive": [],
     "parallelDo": "",

@@ -627,6 +627,12 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		hint += ',' + core.getStatusLabel('exp') + '+' + exp; // hint += "，经验+" + exp;
 	core.drawTip(hint, enemy.id);
 
+	//清除临时护盾
+	flags.temmdef = 0;
+	//增加临时护盾
+	if (flags.skill === 13 && !flags.spy && core.status.maps[floorId].area === '海洋') {
+		flags.temmdef += hero.mdef * 0.2;
+	}
 	//战后关技能并扣mana
 	if (flags.skill > 0) {
 		hero.mana -= core.plugin.skillInfo[flags.skill].cost;
@@ -1649,11 +1655,11 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	}
 
 	let 杀伤榴弹 = ((mon_skillNum.type === '步兵' || mon_skillNum.type === '反坦克炮' || mon_skillNum.type === '榴弹炮' || mon_skillNum.type === '高射炮') && (tk === 'm4' || tk === 'm4a2' || tk === 'm4a3' || tk === 'm4a3e2')) ? 1.3 : 1;
-	if (ca === 'sheffield') { //谢菲尔德·额外先攻
-		guaiwu.hp -= yongshi.atk * beilv * 杀伤榴弹;
+	/*if (ca === 'sheffield') { //谢菲尔德·额外先攻
+		//guaiwu.hp -= yongshi.atk * beilv * 杀伤榴弹;
 	} else if (ca === 'norfolk' && junzhong === '海军' && mon_skillNum.type !== '潜艇') { //诺福克，额外先攻
 		guaiwu.hp -= yongshi.atk * beilv;
-	}
+	}*/
 	//战斗过程循环
 	let norfolkattack = 0,
 		trapdamage = cache.trap_buff || 0; //陷阱
@@ -2055,6 +2061,13 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		if (a === 0) { //地面战允许普攻时
 			hero_common += yongshi.atk;
 		}
+		if (turn === 1) {
+			if (ca === 'sheffield') { //谢菲尔德·额外普攻
+				hero_common += yongshi.atk;
+			} else if (ca === 'norfolk' && junzhong === '海军' && mon_skillNum.type !== '潜艇') { //诺福克，额外先攻
+				hero_common += yongshi.atk;
+			}
+		}
 		hero_common *= 杀伤榴弹; //谢馒头榴弹
 		hero_common *= ft17; //雷诺FT17机枪
 		if (ff === 'hurricanemk1') { //飓风MK1
@@ -2408,12 +2421,18 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	}
 	if (!cacheFloor.截断) { //后勤
 		damage -= yongshi.mdef;
+		if (flags.temmdef) {
+			damage -= flags.temmdef;
+		}
 	}
 	/*if (core.searchBlockWithFilter(fn).length === 0) { //后勤
 		damage -= yongshi.mdef;
 	}*/
 	if (core.hasItem('unicorn') && damage < 0 && (core.status.maps[floorId].area === '海洋' || core.status.maps[floorId].area === '浅滩')) { //独角兽号
 		damage *= 1.2;
+	}
+	if (core.status.maps[floorId].area === '海洋' && flags.skill === 13 && !flags.spy && damage < hero_hp) { //技能13：金牌损管
+		damage = hero_hp - hero_hpmax;
 	}
 
 

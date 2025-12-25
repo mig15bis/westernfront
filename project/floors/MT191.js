@@ -154,8 +154,111 @@ main.floors.MT191=
         },
         "\t[盟军指挥官,hero]确认击沉目标，任务完成，全员返航。",
         {
-            "type": "function",
-            "function": "function(){\nflags.mission[28][0]=true\n}"
+            "type": "setValue",
+            "name": "flag:第27关通关",
+            "value": "1"
+        },
+        {
+            "type": "show",
+            "loc": [
+                [
+                    4,
+                    4
+                ],
+                [
+                    6,
+                    4
+                ],
+                [
+                    8,
+                    4
+                ],
+                [
+                    10,
+                    4
+                ],
+                [
+                    5,
+                    5
+                ],
+                [
+                    7,
+                    5
+                ],
+                [
+                    9,
+                    5
+                ],
+                [
+                    4,
+                    6
+                ],
+                [
+                    6,
+                    6
+                ],
+                [
+                    8,
+                    6
+                ],
+                [
+                    10,
+                    6
+                ],
+                [
+                    5,
+                    7
+                ],
+                [
+                    9,
+                    7
+                ],
+                [
+                    4,
+                    8
+                ],
+                [
+                    6,
+                    8
+                ],
+                [
+                    8,
+                    8
+                ],
+                [
+                    10,
+                    8
+                ],
+                [
+                    5,
+                    9
+                ],
+                [
+                    7,
+                    9
+                ],
+                [
+                    9,
+                    9
+                ],
+                [
+                    4,
+                    10
+                ],
+                [
+                    6,
+                    10
+                ],
+                [
+                    8,
+                    10
+                ],
+                [
+                    10,
+                    10
+                ]
+            ],
+            "time": 200
         }
     ],
     "eachArrive": [],
@@ -191,30 +294,6 @@ main.floors.MT191=
                 "pos": 6
             },
             {
-                "type": "function",
-                "function": "function(){\nflags.skillList=[0,0,0,0,0,0,0]\n}"
-            },
-            {
-                "type": "if",
-                "condition": "(core.searchBlock('*Gem',['MT187','MT188','MT189','MT190','MT191']).length===0)",
-                "true": [
-                    {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[28][1]=true\n}"
-                    }
-                ]
-            },
-            {
-                "type": "if",
-                "condition": "((item:tea>=40)&&(status:mana>=600))",
-                "true": [
-                    {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[28][2]=true\n}"
-                    }
-                ]
-            },
-            {
                 "type": "update"
             },
             {
@@ -222,7 +301,7 @@ main.floors.MT191=
                 "time": 500
             },
             {
-                "type": "hideStatusBar"
+                "type": "hideui"
             },
             {
                 "type": "update"
@@ -265,7 +344,7 @@ main.floors.MT191=
             },
             {
                 "type": "function",
-                "function": "function(){\nvar a = flags.mission[core.getFlag('stage')];\ncore.setFlag('@temp@A', a[0] + a[1] + a[2]);\n}"
+                "function": "function(){\nvar a = core.taskSystem.checkTask(0) ? 1 : 0,\n\tb = core.taskSystem.checkTask(1) ? 1 : 0,\n\tc = core.taskSystem.checkTask(2) ? 1 : 0;\ncore.setFlag('@temp@A', a + b + c);\n}"
             },
             {
                 "type": "if",
@@ -291,11 +370,6 @@ main.floors.MT191=
                             90
                         ],
                         "opacity": 1,
-                        "time": 500,
-                        "async": true
-                    },
-                    {
-                        "type": "sleep",
                         "time": 500
                     },
                     {
@@ -322,11 +396,6 @@ main.floors.MT191=
                                     90
                                 ],
                                 "opacity": 1,
-                                "time": 500,
-                                "async": true
-                            },
-                            {
-                                "type": "sleep",
                                 "time": 500
                             },
                             {
@@ -353,11 +422,6 @@ main.floors.MT191=
                                             90
                                         ],
                                         "opacity": 1,
-                                        "time": 500,
-                                        "async": true
-                                    },
-                                    {
-                                        "type": "sleep",
                                         "time": 500
                                     }
                                 ],
@@ -412,6 +476,9 @@ main.floors.MT191=
             },
             {
                 "type": "clearMap"
+            },
+            {
+                "type": "submitTask"
             },
             {
                 "type": "moveImage",
@@ -498,7 +565,367 @@ main.floors.MT191=
                     }
                 ]
             }
-        ]
+        ],
+        "4,4": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "10,4": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "10,10": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "4,10": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "6,4": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "8,4": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "8,10": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "6,10": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "4,8": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "4,6": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "10,6": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "10,8": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "5,5": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "9,5": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "9,9": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "5,9": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "5,7": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "7,5": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "9,7": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "7,9": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "6,6": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "8,6": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "8,8": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "6,8": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        }
     },
     "changeFloor": {
         "14,7": {
@@ -521,13 +948,13 @@ main.floors.MT191=
     [  3,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  3],
     [  3,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  3],
     [  3,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  3],
-    [  3,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  3],
-    [  3,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  3],
-    [  3,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  3],
-    [ 89,  0,  0,  0,  0,  0,  0,498,  0,  0,  0,  0,  0,  0, 94],
-    [  3,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  3],
-    [  3,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  3],
-    [  3,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  3],
+    [  3,  0,  0,  0,571,  0,537,  0,537,  0,571,  0,  0,  0,  3],
+    [  3,  0,  0,  0,  0,536,  0,535,  0,536,  0,  0,  0,  0,  3],
+    [  3,  0,  0,  0,538,  0,590,  0,590,  0,538,  0,  0,  0,  3],
+    [ 89,  0,  0,  0,  0,535,  0,498,  0,535,  0,  0,  0,  0, 94],
+    [  3,  0,  0,  0,538,  0,590,  0,590,  0,538,  0,  0,  0,  3],
+    [  3,  0,  0,  0,  0,536,  0,535,  0,536,  0,  0,  0,  0,  3],
+    [  3,  0,  0,  0,571,  0,537,  0,537,  0,571,  0,  0,  0,  3],
     [  3,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  3],
     [  3,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  3],
     [  3,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  3],

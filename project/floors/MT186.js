@@ -24,6 +24,9 @@ main.floors.MT186=
         {
             "type": "setCurtain",
             "time": 500
+        },
+        {
+            "type": "showui"
         }
     ],
     "eachArrive": [],
@@ -242,7 +245,7 @@ main.floors.MT186=
                 "text": "\t[机场后勤,N516]请选择出战空军",
                 "choices": [
                     {
-                        "text": "装备 P40C战斧",
+                        "text": "装备 P40B战斧",
                         "icon": "p40c",
                         "need": "core.hasItem('p40c')&&!core.hasEquip('p40c')",
                         "condition": "core.hasItem('spitfiremk1')&&!core.hasEquip('spitfiremk1')",
@@ -484,7 +487,19 @@ main.floors.MT186=
                 "type": "playSound",
                 "name": "xinxinmagic.mp3"
             },
-            "\t[系统提示]当前区域敌人特点：意大利海空军，伴随少量德军潜艇。\n推荐携带技能：防空弹幕、空战王牌、Z字规避、扫雷、破译、从海底出击、金牌损管。\n推荐出战装备：V级驱逐舰、谢菲尔德号轻巡洋舰、厌战号战列舰、喷火5、SBD无畏、B25米切尔"
+            "\t[系统提示]当前区域敌人特点：意大利海空军，伴随少量德军潜艇。\n推荐携带技能：防空弹幕、空战王牌、Z字规避、扫雷、破译、从海底出击、金牌损管。\n推荐出战装备：V级驱逐舰、谢菲尔德号轻巡洋舰、厌战号战列舰、喷火5或P47、英俊战士、B25米切尔",
+            "可以在此清空技能槽，以便于玩家重新选择技能",
+            {
+                "type": "confirm",
+                "text": "清空技能槽？",
+                "yes": [
+                    {
+                        "type": "function",
+                        "function": "function(){\nflags.skillList=[0,0,0,0,0,0,0]\n}"
+                    }
+                ],
+                "no": []
+            }
         ],
         "0,7": [
             "\t[参谋,N517]长官，请下达指示！",

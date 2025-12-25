@@ -2616,6 +2616,9 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				core.drawIcon(uictx, "statusMdef", 8, 127, 20, 20) //后勤点	
 				core.fillText(uictx, "后勤点:", 32, 142.5, "#AAFF88", "bold 16px kaiti") //后勤点：
 				core.fillText(uictx, core.formatBigNumber(core.getRealStatus("mdef"), false), 86, 144, "#AAFF88", "18px number", 100) //后勤点数字
+				if (flags.temmdef) { //临时后勤
+					core.fillText(uictx, "+" + core.formatBigNumber(flags.temmdef, false), 100, 128, "#7CFC00", "12px number", 100);
+				}
 
 				core.setTextAlign("outerUI", "center") //居中
 				core.fillText(uictx, "——陆军属性——", 240, 20, "#FFFF00", "bold 16px kaiti", 150)
@@ -2735,6 +2738,9 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				core.drawIcon(uictx, "statusMdef", 6, 190, 24, 24) //后勤点	
 				core.fillText(uictx, "后勤点:", 36, 209, "#AAFF88", "bold 16px kaiti") //后勤点：
 				core.fillText(uictx, core.formatBigNumber(core.getRealStatus("mdef"), false), 90, 210.5, "#AAFF88", "18px number", 54) //后勤点数字
+				if (flags.temmdef) { //临时后勤
+					core.fillText(uictx, "+" + core.formatBigNumber(flags.temmdef, false), 100, 195, "#7CFC00", "12px number", 100);
+				}
 
 				core.setTextAlign("outerUI", "center") //居中
 				core.fillText(uictx, "——————————陆军属性——————————", 75, 235.5, "#FFFF00", "bold 16px kaiti")
@@ -4535,8 +4541,8 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 			id: 13,
 			strategy: false,
 			name: '金牌损管',
-			cost: 180,
-			description: '下一场战斗结束后，回满血量，清除所有负面效果，获得20%当前后勤值的临时后勤值'
+			cost: 300,
+			description: '仅在海战地图生效。下一场战斗结束后，回满血量，清除所有非环境因素导致的负面效果，获得20%当前后勤值的临时后勤值'
 		},
 
 		{ // 14
