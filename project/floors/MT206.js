@@ -19,6 +19,11 @@ main.floors.MT206=
     "events": {
         "7,14": [
             {
+                "type": "setValue",
+                "name": "flag:第29关通关",
+                "value": "1"
+            },
+            {
                 "type": "unloadEquip",
                 "pos": 0
             },
@@ -47,24 +52,6 @@ main.floors.MT206=
                 "pos": 6
             },
             {
-                "type": "function",
-                "function": "function(){\nflags.skillList=[0,0,0,0,0,0,0]\n}"
-            },
-            {
-                "type": "function",
-                "function": "function(){\nflags.mission[30][0]=true\n}"
-            },
-            {
-                "type": "if",
-                "condition": "(item:tea>=30)",
-                "true": [
-                    {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[30][2]=true\n}"
-                    }
-                ]
-            },
-            {
                 "type": "update"
             },
             {
@@ -72,7 +59,7 @@ main.floors.MT206=
                 "time": 500
             },
             {
-                "type": "hideStatusBar"
+                "type": "hideui"
             },
             {
                 "type": "update"
@@ -115,7 +102,7 @@ main.floors.MT206=
             },
             {
                 "type": "function",
-                "function": "function(){\nvar a = flags.mission[core.getFlag('stage')];\ncore.setFlag('@temp@A', a[0] + a[1] + a[2]);\n}"
+                "function": "function(){\nvar a = core.taskSystem.checkTask(0) ? 1 : 0,\n\tb = core.taskSystem.checkTask(1) ? 1 : 0,\n\tc = core.taskSystem.checkTask(2) ? 1 : 0;\ncore.setFlag('@temp@A', a + b + c);\n}"
             },
             {
                 "type": "if",
@@ -141,11 +128,6 @@ main.floors.MT206=
                             90
                         ],
                         "opacity": 1,
-                        "time": 500,
-                        "async": true
-                    },
-                    {
-                        "type": "sleep",
                         "time": 500
                     },
                     {
@@ -172,11 +154,6 @@ main.floors.MT206=
                                     90
                                 ],
                                 "opacity": 1,
-                                "time": 500,
-                                "async": true
-                            },
-                            {
-                                "type": "sleep",
                                 "time": 500
                             },
                             {
@@ -203,11 +180,6 @@ main.floors.MT206=
                                             90
                                         ],
                                         "opacity": 1,
-                                        "time": 500,
-                                        "async": true
-                                    },
-                                    {
-                                        "type": "sleep",
                                         "time": 500
                                     }
                                 ],
@@ -262,6 +234,9 @@ main.floors.MT206=
             },
             {
                 "type": "clearMap"
+            },
+            {
+                "type": "submitTask"
             },
             {
                 "type": "moveImage",
@@ -382,40 +357,27 @@ main.floors.MT206=
     "afterOpenDoor": {},
     "autoEvent": {
         "6,14": {
-            "0": {
-                "condition": "!core.hasEnemyLeft(undefined,['MT202','MT203','MT204'])",
-                "currentFloor": false,
-                "priority": 0,
-                "delayExecute": false,
-                "multiExecute": false,
-                "data": [
-                    {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[30][1]=true\n}"
-                    }
-                ]
-            },
             "1": null
         }
     },
     "cannotMove": {},
     "cannotMoveIn": {},
     "map": [
-    [ 21,150, 21, 21, 21,150,538,150, 21, 21, 21,150,  0,538,  0],
-    [ 21,150,  0,365,  0,150,538,150,  0,365,  0,150,589,150,392],
+    [580,150, 21, 22, 21,150,538,150, 21, 22, 21,150, 21,538, 21],
+    [580,150,518,365,518,150,538,150,518,365,518,150,589,150,392],
     [363,150,150, 81,150,150,579,150,150, 81,150,150, 11,150,150],
     [579, 11,363,538,  0, 11,411,  0,411,  0,392,150,  0,363,  0],
     [150,150,150,  0,365,150,150, 81,150,150,150,150,150,150, 81],
-    [535,  0,150,405,150,539,150,  0,537,537,392,150,405,  0,589],
+    [535,  0,150,405,150,539,150,  0,537,537,392,150,405,518,589],
     [535,589, 82,  0,150,539,363,150, 11,150,150,150, 11,150,150],
     [535,  0,150,405,536,150, 11,150,539,579, 81,  0,405,  0, 94],
     [150,150,150,536,536,150,539,365,538,539,150,150, 11,150,150],
-    [538,538,150, 11,150,150,589,150,150, 11,150,539,405,  0,  0],
+    [538,538,150, 11,150,150,589,150,150, 11,150,539,405,518,518],
     [538,589, 81,363,571,150,  0,365,150,363,539,150,150,150, 11],
     [150,150,  0,150,150,  0,366,571,366,539,150,539,539,579,  0],
-    [ 22, 22,150,538,538,  0,150, 82,150,150,150, 81,150,150,150],
+    [590, 22,150,538,538,  0,150, 82,150,150,150, 81,150,150,150],
     [539,539,150,150,150, 81,150,411,150,392,150,589,150,537,537],
-    [539,539,363,579,366,392,150, 89,150,392,362,  0,363,537,537]
+    [539,539,363,579,366,392,150, 89,150,392,362,518,363,537,537]
 ],
     "bgmap": [
 

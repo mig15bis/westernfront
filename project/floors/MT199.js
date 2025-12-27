@@ -46,14 +46,24 @@ main.floors.MT199=
             "type": "previewUI",
             "action": [
                 {
+                    "type": "setValue",
+                    "name": "flag:bosshp",
+                    "value": "4"
+                },
+                {
+                    "type": "setValue",
+                    "name": "flag:bosshpmax",
+                    "value": "4"
+                },
+                {
                     "type": "strokeRect",
                     "x": 130,
                     "y": 64,
-                    "width": 64,
+                    "width": 256,
                     "height": 16,
                     "style": [
                         255,
-                        165,
+                        255,
                         0,
                         1
                     ],
@@ -63,7 +73,7 @@ main.floors.MT199=
                     "type": "fillRect",
                     "x": 130,
                     "y": 64,
-                    "width": 64,
+                    "width": 256,
                     "height": 16,
                     "style": [
                         255,
@@ -73,87 +83,28 @@ main.floors.MT199=
                     ]
                 },
                 {
-                    "type": "strokeRect",
-                    "x": 194,
-                    "y": 64,
-                    "width": 64,
-                    "height": 16,
+                    "type": "fillBoldText",
+                    "x": 130,
+                    "y": 48,
                     "style": [
                         255,
-                        165,
+                        0,
                         0,
                         1
                     ],
-                    "lineWidth": 5
-                },
-                {
-                    "type": "fillRect",
-                    "x": 194,
-                    "y": 64,
-                    "width": 64,
-                    "height": 16,
-                    "style": [
+                    "strokeStyle": [
                         255,
-                        0,
-                        0,
-                        1
-                    ]
-                },
-                {
-                    "type": "strokeRect",
-                    "x": 258,
-                    "y": 64,
-                    "width": 64,
-                    "height": 16,
-                    "style": [
-                        255,
-                        165,
+                        140,
                         0,
                         1
                     ],
-                    "lineWidth": 5
-                },
-                {
-                    "type": "fillRect",
-                    "x": 258,
-                    "y": 64,
-                    "width": 64,
-                    "height": 16,
-                    "style": [
-                        255,
-                        0,
-                        0,
-                        1
-                    ]
-                },
-                {
-                    "type": "strokeRect",
-                    "x": 322,
-                    "y": 64,
-                    "width": 64,
-                    "height": 16,
-                    "style": [
-                        255,
-                        165,
-                        0,
-                        1
-                    ],
-                    "lineWidth": 5
-                },
-                {
-                    "type": "fillRect",
-                    "x": 322,
-                    "y": 64,
-                    "width": 64,
-                    "height": 16,
-                    "style": [
-                        255,
-                        0,
-                        0,
-                        1
-                    ]
+                    "font": "20px number",
+                    "text": "4/4"
                 }
             ]
+        },
+        {
+            "type": "callBook"
         }
     ],
     "eachArrive": [],
@@ -189,10 +140,6 @@ main.floors.MT199=
                 "pos": 6
             },
             {
-                "type": "function",
-                "function": "function(){\nflags.skillList=[0,0,0,0,0,0,0]\n}"
-            },
-            {
                 "type": "update"
             },
             {
@@ -200,7 +147,7 @@ main.floors.MT199=
                 "time": 500
             },
             {
-                "type": "hideStatusBar"
+                "type": "hideui"
             },
             {
                 "type": "update"
@@ -243,7 +190,7 @@ main.floors.MT199=
             },
             {
                 "type": "function",
-                "function": "function(){\nvar a = flags.mission[core.getFlag('stage')];\ncore.setFlag('@temp@A', a[0] + a[1] + a[2]);\n}"
+                "function": "function(){\nvar a = core.taskSystem.checkTask(0) ? 1 : 0,\n\tb = core.taskSystem.checkTask(1) ? 1 : 0,\n\tc = core.taskSystem.checkTask(2) ? 1 : 0;\ncore.setFlag('@temp@A', a + b + c);\n}"
             },
             {
                 "type": "if",
@@ -269,11 +216,6 @@ main.floors.MT199=
                             90
                         ],
                         "opacity": 1,
-                        "time": 500,
-                        "async": true
-                    },
-                    {
-                        "type": "sleep",
                         "time": 500
                     },
                     {
@@ -300,11 +242,6 @@ main.floors.MT199=
                                     90
                                 ],
                                 "opacity": 1,
-                                "time": 500,
-                                "async": true
-                            },
-                            {
-                                "type": "sleep",
                                 "time": 500
                             },
                             {
@@ -331,11 +268,6 @@ main.floors.MT199=
                                             90
                                         ],
                                         "opacity": 1,
-                                        "time": 500,
-                                        "async": true
-                                    },
-                                    {
-                                        "type": "sleep",
                                         "time": 500
                                     }
                                 ],
@@ -390,6 +322,9 @@ main.floors.MT199=
             },
             {
                 "type": "clearMap"
+            },
+            {
+                "type": "submitTask"
             },
             {
                 "type": "moveImage",
@@ -491,7 +426,667 @@ main.floors.MT199=
                     }
                 ]
             }
-        ]
+        ],
+        "7,8": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "6,7": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "8,7": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "7,7": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "7,6": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "6,6": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "8,6": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "6,12": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "8,12": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "5,11": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "5,13": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "9,11": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "9,13": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "9,12": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "5,12": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "4,11": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "4,13": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "10,11": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "10,13": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "10,12": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "4,12": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "2,11": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "12,11": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "2,12": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "12,12": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "1,13": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "13,13": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "7,1": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "8,1": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "5,3": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "6,4": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "8,4": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "9,3": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "10,4": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "7,4": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "4,4": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "3,3": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "12,2": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "12,3": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "4,1": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "1,2": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "12,5": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "11,5": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        },
+        "2,5": {
+            "trigger": null,
+            "enable": false,
+            "noPass": null,
+            "displayDamage": true,
+            "opacity": 1,
+            "filter": {
+                "blur": 0,
+                "hue": 0,
+                "grayscale": 0,
+                "invert": false,
+                "shadow": 0
+            },
+            "data": []
+        }
     },
     "changeFloor": {},
     "beforeBattle": {},
@@ -499,14 +1094,51 @@ main.floors.MT199=
         "7,3": [
             {
                 "type": "if",
-                "condition": "(flag:MT199boss===0)",
+                "condition": "(flag:bosshp===4)",
                 "true": [
                     {
-                        "type": "clearMap",
-                        "x": 322,
-                        "y": 64,
-                        "width": 64,
-                        "height": 16
+                        "type": "previewUI",
+                        "action": [
+                            {
+                                "type": "setValue",
+                                "name": "flag:bosshp",
+                                "operator": "-=",
+                                "value": "1"
+                            },
+                            {
+                                "type": "clearMap",
+                                "x": 128,
+                                "y": 30,
+                                "width": 100,
+                                "height": 30
+                            },
+                            {
+                                "type": "clearMap",
+                                "x": "386 - ((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                "y": 64,
+                                "width": "((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                "height": 16
+                            },
+                            {
+                                "type": "fillBoldText",
+                                "x": 130,
+                                "y": 48,
+                                "style": [
+                                    255,
+                                    0,
+                                    0,
+                                    1
+                                ],
+                                "strokeStyle": [
+                                    255,
+                                    140,
+                                    0,
+                                    1
+                                ],
+                                "font": "20px number",
+                                "text": "3/4"
+                            }
+                        ]
                     },
                     {
                         "type": "setBlock",
@@ -537,12 +1169,6 @@ main.floors.MT199=
                         "type": "waitAsync"
                     },
                     {
-                        "type": "setValue",
-                        "name": "flag:MT199boss",
-                        "operator": "+=",
-                        "value": "1"
-                    },
-                    {
                         "type": "sleep",
                         "time": 500
                     },
@@ -556,80 +1182,87 @@ main.floors.MT199=
                         ]
                     },
                     {
-                        "type": "setBlock",
-                        "number": "motorinf",
+                        "type": "show",
                         "loc": [
                             [
+                                6,
+                                6
+                            ],
+                            [
                                 7,
-                                10
-                            ]
-                        ],
-                        "time": 0,
-                        "async": true
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "motorinf",
-                        "loc": [
+                                6
+                            ],
+                            [
+                                8,
+                                6
+                            ],
+                            [
+                                6,
+                                7
+                            ],
+                            [
+                                7,
+                                7
+                            ],
+                            [
+                                8,
+                                7
+                            ],
                             [
                                 7,
                                 8
                             ]
-                        ],
-                        "time": 0,
-                        "async": true
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "panzer3f",
-                        "loc": [
-                            [
-                                8,
-                                7
-                            ]
-                        ],
-                        "time": 0,
-                        "async": true
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "panzer3f",
-                        "loc": [
-                            [
-                                6,
-                                7
-                            ]
-                        ],
-                        "time": 0,
-                        "async": true
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "panzer4f",
-                        "loc": [
-                            [
-                                7,
-                                5
-                            ]
-                        ],
-                        "time": 0,
-                        "async": true
-                    },
-                    {
-                        "type": "waitAsync"
+                        ]
                     }
                 ],
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT199boss===1)",
+                        "condition": "(flag:bosshp===3)",
                         "true": [
                             {
-                                "type": "clearMap",
-                                "x": 258,
-                                "y": 64,
-                                "width": 64,
-                                "height": 16
+                                "type": "previewUI",
+                                "action": [
+                                    {
+                                        "type": "setValue",
+                                        "name": "flag:bosshp",
+                                        "operator": "-=",
+                                        "value": "1"
+                                    },
+                                    {
+                                        "type": "clearMap",
+                                        "x": 128,
+                                        "y": 30,
+                                        "width": 100,
+                                        "height": 30
+                                    },
+                                    {
+                                        "type": "clearMap",
+                                        "x": "386 - ((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                        "y": 64,
+                                        "width": "((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                        "height": 16
+                                    },
+                                    {
+                                        "type": "fillBoldText",
+                                        "x": 130,
+                                        "y": 48,
+                                        "style": [
+                                            255,
+                                            0,
+                                            0,
+                                            1
+                                        ],
+                                        "strokeStyle": [
+                                            255,
+                                            140,
+                                            0,
+                                            1
+                                        ],
+                                        "font": "20px number",
+                                        "text": "2/4"
+                                    }
+                                ]
                             },
                             {
                                 "type": "setBlock",
@@ -660,12 +1293,6 @@ main.floors.MT199=
                                 "type": "waitAsync"
                             },
                             {
-                                "type": "setValue",
-                                "name": "flag:MT199boss",
-                                "operator": "+=",
-                                "value": "1"
-                            },
-                            {
                                 "type": "sleep",
                                 "time": 500
                             },
@@ -679,92 +1306,139 @@ main.floors.MT199=
                                 ]
                             },
                             {
-                                "type": "setBlock",
-                                "number": "flak88",
+                                "type": "show",
                                 "loc": [
                                     [
-                                        6,
-                                        2
-                                    ]
-                                ],
-                                "time": 0,
-                                "async": true
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "flak88",
-                                "loc": [
+                                        2,
+                                        11
+                                    ],
                                     [
-                                        8,
-                                        2
-                                    ]
-                                ],
-                                "time": 0,
-                                "async": true
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "howitzer105",
-                                "loc": [
+                                        2,
+                                        12
+                                    ],
+                                    [
+                                        1,
+                                        13
+                                    ],
+                                    [
+                                        4,
+                                        11
+                                    ],
+                                    [
+                                        4,
+                                        12
+                                    ],
+                                    [
+                                        4,
+                                        13
+                                    ],
                                     [
                                         5,
-                                        3
-                                    ]
-                                ],
-                                "time": 0,
-                                "async": true
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "howitzer105",
-                                "loc": [
+                                        11
+                                    ],
                                     [
-                                        9,
-                                        3
-                                    ]
-                                ],
-                                "time": 0,
-                                "async": true
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "panzer4f",
-                                "loc": [
+                                        5,
+                                        12
+                                    ],
+                                    [
+                                        5,
+                                        13
+                                    ],
                                     [
                                         6,
-                                        4
-                                    ]
-                                ],
-                                "time": 0,
-                                "async": true
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "panzer4f",
-                                "loc": [
+                                        12
+                                    ],
                                     [
                                         8,
-                                        4
+                                        12
+                                    ],
+                                    [
+                                        9,
+                                        11
+                                    ],
+                                    [
+                                        9,
+                                        12
+                                    ],
+                                    [
+                                        9,
+                                        13
+                                    ],
+                                    [
+                                        10,
+                                        11
+                                    ],
+                                    [
+                                        10,
+                                        12
+                                    ],
+                                    [
+                                        10,
+                                        13
+                                    ],
+                                    [
+                                        12,
+                                        11
+                                    ],
+                                    [
+                                        12,
+                                        12
+                                    ],
+                                    [
+                                        13,
+                                        13
                                     ]
-                                ],
-                                "time": 0,
-                                "async": true
-                            },
-                            {
-                                "type": "waitAsync"
+                                ]
                             }
                         ],
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT199boss===2)",
+                                "condition": "(flag:bosshp===2)",
                                 "true": [
                                     {
-                                        "type": "clearMap",
-                                        "x": 194,
-                                        "y": 64,
-                                        "width": 64,
-                                        "height": 16
+                                        "type": "previewUI",
+                                        "action": [
+                                            {
+                                                "type": "setValue",
+                                                "name": "flag:bosshp",
+                                                "operator": "-=",
+                                                "value": "1"
+                                            },
+                                            {
+                                                "type": "clearMap",
+                                                "x": 128,
+                                                "y": 30,
+                                                "width": 100,
+                                                "height": 30
+                                            },
+                                            {
+                                                "type": "clearMap",
+                                                "x": "386 - ((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                                "y": 64,
+                                                "width": "((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                                "height": 16
+                                            },
+                                            {
+                                                "type": "fillBoldText",
+                                                "x": 130,
+                                                "y": 48,
+                                                "style": [
+                                                    255,
+                                                    0,
+                                                    0,
+                                                    1
+                                                ],
+                                                "strokeStyle": [
+                                                    255,
+                                                    140,
+                                                    0,
+                                                    1
+                                                ],
+                                                "font": "20px number",
+                                                "text": "1/4"
+                                            }
+                                        ]
                                     },
                                     {
                                         "type": "setBlock",
@@ -795,12 +1469,6 @@ main.floors.MT199=
                                         "type": "waitAsync"
                                     },
                                     {
-                                        "type": "setValue",
-                                        "name": "flag:MT199boss",
-                                        "operator": "+=",
-                                        "value": "1"
-                                    },
-                                    {
                                         "type": "sleep",
                                         "time": 500
                                     },
@@ -823,57 +1491,140 @@ main.floors.MT199=
                                         ]
                                     },
                                     {
-                                        "type": "setBlock",
-                                        "number": "panzer3f",
+                                        "type": "show",
                                         "loc": [
                                             [
-                                                6,
-                                                5
-                                            ]
-                                        ],
-                                        "time": 0,
-                                        "async": true
-                                    },
-                                    {
-                                        "type": "setBlock",
-                                        "number": "panzer3f",
-                                        "loc": [
+                                                7,
+                                                1
+                                            ],
                                             [
                                                 8,
+                                                1
+                                            ],
+                                            [
+                                                4,
+                                                1
+                                            ],
+                                            [
+                                                1,
+                                                2
+                                            ],
+                                            [
+                                                12,
+                                                2
+                                            ],
+                                            [
+                                                12,
+                                                3
+                                            ],
+                                            [
+                                                3,
+                                                3
+                                            ],
+                                            [
+                                                5,
+                                                3
+                                            ],
+                                            [
+                                                9,
+                                                3
+                                            ],
+                                            [
+                                                4,
+                                                4
+                                            ],
+                                            [
+                                                6,
+                                                4
+                                            ],
+                                            [
+                                                7,
+                                                4
+                                            ],
+                                            [
+                                                8,
+                                                4
+                                            ],
+                                            [
+                                                10,
+                                                4
+                                            ],
+                                            [
+                                                2,
+                                                5
+                                            ],
+                                            [
+                                                11,
+                                                5
+                                            ],
+                                            [
+                                                12,
                                                 5
                                             ]
-                                        ],
-                                        "time": 0,
-                                        "async": true
+                                        ]
                                     },
                                     {
                                         "type": "setEnemy",
                                         "id": "rommel",
                                         "name": "money",
-                                        "value": "30",
+                                        "value": "100",
                                         "norefresh": true
                                     },
                                     {
                                         "type": "setEnemy",
                                         "id": "rommel",
                                         "name": "exp",
-                                        "value": "30"
-                                    },
-                                    {
-                                        "type": "waitAsync"
+                                        "value": "100"
                                     }
                                 ],
                                 "false": [
                                     {
                                         "type": "if",
-                                        "condition": "(flag:MT199boss===3)",
+                                        "condition": "(flag:bosshp===1)",
                                         "true": [
                                             {
-                                                "type": "clearMap",
-                                                "x": 130,
-                                                "y": 64,
-                                                "width": 64,
-                                                "height": 16
+                                                "type": "previewUI",
+                                                "action": [
+                                                    {
+                                                        "type": "setValue",
+                                                        "name": "flag:bosshp",
+                                                        "operator": "-=",
+                                                        "value": "1"
+                                                    },
+                                                    {
+                                                        "type": "clearMap",
+                                                        "x": 128,
+                                                        "y": 30,
+                                                        "width": 100,
+                                                        "height": 30
+                                                    },
+                                                    {
+                                                        "type": "clearMap",
+                                                        "x": "386 - ((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                                        "y": 64,
+                                                        "width": "((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                                        "height": 16
+                                                    },
+                                                    {
+                                                        "type": "fillBoldText",
+                                                        "x": 130,
+                                                        "y": 48,
+                                                        "style": [
+                                                            255,
+                                                            0,
+                                                            0,
+                                                            1
+                                                        ],
+                                                        "strokeStyle": [
+                                                            255,
+                                                            140,
+                                                            0,
+                                                            1
+                                                        ],
+                                                        "font": "20px number",
+                                                        "text": "0/4"
+                                                    }
+                                                ]
                                             },
                                             {
                                                 "type": "setBlock",
@@ -887,18 +1638,12 @@ main.floors.MT199=
                                                 "time": 0
                                             },
                                             {
-                                                "type": "setValue",
-                                                "name": "flag:MT199boss",
-                                                "operator": "+=",
-                                                "value": "1"
-                                            },
-                                            {
                                                 "type": "sleep",
                                                 "time": 500
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "\t[隆美尔]\f[rommel.png,0,310]要我在在元首的命令和士兵的生命之间做抉择，我更希望我的士兵们能活下去。全军撤退！所有的惩罚由我一人承担！",
+                                                "text": "\t[隆美尔]\f[rommel.png,0,310]比起盲目服从元首的错误命令，我更希望我的士兵们能活下去。全军撤退，来不及撤的可以向最近的盟军部队投降！所有的惩罚均由我一人承担。",
                                                 "pos": [
                                                     100,
                                                     300,
@@ -907,8 +1652,9 @@ main.floors.MT199=
                                             },
                                             "\t[系统提示]主线boss战 胜利！",
                                             {
-                                                "type": "function",
-                                                "function": "function(){\nflags.mission[29][0]=true\n}"
+                                                "type": "setValue",
+                                                "name": "flag:MT199boss",
+                                                "value": "1"
                                             },
                                             {
                                                 "type": "hide",
@@ -924,7 +1670,14 @@ main.floors.MT199=
                                             {
                                                 "type": "openDoor",
                                                 "loc": [
-                                                    1,
+                                                    3,
+                                                    7
+                                                ]
+                                            },
+                                            {
+                                                "type": "openDoor",
+                                                "loc": [
+                                                    11,
                                                     7
                                                 ]
                                             },
@@ -954,6 +1707,657 @@ main.floors.MT199=
                     }
                 ]
             }
+        ],
+        "5,11": [
+            {
+                "type": "setValue",
+                "name": "flag:MT199door1",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT199door1===12)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            2,
+                            10
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            12,
+                            10
+                        ]
+                    }
+                ]
+            }
+        ],
+        "5,12": [
+            {
+                "type": "setValue",
+                "name": "flag:MT199door1",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT199door1===12)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            2,
+                            10
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            12,
+                            10
+                        ]
+                    }
+                ]
+            }
+        ],
+        "5,13": [
+            {
+                "type": "setValue",
+                "name": "flag:MT199door1",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT199door1===12)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            2,
+                            10
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            12,
+                            10
+                        ]
+                    }
+                ]
+            }
+        ],
+        "4,11": [
+            {
+                "type": "setValue",
+                "name": "flag:MT199door1",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT199door1===12)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            2,
+                            10
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            12,
+                            10
+                        ]
+                    }
+                ]
+            }
+        ],
+        "4,12": [
+            {
+                "type": "setValue",
+                "name": "flag:MT199door1",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT199door1===12)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            2,
+                            10
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            12,
+                            10
+                        ]
+                    }
+                ]
+            }
+        ],
+        "4,13": [
+            {
+                "type": "setValue",
+                "name": "flag:MT199door1",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT199door1===12)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            2,
+                            10
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            12,
+                            10
+                        ]
+                    }
+                ]
+            }
+        ],
+        "9,11": [
+            {
+                "type": "setValue",
+                "name": "flag:MT199door1",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT199door1===12)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            2,
+                            10
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            12,
+                            10
+                        ]
+                    }
+                ]
+            }
+        ],
+        "9,12": [
+            {
+                "type": "setValue",
+                "name": "flag:MT199door1",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT199door1===12)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            2,
+                            10
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            12,
+                            10
+                        ]
+                    }
+                ]
+            }
+        ],
+        "9,13": [
+            {
+                "type": "setValue",
+                "name": "flag:MT199door1",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT199door1===12)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            2,
+                            10
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            12,
+                            10
+                        ]
+                    }
+                ]
+            }
+        ],
+        "10,11": [
+            {
+                "type": "setValue",
+                "name": "flag:MT199door1",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT199door1===12)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            2,
+                            10
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            12,
+                            10
+                        ]
+                    }
+                ]
+            }
+        ],
+        "10,12": [
+            {
+                "type": "setValue",
+                "name": "flag:MT199door1",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT199door1===12)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            2,
+                            10
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            12,
+                            10
+                        ]
+                    }
+                ]
+            }
+        ],
+        "10,13": [
+            {
+                "type": "setValue",
+                "name": "flag:MT199door1",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT199door1===12)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            2,
+                            10
+                        ]
+                    },
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            12,
+                            10
+                        ]
+                    }
+                ]
+            }
+        ],
+        "5,3": [
+            {
+                "type": "setValue",
+                "name": "flag:MT199door2",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT199door2===15)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            6,
+                            1
+                        ]
+                    }
+                ]
+            }
+        ],
+        "6,4": [
+            {
+                "type": "setValue",
+                "name": "flag:MT199door2",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT199door2===15)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            6,
+                            1
+                        ]
+                    }
+                ]
+            }
+        ],
+        "8,4": [
+            {
+                "type": "setValue",
+                "name": "flag:MT199door2",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT199door2===15)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            6,
+                            1
+                        ]
+                    }
+                ]
+            }
+        ],
+        "9,3": [
+            {
+                "type": "setValue",
+                "name": "flag:MT199door2",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT199door2===15)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            6,
+                            1
+                        ]
+                    }
+                ]
+            }
+        ],
+        "10,4": [
+            {
+                "type": "setValue",
+                "name": "flag:MT199door2",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT199door2===15)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            6,
+                            1
+                        ]
+                    }
+                ]
+            }
+        ],
+        "7,4": [
+            {
+                "type": "setValue",
+                "name": "flag:MT199door2",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT199door2===15)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            6,
+                            1
+                        ]
+                    }
+                ]
+            }
+        ],
+        "4,4": [
+            {
+                "type": "setValue",
+                "name": "flag:MT199door2",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT199door2===15)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            6,
+                            1
+                        ]
+                    }
+                ]
+            }
+        ],
+        "3,3": [
+            {
+                "type": "setValue",
+                "name": "flag:MT199door2",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT199door2===15)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            6,
+                            1
+                        ]
+                    }
+                ]
+            }
+        ],
+        "12,2": [
+            {
+                "type": "setValue",
+                "name": "flag:MT199door2",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT199door2===15)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            6,
+                            1
+                        ]
+                    }
+                ]
+            }
+        ],
+        "12,3": [
+            {
+                "type": "setValue",
+                "name": "flag:MT199door2",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT199door2===15)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            6,
+                            1
+                        ]
+                    }
+                ]
+            }
+        ],
+        "4,1": [
+            {
+                "type": "setValue",
+                "name": "flag:MT199door2",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT199door2===15)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            6,
+                            1
+                        ]
+                    }
+                ]
+            }
+        ],
+        "1,2": [
+            {
+                "type": "setValue",
+                "name": "flag:MT199door2",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT199door2===15)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            6,
+                            1
+                        ]
+                    }
+                ]
+            }
+        ],
+        "12,5": [
+            {
+                "type": "setValue",
+                "name": "flag:MT199door2",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT199door2===15)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            6,
+                            1
+                        ]
+                    }
+                ]
+            }
+        ],
+        "11,5": [
+            {
+                "type": "setValue",
+                "name": "flag:MT199door2",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT199door2===15)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            6,
+                            1
+                        ]
+                    }
+                ]
+            }
+        ],
+        "2,5": [
+            {
+                "type": "setValue",
+                "name": "flag:MT199door2",
+                "operator": "+=",
+                "value": "1"
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT199door2===15)",
+                "true": [
+                    {
+                        "type": "openDoor",
+                        "loc": [
+                            6,
+                            1
+                        ]
+                    }
+                ]
+            }
         ]
     },
     "afterGetItem": {},
@@ -967,19 +2371,19 @@ main.floors.MT199=
     "cannotMoveIn": {},
     "map": [
     [145,145,145,145,145,145,145,145,145,145,145,145,145,145,145],
-    [150,  0,  0,  0,  0,  0, 85,  0,  0,145,145,145,145,145,145],
-    [150,  0,150,150,150,150,150,150,150,150,150,150,  0,145,145],
-    [150,  0,150,  0,  0,  0,150,552,150,  0,  0,150,  0,  0,150],
-    [150,  0,150,150,  0,  0,  0,  0,  0,  0,  0,150,  0,  0,150],
-    [150,  0,  0,  0,  0,150,150,150,150,150,  0,  0,  0,  0,150],
-    [150,150,150,150,  0,150,  0,  0,  0,150,  0,150,150,150,150],
-    [ 89,571,571, 85,  0,150,  0,  0,  0,150,  0, 85,536,536,150],
-    [150,150,150,150,  0,150,150,  0,150,150,  0,150,150,150,150],
+    [150,  0,  0,  0,409,  0, 85,390,220,145,145,145,145,145,145],
+    [150,404,150,150,150,150,150,150,150,150,150,150,253,145,145],
+    [150,  0,150,253,  0,250,150,552,150,250,  0,150,409,  0,150],
+    [150,  0,150,150,203,  0,250,203,250,  0,203,150,  0,  0,150],
+    [150,  0,232,  0,  0,150,150,150,150,150,  0,232,404,  0,150],
+    [150,150,150,150,  0,150,265,253,265,150,  0,150,150,150,150],
+    [ 89,571,571, 85,  0,150,250,266,250,150,  0, 85,536,536,536],
+    [150,150,150,150,  0,150,150,250,150,150,  0,150,150,150,150],
     [150,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,150],
     [150,150, 85,150,150,150,150,  0,150,150,150,150, 85,150,150],
-    [150,  0,  0,150,  0,  0,150,  0,150,  0,  0,150,  0,  0,150],
-    [150,  0,  0,150,  0,  0,  0,  0,  0,  0,  0,150,  0,  0,150],
-    [150,  0,  0,150,  0,  0,150,  0,150,  0,  0,150,  0,  0,150],
+    [150,  0,409,150,203,250,150,  0,150,250,203,150,409,  0,150],
+    [150,  0,390,150,248,404, 11,  0, 11,404,248,150,390,  0,150],
+    [150,253,571,150,203,250,150,  0,150,250,203,150,571,253,150],
     [150,150,150,150,150,150,150,  0,150,150,150,150,150,150,150]
 ],
     "bgmap": [

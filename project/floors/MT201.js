@@ -18,13 +18,15 @@ main.floors.MT201=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        
         {
             "type": "update"
         },
         {
             "type": "setCurtain",
             "time": 500
+        },
+        {
+            "type": "showui"
         }
     ],
     "eachArrive": [],
@@ -155,7 +157,7 @@ main.floors.MT201=
                 "text": "\t[机场后勤,N516]请选择出战空军",
                 "choices": [
                     {
-                        "text": "装备 P40C战斧",
+                        "text": "装备 P40B战斧",
                         "icon": "p40c",
                         "need": "core.hasItem('p40c')&&!core.hasEquip('p40c')",
                         "condition": "core.hasItem('spitfiremk1')&&!core.hasEquip('spitfiremk1')",
@@ -522,7 +524,19 @@ main.floors.MT201=
                 "type": "playSound",
                 "name": "xinxinmagic.mp3"
             },
-            "\t[系统提示]当前区域敌人特点：均为意大利军队，战斗力低下。\n推荐携带技能：防空弹幕、空战王牌、扫雷、抵抗运动、破译、空中打击、补给线。\n推荐出战装备：M4谢尔曼、喷火5或P47B、英俊战士或P38、B25米切尔。海军随便带。"
+            "\t[系统提示]当前区域敌人特点：均为意大利军队，战斗力较低。\n推荐携带技能：防空弹幕、空战王牌、扫雷、抵抗运动、破译、空中打击、补给线。\n推荐出战装备：M4谢尔曼、喷火5或P47B、英俊战士、B25米切尔。海军随便带。",
+            "可以在此清空技能槽，以便于玩家重新选择技能",
+            {
+                "type": "confirm",
+                "text": "清空技能槽？",
+                "yes": [
+                    {
+                        "type": "function",
+                        "function": "function(){\nflags.skillList=[0,0,0,0,0,0,0]\n}"
+                    }
+                ],
+                "no": []
+            }
         ]
     },
     "changeFloor": {},

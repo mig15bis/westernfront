@@ -46,7 +46,7 @@ main.floors.MT304=
                 "text": "\t[机场后勤,N516]请选择出战空军",
                 "choices": [
                     {
-                        "text": "装备 P40C战斧",
+                        "text": "装备 P40B战斧",
                         "icon": "p40c",
                         "need": "core.hasItem('p40c')&&!core.hasEquip('p40c')",
                         "condition": "core.hasItem('spitfiremk1')&&!core.hasEquip('spitfiremk1')",
@@ -1360,7 +1360,7 @@ main.floors.MT304=
                                                         ]
                                                     },
                                                     {
-                                                        "text": "退役 P40C战斧",
+                                                        "text": "退役 P40B战斧",
                                                         "icon": "p40c",
                                                         "need": "core.hasItem('p40c')&&!core.hasEquip('p40c')",
                                                         "condition": "core.hasItem('hurricanemk2')&&!core.hasEquip('hurricanemk2')",

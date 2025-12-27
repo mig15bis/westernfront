@@ -443,7 +443,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		if (flags.escort && damage >= 0) { //拦截
 			var fredamage = (core.hasSpecial(enemyId, 64) ? 2 : 0.4) * damage;
 			if (dd === 'classj') { fredamage *= 0.5 } //检测到装备（J驱），友伤减半
-			if (core.hasItem('casablanca') && (core.status.maps[floorId].area === '浅滩' || core.status.maps[floorId].area === '海洋')) { //卡萨布兰卡
+			if (core.hasItem('casablanca') && (core.status.maps[core.status.floorId].area === '浅滩' || core.status.maps[core.status.floorId].area === '海洋')) { //卡萨布兰卡
 				fredamage *= 0.7;
 			}
 			flags['友军血量'] -= fredamage;
@@ -459,8 +459,11 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	//台风攻击机·纵深打击
 	if (fb === 'typhoon') {
 		let Block = core.getBlock(core.nextX(2), core.nextY(2));
+		if (!Block || Block.event.cls !== 'enemys') {
+			return
+		}
 		let blocktype = core.material.enemys[Block.event.id].type;
-		if (Block.event.cls === 'enemys' && (blocktype === '步兵' || blocktype === '轻坦' || blocktype === '中坦' || blocktype === '重坦' || blocktype === '坦歼' || blocktype === '反坦克炮' || blocktype === '榴弹炮' || blocktype === '高射炮' || blocktype === '建筑')) {
+		if ((blocktype === '步兵' || blocktype === '轻坦' || blocktype === '中坦' || blocktype === '重坦' || blocktype === '坦歼' || blocktype === '反坦克炮' || blocktype === '榴弹炮' || blocktype === '高射炮' || blocktype === '建筑')) {
 			let typhoonrocket = 0,
 				skillatk = core.getRealStatus('atk');
 			if (blocktype === '步兵' || blocktype === '反坦克炮' || blocktype === '榴弹炮' || blocktype === '高射炮') {
@@ -541,8 +544,11 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	if (lb === 'b17') {
 		locs.forEach(v => {
 			let Block = core.getBlock(v[0], v[1]);
-			let blocktype = core.material.enemys[Block.event.id].type;
-			if (Block.event.cls === 'enemys' && (blocktype === '步兵' || blocktype === '轻坦' || blocktype === '中坦' || blocktype === '重坦' || blocktype === '坦歼' || blocktype === '反坦克炮' || blocktype === '榴弹炮' || blocktype === '高射炮' || blocktype === '建筑')) {
+			if (!Block || Block.event.cls !== 'enemys') {
+				return
+			}
+			let blocktype = core.material.enemys[Block.event.id].type || 0;
+			if ((blocktype === '步兵' || blocktype === '轻坦' || blocktype === '中坦' || blocktype === '重坦' || blocktype === '坦歼' || blocktype === '反坦克炮' || blocktype === '榴弹炮' || blocktype === '高射炮' || blocktype === '建筑')) {
 				//core.setEnemyOnPoint(Block.x, Block.y, Block.floorId, 'hp', 0.95, "*=");
 				if (!flags.aoe[Block.x + '，' + Block.y + '，' + Block.floorId]) {
 					flags.aoe[Block.x + '，' + Block.y + '，' + Block.floorId] = Math.floor(core.getEnemyInfo(Block.event.id, hero, Block.x, Block.y, Block.floorId).hp * 0.05);
@@ -556,8 +562,11 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	if (lb === 'lancaster') {
 		locs.forEach(v => {
 			let Block = core.getBlock(v[0], v[1]);
+			if (!Block || Block.event.cls !== 'enemys') {
+				return
+			}
 			let blocktype = core.material.enemys[Block.event.id].type;
-			if (Block.event.cls === 'enemys' && (blocktype === '步兵' || blocktype === '轻坦' || blocktype === '中坦' || blocktype === '重坦' || blocktype === '坦歼' || blocktype === '反坦克炮' || blocktype === '榴弹炮' || blocktype === '高射炮' || blocktype === '建筑')) {
+			if ((blocktype === '步兵' || blocktype === '轻坦' || blocktype === '中坦' || blocktype === '重坦' || blocktype === '坦歼' || blocktype === '反坦克炮' || blocktype === '榴弹炮' || blocktype === '高射炮' || blocktype === '建筑')) {
 				if (!flags.aoe[Block.x + '，' + Block.y + '，' + Block.floorId]) {
 					flags.aoe[Block.x + '，' + Block.y + '，' + Block.floorId] = Math.floor(core.getEnemyInfo(Block.event.id, hero, Block.x, Block.y, Block.floorId).hp * 0.1);
 				} else {
@@ -570,8 +579,11 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	if (core.hasEquip('b29') || core.hasEquip('tu4')) {
 		locs.forEach(v => {
 			let Block = core.getBlock(v[0], v[1]);
+			if (!Block || Block.event.cls !== 'enemys') {
+				return
+			}
 			let blocktype = core.material.enemys[Block.event.id].type;
-			if (Block.event.cls === 'enemys' && (blocktype === '步兵' || blocktype === '轻坦' || blocktype === '中坦' || blocktype === '重坦' || blocktype === '坦歼' || blocktype === '反坦克炮' || blocktype === '榴弹炮' || blocktype === '高射炮' || blocktype === '建筑')) {
+			if ((blocktype === '步兵' || blocktype === '轻坦' || blocktype === '中坦' || blocktype === '重坦' || blocktype === '坦歼' || blocktype === '反坦克炮' || blocktype === '榴弹炮' || blocktype === '高射炮' || blocktype === '建筑')) {
 				if (!flags.aoe[Block.x + '，' + Block.y + '，' + Block.floorId]) {
 					flags.aoe[Block.x + '，' + Block.y + '，' + Block.floorId] = Math.floor(core.getEnemyInfo(Block.event.id, hero, Block.x, Block.y, Block.floorId).hp * 0.15);
 				} else {
@@ -630,7 +642,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	//清除临时护盾
 	flags.temmdef = 0;
 	//增加临时护盾
-	if (flags.skill === 13 && !flags.spy && core.status.maps[floorId].area === '海洋') {
+	if (flags.skill === 13 && !flags.spy && core.status.maps[core.status.floorId].area === '海洋') {
 		flags.temmdef += hero.mdef * 0.2;
 	}
 	//战后关技能并扣mana
@@ -953,7 +965,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		[68, "尖啸死神", "斯图卡轰炸机专属技能。投弹命中主角后，施加3层“惊慌”debuff，每层debuff会使主角攻击力减少10%，每过一次战斗减少一层，可无限叠加", "#dc143c"],
 		[69, "迂回包抄", "主角进行楼层切换操作时，进行强制战斗（为防止不必要的错误，每个区域最后一张地图不会出现）"],
 		[70, "直掩", "主角在当前地图中每主动进行一场战斗后，会遭到全体直掩战斗机的一次普攻（攻击×连击），无视后勤值"],
-		[71, "观测", "存在期间，全图领域伤害提升20%，不可叠加"],
+		[71, "观测", "存在期间，全图领域伤害提升20%，不可叠加", "#FFFF00"],
 		[72, "火力覆盖", "主角每次战斗结束后，以3倍攻击力轰炸主角一次"],
 		[73, "喷气式战机", "速度极快，追不上也打不中。受到的全部伤害减少70%"],
 		[74, "追踪", "主角行至同行或同列，且无障碍物阻拦时，向主角靠近一格。"],
@@ -1004,6 +1016,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		mon_cd = core.getEnemyValue(enemy, 'cd', x, y, floorId),
 		mon_ammo = core.getEnemyValue(enemy, 'ammo', x, y, floorId),
 		mon_spd = core.getEnemyValue(enemy, 'spd', x, y, floorId),
+		mon_zone = core.getEnemyValue(enemy, 'zone', x, y, floorId),
 		n = core.getEnemyValue(enemy, 'n', x, y, floorId),
 		mon_gro = core.getEnemyValue(enemy, 'gro', x, y, floorId);
 	let equipped = core.status.hero.equipment;
@@ -1051,6 +1064,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			bom_buff = 0,
 			trap_buff = 0,
 			hp_buff = 0,
+			zone_buff = 0,
 			aa_buff = 0;
 		// 已经计算过的光环怪ID列表，用于判定叠加
 		var usedEnemyIds = {},
@@ -1144,6 +1158,10 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 							damage_debuff += 0.2;
 						}
 					}
+					//检查“观测”技能，数字71
+					if (enemy && core.hasSpecial(enemy.special, 71)) {
+						zone_buff += 20;
+					}
 					// 检查【狼群】技能，数字58
 					if (enemy && enemy.type === "潜艇" && core.hasSpecial(mon_special, 58)) { // 这里要判断一下两个怪都有狼群
 						if (x !== block.x || y !== block.y) top_buff += 10;
@@ -1194,7 +1212,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 							if (0 < dx + dy && dx + dy <= range) inRange = true;
 							if (enemy.zoneSquare && 0 < dx + dy && dx <= range && dy <= range) inRange = true;
 						}
-						if (inRange) trap_buff += enemy.zone; // 叠加
+						if (inRange) trap_buff += enemy.zone * (1 + zone_buff / 100); // 叠加
 					}
 					// 检查【防空】技能，数字40
 					if (enemy && core.hasSpecial(enemy.special, 40) && !(lb === 'b29' || lb === 'tu4')) {
@@ -1227,7 +1245,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			}
 			damage_debuff = (cacheFloor.防御大师 > 0) ? damage_debuff + 0.3 : damage_debuff; //防御大师
 
-			core.status.checkBlock.cache[index] = { hp_buff, atk_buff, top_buff, bom_buff, trap_buff, aa_buff, guards, damage_debuff };
+			core.status.checkBlock.cache[index] = { hp_buff, atk_buff, top_buff, bom_buff, trap_buff, zone_buff, aa_buff, guards, damage_debuff };
 			cacheFloor.缓存 = true;
 			core.status.checkBlock.cache.cacheFloor = cacheFloor;
 		} else {
@@ -1237,6 +1255,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			top_buff = cache.top_buff;
 			bom_buff = cache.bom_buff;
 			trap_buff = cache.trap_buff;
+			zone_buff = cache.zone_buff;
 			aa_buff = cache.aa_buff;
 			damage_debuff = cache.damage_debuff;
 			guards = cache.guards;
@@ -1247,6 +1266,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		mon_atk *= (1 + atk_buff / 100);
 		mon_top *= (1 + top_buff / 100);
 		mon_bom *= (1 + bom_buff / 100);
+		mon_zone *= (1 + zone_buff / 100);
 	}
 	mon_hp -= flags.aoe[x + '，' + y + '，' + floorId] || 0;
 
@@ -1283,6 +1303,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		"ammo": Math.floor(mon_ammo),
 		"spd": Math.floor(mon_spd),
 		"gro": Math.floor(mon_gro),
+		"zone": Math.floor(mon_zone),
 		"n": Math.floor(n),
 		"enemyId": enemy.id,
 		"type": enemy.type
@@ -2088,6 +2109,10 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			if (isfighter) {
 				hero_common *= 1.2;
 			}
+		} else if (ff === 'p47b') { //P47B雷电
+			if (isbomber && guaiwu.hp <= mon_hp * 0.5) {
+				hero_common += yongshi.atk * 0.3;
+			}
 		} else if (ff === 'f6f5') { //地狱猫
 			if (isfighter) {
 				/*if (core.hasSpecial(mon_special, 4)) {
@@ -2341,7 +2366,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 				}
 			}
 			if (fb === 'p47b' && junzhong === '空军') { //P47B雷电
-				mon_common += 0.8;
+				mon_common *= 0.8;
 			}
 			/*if (core.hasSpecial(mon_special, 30)) { //技能 航炮
 				mon_common *= 1.3;
@@ -2835,12 +2860,12 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	core.flags.canGoDeadZone = true;
 
 	// 计算血网和领域、阻击、激光的伤害，计算捕捉信息
-	let a = core.searchBlockWithFilter(block => { //71
+	/*let a = core.searchBlockWithFilter(block => { //71
 		if (!block || !block.event.cls.startsWith("enemy"))
 			return false;
 		if (core.hasSpecial(block.event.special, 71))
 			return true;
-	}).length > 0;
+	}).length > 0;*/
 	for (var loc in blocks) {
 		var block = blocks[loc],
 			x = block.x,
@@ -2896,7 +2921,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 					if (nx < 0 || nx >= width || ny < 0 || ny >= height) continue;
 					// 如果是十字领域，则还需要满足 |dx|+|dy|<=range
 					if (!zoneSquare && Math.abs(dx) + Math.abs(dy) > range) continue;
-					damage[currloc] = (damage[currloc] || 0) + (enemy.zone || 0) * (a ? 1.2 : 1) * (core.hasEquip('mosquito') ? 0.5 : 1) * (core.hasEquip('p61') ? 0.2 : 1);
+					damage[currloc] = (damage[currloc] || 0) + (enemy.zone || 0) * /*(a ? 1.2 : 1) * */ (core.status.checkBlock.cache?.cacheFloor?.观测 ? 1.2 : 1) * (core.hasEquip('mosquito') ? 0.5 : 1) * (core.hasEquip('p61') ? 0.2 : 1);
 					type[currloc] = type[currloc] || {};
 					type[currloc]["领域伤害"] = true;
 				}

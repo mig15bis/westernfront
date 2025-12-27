@@ -31,10 +31,13 @@ main.floors.MT208=
             "time": 500
         },
         {
+            "type": "showui"
+        },
+        {
             "type": "playSound",
             "name": "xinxinmagic.mp3"
         },
-        "\t[系统提示]本关开始时，将赠送试用装备“B17空中堡垒”并自动装备。此外，由于航程问题，重型战斗机无法参与本关的护航行动。"
+        "\t[系统提示]本关正式进入游戏时，将赠送试用装备“B17空中堡垒”并自动装备。"
     ],
     "eachArrive": [],
     "parallelDo": "",
@@ -46,7 +49,7 @@ main.floors.MT208=
                 "text": "\t[机场后勤,N516]请选择出战空军",
                 "choices": [
                     {
-                        "text": "装备 P40C战斧",
+                        "text": "装备 P40B战斧",
                         "icon": "p40c",
                         "need": "core.hasItem('p40c')&&!core.hasEquip('p40c')",
                         "condition": "core.hasItem('spitfiremk1')&&!core.hasEquip('spitfiremk1')",
@@ -106,6 +109,18 @@ main.floors.MT208=
                         ]
                     },
                     {
+                        "text": "装备 喷火MK9战斗机",
+                        "icon": "spitfiremk9",
+                        "need": "core.hasItem('spitfiremk9')&&!core.hasEquip('spitfiremk9')",
+                        "condition": "core.hasItem('spitfiremk9')&&!core.hasEquip('spitfiremk9')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "spitfiremk9"
+                            }
+                        ]
+                    },
+                    {
                         "text": "装备 P47B雷电战斗机",
                         "icon": "p47b",
                         "need": "core.hasItem('p47b')&&!core.hasEquip('p47b')",
@@ -118,11 +133,65 @@ main.floors.MT208=
                         ]
                     },
                     {
+                        "text": "装备 英俊战士重型战斗机",
+                        "icon": "beautifighter",
+                        "need": "core.hasItem('beautifighter')&&!core.hasEquip('beautifighter')",
+                        "condition": "core.hasItem('beautifighter')&&!core.hasEquip('beautifighter')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "beautifighter"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 P38闪电重型战斗机",
+                        "icon": "p38",
+                        "need": "core.hasItem('p38')&&!core.hasEquip('p38')",
+                        "condition": "core.hasItem('p38')&&!core.hasEquip('p38')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "p38"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 台风攻击机",
+                        "icon": "typhoon",
+                        "need": "core.hasItem('typhoon')&&!core.hasEquip('typhoon')",
+                        "condition": "core.hasItem('typhoon')&&!core.hasEquip('typhoon')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "typhoon"
+                            }
+                        ]
+                    },
+                    {
                         "text": "卸下当前战斗机",
                         "action": [
                             {
                                 "type": "unloadEquip",
                                 "pos": 4
+                            }
+                        ]
+                    },
+                    {
+                        "text": "卸下当前攻击机",
+                        "action": [
+                            {
+                                "type": "unloadEquip",
+                                "pos": 5
+                            }
+                        ]
+                    },
+                    {
+                        "text": "卸下当前轰炸机",
+                        "action": [
+                            {
+                                "type": "unloadEquip",
+                                "pos": 6
                             }
                         ]
                     },
@@ -184,7 +253,19 @@ main.floors.MT208=
                 "type": "playSound",
                 "name": "xinxinmagic.mp3"
             },
-            "\t[系统提示]当前区域敌人特点：德国空军，包括轻型战斗机和重型战斗机。\n推荐携带技能：防空弹幕、空战王牌、破译、补给线。\n推荐出战装备：喷火5或P47B。"
+            "\t[系统提示]当前区域敌人特点：大量德军战斗机和高射炮\n推荐携带技能：防空弹幕、空战王牌、破译、补给线。\n推荐出战装备：喷火5或P47B、P38闪电。",
+            "可以在此清空技能槽，以便于玩家重新选择技能",
+            {
+                "type": "confirm",
+                "text": "清空技能槽？",
+                "yes": [
+                    {
+                        "type": "function",
+                        "function": "function(){\nflags.skillList=[0,0,0,0,0,0,0]\n}"
+                    }
+                ],
+                "no": []
+            }
         ]
     },
     "changeFloor": {},

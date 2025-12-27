@@ -93,7 +93,7 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			if (core.hasEquip('essex')) {
 				code.push( /* js */ `if (nthTurn === 2) bombDamage += 2 * 2 * hero_atk;`);
 			}
-			//P40C战斧
+			//P40B战斧
 			if (core.hasEquip('p40c')) {
 				code.push( /* js */ `if (nthTurn === 2) bombDamage += 2.8 * hero_atk;`);
 			}
@@ -138,7 +138,7 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			if (core.hasEquip('raider')) { //野猫（突击者航空母舰）
 				code.push( /* js */ `if (nthTurn === 2) bombDamage += 0.4 * 2 * hero_atk;`);
 			}
-			//P40C战斧
+			//P40B战斧
 			if (core.hasEquip('p40c')) {
 				code.push( /* js */ `if (nthTurn === 2) bombDamage += 2.8 * hero_atk;`);
 			}
@@ -2715,7 +2715,7 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				let bloodmax = core.getRealStatus('hpmax') * (core.hasItem("penicillin") ? 1.12 : 1),
 					blood = core.getRealStatus('hp');
 				if (blood >= bloodmax * 0.8) { //变色血
-					core.fillRect(uictx, 38, 109, 102 * blood / blood, 20, "#00FF00");
+					core.fillRect(uictx, 38, 109, 102 * blood / bloodmax, 20, "#00FF00");
 				} else if (blood >= bloodmax * 0.6) {
 					core.fillRect(uictx, 38, 109, 102 * blood / bloodmax, 20, "#9ACD32");
 				} else if (blood >= bloodmax * 0.4) {
@@ -2955,6 +2955,10 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			if (core.status.checkBlock.cache?.cacheFloor?.点杀) {
 				Debuff.push('点杀');
 				Debuffcolor.push('#C677DD');
+			}
+			if (core.status.checkBlock.cache?.cacheFloor?.观测) {
+				Debuff.push('观测');
+				Debuffcolor.push('#FFFF00');
 			}
 			if (core.domStyle.isVertical) { //竖屏
 				core.clearMap(uictx, 161, 681, 160, 50);
@@ -4708,7 +4712,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 		}
 	]
 
-	this._makemiddleList = function (list, depth) {
+	this._makemiddleList = function (list, depth, x) {
 		if (list.length > 13) { // 分页
 			var suffix = list.splice(6);
 			list.unshift({ "text": "上一页", "action": [{ "type": "break", "n": 1 }] })
@@ -4721,24 +4725,24 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 			list.push({ "text": "下一页", "action": this._makelastList(suffix, depth + 1) });
 		}
 		list.push({ "text": "查看当前快捷键", "action": [{ "type": "insert", "name": "查看技能" }] });
-		list.push({ "text": "保存并进入下一章", "action": [{ "type": "break", "n": depth }] });
+		list.push({ "text": "保存并进入下一章", "action": [{ "type": "break", "n": depth + x * 2 }] });
 		return [{
 			"type": "while",
 			"condition": "true",
 			"data": [{ "type": "choices", "text": "\t[技能快捷键设定] ", "choices": list }]
 		}];
 	}
-	this._makelastList = function (list, depth) {
+	this._makelastList = function (list, depth, x) {
 		list.unshift({ "text": "上一页", "action": [{ "type": "break", "n": 1 }] })
 		list.push({ "text": "查看当前快捷键", "action": [{ "type": "insert", "name": "查看技能" }] });
-		list.push({ "text": "保存并进入下一章", "action": [{ "type": "break", "n": depth }] });
+		list.push({ "text": "保存并进入下一章", "action": [{ "type": "break", "n": depth + x * 2 }] });
 		return [{
 			"type": "while",
 			"condition": "true",
 			"data": [{ "type": "choices", "text": "\t[技能快捷键设定] ", "choices": list }]
 		}];
 	}
-	this._makeList = function (list, depth) {
+	this._makeList = function (list, depth, x) {
 		if (list.length > 8) { // 分页
 			if (list.length > 14) {
 				var suffix = list.splice(7);
@@ -4750,15 +4754,19 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 
 		}
 		list.push({ "text": "查看当前快捷键", "action": [{ "type": "insert", "name": "查看技能" }] });
-		list.push({ "text": "保存并进入下一章", "action": [{ "type": "break", "n": depth }] });
+		list.push({ "text": "保存并进入下一章", "action": [{ "type": "break", "n": depth + x * 2 }] });
 		return [{
-			"type": "choices",
-			"text": "\t[技能快捷键设定] ",
-			"choices": list
+			"type": "while",
+			"condition": "true",
+			"data": [{
+				"type": "choices",
+				"text": "\t[技能快捷键设定] ",
+				"choices": list
+			}]
 		}]
 
 	}
-	this.bindSkills = function () {
+	this.bindSkills = function (x = 0) {
 		var list = [];
 		for (var i = 0; i < flags.learned.length; ++i) {
 			if (flags.learned[i]) {
@@ -4771,43 +4779,43 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 							"choices": [{
 									"text": "数字1:" + core.plugin.skillInfo[flags.skillList[0]].name + (core.plugin.skillInfo[flags.skillList[0]].strategy ? '（即时）' : '') + '，消耗：' + core.plugin.skillInfo[flags.skillList[0]].cost,
 									"action": [
-										{ "type": "function", "function": "function(){\n var index = flags.skillList.indexOf(" + info.id + ")\n if (index >= 0) flags.skillList[index] = flags.skillList[0]\n flags.skillList[0] = " + info.id + "\n core.ui.statusBar._update_skills()\n core.insertAction(core.plugin.bindSkills())}" },
+										{ "type": "function", "function": "function(){\n var index = flags.skillList.indexOf(" + info.id + ")\n if (index >= 0) flags.skillList[index] = flags.skillList[0]\n flags.skillList[0] = " + info.id + "\n core.ui.statusBar._update_skills()\n core.insertAction(core.plugin.bindSkills(" + (x + 1) + "))}" },
 									]
 								},
 								{
 									"text": "数字2:" + core.plugin.skillInfo[flags.skillList[1]].name + (core.plugin.skillInfo[flags.skillList[1]].strategy ? '（即时）' : '') + '，消耗：' + core.plugin.skillInfo[flags.skillList[1]].cost,
 									"action": [
-										{ "type": "function", "function": "function(){\nvar index = flags.skillList.indexOf(" + info.id + ")\nif (index >= 0) flags.skillList[index] = flags.skillList[1]\nflags.skillList[1] = " + info.id + "\n core.ui.statusBar._update_skills()\n core.insertAction(core.plugin.bindSkills())}" },
+										{ "type": "function", "function": "function(){\nvar index = flags.skillList.indexOf(" + info.id + ")\nif (index >= 0) flags.skillList[index] = flags.skillList[1]\nflags.skillList[1] = " + info.id + "\n core.ui.statusBar._update_skills()\n core.insertAction(core.plugin.bindSkills(" + (x + 1) + "))}" },
 									]
 								},
 								{
 									"text": "数字3:" + core.plugin.skillInfo[flags.skillList[2]].name + (core.plugin.skillInfo[flags.skillList[2]].strategy ? '（即时）' : '') + '，消耗：' + core.plugin.skillInfo[flags.skillList[2]].cost,
 									"action": [
-										{ "type": "function", "function": "function(){\nvar index = flags.skillList.indexOf(" + info.id + ")\nif (index >= 0) flags.skillList[index] = flags.skillList[2]\nflags.skillList[2] = " + info.id + "\n core.ui.statusBar._update_skills()\n core.insertAction(core.plugin.bindSkills())}" },
+										{ "type": "function", "function": "function(){\nvar index = flags.skillList.indexOf(" + info.id + ")\nif (index >= 0) flags.skillList[index] = flags.skillList[2]\nflags.skillList[2] = " + info.id + "\n core.ui.statusBar._update_skills()\n core.insertAction(core.plugin.bindSkills(" + (x + 1) + "))}" },
 									]
 								},
 								{
 									"text": "数字4:" + core.plugin.skillInfo[flags.skillList[3]].name + (core.plugin.skillInfo[flags.skillList[3]].strategy ? '（即时）' : '') + '，消耗：' + core.plugin.skillInfo[flags.skillList[3]].cost,
 									"action": [
-										{ "type": "function", "function": "function(){\nvar index = flags.skillList.indexOf(" + info.id + ")\nif (index >= 0) flags.skillList[index] = flags.skillList[3]\nflags.skillList[3] = " + info.id + "\n core.ui.statusBar._update_skills()\n core.insertAction(core.plugin.bindSkills())}" },
+										{ "type": "function", "function": "function(){\nvar index = flags.skillList.indexOf(" + info.id + ")\nif (index >= 0) flags.skillList[index] = flags.skillList[3]\nflags.skillList[3] = " + info.id + "\n core.ui.statusBar._update_skills()\n core.insertAction(core.plugin.bindSkills(" + (x + 1) + "))}" },
 									]
 								},
 								{
 									"text": "数字5:" + core.plugin.skillInfo[flags.skillList[4]].name + (core.plugin.skillInfo[flags.skillList[4]].strategy ? '（即时）' : '') + '，消耗：' + core.plugin.skillInfo[flags.skillList[4]].cost,
 									"action": [
-										{ "type": "function", "function": "function(){\nvar index = flags.skillList.indexOf(" + info.id + ")\nif (index >= 0) flags.skillList[index] = flags.skillList[4]\nflags.skillList[4] = " + info.id + "\n core.ui.statusBar._update_skills()\n core.insertAction(core.plugin.bindSkills())}" },
+										{ "type": "function", "function": "function(){\nvar index = flags.skillList.indexOf(" + info.id + ")\nif (index >= 0) flags.skillList[index] = flags.skillList[4]\nflags.skillList[4] = " + info.id + "\n core.ui.statusBar._update_skills()\n core.insertAction(core.plugin.bindSkills(" + (x + 1) + "))}" },
 									]
 								},
 								{
 									"text": "数字6:" + core.plugin.skillInfo[flags.skillList[5]].name + (core.plugin.skillInfo[flags.skillList[5]].strategy ? '（即时）' : '') + '，消耗：' + core.plugin.skillInfo[flags.skillList[5]].cost,
 									"action": [
-										{ "type": "function", "function": "function(){\nvar index = flags.skillList.indexOf(" + info.id + ")\nif (index >= 0) flags.skillList[index] = flags.skillList[5]\nflags.skillList[5] = " + info.id + "\n core.ui.statusBar._update_skills()\n core.insertAction(core.plugin.bindSkills())}" },
+										{ "type": "function", "function": "function(){\nvar index = flags.skillList.indexOf(" + info.id + ")\nif (index >= 0) flags.skillList[index] = flags.skillList[5]\nflags.skillList[5] = " + info.id + "\n core.ui.statusBar._update_skills()\n core.insertAction(core.plugin.bindSkills(" + (x + 1) + "))}" },
 									]
 								},
 								{
 									"text": "数字7:" + core.plugin.skillInfo[flags.skillList[6]].name + (core.plugin.skillInfo[flags.skillList[6]].strategy ? '（即时）' : '') + '，消耗：' + core.plugin.skillInfo[flags.skillList[6]].cost,
 									"action": [
-										{ "type": "function", "function": "function(){\nvar index = flags.skillList.indexOf(" + info.id + ")\nif (index >= 0) flags.skillList[index] = flags.skillList[6]\nflags.skillList[6] = " + info.id + "\n core.ui.statusBar._update_skills()\n core.insertAction(core.plugin.bindSkills())}" },
+										{ "type": "function", "function": "function(){\nvar index = flags.skillList.indexOf(" + info.id + ")\nif (index >= 0) flags.skillList[index] = flags.skillList[6]\nflags.skillList[6] = " + info.id + "\n core.ui.statusBar._update_skills()\n core.insertAction(core.plugin.bindSkills(" + (x + 1) + "))}" },
 									]
 								},
 							]
@@ -4816,7 +4824,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 				list.push(obj);
 			}
 		}
-		return this._makeList(list, 1);
+		return this._makeList(list, 1, x);
 	}
 
 },

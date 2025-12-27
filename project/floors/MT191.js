@@ -159,6 +159,18 @@ main.floors.MT191=
             "value": "1"
         },
         {
+            "type": "setBlock",
+            "number": "tea5",
+            "loc": [
+                [
+                    7,
+                    7
+                ]
+            ],
+            "time": 200,
+            "async": true
+        },
+        {
             "type": "show",
             "loc": [
                 [
@@ -258,7 +270,11 @@ main.floors.MT191=
                     10
                 ]
             ],
-            "time": 200
+            "time": 200,
+            "async": true
+        },
+        {
+            "type": "waitAsync"
         }
     ],
     "eachArrive": [],

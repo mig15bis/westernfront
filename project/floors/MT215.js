@@ -608,24 +608,6 @@ main.floors.MT215=
             "pos": 6
         },
         {
-            "type": "function",
-            "function": "function(){\nflags.skillList=[0,0,0,0,0,0,0]\n}"
-        },
-        {
-            "type": "function",
-            "function": "function(){\nflags.mission[30][0]=true\n}"
-        },
-        {
-            "type": "if",
-            "condition": "(item:tea>=30)",
-            "true": [
-                {
-                    "type": "function",
-                    "function": "function(){\nflags.mission[31][2]=true\n}"
-                }
-            ]
-        },
-        {
             "type": "update"
         },
         {
@@ -676,7 +658,7 @@ main.floors.MT215=
         },
         {
             "type": "function",
-            "function": "function(){\nvar a = flags.mission[core.getFlag('stage')];\ncore.setFlag('@temp@A', a[0] + a[1] + a[2]);\n}"
+            "function": "function(){\nvar a = core.taskSystem.checkTask(0) ? 1 : 0,\n\tb = core.taskSystem.checkTask(1) ? 1 : 0,\n\tc = core.taskSystem.checkTask(2) ? 1 : 0;\ncore.setFlag('@temp@A', a + b + c);\n}"
         },
         {
             "type": "if",
@@ -702,11 +684,6 @@ main.floors.MT215=
                         90
                     ],
                     "opacity": 1,
-                    "time": 500,
-                    "async": true
-                },
-                {
-                    "type": "sleep",
                     "time": 500
                 },
                 {
@@ -733,11 +710,6 @@ main.floors.MT215=
                                 90
                             ],
                             "opacity": 1,
-                            "time": 500,
-                            "async": true
-                        },
-                        {
-                            "type": "sleep",
                             "time": 500
                         },
                         {
@@ -764,11 +736,6 @@ main.floors.MT215=
                                         90
                                     ],
                                     "opacity": 1,
-                                    "time": 500,
-                                    "async": true
-                                },
-                                {
-                                    "type": "sleep",
                                     "time": 500
                                 }
                             ],
@@ -823,6 +790,9 @@ main.floors.MT215=
         },
         {
             "type": "clearMap"
+        },
+        {
+            "type": "submitTask"
         },
         {
             "type": "moveImage",
@@ -901,8 +871,8 @@ main.floors.MT215=
                 "B17轰炸机在美国参战前就已经在军队中服役。在太平洋战场，这些飞在高空的重型轰炸机几乎无法击中航行的军舰，但如果是成片的地面工业设施，它们便有了发言权。欧洲战场很明显符合这一需求。",
                 "1942年8月17日，B17轰炸机开始了他们在欧洲的第一次轰炸任务，12架轰炸机对法国卢昂的铁路调度场实施轰炸。也许是德军没有意识到会遭受这种袭击，这一次攻击没有遭到德军战斗机拦截。",
                 "1942年8月19日，也就是2天后，为了支援加拿大军队在迪耶普的登陆行动，美军的B17轰炸机开始对法国阿布维尔机场展开轰炸。",
-                "迪耶普登陆战作为一次试验型登陆战，英美方面并没有指望他们能成功。在没有后援没有补给的情况下，登陆的加拿大军队成功全军覆没，成了给盟军积攒经验的炮灰。但B17轰炸机的表现，令人满意。",
-                "载弹量高，升限高，装甲厚，火力猛，用来炸翻德军的后方基地再合适不过。而且，这种轴心国根本造不出来的大家伙，以美国的工业产能，造个几百上千架不是问题。",
+                "迪耶普登陆战作为一次试验型登陆战，英美方面并没有指望他们能成功。在没有后援没有补给的情况下，登陆的加拿大军队成功地全军覆没，成了给盟军积攒经验的炮灰。而另一边B17轰炸机的表现，令盟军高层很满意。",
+                "载弹量高，升限高，装甲厚，火力猛，用来炸翻德军的后方基地再合适不过。而且，这种轴心国根本造不出来的大家伙，以美国的工业产能，造个成百上千架不是问题。",
                 "一批批刚从流水线上产出的B17轰炸机被装上船，从美国本土开往欧洲。盟军打算利用这些轰炸机，猛攻德军的后方设施，让他们的战争机器停转，武器得不到弹药，载具得不到燃油，德国将因此彻底失去战斗力。",
                 "然而，瘫痪德国的战争机器需要时间。在那之前，盟军必须在地面做出行动，一步一步将德军赶回他们的老家。",
                 {

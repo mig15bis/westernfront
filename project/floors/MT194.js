@@ -50,7 +50,7 @@ main.floors.MT194=
             "type": "setEnemy",
             "id": "italyinf2",
             "name": "hp",
-            "value": "150000",
+            "value": "180000",
             "norefresh": true
         },
         {
@@ -71,7 +71,7 @@ main.floors.MT194=
             "type": "setEnemy",
             "id": "italyinf3",
             "name": "hp",
-            "value": "145000",
+            "value": "175000",
             "norefresh": true
         },
         {
@@ -169,14 +169,14 @@ main.floors.MT194=
             "type": "setEnemy",
             "id": "l640",
             "name": "hp",
-            "value": "30000",
+            "value": "50000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "l640",
             "name": "atk",
-            "value": "2500",
+            "value": "3000",
             "norefresh": true
         },
         {
@@ -197,14 +197,14 @@ main.floors.MT194=
             "type": "setEnemy",
             "id": "m1340",
             "name": "hp",
-            "value": "40000",
+            "value": "60000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "m1340",
             "name": "atk",
-            "value": "6000",
+            "value": "8000",
             "norefresh": true
         },
         {
@@ -218,7 +218,7 @@ main.floors.MT194=
             "type": "setEnemy",
             "id": "commandos",
             "name": "hp",
-            "value": "165000",
+            "value": "200000",
             "norefresh": true
         },
         {
@@ -232,7 +232,7 @@ main.floors.MT194=
             "type": "setEnemy",
             "id": "mortar",
             "name": "hp",
-            "value": "140000",
+            "value": "160000",
             "norefresh": true
         },
         {
@@ -246,7 +246,7 @@ main.floors.MT194=
             "type": "setEnemy",
             "id": "motorinf",
             "name": "hp",
-            "value": "155000",
+            "value": "180000",
             "norefresh": true
         },
         {
@@ -260,7 +260,7 @@ main.floors.MT194=
             "type": "setEnemy",
             "id": "lightmg",
             "name": "hp",
-            "value": "145000",
+            "value": "150000",
             "norefresh": true
         },
         {
@@ -300,6 +300,27 @@ main.floors.MT194=
         },
         {
             "type": "setEnemy",
+            "id": "pak38",
+            "name": "hp",
+            "value": "12000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "pak38",
+            "name": "atk",
+            "value": "12000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "pak38",
+            "name": "zone",
+            "value": "8000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
             "id": "howitzer105",
             "name": "hp",
             "value": "12000",
@@ -309,14 +330,14 @@ main.floors.MT194=
             "type": "setEnemy",
             "id": "howitzer105",
             "name": "atk",
-            "value": "25000",
+            "value": "50000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "howitzer105",
             "name": "zone",
-            "value": "20000",
+            "value": "5000",
             "norefresh": true
         },
         {
@@ -337,42 +358,49 @@ main.floors.MT194=
             "type": "setEnemy",
             "id": "panzer3f",
             "name": "hp",
-            "value": "30000",
+            "value": "60000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer3f",
             "name": "atk",
-            "value": "8000",
+            "value": "12000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "stug3a",
             "name": "hp",
+            "value": "50000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "stug3a",
+            "name": "atk",
             "value": "20000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "stug3a",
-            "name": "atk",
-            "value": "15000",
+            "name": "special",
+            "value": "[1,55,56]",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer4f",
             "name": "hp",
-            "value": "40000",
+            "value": "65000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer4f",
             "name": "atk",
-            "value": "15000",
+            "value": "22000",
             "norefresh": true
         },
         {
@@ -407,28 +435,28 @@ main.floors.MT194=
             "type": "setEnemy",
             "id": "flak88",
             "name": "atk",
-            "value": "20000",
+            "value": "25000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "flak88",
             "name": "zone",
-            "value": "20000",
+            "value": "12000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "rommel",
             "name": "hp",
-            "value": "30000",
+            "value": "60000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "rommel",
             "name": "atk",
-            "value": "15000",
+            "value": "22000",
             "norefresh": true
         },
         {
@@ -469,9 +497,67 @@ main.floors.MT194=
             "type": "playSound",
             "name": "xinxinmagic.mp3"
         },
-        "\t[任务目标]⭐击败隆美尔（主线boss）\n⭐击败巴多格里奥（支线boss）\n⭐消灭所有敌人",
+        "\t[任务目标]⭐击败隆美尔（主线boss）\n⭐击败巴多格里奥（支线boss）\n⭐消灭所有敌人（不包括支线boss）",
         {
             "type": "callBook"
+        },
+        {
+            "type": "setValue",
+            "name": "flag:MT198boss",
+            "value": "0"
+        },
+        {
+            "type": "setValue",
+            "name": "flag:MT199boss",
+            "value": "0"
+        },
+        {
+            "type": "setTask",
+            "name": "第28关任务1",
+            "n": 1,
+            "text": "击败隆美尔（主线boss）",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "MT199boss",
+                    "operator": "=",
+                    "text": "击败隆美尔",
+                    "count": "1"
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第28关任务2",
+            "n": 1,
+            "text": "击败巴多格里奥（支线boss）",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "MT198boss",
+                    "operator": "=",
+                    "text": "击败巴多格里奥",
+                    "count": "1"
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第28关任务3",
+            "n": 1,
+            "text": "消灭所有敌人（不包括支线boss）",
+            "info": [
+                {
+                    "type": "killAll",
+                    "floorId": [
+                        "MT194",
+                        "MT195",
+                        "MT196",
+                        "MT197"
+                    ],
+                    "text": "消灭所有敌人"
+                }
+            ]
         }
     ],
     "eachArrive": [],
@@ -498,16 +584,16 @@ main.floors.MT194=
     [150,150,150,150,518,220,150,362,150,150, 11,150,150,150, 11],
     [538,150,390,150, 11,150,150,  0, 11,522,362,  0, 11,362,363],
     [538,150,250,363,536,  0,253,  0,150,215,150,570,150,150,150],
-    [538,150, 81,150,150,150, 81,150,150,150,150, 81,150,571,571],
+    [538,150, 11,150,150,150, 81,150,150,150,150, 11,150,571,571],
     [365, 81,  0,405,539,150,539,220,539,150,253,362,150,571,571],
     [150,150, 11,150,203,150,150,150, 11,150,150, 11,150,590,590],
     [ 92, 82,271,150,363, 11,522,392,570,362,  0,203, 86,  0,  0],
     [150,150, 11,405,539,150,203,150,150,150,536,  0,150,590,590],
     [518,362, 11,150,150,150, 81,150,215,150,150, 11,150,571,571],
     [150,150,203,  0,363,570,  0,365,250,150,253,362,150,571,571],
-    [535,150, 81,150,150,150,150,150, 81,150, 11,150,150,150,150],
+    [535,150, 11,150,150,150,150,150, 81,150, 11,150,150,150,150],
     [535,150,405,390,150,  0,362,  0,  0,253,  0,536,  0,362,570],
-    [535,150,  0,150,150, 81,150,150,150,150, 81,150,150,150, 11],
+    [535,150,  0,150,150, 81,150,150,150,150, 11,150,150,150, 11],
     [589, 82,536,150,538,365,538,150,531,531,392,150,539,539,404]
 ],
     "bgmap": [

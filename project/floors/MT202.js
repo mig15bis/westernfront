@@ -60,14 +60,14 @@ main.floors.MT202=
             "type": "setEnemy",
             "id": "italyinf2",
             "name": "hp",
-            "value": "200000",
+            "value": "250000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italyinf2",
             "name": "atk",
-            "value": "2000",
+            "value": "2300",
             "norefresh": true
         },
         {
@@ -81,14 +81,14 @@ main.floors.MT202=
             "type": "setEnemy",
             "id": "italyinf3",
             "name": "hp",
-            "value": "195000",
+            "value": "240000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italyinf3",
             "name": "atk",
-            "value": "2100",
+            "value": "2600",
             "norefresh": true
         },
         {
@@ -109,14 +109,14 @@ main.floors.MT202=
             "type": "setEnemy",
             "id": "italyinf4",
             "name": "hp",
-            "value": "195000",
+            "value": "220000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italyinf4",
             "name": "atk",
-            "value": "10000",
+            "value": "15000",
             "norefresh": true
         },
         {
@@ -130,14 +130,14 @@ main.floors.MT202=
             "type": "setEnemy",
             "id": "italyinf5",
             "name": "hp",
-            "value": "185000",
+            "value": "200000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italyinf5",
             "name": "atk",
-            "value": "2100",
+            "value": "2300",
             "norefresh": true
         },
         {
@@ -158,14 +158,14 @@ main.floors.MT202=
             "type": "setEnemy",
             "id": "italyinf6",
             "name": "hp",
-            "value": "180000",
+            "value": "200000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "italyinf6",
             "name": "atk",
-            "value": "2300",
+            "value": "2600",
             "norefresh": true
         },
         {
@@ -270,14 +270,14 @@ main.floors.MT202=
             "type": "setEnemy",
             "id": "c200",
             "name": "hp",
-            "value": "25000",
+            "value": "35000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "c200",
             "name": "atk",
-            "value": "2000",
+            "value": "2800",
             "norefresh": true
         },
         {
@@ -298,14 +298,14 @@ main.floors.MT202=
             "type": "setEnemy",
             "id": "c202",
             "name": "hp",
-            "value": "30000",
+            "value": "45000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "c202",
             "name": "atk",
-            "value": "2200",
+            "value": "3400",
             "norefresh": true
         },
         {
@@ -332,9 +332,61 @@ main.floors.MT202=
             "type": "playSound",
             "name": "xinxinmagic.mp3"
         },
-        "\t[任务目标]⭐通过当前区域\n⭐肃清海岸上的敌人\n⭐通关时至少持有30下午茶",
+        "\t[任务目标]⭐通过当前区域\n⭐肃清海滩上的敌人\n⭐通关时至少持有80下午茶",
         {
             "type": "callBook"
+        },
+        {
+            "type": "setValue",
+            "name": "flag:第29关通关",
+            "value": "0"
+        },
+        {
+            "type": "setTask",
+            "name": "第29关任务1",
+            "n": 1,
+            "text": "通过当前区域",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "第29关通关",
+                    "operator": "=",
+                    "text": "通过当前区域",
+                    "count": "1"
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第29关任务2",
+            "n": 1,
+            "text": "肃清海滩上的敌人",
+            "info": [
+                {
+                    "type": "killAll",
+                    "floorId": [
+                        "MT202",
+                        "MT203",
+                        "MT204"
+                    ],
+                    "text": "海滩上的敌人剩余"
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第29关任务3",
+            "n": 1,
+            "text": "通关时至少持有80下午茶",
+            "info": [
+                {
+                    "type": "checkItem",
+                    "checkItem": "tea",
+                    "operator": ">=",
+                    "text": "当前持有的下午茶",
+                    "count": 80
+                }
+            ]
         }
     ],
     "eachArrive": [],
