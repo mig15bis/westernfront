@@ -18,7 +18,6 @@ main.floors.MT373=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        
         {
             "type": "update"
         },
@@ -704,6 +703,18 @@ main.floors.MT373=
                             {
                                 "type": "loadEquip",
                                 "id": "essex"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 企业号航空母舰",
+                        "icon": "enterprise",
+                        "need": "core.hasItem('enterprise')&&!core.hasEquip('enterprise')",
+                        "condition": "core.hasItem('enterprise')&&!core.hasEquip('enterprise')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "enterprise"
                             }
                         ]
                     },

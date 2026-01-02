@@ -20,7 +20,38 @@ main.floors.MT213=
     "ratio": 1,
     "defaultGround": "grass",
     "bgm": "europe4.mp3",
-    "firstArrive": [],
+    "firstArrive": [
+        {
+            "type": "if",
+            "condition": "(flag:MT211protect===true)",
+            "true": [
+                {
+                    "type": "playSound",
+                    "name": "xinxinmagic.mp3"
+                },
+                "\t[系统提示]先前分离的护航战机中队已经归队，攻击力返还",
+                {
+                    "type": "setValue",
+                    "name": "status:atk",
+                    "operator": "+=",
+                    "value": "50"
+                }
+            ],
+            "false": [
+                {
+                    "type": "playSound",
+                    "name": "xinxinmagic.mp3"
+                },
+                "\t[系统提示]先前离队的轰炸机已被德军击落！友军血量-25万",
+                {
+                    "type": "setValue",
+                    "name": "flag:友军血量",
+                    "operator": "-=",
+                    "value": "250000"
+                }
+            ]
+        }
+    ],
     "eachArrive": [],
     "parallelDo": "",
     "events": {},

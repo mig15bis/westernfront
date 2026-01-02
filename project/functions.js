@@ -474,14 +474,14 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			if (core.hasSpecial(core.material.enemys[Block.event.id].special, 86)) {
 				typhoonrocket *= 0.6;
 			}
-			if (!flags.aoe[Block.x + '，' + Block.y + '，' + Block.floorId]) {
-				flags.aoe[Block.x + '，' + Block.y + '，' + Block.floorId] = typhoonrocket;
+			if (!flags.aoe[Block.x + ',' + Block.y + ',' + core.status.floorId]) {
+				flags.aoe[Block.x + ',' + Block.y + ',' + core.status.floorId] = typhoonrocket;
 			} else {
-				flags.aoe[Block.x + '，' + Block.y + '，' + Block.floorId] += typhoonrocket;
+				flags.aoe[Block.x + ',' + Block.y + ',' + core.status.floorId] += typhoonrocket;
 			}
-			let target = core.getEnemyInfo(Block.event.id, null, Block.x, Block.y, Block.floorId);
+			let target = core.getEnemyInfo(Block.event.id, null, Block.x, Block.y, core.status.floorId);
 			if (target.hp <= 0) {
-				delete flags.aoe[Block.x + '，' + Block.y + '，' + Block.floorId];
+				delete flags.aoe[Block.x + ',' + Block.y + ',' + core.status.floorId];
 				let money = core.getEnemyValue(Block.event.id, 'money', Block.x, Block.y),
 					exp = core.getEnemyValue(Block.event.id, 'exp', Block.x, Block.y);
 				if (tk === 'm4' || tk === 'm4a2' || tk === 'm4a3' || tk === 'm4a3e2' || tk === 'firefly') money += 5; //谢馒头，触发在双倍前
@@ -550,10 +550,43 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			let blocktype = core.material.enemys[Block.event.id].type || 0;
 			if ((blocktype === '步兵' || blocktype === '轻坦' || blocktype === '中坦' || blocktype === '重坦' || blocktype === '坦歼' || blocktype === '反坦克炮' || blocktype === '榴弹炮' || blocktype === '高射炮' || blocktype === '建筑')) {
 				//core.setEnemyOnPoint(Block.x, Block.y, Block.floorId, 'hp', 0.95, "*=");
-				if (!flags.aoe[Block.x + '，' + Block.y + '，' + Block.floorId]) {
-					flags.aoe[Block.x + '，' + Block.y + '，' + Block.floorId] = Math.floor(core.getEnemyInfo(Block.event.id, hero, Block.x, Block.y, Block.floorId).hp * 0.05);
+				if (!flags.aoe[Block.x + ',' + Block.y + ',' + core.status.floorId]) {
+					if (core.hasSpecial(core.material.enemys[Block.event.id].special, 87)) {
+						flags.aoe[Block.x + ',' + Block.y + ',' + core.status.floorId] = Math.floor(core.getEnemyInfo(Block.event.id, hero, Block.x, Block.y, core.status.floorId).hp * 0.05 * 0.3);
+					} else {
+						flags.aoe[Block.x + ',' + Block.y + ',' + core.status.floorId] = Math.floor(core.getEnemyInfo(Block.event.id, hero, Block.x, Block.y, core.status.floorId).hp * 0.05);
+					}
 				} else {
-					flags.aoe[Block.x + '，' + Block.y + '，' + Block.floorId] += Math.floor(core.getEnemyInfo(Block.event.id, hero, Block.x, Block.y, Block.floorId).hp * 0.05);
+					if (core.hasSpecial(core.material.enemys[Block.event.id].special, 87)) {
+						flags.aoe[Block.x + ',' + Block.y + ',' + core.status.floorId] += Math.floor(core.getEnemyInfo(Block.event.id, hero, Block.x, Block.y, core.status.floorId).hp * 0.05 * 0.3);
+					} else {
+						flags.aoe[Block.x + ',' + Block.y + ',' + core.status.floorId] += Math.floor(core.getEnemyInfo(Block.event.id, hero, Block.x, Block.y, core.status.floorId).hp * 0.05);
+					}
+				}
+			}
+		})
+	}
+	//B24解放者
+	if (lb === 'b24') {
+		locs.forEach(v => {
+			let Block = core.getBlock(v[0], v[1]);
+			if (!Block || Block.event.cls !== 'enemys') {
+				return
+			}
+			let blocktype = core.material.enemys[Block.event.id].type;
+			if ((blocktype === '步兵' || blocktype === '轻坦' || blocktype === '中坦' || blocktype === '重坦' || blocktype === '坦歼' || blocktype === '反坦克炮' || blocktype === '榴弹炮' || blocktype === '高射炮' || blocktype === '建筑')) {
+				if (!flags.aoe[Block.x + ',' + Block.y + ',' + core.status.floorId]) {
+					if (core.hasSpecial(core.material.enemys[Block.event.id].special, 87)) {
+						flags.aoe[Block.x + ',' + Block.y + ',' + core.status.floorId] = Math.floor(core.getEnemyInfo(Block.event.id, hero, Block.x, Block.y, core.status.floorId).hp * 0.05 * 0.3);
+					} else {
+						flags.aoe[Block.x + ',' + Block.y + ',' + core.status.floorId] = Math.floor(core.getEnemyInfo(Block.event.id, hero, Block.x, Block.y, core.status.floorId).hp * 0.05);
+					}
+				} else {
+					if (core.hasSpecial(core.material.enemys[Block.event.id].special, 87)) {
+						flags.aoe[Block.x + ',' + Block.y + ',' + core.status.floorId] += Math.floor(core.getEnemyInfo(Block.event.id, hero, Block.x, Block.y, core.status.floorId).hp * 0.05 * 0.3);
+					} else {
+						flags.aoe[Block.x + ',' + Block.y + ',' + core.status.floorId] += Math.floor(core.getEnemyInfo(Block.event.id, hero, Block.x, Block.y, core.status.floorId).hp * 0.05);
+					}
 				}
 			}
 		})
@@ -567,10 +600,43 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			}
 			let blocktype = core.material.enemys[Block.event.id].type;
 			if ((blocktype === '步兵' || blocktype === '轻坦' || blocktype === '中坦' || blocktype === '重坦' || blocktype === '坦歼' || blocktype === '反坦克炮' || blocktype === '榴弹炮' || blocktype === '高射炮' || blocktype === '建筑')) {
-				if (!flags.aoe[Block.x + '，' + Block.y + '，' + Block.floorId]) {
-					flags.aoe[Block.x + '，' + Block.y + '，' + Block.floorId] = Math.floor(core.getEnemyInfo(Block.event.id, hero, Block.x, Block.y, Block.floorId).hp * 0.1);
+				if (!flags.aoe[Block.x + ',' + Block.y + ',' + core.status.floorId]) {
+					if (core.hasSpecial(core.material.enemys[Block.event.id].special, 87)) {
+						flags.aoe[Block.x + ',' + Block.y + ',' + core.status.floorId] = Math.floor(core.getEnemyInfo(Block.event.id, hero, Block.x, Block.y, core.status.floorId).hp * 0.07 * 0.3);
+					} else {
+						flags.aoe[Block.x + ',' + Block.y + ',' + core.status.floorId] = Math.floor(core.getEnemyInfo(Block.event.id, hero, Block.x, Block.y, core.status.floorId).hp * 0.07);
+					}
 				} else {
-					flags.aoe[Block.x + '，' + Block.y + '，' + Block.floorId] += Math.floor(core.getEnemyInfo(Block.event.id, hero, Block.x, Block.y, Block.floorId).hp * 0.1);
+					if (core.hasSpecial(core.material.enemys[Block.event.id].special, 87)) {
+						flags.aoe[Block.x + ',' + Block.y + ',' + core.status.floorId] += Math.floor(core.getEnemyInfo(Block.event.id, hero, Block.x, Block.y, core.status.floorId).hp * 0.07 * 0.3);
+					} else {
+						flags.aoe[Block.x + ',' + Block.y + ',' + core.status.floorId] += Math.floor(core.getEnemyInfo(Block.event.id, hero, Block.x, Block.y, core.status.floorId).hp * 0.07);
+					}
+				}
+			}
+		})
+	}
+	//B17G空中堡垒
+	if (lb === 'b17g') {
+		locs.forEach(v => {
+			let Block = core.getBlock(v[0], v[1]);
+			if (!Block || Block.event.cls !== 'enemys') {
+				return
+			}
+			let blocktype = core.material.enemys[Block.event.id].type;
+			if ((blocktype === '步兵' || blocktype === '轻坦' || blocktype === '中坦' || blocktype === '重坦' || blocktype === '坦歼' || blocktype === '反坦克炮' || blocktype === '榴弹炮' || blocktype === '高射炮' || blocktype === '建筑')) {
+				if (!flags.aoe[Block.x + ',' + Block.y + ',' + core.status.floorId]) {
+					if (core.hasSpecial(core.material.enemys[Block.event.id].special, 87)) {
+						flags.aoe[Block.x + ',' + Block.y + ',' + core.status.floorId] = Math.floor(core.getEnemyInfo(Block.event.id, hero, Block.x, Block.y, core.status.floorId).hp * 0.1 * 0.3);
+					} else {
+						flags.aoe[Block.x + ',' + Block.y + ',' + core.status.floorId] = Math.floor(core.getEnemyInfo(Block.event.id, hero, Block.x, Block.y, core.status.floorId).hp * 0.1);
+					}
+				} else {
+					if (core.hasSpecial(core.material.enemys[Block.event.id].special, 87)) {
+						flags.aoe[Block.x + ',' + Block.y + ',' + core.status.floorId] += Math.floor(core.getEnemyInfo(Block.event.id, hero, Block.x, Block.y, core.status.floorId).hp * 0.1 * 0.3);
+					} else {
+						flags.aoe[Block.x + ',' + Block.y + ',' + core.status.floorId] += Math.floor(core.getEnemyInfo(Block.event.id, hero, Block.x, Block.y, core.status.floorId).hp * 0.1);
+					}
 				}
 			}
 		})
@@ -584,10 +650,18 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			}
 			let blocktype = core.material.enemys[Block.event.id].type;
 			if ((blocktype === '步兵' || blocktype === '轻坦' || blocktype === '中坦' || blocktype === '重坦' || blocktype === '坦歼' || blocktype === '反坦克炮' || blocktype === '榴弹炮' || blocktype === '高射炮' || blocktype === '建筑')) {
-				if (!flags.aoe[Block.x + '，' + Block.y + '，' + Block.floorId]) {
-					flags.aoe[Block.x + '，' + Block.y + '，' + Block.floorId] = Math.floor(core.getEnemyInfo(Block.event.id, hero, Block.x, Block.y, Block.floorId).hp * 0.15);
+				if (!flags.aoe[Block.x + ',' + Block.y + ',' + core.status.floorId]) {
+					if (core.hasSpecial(core.material.enemys[Block.event.id].special, 87)) {
+						flags.aoe[Block.x + ',' + Block.y + ',' + core.status.floorId] += Math.floor(core.getEnemyInfo(Block.event.id, hero, Block.x, Block.y, core.status.floorId).hp * 0.15 * 0.3);
+					} else {
+						flags.aoe[Block.x + ',' + Block.y + ',' + core.status.floorId] += Math.floor(core.getEnemyInfo(Block.event.id, hero, Block.x, Block.y, core.status.floorId).hp * 0.15);
+					}
 				} else {
-					flags.aoe[Block.x + '，' + Block.y + '，' + Block.floorId] += Math.floor(core.getEnemyInfo(Block.event.id, hero, Block.x, Block.y, Block.floorId).hp * 0.15);
+					if (core.hasSpecial(core.material.enemys[Block.event.id].special, 87)) {
+						flags.aoe[Block.x + ',' + Block.y + ',' + core.status.floorId] += Math.floor(core.getEnemyInfo(Block.event.id, hero, Block.x, Block.y, core.status.floorId).hp * 0.15 * 0.3);
+					} else {
+						flags.aoe[Block.x + ',' + Block.y + ',' + core.status.floorId] += Math.floor(core.getEnemyInfo(Block.event.id, hero, Block.x, Block.y, core.status.floorId).hp * 0.15);
+					}
 				}
 			}
 		})
@@ -657,11 +731,11 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 
 
 	//B17空中堡垒
-	if (core.hasEquip('b17'))
+	/*if (core.hasEquip('b17'))
 		for (let dx = -1; dx <= 1; ++dx)
 			for (let dy = -1; dy <= 1; ++dy)
 				if (core.enemyExists(x + dx, y + dy) && core.plugin.Army.includes(core.material.enemys[core.getBlockId(x + dx, y + dy)].type))
-					core.setEnemyOnPoint(x + dx, y + dy, core.status.floorId, 'hp', '0.8', '*=');
+					core.setEnemyOnPoint(x + dx, y + dy, core.status.floorId, 'hp', '0.8', '*=');*/
 
 	// 中毒
 	if (core.enemys.hasSpecial(special, 12)) {
@@ -791,7 +865,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 
 	// 删除该点设置的怪物信息
 	delete((flags.enemyOnPoint || {})[core.status.floorId] || {})[x + "," + y];
-	delete flags.aoe[x + '，' + y + '，' + core.status.floorId];
+	delete flags.aoe[x + ',' + y + ',' + core.status.floorId];
 
 	//战后任务检测
 	core.taskSystem.tasksInfo.forEach(v => v.tasks.forEach(a => {
@@ -1268,7 +1342,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		mon_bom *= (1 + bom_buff / 100);
 		mon_zone *= (1 + zone_buff / 100);
 	}
-	mon_hp -= flags.aoe[x + '，' + y + '，' + floorId] || 0;
+	mon_hp -= flags.aoe[x + ',' + y + ',' + floorId] || 0;
 
 	// TODO：可以在这里新增其他的怪物数据变化
 	// 比如仿攻（怪物攻击不低于勇士攻击）：
@@ -1431,12 +1505,30 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 
 	//陆军特判
 	if (junzhong === '陆军') {
-		if (lb === 'b17') { //B17空中堡垒
-			guaiwu.hp *= 0.9;
+		if (lb === 'b17' || lb === 'b24') { //B17空中堡垒、B24解放者、兰卡斯特
+			if (!core.hasSpecial(mon_special, 87)) {
+				guaiwu.hp *= 0.97;
+			} else {
+				guaiwu.hp *= 0.9;
+			}
+		} else if (lb === 'b17g') { //B17G型
+			if (!core.hasSpecial(mon_special, 87)) {
+				guaiwu.hp *= 0.94;
+			} else {
+				guaiwu.hp *= 0.8;
+			}
 		} else if (lb === 'lancaster') { //兰开斯特
-			guaiwu.hp *= 0.8;
+			if (!core.hasSpecial(mon_special, 87)) {
+				guaiwu.hp *= 0.955;
+			} else {
+				guaiwu.hp *= 0.85;
+			}
 		} else if (lb === 'b29' || lb === 'tu4') { //B29
-			guaiwu.hp *= 0.7;
+			if (!core.hasSpecial(mon_special, 87)) {
+				guaiwu.hp *= 0.91;
+			} else {
+				guaiwu.hp *= 0.7;
+			}
 		}
 		if (taishi === "劣势" && (tk === 'm4' || tk === 'm4a2' || tk === 'm4a3')) { //谢馒头
 			yongshi.atk *= 1.15;
@@ -1646,14 +1738,12 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			beilv *= 1.05;
 		}
 	}
-	if (lb === 'b17' && (mon_skillNum.type === '高射炮' || mon_skillNum.type === '战斗机' || mon_skillNum.type === '重型战斗机')) { //B17堡垒·飞行混凝土
+	if ((lb === 'b17' || lb === 'b17g') && (mon_skillNum.type === '高射炮' || mon_skillNum.type === '战斗机' || mon_skillNum.type === '重型战斗机')) { //B17堡垒·飞行混凝土
 		finalDamage *= 0.8;
 	} else if (lb === 'lancaster') { //兰开斯特·夜间空袭
 		if (mon_skillNum.type === '高射炮') {
 			finalDamage *= 0.8;
-		} else if (mon_skillNum.type === '战斗机') {
-			finalDamage *= 0.9;
-		} else if (mon_skillNum.type === '重型战斗机') {
+		} else if (isfighter) {
 			finalDamage *= 1.3;
 		}
 	}
@@ -1795,7 +1885,9 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 
 		//反潜
 		if (mon_skillNum.type === '潜艇') {
-			if (turn % 3 === 0) {
+			if (turn === 1 && lb === 'b24') { //B24解放者
+				hero_dc += yongshi.atk * 0.5;
+			} else if (turn % 3 === 0) {
 				if (dd === 'classe' || dd === 'mahan') { //E级+马汉级
 					hero_dc += yongshi.atk * 0.5;
 				}
@@ -2217,6 +2309,10 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			if (isfighter) {
 				hero_common *= 1.1;
 			}
+		} else if (lb === 'b17g') { //B17G
+			if (isfighter) {
+				hero_common *= 1.15;
+			}
 		} else if (lb === 'b29' || lb === 'tu4') { //B29·李梅
 			if (junzhong === '陆军') {
 				hero_common += yongshi.mdef * 0.05;
@@ -2409,6 +2505,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	}*/
 	if (flags.skill === 14 && !flags.spy) { //补给线
 		yongshi.mdef *= 10;
+		yongshi.mdef += flags.temmdef * 4;
 	}
 	if (flags.skill === 5 && !flags.spy) { //预警
 		finalDamage *= 0.7;

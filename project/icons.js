@@ -574,7 +574,6 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"barracuda": 133,
 		"tbf": 134,
 		"a26": 135,
-		"sterling": 136,
 		"b17": 137,
 		"b24": 138,
 		"lancaster": 139,
@@ -672,7 +671,8 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"is3": 222,
 		"la9": 223,
 		"il10": 224,
-		"tu4": 225
+		"tu4": 225,
+		"b17g": 136
 	},
 	"autotile": {
 		"autotile": 0,

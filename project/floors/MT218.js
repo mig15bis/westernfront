@@ -21,7 +21,6 @@ main.floors.MT218=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        
         {
             "type": "setCurtain",
             "time": 500
@@ -30,14 +29,14 @@ main.floors.MT218=
             "type": "setEnemy",
             "id": "commandos",
             "name": "hp",
-            "value": "165000",
+            "value": "210000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "commandos",
             "name": "atk",
-            "value": "2500",
+            "value": "3000",
             "norefresh": true
         },
         {
@@ -51,7 +50,7 @@ main.floors.MT218=
             "type": "setEnemy",
             "id": "mortar",
             "name": "atk",
-            "value": "9000",
+            "value": "12000",
             "norefresh": true
         },
         {
@@ -65,56 +64,56 @@ main.floors.MT218=
             "type": "setEnemy",
             "id": "sniper",
             "name": "atk",
-            "value": "60000",
+            "value": "40000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "motorinf",
             "name": "hp",
-            "value": "155000",
+            "value": "210000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "motorinf",
             "name": "atk",
-            "value": "2800",
+            "value": "3300",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "lightmg",
             "name": "hp",
-            "value": "145000",
+            "value": "160000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "lightmg",
             "name": "atk",
-            "value": "2900",
+            "value": "3000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "mg42",
             "name": "hp",
-            "value": "140000",
+            "value": "160000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "mg42",
             "name": "atk",
-            "value": "3200",
+            "value": "3400",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "pak38",
             "name": "hp",
-            "value": "34000",
+            "value": "30000",
             "norefresh": true
         },
         {
@@ -128,28 +127,28 @@ main.floors.MT218=
             "type": "setEnemy",
             "id": "howitzer105",
             "name": "hp",
-            "value": "34000",
+            "value": "30000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "howitzer105",
             "name": "atk",
-            "value": "45000",
+            "value": "50000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "howitzer105",
             "name": "zone",
-            "value": "35000",
+            "value": "5000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "sdkfz234",
             "name": "hp",
-            "value": "85000",
+            "value": "55000",
             "norefresh": true
         },
         {
@@ -163,7 +162,7 @@ main.floors.MT218=
             "type": "setEnemy",
             "id": "panzer3f",
             "name": "hp",
-            "value": "95000",
+            "value": "60000",
             "norefresh": true
         },
         {
@@ -184,28 +183,28 @@ main.floors.MT218=
             "type": "setEnemy",
             "id": "stug3a",
             "name": "hp",
-            "value": "70000",
+            "value": "60000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "stug3a",
             "name": "atk",
-            "value": "23000",
+            "value": "30000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer4f",
             "name": "hp",
-            "value": "110000",
+            "value": "70000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "panzer4f",
             "name": "atk",
-            "value": "28000",
+            "value": "33000",
             "norefresh": true
         },
         {
@@ -233,7 +232,7 @@ main.floors.MT218=
             "type": "setEnemy",
             "id": "flak88",
             "name": "zone",
-            "value": "25000",
+            "value": "15000",
             "norefresh": true
         },
         {
@@ -571,6 +570,9 @@ main.floors.MT218=
             "time": 200
         },
         {
+            "type": "waitAsync"
+        },
+        {
             "type": "animate",
             "name": "vehicleexplore",
             "loc": [
@@ -589,10 +591,6 @@ main.floors.MT218=
                     2
                 ]
             ]
-        },
-        {
-            "type": "sleep",
-            "time": 200
         },
         {
             "type": "animate",
@@ -615,10 +613,6 @@ main.floors.MT218=
             ]
         },
         {
-            "type": "sleep",
-            "time": 200
-        },
-        {
             "type": "animate",
             "name": "vehicleexplore",
             "loc": [
@@ -639,10 +633,6 @@ main.floors.MT218=
             ]
         },
         {
-            "type": "sleep",
-            "time": 200
-        },
-        {
             "type": "animate",
             "name": "vehicleexplore",
             "loc": [
@@ -661,10 +651,6 @@ main.floors.MT218=
                     6
                 ]
             ]
-        },
-        {
-            "type": "sleep",
-            "time": 200
         },
         {
             "type": "animate",
@@ -687,10 +673,6 @@ main.floors.MT218=
             ]
         },
         {
-            "type": "sleep",
-            "time": 200
-        },
-        {
             "type": "animate",
             "name": "vehicleexplore",
             "loc": [
@@ -709,10 +691,6 @@ main.floors.MT218=
                     2
                 ]
             ]
-        },
-        {
-            "type": "sleep",
-            "time": 200
         },
         {
             "type": "animate",
@@ -735,10 +713,6 @@ main.floors.MT218=
             ]
         },
         {
-            "type": "sleep",
-            "time": 200
-        },
-        {
             "type": "animate",
             "name": "vehicleexplore",
             "loc": [
@@ -759,10 +733,6 @@ main.floors.MT218=
             ]
         },
         {
-            "type": "sleep",
-            "time": 200
-        },
-        {
             "type": "animate",
             "name": "vehicleexplore",
             "loc": [
@@ -781,10 +751,6 @@ main.floors.MT218=
                     6
                 ]
             ]
-        },
-        {
-            "type": "sleep",
-            "time": 200
         },
         {
             "type": "waitAsync"

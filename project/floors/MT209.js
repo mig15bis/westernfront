@@ -25,7 +25,6 @@ main.floors.MT209=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        
         "\r[yellow]Mission 31 空中堡垒",
         {
             "type": "setValue",
@@ -35,7 +34,7 @@ main.floors.MT209=
         {
             "type": "setValue",
             "name": "flag:友军血量",
-            "value": "2500000"
+            "value": "3000000"
         },
         {
             "type": "setValue",

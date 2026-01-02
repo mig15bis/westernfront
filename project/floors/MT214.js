@@ -48,7 +48,7 @@ main.floors.MT214=
             {
                 "type": "setValue",
                 "name": "flag:第30关通关",
-                "value": "0"
+                "value": "1"
             },
             {
                 "type": "setCurtain",

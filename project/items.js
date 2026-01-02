@@ -1327,17 +1327,11 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"canUseItemEffect": "true",
 		"text": "废稿"
 	},
-	"sterling": {
-		"cls": "equips",
-		"name": "斯特林MK1",
-		"canUseItemEffect": "true",
-		"text": "废稿"
-	},
 	"b17": {
 		"cls": "equips",
 		"name": "B17空中堡垒",
 		"canUseItemEffect": "true",
-		"text": "挂载：12×500磅炸弹\n被动：\n战略轰炸：无法对舰攻击。对地攻击时，初始敌人血量减少10%，且战后主角周围8格内敌方陆军血量减少5%，可叠加。\n飞行混凝土：遭遇战斗机和高射炮攻击时，减免20%伤害，且对战斗机的每回合普攻伤害+10%。",
+		"text": "挂载：12×500磅炸弹\n被动：\n战略轰炸：无法对舰攻击。对地攻击时，初始敌人血量减少10%，且战后该敌人周围8格内敌方陆军血量减少5%，可叠加。\n飞行混凝土：遭遇战斗机和高射炮攻击时，减免20%伤害，且对战斗机的每回合普攻伤害+10%。",
 		"equip": {
 			"type": 6,
 			"value": {},
@@ -1348,19 +1342,29 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "B24解放者",
 		"canUseItemEffect": "true",
-		"text": "挂载：12×500磅炸弹。\n被动:\n战略轰炸：无法对舰攻击。对地攻击时，敌方血量减少20%，且战后主角周围8格陆军血量减少10%，可叠加。\n反潜巡逻：对潜艇攻击时，抢先投放深水炸弹，造成5倍攻击力的伤害"
+		"text": "挂载：12×500磅炸弹。\n被动:\n战略轰炸：无法对舰攻击。对地攻击时，敌方血量减少10%，且战后该敌人周围8格陆军血量减少5%，可叠加。\n反潜巡逻：对潜艇攻击时，首回合投放深水炸弹，造成0.5倍攻击力的伤害",
+		"equip": {
+			"type": 6,
+			"value": {},
+			"percentage": {}
+		}
 	},
 	"lancaster": {
 		"cls": "equips",
 		"name": "兰开斯特轰炸机",
 		"canUseItemEffect": "true",
-		"text": "挂载：14×1000磅炸弹。\n被动：\n战略轰炸：无法对舰攻击。对地攻击时，初始减少敌人20%血量，且战后主角周围8格内陆军血量减少10%，可叠加。\n夜间空袭：免疫20%高射炮伤害与10%轻型战斗机伤害，但受到重型战斗机伤害提升30%。\n特别行动：该飞机可挂载特定的超重型炸弹。"
+		"text": "挂载：14×1000磅炸弹。\n被动：\n战略轰炸：无法对舰攻击。对地攻击时，初始减少敌人15%血量，且战后该敌人周围8格内陆军血量减少7%，可叠加。\n夜间空袭：免疫20%高射炮伤害与10%轻型战斗机伤害，但受到重型战斗机伤害提升30%。\n特别行动：该飞机可挂载特定的超重型炸弹。",
+		"equip": {
+			"type": 6,
+			"value": {},
+			"percentage": {}
+		}
 	},
 	"b29": {
 		"cls": "equips",
 		"name": "B29超级空中堡垒",
 		"canUseItemEffect": "true",
-		"text": "挂载：18×1000磅炸弹。\n被动：\n战略轰炸：无法对舰攻击。对地攻击时，初始减少敌人30%血量，且战后主角周围8格内陆军血量减少15%，可叠加。\n超高空轰炸：敌人的防空技能失效，高射炮伤害-90%，战斗机伤害-50%。\n李梅之怒：与敌方陆军战斗期间，敌方每回合额外受到等同于5%后勤值的普攻伤害。\n末日审判：该机可以挂载【绝密】（也可挂载高脚柜炸弹）。",
+		"text": "挂载：18×1000磅炸弹。\n被动：\n战略轰炸：无法对舰攻击。对地攻击时，初始减少敌人30%血量，且战后该敌人周围8格内陆军血量减少15%，可叠加。\n超高空轰炸：敌人的防空技能失效，高射炮伤害-90%，战斗机伤害-50%。\n李梅之怒：与敌方陆军战斗期间，敌方每回合额外受到等同于5%后勤值的普攻伤害。\n末日审判：该机可以挂载【绝密】（也可挂载高脚柜炸弹）。",
 		"useItemEffect": null,
 		"equip": {
 			"type": 6,
@@ -1386,7 +1390,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"cola": {
 		"cls": "tools",
 		"name": "可乐",
-		"canUseItemEffect": "core.status.hero.hp < core.status.hero.hpmax",
+		"canUseItemEffect": "true",
 		"text": "美国大兵的最爱。由于作者没有获得广告费赞助，因此这款可乐并没注明品牌。\n饮用后恢复50%血量，下一场战斗中额外增加等同于血限5%的后勤值,可叠加。",
 		"useItemEvent": [
 			{
@@ -1397,9 +1401,9 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 			},
 			{
 				"type": "setValue",
-				"name": "flag:colabuff",
+				"name": "flag:temmdef",
 				"operator": "+=",
-				"value": "1"
+				"value": "(status:hpmax*0.05)"
 			}
 		],
 		"useItemEffect": "if (hero.hp > hero.hpmax * 1 / 2&&!core.getFlag(\"__statistics__\")) core.drawHeroAnimate('hpfull');\ncore.status.hero.hp += hero.hpmax * 0.5;"
@@ -1572,9 +1576,9 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "items",
 		"name": "5阶黄宝石",
 		"canUseItemEffect": "true",
-		"text": ",血量及血限+3000",
-		"itemEffectTip": ",血量及血限+3000",
-		"itemEffect": "core.status.hero.hpmax += 3000;\ncore.status.hero.hp += 3000;\nif (flags.anime === true&&!core.getFlag(\"__statistics__\")) {\n\tcore.drawHeroAnimate('hpmaxup');\n}"
+		"text": ",血量及血限+5000",
+		"itemEffectTip": ",血量及血限+5000",
+		"itemEffect": "core.status.hero.hpmax += 5000;\ncore.status.hero.hp += 3000;\nif (flags.anime === true&&!core.getFlag(\"__statistics__\")) {\n\tcore.drawHeroAnimate('hpmaxup');\n}"
 	},
 	"orange2Gem": {
 		"cls": "items",
@@ -1604,9 +1608,9 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "items",
 		"name": "5阶橙宝石",
 		"canUseItemEffect": "true",
-		"text": "，增加500雷击",
-		"itemEffectTip": "，增加500雷击",
-		"itemEffect": "core.status.hero.top += 500;\nif (flags.anime === true&&!core.getFlag(\"__statistics__\")) {\n\tcore.drawHeroAnimate('topup');\n}"
+		"text": "，增加1000雷击",
+		"itemEffectTip": "，增加1000雷击",
+		"itemEffect": "core.status.hero.top += 1000;\nif (flags.anime === true && !core.getFlag(\"__statistics__\")) {\n\tcore.drawHeroAnimate('topup');\n}"
 	},
 	"p40c": {
 		"cls": "equips",
@@ -2107,9 +2111,9 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "items",
 		"name": "6阶橙宝石",
 		"canUseItemEffect": "true",
-		"text": "，增加1500雷击",
-		"itemEffectTip": "，增加1500雷击",
-		"itemEffect": "core.status.hero.top += 1500;\nif (flags.anime === true&&!core.getFlag(\"__statistics__\")) {\n\tcore.drawHeroAnimate('topup');\n}"
+		"text": "，增加5000雷击",
+		"itemEffectTip": "，增加5000雷击",
+		"itemEffect": "core.status.hero.top += 5000;\nif (flags.anime === true&&!core.getFlag(\"__statistics__\")) {\n\tcore.drawHeroAnimate('topup');\n}"
 	},
 	"red7Gem": {
 		"cls": "items",
@@ -2147,9 +2151,9 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "items",
 		"name": "7阶橙宝石",
 		"canUseItemEffect": "true",
-		"text": "，增加5000雷击",
-		"itemEffectTip": "，增加50500雷击",
-		"itemEffect": "core.status.hero.top += 5000;\nif (flags.anime === true&&!core.getFlag(\"__statistics__\")) {\n\tcore.drawHeroAnimate('topup');\n}"
+		"text": "，增加10000雷击",
+		"itemEffectTip": "，增加10000雷击",
+		"itemEffect": "core.status.hero.top += 10000;\nif (flags.anime === true&&!core.getFlag(\"__statistics__\")) {\n\tcore.drawHeroAnimate('topup');\n}"
 	},
 	"red8Gem": {
 		"cls": "items",
@@ -2187,9 +2191,9 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "items",
 		"name": "8阶橙宝石",
 		"canUseItemEffect": "true",
-		"text": "，增加15000雷击",
-		"itemEffectTip": "，增加15000雷击",
-		"itemEffect": "core.status.hero.top += 15000;\nif (flags.anime === true&&!core.getFlag(\"__statistics__\")) {\n\tcore.drawHeroAnimate('topup');\n}"
+		"text": "，增加50000雷击",
+		"itemEffectTip": "，增加50000雷击",
+		"itemEffect": "core.status.hero.top += 50000;\nif (flags.anime === true&&!core.getFlag(\"__statistics__\")) {\n\tcore.drawHeroAnimate('topup');\n}"
 	},
 	"medal6": {
 		"cls": "items",
@@ -2263,5 +2267,16 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"name": "图4轰炸机",
 		"canUseItemEffect": "true",
 		"text": "自卫武器：12×12.7mm机枪。挂载：18×1000磅炸弹。\n被动：\n山寨版B29：技能组和属性加成同B29轰炸机。"
+	},
+	"b17g": {
+		"cls": "equips",
+		"name": "B17空中堡垒G型",
+		"canUseItemEffect": "true",
+		"text": "挂载：6×1600磅炸弹\n被动：\n战略轰炸：无法对舰攻击。对地攻击时，初始敌人血量减少20%，且战后该敌人周围8格内敌方陆军血量减少10%，可叠加。\n飞行混凝土：遭遇战斗机和高射炮攻击时，减免20%伤害，且对战斗机的每回合普攻伤害+15%。",
+		"equip": {
+			"type": 6,
+			"value": {},
+			"percentage": {}
+		}
 	}
 }

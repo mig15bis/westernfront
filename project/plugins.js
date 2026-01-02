@@ -3885,6 +3885,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 					core.drawHeroAnimate('hpfull');
 					if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
 						core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
+						core.updateStatusBar();
 						if (!core.isReplaying() && !main.replayChecking) {
 							core.drawHeroAnimate('sniper');
 						}
@@ -3896,6 +3897,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 					core.drawHeroAnimate('heal');
 					if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
 						core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
+						core.updateStatusBar();
 						if (!core.isReplaying() && !main.replayChecking) {
 							core.drawHeroAnimate('sniper');
 						}
@@ -3904,6 +3906,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 						}
 					}
 				}
+				core.updateStatusBar();
 			},
 			description: '血量立即恢复25%'
 		},
@@ -3925,7 +3928,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 				let X = core.nextX(),
 					Y = core.nextY(),
 					floorId = core.status.floorId,
-					范围伤害目标 = X + '，' + Y + '，' + floorId,
+					范围伤害目标 = X + ',' + Y + ',' + floorId,
 					nextair = core.getBlockId(X, Y);
 				let todo = [];
 				if (core.isReplaying() || main.replayChecking) { //录像播放
@@ -3965,6 +3968,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 								core.removeBlock(X, Y);
 								if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
 									core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
+									core.updateStatusBar();
 									if (hero.hp <= 0) {
 										core.events.lose();
 									}
@@ -3998,6 +4002,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 							core.insertAction(todo);
 							if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
 								core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
+								core.updateStatusBar();
 								if (hero.hp <= 0) {
 									core.events.lose();
 								}
@@ -4063,6 +4068,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 								})
 								if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
 									core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
+									core.updateStatusBar();
 									core.drawHeroAnimate('sniper');
 									if (hero.hp <= 0) {
 										core.events.lose();
@@ -4110,6 +4116,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 								})
 								if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
 									core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
+									core.updateStatusBar();
 									core.drawHeroAnimate('sniper');
 									if (hero.hp <= 0) {
 										core.events.lose();
@@ -4123,6 +4130,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 						core.drawTip("只能对空中目标使用");
 					}
 				}
+				core.updateStatusBar();
 			},
 			description: '只能对面前的非boss空军使用，将其秒杀。如果无法秒杀对方，则效果改为“造成3倍攻击力的伤害”'
 		},
@@ -4155,6 +4163,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 					core.playSound('005-System05.mp3');
 					if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
 						core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
+						core.updateStatusBar();
 						if (!core.isReplaying() && !main.replayChecking) {
 							core.drawHeroAnimate('sniper');
 						}
@@ -4180,7 +4189,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 				let X = core.nextX(),
 					Y = core.nextY(),
 					floorId = core.status.floorId,
-					范围伤害目标 = X + '，' + Y + '，' + floorId,
+					范围伤害目标 = X + ',' + Y + ',' + floorId,
 					next = core.getBlockId(X, Y);
 				let todo = [];
 				if (core.isReplaying() || main.replayChecking) { //录像播放
@@ -4227,6 +4236,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 						}
 						if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
 							core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
+							core.updateStatusBar();
 							if (hero.hp <= 0) {
 								core.events.lose();
 							}
@@ -4293,6 +4303,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 							})
 							if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
 								core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
+								core.updateStatusBar();
 								core.drawHeroAnimate('sniper');
 								if (hero.hp <= 0) {
 									core.events.lose();
@@ -4305,6 +4316,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 						core.unlockControl();
 					}
 				}
+				core.updateStatusBar();
 			},
 			description: '对面前的敌军舰艇发射5枚鱼雷，且至少会命中1枚（潜艇除外），除造成正常的鱼雷伤害外，对手闪避鱼雷数-2。可重复空袭，但不会再降低对方的闪避'
 		},
@@ -4334,7 +4346,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 				let X = core.nextX(),
 					Y = core.nextY(),
 					floorId = core.status.floorId,
-					范围伤害目标 = X + '，' + Y + '，' + floorId,
+					范围伤害目标 = X + ',' + Y + ',' + floorId,
 					nextair = core.getBlockId(X, Y);
 				let todo = [];
 				if (core.isReplaying() || main.replayChecking) { //录像播放
@@ -4344,9 +4356,17 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 							core.drawTip("无法对敌方boss使用");
 						} else if (!['轻坦', '中坦', '重坦', '坦歼'].includes(core.material.enemys[nextair].type) || core.hasSpecial(nextair, 65)) {
 							if (flags.aoe[范围伤害目标]) {
-								flags.aoe[范围伤害目标] += core.getRealStatus('atk') * 4;
+								if (!core.hasSpecial(core.material.enemys[nextair].special, 87)) {
+									flags.aoe[范围伤害目标] += core.getRealStatus('atk') * 4;
+								} else {
+									flags.aoe[范围伤害目标] += core.getRealStatus('atk') * 1.2;
+								}
 							} else {
-								flags.aoe[范围伤害目标] = core.getRealStatus('atk') * 4;
+								if (!core.hasSpecial(core.material.enemys[nextair].special, 87)) {
+									flags.aoe[范围伤害目标] += core.getRealStatus('atk') * 4;
+								} else {
+									flags.aoe[范围伤害目标] += core.getRealStatus('atk') * 1.2;
+								}
 							}
 							if (core.getEnemyInfo(nextair, hero, X, Y, floorId).hp <= 0) {
 								let money = core.getEnemyValue(nextair, 'money', X, Y),
@@ -4376,6 +4396,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 							}
 							if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
 								core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
+								core.updateStatusBar();
 								if (hero.hp <= 0) {
 									core.events.lose();
 								}
@@ -4407,6 +4428,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 							core.insertAction(todo);
 							if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
 								core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
+								core.updateStatusBar();
 								if (hero.hp <= 0) {
 									core.events.lose();
 								}
@@ -4430,9 +4452,17 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 								setTimeout(() => {
 									core.drawAnimate('explore', X, Y);
 									if (flags.aoe[范围伤害目标]) {
-										flags.aoe[范围伤害目标] += core.getRealStatus('atk') * 3;
+										if (!core.hasSpecial(core.material.enemys[nextair].special, 87)) {
+											flags.aoe[范围伤害目标] += core.getRealStatus('atk') * 4;
+										} else {
+											flags.aoe[范围伤害目标] += core.getRealStatus('atk') * 1.2;
+										}
 									} else {
-										flags.aoe[范围伤害目标] = core.getRealStatus('atk') * 3;
+										if (!core.hasSpecial(core.material.enemys[nextair].special, 87)) {
+											flags.aoe[范围伤害目标] += core.getRealStatus('atk') * 4;
+										} else {
+											flags.aoe[范围伤害目标] += core.getRealStatus('atk') * 1.2;
+										}
 									}
 									if (core.getEnemyInfo(nextair, hero, X, Y, floorId).hp <= 0) {
 										let money = core.getEnemyValue(nextair, 'money', X, Y),
@@ -4470,6 +4500,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 									}
 									if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
 										core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
+										core.updateStatusBar();
 										core.drawHeroAnimate('sniper');
 										if (hero.hp <= 0) {
 											core.events.lose();
@@ -4515,6 +4546,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 									}
 									if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
 										core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
+										core.updateStatusBar();
 										core.drawHeroAnimate('sniper');
 										if (hero.hp <= 0) {
 											core.events.lose();
@@ -4529,6 +4561,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 						core.drawTip("只能对地面目标使用");
 					}
 				}
+				core.updateStatusBar();
 			},
 			description: '只能对面前的非boss地面部队使用。如果是坦克，则直接将其摧毁；如果无法摧毁，改为投掷一轮伤害为4倍攻击力的炸弹攻击'
 		},
@@ -4554,7 +4587,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 			strategy: false,
 			name: '补给线',
 			cost: 250,
-			description: '下一场战斗中，后勤值提升10倍'
+			description: '下一场战斗中，后勤值提升10倍，临时后勤值提升5倍'
 		},
 
 		{ // 15
@@ -4717,12 +4750,12 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 			var suffix = list.splice(6);
 			list.unshift({ "text": "上一页", "action": [{ "type": "break", "n": 1 }] })
 
-			list.push({ "text": "下一页", "action": this._makemiddleList(suffix, depth + 1) });
+			list.push({ "text": "下一页", "action": this._makemiddleList(suffix, depth + 1, x) });
 		} else {
 			var suffix = list.splice(6);
 			list.unshift({ "text": "上一页", "action": [{ "type": "break", "n": 1 }] })
 
-			list.push({ "text": "下一页", "action": this._makelastList(suffix, depth + 1) });
+			list.push({ "text": "下一页", "action": this._makelastList(suffix, depth + 1, x) });
 		}
 		list.push({ "text": "查看当前快捷键", "action": [{ "type": "insert", "name": "查看技能" }] });
 		list.push({ "text": "保存并进入下一章", "action": [{ "type": "break", "n": depth + x * 2 }] });
@@ -4746,10 +4779,10 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 		if (list.length > 8) { // 分页
 			if (list.length > 14) {
 				var suffix = list.splice(7);
-				list.push({ "text": "下一页", "action": this._makemiddleList(suffix, depth + 1) });
+				list.push({ "text": "下一页", "action": this._makemiddleList(suffix, depth + 1, x) });
 			} else {
 				var suffix = list.splice(7);
-				list.push({ "text": "下一页", "action": this._makelastList(suffix, depth + 1) });
+				list.push({ "text": "下一页", "action": this._makelastList(suffix, depth + 1, x) });
 			}
 
 		}

@@ -397,7 +397,7 @@ var maps_90f36752_8815_4be8_b32b_d7fad1d0542e =
 	"481": {"cls":"items","id":"barracuda"},
 	"482": {"cls":"items","id":"tbf"},
 	"483": {"cls":"items","id":"a26"},
-	"484": {"cls":"items","id":"sterling"},
+	"484": {"cls":"items","id":"b17g"},
 	"485": {"cls":"items","id":"b17"},
 	"486": {"cls":"items","id":"b24"},
 	"487": {"cls":"items","id":"lancaster"},

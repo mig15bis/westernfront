@@ -1002,10 +1002,15 @@ core.drawHero();
                                     if (core.plugin.c47[x + ',' + y] === 1){
                                         core.drawAnimate('flak', x, y, null, ()=>{
                                             core.updateStatusBar();
-                                            if(core.status.hero.hp <= 0){
-                                        core.lose();
-                                    }
                                         });
+                                    }
+                                    if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
+						                core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
+                                        core.updateStatusBar();
+							            core.drawHeroAnimate('sniper');
+					}
+                    if(core.status.hero.hp <= 0){
+                                        core.lose();
                                     }
 								})
         });
@@ -1015,12 +1020,16 @@ core.drawHero();
 core.setHeroLoc('x', core.bigmap.width - 1 - core.getHeroLoc('x'));
 core.setHeroLoc('y', core.bigmap.height - 1 - core.getHeroLoc('y'));
 core.drawHero();
+if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
+						core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
+                        core.updateStatusBar();
+					}
         if (core.plugin.c47[x + ',' + y] === 1){
                                             core.updateStatusBar();
-                                            if(core.status.hero.hp <= 0){
-                                        core.lose();
                                     }
-                                    }
+                                    if (hero.hp <= 0) {
+							core.events.lose();
+						}
                                 }
         }
         else {
@@ -1052,10 +1061,15 @@ core.drawHero();
                                     if (core.plugin.c47[x + ',' + y] === 1){
                                         core.drawAnimate('flak', x, y, null, ()=>{
                                             core.updateStatusBar();
-                                            if(core.status.hero.hp <= 0){
-                                        core.lose();
-                                    }
                                         });
+                                    }
+                                    if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
+						                core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
+                                        core.updateStatusBar();
+							            core.drawHeroAnimate('sniper');
+                                        }
+                                        if(core.status.hero.hp <= 0){
+                                        core.lose();
                                     }
 								})
         });
@@ -1071,6 +1085,14 @@ core.drawHero();
                                         core.lose();
                                     }
                                     }
+                                    if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
+						                core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
+                                        core.updateStatusBar();
+							            core.drawHeroAnimate('sniper');
+						                   if (hero.hp <= 0) {
+							                 core.events.lose();
+						                    }
+                                        }
                                 }
         }
         else {

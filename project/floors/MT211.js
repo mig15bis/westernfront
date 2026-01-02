@@ -23,7 +23,7 @@ main.floors.MT211=
     "firstArrive": [
         {
             "type": "animate",
-            "name": "explore",
+            "name": "flak",
             "loc": [
                 8,
                 10
@@ -41,6 +41,40 @@ main.floors.MT211=
             ],
             "remove": true,
             "time": 500
+        },
+        {
+            "type": "choices",
+            "text": "\t[突发事件]一架受损的B17轰炸机脱离机群，向英国飞去。是否分离出一部分护航战斗机，为其提供保护？（扣掉的攻击力过段时间就会返还）",
+            "choices": [
+                {
+                    "text": "提供掩护（-50攻击力）",
+                    "action": [
+                        "\t[盟军指挥官,hero]第23中队，去掩护那架掉队的，直到他们离开德军空域。",
+                        "\t[护航战斗机飞行员,N573]是，长官！",
+                        {
+                            "type": "setValue",
+                            "name": "status:atk",
+                            "operator": "-=",
+                            "value": "50"
+                        },
+                        {
+                            "type": "setValue",
+                            "name": "flag:MT211protect",
+                            "value": "true"
+                        }
+                    ]
+                },
+                {
+                    "text": "视而不见",
+                    "action": [
+                        {
+                            "type": "setValue",
+                            "name": "flag:MT211protect",
+                            "value": "false"
+                        }
+                    ]
+                }
+            ]
         }
     ],
     "eachArrive": [],
