@@ -18,7 +18,6 @@ main.floors.MT241=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        
         {
             "type": "setCurtain",
             "time": 500
@@ -44,7 +43,7 @@ main.floors.MT241=
         },
         {
             "type": "text",
-            "text": "\t[巴顿]\f[patton.png,0,310]没能与隆美尔决战是我的遗憾，但这也意味着对面的敌人不会是我的对手。我的坦克部队将碾碎他们！",
+            "text": "\t[巴顿]\f[patton.png,0,310]没能与隆美尔决战是我的遗憾，但这也意味着对面的敌人不会是我的对手。碾碎他们！",
             "pos": [
                 100,
                 300,

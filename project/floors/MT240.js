@@ -15,10 +15,14 @@ main.floors.MT240=
     "bgm": "cao6.mp3",
     "firstArrive": [
         {
+            "type": "setValue",
+            "name": "flag:dry",
+            "value": "true"
+        },
+        {
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        
         {
             "type": "update"
         },

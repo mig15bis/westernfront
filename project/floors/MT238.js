@@ -47,14 +47,6 @@ main.floors.MT238=
                 "pos": 6
             },
             {
-                "type": "function",
-                "function": "function(){\nflags.skillList=[0,0,0,0,0,0,0]\n}"
-            },
-            {
-                "type": "function",
-                "function": "function(){\nflags.mission[34][0]=true\n}"
-            },
-            {
                 "type": "update"
             },
             {
@@ -62,7 +54,7 @@ main.floors.MT238=
                 "time": 500
             },
             {
-                "type": "hideStatusBar"
+                "type": "hideui"
             },
             {
                 "type": "update"
@@ -105,7 +97,7 @@ main.floors.MT238=
             },
             {
                 "type": "function",
-                "function": "function(){\nvar a = flags.mission[core.getFlag('stage')];\ncore.setFlag('@temp@A', a[0] + a[1] + a[2]);\n}"
+                "function": "function(){\nvar a = core.taskSystem.checkTask(0) ? 1 : 0,\n\tb = core.taskSystem.checkTask(1) ? 1 : 0,\n\tc = core.taskSystem.checkTask(2) ? 1 : 0;\ncore.setFlag('@temp@A', a + b + c);\n}"
             },
             {
                 "type": "if",
@@ -131,11 +123,6 @@ main.floors.MT238=
                             90
                         ],
                         "opacity": 1,
-                        "time": 500,
-                        "async": true
-                    },
-                    {
-                        "type": "sleep",
                         "time": 500
                     },
                     {
@@ -162,11 +149,6 @@ main.floors.MT238=
                                     90
                                 ],
                                 "opacity": 1,
-                                "time": 500,
-                                "async": true
-                            },
-                            {
-                                "type": "sleep",
                                 "time": 500
                             },
                             {
@@ -193,11 +175,6 @@ main.floors.MT238=
                                             90
                                         ],
                                         "opacity": 1,
-                                        "time": 500,
-                                        "async": true
-                                    },
-                                    {
-                                        "type": "sleep",
                                         "time": 500
                                     }
                                 ],
@@ -380,9 +357,9 @@ main.floors.MT238=
     [383,216, 81,  3,216,  3,  0,395,360,521,  3,360,  0, 81,396],
     [535,  3,521,  0,385,  0,521,  3,  0,518,  3,  3,255,  3,537],
     [  3,  3,  3,393,  3,539,  3,  3, 81,  3,  0,360,  0,  3,537],
-    [  0,518,  3,360,  3,  3,538,537,571,  3,381,  3,  3,  3, 85],
-    [ 92,255, 81,207,  3,537,  3,  3,207, 81,  0,396,331, 85, 89],
-    [  0,518,  3,360,394,360,538,  3,571,  3,381,  3,  3,  3, 85],
+    [  0,518,  3,360,  3,  3,538,537,571,  3,381,  3,  3,  3, 82],
+    [ 92,255, 81,207,  3,537,  3,  3,207, 81,  0,396,331, 82, 89],
+    [  0,518,  3,360,394,360,538,  3,571,  3,381,  3,  3,  3, 82],
     [  3,  3,  3,393,  3,  3,255, 82,385,  3,  0,360,  0,  3,537],
     [536,  3,518,  0,384,360,539,  3,571,  0,  3,  3,385,  3,537],
     [536,  3,  3, 82,  3,  3,539,  3,  3,395,  3,  0,  0, 81,396],
