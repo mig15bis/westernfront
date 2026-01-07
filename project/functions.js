@@ -715,6 +715,19 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 
 	//清除临时护盾
 	flags.temmdef = 0;
+	if (core.hasSpecial(enemyId, 89) && core.getFlag('fire', 0) > 0) { //殉爆清火
+		flags.fire = 0;
+	}
+	// 燃烧
+	if (core.getFlag("fire", 0) > 0) {
+		flags.fire--;
+	}
+	if (core.hasSpecial(special, 47) && damage > 0) {
+		flags.fire = (flags.fire ?? 0) + 3;
+	}
+	if (damageInfo.flood) {
+		flags.进水 = true;
+	}
 	//增加临时护盾
 	if (flags.skill === 13 && !flags.spy && core.status.maps[core.status.floorId].area === '海洋') {
 		flags.temmdef += hero.mdef * 0.2;
@@ -797,13 +810,6 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		}
 		flags.jingjie[core.stauts.floorId] = (flags.jingjie[core.stauts.floorId] ?? 1) + 0.1
 
-	}
-	// 燃烧
-	if (core.hasSpecial(special, 47) && damage > 0) {
-		flags.fire = (flags.fire ?? 0) + 3;
-	}
-	if (core.getFlag("fire", 0) > 0) {
-		flags.fire--;
 	}
 	// 遥控				
 	if (core.hasSpecial(special, 50) && core.searchBlockWithFilter(block => { //有且仅有最后一个
@@ -1027,7 +1033,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		[44, "神风特攻", function (enemy) { return "丧心病狂且泯灭人性的碳基制导系统。不攻击，" + (enemy.spd ?? 0) + "回合后撞击主角，造成1倍雷击伤害和2层惊慌debuff。", "#e6e099" }],
 		[45, "警戒", "若主角与该敌人发生战斗，则永久为全图轴心国部队提供10%的攻击力加成", "#e6e099"],
 		[46, "堡垒", "为身周9×9范围内轴心国军队提供20%伤害减免，且该范围内存在轴心国军队时，堡垒自身无法被攻击", "#e6e099"],
-		[47, "燃烧", "战后为主角施加3层燃烧debuff。该debuff存在时，主角在战斗期间每回合受到伤害提升10%×燃烧层数，火焰每过一场战斗会熄灭一层，可叠加。伤害<=0或被技能秒杀时不会触发", "#FF8000"],
+		[47, "燃烧", "战后为主角施加3层燃烧debuff。该debuff存在时，主角受到的战斗伤害提升20%×燃烧层数，火焰每过一场战斗会熄灭一层，可叠加。伤害<=0或被技能秒杀时不会触发", "#FF8000"],
 		[48, "V1导弹", "巡航导弹，不会主动攻击。若主角未能在10回合内成功拦截该导弹，则立即爆炸并造成等同于自身雷击值的伤害。若成功拦截，则只造成20%伤害"],
 		[49, "无线制导", "无线电遥控导弹。当前地图内存在具有“遥控”技能的敌人时，对主角造成1倍雷击的伤害，否则失控坠毁。"],
 		[50, "遥控", "该敌人控制着“弗里茨X”导弹进行攻击。被摧毁后，“弗里茨X”就会失控坠毁"],
@@ -1067,7 +1073,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		[85, "狼群·改", "与身周5×5范围内其他潜艇组成狼群。自身被击败后，主角遭受其他狼群成员潜艇的一轮30%倍率鱼雷齐射。", "#e6e099"],
 		[86, "重型装甲", "受到普攻和火箭弹伤害减少40%"],
 		[87, "隐蔽", "受到炸弹伤害减少70%"],
-		[88, "进水", "主角被该敌人的鱼雷命中后会获得“漏水”debuff，存在期间主角每次战后损失等同于10%血限的血量。“金牌损管”可以在战后完成修复，或是通关后可自动消除", "#00FFFF"],
+		[88, "进水", "主角被该敌人的鱼雷命中后会获得“进水”debuff，存在期间主角每次战后损失等同于10%血限的血量。“金牌损管”可以在战后完成修复，或是通关后可自动消除", "#00FFFF"],
 		[89, "殉爆", "如果主角带着燃烧状态与该敌人战斗，则会消除所有燃烧层数，受到一次60%血量上限的殉爆伤害", "#FF0000"]
 	];
 },
@@ -1686,7 +1692,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	if (core.hasSpecial(mon_special, 22)) { //技能 固伤
 		damage += mon_skillNum.damage;
 	}
-	if (core.hasSpecial(mon_special, 34)) { //技能 惊雷
+	if (core.hasSpecial(mon_special, 34) && !core.hasItem('sonar')) { //技能 惊雷
 		damage += guaiwu.top * Math.max(guaiwu.tpn - yongshi.dod, 0);
 	}
 	if (core.hasSpecial(mon_special, 37)) { //技能 跨射
@@ -1794,7 +1800,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	let norfolkattack = 0,
 		trapdamage = cache.trap_buff || 0; //陷阱
 	if (fb === 'mosquito') { trapdamage *= 0.5 } else if (fb === 'p61') { trapdamage *= 0.2 }
-	let burndamage = (core.getFlag("fire", 0) > 0 ? 1.1 * flags.fire : 1), //燃烧
+	let burndamage = (core.getFlag("fire", 0) > 0 ? (0.2 * flags.fire) + 1 : 1), //燃烧
 		nodud = flags.引信改良 || core.hasItem('hard1'),
 		topwork = nodud || (dd !== 'mahan' || dd !== 'benson' || dd !== 'flecher' || ca !== "cleveland"),
 		havecv = bb === 'eagle' || bb === 'illus1941' || bb === 'illustrious' || bb === 'raider' || bb === 'essex' || bb === 'enterprise',
@@ -1810,6 +1816,8 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		monsk86 = 1,
 		monsk87 = 1,
 		monsk88 = false,
+		flood = false,
+		flooding = core.getFlag('进水', false),
 		lianji = 1;
 
 	if (ff === 'p51d' && junzhong === '空军' && !core.hasSpecial(mon_special, 73)) {
@@ -2505,10 +2513,8 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			if (x !== null && y !== null) { //技能 防空 40
 				mon_common += cache.aa_buff || 0;
 			}
-			if (monsk88 && mon_torpedo >= 0) { //技能88：进水
-				if (!flags.进水) {
-					flags.进水 = true;
-				}
+			if (monsk88 && mon_torpedo > 0) { //技能88：进水
+				flood = true;
 			}
 			mon_summary += mon_common + mon_bomb + mon_torpedo;
 			mon_perDamage += mon_summary;
@@ -2516,7 +2522,6 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 				mon_perDamage *= 0.7;
 			}
 			damage += mon_perDamage;
-			damage *= burndamage;
 		}
 		if (guaiwu.hp <= 0) {
 			break;
@@ -2562,7 +2567,11 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		finalDamage = Math.min(0.9, finalDamage);
 	}
 	damage *= finalDamage;
+	damage *= burndamage;
 	damage += cacheFloor.直掩 + cacheFloor.火力覆盖;
+	if (flooding) { //进水
+		damage += core.status.hero.hpmax * 0.1;
+	}
 	if (core.hasSpecial(mon_special, 89) && core.getFlag('fire', 0) > 0) { //技能89：殉爆
 		damage += core.status.hero.hpmax * 0.6;
 	}
@@ -2598,6 +2607,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		"turn": Math.floor(turn),
 		"damage": Math.floor(damage),
 		"bool": bool,
+		"flood": flood,
 		"v1": v1
 	};
 }

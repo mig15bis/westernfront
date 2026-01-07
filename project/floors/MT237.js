@@ -8,7 +8,7 @@ main.floors.MT237=
     "canFlyTo": false,
     "canFlyFrom": false,
     "canUseQuickShop": true,
-    "cannotViewMap": false,
+    "cannotViewMap": true,
     "images": [],
     "ratio": 1,
     "defaultGround": "water",
@@ -71,14 +71,24 @@ main.floors.MT237=
             "type": "previewUI",
             "action": [
                 {
+                    "type": "setValue",
+                    "name": "flag:bosshp",
+                    "value": "4"
+                },
+                {
+                    "type": "setValue",
+                    "name": "flag:bosshpmax",
+                    "value": "4"
+                },
+                {
                     "type": "strokeRect",
                     "x": 130,
                     "y": 64,
-                    "width": 96,
+                    "width": 256,
                     "height": 16,
                     "style": [
                         255,
-                        165,
+                        255,
                         0,
                         1
                     ],
@@ -88,7 +98,7 @@ main.floors.MT237=
                     "type": "fillRect",
                     "x": 130,
                     "y": 64,
-                    "width": 96,
+                    "width": 256,
                     "height": 16,
                     "style": [
                         255,
@@ -98,89 +108,37 @@ main.floors.MT237=
                     ]
                 },
                 {
-                    "type": "strokeRect",
-                    "x": 226,
-                    "y": 64,
-                    "width": 96,
-                    "height": 16,
+                    "type": "fillBoldText",
+                    "x": 130,
+                    "y": 48,
                     "style": [
                         255,
-                        165,
+                        0,
                         0,
                         1
                     ],
-                    "lineWidth": 5
-                },
-                {
-                    "type": "fillRect",
-                    "x": 226,
-                    "y": 64,
-                    "width": 96,
-                    "height": 16,
-                    "style": [
+                    "strokeStyle": [
                         255,
-                        0,
-                        0,
-                        1
-                    ]
-                },
-                {
-                    "type": "strokeRect",
-                    "x": 322,
-                    "y": 64,
-                    "width": 96,
-                    "height": 16,
-                    "style": [
-                        255,
-                        165,
+                        140,
                         0,
                         1
                     ],
-                    "lineWidth": 5
-                },
-                {
-                    "type": "fillRect",
-                    "x": 322,
-                    "y": 64,
-                    "width": 96,
-                    "height": 16,
-                    "style": [
-                        255,
-                        0,
-                        0,
-                        1
-                    ]
+                    "font": "20px number",
+                    "text": "4/4"
                 }
             ]
+        },
+        {
+            "type": "callBook"
         },
         {
             "type": "playSound",
             "name": "xinxinmagic.mp3"
         },
-        "\t[系统提示]敌方护航舰与战斗机展开防御阵型",
+        "\t[系统提示]敌方护航舰展开防御阵型，齐柏林号开始将舰载机移入甲板。",
         {
-            "type": "setBlock",
-            "number": "veneto",
-            "loc": [
-                [
-                    7,
-                    5
-                ]
-            ],
-            "time": 0,
-            "async": true
-        },
-        {
-            "type": "setBlock",
-            "number": "deutschland",
-            "loc": [
-                [
-                    7,
-                    1
-                ]
-            ],
-            "time": 0,
-            "async": true
+            "type": "playSound",
+            "name": "ship.mp3"
         },
         {
             "type": "setBlock",
@@ -267,137 +225,71 @@ main.floors.MT237=
             "async": true
         },
         {
-            "type": "setBlock",
-            "number": "me109g6",
-            "loc": [
-                [
-                    6,
-                    2
-                ]
-            ],
-            "time": 0,
-            "async": true
-        },
-        {
-            "type": "setBlock",
-            "number": "me109g6",
-            "loc": [
-                [
-                    8,
-                    2
-                ]
-            ],
-            "time": 0,
-            "async": true
-        },
-        {
-            "type": "setBlock",
-            "number": "me109g6",
-            "loc": [
-                [
-                    8,
-                    4
-                ]
-            ],
-            "time": 0,
-            "async": true
-        },
-        {
-            "type": "setBlock",
-            "number": "me109g6",
-            "loc": [
-                [
-                    6,
-                    4
-                ]
-            ],
-            "time": 0,
-            "async": true
-        },
-        {
-            "type": "setBlock",
-            "number": "me109g6",
-            "loc": [
-                [
-                    5,
-                    9
-                ]
-            ],
-            "time": 0,
-            "async": true
-        },
-        {
-            "type": "setBlock",
-            "number": "me109g6",
-            "loc": [
-                [
-                    9,
-                    9
-                ]
-            ],
-            "time": 0,
-            "async": true
-        },
-        {
-            "type": "setBlock",
-            "number": "me109g6",
-            "loc": [
-                [
-                    6,
-                    10
-                ]
-            ],
-            "time": 0,
-            "async": true
-        },
-        {
-            "type": "setBlock",
-            "number": "me109g6",
-            "loc": [
-                [
-                    8,
-                    10
-                ]
-            ],
-            "time": 0,
-            "async": true
-        },
-        {
-            "type": "setBlock",
-            "number": "me109g6",
-            "loc": [
-                [
-                    7,
-                    11
-                ]
-            ],
-            "time": 0,
-            "async": true
-        },
-        {
             "type": "waitAsync"
-        },
-        {
-            "type": "callBook"
         }
     ],
     "eachArrive": [],
     "parallelDo": "",
     "events": {},
-    "changeFloor": {},
+    "changeFloor": {
+        "7,14": {
+            "floorId": "MT236",
+            "loc": [
+                7,
+                0
+            ]
+        }
+    },
     "beforeBattle": {},
     "afterBattle": {
         "7,3": [
             {
                 "type": "if",
-                "condition": "(flag:MT237boss===0)",
+                "condition": "(flag:bosshp===4)",
                 "true": [
                     {
-                        "type": "clearMap",
-                        "x": 322,
-                        "y": 64,
-                        "width": 96,
-                        "height": 16
+                        "type": "previewUI",
+                        "action": [
+                            {
+                                "type": "setValue",
+                                "name": "flag:bosshp",
+                                "operator": "-=",
+                                "value": "1"
+                            },
+                            {
+                                "type": "clearMap",
+                                "x": 128,
+                                "y": 30,
+                                "width": 100,
+                                "height": 30
+                            },
+                            {
+                                "type": "clearMap",
+                                "x": "386 - ((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                "y": 64,
+                                "width": "((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                "height": 16
+                            },
+                            {
+                                "type": "fillBoldText",
+                                "x": 130,
+                                "y": 48,
+                                "style": [
+                                    255,
+                                    0,
+                                    0,
+                                    1
+                                ],
+                                "strokeStyle": [
+                                    255,
+                                    140,
+                                    0,
+                                    1
+                                ],
+                                "font": "20px number",
+                                "text": "3/4"
+                            }
+                        ]
                     },
                     {
                         "type": "setBlock",
@@ -428,12 +320,6 @@ main.floors.MT237=
                         "type": "waitAsync"
                     },
                     {
-                        "type": "setValue",
-                        "name": "flag:MT237boss",
-                        "operator": "+=",
-                        "value": "1"
-                    },
-                    {
                         "type": "sleep",
                         "time": 500
                     },
@@ -441,7 +327,11 @@ main.floors.MT237=
                         "type": "playSound",
                         "name": "xinxinmagic.mp3"
                     },
-                    "\t[系统提示]水下探测到多个声纳信号！",
+                    "\t[系统提示]水下探测到多个声纳信号！齐柏林伯爵号放飞战斗机编队！",
+                    {
+                        "type": "playSound",
+                        "name": "Sonar.wav"
+                    },
                     {
                         "type": "setBlock",
                         "number": "u7",
@@ -451,7 +341,7 @@ main.floors.MT237=
                                 4
                             ]
                         ],
-                        "time": 0,
+                        "time": 500,
                         "async": true
                     },
                     {
@@ -463,7 +353,31 @@ main.floors.MT237=
                                 4
                             ]
                         ],
-                        "time": 0,
+                        "time": 500,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "u7",
+                        "loc": [
+                            [
+                                5,
+                                2
+                            ]
+                        ],
+                        "time": 500,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "u7",
+                        "loc": [
+                            [
+                                9,
+                                2
+                            ]
+                        ],
+                        "time": 500,
                         "async": true
                     },
                     {
@@ -475,7 +389,7 @@ main.floors.MT237=
                                 6
                             ]
                         ],
-                        "time": 0,
+                        "time": 500,
                         "async": true
                     },
                     {
@@ -484,82 +398,254 @@ main.floors.MT237=
                         "loc": [
                             [
                                 7,
-                                8
+                                1
                             ]
                         ],
-                        "time": 0,
+                        "time": 500,
+                        "async": true
+                    },
+                    {
+                        "type": "waitAsync"
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "fighter1.mp3"
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109g6",
+                        "loc": [
+                            [
+                                6,
+                                2
+                            ]
+                        ],
+                        "time": 500,
                         "async": true
                     },
                     {
                         "type": "setBlock",
-                        "number": "u9",
+                        "number": "me109g6",
                         "loc": [
                             [
-                                4,
-                                10
+                                7,
+                                2
                             ]
                         ],
-                        "time": 0,
+                        "time": 500,
                         "async": true
                     },
                     {
                         "type": "setBlock",
-                        "number": "u9",
+                        "number": "me109g6",
                         "loc": [
                             [
-                                10,
-                                10
+                                8,
+                                2
                             ]
                         ],
-                        "time": 0,
+                        "time": 500,
                         "async": true
                     },
                     {
                         "type": "setBlock",
-                        "number": "u7",
+                        "number": "me109g6",
                         "loc": [
                             [
-                                5,
-                                10
+                                8,
+                                3
                             ]
                         ],
-                        "time": 0,
+                        "time": 500,
                         "async": true
                     },
                     {
                         "type": "setBlock",
-                        "number": "u7",
+                        "number": "me109g6",
                         "loc": [
                             [
-                                9,
-                                10
+                                8,
+                                4
                             ]
                         ],
-                        "time": 0,
+                        "time": 500,
                         "async": true
                     },
                     {
                         "type": "setBlock",
-                        "number": "u7",
+                        "number": "me109g6",
                         "loc": [
                             [
-                                4,
-                                7
+                                7,
+                                4
                             ]
                         ],
-                        "time": 0,
+                        "time": 500,
                         "async": true
                     },
                     {
                         "type": "setBlock",
-                        "number": "u7",
+                        "number": "me109g6",
                         "loc": [
                             [
-                                10,
-                                7
+                                6,
+                                4
                             ]
                         ],
-                        "time": 0,
+                        "time": 500,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109g6",
+                        "loc": [
+                            [
+                                6,
+                                3
+                            ]
+                        ],
+                        "time": 500,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109g6",
+                        "loc": [
+                            [
+                                7,
+                                5
+                            ]
+                        ],
+                        "time": 500,
+                        "async": true
+                    },
+                    {
+                        "type": "waitAsync"
+                    },
+                    {
+                        "type": "jump",
+                        "from": [
+                            6,
+                            2
+                        ],
+                        "to": [
+                            6,
+                            7
+                        ],
+                        "time": 500,
+                        "keep": true,
+                        "async": true
+                    },
+                    {
+                        "type": "jump",
+                        "from": [
+                            7,
+                            2
+                        ],
+                        "to": [
+                            7,
+                            8
+                        ],
+                        "time": 500,
+                        "keep": true,
+                        "async": true
+                    },
+                    {
+                        "type": "jump",
+                        "from": [
+                            8,
+                            2
+                        ],
+                        "to": [
+                            8,
+                            7
+                        ],
+                        "time": 500,
+                        "keep": true,
+                        "async": true
+                    },
+                    {
+                        "type": "jump",
+                        "from": [
+                            8,
+                            3
+                        ],
+                        "to": [
+                            10,
+                            9
+                        ],
+                        "time": 500,
+                        "keep": true,
+                        "async": true
+                    },
+                    {
+                        "type": "jump",
+                        "from": [
+                            8,
+                            4
+                        ],
+                        "to": [
+                            11,
+                            10
+                        ],
+                        "time": 500,
+                        "keep": true,
+                        "async": true
+                    },
+                    {
+                        "type": "jump",
+                        "from": [
+                            7,
+                            4
+                        ],
+                        "to": [
+                            12,
+                            9
+                        ],
+                        "time": 500,
+                        "keep": true,
+                        "async": true
+                    },
+                    {
+                        "type": "jump",
+                        "from": [
+                            6,
+                            4
+                        ],
+                        "to": [
+                            4,
+                            9
+                        ],
+                        "time": 500,
+                        "keep": true,
+                        "async": true
+                    },
+                    {
+                        "type": "jump",
+                        "from": [
+                            6,
+                            3
+                        ],
+                        "to": [
+                            3,
+                            10
+                        ],
+                        "time": 500,
+                        "keep": true,
+                        "async": true
+                    },
+                    {
+                        "type": "jump",
+                        "from": [
+                            7,
+                            5
+                        ],
+                        "to": [
+                            2,
+                            9
+                        ],
+                        "time": 500,
+                        "keep": true,
                         "async": true
                     },
                     {
@@ -569,14 +655,51 @@ main.floors.MT237=
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT237boss===1)",
+                        "condition": "(flag:bosshp===3)",
                         "true": [
                             {
-                                "type": "clearMap",
-                                "x": 226,
-                                "y": 64,
-                                "width": 96,
-                                "height": 16
+                                "type": "previewUI",
+                                "action": [
+                                    {
+                                        "type": "setValue",
+                                        "name": "flag:bosshp",
+                                        "operator": "-=",
+                                        "value": "1"
+                                    },
+                                    {
+                                        "type": "clearMap",
+                                        "x": 128,
+                                        "y": 30,
+                                        "width": 100,
+                                        "height": 30
+                                    },
+                                    {
+                                        "type": "clearMap",
+                                        "x": "386 - ((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                        "y": 64,
+                                        "width": "((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                        "height": 16
+                                    },
+                                    {
+                                        "type": "fillBoldText",
+                                        "x": 130,
+                                        "y": 48,
+                                        "style": [
+                                            255,
+                                            0,
+                                            0,
+                                            1
+                                        ],
+                                        "strokeStyle": [
+                                            255,
+                                            140,
+                                            0,
+                                            1
+                                        ],
+                                        "font": "20px number",
+                                        "text": "2/4"
+                                    }
+                                ]
                             },
                             {
                                 "type": "setBlock",
@@ -607,12 +730,6 @@ main.floors.MT237=
                                 "type": "waitAsync"
                             },
                             {
-                                "type": "setValue",
-                                "name": "flag:MT237boss",
-                                "operator": "+=",
-                                "value": "1"
-                            },
-                            {
                                 "type": "sleep",
                                 "time": 500
                             },
@@ -620,78 +737,89 @@ main.floors.MT237=
                                 "type": "playSound",
                                 "name": "xinxinmagic.mp3"
                             },
-                            "\t[系统提示]齐柏林伯爵号 放飞更多舰载机！",
+                            "\t[系统提示]更多护航舰抵达！齐柏林伯爵号放飞轰炸机编队！",
                             {
-                                "type": "setBlock",
-                                "number": "me109g6",
-                                "loc": [
-                                    [
-                                        6,
-                                        2
-                                    ]
-                                ],
-                                "time": 0,
-                                "async": true
+                                "type": "playSound",
+                                "name": "ship.mp3"
                             },
                             {
                                 "type": "setBlock",
-                                "number": "me109g6",
-                                "loc": [
-                                    [
-                                        8,
-                                        2
-                                    ]
-                                ],
-                                "time": 0,
-                                "async": true
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "me109g6",
+                                "number": "z1936a",
                                 "loc": [
                                     [
                                         6,
                                         4
                                     ]
                                 ],
-                                "time": 0,
+                                "time": 500,
                                 "async": true
                             },
                             {
                                 "type": "setBlock",
-                                "number": "me109g6",
+                                "number": "z1936a",
                                 "loc": [
                                     [
                                         8,
                                         4
                                     ]
                                 ],
-                                "time": 0,
+                                "time": 500,
                                 "async": true
                             },
                             {
                                 "type": "setBlock",
-                                "number": "ju87b",
+                                "number": "konesburg",
+                                "loc": [
+                                    [
+                                        7,
+                                        1
+                                    ]
+                                ],
+                                "time": 500,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "z1934a",
                                 "loc": [
                                     [
                                         5,
-                                        5
+                                        2
                                     ]
                                 ],
-                                "time": 0,
+                                "time": 500,
                                 "async": true
                             },
                             {
                                 "type": "setBlock",
-                                "number": "ju87b",
+                                "number": "z1934a",
                                 "loc": [
                                     [
                                         9,
-                                        5
+                                        2
                                     ]
                                 ],
-                                "time": 0,
+                                "time": 500,
                                 "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "hipper",
+                                "loc": [
+                                    [
+                                        7,
+                                        2
+                                    ]
+                                ],
+                                "time": 500,
+                                "async": true
+                            },
+                            {
+                                "type": "waitAsync"
+                            },
+                            {
+                                "type": "playSound",
+                                "name": "fighter1.mp3"
                             },
                             {
                                 "type": "setBlock",
@@ -699,10 +827,10 @@ main.floors.MT237=
                                 "loc": [
                                     [
                                         6,
-                                        6
+                                        3
                                     ]
                                 ],
-                                "time": 0,
+                                "time": 500,
                                 "async": true
                             },
                             {
@@ -711,10 +839,10 @@ main.floors.MT237=
                                 "loc": [
                                     [
                                         8,
-                                        6
+                                        3
                                     ]
                                 ],
-                                "time": 0,
+                                "time": 500,
                                 "async": true
                             },
                             {
@@ -723,71 +851,232 @@ main.floors.MT237=
                                 "loc": [
                                     [
                                         7,
-                                        7
+                                        4
                                     ]
                                 ],
-                                "time": 0,
+                                "time": 500,
+                                "async": true
+                            },
+                            {
+                                "type": "waitAsync"
+                            },
+                            {
+                                "type": "jump",
+                                "from": [
+                                    6,
+                                    3
+                                ],
+                                "to": [
+                                    4,
+                                    7
+                                ],
+                                "time": 500,
+                                "keep": true,
+                                "async": true
+                            },
+                            {
+                                "type": "jump",
+                                "from": [
+                                    8,
+                                    3
+                                ],
+                                "to": [
+                                    6,
+                                    7
+                                ],
+                                "time": 500,
+                                "keep": true,
+                                "async": true
+                            },
+                            {
+                                "type": "jump",
+                                "from": [
+                                    7,
+                                    4
+                                ],
+                                "to": [
+                                    5,
+                                    8
+                                ],
+                                "time": 500,
+                                "keep": true,
+                                "async": true
+                            },
+                            {
+                                "type": "waitAsync"
+                            },
+                            {
+                                "type": "playSound",
+                                "name": "fighter1.mp3"
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "ju87b",
+                                "loc": [
+                                    [
+                                        6,
+                                        3
+                                    ]
+                                ],
+                                "time": 500,
                                 "async": true
                             },
                             {
                                 "type": "setBlock",
-                                "number": "me109g6",
+                                "number": "ju87b",
                                 "loc": [
                                     [
-                                        4,
-                                        7
+                                        8,
+                                        3
                                     ]
                                 ],
-                                "time": 0,
+                                "time": 500,
                                 "async": true
                             },
                             {
                                 "type": "setBlock",
-                                "number": "me109g6",
+                                "number": "ju87b",
                                 "loc": [
                                     [
-                                        10,
-                                        7
+                                        7,
+                                        4
                                     ]
                                 ],
-                                "time": 0,
+                                "time": 500,
+                                "async": true
+                            },
+                            {
+                                "type": "waitAsync"
+                            },
+                            {
+                                "type": "jump",
+                                "from": [
+                                    6,
+                                    3
+                                ],
+                                "to": [
+                                    8,
+                                    7
+                                ],
+                                "time": 500,
+                                "keep": true,
+                                "async": true
+                            },
+                            {
+                                "type": "jump",
+                                "from": [
+                                    8,
+                                    3
+                                ],
+                                "to": [
+                                    10,
+                                    7
+                                ],
+                                "time": 500,
+                                "keep": true,
+                                "async": true
+                            },
+                            {
+                                "type": "jump",
+                                "from": [
+                                    7,
+                                    4
+                                ],
+                                "to": [
+                                    9,
+                                    8
+                                ],
+                                "time": 500,
+                                "keep": true,
+                                "async": true
+                            },
+                            {
+                                "type": "waitAsync"
+                            },
+                            {
+                                "type": "playSound",
+                                "name": "fighter1.mp3"
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "ju87b",
+                                "loc": [
+                                    [
+                                        6,
+                                        3
+                                    ]
+                                ],
+                                "time": 500,
                                 "async": true
                             },
                             {
                                 "type": "setBlock",
-                                "number": "me109g6",
+                                "number": "ju87b",
                                 "loc": [
                                     [
-                                        4,
-                                        9
+                                        8,
+                                        3
                                     ]
                                 ],
-                                "time": 0,
+                                "time": 500,
                                 "async": true
                             },
                             {
                                 "type": "setBlock",
-                                "number": "me109g6",
+                                "number": "ju87b",
                                 "loc": [
                                     [
-                                        10,
-                                        9
+                                        7,
+                                        4
                                     ]
                                 ],
-                                "time": 0,
+                                "time": 500,
                                 "async": true
                             },
                             {
-                                "type": "setEnemy",
-                                "id": "zeppelin",
-                                "name": "money",
-                                "value": "50"
+                                "type": "waitAsync"
                             },
                             {
-                                "type": "setEnemy",
-                                "id": "zeppelin",
-                                "name": "exp",
-                                "value": "50"
+                                "type": "jump",
+                                "from": [
+                                    6,
+                                    3
+                                ],
+                                "to": [
+                                    7,
+                                    8
+                                ],
+                                "time": 500,
+                                "keep": true,
+                                "async": true
+                            },
+                            {
+                                "type": "jump",
+                                "from": [
+                                    8,
+                                    3
+                                ],
+                                "to": [
+                                    6,
+                                    9
+                                ],
+                                "time": 500,
+                                "keep": true,
+                                "async": true
+                            },
+                            {
+                                "type": "jump",
+                                "from": [
+                                    7,
+                                    4
+                                ],
+                                "to": [
+                                    8,
+                                    9
+                                ],
+                                "time": 500,
+                                "keep": true,
+                                "async": true
                             },
                             {
                                 "type": "waitAsync"
@@ -796,14 +1085,51 @@ main.floors.MT237=
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT237boss===2)",
+                                "condition": "(flag:bosshp===2)",
                                 "true": [
                                     {
-                                        "type": "clearMap",
-                                        "x": 130,
-                                        "y": 64,
-                                        "width": 96,
-                                        "height": 16
+                                        "type": "previewUI",
+                                        "action": [
+                                            {
+                                                "type": "setValue",
+                                                "name": "flag:bosshp",
+                                                "operator": "-=",
+                                                "value": "1"
+                                            },
+                                            {
+                                                "type": "clearMap",
+                                                "x": 128,
+                                                "y": 30,
+                                                "width": 100,
+                                                "height": 30
+                                            },
+                                            {
+                                                "type": "clearMap",
+                                                "x": "386 - ((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                                "y": 64,
+                                                "width": "((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                                "height": 16
+                                            },
+                                            {
+                                                "type": "fillBoldText",
+                                                "x": 130,
+                                                "y": 48,
+                                                "style": [
+                                                    255,
+                                                    0,
+                                                    0,
+                                                    1
+                                                ],
+                                                "strokeStyle": [
+                                                    255,
+                                                    140,
+                                                    0,
+                                                    1
+                                                ],
+                                                "font": "20px number",
+                                                "text": "1/4"
+                                            }
+                                        ]
                                     },
                                     {
                                         "type": "setBlock",
@@ -817,19 +1143,18 @@ main.floors.MT237=
                                         "time": 0
                                     },
                                     {
-                                        "type": "playSound",
-                                        "name": "torpeodoexplo.wav"
+                                        "type": "animate",
+                                        "name": "hand",
+                                        "async": true
                                     },
                                     {
-                                        "type": "hide",
+                                        "type": "jumpHero",
                                         "loc": [
-                                            [
-                                                7,
-                                                3
-                                            ]
+                                            7,
+                                            12
                                         ],
-                                        "remove": true,
-                                        "time": 2000
+                                        "time": 10,
+                                        "async": true
                                     },
                                     {
                                         "type": "waitAsync"
@@ -842,110 +1167,919 @@ main.floors.MT237=
                                         "type": "playSound",
                                         "name": "xinxinmagic.mp3"
                                     },
-                                    "\t[系统提示]支线boss战 胜利！",
+                                    "\t[系统提示]敌军大型军舰和陆基轰炸机增援！齐柏林伯爵号放飞混合机群！",
                                     {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[34][1]=true\n}"
+                                        "type": "playSound",
+                                        "name": "ship.mp3"
                                     },
                                     {
-                                        "type": "openDoor",
+                                        "type": "setBlock",
+                                        "number": "konesburg",
                                         "loc": [
+                                            [
+                                                6,
+                                                4
+                                            ]
+                                        ],
+                                        "time": 500,
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "setBlock",
+                                        "number": "konesburg",
+                                        "loc": [
+                                            [
+                                                8,
+                                                4
+                                            ]
+                                        ],
+                                        "time": 500,
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "setBlock",
+                                        "number": "hipper",
+                                        "loc": [
+                                            [
+                                                6,
+                                                2
+                                            ]
+                                        ],
+                                        "time": 500,
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "setBlock",
+                                        "number": "deutschland",
+                                        "loc": [
+                                            [
+                                                8,
+                                                2
+                                            ]
+                                        ],
+                                        "time": 500,
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "setBlock",
+                                        "number": "scharnhost",
+                                        "loc": [
+                                            [
+                                                7,
+                                                1
+                                            ]
+                                        ],
+                                        "time": 500,
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "waitAsync"
+                                    },
+                                    {
+                                        "type": "playSound",
+                                        "name": "bomber1.mp3"
+                                    },
+                                    {
+                                        "type": "setBlock",
+                                        "number": "ju88a",
+                                        "loc": [
+                                            [
+                                                2,
+                                                1
+                                            ]
+                                        ],
+                                        "time": 0,
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "setBlock",
+                                        "number": "fw200",
+                                        "loc": [
+                                            [
+                                                4,
+                                                1
+                                            ]
+                                        ],
+                                        "time": 0,
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "setBlock",
+                                        "number": "do17z",
+                                        "loc": [
+                                            [
+                                                3,
+                                                2
+                                            ]
+                                        ],
+                                        "time": 0,
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "setBlock",
+                                        "number": "ju88a",
+                                        "loc": [
+                                            [
+                                                12,
+                                                1
+                                            ]
+                                        ],
+                                        "time": 0,
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "setBlock",
+                                        "number": "fw200",
+                                        "loc": [
+                                            [
+                                                10,
+                                                1
+                                            ]
+                                        ],
+                                        "time": 0,
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "setBlock",
+                                        "number": "do17z",
+                                        "loc": [
+                                            [
+                                                11,
+                                                2
+                                            ]
+                                        ],
+                                        "time": 0,
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "waitAsync"
+                                    },
+                                    {
+                                        "type": "move",
+                                        "loc": [
+                                            2,
+                                            1
+                                        ],
+                                        "time": 500,
+                                        "keep": true,
+                                        "async": true,
+                                        "steps": [
+                                            "down:1"
+                                        ]
+                                    },
+                                    {
+                                        "type": "move",
+                                        "loc": [
+                                            4,
+                                            1
+                                        ],
+                                        "time": 500,
+                                        "keep": true,
+                                        "async": true,
+                                        "steps": [
+                                            "down:1"
+                                        ]
+                                    },
+                                    {
+                                        "type": "move",
+                                        "loc": [
+                                            3,
+                                            2
+                                        ],
+                                        "time": 500,
+                                        "keep": true,
+                                        "async": true,
+                                        "steps": [
+                                            "down:1"
+                                        ]
+                                    },
+                                    {
+                                        "type": "move",
+                                        "loc": [
+                                            12,
+                                            1
+                                        ],
+                                        "time": 500,
+                                        "keep": true,
+                                        "async": true,
+                                        "steps": [
+                                            "down:1"
+                                        ]
+                                    },
+                                    {
+                                        "type": "move",
+                                        "loc": [
+                                            10,
+                                            1
+                                        ],
+                                        "time": 500,
+                                        "keep": true,
+                                        "async": true,
+                                        "steps": [
+                                            "down:1"
+                                        ]
+                                    },
+                                    {
+                                        "type": "move",
+                                        "loc": [
+                                            11,
+                                            2
+                                        ],
+                                        "time": 500,
+                                        "keep": true,
+                                        "async": true,
+                                        "steps": [
+                                            "down:1"
+                                        ]
+                                    },
+                                    {
+                                        "type": "waitAsync"
+                                    },
+                                    {
+                                        "type": "playSound",
+                                        "name": "fighter1.mp3"
+                                    },
+                                    {
+                                        "type": "setBlock",
+                                        "number": "me109g6",
+                                        "loc": [
+                                            [
+                                                7,
+                                                2
+                                            ]
+                                        ],
+                                        "time": 500,
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "setBlock",
+                                        "number": "me109g6",
+                                        "loc": [
+                                            [
+                                                6,
+                                                3
+                                            ]
+                                        ],
+                                        "time": 500,
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "setBlock",
+                                        "number": "me109g6",
+                                        "loc": [
+                                            [
+                                                8,
+                                                3
+                                            ]
+                                        ],
+                                        "time": 500,
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "setBlock",
+                                        "number": "me109g6",
+                                        "loc": [
+                                            [
+                                                7,
+                                                4
+                                            ]
+                                        ],
+                                        "time": 500,
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "waitAsync"
+                                    },
+                                    {
+                                        "type": "jump",
+                                        "from": [
                                             7,
-                                            13
-                                        ]
+                                            2
+                                        ],
+                                        "to": [
+                                            5,
+                                            7
+                                        ],
+                                        "time": 500,
+                                        "keep": true,
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "jump",
+                                        "from": [
+                                            6,
+                                            3
+                                        ],
+                                        "to": [
+                                            6,
+                                            8
+                                        ],
+                                        "time": 500,
+                                        "keep": true,
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "jump",
+                                        "from": [
+                                            8,
+                                            3
+                                        ],
+                                        "to": [
+                                            9,
+                                            7
+                                        ],
+                                        "time": 500,
+                                        "keep": true,
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "jump",
+                                        "from": [
+                                            7,
+                                            4
+                                        ],
+                                        "to": [
+                                            8,
+                                            8
+                                        ],
+                                        "time": 500,
+                                        "keep": true,
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "waitAsync"
                                     },
                                     {
                                         "type": "setBlock",
-                                        "number": "medal4",
+                                        "number": "me109g6",
                                         "loc": [
                                             [
                                                 7,
-                                                3
+                                                4
                                             ]
-                                        ]
+                                        ],
+                                        "time": 500
+                                    },
+                                    {
+                                        "type": "jump",
+                                        "from": [
+                                            7,
+                                            4
+                                        ],
+                                        "to": [
+                                            7,
+                                            9
+                                        ],
+                                        "time": 500,
+                                        "keep": true
+                                    },
+                                    {
+                                        "type": "playSound",
+                                        "name": "fighter1.mp3"
                                     },
                                     {
                                         "type": "setBlock",
-                                        "number": "medal4",
-                                        "loc": [
-                                            [
-                                                5,
-                                                3
-                                            ]
-                                        ]
-                                    },
-                                    {
-                                        "type": "setBlock",
-                                        "number": "medal4",
-                                        "loc": [
-                                            [
-                                                9,
-                                                3
-                                            ]
-                                        ]
-                                    },
-                                    {
-                                        "type": "setBlock",
-                                        "number": "tea5",
+                                        "number": "ju87b",
                                         "loc": [
                                             [
                                                 6,
-                                                2
+                                                3
                                             ]
-                                        ]
+                                        ],
+                                        "time": 500,
+                                        "async": true
                                     },
                                     {
                                         "type": "setBlock",
-                                        "number": "tea5",
+                                        "number": "ju87b",
                                         "loc": [
                                             [
                                                 8,
-                                                2
+                                                3
                                             ]
-                                        ]
+                                        ],
+                                        "time": 500,
+                                        "async": true
                                     },
                                     {
                                         "type": "setBlock",
-                                        "number": "I523",
-                                        "loc": [
-                                            [
-                                                6,
-                                                4
-                                            ]
-                                        ]
-                                    },
-                                    {
-                                        "type": "setBlock",
-                                        "number": "I523",
-                                        "loc": [
-                                            [
-                                                8,
-                                                4
-                                            ]
-                                        ]
-                                    },
-                                    {
-                                        "type": "setBlock",
-                                        "number": "I524",
+                                        "number": "ju87b",
                                         "loc": [
                                             [
                                                 7,
-                                                5
+                                                4
                                             ]
-                                        ]
+                                        ],
+                                        "time": 500,
+                                        "async": true
                                     },
                                     {
-                                        "type": "clearMap",
-                                        "x": 0,
-                                        "y": 0,
-                                        "width": 480,
-                                        "height": 480
+                                        "type": "waitAsync"
                                     },
                                     {
-                                        "type": "forbidSave"
+                                        "type": "jump",
+                                        "from": [
+                                            7,
+                                            4
+                                        ],
+                                        "to": [
+                                            1,
+                                            7
+                                        ],
+                                        "time": 500,
+                                        "keep": true,
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "jump",
+                                        "from": [
+                                            6,
+                                            3
+                                        ],
+                                        "to": [
+                                            2,
+                                            8
+                                        ],
+                                        "time": 500,
+                                        "keep": true,
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "jump",
+                                        "from": [
+                                            8,
+                                            3
+                                        ],
+                                        "to": [
+                                            3,
+                                            7
+                                        ],
+                                        "time": 500,
+                                        "keep": true,
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "waitAsync"
+                                    },
+                                    {
+                                        "type": "playSound",
+                                        "name": "fighter1.mp3"
+                                    },
+                                    {
+                                        "type": "setBlock",
+                                        "number": "ju87b",
+                                        "loc": [
+                                            [
+                                                6,
+                                                3
+                                            ]
+                                        ],
+                                        "time": 500,
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "setBlock",
+                                        "number": "ju87b",
+                                        "loc": [
+                                            [
+                                                8,
+                                                3
+                                            ]
+                                        ],
+                                        "time": 500,
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "setBlock",
+                                        "number": "ju87b",
+                                        "loc": [
+                                            [
+                                                7,
+                                                4
+                                            ]
+                                        ],
+                                        "time": 500,
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "waitAsync"
+                                    },
+                                    {
+                                        "type": "jump",
+                                        "from": [
+                                            7,
+                                            4
+                                        ],
+                                        "to": [
+                                            11,
+                                            7
+                                        ],
+                                        "time": 500,
+                                        "keep": true,
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "jump",
+                                        "from": [
+                                            6,
+                                            3
+                                        ],
+                                        "to": [
+                                            13,
+                                            7
+                                        ],
+                                        "time": 500,
+                                        "keep": true,
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "jump",
+                                        "from": [
+                                            8,
+                                            3
+                                        ],
+                                        "to": [
+                                            12,
+                                            8
+                                        ],
+                                        "time": 500,
+                                        "keep": true,
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "waitAsync"
+                                    },
+                                    {
+                                        "type": "setEnemy",
+                                        "id": "zeppelin",
+                                        "name": "money",
+                                        "value": "300"
+                                    },
+                                    {
+                                        "type": "setEnemy",
+                                        "id": "zeppelin",
+                                        "name": "exp",
+                                        "value": "300"
                                     }
                                 ],
-                                "false": []
+                                "false": [
+                                    {
+                                        "type": "if",
+                                        "condition": "(flag:bosshp===1)",
+                                        "true": [
+                                            {
+                                                "type": "previewUI",
+                                                "action": [
+                                                    {
+                                                        "type": "setValue",
+                                                        "name": "flag:bosshp",
+                                                        "operator": "-=",
+                                                        "value": "1"
+                                                    },
+                                                    {
+                                                        "type": "clearMap",
+                                                        "x": 128,
+                                                        "y": 30,
+                                                        "width": 100,
+                                                        "height": 30
+                                                    },
+                                                    {
+                                                        "type": "clearMap",
+                                                        "x": "386 - ((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                                        "y": 64,
+                                                        "width": "((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                                        "height": 16
+                                                    },
+                                                    {
+                                                        "type": "fillBoldText",
+                                                        "x": 130,
+                                                        "y": 48,
+                                                        "style": [
+                                                            255,
+                                                            0,
+                                                            0,
+                                                            1
+                                                        ],
+                                                        "strokeStyle": [
+                                                            255,
+                                                            140,
+                                                            0,
+                                                            1
+                                                        ],
+                                                        "font": "20px number",
+                                                        "text": "0/4"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "type": "setBlock",
+                                                "number": "zeppelin",
+                                                "loc": [
+                                                    [
+                                                        7,
+                                                        3
+                                                    ]
+                                                ],
+                                                "time": 0
+                                            },
+                                            {
+                                                "type": "playSound",
+                                                "name": "bomber2.mp3"
+                                            },
+                                            {
+                                                "type": "showImage",
+                                                "code": 1,
+                                                "image": "aircraft7.png",
+                                                "loc": [
+                                                    480,
+                                                    -10
+                                                ],
+                                                "opacity": 1,
+                                                "time": 0
+                                            },
+                                            {
+                                                "type": "moveImage",
+                                                "code": 1,
+                                                "to": [
+                                                    -195,
+                                                    -10
+                                                ],
+                                                "time": 1000,
+                                                "async": true
+                                            },
+                                            {
+                                                "type": "sleep",
+                                                "time": 500,
+                                                "noSkip": true
+                                            },
+                                            {
+                                                "type": "animate",
+                                                "name": "xinxinwater",
+                                                "loc": [
+                                                    9,
+                                                    3
+                                                ],
+                                                "async": true
+                                            },
+                                            {
+                                                "type": "sleep",
+                                                "time": 100,
+                                                "noSkip": true
+                                            },
+                                            {
+                                                "type": "animate",
+                                                "name": "xinxinwater",
+                                                "loc": [
+                                                    8,
+                                                    3
+                                                ],
+                                                "async": true
+                                            },
+                                            {
+                                                "type": "sleep",
+                                                "time": 100,
+                                                "noSkip": true
+                                            },
+                                            {
+                                                "type": "animate",
+                                                "name": "explore2",
+                                                "loc": [
+                                                    7,
+                                                    3
+                                                ],
+                                                "async": true
+                                            },
+                                            {
+                                                "type": "sleep",
+                                                "time": 100,
+                                                "noSkip": true
+                                            },
+                                            {
+                                                "type": "animate",
+                                                "name": "xinxinwater",
+                                                "loc": [
+                                                    6,
+                                                    3
+                                                ],
+                                                "async": true
+                                            },
+                                            {
+                                                "type": "sleep",
+                                                "time": 100,
+                                                "noSkip": true
+                                            },
+                                            {
+                                                "type": "animate",
+                                                "name": "xinxinwater",
+                                                "loc": [
+                                                    5,
+                                                    3
+                                                ],
+                                                "async": true
+                                            },
+                                            {
+                                                "type": "waitAsync"
+                                            },
+                                            {
+                                                "type": "sleep",
+                                                "time": 1000
+                                            },
+                                            {
+                                                "type": "animate",
+                                                "name": "explore",
+                                                "loc": [
+                                                    7,
+                                                    3
+                                                ]
+                                            },
+                                            {
+                                                "type": "sleep",
+                                                "time": 1000
+                                            },
+                                            {
+                                                "type": "animate",
+                                                "name": "bigexplore",
+                                                "loc": [
+                                                    7,
+                                                    3
+                                                ]
+                                            },
+                                            {
+                                                "type": "playSound",
+                                                "name": "torpeodoexplo.wav"
+                                            },
+                                            {
+                                                "type": "hide",
+                                                "loc": [
+                                                    [
+                                                        7,
+                                                        3
+                                                    ]
+                                                ],
+                                                "remove": true,
+                                                "time": 4000
+                                            },
+                                            {
+                                                "type": "waitAsync"
+                                            },
+                                            {
+                                                "type": "sleep",
+                                                "time": 500
+                                            },
+                                            {
+                                                "type": "playSound",
+                                                "name": "xinxinmagic.mp3"
+                                            },
+                                            "\t[系统提示]支线boss战 胜利！",
+                                            {
+                                                "type": "setValue",
+                                                "name": "flag:MT237boss",
+                                                "value": "1"
+                                            },
+                                            {
+                                                "type": "openDoor",
+                                                "loc": [
+                                                    7,
+                                                    13
+                                                ]
+                                            },
+                                            {
+                                                "type": "setBlock",
+                                                "number": "medal4",
+                                                "loc": [
+                                                    [
+                                                        7,
+                                                        3
+                                                    ]
+                                                ],
+                                                "time": 200,
+                                                "async": true
+                                            },
+                                            {
+                                                "type": "setBlock",
+                                                "number": "medal4",
+                                                "loc": [
+                                                    [
+                                                        5,
+                                                        3
+                                                    ]
+                                                ],
+                                                "time": 200,
+                                                "async": true
+                                            },
+                                            {
+                                                "type": "setBlock",
+                                                "number": "medal4",
+                                                "loc": [
+                                                    [
+                                                        9,
+                                                        3
+                                                    ]
+                                                ],
+                                                "time": 200,
+                                                "async": true
+                                            },
+                                            {
+                                                "type": "setBlock",
+                                                "number": "tea5",
+                                                "loc": [
+                                                    [
+                                                        6,
+                                                        2
+                                                    ]
+                                                ],
+                                                "time": 200,
+                                                "async": true
+                                            },
+                                            {
+                                                "type": "setBlock",
+                                                "number": "tea5",
+                                                "loc": [
+                                                    [
+                                                        8,
+                                                        2
+                                                    ]
+                                                ],
+                                                "time": 200,
+                                                "async": true
+                                            },
+                                            {
+                                                "type": "setBlock",
+                                                "number": "tea5",
+                                                "loc": [
+                                                    [
+                                                        6,
+                                                        4
+                                                    ]
+                                                ],
+                                                "time": 200,
+                                                "async": true
+                                            },
+                                            {
+                                                "type": "setBlock",
+                                                "number": "tea5",
+                                                "loc": [
+                                                    [
+                                                        8,
+                                                        4
+                                                    ]
+                                                ],
+                                                "time": 200,
+                                                "async": true
+                                            },
+                                            {
+                                                "type": "setBlock",
+                                                "number": "blue5Gem",
+                                                "loc": [
+                                                    [
+                                                        5,
+                                                        1
+                                                    ]
+                                                ],
+                                                "time": 200,
+                                                "async": true
+                                            },
+                                            {
+                                                "type": "setBlock",
+                                                "number": "blue5Gem",
+                                                "loc": [
+                                                    [
+                                                        9,
+                                                        1
+                                                    ]
+                                                ],
+                                                "time": 200,
+                                                "async": true
+                                            },
+                                            {
+                                                "type": "setBlock",
+                                                "number": "blue5Gem",
+                                                "loc": [
+                                                    [
+                                                        7,
+                                                        1
+                                                    ]
+                                                ],
+                                                "time": 200,
+                                                "async": true
+                                            },
+                                            {
+                                                "type": "waitAsync"
+                                            },
+                                            {
+                                                "type": "clearMap",
+                                                "x": 0,
+                                                "y": 0,
+                                                "width": 480,
+                                                "height": 480
+                                            },
+                                            {
+                                                "type": "forbidSave"
+                                            }
+                                        ],
+                                        "false": []
+                                    }
+                                ]
                             }
                         ]
                     }

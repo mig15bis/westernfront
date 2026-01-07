@@ -4192,10 +4192,6 @@ var events_c12a15a8_c380_4b28_8144_256cba95f760 =
 				"type": "hideImage",
 				"code": 1,
 				"time": 0
-			},
-			{
-				"type": "function",
-				"function": "function(){\nlet floorId = core.status.floorId;\nflags.航母炸过的楼层.floorId = true;\n}"
 			}
 		]
 	}

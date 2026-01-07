@@ -4294,7 +4294,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"text": "新版商店中需要手动扣减金币和增加访问次数"
 							},
 							"\f[barracuda.jpg,90,50]英国费尔雷公司研发的梭鱼式轰炸机是二战后期英国较优秀的舰载轰炸机。当同时期的美国和日本都已经用上新型全金属鱼雷机时，英国还在使用老式的双翼“剑鱼”轰炸机，这让英国军方很不爽，于是“梭鱼”被研发了出来。“梭鱼”的外形非常丑陋，但实战证明“梭鱼”是一款性能出色的战机，既能进行鱼雷攻击，也能当作俯冲轰炸机使用，最出名的战果是在“钨”行动中对“提尔皮茨”号战列舰的攻击，虽然没能将其击沉，但表现出来的性能也令人印象深刻。",
-							"\f[barracuda.jpg,90,50]装备属性：无属性加成。挂载：6×250磅炸弹或1×MK12鱼雷\n对地攻击时，每5回合投掷一轮炸弹，每颗炸弹伤害为0.5倍攻击力\n对舰攻击时，每5回合投掷5枚鱼雷。\n被动：\n兼职俯冲：对舰攻击时，同时进行炸弹和鱼雷攻击。",
+							"\f[barracuda.jpg,90,50]装备属性：无属性加成。挂载：6×250磅炸弹或1×MK12鱼雷\n对地攻击时，每5回合投掷一轮炸弹，每颗炸弹伤害为0.5倍攻击力\n对舰攻击时，每5回合投掷5枚鱼雷。\n被动：\n双重打击：对舰攻击时，同时进行炸弹和鱼雷攻击。",
 							{
 								"type": "confirm",
 								"text": "确定购买？",
@@ -6393,13 +6393,15 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						"type": "setValue",
 						"name": "status:atk",
 						"operator": "+=",
-						"value": "5"
+						"value": "5",
+						"norefresh": true
 					},
 					{
 						"type": "setValue",
 						"name": "status:hpmax",
 						"operator": "+=",
-						"value": "100"
+						"value": "100",
+						"norefresh": true
 					},
 					{
 						"type": "setValue",
@@ -6423,19 +6425,22 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						"type": "setValue",
 						"name": "status:atk",
 						"operator": "+=",
-						"value": "10"
+						"value": "10",
+						"norefresh": true
 					},
 					{
 						"type": "setValue",
 						"name": "status:hpmax",
 						"operator": "+=",
-						"value": "200"
+						"value": "200",
+						"norefresh": true
 					},
 					{
 						"type": "setValue",
 						"name": "status:hp",
 						"operator": "+=",
-						"value": "200"
+						"value": "200",
+						"norefresh": true
 					},
 					{
 						"type": "setValue",
@@ -6459,31 +6464,36 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						"type": "setValue",
 						"name": "status:atk",
 						"operator": "+=",
-						"value": "20"
+						"value": "20",
+						"norefresh": true
 					},
 					{
 						"type": "setValue",
 						"name": "status:top",
 						"operator": "+=",
-						"value": "50"
+						"value": "50",
+						"norefresh": true
 					},
 					{
 						"type": "setValue",
 						"name": "status:hpmax",
 						"operator": "+=",
-						"value": "500"
+						"value": "500",
+						"norefresh": true
 					},
 					{
 						"type": "setValue",
 						"name": "status:hp",
 						"operator": "+=",
-						"value": "500"
+						"value": "500",
+						"norefresh": true
 					},
 					{
 						"type": "setValue",
 						"name": "status:mdef",
 						"operator": "+=",
-						"value": "10"
+						"value": "10",
+						"norefresh": true
 					},
 					{
 						"type": "setValue",
@@ -6507,25 +6517,29 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						"type": "setValue",
 						"name": "status:atk",
 						"operator": "+=",
-						"value": "25"
+						"value": "25",
+						"norefresh": true
 					},
 					{
 						"type": "setValue",
 						"name": "status:top",
 						"operator": "+=",
-						"value": "50"
+						"value": "50",
+						"norefresh": true
 					},
 					{
 						"type": "setValue",
 						"name": "status:hpmax",
 						"operator": "+=",
-						"value": "700"
+						"value": "700",
+						"norefresh": true
 					},
 					{
 						"type": "setValue",
 						"name": "status:hp",
 						"operator": "+=",
-						"value": "700"
+						"value": "700",
+						"norefresh": true
 					},
 					{
 						"type": "setValue",
@@ -6545,25 +6559,29 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						"type": "setValue",
 						"name": "status:atk",
 						"operator": "+=",
-						"value": "30"
+						"value": "30",
+						"norefresh": true
 					},
 					{
 						"type": "setValue",
 						"name": "status:top",
 						"operator": "+=",
-						"value": "70"
+						"value": "70",
+						"norefresh": true
 					},
 					{
 						"type": "setValue",
 						"name": "status:hpmax",
 						"operator": "+=",
-						"value": "1000"
+						"value": "1000",
+						"norefresh": true
 					},
 					{
 						"type": "setValue",
 						"name": "status:hp",
 						"operator": "+=",
-						"value": "1000"
+						"value": "1000",
+						"norefresh": true
 					},
 					{
 						"type": "setValue",
@@ -6583,25 +6601,29 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						"type": "setValue",
 						"name": "status:atk",
 						"operator": "+=",
-						"value": "35"
+						"value": "35",
+						"norefresh": true
 					},
 					{
 						"type": "setValue",
 						"name": "status:top",
 						"operator": "+=",
-						"value": "90"
+						"value": "90",
+						"norefresh": true
 					},
 					{
 						"type": "setValue",
 						"name": "status:hpmax",
 						"operator": "+=",
-						"value": "1500"
+						"value": "1500",
+						"norefresh": true
 					},
 					{
 						"type": "setValue",
 						"name": "status:hp",
 						"operator": "+=",
-						"value": "1500"
+						"value": "1500",
+						"norefresh": true
 					},
 					{
 						"type": "setValue",
@@ -6621,25 +6643,29 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						"type": "setValue",
 						"name": "status:atk",
 						"operator": "+=",
-						"value": "50"
+						"value": "50",
+						"norefresh": true
 					},
 					{
 						"type": "setValue",
 						"name": "status:top",
 						"operator": "+=",
-						"value": "150"
+						"value": "150",
+						"norefresh": true
 					},
 					{
 						"type": "setValue",
 						"name": "status:hpmax",
 						"operator": "+=",
-						"value": "2000"
+						"value": "2000",
+						"norefresh": true
 					},
 					{
 						"type": "setValue",
 						"name": "status:hp",
 						"operator": "+=",
-						"value": "2000"
+						"value": "2000",
+						"norefresh": true
 					},
 					{
 						"type": "setValue",
@@ -6659,25 +6685,29 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						"type": "setValue",
 						"name": "status:atk",
 						"operator": "+=",
-						"value": "50"
+						"value": "50",
+						"norefresh": true
 					},
 					{
 						"type": "setValue",
 						"name": "status:top",
 						"operator": "+=",
-						"value": "250"
+						"value": "250",
+						"norefresh": true
 					},
 					{
 						"type": "setValue",
 						"name": "status:hpmax",
 						"operator": "+=",
-						"value": "3000"
+						"value": "3000",
+						"norefresh": true
 					},
 					{
 						"type": "setValue",
 						"name": "status:hp",
 						"operator": "+=",
-						"value": "3000"
+						"value": "3000",
+						"norefresh": true
 					},
 					{
 						"type": "setValue",
@@ -6697,25 +6727,29 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						"type": "setValue",
 						"name": "status:atk",
 						"operator": "+=",
-						"value": "80"
+						"value": "80",
+						"norefresh": true
 					},
 					{
 						"type": "setValue",
 						"name": "status:top",
 						"operator": "+=",
-						"value": "500"
+						"value": "500",
+						"norefresh": true
 					},
 					{
 						"type": "setValue",
 						"name": "status:hpmax",
 						"operator": "+=",
-						"value": "5000"
+						"value": "5000",
+						"norefresh": true
 					},
 					{
 						"type": "setValue",
 						"name": "status:hp",
 						"operator": "+=",
-						"value": "5000"
+						"value": "5000",
+						"norefresh": true
 					},
 					{
 						"type": "setValue",
@@ -6735,25 +6769,29 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						"type": "setValue",
 						"name": "status:atk",
 						"operator": "+=",
-						"value": "100"
+						"value": "100",
+						"norefresh": true
 					},
 					{
 						"type": "setValue",
 						"name": "status:top",
 						"operator": "+=",
-						"value": "800"
+						"value": "800",
+						"norefresh": true
 					},
 					{
 						"type": "setValue",
 						"name": "status:hpmax",
 						"operator": "+=",
-						"value": "8000"
+						"value": "8000",
+						"norefresh": true
 					},
 					{
 						"type": "setValue",
 						"name": "status:hp",
 						"operator": "+=",
-						"value": "8000"
+						"value": "8000",
+						"norefresh": true
 					},
 					{
 						"type": "setValue",
@@ -6773,25 +6811,29 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						"type": "setValue",
 						"name": "status:atk",
 						"operator": "+=",
-						"value": "500"
+						"value": "500",
+						"norefresh": true
 					},
 					{
 						"type": "setValue",
 						"name": "status:top",
 						"operator": "+=",
-						"value": "2000"
+						"value": "2000",
+						"norefresh": true
 					},
 					{
 						"type": "setValue",
 						"name": "status:hpmax",
 						"operator": "+=",
-						"value": "50000"
+						"value": "50000",
+						"norefresh": true
 					},
 					{
 						"type": "setValue",
 						"name": "status:hp",
 						"operator": "+=",
-						"value": "50000"
+						"value": "50000",
+						"norefresh": true
 					},
 					{
 						"type": "setValue",
@@ -6806,7 +6848,41 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 				"title": "少将",
 				"clear": true,
 				"action": [
-					"晋升少将"
+					"晋升少将，攻击+1000，雷击+25000，血量与血限+100000，后勤+5000",
+					{
+						"type": "setValue",
+						"name": "status:atk",
+						"operator": "+=",
+						"value": "1000",
+						"norefresh": true
+					},
+					{
+						"type": "setValue",
+						"name": "status:top",
+						"operator": "+=",
+						"value": "25000",
+						"norefresh": true
+					},
+					{
+						"type": "setValue",
+						"name": "status:hpmax",
+						"operator": "+=",
+						"value": "100000",
+						"norefresh": true
+					},
+					{
+						"type": "setValue",
+						"name": "status:hp",
+						"operator": "+=",
+						"value": "100000",
+						"norefresh": true
+					},
+					{
+						"type": "setValue",
+						"name": "status:mdef",
+						"operator": "+=",
+						"value": "5000"
+					}
 				]
 			},
 			{

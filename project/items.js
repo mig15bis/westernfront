@@ -1304,7 +1304,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "梭鱼式轰炸机",
 		"canUseItemEffect": "true",
-		"text": "挂载：6×250磅炸弹或1×MK12鱼雷\n无属性加成。\n对地攻击时，每5回合投掷一轮炸弹，每颗炸弹伤害为0.5倍攻击力\n对舰攻击时，每5回合投掷5枚鱼雷。\n被动：\n兼职俯冲：对舰攻击时，同时进行炸弹和鱼雷攻击。",
+		"text": "挂载：6×250磅炸弹或1×MK12鱼雷\n无属性加成。\n对地攻击时，每5回合投掷一轮炸弹，每颗炸弹伤害为0.5倍攻击力\n对舰攻击时，每5回合投掷5枚鱼雷。\n被动：\n双重打击：对舰攻击时，同时进行炸弹和鱼雷攻击。",
 		"equip": {
 			"type": 6,
 			"value": {},
@@ -1953,7 +1953,8 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"sonar": {
 		"cls": "constants",
 		"name": "主动声纳",
-		"canUseItemEffect": "false"
+		"canUseItemEffect": "false",
+		"text": "使敌军潜艇的“惊雷”技能无效化。"
 	},
 	"bigredPotion": {
 		"cls": "items",
