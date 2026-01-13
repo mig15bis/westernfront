@@ -20,6 +20,11 @@ main.floors.MT238=
         "14,7": [
             {
                 "type": "setValue",
+                "name": "flag:进水",
+                "value": "false"
+            },
+            {
+                "type": "setValue",
                 "name": "flag:第33关通关",
                 "value": "1"
             },
@@ -234,6 +239,9 @@ main.floors.MT238=
             },
             {
                 "type": "clearMap"
+            },
+            {
+                "type": "submitTask"
             },
             {
                 "type": "moveImage",

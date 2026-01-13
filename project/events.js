@@ -1442,7 +1442,7 @@ var events_c12a15a8_c380_4b28_8144_256cba95f760 =
 								]
 							},
 							{
-								"text": "退役 M4A1(76W)（2200）",
+								"text": "退役 M4A1(76W)（3400）",
 								"icon": "m4a3",
 								"need": "core.hasItem('m4a3')&&!core.hasEquip('m4a3')",
 								"condition": "core.hasItem('m4a3')&&!core.hasEquip('m4a3')",
@@ -1465,7 +1465,7 @@ var events_c12a15a8_c380_4b28_8144_256cba95f760 =
 												"type": "setValue",
 												"name": "status:money",
 												"operator": "+=",
-												"value": "2200"
+												"value": "3400"
 											}
 										],
 										"no": []
@@ -1878,7 +1878,7 @@ var events_c12a15a8_c380_4b28_8144_256cba95f760 =
 												]
 											},
 											{
-												"text": "退役 北卡罗莱纳号战列舰（6000）",
+												"text": "退役 北卡罗莱纳号战列舰（12000）",
 												"icon": "northcarolina",
 												"need": "core.hasItem('northcarolina')&&!core.hasEquip('northcarolina')",
 												"condition": "core.hasItem('northcarolina')&&!core.hasEquip('northcarolina')",
@@ -1897,7 +1897,7 @@ var events_c12a15a8_c380_4b28_8144_256cba95f760 =
 														"type": "setValue",
 														"name": "status:money",
 														"operator": "+=",
-														"value": "6000"
+														"value": "12000"
 													}
 												]
 											},
@@ -2280,7 +2280,7 @@ var events_c12a15a8_c380_4b28_8144_256cba95f760 =
 																]
 															},
 															{
-																"text": "退役 F6F地狱猫（3500）",
+																"text": "退役 F6F地狱猫（4800）",
 																"icon": "f6f5",
 																"need": "core.hasItem('f6f5')&&!core.hasEquip('f6f5')",
 																"condition": "core.hasItem('f6f5')&&!core.hasEquip('f6f5')",
@@ -2299,7 +2299,7 @@ var events_c12a15a8_c380_4b28_8144_256cba95f760 =
 																		"type": "setValue",
 																		"name": "status:money",
 																		"operator": "+=",
-																		"value": "3500"
+																		"value": "4800"
 																	}
 																]
 															},
@@ -2496,7 +2496,7 @@ var events_c12a15a8_c380_4b28_8144_256cba95f760 =
 																]
 															},
 															{
-																"text": "退役 蚊式战斗机（3000）",
+																"text": "退役 蚊式战斗机（5400）",
 																"icon": "mosquito",
 																"need": "core.hasItem('mosquito')&&!core.hasEquip('mosquito')",
 																"condition": "core.hasItem('mosquito')&&!core.hasEquip('mosquito')",
@@ -2688,7 +2688,7 @@ var events_c12a15a8_c380_4b28_8144_256cba95f760 =
 																]
 															},
 															{
-																"text": "退役 TBF复仇者鱼雷机（3600）",
+																"text": "退役 TBF复仇者鱼雷机（6000）",
 																"icon": "tbf",
 																"need": "core.hasItem('tbf')&&!core.hasEquip('tbf')",
 																"condition": "core.hasItem('tbf')&&!core.hasEquip('tbf')",
@@ -2877,1321 +2877,1327 @@ var events_c12a15a8_c380_4b28_8144_256cba95f760 =
 		],
 		"海上霸主动画": [
 			{
-				"type": "playSound",
-				"name": "fighter1.mp3"
-			},
-			{
-				"type": "playSound",
-				"name": "cvstrike.mp3"
-			},
-			{
-				"type": "showImage",
-				"code": 1,
-				"image": "cvstrike.png",
-				"loc": [
-					30,
-					100
-				],
-				"opacity": 1,
-				"time": 500
-			},
-			{
-				"type": "sleep",
-				"time": 1000,
-				"noSkip": true
-			},
-			{
-				"type": "hideImage",
-				"code": 1,
-				"time": 500
-			},
-			{
-				"type": "sleep",
-				"time": 3000,
-				"noSkip": true
-			},
-			{
-				"type": "showImage",
-				"code": 1,
-				"image": "cvairgroup.png",
-				"loc": [
-					0,
-					-1920
-				],
-				"opacity": 1,
-				"time": 0
-			},
-			{
-				"type": "moveImage",
-				"code": 1,
-				"to": [
-					0,
-					480
-				],
-				"time": 8000,
-				"async": true
-			},
-			{
-				"type": "sleep",
-				"time": 1000
-			},
-			{
-				"type": "animate",
-				"name": "zone",
-				"loc": [
-					2,
-					4
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "explore",
-				"loc": [
-					1,
-					9
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "xinxinwater",
-				"loc": [
-					9,
-					4
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "zone",
-				"loc": [
-					6,
-					2
-				],
-				"async": true
-			},
-			{
-				"type": "sleep",
-				"time": 150
-			},
-			{
-				"type": "animate",
-				"name": "zone",
-				"loc": [
-					5,
-					3
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "explore",
-				"loc": [
-					14,
-					9
+				"type": "if",
+				"condition": "(flag:anime===true)",
+				"true": [
+					{
+						"type": "playSound",
+						"name": "fighter1.mp3"
+					},
+					{
+						"type": "playSound",
+						"name": "cvstrike.mp3"
+					},
+					{
+						"type": "showImage",
+						"code": 1,
+						"image": "cvstrike.png",
+						"loc": [
+							30,
+							100
+						],
+						"opacity": 1,
+						"time": 500
+					},
+					{
+						"type": "sleep",
+						"time": 1000,
+						"noSkip": true
+					},
+					{
+						"type": "hideImage",
+						"code": 1,
+						"time": 500
+					},
+					{
+						"type": "sleep",
+						"time": 3000,
+						"noSkip": true
+					},
+					{
+						"type": "showImage",
+						"code": 1,
+						"image": "cvairgroup.png",
+						"loc": [
+							0,
+							-1920
+						],
+						"opacity": 1,
+						"time": 0
+					},
+					{
+						"type": "moveImage",
+						"code": 1,
+						"to": [
+							0,
+							480
+						],
+						"time": 8000,
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 1000
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							2,
+							4
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							1,
+							9
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "xinxinwater",
+						"loc": [
+							9,
+							4
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							6,
+							2
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 150
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							5,
+							3
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							14,
+							9
+						]
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							4,
+							8
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore3",
+						"loc": [
+							9,
+							2
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 150
+					},
+					{
+						"type": "animate",
+						"name": "xinxinwater",
+						"loc": [
+							3,
+							9
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							7,
+							8
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							1,
+							0
+						]
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							0,
+							7
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "xinxinwater",
+						"loc": [
+							8,
+							14
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 150
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							14,
+							1
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							6,
+							3
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "xinxinwater",
+						"loc": [
+							8,
+							8
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							4,
+							4
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore3",
+						"loc": [
+							1,
+							0
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 150
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							1,
+							12
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							9,
+							3
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore3",
+						"loc": [
+							5,
+							11
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore3",
+						"loc": [
+							2,
+							10
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "xinxinwater",
+						"loc": [
+							1,
+							3
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 150
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							13,
+							3
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "xinxinwater",
+						"loc": [
+							9,
+							8
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "xinxinwater",
+						"loc": [
+							6,
+							9
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore3",
+						"loc": [
+							0,
+							6
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore3",
+						"loc": [
+							8,
+							1
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 150
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							4,
+							7
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							3,
+							7
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore3",
+						"loc": [
+							8,
+							5
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "xinxinwater",
+						"loc": [
+							4,
+							1
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "xinxinwater",
+						"loc": [
+							10,
+							3
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 150
+					},
+					{
+						"type": "animate",
+						"name": "xinxinwater",
+						"loc": [
+							12,
+							0
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							14,
+							0
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							6,
+							7
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							1,
+							9
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "xinxinwater",
+						"loc": [
+							4,
+							5
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 150
+					},
+					{
+						"type": "animate",
+						"name": "xinxinwater",
+						"loc": [
+							5,
+							1
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							1,
+							8
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							6,
+							1
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							5,
+							3
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							7,
+							4
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 150
+					},
+					{
+						"type": "animate",
+						"name": "xinxinwater",
+						"loc": [
+							13,
+							14
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							0,
+							0
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							8,
+							2
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							2,
+							4
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							5,
+							4
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 150
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							5,
+							10
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore3",
+						"loc": [
+							0,
+							10
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore3",
+						"loc": [
+							3,
+							8
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore3",
+						"loc": [
+							2,
+							3
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							1,
+							5
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 150
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							12,
+							2
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							11,
+							6
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							9,
+							3
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "xinxinwater",
+						"loc": [
+							4,
+							7
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "xinxinwater",
+						"loc": [
+							3,
+							2
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 150
+					},
+					{
+						"type": "animate",
+						"name": "xinxinwater",
+						"loc": [
+							6,
+							5
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "xinxinwater",
+						"loc": [
+							9,
+							3
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "xinxinwater",
+						"loc": [
+							7,
+							8
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							3,
+							14
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							7,
+							6
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 150
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							12,
+							10
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							3,
+							0
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore3",
+						"loc": [
+							9,
+							1
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore3",
+						"loc": [
+							7,
+							0
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							1,
+							14
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 150
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							7,
+							3
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore3",
+						"loc": [
+							13,
+							0
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							14,
+							13
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "xinxinwater",
+						"loc": [
+							14,
+							7
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "xinxinwater",
+						"loc": [
+							1,
+							3
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 150
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							11,
+							7
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							6,
+							1
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							4,
+							0
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							8,
+							3
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							13,
+							1
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 150
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							8,
+							8
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore3",
+						"loc": [
+							14,
+							14
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "xinxinwater",
+						"loc": [
+							1,
+							3
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							13,
+							10
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							4,
+							11
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 150
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							10,
+							4
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							2,
+							7
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							13,
+							5
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							13,
+							6
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore3",
+						"loc": [
+							10,
+							13
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 150
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							9,
+							1
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							14,
+							13
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore3",
+						"loc": [
+							14,
+							6
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore3",
+						"loc": [
+							8,
+							14
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							5,
+							9
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 150
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							10,
+							9
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "xinxinwater",
+						"loc": [
+							11,
+							0
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							13,
+							8
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore3",
+						"loc": [
+							7,
+							14
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							8,
+							11
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 150
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							9,
+							14
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore3",
+						"loc": [
+							4,
+							8
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							1,
+							14
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							10,
+							5
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							9,
+							4
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 150
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							8,
+							7
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore3",
+						"loc": [
+							7,
+							0
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "xinxinwater",
+						"loc": [
+							3,
+							13
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							3,
+							1
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							9,
+							1
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 150
+					},
+					{
+						"type": "animate",
+						"name": "xinxinwater",
+						"loc": [
+							10,
+							6
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							7,
+							7
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							9,
+							8
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							14,
+							4
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							3,
+							7
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 150
+					},
+					{
+						"type": "animate",
+						"name": "xinxinwater",
+						"loc": [
+							7,
+							3
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							13,
+							14
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "xinxinwater",
+						"loc": [
+							4,
+							3
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							0,
+							0
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							13,
+							2
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 150
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							11,
+							2
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore3",
+						"loc": [
+							1,
+							10
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							4,
+							8
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							4,
+							2
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore3",
+						"loc": [
+							13,
+							8
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 150
+					},
+					{
+						"type": "animate",
+						"name": "xinxinwater",
+						"loc": [
+							7,
+							11
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "xinxinwater",
+						"loc": [
+							11,
+							0
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore3",
+						"loc": [
+							9,
+							5
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							7,
+							11
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore3",
+						"loc": [
+							4,
+							13
+						],
+						"async": true
+					},
+					{
+						"type": "waitAsync"
+					},
+					{
+						"type": "hideImage",
+						"code": 1,
+						"time": 0
+					}
 				]
-			},
-			{
-				"type": "animate",
-				"name": "explore",
-				"loc": [
-					4,
-					8
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "explore3",
-				"loc": [
-					9,
-					2
-				],
-				"async": true
-			},
-			{
-				"type": "sleep",
-				"time": 150
-			},
-			{
-				"type": "animate",
-				"name": "xinxinwater",
-				"loc": [
-					3,
-					9
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "zone",
-				"loc": [
-					7,
-					8
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "explore",
-				"loc": [
-					1,
-					0
-				]
-			},
-			{
-				"type": "animate",
-				"name": "zone",
-				"loc": [
-					0,
-					7
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "xinxinwater",
-				"loc": [
-					8,
-					14
-				],
-				"async": true
-			},
-			{
-				"type": "sleep",
-				"time": 150
-			},
-			{
-				"type": "animate",
-				"name": "explore",
-				"loc": [
-					14,
-					1
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "zone",
-				"loc": [
-					6,
-					3
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "xinxinwater",
-				"loc": [
-					8,
-					8
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "zone",
-				"loc": [
-					4,
-					4
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "explore3",
-				"loc": [
-					1,
-					0
-				],
-				"async": true
-			},
-			{
-				"type": "sleep",
-				"time": 150
-			},
-			{
-				"type": "animate",
-				"name": "zone",
-				"loc": [
-					1,
-					12
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "explore",
-				"loc": [
-					9,
-					3
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "explore3",
-				"loc": [
-					5,
-					11
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "explore3",
-				"loc": [
-					2,
-					10
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "xinxinwater",
-				"loc": [
-					1,
-					3
-				],
-				"async": true
-			},
-			{
-				"type": "sleep",
-				"time": 150
-			},
-			{
-				"type": "animate",
-				"name": "zone",
-				"loc": [
-					13,
-					3
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "xinxinwater",
-				"loc": [
-					9,
-					8
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "xinxinwater",
-				"loc": [
-					6,
-					9
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "explore3",
-				"loc": [
-					0,
-					6
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "explore3",
-				"loc": [
-					8,
-					1
-				],
-				"async": true
-			},
-			{
-				"type": "sleep",
-				"time": 150
-			},
-			{
-				"type": "animate",
-				"name": "explore",
-				"loc": [
-					4,
-					7
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "zone",
-				"loc": [
-					3,
-					7
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "explore3",
-				"loc": [
-					8,
-					5
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "xinxinwater",
-				"loc": [
-					4,
-					1
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "xinxinwater",
-				"loc": [
-					10,
-					3
-				],
-				"async": true
-			},
-			{
-				"type": "sleep",
-				"time": 150
-			},
-			{
-				"type": "animate",
-				"name": "xinxinwater",
-				"loc": [
-					12,
-					0
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "zone",
-				"loc": [
-					14,
-					0
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "zone",
-				"loc": [
-					6,
-					7
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "zone",
-				"loc": [
-					1,
-					9
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "xinxinwater",
-				"loc": [
-					4,
-					5
-				],
-				"async": true
-			},
-			{
-				"type": "sleep",
-				"time": 150
-			},
-			{
-				"type": "animate",
-				"name": "xinxinwater",
-				"loc": [
-					5,
-					1
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "zone",
-				"loc": [
-					1,
-					8
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "zone",
-				"loc": [
-					6,
-					1
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "explore",
-				"loc": [
-					5,
-					3
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "explore",
-				"loc": [
-					7,
-					4
-				],
-				"async": true
-			},
-			{
-				"type": "sleep",
-				"time": 150
-			},
-			{
-				"type": "animate",
-				"name": "xinxinwater",
-				"loc": [
-					13,
-					14
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "zone",
-				"loc": [
-					0,
-					0
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "zone",
-				"loc": [
-					8,
-					2
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "zone",
-				"loc": [
-					2,
-					4
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "zone",
-				"loc": [
-					5,
-					4
-				],
-				"async": true
-			},
-			{
-				"type": "sleep",
-				"time": 150
-			},
-			{
-				"type": "animate",
-				"name": "zone",
-				"loc": [
-					5,
-					10
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "explore3",
-				"loc": [
-					0,
-					10
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "explore3",
-				"loc": [
-					3,
-					8
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "explore3",
-				"loc": [
-					2,
-					3
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "explore",
-				"loc": [
-					1,
-					5
-				],
-				"async": true
-			},
-			{
-				"type": "sleep",
-				"time": 150
-			},
-			{
-				"type": "animate",
-				"name": "zone",
-				"loc": [
-					12,
-					2
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "explore",
-				"loc": [
-					11,
-					6
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "explore",
-				"loc": [
-					9,
-					3
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "xinxinwater",
-				"loc": [
-					4,
-					7
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "xinxinwater",
-				"loc": [
-					3,
-					2
-				],
-				"async": true
-			},
-			{
-				"type": "sleep",
-				"time": 150
-			},
-			{
-				"type": "animate",
-				"name": "xinxinwater",
-				"loc": [
-					6,
-					5
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "xinxinwater",
-				"loc": [
-					9,
-					3
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "xinxinwater",
-				"loc": [
-					7,
-					8
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "zone",
-				"loc": [
-					3,
-					14
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "zone",
-				"loc": [
-					7,
-					6
-				],
-				"async": true
-			},
-			{
-				"type": "sleep",
-				"time": 150
-			},
-			{
-				"type": "animate",
-				"name": "zone",
-				"loc": [
-					12,
-					10
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "zone",
-				"loc": [
-					3,
-					0
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "explore3",
-				"loc": [
-					9,
-					1
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "explore3",
-				"loc": [
-					7,
-					0
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "explore",
-				"loc": [
-					1,
-					14
-				],
-				"async": true
-			},
-			{
-				"type": "sleep",
-				"time": 150
-			},
-			{
-				"type": "animate",
-				"name": "zone",
-				"loc": [
-					7,
-					3
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "explore3",
-				"loc": [
-					13,
-					0
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "zone",
-				"loc": [
-					14,
-					13
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "xinxinwater",
-				"loc": [
-					14,
-					7
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "xinxinwater",
-				"loc": [
-					1,
-					3
-				],
-				"async": true
-			},
-			{
-				"type": "sleep",
-				"time": 150
-			},
-			{
-				"type": "animate",
-				"name": "zone",
-				"loc": [
-					11,
-					7
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "explore",
-				"loc": [
-					6,
-					1
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "explore",
-				"loc": [
-					4,
-					0
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "explore",
-				"loc": [
-					8,
-					3
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "explore",
-				"loc": [
-					13,
-					1
-				],
-				"async": true
-			},
-			{
-				"type": "sleep",
-				"time": 150
-			},
-			{
-				"type": "animate",
-				"name": "zone",
-				"loc": [
-					8,
-					8
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "explore3",
-				"loc": [
-					14,
-					14
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "xinxinwater",
-				"loc": [
-					1,
-					3
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "zone",
-				"loc": [
-					13,
-					10
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "explore",
-				"loc": [
-					4,
-					11
-				],
-				"async": true
-			},
-			{
-				"type": "sleep",
-				"time": 150
-			},
-			{
-				"type": "animate",
-				"name": "explore",
-				"loc": [
-					10,
-					4
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "zone",
-				"loc": [
-					2,
-					7
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "explore",
-				"loc": [
-					13,
-					5
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "zone",
-				"loc": [
-					13,
-					6
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "explore3",
-				"loc": [
-					10,
-					13
-				],
-				"async": true
-			},
-			{
-				"type": "sleep",
-				"time": 150
-			},
-			{
-				"type": "animate",
-				"name": "explore",
-				"loc": [
-					9,
-					1
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "explore",
-				"loc": [
-					14,
-					13
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "explore3",
-				"loc": [
-					14,
-					6
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "explore3",
-				"loc": [
-					8,
-					14
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "explore",
-				"loc": [
-					5,
-					9
-				],
-				"async": true
-			},
-			{
-				"type": "sleep",
-				"time": 150
-			},
-			{
-				"type": "animate",
-				"name": "zone",
-				"loc": [
-					10,
-					9
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "xinxinwater",
-				"loc": [
-					11,
-					0
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "explore",
-				"loc": [
-					13,
-					8
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "explore3",
-				"loc": [
-					7,
-					14
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "explore",
-				"loc": [
-					8,
-					11
-				],
-				"async": true
-			},
-			{
-				"type": "sleep",
-				"time": 150
-			},
-			{
-				"type": "animate",
-				"name": "explore",
-				"loc": [
-					9,
-					14
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "explore3",
-				"loc": [
-					4,
-					8
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "explore",
-				"loc": [
-					1,
-					14
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "explore",
-				"loc": [
-					10,
-					5
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "zone",
-				"loc": [
-					9,
-					4
-				],
-				"async": true
-			},
-			{
-				"type": "sleep",
-				"time": 150
-			},
-			{
-				"type": "animate",
-				"name": "zone",
-				"loc": [
-					8,
-					7
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "explore3",
-				"loc": [
-					7,
-					0
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "xinxinwater",
-				"loc": [
-					3,
-					13
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "explore",
-				"loc": [
-					3,
-					1
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "zone",
-				"loc": [
-					9,
-					1
-				],
-				"async": true
-			},
-			{
-				"type": "sleep",
-				"time": 150
-			},
-			{
-				"type": "animate",
-				"name": "xinxinwater",
-				"loc": [
-					10,
-					6
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "explore",
-				"loc": [
-					7,
-					7
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "explore",
-				"loc": [
-					9,
-					8
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "explore",
-				"loc": [
-					14,
-					4
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "explore",
-				"loc": [
-					3,
-					7
-				],
-				"async": true
-			},
-			{
-				"type": "sleep",
-				"time": 150
-			},
-			{
-				"type": "animate",
-				"name": "xinxinwater",
-				"loc": [
-					7,
-					3
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "explore",
-				"loc": [
-					13,
-					14
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "xinxinwater",
-				"loc": [
-					4,
-					3
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "explore",
-				"loc": [
-					0,
-					0
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "zone",
-				"loc": [
-					13,
-					2
-				],
-				"async": true
-			},
-			{
-				"type": "sleep",
-				"time": 150
-			},
-			{
-				"type": "animate",
-				"name": "zone",
-				"loc": [
-					11,
-					2
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "explore3",
-				"loc": [
-					1,
-					10
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "zone",
-				"loc": [
-					4,
-					8
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "zone",
-				"loc": [
-					4,
-					2
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "explore3",
-				"loc": [
-					13,
-					8
-				],
-				"async": true
-			},
-			{
-				"type": "sleep",
-				"time": 150
-			},
-			{
-				"type": "animate",
-				"name": "xinxinwater",
-				"loc": [
-					7,
-					11
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "xinxinwater",
-				"loc": [
-					11,
-					0
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "explore3",
-				"loc": [
-					9,
-					5
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "zone",
-				"loc": [
-					7,
-					11
-				],
-				"async": true
-			},
-			{
-				"type": "animate",
-				"name": "explore3",
-				"loc": [
-					4,
-					13
-				],
-				"async": true
-			},
-			{
-				"type": "waitAsync"
-			},
-			{
-				"type": "hideImage",
-				"code": 1,
-				"time": 0
 			}
 		]
 	}

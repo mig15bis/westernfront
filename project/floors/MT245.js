@@ -12,7 +12,7 @@ main.floors.MT245=
     "images": [],
     "ratio": 1,
     "defaultGround": "X10007",
-    "bgm": "desert3.mp3",
+    "bgm": "cao3.mp3",
     "firstArrive": [
         {
             "type": "moveHero",
@@ -50,14 +50,24 @@ main.floors.MT245=
             "type": "previewUI",
             "action": [
                 {
+                    "type": "setValue",
+                    "name": "flag:bosshp",
+                    "value": "3"
+                },
+                {
+                    "type": "setValue",
+                    "name": "flag:bosshpmax",
+                    "value": "3"
+                },
+                {
                     "type": "strokeRect",
                     "x": 130,
                     "y": 64,
-                    "width": 96,
+                    "width": 256,
                     "height": 16,
                     "style": [
                         255,
-                        165,
+                        255,
                         0,
                         1
                     ],
@@ -67,7 +77,7 @@ main.floors.MT245=
                     "type": "fillRect",
                     "x": 130,
                     "y": 64,
-                    "width": 96,
+                    "width": 256,
                     "height": 16,
                     "style": [
                         255,
@@ -77,58 +87,23 @@ main.floors.MT245=
                     ]
                 },
                 {
-                    "type": "strokeRect",
-                    "x": 226,
-                    "y": 64,
-                    "width": 96,
-                    "height": 16,
+                    "type": "fillBoldText",
+                    "x": 130,
+                    "y": 48,
                     "style": [
                         255,
-                        165,
+                        0,
                         0,
                         1
                     ],
-                    "lineWidth": 5
-                },
-                {
-                    "type": "fillRect",
-                    "x": 226,
-                    "y": 64,
-                    "width": 96,
-                    "height": 16,
-                    "style": [
+                    "strokeStyle": [
                         255,
-                        0,
-                        0,
-                        1
-                    ]
-                },
-                {
-                    "type": "strokeRect",
-                    "x": 322,
-                    "y": 64,
-                    "width": 96,
-                    "height": 16,
-                    "style": [
-                        255,
-                        165,
+                        140,
                         0,
                         1
                     ],
-                    "lineWidth": 5
-                },
-                {
-                    "type": "fillRect",
-                    "x": 322,
-                    "y": 64,
-                    "width": 96,
-                    "height": 16,
-                    "style": [
-                        255,
-                        0,
-                        0,
-                        1
-                    ]
+                    "font": "20px number",
+                    "text": "3/3"
                 }
             ]
         },
@@ -153,14 +128,51 @@ main.floors.MT245=
         "7,5": [
             {
                 "type": "if",
-                "condition": "(flag:MT245boss===0)",
+                "condition": "(flag:bosshp===3)",
                 "true": [
                     {
-                        "type": "clearMap",
-                        "x": 322,
-                        "y": 64,
-                        "width": 96,
-                        "height": 16
+                        "type": "previewUI",
+                        "action": [
+                            {
+                                "type": "setValue",
+                                "name": "flag:bosshp",
+                                "operator": "-=",
+                                "value": "1"
+                            },
+                            {
+                                "type": "clearMap",
+                                "x": 128,
+                                "y": 30,
+                                "width": 100,
+                                "height": 30
+                            },
+                            {
+                                "type": "clearMap",
+                                "x": "386 - ((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                "y": 64,
+                                "width": "((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                "height": 16
+                            },
+                            {
+                                "type": "fillBoldText",
+                                "x": 130,
+                                "y": 48,
+                                "style": [
+                                    255,
+                                    0,
+                                    0,
+                                    1
+                                ],
+                                "strokeStyle": [
+                                    255,
+                                    140,
+                                    0,
+                                    1
+                                ],
+                                "font": "20px number",
+                                "text": "2/3"
+                            }
+                        ]
                     },
                     {
                         "type": "setBlock",
@@ -189,12 +201,6 @@ main.floors.MT245=
                     },
                     {
                         "type": "waitAsync"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "flag:MT245boss",
-                        "operator": "+=",
-                        "value": "1"
                     },
                     {
                         "type": "sleep",
@@ -300,14 +306,51 @@ main.floors.MT245=
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT245boss===1)",
+                        "condition": "(flag:bosshp===2)",
                         "true": [
                             {
-                                "type": "clearMap",
-                                "x": 226,
-                                "y": 64,
-                                "width": 96,
-                                "height": 16
+                                "type": "previewUI",
+                                "action": [
+                                    {
+                                        "type": "setValue",
+                                        "name": "flag:bosshp",
+                                        "operator": "-=",
+                                        "value": "1"
+                                    },
+                                    {
+                                        "type": "clearMap",
+                                        "x": 128,
+                                        "y": 30,
+                                        "width": 100,
+                                        "height": 30
+                                    },
+                                    {
+                                        "type": "clearMap",
+                                        "x": "386 - ((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                        "y": 64,
+                                        "width": "((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                        "height": 16
+                                    },
+                                    {
+                                        "type": "fillBoldText",
+                                        "x": 130,
+                                        "y": 48,
+                                        "style": [
+                                            255,
+                                            0,
+                                            0,
+                                            1
+                                        ],
+                                        "strokeStyle": [
+                                            255,
+                                            140,
+                                            0,
+                                            1
+                                        ],
+                                        "font": "20px number",
+                                        "text": "1/3"
+                                    }
+                                ]
                             },
                             {
                                 "type": "setBlock",
@@ -336,13 +379,6 @@ main.floors.MT245=
                             },
                             {
                                 "type": "waitAsync"
-                            },
-                            {
-                                "type": "setValue",
-                                "name": "flag:MT245boss",
-                                "operator": "+=",
-                                "value": "1",
-                                "norefresh": true
                             },
                             {
                                 "type": "sleep",
@@ -421,13 +457,13 @@ main.floors.MT245=
                                 "type": "setEnemy",
                                 "id": "messe",
                                 "name": "money",
-                                "value": "20"
+                                "value": "50"
                             },
                             {
                                 "type": "setEnemy",
                                 "id": "messe",
                                 "name": "exp",
-                                "value": "20"
+                                "value": "50"
                             },
                             {
                                 "type": "waitAsync"
@@ -436,14 +472,51 @@ main.floors.MT245=
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT245boss===2)",
+                                "condition": "(flag:bosshp===1)",
                                 "true": [
                                     {
-                                        "type": "clearMap",
-                                        "x": 130,
-                                        "y": 64,
-                                        "width": 96,
-                                        "height": 16
+                                        "type": "previewUI",
+                                        "action": [
+                                            {
+                                                "type": "setValue",
+                                                "name": "flag:bosshp",
+                                                "operator": "-=",
+                                                "value": "1"
+                                            },
+                                            {
+                                                "type": "clearMap",
+                                                "x": 128,
+                                                "y": 30,
+                                                "width": 100,
+                                                "height": 30
+                                            },
+                                            {
+                                                "type": "clearMap",
+                                                "x": "386 - ((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                                "y": 64,
+                                                "width": "((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                                "height": 16
+                                            },
+                                            {
+                                                "type": "fillBoldText",
+                                                "x": 130,
+                                                "y": 48,
+                                                "style": [
+                                                    255,
+                                                    0,
+                                                    0,
+                                                    1
+                                                ],
+                                                "strokeStyle": [
+                                                    255,
+                                                    140,
+                                                    0,
+                                                    1
+                                                ],
+                                                "font": "20px number",
+                                                "text": "0/3"
+                                            }
+                                        ]
                                     },
                                     {
                                         "type": "animate",
@@ -472,21 +545,22 @@ main.floors.MT245=
                                     },
                                     "\t[系统提示]支线boss战 胜利！",
                                     {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[35][1]=true\n}"
+                                        "type": "setValue",
+                                        "name": "flag:MT245boss",
+                                        "value": "1"
                                     },
                                     {
                                         "type": "openDoor",
                                         "loc": [
                                             7,
-                                            1
+                                            3
                                         ]
                                     },
                                     {
                                         "type": "openDoor",
                                         "loc": [
                                             7,
-                                            11
+                                            13
                                         ]
                                     },
                                     {
@@ -504,6 +578,13 @@ main.floors.MT245=
                                         "name": "xinxinmagic.mp3"
                                     },
                                     "\t[系统提示]当前区域的全部意军已投降！",
+                                    {
+                                        "type": "setEnemy",
+                                        "id": "italyinf2",
+                                        "name": "special",
+                                        "value": "[61]",
+                                        "norefresh": true
+                                    },
                                     {
                                         "type": "setEnemy",
                                         "id": "italyinf3",
@@ -551,6 +632,18 @@ main.floors.MT245=
                                         "id": "p2640",
                                         "name": "special",
                                         "value": "[61]"
+                                    },
+                                    {
+                                        "type": "setEnemy",
+                                        "id": "da90",
+                                        "name": "special",
+                                        "value": "[61]"
+                                    },
+                                    {
+                                        "type": "setEnemy",
+                                        "id": "italyinf7",
+                                        "name": "special",
+                                        "value": "[61]"
                                     }
                                 ],
                                 "false": []
@@ -568,8 +661,8 @@ main.floors.MT245=
     "cannotMoveIn": {},
     "map": [
     [109,109,109,109,109,109,109,109,109,109,109,109,109,109,109],
-    [109,  0,  0,  0,109,606,605,625,605,606,109,  0,  0,  0,109],
-    [109,  0,  0,  0,109,605,522,625,522,605,109,  0,  0,  0,109],
+    [109,  0,  0,  0,109,341,580,625,580,341,109,  0,  0,  0,109],
+    [109,  0,  0,  0,109,580,581,625,581,580,109,  0,  0,  0,109],
     [109,  0,  0,  0,109,109,109, 85,109,109,109,  0,  0,  0,109],
     [109,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,109],
     [109,  0,  0,  0,  0,  0,  0,221,  0,  0,  0,  0,  0,  0,109],

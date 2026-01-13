@@ -12,7 +12,7 @@ main.floors.MT258=
     "images": [],
     "ratio": 1,
     "defaultGround": "ground6",
-    "bgm": "desert3.mp3",
+    "bgm": "wots6.mp3",
     "firstArrive": [
         {
             "type": "setCurtain",

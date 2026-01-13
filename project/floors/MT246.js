@@ -12,7 +12,7 @@ main.floors.MT246=
     "images": [],
     "ratio": 1,
     "defaultGround": "X10007",
-    "bgm": "desert3.mp3",
+    "bgm": "cao3.mp3",
     "firstArrive": [
         {
             "type": "moveHero",
@@ -46,14 +46,24 @@ main.floors.MT246=
             "type": "previewUI",
             "action": [
                 {
+                    "type": "setValue",
+                    "name": "flag:bosshp",
+                    "value": "4"
+                },
+                {
+                    "type": "setValue",
+                    "name": "flag:bosshpmax",
+                    "value": "4"
+                },
+                {
                     "type": "strokeRect",
                     "x": 130,
                     "y": 64,
-                    "width": 64,
+                    "width": 256,
                     "height": 16,
                     "style": [
                         255,
-                        165,
+                        255,
                         0,
                         1
                     ],
@@ -63,7 +73,7 @@ main.floors.MT246=
                     "type": "fillRect",
                     "x": 130,
                     "y": 64,
-                    "width": 64,
+                    "width": 256,
                     "height": 16,
                     "style": [
                         255,
@@ -73,93 +83,39 @@ main.floors.MT246=
                     ]
                 },
                 {
-                    "type": "strokeRect",
-                    "x": 194,
-                    "y": 64,
-                    "width": 64,
-                    "height": 16,
+                    "type": "fillBoldText",
+                    "x": 130,
+                    "y": 48,
                     "style": [
                         255,
-                        165,
+                        0,
                         0,
                         1
                     ],
-                    "lineWidth": 5
-                },
-                {
-                    "type": "fillRect",
-                    "x": 194,
-                    "y": 64,
-                    "width": 64,
-                    "height": 16,
-                    "style": [
+                    "strokeStyle": [
                         255,
-                        0,
-                        0,
-                        1
-                    ]
-                },
-                {
-                    "type": "strokeRect",
-                    "x": 258,
-                    "y": 64,
-                    "width": 64,
-                    "height": 16,
-                    "style": [
-                        255,
-                        165,
+                        140,
                         0,
                         1
                     ],
-                    "lineWidth": 5
-                },
-                {
-                    "type": "fillRect",
-                    "x": 258,
-                    "y": 64,
-                    "width": 64,
-                    "height": 16,
-                    "style": [
-                        255,
-                        0,
-                        0,
-                        1
-                    ]
-                },
-                {
-                    "type": "strokeRect",
-                    "x": 322,
-                    "y": 64,
-                    "width": 64,
-                    "height": 16,
-                    "style": [
-                        255,
-                        165,
-                        0,
-                        1
-                    ],
-                    "lineWidth": 5
-                },
-                {
-                    "type": "fillRect",
-                    "x": 322,
-                    "y": 64,
-                    "width": 64,
-                    "height": 16,
-                    "style": [
-                        255,
-                        0,
-                        0,
-                        1
-                    ]
+                    "font": "20px number",
+                    "text": "4/4"
                 }
             ]
+        },
+        {
+            "type": "callBook"
         }
     ],
     "eachArrive": [],
     "parallelDo": "",
     "events": {
         "7,0": [
+            {
+                "type": "setValue",
+                "name": "flag:dry",
+                "value": "false"
+            },
             {
                 "type": "unloadEquip",
                 "pos": 0
@@ -189,14 +145,6 @@ main.floors.MT246=
                 "pos": 6
             },
             {
-                "type": "function",
-                "function": "function(){\nflags.skillList=[0,0,0,0,0,0,0]\n}"
-            },
-            {
-                "type": "function",
-                "function": "function(){\nflags.mission[35][0]=true\n}"
-            },
-            {
                 "type": "update"
             },
             {
@@ -204,7 +152,7 @@ main.floors.MT246=
                 "time": 500
             },
             {
-                "type": "hideStatusBar"
+                "type": "hideui"
             },
             {
                 "type": "update"
@@ -247,7 +195,7 @@ main.floors.MT246=
             },
             {
                 "type": "function",
-                "function": "function(){\nvar a = flags.mission[core.getFlag('stage')];\ncore.setFlag('@temp@A', a[0] + a[1] + a[2]);\n}"
+                "function": "function(){\nvar a = core.taskSystem.checkTask(0) ? 1 : 0,\n\tb = core.taskSystem.checkTask(1) ? 1 : 0,\n\tc = core.taskSystem.checkTask(2) ? 1 : 0;\ncore.setFlag('@temp@A', a + b + c);\n}"
             },
             {
                 "type": "if",
@@ -273,11 +221,6 @@ main.floors.MT246=
                             90
                         ],
                         "opacity": 1,
-                        "time": 500,
-                        "async": true
-                    },
-                    {
-                        "type": "sleep",
                         "time": 500
                     },
                     {
@@ -304,11 +247,6 @@ main.floors.MT246=
                                     90
                                 ],
                                 "opacity": 1,
-                                "time": 500,
-                                "async": true
-                            },
-                            {
-                                "type": "sleep",
                                 "time": 500
                             },
                             {
@@ -335,11 +273,6 @@ main.floors.MT246=
                                             90
                                         ],
                                         "opacity": 1,
-                                        "time": 500,
-                                        "async": true
-                                    },
-                                    {
-                                        "type": "sleep",
                                         "time": 500
                                     }
                                 ],
@@ -377,7 +310,7 @@ main.floors.MT246=
             },
             {
                 "type": "drawTextContent",
-                "text": "   我们做到了！指挥官阁下拔除了最\n后一个敌军据点，沙漠军团已经成为过\n去时！\n   北非战役远比我们想象中的要持续\n的更久，但好在它终于以我们的胜利而\n告终了。现在，我们可以把兵力集中到\n欧洲，向敌人的大本营缓步推进。",
+                "text": "   我们做到了！指挥官阁下拔除了最\n后一个敌军据点，敌人的沙漠军团已\n经不复存在！\n   北非战役远比我们想象中的要持续\n的更久，但好在它终于以我们的胜利\n而告终了。现在，我们可以把兵力集\n中到欧洲，向敌人的大本营缓步推进。",
                 "left": 60,
                 "top": 100,
                 "align": "left",
@@ -394,6 +327,9 @@ main.floors.MT246=
             },
             {
                 "type": "clearMap"
+            },
+            {
+                "type": "submitTask"
             },
             {
                 "type": "moveImage",
@@ -509,14 +445,51 @@ main.floors.MT246=
         "7,3": [
             {
                 "type": "if",
-                "condition": "(flag:MT246boss===0)",
+                "condition": "(flag:bosshp===4)",
                 "true": [
                     {
-                        "type": "clearMap",
-                        "x": 322,
-                        "y": 64,
-                        "width": 64,
-                        "height": 16
+                        "type": "previewUI",
+                        "action": [
+                            {
+                                "type": "setValue",
+                                "name": "flag:bosshp",
+                                "operator": "-=",
+                                "value": "1"
+                            },
+                            {
+                                "type": "clearMap",
+                                "x": 128,
+                                "y": 30,
+                                "width": 100,
+                                "height": 30
+                            },
+                            {
+                                "type": "clearMap",
+                                "x": "386 - ((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                "y": 64,
+                                "width": "((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                "height": 16
+                            },
+                            {
+                                "type": "fillBoldText",
+                                "x": 130,
+                                "y": 48,
+                                "style": [
+                                    255,
+                                    0,
+                                    0,
+                                    1
+                                ],
+                                "strokeStyle": [
+                                    255,
+                                    140,
+                                    0,
+                                    1
+                                ],
+                                "font": "20px number",
+                                "text": "3/4"
+                            }
+                        ]
                     },
                     {
                         "type": "setBlock",
@@ -545,12 +518,6 @@ main.floors.MT246=
                     },
                     {
                         "type": "waitAsync"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "flag:MT246boss",
-                        "operator": "+=",
-                        "value": "1"
                     },
                     {
                         "type": "sleep",
@@ -728,14 +695,51 @@ main.floors.MT246=
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT246boss===1)",
+                        "condition": "(flag:bosshp===3)",
                         "true": [
                             {
-                                "type": "clearMap",
-                                "x": 258,
-                                "y": 64,
-                                "width": 64,
-                                "height": 16
+                                "type": "previewUI",
+                                "action": [
+                                    {
+                                        "type": "setValue",
+                                        "name": "flag:bosshp",
+                                        "operator": "-=",
+                                        "value": "1"
+                                    },
+                                    {
+                                        "type": "clearMap",
+                                        "x": 128,
+                                        "y": 30,
+                                        "width": 100,
+                                        "height": 30
+                                    },
+                                    {
+                                        "type": "clearMap",
+                                        "x": "386 - ((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                        "y": 64,
+                                        "width": "((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                        "height": 16
+                                    },
+                                    {
+                                        "type": "fillBoldText",
+                                        "x": 130,
+                                        "y": 48,
+                                        "style": [
+                                            255,
+                                            0,
+                                            0,
+                                            1
+                                        ],
+                                        "strokeStyle": [
+                                            255,
+                                            140,
+                                            0,
+                                            1
+                                        ],
+                                        "font": "20px number",
+                                        "text": "2/4"
+                                    }
+                                ]
                             },
                             {
                                 "type": "setBlock",
@@ -757,19 +761,13 @@ main.floors.MT246=
                                 "type": "jumpHero",
                                 "loc": [
                                     7,
-                                    12
+                                    13
                                 ],
                                 "time": 10,
                                 "async": true
                             },
                             {
                                 "type": "waitAsync"
-                            },
-                            {
-                                "type": "setValue",
-                                "name": "flag:MT246boss",
-                                "operator": "+=",
-                                "value": "1"
                             },
                             {
                                 "type": "sleep",
@@ -875,14 +873,51 @@ main.floors.MT246=
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT246boss===2)",
+                                "condition": "(flag:bosshp===2)",
                                 "true": [
                                     {
-                                        "type": "clearMap",
-                                        "x": 194,
-                                        "y": 64,
-                                        "width": 64,
-                                        "height": 16
+                                        "type": "previewUI",
+                                        "action": [
+                                            {
+                                                "type": "setValue",
+                                                "name": "flag:bosshp",
+                                                "operator": "-=",
+                                                "value": "1"
+                                            },
+                                            {
+                                                "type": "clearMap",
+                                                "x": 128,
+                                                "y": 30,
+                                                "width": 100,
+                                                "height": 30
+                                            },
+                                            {
+                                                "type": "clearMap",
+                                                "x": "386 - ((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                                "y": 64,
+                                                "width": "((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                                "height": 16
+                                            },
+                                            {
+                                                "type": "fillBoldText",
+                                                "x": 130,
+                                                "y": 48,
+                                                "style": [
+                                                    255,
+                                                    0,
+                                                    0,
+                                                    1
+                                                ],
+                                                "strokeStyle": [
+                                                    255,
+                                                    140,
+                                                    0,
+                                                    1
+                                                ],
+                                                "font": "20px number",
+                                                "text": "1/4"
+                                            }
+                                        ]
                                     },
                                     {
                                         "type": "setBlock",
@@ -904,19 +939,13 @@ main.floors.MT246=
                                         "type": "jumpHero",
                                         "loc": [
                                             7,
-                                            12
+                                            13
                                         ],
                                         "time": 10,
                                         "async": true
                                     },
                                     {
                                         "type": "waitAsync"
-                                    },
-                                    {
-                                        "type": "setValue",
-                                        "name": "flag:MT246boss",
-                                        "operator": "+=",
-                                        "value": "1"
                                     },
                                     {
                                         "type": "sleep",
@@ -1016,14 +1045,14 @@ main.floors.MT246=
                                         "type": "setEnemy",
                                         "id": "blueKing",
                                         "name": "money",
-                                        "value": "30",
+                                        "value": "80",
                                         "norefresh": true
                                     },
                                     {
                                         "type": "setEnemy",
                                         "id": "blueKing",
                                         "name": "exp",
-                                        "value": "30"
+                                        "value": "80"
                                     },
                                     {
                                         "type": "waitAsync"
@@ -1032,14 +1061,51 @@ main.floors.MT246=
                                 "false": [
                                     {
                                         "type": "if",
-                                        "condition": "(flag:MT246boss===3)",
+                                        "condition": "(flag:bosshp===1)",
                                         "true": [
                                             {
-                                                "type": "clearMap",
-                                                "x": 130,
-                                                "y": 64,
-                                                "width": 64,
-                                                "height": 16
+                                                "type": "previewUI",
+                                                "action": [
+                                                    {
+                                                        "type": "setValue",
+                                                        "name": "flag:bosshp",
+                                                        "operator": "-=",
+                                                        "value": "1"
+                                                    },
+                                                    {
+                                                        "type": "clearMap",
+                                                        "x": 128,
+                                                        "y": 30,
+                                                        "width": 100,
+                                                        "height": 30
+                                                    },
+                                                    {
+                                                        "type": "clearMap",
+                                                        "x": "386 - ((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                                        "y": 64,
+                                                        "width": "((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                                        "height": 16
+                                                    },
+                                                    {
+                                                        "type": "fillBoldText",
+                                                        "x": 130,
+                                                        "y": 48,
+                                                        "style": [
+                                                            255,
+                                                            0,
+                                                            0,
+                                                            1
+                                                        ],
+                                                        "strokeStyle": [
+                                                            255,
+                                                            140,
+                                                            0,
+                                                            1
+                                                        ],
+                                                        "font": "20px number",
+                                                        "text": "0/4"
+                                                    }
+                                                ]
                                             },
                                             {
                                                 "type": "setBlock",
@@ -1055,7 +1121,6 @@ main.floors.MT246=
                                             {
                                                 "type": "setValue",
                                                 "name": "flag:MT246boss",
-                                                "operator": "+=",
                                                 "value": "1"
                                             },
                                             {
@@ -1073,7 +1138,7 @@ main.floors.MT246=
                                             },
                                             {
                                                 "type": "text",
-                                                "text": "\t[隆美尔]\f[rommel.png,0,310]希特勒，这个疯狂的男人正在一步步将德意志推向深渊，而我却什么都做不到。",
+                                                "text": "\t[隆美尔]\f[rommel.png,0,310]希特勒，这个疯狂的男人正在一步步将德意志推向深渊，而我到底还能做些什么？",
                                                 "pos": [
                                                     100,
                                                     300,
@@ -1081,10 +1146,6 @@ main.floors.MT246=
                                                 ]
                                             },
                                             "\t[系统提示]主线boss战 胜利！",
-                                            {
-                                                "type": "function",
-                                                "function": "function(){\nflags.mission[35][0]=true\n}"
-                                            },
                                             {
                                                 "type": "hide",
                                                 "loc": [

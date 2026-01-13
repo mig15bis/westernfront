@@ -92,6 +92,13 @@ main.floors.MT226=
         },
         {
             "type": "setEnemy",
+            "id": "italyinf3",
+            "name": "atk",
+            "value": "[1,6]",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
             "id": "italyinf4",
             "name": "hp",
             "value": "120000",
@@ -127,6 +134,13 @@ main.floors.MT226=
         },
         {
             "type": "setEnemy",
+            "id": "italyinf5",
+            "name": "special",
+            "value": "[6]",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
             "id": "italyinf6",
             "name": "hp",
             "value": "100000",
@@ -137,6 +151,13 @@ main.floors.MT226=
             "id": "italyinf6",
             "name": "atk",
             "value": "2500",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "italyinf6",
+            "name": "special",
+            "value": "[6]",
             "norefresh": true
         },
         {
@@ -155,6 +176,13 @@ main.floors.MT226=
         },
         {
             "type": "setEnemy",
+            "id": "l640",
+            "name": "special",
+            "value": "[6,60]",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
             "id": "m1340",
             "name": "hp",
             "value": "150000",
@@ -165,6 +193,13 @@ main.floors.MT226=
             "id": "m1340",
             "name": "atk",
             "value": "12000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "m1340",
+            "name": "special",
+            "value": "[]",
             "norefresh": true
         },
         {

@@ -1052,12 +1052,12 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		[64, "拦截", "对主角的伤害降为50%，但对受保护的友军伤害倍率改为100%", "#ffcc33"],
 		[65, "抗破", "秒杀类技能无法对该敌人生效", "#d3d3d3"],
 		[66, "点杀", "主角在当前地图使用即时战略技能时（例如扫雷），以2倍攻击力攻击主角一次", "#c677dd"],
-		[67, "好战", "主角经过该敌人周围4格时，以120%攻击力与主角发生强制战斗", "#ff8c00"],
+		[67, "好战", "主角经过该敌人周围4格时，与主角发生强制战斗（这不就是捕捉吗？）", "#ff8c00"],
 		[68, "尖啸死神", "斯图卡轰炸机专属技能。投弹命中主角后，施加3层“惊慌”debuff，每层debuff会使主角攻击力减少10%，每过一次战斗减少一层，可无限叠加", "#dc143c"],
 		[69, "迂回包抄", "主角进行楼层切换操作时，进行强制战斗（为防止不必要的错误，每个区域最后一张地图不会出现）"],
 		[70, "直掩", "主角在当前地图中每主动进行一场战斗后，会遭到全体直掩战斗机的一次普攻（攻击×连击），无视后勤值"],
 		[71, "观测", "存在期间，全图领域伤害提升20%，不可叠加", "#FFFF00"],
-		[72, "火力覆盖", "主角每次战斗结束后，以3倍攻击力轰炸主角一次"],
+		[72, "火力覆盖", "主角每次战斗结束后，以20%攻击力轰炸主角一次"],
 		[73, "喷气式战机", "速度极快，追不上也打不中。受到的全部伤害减少70%"],
 		[74, "追踪", "主角行至同行或同列，且无障碍物阻拦时，向主角靠近一格。"],
 		[75, "V2导弹", function (enemy) { return "弹道导弹，无法拦截，造成" + enemy.value + "点伤害,并施加一层“惊慌”" }, "#dc143c"],
@@ -1214,7 +1214,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 							cacheFloor.观测++;
 						}
 						if (core.hasSpecial(enemy.special, 72)) {
-							cacheFloor.火力覆盖 += enemy.atk * 3;
+							cacheFloor.火力覆盖 += enemy.atk * 0.2;
 						}
 						if (core.hasSpecial(enemy.special, 77)) {
 							cacheFloor.防御大师++;
@@ -1513,7 +1513,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		v1 = false,
 		a = 0, //敌方先攻
 		b = 0, //我方先攻
-		hasFighter = ff || fb === 'p38' || fb === 'typhoon' || fb === 'mosquito' || fb === 'p47d' || fb === 'p61' || bb === 'eagle' || bb === 'illustrious' || bb === 'raider' || bb === 'essex' || bb === 'enterprise' || bb === 'illus1941' || core.hasItem('independence'),
+		hasFighter = ff || fb === 'p38' || fb === 'typhoon' || fb === 'mosquito' || fb === 'p47d' || fb === 'p61' || bb === 'eagle' || bb === 'illustrious' || bb === 'raider' || bb === 'essex' || bb === 'enterprise' || bb === 'illus1941' || (core.hasItem('independence') && (core.status.maps[core.status.floorId].area === '海洋' || core.status.maps[core.status.floorId].area === '浅滩')),
 		enemyFighter = cacheFloor?.战斗机 || cacheFloor?.重型战斗机,
 		hugeship = mon_skillNum.type === '重巡' || mon_skillNum.type === '战列' || mon_skillNum.type === '航母',
 		lightship = mon_skillNum.type === '轻巡' || mon_skillNum.type === '驱逐',
@@ -1598,7 +1598,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		if (flags.skill === 3 && !flags.spy) { //防空弹幕
 			yongshi.atk *= 1.2;
 		}
-		if (fb === 'mosquito' && isfighter && !core.hasSpecial(mon_special, 73)) { //蚊子·木制奇迹
+		if (fb === 'mosquito' && !core.hasSpecial(mon_special, 73)) { //蚊子·木制奇迹
 			guaiwu.hp -= yongshi.atk * 3;
 		}
 		if (ff === 'f4f3' && isfighter) { //野猫
@@ -1678,6 +1678,9 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	}
 	//战斗伤害计算
 	//总伤害计算（先攻、倍率调整等）
+	if (core.getFlag('morearmor', 0) > 0) {
+		finalDamage *= 0.95;
+	}
 	if (ca === 'cleveland' && hero_hp < hero_hpmax * 0.5) { //克利夫兰·海上骑士
 		finalDamage *= 0.75;
 	}
@@ -1805,7 +1808,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		topwork = nodud || (dd !== 'mahan' || dd !== 'benson' || dd !== 'flecher' || ca !== "cleveland"),
 		havecv = bb === 'eagle' || bb === 'illus1941' || bb === 'illustrious' || bb === 'raider' || bb === 'essex' || bb === 'enterprise',
 		ft17 = (tk === 'ft17' && mon_skillNum.type === '步兵') ? 1.05 : 1,
-		independencefly = core.hasItem('independence') && !havecv,
+		independencefly = core.hasItem('independence') && !havecv && (core.status.maps[floorId].area === '海洋' || core.status.maps[floorId].area === '浅滩'),
 		swordfish = bb === 'eagle' || bb === 'illus1941' || bb === 'illustrious',
 		hvar = mon_skillNum.type === '步兵' || mon_skillNum.type === '反坦克炮' || mon_skillNum.type === '榴弹炮' || mon_skillNum.type === '高射炮' || mon_skillNum.type === '驱逐舰',
 		rp3 = mon_skillNum.type === '轻坦' || mon_skillNum.type === '中坦' || mon_skillNum.type === '重坦' || mon_skillNum.type === '坦歼' || mon_skillNum.type === '建筑',
@@ -2361,7 +2364,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			hero_bomb *= 2.5;
 			hero_skytorpedo *= 2.5;
 		}
-		if (core.hasItem('independence') && havecv) { //独立级
+		if (core.hasItem('independence') && havecv && (core.status.maps[floorId].area === '海洋' || core.status.maps[floorId].area === '浅滩')) { //独立级
 			hero_rocket *= 1.3;
 			hero_bomb *= 1.3;
 			hero_skytorpedo *= 1.3;
@@ -3118,7 +3121,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 
 		// 捕捉
 		// 如果要防止捕捉效果，可以直接简单的将 flag:no_ambush 设为true
-		if (enemy && core.enemys.hasSpecial(enemy.special, 27) && !core.hasFlag("no_ambush")) {
+		if (enemy && core.enemys.hasSpecial(enemy.special, 67) && !core.hasFlag("no_ambush")) {
 			var scan = enemy.zoneSquare ? core.utils.scan2 : core.utils.scan;
 			// 给周围格子加上【捕捉】记号
 			for (var dir in scan) {

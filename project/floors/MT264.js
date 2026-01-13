@@ -12,7 +12,7 @@ main.floors.MT264=
     "images": [],
     "ratio": 1,
     "defaultGround": "sand",
-    "bgm": "bgm7.mp3",
+    "bgm": "bgm5.mp3",
     "firstArrive": [
         {
             "type": "moveHero",
@@ -30,154 +30,12 @@ main.floors.MT264=
         },
         {
             "type": "text",
-            "text": "\t[艾森豪威尔]\f[clark.png,0,310]海空军增援已抵达！立即对敌军进行火力压制！",
+            "text": "\t[艾森豪威尔]\f[clark.png,0,310]海军增援已抵达！立即对敌军进行火力压制！",
             "pos": [
                 100,
                 300,
                 380
             ]
-        },
-        {
-            "type": "animate",
-            "name": "explore3",
-            "loc": [
-                2,
-                3
-            ],
-            "async": true
-        },
-        {
-            "type": "sleep",
-            "time": 500
-        },
-        {
-            "type": "animate",
-            "name": "explore3",
-            "loc": [
-                12,
-                1
-            ],
-            "async": true
-        },
-        {
-            "type": "sleep",
-            "time": 500
-        },
-        {
-            "type": "animate",
-            "name": "explore3",
-            "loc": [
-                4,
-                13
-            ],
-            "async": true
-        },
-        {
-            "type": "sleep",
-            "time": 500
-        },
-        {
-            "type": "animate",
-            "name": "explore3",
-            "loc": [
-                10,
-                7
-            ],
-            "async": true
-        },
-        {
-            "type": "sleep",
-            "time": 500
-        },
-        {
-            "type": "animate",
-            "name": "explore3",
-            "loc": [
-                11,
-                2
-            ],
-            "async": true
-        },
-        {
-            "type": "sleep",
-            "time": 500
-        },
-        {
-            "type": "animate",
-            "name": "explore3",
-            "loc": [
-                7,
-                7
-            ],
-            "async": true
-        },
-        {
-            "type": "sleep",
-            "time": 500
-        },
-        {
-            "type": "animate",
-            "name": "explore3",
-            "loc": [
-                3,
-                8
-            ],
-            "async": true
-        },
-        {
-            "type": "sleep",
-            "time": 500
-        },
-        {
-            "type": "animate",
-            "name": "explore3",
-            "loc": [
-                9,
-                4
-            ],
-            "async": true
-        },
-        {
-            "type": "sleep",
-            "time": 500
-        },
-        {
-            "type": "animate",
-            "name": "explore3",
-            "loc": [
-                5,
-                5
-            ],
-            "async": true
-        },
-        {
-            "type": "sleep",
-            "time": 500
-        },
-        {
-            "type": "animate",
-            "name": "explore3",
-            "loc": [
-                12,
-                12
-            ],
-            "async": true
-        },
-        {
-            "type": "sleep",
-            "time": 500
-        },
-        {
-            "type": "animate",
-            "name": "explore3",
-            "loc": [
-                6,
-                9
-            ],
-            "async": true
-        },
-        {
-            "type": "waitAsync"
         },
         {
             "type": "text",
@@ -187,6 +45,11 @@ main.floors.MT264=
                 300,
                 380
             ]
+        },
+        "\t[系统提示]接下来可以选择一艘战舰加入战斗，请谨慎选择！",
+        {
+            "type": "insert",
+            "name": "选择战舰"
         }
     ],
     "eachArrive": [],
@@ -222,12 +85,9 @@ main.floors.MT264=
                 "pos": 6
             },
             {
-                "type": "function",
-                "function": "function(){\nflags.skillList=[0,0,0,0,0,0,0]\n}"
-            },
-            {
-                "type": "function",
-                "function": "function(){\nflags.mission[35][0]=true\n}"
+                "type": "setValue",
+                "name": "flag:第36关通关",
+                "value": "1"
             },
             {
                 "type": "update"
@@ -237,7 +97,7 @@ main.floors.MT264=
                 "time": 500
             },
             {
-                "type": "hideStatusBar"
+                "type": "hideui"
             },
             {
                 "type": "update"
@@ -280,7 +140,7 @@ main.floors.MT264=
             },
             {
                 "type": "function",
-                "function": "function(){\nvar a = flags.mission[core.getFlag('stage')];\ncore.setFlag('@temp@A', a[0] + a[1] + a[2]);\n}"
+                "function": "function(){\nvar a = core.taskSystem.checkTask(0) ? 1 : 0,\n\tb = core.taskSystem.checkTask(1) ? 1 : 0,\n\tc = core.taskSystem.checkTask(2) ? 1 : 0;\ncore.setFlag('@temp@A', a + b + c);\n}"
             },
             {
                 "type": "if",
@@ -306,11 +166,6 @@ main.floors.MT264=
                             90
                         ],
                         "opacity": 1,
-                        "time": 500,
-                        "async": true
-                    },
-                    {
-                        "type": "sleep",
                         "time": 500
                     },
                     {
@@ -337,11 +192,6 @@ main.floors.MT264=
                                     90
                                 ],
                                 "opacity": 1,
-                                "time": 500,
-                                "async": true
-                            },
-                            {
-                                "type": "sleep",
                                 "time": 500
                             },
                             {
@@ -368,11 +218,6 @@ main.floors.MT264=
                                             90
                                         ],
                                         "opacity": 1,
-                                        "time": 500,
-                                        "async": true
-                                    },
-                                    {
-                                        "type": "sleep",
                                         "time": 500
                                     }
                                 ],
@@ -427,6 +272,9 @@ main.floors.MT264=
             },
             {
                 "type": "clearMap"
+            },
+            {
+                "type": "submitTask"
             },
             {
                 "type": "moveImage",
@@ -498,7 +346,7 @@ main.floors.MT264=
                         "floorId": "MT266",
                         "loc": [
                             7,
-                            7
+                            11
                         ],
                         "direction": "down"
                     }
@@ -513,8 +361,8 @@ main.floors.MT264=
                     "9月11日，德军集结了4个师，开始大规模反击，英美军队在巨大压力下被迫放弃了刚夺取的阵地。德国空军也大举出动，攻击盟军舰队，击沉数艘军舰，盟军航母上的寥寥几架喷火战斗机完全招架不住。",
                     "9月13日，德军发起更猛烈的反攻，英美防线被一分为二，克拉克第5集团军司令部都在德军的火力直接威胁之下。克拉克的信心开始动摇，命令他的参谋人员着手制定撤退计划。但他把撤退想的过于容易，对技术一无所知的他并不知道，登陆艇是无法接送地面部队返回的，更何况还要顶着德军的炮火。",
                     "情急之下，盟军2艘战列舰被紧急调往萨勒诺，空军也停止对德军纵深的轰炸，转而向萨勒诺的德军投弹，空降部队紧急更改空降地点，滩头卸载工作停止，就连厨子也拿起武器加入战斗，所有的力量都在向萨勒诺倾斜。",
-                    "最终在猛烈的炮火攻势下，德军终于撤退，但盟军也损失2艘驱逐舰，1艘战列舰和2艘巡洋舰遭重创。而凯赛林本来就没想让这支德军战胜盟军，只要求他拖延，现在的战果早已超过预期，撤退是完全被允许的。",
-                    "德军开始有秩序撤离萨勒诺地区，沿途对桥梁、公路都进行了破坏，埋设大量地雷和爆炸物，还以坚强的后卫部队不时借助有利地形，实施阻滞作战。因此盟军的推进速度极其缓慢，“雪崩”变成了“蜗牛”。",
+                    "最终在猛烈的炮火攻势下，德军终于撤退，但盟军也损失2艘驱逐舰，1艘战列舰和2艘巡洋舰遭重创。而凯赛林本来就没想在这里战胜盟军，只要拖延盟军一段时间即可。现在的战果早已超过预期，撤退是完全被允许的。",
+                    "德军开始有秩序撤离萨勒诺地区，沿途对桥梁、公路都进行了破坏，埋设大量地雷和爆炸物，还以坚强的后卫部队不时借助有利地形，实施阻滞作战。因此盟军的推进速度极其缓慢，导致“雪崩”行动变成了“蜗牛”行动。",
                     "萨勒诺的险胜表明，意大利的战事，短期内绝无可能结束，在法国登陆的计划应该尽快做好准备。而这些，离不开空中力量对德军纵深的战略轰炸。",
                     "但在这一时期，盟军的轰炸机群正面临着一个致命的问题。",
                     {
@@ -526,6 +374,33 @@ main.floors.MT264=
                         ]
                     }
                 ]
+            }
+        ],
+        "0,0": [
+            "你居然会开穿墙？但很可惜，这里禁止通行！",
+            {
+                "type": "animate",
+                "name": "hand",
+                "loc": "hero",
+                "async": true
+            },
+            {
+                "type": "jump",
+                "to": [
+                    2,
+                    0
+                ],
+                "time": 500,
+                "keep": true,
+                "async": true
+            },
+            {
+                "type": "waitAsync"
+            },
+            {
+                "type": "animate",
+                "name": "irritable",
+                "loc": "hero"
             }
         ]
     },
@@ -541,8 +416,8 @@ main.floors.MT264=
     [ 92,  0,  0, 82,266,150,518,227,518,518,518,150,410, 21, 21],
     [109,109,227,150, 22,150,150, 82,150,150,218,150, 81,631,631],
     [  0,218,  0,150,388,150,  0,632,  0,60032,60032,  0,266,542,542],
-    [60032, 81,150,150,60032,265,  0,150,  0, 81,  0,605,150,150,150],
-    [ 21,410,  0,60032,544, 81,150,150, 81,150,410,20031,150,519, 22],
+    [60032, 81,150,150,60032,265,  0,150,  0,235,  0,605,150,150,150],
+    [ 21,410,  0,60032,544,235,150,150, 81,150,410,20031,150,519, 22],
     [ 21,150,543,410,544,150,631,388,250,150,541,542,150, 22,227],
     [ 21,150,  0,150,150,150,544,60032,543,150,20031,250,150,631, 81],
     [631,150,20031,544,20031,544,  0,60032,543,150,250,605,250,  0,540],

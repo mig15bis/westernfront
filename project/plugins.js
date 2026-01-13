@@ -2545,7 +2545,7 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 					ff = core.getEquip(4),
 					fb = core.getEquip(5),
 					cacheFloor = core.status.checkBlock.cache?.cacheFloor;
-				let hasFighter = ff || fb === 'p38' || fb === 'typhoon' || fb === 'mosquito' || fb === 'p47d' || fb === 'p61' || bb === 'eagle' || bb === 'illustrious' || bb === 'raider' || bb === 'essex' || bb === 'enterprise' || bb === 'illus1941' || core.hasItem('independence'),
+				let hasFighter = ff || fb === 'p38' || fb === 'typhoon' || fb === 'mosquito' || fb === 'p47d' || fb === 'p61' || bb === 'eagle' || bb === 'illustrious' || bb === 'raider' || bb === 'essex' || bb === 'enterprise' || bb === 'illus1941' || (core.hasItem('independence') && (core.status.maps[core.status.floorId].area === '海洋' || core.status.maps[core.status.floorId].area === '浅滩')),
 					enemyFighter = cacheFloor?.战斗机 || cacheFloor?.重型战斗机;
 				if (hasFighter && !enemyFighter) {
 					skycontrol = 1;
@@ -4386,9 +4386,9 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 								}
 							} else {
 								if (!core.hasSpecial(core.material.enemys[nextair].special, 87)) {
-									flags.aoe[范围伤害目标] += core.getRealStatus('atk') * 4;
+									flags.aoe[范围伤害目标] = core.getRealStatus('atk') * 4;
 								} else {
-									flags.aoe[范围伤害目标] += core.getRealStatus('atk') * 1.2;
+									flags.aoe[范围伤害目标] = core.getRealStatus('atk') * 1.2;
 								}
 							}
 							if (core.getEnemyInfo(nextair, hero, X, Y, floorId).hp <= 0) {
@@ -4484,9 +4484,9 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 										}
 									} else {
 										if (!core.hasSpecial(core.material.enemys[nextair].special, 87)) {
-											flags.aoe[范围伤害目标] += core.getRealStatus('atk') * 4;
+											flags.aoe[范围伤害目标] = core.getRealStatus('atk') * 4;
 										} else {
-											flags.aoe[范围伤害目标] += core.getRealStatus('atk') * 1.2;
+											flags.aoe[范围伤害目标] = core.getRealStatus('atk') * 1.2;
 										}
 									}
 									if (core.getEnemyInfo(nextair, hero, X, Y, floorId).hp <= 0) {
@@ -4982,7 +4982,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 			id: 18,
 			strategy: false,
 			name: '孟菲斯美女号',
-			cost: 50,
+			cost: 200,
 			description: '下一场战斗中，友军不会受到任何伤害'
 		},
 
