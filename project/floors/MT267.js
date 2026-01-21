@@ -5,8 +5,8 @@ main.floors.MT267=
     "name": "德国",
     "width": 15,
     "height": 15,
-    "canFlyTo": false,
-    "canFlyFrom": false,
+    "canFlyTo": true,
+    "canFlyFrom": true,
     "canUseQuickShop": true,
     "cannotViewMap": false,
     "images": [
@@ -29,12 +29,13 @@ main.floors.MT267=
         {
             "type": "setValue",
             "name": "flag:escort",
-            "value": "true"
+            "value": "true",
+            "norefresh": true
         },
         {
             "type": "setValue",
             "name": "flag:友军血量",
-            "value": "2500000"
+            "value": "8000000"
         },
         "\t[护航战斗机中队队长,N573]呼叫第八航空队，我们是护航战斗机中队，在你们五点钟方向，收到请回答。",
         "\t[盟军指挥官,hero]收到，等你们很久了，过来会合。",
@@ -68,63 +69,91 @@ main.floors.MT267=
         "\t[系统提示]敌人战力重置中",
         {
             "type": "setEnemy",
-            "id": "me109f4",
+            "id": "flak88",
             "name": "hp",
-            "value": "40000",
+            "value": "100000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "me109f4",
+            "id": "flak88",
             "name": "atk",
-            "value": "3000",
+            "value": "80000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "me109f4",
+            "id": "flak88",
+            "name": "zone",
+            "value": "15000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "flak88",
             "name": "special",
-            "value": "[6]",
+            "value": "[15,40,64]",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "me109g6",
             "name": "hp",
-            "value": "42000",
+            "value": "140000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "me109g6",
             "name": "atk",
-            "value": "3500",
+            "value": "9000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "me109g6",
+            "id": "me110g",
+            "name": "hp",
+            "value": "160000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "me110g",
+            "name": "atk",
+            "value": "18000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "me110g",
             "name": "special",
-            "value": "[6]",
+            "value": "[30,64,90]",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "me110c",
+            "id": "me110g",
+            "name": "ammo",
+            "value": "2",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "ju88c6",
             "name": "hp",
-            "value": "60000",
+            "value": "170000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "me110c",
+            "id": "ju88c6",
             "name": "atk",
-            "value": "8000",
+            "value": "18000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "me110c",
+            "id": "ju88c6",
             "name": "special",
             "value": "[30,64]",
             "norefresh": true
@@ -132,43 +161,92 @@ main.floors.MT267=
         {
             "type": "setEnemy",
             "id": "ju88c6",
-            "name": "hp",
-            "value": "75000",
+            "name": "money",
+            "value": "8",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "ju88c6",
-            "name": "atk",
-            "value": "9500",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "ju88c6",
-            "name": "special",
-            "value": "[30,64]",
+            "name": "exp",
+            "value": "8",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "fw190a1",
             "name": "hp",
-            "value": "50000",
+            "value": "150000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "fw190a1",
             "name": "atk",
-            "value": "4000",
+            "value": "12000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "fw190a1",
             "name": "special",
-            "value": "[6]"
+            "value": "[6,30]",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "fw190a1",
+            "name": "money",
+            "value": "6",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "fw190a1",
+            "name": "exp",
+            "value": "6",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "fw190a3",
+            "name": "hp",
+            "value": "160000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "fw190a3",
+            "name": "atk",
+            "value": "12000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "fw190a3",
+            "name": "special",
+            "value": "[6,30,90]",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "fw190a3",
+            "name": "ammo",
+            "value": "2",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "fw190a3",
+            "name": "money",
+            "value": "6",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "fw190a3",
+            "name": "exp",
+            "value": "6"
         },
         "\t[系统提示]敌人战力重置完成",
         {
@@ -188,10 +266,93 @@ main.floors.MT267=
             "type": "callBook"
         },
         {
-            "type": "playSound",
-            "name": "xinxinmagic.mp3"
+            "type": "setValue",
+            "name": "flag:第37关通关",
+            "value": "0",
+            "norefresh": true
         },
-        "\t[系统提示]当前地图离开后不可返回"
+        {
+            "type": "setValue",
+            "name": "flag:mission38tsk3fail",
+            "value": "false"
+        },
+        {
+            "type": "setTask",
+            "name": "第37关任务1",
+            "n": 1,
+            "text": "抵达轰炸目标",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "第37关通关",
+                    "operator": "=",
+                    "text": "通过当前区域",
+                    "count": "1"
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第37关任务2",
+            "n": 1,
+            "text": "友军剩余血量不少于50w",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "友军血量",
+                    "operator": ">=",
+                    "text": "友军血量剩余",
+                    "count": "500000"
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第37关任务3",
+            "n": 1,
+            "text": "不走安全通道的情况下通关",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "mission38tsk3fail",
+                    "operator": "=",
+                    "text": "别开铁门",
+                    "count": "false"
+                }
+            ]
+        },
+        {
+            "type": "animate",
+            "name": "wonder",
+            "loc": "hero",
+            "async": true
+        },
+        {
+            "type": "sleep",
+            "time": 500
+        },
+        {
+            "type": "animate",
+            "name": "explore3",
+            "loc": "hero",
+            "async": true
+        },
+        {
+            "type": "setValue",
+            "name": "status:hp",
+            "operator": "-=",
+            "value": "5040",
+            "norefresh": true
+        },
+        {
+            "type": "setValue",
+            "name": "flag:友军血量",
+            "operator": "-=",
+            "value": "20160"
+        },
+        {
+            "type": "waitAsync"
+        }
     ],
     "eachArrive": [],
     "parallelDo": "",
@@ -213,20 +374,20 @@ main.floors.MT267=
     "cannotMove": {},
     "cannotMoveIn": {},
     "map": [
-    [542,542,542,372,140, 21,140, 91,140,378,  0,544,544,544,  0],
-    [140,140,140, 81,140,371,140,371,140, 81,140,140,140,140, 82],
-    [541,542,140,  0,277,  0,544, 81,544,544,544,140,541,541,372],
-    [140,369, 81,544,  0,140,140,140,140, 81,140,140,541,541,541],
-    [541,542,140,544,140,140,605,140,  0,369,  0,140,140,140,140],
-    [140,140,140,140,369,518,518,371,  0,140,  0,140,518,518,518],
-    [543,543,140,  0, 81,140,140,140,140,140,371,140,369,140,518],
-    [542,372, 82,  0,140,518,518,518,371,140,  0, 21,  0,140,140],
+    [542,542,542,372,140, 21,140, 91,140,  0,544,544,544,544,  0],
+    [140,140,140, 81,140,371,140,371,140,378,140,140,140,140, 82],
+    [541,542,140,  0,277,  0,544,  0,544,  0,544,140,541,541,372],
+    [140,  0,369,544,390,140,140,140,140,369,140,140,541,541,541],
+    [541,542,140,544,140,140,605,140,  0,371,  0,140,140,140,140],
+    [140,140,140,140,369,518,518,371,390,140,  0,140,518,518,518],
+    [543,543,140,  0, 81,140,140,140,140,140,  0,140,369,140,518],
+    [542,372, 82,  0,140,518,518,518,371,140,390, 21,390,140,140],
     [543,543,140,  0,140,140,140,140, 81,140,140, 81,140,140, 21],
     [140,140,140,369,140,544,369,  0,  0,140,  0,544,  0,369, 21],
     [542,140,  0,277,  0,544,140,  0,  0,369,  0,140,140,140,140],
-    [542,371,  0,140,371,140,140, 86,140,140, 81,140,521,521,521],
+    [542,371,390,140,371,140,140, 86,140,140, 81,140,523,523,523],
     [ 81,140,140,140,544,140,605,  0,605,140,  0,277,  0,140,277],
-    [378,  0,580,140,540,140,605,  0,605,140,140,140,140,140, 82],
+    [378,  0,580,140,540,140,606,  0,606,140,140,140,140,140, 82],
     [  0,580,581,140,540,140,605,  0,605,140,519,519,540,540,540]
 ],
     "bgmap": [

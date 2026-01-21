@@ -105,7 +105,7 @@ var maps_90f36752_8815_4be8_b32b_d7fad1d0542e =
 	"136": {"cls":"npc48","id":"npc3","faceIds":{"down":"npc0","left":"npc1","right":"npc2","up":"npc3"},"animate":1},
 	"137": {"cls":"npcs","id":"greenMan"},
 	"138": {"cls":"npcs","id":"blueTrader"},
-	"140": {"cls":"autotile","id":"autotile4"},
+	"140": {"cls":"autotile","id":"autotile4","canBreak":true},
 	"141": {"cls":"autotile","id":"autotile5","canBreak":true},
 	"142": {"cls":"autotile","id":"autotile6","canBreak":true},
 	"143": {"cls":"autotile","id":"autotile7","canBreak":true},

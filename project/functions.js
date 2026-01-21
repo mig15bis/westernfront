@@ -441,7 +441,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	//友伤
 	if (flags.skill !== 18) { //孟菲斯美女号
 		if (flags.escort && damage >= 0) { //拦截
-			var fredamage = (core.hasSpecial(enemyId, 64) ? 2 : 0.4) * damage;
+			var fredamage = Math.floor((core.hasSpecial(enemyId, 64) ? 2 : 0.4) * damage);
 			if (dd === 'classj') { fredamage *= 0.5 } //检测到装备（J驱），友伤减半
 			if (core.hasItem('casablanca') && (core.status.maps[core.status.floorId].area === '浅滩' || core.status.maps[core.status.floorId].area === '海洋')) { //卡萨布兰卡
 				fredamage *= 0.7;
@@ -713,6 +713,13 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		hint += ',' + core.getStatusLabel('exp') + '+' + exp; // hint += "，经验+" + exp;
 	core.drawTip(hint, enemy.id);
 
+	if (flags.skill === 18) { //孟菲斯美女·回血
+		if (core.status.hero.hp <= core.status.hero.hpmax * 0.75) {
+			core.status.hero.hp += core.status.hero.hpmax * 0.25;
+		} else {
+			core.status.hero.hp = core.status.hero.hpmax;
+		}
+	}
 	//清除临时护盾
 	flags.temmdef = 0;
 	if (core.hasSpecial(enemyId, 89) && core.getFlag('fire', 0) > 0) { //殉爆清火
@@ -1068,13 +1075,14 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		[80, "410mm舰炮", "每\r[red]4\r回合额外发射一轮主炮，伤害等于8倍攻击力"],
 		[81, "460mm舰炮", "大和级专用。每\r[red]5\r回合额外发射一轮主炮，伤害等于12倍攻击力"],
 		[82, "万岁冲锋", "主角的减伤效果合计不会超过10%"],
-		[83, "对空火箭", function (enemy) { return "回合开始时，发射\r[red]" + enemy.ammo ?? 0 + "\r枚火箭弹，每发火箭弹对受保护的目标造成5%攻击力的伤害" }],
+		[83, "R4M火箭弹", function (enemy) { return "主角首次进入当前楼层时，会被所有携带R4M火箭弹的敌机集火一次，每架飞机造成5%攻击力×载弹量的伤害。如果存在友军，则该伤害的80%由友军承受。该敌机携带" + (enemy.ammo ?? 0) + "枚R4M火箭弹" }],
 		[84, "永久工事", "战败后化作可破土墙阻拦道路"],
 		[85, "狼群·改", "与身周5×5范围内其他潜艇组成狼群。自身被击败后，主角遭受其他狼群成员潜艇的一轮30%倍率鱼雷齐射。", "#e6e099"],
 		[86, "重型装甲", "受到普攻和火箭弹伤害减少40%"],
 		[87, "隐蔽", "受到炸弹伤害减少70%"],
 		[88, "进水", "主角被该敌人的鱼雷命中后会获得“进水”debuff，存在期间主角每次战后损失等同于10%血限的血量。“金牌损管”可以在战后完成修复，或是通关后可自动消除", "#00FFFF"],
-		[89, "殉爆", "如果主角带着燃烧状态与该敌人战斗，则会消除所有燃烧层数，受到一次60%血量上限的殉爆伤害", "#FF0000"]
+		[89, "殉爆", "如果主角带着燃烧状态与该敌人战斗，则会消除所有燃烧层数，受到一次60%血量上限的殉爆伤害", "#FF0000"],
+		[90, "WG42火箭弹", function (enemy) { return "主角首次进入当前楼层时，会被所有携带WG.42火箭弹的敌机集火一次，每架飞机造成15%攻击力×载弹量的伤害。如果存在友军，则该伤害的80%由友军承受。该敌机携带" + (enemy.ammo ?? 0) + "枚WG42火箭弹" }]
 	];
 },
         "getEnemyInfo": function (enemy, hero, x, y, floorId) {
@@ -1929,7 +1937,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 				if (dd === 'classj' || dd === 'flecher') { //J级+弗莱彻级
 					hero_dc += yongshi.atk * 1.5;
 				}
-			} else if (turn === 1 && core.hasItem('casablanca')) { hero_dc += yongshi.atk; } //卡萨布兰卡·单独判定
+			} else if (turn === 1 && core.hasItem('casablanca')) { hero_dc += yongshi.atk * 0.4; } //卡萨布兰卡·单独判定
 		}
 
 		//主炮
