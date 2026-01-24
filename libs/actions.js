@@ -983,6 +983,7 @@ actions.prototype._keyUpCenterFly = function (keycode) {
 actions.prototype._clickc47 = function (x, y) {
     var posX = core.status.event.data.posX, posY = core.status.event.data.posY;
     core.ui.closePanel();
+    if (core.status.floorId !== 'MT284'){
     if (x == posX && y == posY) {
         if (!core.getBlockId(x, y)) {
     if (core.plugin.c47[x + ',' + y] === 1){
@@ -1033,16 +1034,23 @@ if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
                                 }
         }
         else {
+            core.status.hero.mana += 300;
             core.playSound('操作失败');
             core.drawTip('空降地点存在障碍物！');
         }
     }
+} else {
+    core.status.hero.mana += 300;
+    core.playSound('操作失败');
+    core.drawTip('当前楼层不能空降！');
+}
 }
 actions.prototype._keyUpc47 = function (keycode) {
     var x = core.bigmap.width - 1 - core.getHeroLoc('x'),
     y = core.bigmap.height - 1 - core.getHeroLoc('y');
     core.ui.closePanel();
     if (keycode == 51 || keycode == 13 || keycode == 32 || keycode == 67) {
+        if (core.status.floorId !== 'MT284') {
         if (!core.getBlockId(x, y)) {
     if (core.plugin.c47[x + ',' + y] === 1){
         core.status.hero.hp -= core.status.hero.hpmax * 0.8;
@@ -1096,9 +1104,15 @@ core.drawHero();
                                 }
         }
         else {
+            core.status.hero.mana += 300;
             core.playSound('操作失败');
             core.drawTip('空降地点存在障碍物！');
         }
+    } else {
+        core.status.hero.mana += 300;
+        core.playSound('操作失败');
+        core.drawTip('当前楼层不能空降！');
+    }
     }
 }
 

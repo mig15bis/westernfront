@@ -48,41 +48,24 @@ main.floors.MT281=
             "type": "previewUI",
             "action": [
                 {
-                    "type": "strokeRect",
-                    "x": 98,
-                    "y": 64,
-                    "width": 32,
-                    "height": 16,
-                    "style": [
-                        255,
-                        165,
-                        0,
-                        1
-                    ],
-                    "lineWidth": 5
+                    "type": "setValue",
+                    "name": "flag:bosshp",
+                    "value": "8"
                 },
                 {
-                    "type": "fillRect",
-                    "x": 98,
-                    "y": 64,
-                    "width": 32,
-                    "height": 16,
-                    "style": [
-                        255,
-                        0,
-                        0,
-                        1
-                    ]
+                    "type": "setValue",
+                    "name": "flag:bosshpmax",
+                    "value": "8"
                 },
                 {
                     "type": "strokeRect",
                     "x": 130,
                     "y": 64,
-                    "width": 32,
+                    "width": 256,
                     "height": 16,
                     "style": [
                         255,
-                        165,
+                        255,
                         0,
                         1
                     ],
@@ -92,7 +75,7 @@ main.floors.MT281=
                     "type": "fillRect",
                     "x": 130,
                     "y": 64,
-                    "width": 32,
+                    "width": 256,
                     "height": 16,
                     "style": [
                         255,
@@ -102,166 +85,23 @@ main.floors.MT281=
                     ]
                 },
                 {
-                    "type": "strokeRect",
-                    "x": 162,
-                    "y": 64,
-                    "width": 32,
-                    "height": 16,
+                    "type": "fillBoldText",
+                    "x": 130,
+                    "y": 48,
                     "style": [
                         255,
-                        165,
+                        0,
                         0,
                         1
                     ],
-                    "lineWidth": 5
-                },
-                {
-                    "type": "fillRect",
-                    "x": 162,
-                    "y": 64,
-                    "width": 32,
-                    "height": 16,
-                    "style": [
+                    "strokeStyle": [
                         255,
-                        0,
-                        0,
-                        1
-                    ]
-                },
-                {
-                    "type": "strokeRect",
-                    "x": 194,
-                    "y": 64,
-                    "width": 32,
-                    "height": 16,
-                    "style": [
-                        255,
-                        165,
+                        140,
                         0,
                         1
                     ],
-                    "lineWidth": 5
-                },
-                {
-                    "type": "fillRect",
-                    "x": 194,
-                    "y": 64,
-                    "width": 32,
-                    "height": 16,
-                    "style": [
-                        255,
-                        0,
-                        0,
-                        1
-                    ]
-                },
-                {
-                    "type": "strokeRect",
-                    "x": 226,
-                    "y": 64,
-                    "width": 32,
-                    "height": 16,
-                    "style": [
-                        255,
-                        165,
-                        0,
-                        1
-                    ],
-                    "lineWidth": 5
-                },
-                {
-                    "type": "fillRect",
-                    "x": 226,
-                    "y": 64,
-                    "width": 32,
-                    "height": 16,
-                    "style": [
-                        255,
-                        0,
-                        0,
-                        1
-                    ]
-                },
-                {
-                    "type": "strokeRect",
-                    "x": 258,
-                    "y": 64,
-                    "width": 32,
-                    "height": 16,
-                    "style": [
-                        255,
-                        165,
-                        0,
-                        1
-                    ],
-                    "lineWidth": 5
-                },
-                {
-                    "type": "fillRect",
-                    "x": 258,
-                    "y": 64,
-                    "width": 32,
-                    "height": 16,
-                    "style": [
-                        255,
-                        0,
-                        0,
-                        1
-                    ]
-                },
-                {
-                    "type": "strokeRect",
-                    "x": 290,
-                    "y": 64,
-                    "width": 32,
-                    "height": 16,
-                    "style": [
-                        255,
-                        165,
-                        0,
-                        1
-                    ],
-                    "lineWidth": 5
-                },
-                {
-                    "type": "fillRect",
-                    "x": 290,
-                    "y": 64,
-                    "width": 32,
-                    "height": 16,
-                    "style": [
-                        255,
-                        0,
-                        0,
-                        1
-                    ]
-                },
-                {
-                    "type": "strokeRect",
-                    "x": 322,
-                    "y": 64,
-                    "width": 32,
-                    "height": 16,
-                    "style": [
-                        255,
-                        165,
-                        0,
-                        1
-                    ],
-                    "lineWidth": 5
-                },
-                {
-                    "type": "fillRect",
-                    "x": 322,
-                    "y": 64,
-                    "width": 32,
-                    "height": 16,
-                    "style": [
-                        255,
-                        0,
-                        0,
-                        1
-                    ]
+                    "font": "20px number",
+                    "text": "8/8"
                 }
             ]
         }
@@ -305,10 +145,6 @@ main.floors.MT281=
                 "value": "1"
             },
             {
-                "type": "function",
-                "function": "function(){\nflags.skillList=[0,0,0,0,0,0,0]\n}"
-            },
-            {
                 "type": "update"
             },
             {
@@ -316,7 +152,7 @@ main.floors.MT281=
                 "time": 500
             },
             {
-                "type": "hideStatusBar"
+                "type": "hideui"
             },
             {
                 "type": "update"
@@ -359,7 +195,7 @@ main.floors.MT281=
             },
             {
                 "type": "function",
-                "function": "function(){\nvar a = flags.mission[core.getFlag('stage')];\ncore.setFlag('@temp@A', a[0] + a[1] + a[2]);\n}"
+                "function": "function(){\nvar a = core.taskSystem.checkTask(0) ? 1 : 0,\n\tb = core.taskSystem.checkTask(1) ? 1 : 0,\n\tc = core.taskSystem.checkTask(2) ? 1 : 0;\ncore.setFlag('@temp@A', a + b + c);\n}"
             },
             {
                 "type": "if",
@@ -385,11 +221,6 @@ main.floors.MT281=
                             90
                         ],
                         "opacity": 1,
-                        "time": 500,
-                        "async": true
-                    },
-                    {
-                        "type": "sleep",
                         "time": 500
                     },
                     {
@@ -416,11 +247,6 @@ main.floors.MT281=
                                     90
                                 ],
                                 "opacity": 1,
-                                "time": 500,
-                                "async": true
-                            },
-                            {
-                                "type": "sleep",
                                 "time": 500
                             },
                             {
@@ -447,11 +273,6 @@ main.floors.MT281=
                                             90
                                         ],
                                         "opacity": 1,
-                                        "time": 500,
-                                        "async": true
-                                    },
-                                    {
-                                        "type": "sleep",
                                         "time": 500
                                     }
                                 ],
@@ -489,7 +310,7 @@ main.floors.MT281=
             },
             {
                 "type": "drawTextContent",
-                "text": "   指挥官阁下为“约克公爵”号争取了\n足够多的时间，这次能够歼灭“沙恩霍斯\n特”号，他功不可没。\n   我们在大海上的重大威胁又少了一个\n。德军已经不敢再轻易派出大型水面战舰\n了，剩余的两艘战列舰我们也会持续跟踪\n。此外，我们应当向“沙恩霍斯特”号表现\n出的永不言弃精神学习，虽是敌人，但值\n得敬佩。",
+                "text": "   指挥官阁下为“约克公爵”号争取了\n足够多的时间，这次能够歼灭“沙恩霍斯\n特”号，他功不可没。\n   我们在大海上的重大威胁又少了一个\n。德军已经不敢再轻易派出大型水面战舰\n了，剩余的两艘战列舰我们也会持续跟踪\n。此外，我们应当向“沙恩霍斯特”号表\n现出的永不言弃精神学习。他们虽是敌人，\n但值得敬佩。",
                 "left": 60,
                 "top": 100,
                 "align": "left",
@@ -506,6 +327,9 @@ main.floors.MT281=
             },
             {
                 "type": "clearMap"
+            },
+            {
+                "type": "submitTask"
             },
             {
                 "type": "moveImage",
@@ -566,9 +390,6 @@ main.floors.MT281=
                 "value": "40"
             },
             {
-                "type": "pauseBgm"
-            },
-            {
                 "type": "confirm",
                 "text": "跳过剧情吗？",
                 "yes": [
@@ -599,7 +420,7 @@ main.floors.MT281=
                     "德军仅有的四艘战列舰——沙恩霍斯特、格奈森瑙、俾斯麦和提尔皮茨，盟军已歼灭其二。剩余的两艘战舰，不是躺在船坞维修，就是龟缩在挪威无法出航。",
                     "从此之后，德国海军大型水面战舰的战斗历程彻底结束，只剩下潜艇和飞机还能零星骚扰着盟军往返苏联的船队，但随着盟军反潜技术的加强和小型航母的空中掩护加入，德军的袭击效果也与日俱减，正如他们在陆地上被苏军打的节节溃败那样。",
                     "海上的战斗告一段落，现在回到陆地。意大利战场远比盟军想象中的要艰难得多，原计划在1943年10月就该被拿下的罗马，直到1944年仍然遥不可及。",
-                    "盟军的攻势在一个名叫卡西诺山的地方陷入停滞，这里位于罗马和那不勒斯之间，地势险要，还有德军布下的“古斯塔夫”防线，可以居高临下对盟军实施降维打击。这里把控着通向罗马主干道公路的咽喉，是盟军的必经之路。",
+                    "盟军的攻势在一个名叫卡西诺山的地方陷入停滞，这里位于罗马和那不勒斯之间，地势险要，还有德军布下的“古斯塔夫”防线，可以居高临下对盟军实施打击。这里把控着通向罗马主干道公路的咽喉，是盟军的必经之路。",
                     "为了夺下这个通向罗马必经之路的控制权，1944年1月，暴风雪过后，盟军再次开始了对卡西诺山的进攻。",
                     "而这场血腥的战役，将会把卡西诺山上历史悠久的基督教宝贵遗产，连同不计其数的英勇战士一起，焚烧殆尽。",
                     {
@@ -620,14 +441,51 @@ main.floors.MT281=
         "7,3": [
             {
                 "type": "if",
-                "condition": "(flag:MT281boss===0)",
+                "condition": "(flag:bosshp===8)",
                 "true": [
                     {
-                        "type": "clearMap",
-                        "x": 322,
-                        "y": 64,
-                        "width": 32,
-                        "height": 16
+                        "type": "previewUI",
+                        "action": [
+                            {
+                                "type": "setValue",
+                                "name": "flag:bosshp",
+                                "operator": "-=",
+                                "value": "1"
+                            },
+                            {
+                                "type": "clearMap",
+                                "x": 128,
+                                "y": 30,
+                                "width": 100,
+                                "height": 30
+                            },
+                            {
+                                "type": "clearMap",
+                                "x": "386 - ((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                "y": 64,
+                                "width": "((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                "height": 16
+                            },
+                            {
+                                "type": "fillBoldText",
+                                "x": 130,
+                                "y": 48,
+                                "style": [
+                                    255,
+                                    0,
+                                    0,
+                                    1
+                                ],
+                                "strokeStyle": [
+                                    255,
+                                    140,
+                                    0,
+                                    1
+                                ],
+                                "font": "20px number",
+                                "text": "7/8"
+                            }
+                        ]
                     },
                     {
                         "type": "setBlock",
@@ -658,16 +516,30 @@ main.floors.MT281=
                         "type": "waitAsync"
                     },
                     {
-                        "type": "setValue",
-                        "name": "flag:MT281boss",
-                        "operator": "+=",
-                        "value": "1"
-                    },
-                    {
                         "type": "playSound",
                         "name": "xinxinmagic.mp3"
                     },
-                    "\t[系统提示]沙恩霍斯特号战列舰 攻击力小幅提升了",
+                    "\t[系统提示]沙恩霍斯特号战列舰 攻击力小幅提升了，获得“殉爆”技能",
+                    {
+                        "type": "setEnemy",
+                        "id": "scharnhost",
+                        "name": "hp",
+                        "value": "10000000",
+                        "norefresh": true
+                    },
+                    {
+                        "type": "setEnemy",
+                        "id": "scharnhost",
+                        "name": "atk",
+                        "value": "13000",
+                        "norefresh": true
+                    },
+                    {
+                        "type": "setEnemy",
+                        "id": "scharnhost",
+                        "name": "special",
+                        "value": "[31,35,36,37,86,89]"
+                    },
                     {
                         "type": "sleep",
                         "time": 500
@@ -679,14 +551,51 @@ main.floors.MT281=
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT281boss===1)",
+                        "condition": "(flag:bosshp===7)",
                         "true": [
                             {
-                                "type": "clearMap",
-                                "x": 290,
-                                "y": 64,
-                                "width": 32,
-                                "height": 16
+                                "type": "previewUI",
+                                "action": [
+                                    {
+                                        "type": "setValue",
+                                        "name": "flag:bosshp",
+                                        "operator": "-=",
+                                        "value": "1"
+                                    },
+                                    {
+                                        "type": "clearMap",
+                                        "x": 128,
+                                        "y": 30,
+                                        "width": 100,
+                                        "height": 30
+                                    },
+                                    {
+                                        "type": "clearMap",
+                                        "x": "386 - ((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                        "y": 64,
+                                        "width": "((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                        "height": 16
+                                    },
+                                    {
+                                        "type": "fillBoldText",
+                                        "x": 130,
+                                        "y": 48,
+                                        "style": [
+                                            255,
+                                            0,
+                                            0,
+                                            1
+                                        ],
+                                        "strokeStyle": [
+                                            255,
+                                            140,
+                                            0,
+                                            1
+                                        ],
+                                        "font": "20px number",
+                                        "text": "6/8"
+                                    }
+                                ]
                             },
                             {
                                 "type": "setBlock",
@@ -717,16 +626,16 @@ main.floors.MT281=
                                 "type": "waitAsync"
                             },
                             {
-                                "type": "setValue",
-                                "name": "flag:MT281boss",
-                                "operator": "+=",
-                                "value": "1"
-                            },
-                            {
                                 "type": "playSound",
                                 "name": "xinxinmagic.mp3"
                             },
-                            "\t[系统提示]沙恩霍斯特号战列舰 生命值和攻击力提升了",
+                            "\t[系统提示]沙恩霍斯特号战列舰 获得“燃烧”技能",
+                            {
+                                "type": "setEnemy",
+                                "id": "scharnhost",
+                                "name": "special",
+                                "value": "[31,35,36,37,47,86,89]"
+                            },
                             {
                                 "type": "sleep",
                                 "time": 500
@@ -738,14 +647,51 @@ main.floors.MT281=
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT281boss===2)",
+                                "condition": "(flag:bosshp===6)",
                                 "true": [
                                     {
-                                        "type": "clearMap",
-                                        "x": 258,
-                                        "y": 64,
-                                        "width": 32,
-                                        "height": 16
+                                        "type": "previewUI",
+                                        "action": [
+                                            {
+                                                "type": "setValue",
+                                                "name": "flag:bosshp",
+                                                "operator": "-=",
+                                                "value": "1"
+                                            },
+                                            {
+                                                "type": "clearMap",
+                                                "x": 128,
+                                                "y": 30,
+                                                "width": 100,
+                                                "height": 30
+                                            },
+                                            {
+                                                "type": "clearMap",
+                                                "x": "386 - ((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                                "y": 64,
+                                                "width": "((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                                "height": 16
+                                            },
+                                            {
+                                                "type": "fillBoldText",
+                                                "x": 130,
+                                                "y": 48,
+                                                "style": [
+                                                    255,
+                                                    0,
+                                                    0,
+                                                    1
+                                                ],
+                                                "strokeStyle": [
+                                                    255,
+                                                    140,
+                                                    0,
+                                                    1
+                                                ],
+                                                "font": "20px number",
+                                                "text": "5/8"
+                                            }
+                                        ]
                                     },
                                     {
                                         "type": "setBlock",
@@ -776,33 +722,72 @@ main.floors.MT281=
                                         "type": "waitAsync"
                                     },
                                     {
-                                        "type": "setValue",
-                                        "name": "flag:MT281boss",
-                                        "operator": "+=",
-                                        "value": "1"
-                                    },
-                                    {
                                         "type": "playSound",
                                         "name": "xinxinmagic.mp3"
                                     },
-                                    "\t[系统提示]沙恩霍斯特号战列舰 开启了“截断”技能",
+                                    "\t[系统提示]沙恩霍斯特号战列舰 获得“截断”技能，移除“燃烧”技能",
+                                    {
+                                        "type": "setEnemy",
+                                        "id": "scharnhost",
+                                        "name": "special",
+                                        "value": "[31,35,36,37,42,86,89]"
+                                    },
                                     {
                                         "type": "sleep",
                                         "time": 500
                                     },
                                     {
                                         "type": "waitAsync"
-                                    },
+                                    }
+                                ],
+                                "false": [
                                     {
                                         "type": "if",
-                                        "condition": "(flag:MT281boss===3)",
+                                        "condition": "(flag:bosshp===5)",
                                         "true": [
                                             {
-                                                "type": "clearMap",
-                                                "x": 226,
-                                                "y": 64,
-                                                "width": 32,
-                                                "height": 16
+                                                "type": "previewUI",
+                                                "action": [
+                                                    {
+                                                        "type": "setValue",
+                                                        "name": "flag:bosshp",
+                                                        "operator": "-=",
+                                                        "value": "1"
+                                                    },
+                                                    {
+                                                        "type": "clearMap",
+                                                        "x": 128,
+                                                        "y": 30,
+                                                        "width": 100,
+                                                        "height": 30
+                                                    },
+                                                    {
+                                                        "type": "clearMap",
+                                                        "x": "386 - ((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                                        "y": 64,
+                                                        "width": "((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                                        "height": 16
+                                                    },
+                                                    {
+                                                        "type": "fillBoldText",
+                                                        "x": 130,
+                                                        "y": 48,
+                                                        "style": [
+                                                            255,
+                                                            0,
+                                                            0,
+                                                            1
+                                                        ],
+                                                        "strokeStyle": [
+                                                            255,
+                                                            140,
+                                                            0,
+                                                            1
+                                                        ],
+                                                        "font": "20px number",
+                                                        "text": "4/8"
+                                                    }
+                                                ]
                                             },
                                             {
                                                 "type": "setBlock",
@@ -833,16 +818,22 @@ main.floors.MT281=
                                                 "type": "waitAsync"
                                             },
                                             {
-                                                "type": "setValue",
-                                                "name": "flag:MT281boss",
-                                                "operator": "+=",
-                                                "value": "1"
-                                            },
-                                            {
                                                 "type": "playSound",
                                                 "name": "xinxinmagic.mp3"
                                             },
-                                            "\t[系统提示]沙恩霍斯特号战列舰 开启了“三连击”技能",
+                                            "\t[系统提示]沙恩霍斯特号战列舰 移除异常状态类技能，获得“二连击”技能",
+                                            {
+                                                "type": "setEnemy",
+                                                "id": "scharnhost",
+                                                "name": "special",
+                                                "value": "[6,31,35,36,37]"
+                                            },
+                                            {
+                                                "type": "setEnemy",
+                                                "id": "scharnhost",
+                                                "name": "n",
+                                                "value": "2"
+                                            },
                                             {
                                                 "type": "sleep",
                                                 "time": 500
@@ -854,14 +845,51 @@ main.floors.MT281=
                                         "false": [
                                             {
                                                 "type": "if",
-                                                "condition": "(flag:MT281boss===4)",
+                                                "condition": "(flag:bosshp===4)",
                                                 "true": [
                                                     {
-                                                        "type": "clearMap",
-                                                        "x": 194,
-                                                        "y": 64,
-                                                        "width": 32,
-                                                        "height": 16
+                                                        "type": "previewUI",
+                                                        "action": [
+                                                            {
+                                                                "type": "setValue",
+                                                                "name": "flag:bosshp",
+                                                                "operator": "-=",
+                                                                "value": "1"
+                                                            },
+                                                            {
+                                                                "type": "clearMap",
+                                                                "x": 128,
+                                                                "y": 30,
+                                                                "width": 100,
+                                                                "height": 30
+                                                            },
+                                                            {
+                                                                "type": "clearMap",
+                                                                "x": "386 - ((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                                                "y": 64,
+                                                                "width": "((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                                                "height": 16
+                                                            },
+                                                            {
+                                                                "type": "fillBoldText",
+                                                                "x": 130,
+                                                                "y": 48,
+                                                                "style": [
+                                                                    255,
+                                                                    0,
+                                                                    0,
+                                                                    1
+                                                                ],
+                                                                "strokeStyle": [
+                                                                    255,
+                                                                    140,
+                                                                    0,
+                                                                    1
+                                                                ],
+                                                                "font": "20px number",
+                                                                "text": "3/8"
+                                                            }
+                                                        ]
                                                     },
                                                     {
                                                         "type": "setBlock",
@@ -891,12 +919,6 @@ main.floors.MT281=
                                                     {
                                                         "type": "waitAsync"
                                                     },
-                                                    {
-                                                        "type": "setValue",
-                                                        "name": "flag:MT281boss",
-                                                        "operator": "+=",
-                                                        "value": "1"
-                                                    },
                                                     "\t[埃里希·贝（沙恩霍斯特号指挥官）,scharnhost]目标受重创，继续攻击，拿下这个战果……",
                                                     {
                                                         "type": "animate",
@@ -916,7 +938,7 @@ main.floors.MT281=
                                                     },
                                                     {
                                                         "type": "setBlock",
-                                                        "number": "N584",
+                                                        "number": "N586",
                                                         "loc": [
                                                             [
                                                                 7,
@@ -931,6 +953,7 @@ main.floors.MT281=
                                                         "name": "xinxinmagic.mp3"
                                                     },
                                                     "\t[系统提示]友军战列舰 乔治五世级三号舰 约克公爵号 加入战斗！已自动装备！",
+                                                    "\t[系统提示]沙恩霍斯特号战列舰 移除“二连击”技能，获得“殉爆”技能",
                                                     {
                                                         "type": "setValue",
                                                         "name": "item:kinggeorge5",
@@ -941,7 +964,12 @@ main.floors.MT281=
                                                         "type": "loadEquip",
                                                         "id": "kinggeorge5"
                                                     },
-                                                    "\t[系统提示]沙恩霍斯特号战列舰受损 失去技能组",
+                                                    {
+                                                        "type": "setEnemy",
+                                                        "id": "scharnhost",
+                                                        "name": "special",
+                                                        "value": "[31,35,36,37,89]"
+                                                    },
                                                     {
                                                         "type": "hide",
                                                         "loc": [
@@ -963,14 +991,51 @@ main.floors.MT281=
                                                 "false": [
                                                     {
                                                         "type": "if",
-                                                        "condition": "(flag:MT281boss===5)",
+                                                        "condition": "(flag:bosshp===3)",
                                                         "true": [
                                                             {
-                                                                "type": "clearMap",
-                                                                "x": 162,
-                                                                "y": 64,
-                                                                "width": 32,
-                                                                "height": 16
+                                                                "type": "previewUI",
+                                                                "action": [
+                                                                    {
+                                                                        "type": "setValue",
+                                                                        "name": "flag:bosshp",
+                                                                        "operator": "-=",
+                                                                        "value": "1"
+                                                                    },
+                                                                    {
+                                                                        "type": "clearMap",
+                                                                        "x": 128,
+                                                                        "y": 30,
+                                                                        "width": 100,
+                                                                        "height": 30
+                                                                    },
+                                                                    {
+                                                                        "type": "clearMap",
+                                                                        "x": "386 - ((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                                                        "y": 64,
+                                                                        "width": "((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                                                        "height": 16
+                                                                    },
+                                                                    {
+                                                                        "type": "fillBoldText",
+                                                                        "x": 130,
+                                                                        "y": 48,
+                                                                        "style": [
+                                                                            255,
+                                                                            0,
+                                                                            0,
+                                                                            1
+                                                                        ],
+                                                                        "strokeStyle": [
+                                                                            255,
+                                                                            140,
+                                                                            0,
+                                                                            1
+                                                                        ],
+                                                                        "font": "20px number",
+                                                                        "text": "2/8"
+                                                                    }
+                                                                ]
                                                             },
                                                             {
                                                                 "type": "setBlock",
@@ -1001,16 +1066,23 @@ main.floors.MT281=
                                                                 "type": "waitAsync"
                                                             },
                                                             {
-                                                                "type": "setValue",
-                                                                "name": "flag:MT281boss",
-                                                                "operator": "+=",
-                                                                "value": "1"
-                                                            },
-                                                            {
                                                                 "type": "playSound",
                                                                 "name": "xinxinmagic.mp3"
                                                             },
-                                                            "\t[系统提示]沙恩霍斯特号战列舰 主炮炮塔被摧毁 攻击力降低，失去相应技能",
+                                                            "\t[系统提示]沙恩霍斯特号战列舰 主炮炮塔被摧毁 攻击力降低，失去“殉爆”技能",
+                                                            {
+                                                                "type": "setEnemy",
+                                                                "id": "scharnhost",
+                                                                "name": "atk",
+                                                                "value": "10000",
+                                                                "norefresh": true
+                                                            },
+                                                            {
+                                                                "type": "setEnemy",
+                                                                "id": "scharnhost",
+                                                                "name": "special",
+                                                                "value": "[35,36]"
+                                                            },
                                                             {
                                                                 "type": "sleep",
                                                                 "time": 500
@@ -1022,14 +1094,51 @@ main.floors.MT281=
                                                         "false": [
                                                             {
                                                                 "type": "if",
-                                                                "condition": "(flag:MT281boss===6)",
+                                                                "condition": "(flag:bosshp===2)",
                                                                 "true": [
                                                                     {
-                                                                        "type": "clearMap",
-                                                                        "x": 130,
-                                                                        "y": 64,
-                                                                        "width": 32,
-                                                                        "height": 16
+                                                                        "type": "previewUI",
+                                                                        "action": [
+                                                                            {
+                                                                                "type": "setValue",
+                                                                                "name": "flag:bosshp",
+                                                                                "operator": "-=",
+                                                                                "value": "1"
+                                                                            },
+                                                                            {
+                                                                                "type": "clearMap",
+                                                                                "x": 128,
+                                                                                "y": 30,
+                                                                                "width": 100,
+                                                                                "height": 30
+                                                                            },
+                                                                            {
+                                                                                "type": "clearMap",
+                                                                                "x": "386 - ((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                                                                "y": 64,
+                                                                                "width": "((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                                                                "height": 16
+                                                                            },
+                                                                            {
+                                                                                "type": "fillBoldText",
+                                                                                "x": 130,
+                                                                                "y": 48,
+                                                                                "style": [
+                                                                                    255,
+                                                                                    0,
+                                                                                    0,
+                                                                                    1
+                                                                                ],
+                                                                                "strokeStyle": [
+                                                                                    255,
+                                                                                    140,
+                                                                                    0,
+                                                                                    1
+                                                                                ],
+                                                                                "font": "20px number",
+                                                                                "text": "1/8"
+                                                                            }
+                                                                        ]
                                                                     },
                                                                     {
                                                                         "type": "setBlock",
@@ -1059,18 +1168,46 @@ main.floors.MT281=
                                                                     {
                                                                         "type": "waitAsync"
                                                                     },
-                                                                    {
-                                                                        "type": "setValue",
-                                                                        "name": "flag:MT281boss",
-                                                                        "operator": "+=",
-                                                                        "value": "1"
-                                                                    },
                                                                     "\t[埃里希·贝（沙恩霍斯特号指挥官）,scharnhost]向邓尼茨元帅报告，我舰已受重创，引擎被毁，已无力回天。但只要还有一发炮弹，我们就不会放弃战斗！直至沉没！",
                                                                     {
                                                                         "type": "playSound",
                                                                         "name": "xinxinmagic.mp3"
                                                                     },
-                                                                    "\t[系统提示]沙恩霍斯特号战列舰 最后的挣扎！生命值、攻击力降低！",
+                                                                    "\t[系统提示]沙恩霍斯特号战列舰 最后的挣扎！生命值、攻击力降低，失去所有技能！",
+                                                                    {
+                                                                        "type": "setEnemy",
+                                                                        "id": "scharnhost",
+                                                                        "name": "hp",
+                                                                        "value": "600000",
+                                                                        "norefresh": true
+                                                                    },
+                                                                    {
+                                                                        "type": "setEnemy",
+                                                                        "id": "scharnhost",
+                                                                        "name": "atk",
+                                                                        "value": "5000",
+                                                                        "norefresh": true
+                                                                    },
+                                                                    {
+                                                                        "type": "setEnemy",
+                                                                        "id": "scharnhost",
+                                                                        "name": "special",
+                                                                        "value": "[]",
+                                                                        "norefresh": true
+                                                                    },
+                                                                    {
+                                                                        "type": "setEnemy",
+                                                                        "id": "scharnhost",
+                                                                        "name": "money",
+                                                                        "value": "200",
+                                                                        "norefresh": true
+                                                                    },
+                                                                    {
+                                                                        "type": "setEnemy",
+                                                                        "id": "scharnhost",
+                                                                        "name": "exp",
+                                                                        "value": "200"
+                                                                    },
                                                                     {
                                                                         "type": "sleep",
                                                                         "time": 500
@@ -1082,14 +1219,51 @@ main.floors.MT281=
                                                                 "false": [
                                                                     {
                                                                         "type": "if",
-                                                                        "condition": "(flag:MT281boss===7)",
+                                                                        "condition": "(flag:bosshp===1)",
                                                                         "true": [
                                                                             {
-                                                                                "type": "clearMap",
-                                                                                "x": 98,
-                                                                                "y": 64,
-                                                                                "width": 32,
-                                                                                "height": 16
+                                                                                "type": "previewUI",
+                                                                                "action": [
+                                                                                    {
+                                                                                        "type": "setValue",
+                                                                                        "name": "flag:bosshp",
+                                                                                        "operator": "-=",
+                                                                                        "value": "1"
+                                                                                    },
+                                                                                    {
+                                                                                        "type": "clearMap",
+                                                                                        "x": 128,
+                                                                                        "y": 30,
+                                                                                        "width": 100,
+                                                                                        "height": 30
+                                                                                    },
+                                                                                    {
+                                                                                        "type": "clearMap",
+                                                                                        "x": "386 - ((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                                                                        "y": 64,
+                                                                                        "width": "((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                                                                        "height": 16
+                                                                                    },
+                                                                                    {
+                                                                                        "type": "fillBoldText",
+                                                                                        "x": 130,
+                                                                                        "y": 48,
+                                                                                        "style": [
+                                                                                            255,
+                                                                                            0,
+                                                                                            0,
+                                                                                            1
+                                                                                        ],
+                                                                                        "strokeStyle": [
+                                                                                            255,
+                                                                                            140,
+                                                                                            0,
+                                                                                            1
+                                                                                        ],
+                                                                                        "font": "20px number",
+                                                                                        "text": "0/8"
+                                                                                    }
+                                                                                ]
                                                                             },
                                                                             {
                                                                                 "type": "setBlock",
@@ -1166,17 +1340,7 @@ main.floors.MT281=
                                                                                     ]
                                                                                 ],
                                                                                 "remove": true,
-                                                                                "time": 1000
-                                                                            },
-                                                                            {
-                                                                                "type": "setBlock",
-                                                                                "number": "X10207",
-                                                                                "loc": [
-                                                                                    [
-                                                                                        7,
-                                                                                        3
-                                                                                    ]
-                                                                                ]
+                                                                                "time": 2000
                                                                             },
                                                                             "\t[弗雷泽（英国本土舰队司令，坐镇约克公爵号）,N586]他们直到最后一刻，都没有放弃用仅存的武器向我们发起还击。虽是敌人，但值得敬佩。",
                                                                             "\t[弗雷泽（英国本土舰队司令，坐镇约克公爵号）,N586]先生们，与沙恩霍斯特号的战斗已经以我们的胜利而告终。我希望当你们中的任何人指挥一艘战舰面对强大数倍的对手时，会像今天沙恩霍斯特号的指挥官一样勇敢。",
@@ -1194,14 +1358,6 @@ main.floors.MT281=
                                                                                 "name": "item:kinggeorge5",
                                                                                 "operator": "-=",
                                                                                 "value": "1"
-                                                                            },
-                                                                            {
-                                                                                "type": "function",
-                                                                                "function": "function(){\nflags.mission[39][0]=true\n}"
-                                                                            },
-                                                                            {
-                                                                                "type": "playSound",
-                                                                                "name": "torpeodoexplo.wav"
                                                                             },
                                                                             {
                                                                                 "type": "hide",
@@ -1242,8 +1398,7 @@ main.floors.MT281=
                                             }
                                         ]
                                     }
-                                ],
-                                "false": []
+                                ]
                             }
                         ]
                     }

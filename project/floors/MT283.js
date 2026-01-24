@@ -18,13 +18,15 @@ main.floors.MT283=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        
         {
             "type": "update"
         },
         {
             "type": "setCurtain",
             "time": 500
+        },
+        {
+            "type": "showui"
         },
         {
             "type": "playSound",
@@ -86,148 +88,25 @@ main.floors.MT283=
                 "type": "playSound",
                 "name": "xinxinmagic.mp3"
             },
-            "\t[系统提示]当前区域敌人特点：大量步兵，炮兵和建筑协同作战，少量坦克和飞机。\n推荐携带技能：空战王牌、扫雷、抵抗运动、破译、补给线、空中列车、潜行\n推荐出战装备：M4A1（76W）、地狱猫、蚊式。"
+            "\t[系统提示]当前区域敌人特点：大量步兵，炮兵和建筑协同作战，少量坦克和飞机。\n推荐携带技能：空战王牌、扫雷、破译、空中打击、补给线、C-47空中列车、装甲突击\n推荐出战装备：M4A1（76W）、地狱猫、蚊式。",
+            "可以在此清空技能槽，以便于玩家重新选择技能",
+            {
+                "type": "confirm",
+                "text": "清空技能槽？",
+                "yes": [
+                    {
+                        "type": "function",
+                        "function": "function(){\nflags.skillList=[0,0,0,0,0,0,0]\n}"
+                    }
+                ],
+                "no": []
+            }
         ],
         "1,8": [
             "\t[维修人员,N514]长官，所有战车准备就绪！",
             {
-                "type": "choices",
-                "text": "\t[维修人员,N514]请选择出战坦克",
-                "choices": [
-                    {
-                        "text": "装备 雷诺FT17",
-                        "icon": "ft17",
-                        "need": "core.hasItem('ft17')&&!core.hasEquip('ft17')",
-                        "condition": "core.hasItem('ft17')&&!core.hasEquip('ft17')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "ft17"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 哈奇开斯H35",
-                        "icon": "h35",
-                        "need": "core.hasItem('h35')&&!core.hasEquip('h35')",
-                        "condition": "core.hasItem('h35')&&!core.hasEquip('h35')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "h35"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 十字军巡洋坦克",
-                        "icon": "crusades",
-                        "need": "core.hasItem('crusades')&&!core.hasEquip('crusades')",
-                        "condition": "core.hasItem('crusades')&&!core.hasEquip('crusades')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "crusades"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 瓦伦丁步兵坦克",
-                        "icon": "valentine",
-                        "need": "core.hasItem('valentine')&&!core.hasEquip('valentine')",
-                        "condition": "core.hasItem('valentine')&&!core.hasEquip('valentine')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "valentine"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 玛蒂尔达步兵坦克",
-                        "icon": "matilda",
-                        "need": "core.hasItem('matilda')&&!core.hasEquip('matilda')",
-                        "condition": "core.hasItem('matilda')&&!core.hasEquip('matilda')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "matilda"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 M3格兰特中型坦克",
-                        "icon": "m3grant",
-                        "need": "core.hasItem('m3grant')&&!core.hasEquip('m3grant')",
-                        "condition": "core.hasItem('m3grant')&&!core.hasEquip('m3grant')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "m3grant"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 M4谢尔曼中型坦克",
-                        "icon": "m4",
-                        "need": "core.hasItem('m4')&&!core.hasEquip('m4')",
-                        "condition": "core.hasItem('m4')&&!core.hasEquip('m4')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "m4"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 丘吉尔MK3步兵坦克",
-                        "icon": "churchillmk3",
-                        "need": "core.hasItem('churchillmk3')&&!core.hasEquip('churchillmk3')",
-                        "condition": "core.hasItem('churchillmk3')&&!core.hasEquip('churchillmk3')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "churchillmk3"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 M4A2谢尔曼",
-                        "icon": "m4a2",
-                        "need": "core.hasItem('m4a2')&&!core.hasEquip('m4a2')",
-                        "condition": "core.hasItem('m4a2')&&!core.hasEquip('m4a2')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "m4a2"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "装备 M4A1（76W）谢尔曼",
-                        "icon": "m4a3",
-                        "need": "core.hasItem('m4a3')&&!core.hasEquip('m4a3')",
-                        "condition": "core.hasItem('m4a3')&&!core.hasEquip('m4a3')",
-                        "action": [
-                            {
-                                "type": "loadEquip",
-                                "id": "m4a3"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "卸下当前坦克",
-                        "action": [
-                            {
-                                "type": "unloadEquip",
-                                "pos": 0
-                            }
-                        ]
-                    },
-                    {
-                        "text": "返回",
-                        "action": []
-                    }
-                ]
+                "type": "insert",
+                "name": "选择坦克"
             }
         ],
         "13,8": [
@@ -240,11 +119,23 @@ main.floors.MT283=
                         "text": "装备 P40B战斧",
                         "icon": "p40c",
                         "need": "core.hasItem('p40c')&&!core.hasEquip('p40c')",
-                        "condition": "core.hasItem('spitfiremk1')&&!core.hasEquip('spitfiremk1')",
+                        "condition": "core.hasItem('p40c')&&!core.hasEquip('p40c')",
                         "action": [
                             {
                                 "type": "loadEquip",
                                 "id": "p40c"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "装备 飓风MK1型",
+                        "icon": "hurricanemk1",
+                        "need": "core.hasItem('hurricanemk1')&&!core.hasEquip('hurricanemk1')",
+                        "condition": "core.hasItem('hurricanemk1')&&!core.hasEquip('hurricanemk1')",
+                        "action": [
+                            {
+                                "type": "loadEquip",
+                                "id": "spitfiremk1"
                             }
                         ]
                     },
@@ -485,6 +376,12 @@ main.floors.MT283=
                     }
                 ]
             }
+        ],
+        "7,1": [
+            {
+                "type": "insert",
+                "name": "退役武器"
+            }
         ]
     },
     "changeFloor": {},
@@ -497,11 +394,11 @@ main.floors.MT283=
     "cannotMoveIn": {},
     "map": [
     [50049,50049,50049,30509,30509,30509,30509,  0,30509,30509,30509,30509,50049,50049,50049],
-    [50049,30509,30509,550,550,550,550,  0,550,550,550,550,30509,30509,50049],
-    [30509,  0,  0,504,  0,  0,  0,  0,  0,  0,  0,504,  0,  0,30509],
-    [  0,504,504,  0,  0,  0,  0,  0,  0,  0,  0,  0,504,  0,  0],
-    [504,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,504,504],
-    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [50049,30509,30509,  0,  0,  0,  0,599,  0,  0,  0,  0,30509,30509,50049],
+    [30509,140136,140137,140138,  0,  0,  0,  0,  0,  0,  0,140136,140137,140138,30509],
+    [  0,140153,140154,140155,  0,  0,  0,  0,  0,  0,  0,140153,140154,140155,  0],
+    [  0,140136,140137,140138,  0,  0,  0,  0,  0,  0,  0,140136,140137,140138,  0],
+    [  0,140153,140154,140155,  0,  0,  0,  0,  0,  0,  0,140153,140154,140155,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [100009,100010,100010,  0,  0,  0,  0,  0,  0,  0,  0,  0,100010,100010,100011],
     [100017,514,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,516,100019],
@@ -509,23 +406,23 @@ main.floors.MT283=
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,10289,  0,  0,  0,  0,  0],
     [30516,30516,30516,30516,  0,  0,100017,  0,100019,  0,  0,  0,  0,  0,  0],
-    [30516,30516,30516,30516,  0,  0,100017,517,100019,  0,  0,  0,30526,30526,30526],
-    [30540,30540,30540,30540,  0,  0,100025,100026,100027,  0,  0,  0,30534,30534,30534]
+    [30516,30516,30516,30516,  0,  0,100017,517,100019,  0,  0,  0,140136,140137,140138],
+    [30540,30540,30540,30540,  0,  0,100025,100026,100027,  0,  0,  0,140153,140154,140155]
 ],
     "bgmap": [
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
-    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,  0,  0,  0,  0,559,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,100040,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,100040,  0,  0,100040,  0,  0,100040,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,100040,  0,  0,  0,  0,  0,  0,  0,  0,  0],
-    [  0,  0,  0,  0,  0,  0,  0,  0,100040,  0,100040,  0,  0,  0,  0],
+    [  0,  0,557,  0,  0,  0,  0,  0,100040,  0,100040,  0,558,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
-    [100033,100034,100034,  0,100040,  0,  0,  0,  0,  0,  0,  0,100034,100034,100035],
+    [100033,100034,100034,  0,100040,  0,  0,  0,  0,556,  0,  0,100034,100034,100035],
     [100040,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,100040,  0,  0,  0],
-    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,100040,  0],
+    [  0,  0,  0,  0,  0,  0,  0,556,  0,  0,  0,  0,  0,100040,  0],
     [  0,  0,  0,  0,100040,  0,  0,  0,  0,  0,100040,  0,  0,  0,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0]
 ],

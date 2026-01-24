@@ -411,18 +411,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		}
 		hero.hp -= v.event.atk * number;
 	})*/
-	//狼群改
-	if (core.hasSpecial(special, 85) && x !== null && y !== null) {
-		for (let m = -2; m <= 2; m++) {
-			for (let n = -2; n <= 2; n++) {
-				if (m !== 0 && n !== 0) {
-					if (core.getBlockCls(x + m, y + n).startsWith("enemy") && core.material.enemys[core.getBlockId(x + m, y + n)].type === "潜艇") {
-						damage += core.getEnemyInfo(core.getBlockId(x + m, y + n), hero, x + m, y + n).top * core.material.enemys[core.getBlockId(x + m, y + n)].tpn * 3 / 10;
-					}
-				}
-			}
-		}
-	}
+
 	//火力覆盖
 	/*core.searchBlockWithFilter(block => {
 		if (!block || !block.event.cls.startsWith("enemy"))
@@ -490,14 +479,14 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 				if (ca === 'edinburgh') money += 2; //爱丁堡号巡洋舰，金币+2
 				if (bb === 'hood') money += 10; //胡德号，金币+10
 				if (core.hasItem('coin')) money *= 2; // 幸运金币：双倍
-				if (core.hasSpecial(target.special, 61)) money = 0; // 投降
+				if (core.hasSpecial(target.special, 61) || flags.咒 === true) money = 0; // 投降
 				core.status.hero.money += money;
 				core.status.hero.statistics.money += money;
 				if (dd === 'classv') exp += 2; //V级驱逐舰
 				if (dd === 'classj') exp += 5; //J级驱逐舰
 				if (bb === 'hood') exp += 10; //胡德号，经验+10
 				if (tk === 'm4a2' || tk === 'm4a3' || tk === 'm4a3e2' || tk === 'firefly') exp *= 2; //馒头
-				if (core.hasSpecial(target.special, 61)) exp = 0; // 投降
+				if (core.hasSpecial(target.special, 61) || flags.咒 === true) exp = 0; // 投降
 				core.status.hero.exp += exp;
 				core.status.hero.statistics.exp += exp;
 				core.drawAnimate('explore3', Block.x, Block.y);
@@ -690,7 +679,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	if (ca === 'edinburgh') money += 2; //爱丁堡号巡洋舰，金币+2
 	if (bb === 'hood') money += 10; //胡德号，金币+10
 	if (core.hasItem('coin')) money *= 2; // 幸运金币：双倍
-	if (core.hasSpecial(enemyId, 61)) money = 0; // 投降
+	if (core.hasSpecial(enemyId, 61) || flags.咒 === true) money = 0; // 投降
 	core.status.hero.money += money;
 	core.status.hero.statistics.money += money;
 
@@ -702,7 +691,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	if (dd === 'classj') exp += 5; //J级驱逐舰
 	if (bb === 'hood') exp += 10; //胡德号，经验+10
 	if (tk === 'm4a2' || tk === 'm4a3' || tk === 'm4a3e2' || tk === 'firefly') exp *= 2; //馒头
-	if (core.hasSpecial(enemyId, 61)) exp = 0; // 投降
+	if (core.hasSpecial(enemyId, 61) || flags.咒 === true) exp = 0; // 投降
 	core.status.hero.exp += exp;
 	core.status.hero.statistics.exp += exp;
 
@@ -713,13 +702,6 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		hint += ',' + core.getStatusLabel('exp') + '+' + exp; // hint += "，经验+" + exp;
 	core.drawTip(hint, enemy.id);
 
-	if (flags.skill === 18) { //孟菲斯美女·回血
-		if (core.status.hero.hp <= core.status.hero.hpmax * 0.75) {
-			core.status.hero.hp += core.status.hero.hpmax * 0.25;
-		} else {
-			core.status.hero.hp = core.status.hero.hpmax;
-		}
-	}
 	//清除临时护盾
 	flags.temmdef = 0;
 	if (core.hasSpecial(enemyId, 89) && core.getFlag('fire', 0) > 0) { //殉爆清火
@@ -1528,7 +1510,11 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		isbomber = mon_skillNum.type === '俯冲轰炸机' || mon_skillNum.type === '鱼雷轰炸机' || mon_skillNum.type === '攻击机' || mon_skillNum.type === '中型轰炸机',
 		isfighter = mon_skillNum.type === '战斗机' || mon_skillNum.type === '重型战斗机',
 		istank = mon_skillNum.type === '轻坦' || mon_skillNum.type === '中坦' || mon_skillNum.type === '重坦' || mon_skillNum.type === '坦歼',
-		isgun = mon_skillNum.type === '反坦克炮' || mon_skillNum.type === '榴弹炮' || mon_skillNum.type === '高射炮';
+		isgun = mon_skillNum.type === '反坦克炮' || mon_skillNum.type === '榴弹炮' || mon_skillNum.type === '高射炮',
+		casino = false;
+	if (floorId === 'MT284' || floorId === 'MT285' || floorId === 'MT286' || floorId === 'MT287' || floorId === 'MT288' || floorId === 'MT289' || floorId === 'MT290' || floorId === 'MT291' || floorId === 'MT292' || floorId === 'MT293') {
+		casino = true;
+	}
 
 	//陆军特判
 	if (junzhong === '陆军') {
@@ -1654,6 +1640,9 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			beilv *= 1.5;
 			finalDamage *= 0.7;
 		}
+	}
+	if (flags.skill === 18) {
+		finalDamage *= 0.75;
 	}
 	if (flags.ussrair === true) { //拉9·苏空集群
 		yongshi.atk *= 1.1;
@@ -1938,6 +1927,9 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 					hero_dc += yongshi.atk * 1.5;
 				}
 			} else if (turn === 1 && core.hasItem('casablanca')) { hero_dc += yongshi.atk * 0.4; } //卡萨布兰卡·单独判定
+			if (turn === 1 && flags.skill === 19) { //刺猬弹
+				hero_dc += yongshi.atk * 1;
+			}
 		}
 
 		//主炮
@@ -2583,6 +2575,11 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	if (flooding) { //进水
 		damage += core.status.hero.hpmax * 0.1;
 	}
+	if (casino) { //卡西诺山特判
+		if (core.getFlag('摧毁修道院'), false) {
+			damage += 0;
+		}
+	}
 	if (core.hasSpecial(mon_special, 89) && core.getFlag('fire', 0) > 0) { //技能89：殉爆
 		damage += core.status.hero.hpmax * 0.6;
 	}
@@ -2598,6 +2595,20 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		damage -= yongshi.mdef;
 		if (flags.temmdef) {
 			damage -= flags.temmdef;
+		}
+	}
+	//狼群改
+	if (core.hasSpecial(mon_special, 85) && flags.skill !== 19 && x !== null && y !== null) {
+		for (let m = -2; m <= 2; m++) {
+			for (let n = -2; n <= 2; n++) {
+				if (m !== 0 || n !== 0) {
+					if (core.getBlockCls(x + m, y + n)?.startsWith("enemy")) {
+						if (core.material.enemys[core.getBlockId(x + m, y + n)].type === "潜艇") {
+							damage += core.getEnemyInfo(core.getBlockId(x + m, y + n), hero, x + m, y + n).top * core.material.enemys[core.getBlockId(x + m, y + n)].tpn * 3 / 10;
+						}
+					}
+				}
+			}
 		}
 	}
 	/*if (core.searchBlockWithFilter(fn).length === 0) { //后勤

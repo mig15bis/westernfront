@@ -12,13 +12,12 @@ main.floors.MT284=
     "images": [],
     "ratio": 1,
     "defaultGround": "X100052",
-    "bgm": "cao1.mp3",
+    "bgm": "bgm6.mp3",
     "firstArrive": [
         {
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        
         {
             "type": "setCurtain",
             "time": 500
@@ -60,238 +59,273 @@ main.floors.MT284=
             "type": "setEnemy",
             "id": "commandos",
             "name": "hp",
-            "value": "220000",
+            "value": "650000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "commandos",
             "name": "atk",
-            "value": "2800",
+            "value": "5000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "mortar",
             "name": "hp",
-            "value": "120000",
+            "value": "400000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "mortar",
             "name": "atk",
-            "value": "10000",
+            "value": "30000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "mortar",
+            "name": "zoneSquare",
+            "value": "true",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "mortar",
+            "name": "range",
+            "value": "2",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "mortar",
+            "name": "zone",
+            "value": "15000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "sniper",
-            "name": "hp",
-            "value": "20000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "sniper",
-            "name": "atk",
-            "value": "40000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "motorinf",
-            "name": "hp",
-            "value": "150000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "motorinf",
-            "name": "atk",
-            "value": "3200",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "lightmg",
             "name": "hp",
             "value": "120000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "lightmg",
+            "id": "sniper",
             "name": "atk",
-            "value": "3300",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "mg42",
-            "name": "hp",
             "value": "100000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
+            "id": "sniper",
+            "name": "special",
+            "value": "[56,66,71]",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "motorinf",
+            "name": "hp",
+            "value": "550000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "motorinf",
+            "name": "atk",
+            "value": "5500",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "grenadier",
+            "name": "hp",
+            "value": "450000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "grenadier",
+            "name": "atk",
+            "value": "32000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "lightmg",
+            "name": "hp",
+            "value": "450000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "lightmg",
+            "name": "atk",
+            "value": "5500",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "mg42",
+            "name": "hp",
+            "value": "450000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
             "id": "mg42",
             "name": "atk",
-            "value": "3800",
+            "value": "6000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "pak38",
+            "id": "aceinf",
             "name": "hp",
-            "value": "34000",
+            "value": "300000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "pak38",
+            "id": "aceinf",
             "name": "atk",
+            "value": "50000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "pak40",
+            "name": "hp",
+            "value": "200000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "pak40",
+            "name": "atk",
+            "value": "50000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "pak40",
+            "name": "special",
+            "value": "[59,87]",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "pak40",
+            "name": "zone",
             "value": "20000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "howitzer105",
+            "id": "howitzer150",
             "name": "hp",
-            "value": "34000",
+            "value": "200000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "howitzer105",
+            "id": "howitzer150",
             "name": "atk",
-            "value": "45000",
+            "value": "100000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "howitzer105",
+            "id": "howitzer150",
             "name": "zone",
-            "value": "35000",
+            "value": "10000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "sdkfz234",
-            "name": "hp",
-            "value": "85000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "sdkfz234",
-            "name": "atk",
-            "value": "15000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "panzer3f",
-            "name": "hp",
-            "value": "95000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "panzer3f",
-            "name": "atk",
-            "value": "15000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "panzer3f",
+            "id": "howitzer150",
             "name": "special",
-            "value": "[55,60]",
+            "value": "[15,72,87]",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "stug3a",
+            "id": "panzer4h",
             "name": "hp",
-            "value": "70000",
+            "value": "200000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "stug3a",
+            "id": "panzer4h",
             "name": "atk",
-            "value": "23000",
+            "value": "50000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "panzer4e",
-            "name": "hp",
-            "value": "90000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "panzer4e",
-            "name": "atk",
-            "value": "35000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "panzer4f",
-            "name": "hp",
-            "value": "110000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "panzer4f",
-            "name": "atk",
-            "value": "28000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "panzer4g",
-            "name": "hp",
-            "value": "110000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "panzer4g",
-            "name": "atk",
-            "value": "33000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "panzer4g",
+            "id": "panzer4h",
             "name": "special",
-            "value": "[55]",
+            "value": "[67,69,87]",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "panzer5d",
+            "name": "hp",
+            "value": "250000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "panzer5d",
+            "name": "atk",
+            "value": "65000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "panzer5d",
+            "name": "special",
+            "value": "[56,65,86]",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "tigere",
+            "name": "hp",
+            "value": "250000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "tigere",
+            "name": "atk",
+            "value": "80000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "tigere",
+            "name": "special",
+            "value": "[38,65,86]",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "flak88",
             "name": "hp",
-            "value": "35000",
+            "value": "200000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "flak88",
             "name": "atk",
-            "value": "35000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "flak88",
-            "name": "special",
-            "value": "[40,51,55,59]",
+            "value": "80000",
             "norefresh": true
         },
         {
@@ -303,122 +337,72 @@ main.floors.MT284=
         },
         {
             "type": "setEnemy",
-            "id": "me109g6",
-            "name": "hp",
-            "value": "45000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "me109g6",
-            "name": "atk",
-            "value": "4000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "me109g6",
+            "id": "flak88",
             "name": "special",
-            "value": "[6,55]",
+            "value": "[40,59]",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "me110g",
+            "id": "fw190a3",
             "name": "hp",
-            "value": "60000",
+            "value": "140000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "me110g",
+            "id": "fw190a3",
             "name": "atk",
-            "value": "8000",
+            "value": "10000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "me110g",
+            "id": "fw190a3",
             "name": "special",
-            "value": "[28,30,55]",
+            "value": "[6,30,70]",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "ju87b",
+            "id": "gunbunker",
             "name": "hp",
-            "value": "45000",
+            "value": "200000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "ju87b",
+            "id": "gunbunker",
             "name": "atk",
-            "value": "1000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "ju87b",
-            "name": "bom",
-            "value": "120000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "ju87b",
-            "name": "special",
-            "value": "[28,36,55]",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "ju88a",
-            "name": "hp",
-            "value": "95000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "ju88a",
-            "name": "atk",
-            "value": "2000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "ju88a",
-            "name": "bom",
-            "value": "15000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "ju88a",
-            "name": "special",
-            "value": "[28,55]",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "mgbunker",
-            "name": "hp",
             "value": "100000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "mgbunker",
-            "name": "atk",
-            "value": "3200",
+            "id": "gunbunker",
+            "name": "zone",
+            "value": "10000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "mgbunker",
+            "id": "gunbunker",
             "name": "special",
-            "value": "[6,55,63]",
+            "value": "[15,63,84,86,87]",
             "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "gunbunker",
+            "name": "money",
+            "value": "20",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "gunbunker",
+            "name": "exp",
+            "value": "20"
         },
         "\t[系统提示]敌人战力重置完成",
         {
@@ -442,22 +426,87 @@ main.floors.MT284=
             "name": "xinxinmagic.mp3"
         },
         "\t[系统提示]本关通关条件较为特殊：当系统检测到主角持有的下午茶数量不多于10时，会自动将主角传送至最终出口。并且，出口的路是堵死的，即便玩家依托简单难度福利能杀穿所有敌人，也无法主动抵达出口。",
-        "\t[系统提示]这样设置的原因很简单：本区域体验极差，一步一个战败CG，所以实在不想打了的玩家可以找旁边NPC清光道具直接通关，想要挑战一下的玩家可以尽量打。",
-        "\t[系统提示]不用担心跳关会影响后续推图，本关敌人0金经，并且下一关开始时会重置主角状态和相关的一次性道具。直接跳关只可能导致某些剧情没有体验完整。",
+        "\t[系统提示]这样设置的原因很简单：本区域游戏体验极差，一步一个战败CG，所以实在不想打了的玩家可以找旁边NPC清光道具直接通关，想要挑战一下的玩家可以尽量打。",
+        "\t[系统提示]不用担心跳关会影响后续推图，本关杀敌不给金经，并且下一关开始时会重置主角状态和相关的一次性道具。直接跳关只可能导致某些剧情没有体验完整。",
         {
             "type": "setValue",
             "name": "flag:MT284mg42",
-            "value": "6"
+            "value": "4",
+            "norefresh": true
         },
         {
             "type": "setValue",
             "name": "flag:MT284flak",
-            "value": "2"
+            "value": "2",
+            "norefresh": true
         },
         {
             "type": "setValue",
             "name": "flag:MT284howitzers",
-            "value": "3"
+            "value": "3",
+            "norefresh": true
+        },
+        {
+            "type": "setValue",
+            "name": "flag:第39关任务2",
+            "value": "0",
+            "norefresh": true
+        },
+        {
+            "type": "setValue",
+            "name": "flag:第39关任务3",
+            "value": "0",
+            "norefresh": true
+        },
+        {
+            "type": "setValue",
+            "name": "flag:咒",
+            "value": "true"
+        },
+        {
+            "type": "setTask",
+            "name": "第39关任务1",
+            "n": 1,
+            "text": "下午茶数量不多于10时，自动通关",
+            "info": [
+                {
+                    "type": "checkItem",
+                    "checkItem": "tea",
+                    "operator": "<=",
+                    "text": "当前剩余下午茶",
+                    "count": 10
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第39关任务2",
+            "n": 1,
+            "text": "抵达卡西诺山-5或7",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "第39关任务2",
+                    "operator": "=",
+                    "text": "抵达目标地图",
+                    "count": "1"
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第39关任务3",
+            "n": 1,
+            "text": "抵达卡西诺山-9",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "第39关任务3",
+                    "operator": "=",
+                    "text": "抵达目标地图",
+                    "count": "1"
+                }
+            ]
         }
     ],
     "eachArrive": [],
@@ -492,7 +541,7 @@ main.floors.MT284=
             }
         ],
         "4,13": [
-            "开门见杀！主角每次在河面上行走一步，都会被对岸的敌军集火攻击一次！一共需要渡河4次，且本层禁用对称飞！"
+            "开门见杀！主角每次在河面上行走一步，都会被对岸的敌军集火攻击一次（集火伤害为：敌方攻击力×连击数×50%）！一共需要渡河4次，且本层禁用对称飞！"
         ],
         "7,12": [
             {
@@ -509,7 +558,7 @@ main.floors.MT284=
                         "type": "setValue",
                         "name": "status:hp",
                         "operator": "-=",
-                        "value": "(flag:MT284mg42*100000)"
+                        "value": "(flag:MT284mg42*30000)"
                     }
                 ]
             },
@@ -527,7 +576,7 @@ main.floors.MT284=
                         "type": "setValue",
                         "name": "status:hp",
                         "operator": "-=",
-                        "value": "(flag:MT284flak*400000)"
+                        "value": "(flag:MT284flak*40000)"
                     }
                 ]
             },
@@ -545,7 +594,7 @@ main.floors.MT284=
                         "type": "setValue",
                         "name": "status:hp",
                         "operator": "-=",
-                        "value": "(flag:MT284howitzers*400000)"
+                        "value": "(flag:MT284howitzers*50000)"
                     }
                 ]
             },
@@ -587,7 +636,7 @@ main.floors.MT284=
                         "type": "setCurtain",
                         "time": 500
                     },
-                    "\t[盟军指挥官]第一次渡河行动失败，我们的部队在雷区和敌人的炮火中迷失了方向。现在开始第二次强渡！"
+                    "\t[盟军指挥官,hero]第一次渡河行动失败，我们的部队在雷区和敌人的炮火中迷失了方向。现在开始第二次强渡！"
                 ]
             },
             {
@@ -617,15 +666,23 @@ main.floors.MT284=
                         "type": "setCurtain",
                         "time": 500
                     },
-                    "\t[盟军指挥官]第二次渡河又失败了，我们没能拿下任何战果。",
-                    "\t[盟军指挥官]两翼的英法部队都取得了一定的成绩，我们美利坚合众国绝不能比他们差！继续渡河！直到突破德军防线！"
+                    "\t[盟军指挥官,hero]第二次渡河又失败了，我们没能拿下任何战果。",
+                    "\t[盟军指挥官,hero]两翼的英法部队都取得了一定的成绩，我们美利坚合众国绝不能比他们差！继续渡河！直到突破德军防线！"
                 ]
             },
             {
                 "type": "if",
                 "condition": "(flag:MT284time===3)",
                 "true": [
-                    "\t[克拉克]\f[clark.png,0,310]停止进攻！这是无意义的消耗！现在回来休整部队，重整旗鼓后再继续！",
+                    {
+                        "type": "text",
+                        "text": "\t[克拉克]\f[clark.png,0,310]停止进攻！这样的损失只会折损我的威望！现在回来休整部队，重整旗鼓后再继续！",
+                        "pos": [
+                            100,
+                            300,
+                            380
+                        ]
+                    },
                     {
                         "type": "setCurtain",
                         "color": [
@@ -692,7 +749,7 @@ main.floors.MT284=
                         "type": "setCurtain",
                         "time": 500
                     },
-                    "\t[盟军指挥官]第一次渡河行动失败，我们的部队在雷区和敌人的炮火中迷失了方向。现在开始第二次强渡！"
+                    "\t[盟军指挥官,hero]第一次渡河行动失败，我们的部队在雷区和敌人的炮火中迷失了方向。现在开始第二次强渡！"
                 ]
             },
             {
@@ -722,15 +779,23 @@ main.floors.MT284=
                         "type": "setCurtain",
                         "time": 500
                     },
-                    "\t[盟军指挥官]第二次渡河又失败了，我们没能拿下任何战果。",
-                    "\t[盟军指挥官]两翼的英法部队都取得了一定的成绩，我们美利坚合众国绝不能比他们差！继续渡河！直到突破德军防线！"
+                    "\t[盟军指挥官,hero]第二次渡河又失败了，我们没能拿下任何战果。",
+                    "\t[盟军指挥官,hero]两翼的英法部队都取得了一定的成绩，我们美利坚合众国绝不能比他们差！继续渡河！直到突破德军防线！"
                 ]
             },
             {
                 "type": "if",
                 "condition": "(flag:MT284time===3)",
                 "true": [
-                    "\t[克拉克]\f[clark.png,0,310]停止进攻！这是无意义的消耗！现在回来休整部队，重整旗鼓后再继续！",
+                    {
+                        "type": "text",
+                        "text": "\t[克拉克]\f[clark.png,0,310]停止进攻！这样的损失只会折损我的威望！现在回来休整部队，重整旗鼓后再继续！",
+                        "pos": [
+                            100,
+                            300,
+                            380
+                        ]
+                    },
                     {
                         "type": "setCurtain",
                         "color": [
@@ -797,7 +862,7 @@ main.floors.MT284=
                         "type": "setCurtain",
                         "time": 500
                     },
-                    "\t[盟军指挥官]第一次渡河行动失败，我们的部队在雷区和敌人的炮火中迷失了方向。现在开始第二次强渡！"
+                    "\t[盟军指挥官,hero]第一次渡河行动失败，我们的部队在雷区和敌人的炮火中迷失了方向。现在开始第二次强渡！"
                 ]
             },
             {
@@ -827,15 +892,23 @@ main.floors.MT284=
                         "type": "setCurtain",
                         "time": 500
                     },
-                    "\t[盟军指挥官]第二次渡河又失败了，我们没能拿下任何战果。",
-                    "\t[盟军指挥官]两翼的英法部队都取得了一定的成绩，我们美利坚合众国绝不能比他们差！继续渡河！直到突破德军防线！"
+                    "\t[盟军指挥官,hero]第二次渡河又失败了，我们没能拿下任何战果。",
+                    "\t[盟军指挥官,hero]两翼的英法部队都取得了一定的成绩，我们美利坚合众国绝不能比他们差！继续渡河！直到突破德军防线！"
                 ]
             },
             {
                 "type": "if",
                 "condition": "(flag:MT284time===3)",
                 "true": [
-                    "\t[克拉克]\f[clark.png,0,310]停止进攻！这是无意义的消耗！现在回来休整部队，重整旗鼓后再继续！",
+                    {
+                        "type": "text",
+                        "text": "\t[克拉克]\f[clark.png,0,310]停止进攻！这样的损失只会折损我的威望！现在回来休整部队，重整旗鼓后再继续！",
+                        "pos": [
+                            100,
+                            300,
+                            380
+                        ]
+                    },
                     {
                         "type": "setCurtain",
                         "color": [
@@ -902,7 +975,7 @@ main.floors.MT284=
                         "type": "setCurtain",
                         "time": 500
                     },
-                    "\t[盟军指挥官]第一次渡河行动失败，我们的部队在雷区和敌人的炮火中迷失了方向。现在开始第二次强渡！"
+                    "\t[盟军指挥官,hero]第一次渡河行动失败，我们的部队在雷区和敌人的炮火中迷失了方向。现在开始第二次强渡！"
                 ]
             },
             {
@@ -932,15 +1005,23 @@ main.floors.MT284=
                         "type": "setCurtain",
                         "time": 500
                     },
-                    "\t[盟军指挥官]第二次渡河又失败了，我们没能拿下任何战果。",
-                    "\t[盟军指挥官]两翼的英法部队都取得了一定的成绩，我们美利坚合众国绝不能比他们差！继续渡河！直到突破德军防线！"
+                    "\t[盟军指挥官,hero]第二次渡河又失败了，我们没能拿下任何战果。",
+                    "\t[盟军指挥官,hero]两翼的英法部队都取得了一定的成绩，我们美利坚合众国绝不能比他们差！继续渡河！直到突破德军防线！"
                 ]
             },
             {
                 "type": "if",
                 "condition": "(flag:MT284time===3)",
                 "true": [
-                    "\t[克拉克]\f[clark.png,0,310]停止进攻！这是无意义的消耗！现在回来休整部队，重整旗鼓后再继续！",
+                    {
+                        "type": "text",
+                        "text": "\t[克拉克]\f[clark.png,0,310]停止进攻！这样的损失只会折损我的威望！现在回来休整部队，重整旗鼓后再继续！",
+                        "pos": [
+                            100,
+                            300,
+                            380
+                        ]
+                    },
                     {
                         "type": "setCurtain",
                         "color": [
@@ -1007,7 +1088,7 @@ main.floors.MT284=
                         "type": "setCurtain",
                         "time": 500
                     },
-                    "\t[盟军指挥官]第一次渡河行动失败，我们的部队在雷区和敌人的炮火中迷失了方向。现在开始第二次强渡！"
+                    "\t[盟军指挥官,hero]第一次渡河行动失败，我们的部队在雷区和敌人的炮火中迷失了方向。现在开始第二次强渡！"
                 ]
             },
             {
@@ -1037,15 +1118,23 @@ main.floors.MT284=
                         "type": "setCurtain",
                         "time": 500
                     },
-                    "\t[盟军指挥官]第二次渡河又失败了，我们没能拿下任何战果。",
-                    "\t[盟军指挥官]两翼的英法部队都取得了一定的成绩，我们美利坚合众国绝不能比他们差！继续渡河！直到突破德军防线！"
+                    "\t[盟军指挥官,hero]第二次渡河又失败了，我们没能拿下任何战果。",
+                    "\t[盟军指挥官,hero]两翼的英法部队都取得了一定的成绩，我们美利坚合众国绝不能比他们差！继续渡河！直到突破德军防线！"
                 ]
             },
             {
                 "type": "if",
                 "condition": "(flag:MT284time===3)",
                 "true": [
-                    "\t[克拉克]\f[clark.png,0,310]停止进攻！这是无意义的消耗！现在回来休整部队，重整旗鼓后再继续！",
+                    {
+                        "type": "text",
+                        "text": "\t[克拉克]\f[clark.png,0,310]停止进攻！这样的损失只会折损我的威望！现在回来休整部队，重整旗鼓后再继续！",
+                        "pos": [
+                            100,
+                            300,
+                            380
+                        ]
+                    },
                     {
                         "type": "setCurtain",
                         "color": [
@@ -1112,7 +1201,7 @@ main.floors.MT284=
                         "type": "setCurtain",
                         "time": 500
                     },
-                    "\t[盟军指挥官]第一次渡河行动失败，我们的部队在雷区和敌人的炮火中迷失了方向。现在开始第二次强渡！"
+                    "\t[盟军指挥官,hero]第一次渡河行动失败，我们的部队在雷区和敌人的炮火中迷失了方向。现在开始第二次强渡！"
                 ]
             },
             {
@@ -1142,15 +1231,23 @@ main.floors.MT284=
                         "type": "setCurtain",
                         "time": 500
                     },
-                    "\t[盟军指挥官]第二次渡河又失败了，我们没能拿下任何战果。",
-                    "\t[盟军指挥官]两翼的英法部队都取得了一定的成绩，我们美利坚合众国绝不能比他们差！继续渡河！直到突破德军防线！"
+                    "\t[盟军指挥官,hero]第二次渡河又失败了，我们没能拿下任何战果。",
+                    "\t[盟军指挥官,hero]两翼的英法部队都取得了一定的成绩，我们美利坚合众国绝不能比他们差！继续渡河！直到突破德军防线！"
                 ]
             },
             {
                 "type": "if",
                 "condition": "(flag:MT284time===3)",
                 "true": [
-                    "\t[克拉克]\f[clark.png,0,310]停止进攻！这是无意义的消耗！现在回来休整部队，重整旗鼓后再继续！",
+                    {
+                        "type": "text",
+                        "text": "\t[克拉克]\f[clark.png,0,310]停止进攻！这样的损失只会折损我的威望！现在回来休整部队，重整旗鼓后再继续！",
+                        "pos": [
+                            100,
+                            300,
+                            380
+                        ]
+                    },
                     {
                         "type": "setCurtain",
                         "color": [
@@ -1217,7 +1314,7 @@ main.floors.MT284=
                         "type": "setCurtain",
                         "time": 500
                     },
-                    "\t[盟军指挥官]第一次渡河行动失败，我们的部队在雷区和敌人的炮火中迷失了方向。现在开始第二次强渡！"
+                    "\t[盟军指挥官,hero]第一次渡河行动失败，我们的部队在雷区和敌人的炮火中迷失了方向。现在开始第二次强渡！"
                 ]
             },
             {
@@ -1247,15 +1344,23 @@ main.floors.MT284=
                         "type": "setCurtain",
                         "time": 500
                     },
-                    "\t[盟军指挥官]第二次渡河又失败了，我们没能拿下任何战果。",
-                    "\t[盟军指挥官]两翼的英法部队都取得了一定的成绩，我们美利坚合众国绝不能比他们差！继续渡河！直到突破德军防线！"
+                    "\t[盟军指挥官,hero]第二次渡河又失败了，我们没能拿下任何战果。",
+                    "\t[盟军指挥官,hero]两翼的英法部队都取得了一定的成绩，我们美利坚合众国绝不能比他们差！继续渡河！直到突破德军防线！"
                 ]
             },
             {
                 "type": "if",
                 "condition": "(flag:MT284time===3)",
                 "true": [
-                    "\t[克拉克]\f[clark.png,0,310]停止进攻！这是无意义的消耗！现在回来休整部队，重整旗鼓后再继续！",
+                    {
+                        "type": "text",
+                        "text": "\t[克拉克]\f[clark.png,0,310]停止进攻！这样的损失只会折损我的威望！现在回来休整部队，重整旗鼓后再继续！",
+                        "pos": [
+                            100,
+                            300,
+                            380
+                        ]
+                    },
                     {
                         "type": "setCurtain",
                         "color": [
@@ -1322,7 +1427,7 @@ main.floors.MT284=
                         "type": "setCurtain",
                         "time": 500
                     },
-                    "\t[盟军指挥官]第一次渡河行动失败，我们的部队在雷区和敌人的炮火中迷失了方向。现在开始第二次强渡！"
+                    "\t[盟军指挥官,hero]第一次渡河行动失败，我们的部队在雷区和敌人的炮火中迷失了方向。现在开始第二次强渡！"
                 ]
             },
             {
@@ -1352,15 +1457,23 @@ main.floors.MT284=
                         "type": "setCurtain",
                         "time": 500
                     },
-                    "\t[盟军指挥官]第二次渡河又失败了，我们没能拿下任何战果。",
-                    "\t[盟军指挥官]两翼的英法部队都取得了一定的成绩，我们美利坚合众国绝不能比他们差！继续渡河！直到突破德军防线！"
+                    "\t[盟军指挥官,hero]第二次渡河又失败了，我们没能拿下任何战果。",
+                    "\t[盟军指挥官,hero]两翼的英法部队都取得了一定的成绩，我们美利坚合众国绝不能比他们差！继续渡河！直到突破德军防线！"
                 ]
             },
             {
                 "type": "if",
                 "condition": "(flag:MT284time===3)",
                 "true": [
-                    "\t[克拉克]\f[clark.png,0,310]停止进攻！这是无意义的消耗！现在回来休整部队，重整旗鼓后再继续！",
+                    {
+                        "type": "text",
+                        "text": "\t[克拉克]\f[clark.png,0,310]停止进攻！这样的损失只会折损我的威望！现在回来休整部队，重整旗鼓后再继续！",
+                        "pos": [
+                            100,
+                            300,
+                            380
+                        ]
+                    },
                     {
                         "type": "setCurtain",
                         "color": [
@@ -1427,7 +1540,7 @@ main.floors.MT284=
                         "type": "setCurtain",
                         "time": 500
                     },
-                    "\t[盟军指挥官]第一次渡河行动失败，我们的部队在雷区和敌人的炮火中迷失了方向。现在开始第二次强渡！"
+                    "\t[盟军指挥官,hero]第一次渡河行动失败，我们的部队在雷区和敌人的炮火中迷失了方向。现在开始第二次强渡！"
                 ]
             },
             {
@@ -1457,15 +1570,23 @@ main.floors.MT284=
                         "type": "setCurtain",
                         "time": 500
                     },
-                    "\t[盟军指挥官]第二次渡河又失败了，我们没能拿下任何战果。",
-                    "\t[盟军指挥官]两翼的英法部队都取得了一定的成绩，我们美利坚合众国绝不能比他们差！继续渡河！直到突破德军防线！"
+                    "\t[盟军指挥官,hero]第二次渡河又失败了，我们没能拿下任何战果。",
+                    "\t[盟军指挥官,hero]两翼的英法部队都取得了一定的成绩，我们美利坚合众国绝不能比他们差！继续渡河！直到突破德军防线！"
                 ]
             },
             {
                 "type": "if",
                 "condition": "(flag:MT284time===3)",
                 "true": [
-                    "\t[克拉克]\f[clark.png,0,310]停止进攻！这是无意义的消耗！现在回来休整部队，重整旗鼓后再继续！",
+                    {
+                        "type": "text",
+                        "text": "\t[克拉克]\f[clark.png,0,310]停止进攻！这样的损失只会折损我的威望！现在回来休整部队，重整旗鼓后再继续！",
+                        "pos": [
+                            100,
+                            300,
+                            380
+                        ]
+                    },
                     {
                         "type": "setCurtain",
                         "color": [
@@ -1532,7 +1653,7 @@ main.floors.MT284=
                         "type": "setCurtain",
                         "time": 500
                     },
-                    "\t[盟军指挥官]第一次渡河行动失败，我们的部队在雷区和敌人的炮火中迷失了方向。现在开始第二次强渡！"
+                    "\t[盟军指挥官,hero]第一次渡河行动失败，我们的部队在雷区和敌人的炮火中迷失了方向。现在开始第二次强渡！"
                 ]
             },
             {
@@ -1562,15 +1683,23 @@ main.floors.MT284=
                         "type": "setCurtain",
                         "time": 500
                     },
-                    "\t[盟军指挥官]第二次渡河又失败了，我们没能拿下任何战果。",
-                    "\t[盟军指挥官]两翼的英法部队都取得了一定的成绩，我们美利坚合众国绝不能比他们差！继续渡河！直到突破德军防线！"
+                    "\t[盟军指挥官,hero]第二次渡河又失败了，我们没能拿下任何战果。",
+                    "\t[盟军指挥官,hero]两翼的英法部队都取得了一定的成绩，我们美利坚合众国绝不能比他们差！继续渡河！直到突破德军防线！"
                 ]
             },
             {
                 "type": "if",
                 "condition": "(flag:MT284time===3)",
                 "true": [
-                    "\t[克拉克]\f[clark.png,0,310]停止进攻！这是无意义的消耗！现在回来休整部队，重整旗鼓后再继续！",
+                    {
+                        "type": "text",
+                        "text": "\t[克拉克]\f[clark.png,0,310]停止进攻！这样的损失只会折损我的威望！现在回来休整部队，重整旗鼓后再继续！",
+                        "pos": [
+                            100,
+                            300,
+                            380
+                        ]
+                    },
                     {
                         "type": "setCurtain",
                         "color": [
@@ -1637,7 +1766,7 @@ main.floors.MT284=
                         "type": "setCurtain",
                         "time": 500
                     },
-                    "\t[盟军指挥官]第一次渡河行动失败，我们的部队在雷区和敌人的炮火中迷失了方向。现在开始第二次强渡！"
+                    "\t[盟军指挥官,hero]第一次渡河行动失败，我们的部队在雷区和敌人的炮火中迷失了方向。现在开始第二次强渡！"
                 ]
             },
             {
@@ -1667,15 +1796,23 @@ main.floors.MT284=
                         "type": "setCurtain",
                         "time": 500
                     },
-                    "\t[盟军指挥官]第二次渡河又失败了，我们没能拿下任何战果。",
-                    "\t[盟军指挥官]两翼的英法部队都取得了一定的成绩，我们美利坚合众国绝不能比他们差！继续渡河！直到突破德军防线！"
+                    "\t[盟军指挥官,hero]第二次渡河又失败了，我们没能拿下任何战果。",
+                    "\t[盟军指挥官,hero]两翼的英法部队都取得了一定的成绩，我们美利坚合众国绝不能比他们差！继续渡河！直到突破德军防线！"
                 ]
             },
             {
                 "type": "if",
                 "condition": "(flag:MT284time===3)",
                 "true": [
-                    "\t[克拉克]\f[clark.png,0,310]停止进攻！这是无意义的消耗！现在回来休整部队，重整旗鼓后再继续！",
+                    {
+                        "type": "text",
+                        "text": "\t[克拉克]\f[clark.png,0,310]停止进攻！这样的损失只会折损我的威望！现在回来休整部队，重整旗鼓后再继续！",
+                        "pos": [
+                            100,
+                            300,
+                            380
+                        ]
+                    },
                     {
                         "type": "setCurtain",
                         "color": [
@@ -1742,7 +1879,7 @@ main.floors.MT284=
                         "type": "setCurtain",
                         "time": 500
                     },
-                    "\t[盟军指挥官]第一次渡河行动失败，我们的部队在雷区和敌人的炮火中迷失了方向。现在开始第二次强渡！"
+                    "\t[盟军指挥官,hero]第一次渡河行动失败，我们的部队在雷区和敌人的炮火中迷失了方向。现在开始第二次强渡！"
                 ]
             },
             {
@@ -1772,15 +1909,23 @@ main.floors.MT284=
                         "type": "setCurtain",
                         "time": 500
                     },
-                    "\t[盟军指挥官]第二次渡河又失败了，我们没能拿下任何战果。",
-                    "\t[盟军指挥官]两翼的英法部队都取得了一定的成绩，我们美利坚合众国绝不能比他们差！继续渡河！直到突破德军防线！"
+                    "\t[盟军指挥官,hero]第二次渡河又失败了，我们没能拿下任何战果。",
+                    "\t[盟军指挥官,hero]两翼的英法部队都取得了一定的成绩，我们美利坚合众国绝不能比他们差！继续渡河！直到突破德军防线！"
                 ]
             },
             {
                 "type": "if",
                 "condition": "(flag:MT284time===3)",
                 "true": [
-                    "\t[克拉克]\f[clark.png,0,310]停止进攻！这是无意义的消耗！现在回来休整部队，重整旗鼓后再继续！",
+                    {
+                        "type": "text",
+                        "text": "\t[克拉克]\f[clark.png,0,310]停止进攻！这样的损失只会折损我的威望！现在回来休整部队，重整旗鼓后再继续！",
+                        "pos": [
+                            100,
+                            300,
+                            380
+                        ]
+                    },
                     {
                         "type": "setCurtain",
                         "color": [
@@ -1847,7 +1992,7 @@ main.floors.MT284=
                         "type": "setCurtain",
                         "time": 500
                     },
-                    "\t[盟军指挥官]第一次渡河行动失败，我们的部队在雷区和敌人的炮火中迷失了方向。现在开始第二次强渡！"
+                    "\t[盟军指挥官,hero]第一次渡河行动失败，我们的部队在雷区和敌人的炮火中迷失了方向。现在开始第二次强渡！"
                 ]
             },
             {
@@ -1877,15 +2022,23 @@ main.floors.MT284=
                         "type": "setCurtain",
                         "time": 500
                     },
-                    "\t[盟军指挥官]第二次渡河又失败了，我们没能拿下任何战果。",
-                    "\t[盟军指挥官]两翼的英法部队都取得了一定的成绩，我们美利坚合众国绝不能比他们差！继续渡河！直到突破德军防线！"
+                    "\t[盟军指挥官,hero]第二次渡河又失败了，我们没能拿下任何战果。",
+                    "\t[盟军指挥官,hero]两翼的英法部队都取得了一定的成绩，我们美利坚合众国绝不能比他们差！继续渡河！直到突破德军防线！"
                 ]
             },
             {
                 "type": "if",
                 "condition": "(flag:MT284time===3)",
                 "true": [
-                    "\t[克拉克]\f[clark.png,0,310]停止进攻！这是无意义的消耗！现在回来休整部队，重整旗鼓后再继续！",
+                    {
+                        "type": "text",
+                        "text": "\t[克拉克]\f[clark.png,0,310]停止进攻！这样的损失只会折损我的威望！现在回来休整部队，重整旗鼓后再继续！",
+                        "pos": [
+                            100,
+                            300,
+                            380
+                        ]
+                    },
                     {
                         "type": "setCurtain",
                         "color": [
@@ -1952,7 +2105,7 @@ main.floors.MT284=
                         "type": "setCurtain",
                         "time": 500
                     },
-                    "\t[盟军指挥官]第一次渡河行动失败，我们的部队在雷区和敌人的炮火中迷失了方向。现在开始第二次强渡！"
+                    "\t[盟军指挥官,hero]第一次渡河行动失败，我们的部队在雷区和敌人的炮火中迷失了方向。现在开始第二次强渡！"
                 ]
             },
             {
@@ -1982,15 +2135,23 @@ main.floors.MT284=
                         "type": "setCurtain",
                         "time": 500
                     },
-                    "\t[盟军指挥官]第二次渡河又失败了，我们没能拿下任何战果。",
-                    "\t[盟军指挥官]两翼的英法部队都取得了一定的成绩，我们美利坚合众国绝不能比他们差！继续渡河！直到突破德军防线！"
+                    "\t[盟军指挥官,hero]第二次渡河又失败了，我们没能拿下任何战果。",
+                    "\t[盟军指挥官,hero]两翼的英法部队都取得了一定的成绩，我们美利坚合众国绝不能比他们差！继续渡河！直到突破德军防线！"
                 ]
             },
             {
                 "type": "if",
                 "condition": "(flag:MT284time===3)",
                 "true": [
-                    "\t[克拉克]\f[clark.png,0,310]停止进攻！这是无意义的消耗！现在回来休整部队，重整旗鼓后再继续！",
+                    {
+                        "type": "text",
+                        "text": "\t[克拉克]\f[clark.png,0,310]停止进攻！这样的损失只会折损我的威望！现在回来休整部队，重整旗鼓后再继续！",
+                        "pos": [
+                            100,
+                            300,
+                            380
+                        ]
+                    },
                     {
                         "type": "setCurtain",
                         "color": [
@@ -2057,7 +2218,7 @@ main.floors.MT284=
                         "type": "setCurtain",
                         "time": 500
                     },
-                    "\t[盟军指挥官]第一次渡河行动失败，我们的部队在雷区和敌人的炮火中迷失了方向。现在开始第二次强渡！"
+                    "\t[盟军指挥官,hero]第一次渡河行动失败，我们的部队在雷区和敌人的炮火中迷失了方向。现在开始第二次强渡！"
                 ]
             },
             {
@@ -2087,15 +2248,23 @@ main.floors.MT284=
                         "type": "setCurtain",
                         "time": 500
                     },
-                    "\t[盟军指挥官]第二次渡河又失败了，我们没能拿下任何战果。",
-                    "\t[盟军指挥官]两翼的英法部队都取得了一定的成绩，我们美利坚合众国绝不能比他们差！继续渡河！直到突破德军防线！"
+                    "\t[盟军指挥官,hero]第二次渡河又失败了，我们没能拿下任何战果。",
+                    "\t[盟军指挥官,hero]两翼的英法部队都取得了一定的成绩，我们美利坚合众国绝不能比他们差！继续渡河！直到突破德军防线！"
                 ]
             },
             {
                 "type": "if",
                 "condition": "(flag:MT284time===3)",
                 "true": [
-                    "\t[克拉克]\f[clark.png,0,310]停止进攻！这是无意义的消耗！现在回来休整部队，重整旗鼓后再继续！",
+                    {
+                        "type": "text",
+                        "text": "\t[克拉克]\f[clark.png,0,310]停止进攻！这样的损失只会折损我的威望！现在回来休整部队，重整旗鼓后再继续！",
+                        "pos": [
+                            100,
+                            300,
+                            380
+                        ]
+                    },
                     {
                         "type": "setCurtain",
                         "color": [
@@ -2162,7 +2331,7 @@ main.floors.MT284=
                         "type": "setCurtain",
                         "time": 500
                     },
-                    "\t[盟军指挥官]第一次渡河行动失败，我们的部队在雷区和敌人的炮火中迷失了方向。现在开始第二次强渡！"
+                    "\t[盟军指挥官,hero]第一次渡河行动失败，我们的部队在雷区和敌人的炮火中迷失了方向。现在开始第二次强渡！"
                 ]
             },
             {
@@ -2192,15 +2361,23 @@ main.floors.MT284=
                         "type": "setCurtain",
                         "time": 500
                     },
-                    "\t[盟军指挥官]第二次渡河又失败了，我们没能拿下任何战果。",
-                    "\t[盟军指挥官]两翼的英法部队都取得了一定的成绩，我们美利坚合众国绝不能比他们差！继续渡河！直到突破德军防线！"
+                    "\t[盟军指挥官,hero]第二次渡河又失败了，我们没能拿下任何战果。",
+                    "\t[盟军指挥官,hero]两翼的英法部队都取得了一定的成绩，我们美利坚合众国绝不能比他们差！继续渡河！直到突破德军防线！"
                 ]
             },
             {
                 "type": "if",
                 "condition": "(flag:MT284time===3)",
                 "true": [
-                    "\t[克拉克]\f[clark.png,0,310]停止进攻！这是无意义的消耗！现在回来休整部队，重整旗鼓后再继续！",
+                    {
+                        "type": "text",
+                        "text": "\t[克拉克]\f[clark.png,0,310]停止进攻！这样的损失只会折损我的威望！现在回来休整部队，重整旗鼓后再继续！",
+                        "pos": [
+                            100,
+                            300,
+                            380
+                        ]
+                    },
                     {
                         "type": "setCurtain",
                         "color": [
@@ -2267,7 +2444,7 @@ main.floors.MT284=
                         "type": "setCurtain",
                         "time": 500
                     },
-                    "\t[盟军指挥官]第一次渡河行动失败，我们的部队在雷区和敌人的炮火中迷失了方向。现在开始第二次强渡！"
+                    "\t[盟军指挥官,hero]第一次渡河行动失败，我们的部队在雷区和敌人的炮火中迷失了方向。现在开始第二次强渡！"
                 ]
             },
             {
@@ -2297,15 +2474,23 @@ main.floors.MT284=
                         "type": "setCurtain",
                         "time": 500
                     },
-                    "\t[盟军指挥官]第二次渡河又失败了，我们没能拿下任何战果。",
-                    "\t[盟军指挥官]两翼的英法部队都取得了一定的成绩，我们美利坚合众国绝不能比他们差！继续渡河！直到突破德军防线！"
+                    "\t[盟军指挥官,hero]第二次渡河又失败了，我们没能拿下任何战果。",
+                    "\t[盟军指挥官,hero]两翼的英法部队都取得了一定的成绩，我们美利坚合众国绝不能比他们差！继续渡河！直到突破德军防线！"
                 ]
             },
             {
                 "type": "if",
                 "condition": "(flag:MT284time===3)",
                 "true": [
-                    "\t[克拉克]\f[clark.png,0,310]停止进攻！这是无意义的消耗！现在回来休整部队，重整旗鼓后再继续！",
+                    {
+                        "type": "text",
+                        "text": "\t[克拉克]\f[clark.png,0,310]停止进攻！这样的损失只会折损我的威望！现在回来休整部队，重整旗鼓后再继续！",
+                        "pos": [
+                            100,
+                            300,
+                            380
+                        ]
+                    },
                     {
                         "type": "setCurtain",
                         "color": [
@@ -2372,7 +2557,7 @@ main.floors.MT284=
                         "type": "setCurtain",
                         "time": 500
                     },
-                    "\t[盟军指挥官]第一次渡河行动失败，我们的部队在雷区和敌人的炮火中迷失了方向。现在开始第二次强渡！"
+                    "\t[盟军指挥官,hero]第一次渡河行动失败，我们的部队在雷区和敌人的炮火中迷失了方向。现在开始第二次强渡！"
                 ]
             },
             {
@@ -2402,15 +2587,23 @@ main.floors.MT284=
                         "type": "setCurtain",
                         "time": 500
                     },
-                    "\t[盟军指挥官]第二次渡河又失败了，我们没能拿下任何战果。",
-                    "\t[盟军指挥官]两翼的英法部队都取得了一定的成绩，我们美利坚合众国绝不能比他们差！继续渡河！直到突破德军防线！"
+                    "\t[盟军指挥官,hero]第二次渡河又失败了，我们没能拿下任何战果。",
+                    "\t[盟军指挥官,hero]两翼的英法部队都取得了一定的成绩，我们美利坚合众国绝不能比他们差！继续渡河！直到突破德军防线！"
                 ]
             },
             {
                 "type": "if",
                 "condition": "(flag:MT284time===3)",
                 "true": [
-                    "\t[克拉克]\f[clark.png,0,310]停止进攻！这是无意义的消耗！现在回来休整部队，重整旗鼓后再继续！",
+                    {
+                        "type": "text",
+                        "text": "\t[克拉克]\f[clark.png,0,310]停止进攻！这样的损失只会折损我的威望！现在回来休整部队，重整旗鼓后再继续！",
+                        "pos": [
+                            100,
+                            300,
+                            380
+                        ]
+                    },
                     {
                         "type": "setCurtain",
                         "color": [
@@ -2441,6 +2634,6909 @@ main.floors.MT284=
                         "value": "status:hpmax"
                     }
                 ]
+            }
+        ],
+        "8,12": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "9,12": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "10,12": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "11,12": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "12,12": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "13,12": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "14,12": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "14,13": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "13,13": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "0,13": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "0,12": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "1,12": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "2,12": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "3,12": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "4,12": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "5,12": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "6,12": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "7,11": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "8,11": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "10,11": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "11,11": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "12,11": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "14,11": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "5,11": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "4,11": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "2,11": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "0,11": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "0,10": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "1,10": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "2,10": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "3,10": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "5,10": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "6,10": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "7,10": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "9,10": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "10,10": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "11,10": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "12,10": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "13,10": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "14,10": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "14,9": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "13,9": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "11,9": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "9,9": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "8,9": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "7,9": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "6,9": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "5,9": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "4,9": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "3,9": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "2,9": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "1,9": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "0,8": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "1,8": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "3,8": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "4,8": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "6,8": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "8,8": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "9,8": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "10,8": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "11,8": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "13,8": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "14,8": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "13,7": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "12,7": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "11,7": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "9,7": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "8,7": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "7,7": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "6,7": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "5,7": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "4,7": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "3,7": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "2,7": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "1,7": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "0,6": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "1,6": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "2,6": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "3,6": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "5,6": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "7,6": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "8,6": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "9,6": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "10,6": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "11,6": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "12,6": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "13,6": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "14,6": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "14,5": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "13,5": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "12,5": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "11,5": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "10,5": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "9,5": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "7,5": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "6,5": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "4,5": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "3,5": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "1,5": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "0,5": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "0,3": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "1,4": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "2,4": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "4,4": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "5,4": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "6,4": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "8,4": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "9,4": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "11,4": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "12,4": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "14,4": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "14,3": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "13,3": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "14,2": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "12,3": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "11,3": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
+            }
+        ],
+        "10,3": [
+            {
+                "type": "if",
+                "condition": "(flag:MT284mg42>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "shoot3",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284mg42*30000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284flak>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "explore2",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284flak*40000)"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:MT284howitzers>=1)",
+                "true": [
+                    {
+                        "type": "animate",
+                        "name": "howitzer",
+                        "loc": "hero",
+                        "async": true
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:hp",
+                        "operator": "-=",
+                        "value": "(flag:MT284howitzers*50000)"
+                    }
+                ]
+            },
+            {
+                "type": "waitAsync"
             }
         ]
     },
@@ -2511,14 +9607,6 @@ main.floors.MT284=
                 "value": "1"
             }
         ],
-        "11,0": [
-            {
-                "type": "setValue",
-                "name": "flag:MT284mg42",
-                "operator": "-=",
-                "value": "1"
-            }
-        ],
         "5,0": [
             {
                 "type": "setValue",
@@ -2534,14 +9622,6 @@ main.floors.MT284=
                 "operator": "-=",
                 "value": "1"
             }
-        ],
-        "3,0": [
-            {
-                "type": "setValue",
-                "name": "flag:MT284mg42",
-                "operator": "-=",
-                "value": "1"
-            }
         ]
     },
     "afterGetItem": {},
@@ -2550,21 +9630,21 @@ main.floors.MT284=
     "cannotMove": {},
     "cannotMoveIn": {},
     "map": [
-    [  0,  0,  0,266,266,388,266, 91,266,388,266,266,  0, 11, 11],
+    [  0,  0,  0,  0,266,388,266, 91,266,388,266,  0,  0, 11, 11],
     [ 11, 11,  0,  0,  0,  0,390,236,390, 11, 11, 11, 11,  0,  0],
     [  0,  0, 11, 11, 11, 11, 11, 11, 11,  0,  0,  0,  0,  0,  0],
-    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
-    [50049,  0,  0,50049,  0,  0,  0,50049,  0,  0,50049,  0,  0,50049,  0],
-    [  0,  0,50049,  0,  0,50049,  0,  0,50049,  0,  0,  0,  0,  0,  0],
-    [  0,  0,  0,  0,50049,  0,50049,  0,  0,  0,  0,  0,  0,  0,  0],
+    [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,606],
+    [50049,  0,  0,50049,  0,  0,  0,50049,  0,606,50049,  0,  0,50049,  0],
+    [  0,  0,50049,  0,  0,50049,  0,  0,50049,  0,  0,  0,606,  0,  0],
+    [  0,606,  0,  0,50049,  0,50049,606,  0,  0,  0,  0,606,  0,  0],
     [50049,  0,  0,  0,  0,  0,  0,  0,  0,  0,50049,  0,  0,  0,50049],
     [  0,  0,50049,  0,  0,50049,  0,50049,  0,  0,  0,  0,50049,  0,  0],
-    [50049,  0,  0,  0,  0,  0,  0,  0,  0,  0,50049,  0,50049,  0,  0],
-    [  0,  0,  0,  0,50049,  0,  0,  0,50049,  0,  0,  0,  0,  0,  0],
-    [  0,50049,  0,50049,  0,  0,50049,  0,  0,50049,  0,  0,  0,50049,  0],
+    [50049,  0,  0,  0,  0,  0,606,  0,  0,  0,50049,606,50049,  0,  0],
+    [  0,  0,606,  0,50049,  0,  0,  0,50049,  0,  0,  0,  0,  0,  0],
+    [  0,50049,  0,50049,  0,606,50049,  0,  0,50049,  0,  0,  0,50049,  0],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
-    [  0,606,606,605,10147,  0,  0,  0,  0,601,605,606,606,  0,  0],
-    [607,607,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,607,607]
+    [  0,606,606,606,10147,  0,  0,  0,  0,601,606,606,606,  0,  0],
+    [607,607,541,541,541,  0,  0,  0,  0,  0,541,541,541,607,607]
 ],
     "bgmap": [
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],

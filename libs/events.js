@@ -702,7 +702,7 @@ events.prototype.changeFloor = function (floorId, stair, heroLoc, time, callback
     if (core.status.floorId)core.searchBlockWithFilter(block => { 
         if (!block || !block.event.cls.startsWith("enemy"))
 				return false;
-			if (core.hasSpecial(block.event.special, 69))
+			if (core.hasSpecial(core.material.enemys[block.event.id].special, 69))
 				return true;
     }).forEach(v=>core.battle(null,v.x,v.y,true))// 迂回包抄 69
     floorId = info.floorId;

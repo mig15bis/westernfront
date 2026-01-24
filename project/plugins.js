@@ -3968,14 +3968,14 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 									if (core.hasEquip('edinburgh')) money += 2; //爱丁堡号巡洋舰，金币+2
 									if (core.hasEquip('hood')) money += 10; //胡德号，金币+10
 									if (core.hasItem('coin')) money *= 2; // 幸运金币：双倍
-									if (core.hasSpecial(nextair, 61)) money = 0; // 投降
+									if (core.hasSpecial(nextair, 61) || flags.咒 === true) money = 0; // 投降
 									core.status.hero.money += money;
 									core.status.hero.statistics.money += money;
 									if (core.hasEquip('classv')) exp += 2; //V级驱逐舰
 									if (core.hasEquip('classj')) exp += 5; //J级驱逐舰
 									if (core.hasEquip('hood')) exp += 10; //胡德号，经验+10
 									if (core.hasEquip('m4a2') || core.hasEquip('m4a3') || core.hasEquip('m4a3e2') || core.hasEquip('firefly')) exp *= 2; //馒头
-									if (core.hasSpecial(nextair, 61)) exp = 0; // 投降
+									if (core.hasSpecial(nextair, 61) || flags.咒 === true) exp = 0; // 投降
 									core.status.hero.exp += exp;
 									core.status.hero.statistics.exp += exp;
 									core.push(todo, core.floors[floorId].afterBattle[X + "," + Y]);
@@ -4002,14 +4002,14 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 								if (core.hasEquip('edinburgh')) money += 2; //爱丁堡号巡洋舰，金币+2
 								if (core.hasEquip('hood')) money += 10; //胡德号，金币+10
 								if (core.hasItem('coin')) money *= 2; // 幸运金币：双倍
-								if (core.hasSpecial(nextair, 61)) money = 0; // 投降
+								if (core.hasSpecial(nextair, 61) || flags.咒 === true) money = 0; // 投降
 								core.status.hero.money += money;
 								core.status.hero.statistics.money += money;
 								if (core.hasEquip('classv')) exp += 2; //V级驱逐舰
 								if (core.hasEquip('classj')) exp += 5; //J级驱逐舰
 								if (core.hasEquip('hood')) exp += 10; //胡德号，经验+10
 								if (core.hasEquip('m4a2') || core.hasEquip('m4a3') || core.hasEquip('m4a3e2') || core.hasEquip('firefly')) exp *= 2; //馒头
-								if (core.hasSpecial(nextair, 61)) exp = 0; // 投降
+								if (core.hasSpecial(nextair, 61) || flags.咒 === true) exp = 0; // 投降
 								core.status.hero.exp += exp;
 								core.status.hero.statistics.exp += exp;
 								core.push(todo, core.floors[floorId].afterBattle[X + "," + Y]);
@@ -4064,14 +4064,14 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 											if (core.hasEquip('edinburgh')) money += 2; //爱丁堡号巡洋舰，金币+2
 											if (core.hasEquip('hood')) money += 10; //胡德号，金币+10
 											if (core.hasItem('coin')) money *= 2; // 幸运金币：双倍
-											if (core.hasSpecial(nextair, 61)) money = 0; // 投降
+											if (core.hasSpecial(nextair, 61) || flags.咒 === true) money = 0; // 投降
 											core.status.hero.money += money;
 											core.status.hero.statistics.money += money;
 											if (core.hasEquip('classv')) exp += 2; //V级驱逐舰
 											if (core.hasEquip('classj')) exp += 5; //J级驱逐舰
 											if (core.hasEquip('hood')) exp += 10; //胡德号，经验+10
 											if (core.hasEquip('m4a2') || core.hasEquip('m4a3') || core.hasEquip('m4a3e2') || core.hasEquip('firefly')) exp *= 2; //馒头
-											if (core.hasSpecial(nextair, 61)) exp = 0; // 投降
+											if (core.hasSpecial(nextair, 61) || flags.咒 === true) exp = 0; // 投降
 											core.status.hero.exp += exp;
 											core.status.hero.statistics.exp += exp;
 											core.push(todo, core.floors[floorId].afterBattle[X + "," + Y]);
@@ -4114,14 +4114,14 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 										if (core.hasEquip('edinburgh')) money += 2; //爱丁堡号巡洋舰，金币+2
 										if (core.hasEquip('hood')) money += 10; //胡德号，金币+10
 										if (core.hasItem('coin')) money *= 2; // 幸运金币：双倍
-										if (core.hasSpecial(nextair, 61)) money = 0; // 投降
+										if (core.hasSpecial(nextair, 61) || flags.咒 === true) money = 0; // 投降
 										core.status.hero.money += money;
 										core.status.hero.statistics.money += money;
 										if (core.hasEquip('classv')) exp += 2; //V级驱逐舰
 										if (core.hasEquip('classj')) exp += 5; //J级驱逐舰
 										if (core.hasEquip('hood')) exp += 10; //胡德号，经验+10
 										if (core.hasEquip('m4a2') || core.hasEquip('m4a3') || core.hasEquip('m4a3e2') || core.hasEquip('firefly')) exp *= 2; //馒头
-										if (core.hasSpecial(nextair, 61)) exp = 0; // 投降
+										if (core.hasSpecial(nextair, 61) || flags.咒 === true) exp = 0; // 投降
 										core.status.hero.exp += exp;
 										core.status.hero.statistics.exp += exp;
 										core.push(todo, core.floors[floorId].afterBattle[X + "," + Y]);
@@ -4411,14 +4411,14 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 								if (core.hasEquip('edinburgh')) money += 2; //爱丁堡号巡洋舰，金币+2
 								if (core.hasEquip('hood')) money += 10; //胡德号，金币+10
 								if (core.hasItem('coin')) money *= 2; // 幸运金币：双倍
-								if (core.hasSpecial(nextair, 61)) money = 0; // 投降
+								if (core.hasSpecial(nextair, 61) || flags.咒 === true) money = 0; // 投降
 								core.status.hero.money += money;
 								core.status.hero.statistics.money += money;
 								if (core.hasEquip('classv')) exp += 2; //V级驱逐舰
 								if (core.hasEquip('classj')) exp += 5; //J级驱逐舰
 								if (core.hasEquip('hood')) exp += 10; //胡德号，经验+10
 								if (core.hasEquip('m4a2') || core.hasEquip('m4a3') || core.hasEquip('m4a3e2') || core.hasEquip('firefly')) exp *= 2; //馒头
-								if (core.hasSpecial(nextair, 61)) exp = 0; // 投降
+								if (core.hasSpecial(nextair, 61) || flags.咒 === true) exp = 0; // 投降
 								core.status.hero.exp += exp;
 								core.status.hero.statistics.exp += exp;
 								core.push(todo, core.floors[floorId].afterBattle[X + "," + Y]);
@@ -4445,14 +4445,14 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 							if (core.hasEquip('edinburgh')) money += 2; //爱丁堡号巡洋舰，金币+2
 							if (core.hasEquip('hood')) money += 10; //胡德号，金币+10
 							if (core.hasItem('coin')) money *= 2; // 幸运金币：双倍
-							if (core.hasSpecial(nextair, 61)) money = 0; // 投降
+							if (core.hasSpecial(nextair, 61) || flags.咒 === true) money = 0; // 投降
 							core.status.hero.money += money;
 							core.status.hero.statistics.money += money;
 							if (core.hasEquip('classv')) exp += 2; //V级驱逐舰
 							if (core.hasEquip('classj')) exp += 5; //J级驱逐舰
 							if (core.hasEquip('hood')) exp += 10; //胡德号，经验+10
 							if (core.hasEquip('m4a2') || core.hasEquip('m4a3') || core.hasEquip('m4a3e2') || core.hasEquip('firefly')) exp *= 2; //馒头
-							if (core.hasSpecial(nextair, 61)) exp = 0; // 投降
+							if (core.hasSpecial(nextair, 61) || flags.咒 === true) exp = 0; // 投降
 							core.status.hero.exp += exp;
 							core.status.hero.statistics.exp += exp;
 							core.push(todo, core.floors[floorId].afterBattle[X + "," + Y]);
@@ -4509,14 +4509,14 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 										if (core.hasEquip('edinburgh')) money += 2; //爱丁堡号巡洋舰，金币+2
 										if (core.hasEquip('hood')) money += 10; //胡德号，金币+10
 										if (core.hasItem('coin')) money *= 2; // 幸运金币：双倍
-										if (core.hasSpecial(nextair, 61)) money = 0; // 投降
+										if (core.hasSpecial(nextair, 61) || flags.咒 === true) money = 0; // 投降
 										core.status.hero.money += money;
 										core.status.hero.statistics.money += money;
 										if (core.hasEquip('classv')) exp += 2; //V级驱逐舰
 										if (core.hasEquip('classj')) exp += 5; //J级驱逐舰
 										if (core.hasEquip('hood')) exp += 10; //胡德号，经验+10
 										if (core.hasEquip('m4a2') || core.hasEquip('m4a3') || core.hasEquip('m4a3e2') || core.hasEquip('firefly')) exp *= 2; //馒头
-										if (core.hasSpecial(nextair, 61)) exp = 0; // 投降
+										if (core.hasSpecial(nextair, 61) || flags.咒 === true) exp = 0; // 投降
 										core.status.hero.exp += exp;
 										core.status.hero.statistics.exp += exp;
 										core.push(todo, core.floors[floorId].afterBattle[X + "," + Y]);
@@ -4558,14 +4558,14 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 									if (core.hasEquip('edinburgh')) money += 2; //爱丁堡号巡洋舰，金币+2
 									if (core.hasEquip('hood')) money += 10; //胡德号，金币+10
 									if (core.hasItem('coin')) money *= 2; // 幸运金币：双倍
-									if (core.hasSpecial(nextair, 61)) money = 0; // 投降
+									if (core.hasSpecial(nextair, 61) || flags.咒 === true) money = 0; // 投降
 									core.status.hero.money += money;
 									core.status.hero.statistics.money += money;
 									if (core.hasEquip('classv')) exp += 2; //V级驱逐舰
 									if (core.hasEquip('classj')) exp += 5; //J级驱逐舰
 									if (core.hasEquip('hood')) exp += 10; //胡德号，经验+10
 									if (core.hasEquip('m4a2') || core.hasEquip('m4a3') || core.hasEquip('m4a3e2') || core.hasEquip('firefly')) exp *= 2; //馒头
-									if (core.hasSpecial(nextair, 61)) exp = 0; // 投降
+									if (core.hasSpecial(nextair, 61) || flags.咒 === true) exp = 0; // 投降
 									core.status.hero.exp += exp;
 									core.status.hero.statistics.exp += exp;
 									core.push(todo, core.floors[floorId].afterBattle[X + "," + Y]);
@@ -4994,7 +4994,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 			strategy: false,
 			name: '孟菲斯美女号',
 			cost: 200,
-			description: '下一场战斗中，友军不会受到任何伤害，且战后恢复25%生命值'
+			description: '下一场战斗中，友军不会受到任何伤害，且战斗伤害减少25%'
 		},
 
 		{ // 19
@@ -5002,7 +5002,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 			strategy: false,
 			name: '刺猬弹',
 			cost: 100,
-			description: '下一场战斗中发射“刺猬”反潜迫击炮，在首回合对潜艇造成1倍攻击力的伤害，且战后无视狼群协同攻击'
+			description: '下一场战斗中发射“刺猬”反潜迫击炮，在首回合对潜艇造成1倍攻击力的伤害，且战后不会被狼群协同攻击'
 		},
 
 		{ // 20
