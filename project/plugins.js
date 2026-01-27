@@ -4041,9 +4041,11 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 						if (nextair && core.getBlockCls(X, Y) === "enemys" && core.plugin.Luftwaffe.includes(core.material.enemys[nextair].type)) {
 							if (core.hasSpecial(nextair, 57)) {
 								hero.mana += 100;
-								core.unlockControl();
 								core.drawTip("无法对敌方boss使用");
 							} else if (core.hasSpecial(nextair, 65)) {
+								let enemydie = 0,
+									getexp = 0;
+								let nextlv = core.control.getNextLvUpNeed();
 								//动画
 								core.playSound('fighter.mp3');
 								core.showImage(1, 'aircraft1.png', null, [480, 32 * Y - 109], 1, 0, () => {
@@ -4074,6 +4076,8 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 											if (core.hasSpecial(nextair, 61) || flags.咒 === true) exp = 0; // 投降
 											core.status.hero.exp += exp;
 											core.status.hero.statistics.exp += exp;
+											getexp = exp;
+											enemydie = 1;
 											core.push(todo, core.floors[floorId].afterBattle[X + "," + Y]);
 											core.push(todo, core.material.enemys[nextair].afterBattle);
 											delete((flags.enemyOnPoint || {})[floorId] || {})[X + "," + Y];
@@ -4086,23 +4090,26 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 										core.hideImage(1, 0);
 										if (todo.length > 0) {
 											core.insertAction(todo);
-											core.unlockControl();
 										} else {
-											core.unlockControl();
+											if (enemydie === 1 && getexp < nextlv) {
+												core.unlockControl();
+											}
+										}
+										if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
+											core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
+											core.updateStatusBar();
+											core.drawHeroAnimate('sniper');
+											if (hero.hp <= 0) {
+												core.events.lose();
+											}
 										}
 									})
-									if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
-										core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
-										core.updateStatusBar();
-										core.drawHeroAnimate('sniper');
-										if (hero.hp <= 0) {
-											core.events.lose();
-										}
-									}
 								});
 							} else {
 								core.playSound('fighter.mp3');
 								core.showImage(1, 'aircraft1.png', null, [480, 32 * Y - 109], 1, 0, () => {
+									let getexp = 0;
+									let nextlv = core.control.getNextLvUpNeed();
 									setTimeout(() => {
 										core.drawAnimate('shootair', X, Y);
 										core.playSound('crash2.mp3');
@@ -4124,45 +4131,42 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 										if (core.hasSpecial(nextair, 61) || flags.咒 === true) exp = 0; // 投降
 										core.status.hero.exp += exp;
 										core.status.hero.statistics.exp += exp;
+										getexp = exp;
 										core.push(todo, core.floors[floorId].afterBattle[X + "," + Y]);
 										core.push(todo, core.material.enemys[nextair].afterBattle);
 										delete((flags.enemyOnPoint || {})[floorId] || {})[X + "," + Y];
 										delete flags.aoe[范围伤害目标];
 										core.removeBlock(X, Y);
-										core.updateStatusBar();
 									}, (18 - X) / 21 * 500);
 									core.moveImage(1, [-195, 32 * Y - 109], 1, null, 500, () => {
 										core.hideImage(1, 0);
 										if (todo.length > 0) {
 											core.insertAction(todo);
-											core.unlockControl();
 										} else {
-											core.unlockControl();
+											if (getexp < nextlv) {
+												core.unlockControl();
+											}
+										}
+										if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
+											core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
+											core.updateStatusBar();
+											core.drawHeroAnimate('sniper');
+											if (hero.hp <= 0) {
+												core.events.lose();
+											}
 										}
 									})
-									if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
-										core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
-										core.updateStatusBar();
-										core.drawHeroAnimate('sniper');
-										if (hero.hp <= 0) {
-											core.events.lose();
-										}
-									}
 								});
-								core.updateStatusBar();
 							}
 						} else {
 							hero.mana += 100;
-							core.unlockControl();
 							core.drawTip("只能对空中目标使用");
 						}
 					} else {
 						hero.mana += 100;
-						core.unlockControl();
 						core.drawTip("受剧情影响，无法使用");
 					}
 				}
-				core.updateStatusBar();
 			},
 			description: '只能对面前的非boss空军使用，将其秒杀。如果无法秒杀对方，则效果改为“造成3倍攻击力的伤害”'
 		},
@@ -4282,6 +4286,9 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 					core.lockControl();
 					if (next && core.getBlockCls(X, Y) === "enemys" && core.plugin.Navy.includes(core.material.enemys[next].type) && core.material.enemys[next].type !== '潜艇') {
 						let dod = core.getEnemyInfo(next, hero, X, Y, floorId).dod;
+						let enemydie = 0,
+							getexp = 0;
+						let nextlv = core.control.getNextLvUpNeed();
 						//动画
 						core.playSound('bomber2.mp3');
 						core.showImage(1, 'aircraft7.png', null, [480, 32 * Y - 109], 1, 0, () => {
@@ -4319,6 +4326,8 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 									if (core.hasSpecial(next, 61)) exp = 0; // 投降
 									core.status.hero.exp += exp;
 									core.status.hero.statistics.exp += exp;
+									getexp = exp;
+									enemydie = 1;
 									core.push(todo, core.floors[floorId].afterBattle[X + "," + Y]);
 									core.push(todo, core.material.enemys[next].afterBattle);
 									delete((flags.enemyOnPoint || {})[floorId] || {})[X + "," + Y];
@@ -4332,7 +4341,9 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 								if (todo.length > 0) {
 									core.insertAction(todo);
 								} else {
-									core.unlockControl();
+									if (enemydie === 1 && getexp < nextlv) {
+										core.unlockControl();
+									}
 								}
 							})
 							if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
@@ -4347,7 +4358,6 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 					} else {
 						hero.mana += 150;
 						core.drawTip("只能对水面舰艇使用");
-						core.unlockControl();
 					}
 				}
 				core.updateStatusBar();
@@ -4482,6 +4492,9 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 							core.unlockControl();
 							core.drawTip("无法对敌方boss使用");
 						} else if (!['轻坦', '中坦', '重坦', '坦歼'].includes(core.material.enemys[nextair].type) || core.hasSpecial(nextair, 65)) {
+							let enemydie = 0,
+								getexp = 0;
+							let nextlv = core.control.getNextLvUpNeed();
 							//动画
 							core.playSound('bomber3.mp3');
 							core.showImage(1, 'aircraft2.png', null, [480, 32 * Y - 109], 1, 0, () => {
@@ -4519,6 +4532,8 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 										if (core.hasSpecial(nextair, 61) || flags.咒 === true) exp = 0; // 投降
 										core.status.hero.exp += exp;
 										core.status.hero.statistics.exp += exp;
+										enemydie = 1;
+										getexp = exp;
 										core.push(todo, core.floors[floorId].afterBattle[X + "," + Y]);
 										core.push(todo, core.material.enemys[nextair].afterBattle);
 										delete((flags.enemyOnPoint || {})[floorId] || {})[X + "," + Y];
@@ -4531,9 +4546,10 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 									core.hideImage(1, 0);
 									if (todo.length > 0) {
 										core.insertAction(todo);
-										core.unlockControl();
 									} else {
-										core.unlockControl();
+										if (enemydie === 1 && getexp < nextlv) {
+											core.unlockControl();
+										}
 									}
 									if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
 										core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
@@ -4548,6 +4564,8 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 						} else {
 							core.playSound('bomber3.mp3');
 							core.showImage(1, 'aircraft2.png', null, [480, 32 * Y - 109], 1, 0, () => {
+								let getexp = 0;
+								let nextlv = core.control.getNextLvUpNeed();
 								setTimeout(() => {
 									core.drawAnimate('vehicleexplore', X, Y);
 									let money = core.getEnemyValue(nextair, 'money', X, Y),
@@ -4568,6 +4586,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 									if (core.hasSpecial(nextair, 61) || flags.咒 === true) exp = 0; // 投降
 									core.status.hero.exp += exp;
 									core.status.hero.statistics.exp += exp;
+									getexp = exp;
 									core.push(todo, core.floors[floorId].afterBattle[X + "," + Y]);
 									core.push(todo, core.material.enemys[nextair].afterBattle);
 									delete((flags.enemyOnPoint || {})[floorId] || {})[X + "," + Y];
@@ -4579,7 +4598,9 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 									if (todo.length > 0) {
 										core.insertAction(todo)
 									} else {
-										core.unlockControl();
+										if (getexp < nextlv) {
+											core.unlockControl();
+										}
 									}
 									core.updateStatusBar();
 									if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
@@ -4595,7 +4616,6 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 						}
 					} else {
 						hero.mana += 200;
-						core.unlockControl();
 						core.drawTip("只能对地面目标使用");
 					}
 				}

@@ -70,6 +70,13 @@ main.floors.MT288=
                                 "盟军的行为引起了国际社会的不满，并且德军现在可以名正言顺的将那里的残垣断壁挪作炮兵观察哨和狙击手掩体。从现在起，当前区域领域类伤害增加，且每次战后会被狙击手攻击一次。",
                                 {
                                     "type": "setEnemy",
+                                    "id": "mortar",
+                                    "name": "zone",
+                                    "value": "20000",
+                                    "norefresh": true
+                                },
+                                {
+                                    "type": "setEnemy",
                                     "id": "pak40",
                                     "name": "zone",
                                     "value": "25000",

@@ -1512,7 +1512,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		istank = mon_skillNum.type === '轻坦' || mon_skillNum.type === '中坦' || mon_skillNum.type === '重坦' || mon_skillNum.type === '坦歼',
 		isgun = mon_skillNum.type === '反坦克炮' || mon_skillNum.type === '榴弹炮' || mon_skillNum.type === '高射炮',
 		casino = false;
-	if (floorId === 'MT284' || floorId === 'MT285' || floorId === 'MT286' || floorId === 'MT287' || floorId === 'MT288' || floorId === 'MT289' || floorId === 'MT290' || floorId === 'MT291' || floorId === 'MT292' || floorId === 'MT293') {
+	if (core.status.floorId === 'MT284' || core.status.floorId === 'MT285' || core.status.floorId === 'MT286' || core.status.floorId === 'MT287' || core.status.floorId === 'MT288' || core.status.floorId === 'MT289' || core.status.floorId === 'MT290' || core.status.floorId === 'MT291' || core.status.floorId === 'MT292' || core.status.floorId === 'MT293') {
 		casino = true;
 	}
 
@@ -2387,10 +2387,11 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			hero_rocket *= 0.6;
 		}*/
 		hero_common *= monsk86;
+		hero_rocket *= monsk86;
 		/*if (core.hasSpecial(mon_special, 87)) { //技能87：隐蔽
 			hero_bomb *= 0.1;
 		}*/
-		hero_common *= monsk87;
+		hero_bomb *= monsk87;
 
 		hero_perDamage += (hero_common + hero_dc + hero_rocket + hero_bomb + hero_torpedo + hero_skytorpedo + hero_main) * beilv; //总伤计算
 		if (p51lianji) { //P51连击
@@ -2576,8 +2577,8 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		damage += core.status.hero.hpmax * 0.1;
 	}
 	if (casino) { //卡西诺山特判
-		if (core.getFlag('摧毁修道院'), false) {
-			damage += 0;
+		if (core.getFlag('摧毁修道院')) {
+			damage += 100000;
 		}
 	}
 	if (core.hasSpecial(mon_special, 89) && core.getFlag('fire', 0) > 0) { //技能89：殉爆

@@ -6951,6 +6951,18 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 				"action": [
 					"晋升元帅"
 				]
+			},
+			{
+				"need": "999999999999",
+				"title": "???",
+				"clear": true,
+				"action": [
+					"你哪来这么多经验？开了吧？",
+					{
+						"type": "lose",
+						"reason": "禁止开挂！"
+					}
+				]
 			}
 		]
 	},
