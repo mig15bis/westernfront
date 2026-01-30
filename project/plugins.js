@@ -4160,10 +4160,12 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 							}
 						} else {
 							hero.mana += 100;
+							core.unlockControl();
 							core.drawTip("只能对空中目标使用");
 						}
 					} else {
 						hero.mana += 100;
+						core.unlockControl();
 						core.drawTip("受剧情影响，无法使用");
 					}
 				}
@@ -4357,6 +4359,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 						});
 					} else {
 						hero.mana += 150;
+						core.unlockControl();
 						core.drawTip("只能对水面舰艇使用");
 					}
 				}
@@ -4616,6 +4619,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 						}
 					} else {
 						hero.mana += 200;
+						core.unlockControl();
 						core.drawTip("只能对地面目标使用");
 					}
 				}
@@ -5030,7 +5034,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 			strategy: true,
 			name: '红色尾翼',
 			cost: 1000,
-			description: '获得第332战斗机大队的支援。无条件直接夺取当前地图制空权，且制空权效果改为20%。主角在当前地图行动期间，友军不会受到任何损失，对敌方空军伤害+30%'
+			description: '获得第332战斗机大队的支援。无条件直接夺取当前地图制空权，且制空权加成效果改为20%。主角在当前地图行动期间，友军不会受到任何损失，以及对敌方空军伤害+30%'
 		},
 
 		{ // 21
