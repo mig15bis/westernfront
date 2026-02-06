@@ -2545,12 +2545,16 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 					ff = core.getEquip(4),
 					fb = core.getEquip(5),
 					cacheFloor = core.status.checkBlock.cache?.cacheFloor;
-				let hasFighter = ff || fb === 'p38' || fb === 'typhoon' || fb === 'mosquito' || fb === 'p47d' || fb === 'p61' || bb === 'eagle' || bb === 'illustrious' || bb === 'raider' || bb === 'essex' || bb === 'enterprise' || bb === 'illus1941' || (core.hasItem('independence') && (core.status.maps[core.status.floorId].area === '海洋' || core.status.maps[core.status.floorId].area === '浅滩')),
-					enemyFighter = cacheFloor?.战斗机 || cacheFloor?.重型战斗机;
-				if (hasFighter && !enemyFighter) {
+				if (cacheFloor.红尾巴) {
 					skycontrol = 1;
-				} else if (!hasFighter && enemyFighter) {
-					skycontrol = 2;
+				} else {
+					let hasFighter = ff || fb === 'p38' || fb === 'typhoon' || fb === 'mosquito' || fb === 'p47d' || fb === 'p61' || bb === 'eagle' || bb === 'illustrious' || bb === 'raider' || bb === 'essex' || bb === 'enterprise' || bb === 'illus1941' || (core.hasItem('independence') && (core.status.maps[core.status.floorId].area === '海洋' || core.status.maps[core.status.floorId].area === '浅滩')),
+						enemyFighter = cacheFloor?.战斗机 || cacheFloor?.重型战斗机;
+					if (hasFighter && !enemyFighter) {
+						skycontrol = 1;
+					} else if (!hasFighter && enemyFighter) {
+						skycontrol = 2;
+					}
 				}
 			}
 			if (core.domStyle.isVertical) { // 竖屏
@@ -5034,7 +5038,24 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 			strategy: true,
 			name: '红色尾翼',
 			cost: 1000,
-			description: '获得第332战斗机大队的支援。无条件直接夺取当前地图制空权，且制空权加成效果改为20%。主角在当前地图行动期间，友军不会受到任何损失，以及对敌方空军伤害+30%'
+			func: function () {
+				const thisfloor = core.status.floorId;
+				if (flags.skill20Floor.includes(thisfloor)) { //检测当前楼层是否已使用技能
+					core.status.hero.mana += 1000;
+					core.drawTip('仅能在海洋使用');
+					core.playSound('error.mp3');
+					return;
+				} else {
+					if (!core.isReplaying() && !main.replayChecking) { //不在录像中
+						flags.skill20Floor.push(thisfloor);
+					} else {
+						//动画特效待定
+						flags.skill20Floor.push(thisfloor);
+						core.updateStatusBar();
+					}
+				}
+			},
+			description: '获得第332战斗机大队的支援：无条件直接夺取当前地图制空权。主角在当前地图行动期间，友军受到的战斗伤害-80%，且对敌方空军伤害+30%。'
 		},
 
 		{ // 21
@@ -5042,7 +5063,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 			strategy: true,
 			name: 'T34谢尔曼风琴',
 			cost: 600,
-			description: '仅可在地面使用。呼叫火箭炮覆盖打击，打击目标为以自身为中心7×7正方形区域，其中的敌人陆军受到不同程度的损失：步兵失去70%生命值，炮兵失去50%，装甲失去20%'
+			description: '仅可在地面使用。呼叫火箭炮覆盖打击，打击目标为以自身为中心7×7正方形区域，其中的敌人陆军受到不同程度的损失：步兵失去70%生命值，炮兵50%，装甲20%'
 		},
 
 		{ // 22

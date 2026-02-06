@@ -39,8 +39,47 @@ main.floors.MT302=
             "type": "animate",
             "name": "fire",
             "loc": [
+                5,
+                13
+            ],
+            "async": true
+        },
+        {
+            "type": "sleep",
+            "time": 50
+        },
+        {
+            "type": "animate",
+            "name": "fire",
+            "loc": [
                 7,
                 13
+            ],
+            "async": true
+        },
+        {
+            "type": "sleep",
+            "time": 50
+        },
+        {
+            "type": "animate",
+            "name": "fire",
+            "loc": [
+                4,
+                12
+            ],
+            "async": true
+        },
+        {
+            "type": "sleep",
+            "time": 50
+        },
+        {
+            "type": "animate",
+            "name": "fire",
+            "loc": [
+                6,
+                12
             ],
             "async": true
         },
@@ -91,8 +130,60 @@ main.floors.MT302=
             "type": "animate",
             "name": "fire",
             "loc": [
+                3,
+                11
+            ],
+            "async": true
+        },
+        {
+            "type": "sleep",
+            "time": 50
+        },
+        {
+            "type": "animate",
+            "name": "fire",
+            "loc": [
+                5,
+                11
+            ],
+            "async": true
+        },
+        {
+            "type": "sleep",
+            "time": 50
+        },
+        {
+            "type": "animate",
+            "name": "fire",
+            "loc": [
                 7,
                 11
+            ],
+            "async": true
+        },
+        {
+            "type": "sleep",
+            "time": 50
+        },
+        {
+            "type": "animate",
+            "name": "fire",
+            "loc": [
+                4,
+                10
+            ],
+            "async": true
+        },
+        {
+            "type": "sleep",
+            "time": 50
+        },
+        {
+            "type": "animate",
+            "name": "fire",
+            "loc": [
+                6,
+                10
             ],
             "async": true
         },
@@ -143,8 +234,21 @@ main.floors.MT302=
             "type": "animate",
             "name": "fire",
             "loc": [
+                3,
+                9
+            ],
+            "async": true
+        },
+        {
+            "type": "sleep",
+            "time": 50
+        },
+        {
+            "type": "animate",
+            "name": "fire",
+            "loc": [
                 5,
-                11
+                9
             ],
             "async": true
         },
@@ -158,6 +262,32 @@ main.floors.MT302=
             "loc": [
                 7,
                 9
+            ],
+            "async": true
+        },
+        {
+            "type": "sleep",
+            "time": 50
+        },
+        {
+            "type": "animate",
+            "name": "fire",
+            "loc": [
+                4,
+                8
+            ],
+            "async": true
+        },
+        {
+            "type": "sleep",
+            "time": 50
+        },
+        {
+            "type": "animate",
+            "name": "fire",
+            "loc": [
+                6,
+                8
             ],
             "async": true
         },
@@ -208,8 +338,21 @@ main.floors.MT302=
             "type": "animate",
             "name": "fire",
             "loc": [
+                3,
+                7
+            ],
+            "async": true
+        },
+        {
+            "type": "sleep",
+            "time": 50
+        },
+        {
+            "type": "animate",
+            "name": "fire",
+            "loc": [
                 5,
-                9
+                7
             ],
             "async": true
         },
@@ -223,6 +366,32 @@ main.floors.MT302=
             "loc": [
                 7,
                 7
+            ],
+            "async": true
+        },
+        {
+            "type": "sleep",
+            "time": 50
+        },
+        {
+            "type": "animate",
+            "name": "fire",
+            "loc": [
+                4,
+                6
+            ],
+            "async": true
+        },
+        {
+            "type": "sleep",
+            "time": 50
+        },
+        {
+            "type": "animate",
+            "name": "fire",
+            "loc": [
+                6,
+                6
             ],
             "async": true
         },
@@ -273,8 +442,21 @@ main.floors.MT302=
             "type": "animate",
             "name": "fire",
             "loc": [
+                3,
+                5
+            ],
+            "async": true
+        },
+        {
+            "type": "sleep",
+            "time": 50
+        },
+        {
+            "type": "animate",
+            "name": "fire",
+            "loc": [
                 5,
-                7
+                5
             ],
             "async": true
         },
@@ -288,6 +470,32 @@ main.floors.MT302=
             "loc": [
                 7,
                 5
+            ],
+            "async": true
+        },
+        {
+            "type": "sleep",
+            "time": 50
+        },
+        {
+            "type": "animate",
+            "name": "fire",
+            "loc": [
+                4,
+                4
+            ],
+            "async": true
+        },
+        {
+            "type": "sleep",
+            "time": 50
+        },
+        {
+            "type": "animate",
+            "name": "fire",
+            "loc": [
+                6,
+                4
             ],
             "async": true
         },
@@ -601,10 +809,6 @@ main.floors.MT302=
             "pos": 6
         },
         {
-            "type": "function",
-            "function": "function(){\nflags.skillList=[0,0,0,0,0,0,0]\n}"
-        },
-        {
             "type": "update"
         },
         {
@@ -612,7 +816,7 @@ main.floors.MT302=
             "time": 500
         },
         {
-            "type": "hideStatusBar"
+            "type": "hideui"
         },
         {
             "type": "update"
@@ -655,7 +859,7 @@ main.floors.MT302=
         },
         {
             "type": "function",
-            "function": "function(){\nvar a = flags.mission[core.getFlag('stage')];\ncore.setFlag('@temp@A', a[0] + a[1] + a[2]);\n}"
+            "function": "function(){\nvar a = core.taskSystem.checkTask(0) ? 1 : 0,\n\tb = core.taskSystem.checkTask(1) ? 1 : 0,\n\tc = core.taskSystem.checkTask(2) ? 1 : 0;\ncore.setFlag('@temp@A', a + b + c);\n}"
         },
         {
             "type": "if",
@@ -681,11 +885,6 @@ main.floors.MT302=
                         90
                     ],
                     "opacity": 1,
-                    "time": 500,
-                    "async": true
-                },
-                {
-                    "type": "sleep",
                     "time": 500
                 },
                 {
@@ -712,11 +911,6 @@ main.floors.MT302=
                                 90
                             ],
                             "opacity": 1,
-                            "time": 500,
-                            "async": true
-                        },
-                        {
-                            "type": "sleep",
                             "time": 500
                         },
                         {
@@ -743,11 +937,6 @@ main.floors.MT302=
                                         90
                                     ],
                                     "opacity": 1,
-                                    "time": 500,
-                                    "async": true
-                                },
-                                {
-                                    "type": "sleep",
                                     "time": 500
                                 }
                             ],

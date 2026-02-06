@@ -428,7 +428,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		return;
 	}
 	//友伤
-	if (flags.skill !== 18) { //孟菲斯美女号
+	if (flags.skill !== 18 || core.hasSpecial(enemyId, 91)) { //孟菲斯美女号
 		if (flags.escort && damage >= 0) { //拦截
 			var fredamage = Math.floor((core.hasSpecial(enemyId, 64) ? 2 : 0.4) * damage);
 			if (dd === 'classj') { fredamage *= 0.5 } //检测到装备（J驱），友伤减半
@@ -1064,7 +1064,8 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		[87, "隐蔽", "受到炸弹伤害减少70%"],
 		[88, "进水", "主角被该敌人的鱼雷命中后会获得“进水”debuff，存在期间主角每次战后损失等同于10%血限的血量。“金牌损管”可以在战后完成修复，或是通关后可自动消除", "#00FFFF"],
 		[89, "殉爆", "如果主角带着燃烧状态与该敌人战斗，则会消除所有燃烧层数，受到一次60%血量上限的殉爆伤害", "#FF0000"],
-		[90, "WG42火箭弹", function (enemy) { return "主角首次进入当前楼层时，会被所有携带WG.42火箭弹的敌机集火一次，每架飞机造成15%攻击力×载弹量的伤害。如果存在友军，则该伤害的80%由友军承受。该敌机携带" + (enemy.ammo ?? 0) + "枚WG42火箭弹" }]
+		[90, "WG42火箭弹", function (enemy) { return "主角首次进入当前楼层时，会被所有携带WG.42火箭弹的敌机集火一次，每架飞机造成15%攻击力×载弹量的伤害。如果存在友军，则该伤害的80%由友军承受。该敌机携带" + (enemy.ammo ?? 0) + "枚WG42火箭弹" }],
+		[91, "决斗", "与该敌人战斗时，不会波及友军", "#ffffff"]
 	];
 },
         "getEnemyInfo": function (enemy, hero, x, y, floorId) {
@@ -1158,7 +1159,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		if (!core.status.checkBlock.cache) core.status.checkBlock.cache = {};
 		var cache = core.status.checkBlock.cache[index];
 		let cacheFloor;
-		if (!core.status.checkBlock.cache.cacheFloor?.缓存) { cacheFloor = { 陆军: 0, 海军: 0, 空军: 0, 缓存: false, 航空支援: 0, 主将: 0, 截断: 0, 遥控: 0, 点杀: 0, 直掩: 0, 观测: 0, 火力覆盖: 0, 防御大师: 0 } } else {
+		if (!core.status.checkBlock.cache.cacheFloor?.缓存) { cacheFloor = { 陆军: 0, 海军: 0, 空军: 0, 缓存: false, 航空支援: 0, 主将: 0, 截断: 0, 遥控: 0, 点杀: 0, 直掩: 0, 观测: 0, 火力覆盖: 0, 防御大师: 0, 红尾巴: false } } else {
 			cacheFloor = core.status.checkBlock.cache.cacheFloor;
 		}
 		if (!cache) {
@@ -1208,6 +1209,11 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 						}
 						if (core.hasSpecial(enemy.special, 77)) {
 							cacheFloor.防御大师++;
+						}
+						if (flags.skill20Floor) {
+							if (flags.skill20.includes(floorId)) {
+								cacheFloor.红尾巴 = true;
+							}
 						}
 					}
 					// 检查【光环】技能，数字25
@@ -1720,14 +1726,20 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	if ((core.hasSpecial(mon_special, 38) || core.hasSpecial(mon_special, 57)) && tk === 'firefly') { //萤火虫
 		beilv *= 1.4;
 	}
-	if (hasFighter && !enemyFighter) { //制空权检测，下同
+	if (cacheFloor.红尾巴) { //制空权检测：红色尾翼
+		if (ff === 'spitfiremk9') { //喷火9
+			beilv *= 1.2;
+		} else if (ff === 'spitfiremk16') { //喷火16
+			beilv *= 1.25;
+		} else { beilv *= 1.1; }
+	} else if (hasFighter && !enemyFighter) { //制空权检测（常规），下同
 		if (ff === 'spitfiremk9') { //喷火9
 			beilv *= 1.2;
 		} else if (ff === 'spitfiremk16') { //喷火16
 			beilv *= 1.25;
 		} else { beilv *= 1.1; }
 	}
-	if (enemyFighter && !hasFighter) {
+	if (enemyFighter && !hasFighter && !cacheFloor.红尾巴) {
 		finalDamage *= 1.1;
 	}
 	if (fb === 'p38' && core.hasSpecial(mon_special, 57)) { //闪电·斩首行动
@@ -2071,13 +2083,13 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			}
 			if (fb === 'p47d' && turn % 3 === 0) { //P47D雷电特判
 				if (junzhong === '陆军') {
-					if (!(hasFighter && !enemyFighter)) {
+					if (!(hasFighter && !enemyFighter) && !cacheFloor.红尾巴) {
 						hero_bomb += (yongshi.atk * 1.5 * 2 * 9) * 0.7;
 					} else {
 						hero_bomb += yongshi.atk * 1.5 * 2 * 9;
 					}
 				} else {
-					if (!(hasFighter && !enemyFighter)) {
+					if (!(hasFighter && !enemyFighter) && !cacheFloor.红尾巴) {
 						hero_bomb += (yongshi.atk * 1.5 * 2 * 6) * 0.7;
 					}
 					hero_bomb += yongshi.atk * 1.5 * 2 * 6;
@@ -2151,13 +2163,13 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 				}
 			} else if (fb === 'p47d') { //P47D
 				if (hvar) {
-					if (!(hasFighter && !enemyFighter)) {
+					if (!(hasFighter && !enemyFighter) && !cacheFloor.红尾巴) {
 						hero_rocket += (yongshi.atk * 0.2 * 1.15 * 16) * 0.7;
 					} else {
 						hero_rocket += yongshi.atk * 0.2 * 1.15 * 16;
 					}
 				} else {
-					if (!(hasFighter && !enemyFighter)) {
+					if (!(hasFighter && !enemyFighter) && !cacheFloor.红尾巴) {
 						hero_rocket += (yongshi.atk * 0.2 * 16) * 0.7;
 					} else {
 						hero_rocket += yongshi.atk * 0.2 * 16;
@@ -2275,7 +2287,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 				hero_common *= 1.35;
 			}
 		} else if (fb === 'p47d') { //P47D
-			if (!(hasFighter && !enemyFighter) && junzhong === '空军') {
+			if (!(hasFighter && !enemyFighter) && !cacheFloor.红尾巴 && junzhong === '空军') {
 				hero_common *= 1.4;
 			}
 		}
@@ -2306,7 +2318,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			}
 		}
 		if (ff === 'f4u' || bb === 'enterprise') { //海盗·空域肃清
-			if (hasFighter && !enemyFighter) {
+			if ((hasFighter && !enemyFighter) || cacheFloor.红尾巴) {
 				hero_bomb *= 1.5;
 				hero_rocket *= 1.5;
 				hero_skytorpedo *= 1.5;
@@ -2354,10 +2366,11 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 
 		//分类伤害计算乘区
 
-		if (ff === 'p51d' && hasFighter && !enemyFighter) { //野马·制空霸权
-			hero_rocket *= 1.4;
-			hero_bomb *= 1.4;
-			hero_skytorpedo *= 1.4;
+		if (ff === 'p51d' && (hasFighter && !enemyFighter) || cacheFloor.红尾巴) { //野马·制空霸权
+			hero_rocket *= 1.3;
+			hero_bomb *= 1.3;
+			hero_skytorpedo *= 1.3;
+			hero_common *= 1.2;
 		}
 		if (bb === 'enterprise') { //企业号·灰色幽灵
 			hero_rocket *= 2.5;
