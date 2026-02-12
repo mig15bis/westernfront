@@ -276,7 +276,7 @@ main.floors.MT284=
             "type": "setEnemy",
             "id": "panzer5d",
             "name": "hp",
-            "value": "250000",
+            "value": "350000",
             "norefresh": true
         },
         {
@@ -297,7 +297,7 @@ main.floors.MT284=
             "type": "setEnemy",
             "id": "tigere",
             "name": "hp",
-            "value": "250000",
+            "value": "400000",
             "norefresh": true
         },
         {

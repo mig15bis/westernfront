@@ -428,7 +428,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		return;
 	}
 	//友伤
-	if (flags.skill !== 18 || core.hasSpecial(enemyId, 91)) { //孟菲斯美女号
+	if (flags.skill !== 18 || !core.hasSpecial(enemyId, 91)) { //孟菲斯美女号、决斗
 		if (flags.escort && damage >= 0) { //拦截
 			var fredamage = Math.floor((core.hasSpecial(enemyId, 64) ? 2 : 0.4) * damage);
 			if (dd === 'classj') { fredamage *= 0.5 } //检测到装备（J驱），友伤减半
@@ -1044,7 +1044,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		[67, "好战", "主角经过该敌人周围4格时，与主角发生强制战斗（这不就是捕捉吗？）", "#ff8c00"],
 		[68, "尖啸死神", "斯图卡轰炸机专属技能。投弹命中主角后，施加3层“惊慌”debuff，每层debuff会使主角攻击力减少10%，每过一次战斗减少一层，可无限叠加", "#dc143c"],
 		[69, "迂回包抄", "主角进行楼层切换操作时，进行强制战斗（为防止不必要的错误，每个区域最后一张地图不会出现）"],
-		[70, "直掩", "主角在当前地图中每主动进行一场战斗后，会遭到全体直掩战斗机的一次普攻（攻击×连击），无视后勤值"],
+		[70, "直掩", "主角在当前地图中每主动进行一场战斗后，会遭到全体直掩战斗机的一次普攻（攻击×连击）"],
 		[71, "观测", "存在期间，全图领域伤害提升20%，不可叠加", "#FFFF00"],
 		[72, "火力覆盖", "主角每次战斗结束后，以20%攻击力轰炸主角一次"],
 		[73, "喷气式战机", "速度极快，追不上也打不中。受到的全部伤害减少70%"],
@@ -1211,7 +1211,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 							cacheFloor.防御大师++;
 						}
 						if (flags.skill20Floor) {
-							if (flags.skill20.includes(floorId)) {
+							if (flags.skill20Floor.includes(floorId)) {
 								cacheFloor.红尾巴 = true;
 							}
 						}
@@ -1726,7 +1726,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	if ((core.hasSpecial(mon_special, 38) || core.hasSpecial(mon_special, 57)) && tk === 'firefly') { //萤火虫
 		beilv *= 1.4;
 	}
-	if (cacheFloor.红尾巴) { //制空权检测：红色尾翼
+	if (cacheFloor?.红尾巴) { //制空权检测：红色尾翼
 		if (ff === 'spitfiremk9') { //喷火9
 			beilv *= 1.2;
 		} else if (ff === 'spitfiremk16') { //喷火16
@@ -1739,7 +1739,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			beilv *= 1.25;
 		} else { beilv *= 1.1; }
 	}
-	if (enemyFighter && !hasFighter && !cacheFloor.红尾巴) {
+	if (enemyFighter && !hasFighter && !cacheFloor?.红尾巴) {
 		finalDamage *= 1.1;
 	}
 	if (fb === 'p38' && core.hasSpecial(mon_special, 57)) { //闪电·斩首行动
@@ -1757,7 +1757,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	} else if (bb === 'illustrious' && mon_skillNum.type !== '战列' && mon_skillNum.type !== '航母') { //光辉·装甲航母
 		finalDamage *= 0.8;
 	}
-	if (core.hasItem('unicorn') && (core.status.maps[floorId].area === '海洋' || core.status.maps[floorId].area === '浅滩')) { //独角兽号
+	if (core.hasItem('unicorn')) { //独角兽号
 		if (bb === 'eagle' || bb === 'raider' || bb === 'essex' || bb === 'enterprise') {
 			finalDamage *= 0.9;
 		} else if (bb === "illus1941" || bb === "illustrious") {
@@ -2083,13 +2083,13 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			}
 			if (fb === 'p47d' && turn % 3 === 0) { //P47D雷电特判
 				if (junzhong === '陆军') {
-					if (!(hasFighter && !enemyFighter) && !cacheFloor.红尾巴) {
+					if (!(hasFighter && !enemyFighter) && !cacheFloor?.红尾巴) {
 						hero_bomb += (yongshi.atk * 1.5 * 2 * 9) * 0.7;
 					} else {
 						hero_bomb += yongshi.atk * 1.5 * 2 * 9;
 					}
 				} else {
-					if (!(hasFighter && !enemyFighter) && !cacheFloor.红尾巴) {
+					if (!(hasFighter && !enemyFighter) && !cacheFloor?.红尾巴) {
 						hero_bomb += (yongshi.atk * 1.5 * 2 * 6) * 0.7;
 					}
 					hero_bomb += yongshi.atk * 1.5 * 2 * 6;
@@ -2163,13 +2163,13 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 				}
 			} else if (fb === 'p47d') { //P47D
 				if (hvar) {
-					if (!(hasFighter && !enemyFighter) && !cacheFloor.红尾巴) {
+					if (!(hasFighter && !enemyFighter) && !cacheFloor?.红尾巴) {
 						hero_rocket += (yongshi.atk * 0.2 * 1.15 * 16) * 0.7;
 					} else {
 						hero_rocket += yongshi.atk * 0.2 * 1.15 * 16;
 					}
 				} else {
-					if (!(hasFighter && !enemyFighter) && !cacheFloor.红尾巴) {
+					if (!(hasFighter && !enemyFighter) && !cacheFloor?.红尾巴) {
 						hero_rocket += (yongshi.atk * 0.2 * 16) * 0.7;
 					} else {
 						hero_rocket += yongshi.atk * 0.2 * 16;
@@ -2287,7 +2287,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 				hero_common *= 1.35;
 			}
 		} else if (fb === 'p47d') { //P47D
-			if (!(hasFighter && !enemyFighter) && !cacheFloor.红尾巴 && junzhong === '空军') {
+			if (!(hasFighter && !enemyFighter) && !cacheFloor?.红尾巴 && junzhong === '空军') {
 				hero_common *= 1.4;
 			}
 		}
@@ -2318,7 +2318,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			}
 		}
 		if (ff === 'f4u' || bb === 'enterprise') { //海盗·空域肃清
-			if ((hasFighter && !enemyFighter) || cacheFloor.红尾巴) {
+			if ((hasFighter && !enemyFighter) || cacheFloor?.红尾巴) {
 				hero_bomb *= 1.5;
 				hero_rocket *= 1.5;
 				hero_skytorpedo *= 1.5;
@@ -2366,7 +2366,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 
 		//分类伤害计算乘区
 
-		if (ff === 'p51d' && (hasFighter && !enemyFighter) || cacheFloor.红尾巴) { //野马·制空霸权
+		if (ff === 'p51d' && (hasFighter && !enemyFighter) || cacheFloor?.红尾巴) { //野马·制空霸权
 			hero_rocket *= 1.3;
 			hero_bomb *= 1.3;
 			hero_skytorpedo *= 1.3;
@@ -2628,7 +2628,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	/*if (core.searchBlockWithFilter(fn).length === 0) { //后勤
 		damage -= yongshi.mdef;
 	}*/
-	if (core.hasItem('unicorn') && damage < 0 && (core.status.maps[floorId].area === '海洋' || core.status.maps[floorId].area === '浅滩')) { //独角兽号
+	if (core.hasItem('unicorn') && damage < 0) { //独角兽号
 		damage *= 1.2;
 	}
 	if (core.status.maps[floorId].area === '海洋' && flags.skill === 13 && !flags.spy && damage < hero_hp) { //技能13：金牌损管

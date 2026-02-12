@@ -297,9 +297,6 @@ main.floors.MT293=
                 "value": "41"
             },
             {
-                "type": "pauseBgm"
-            },
-            {
                 "type": "confirm",
                 "text": "跳过剧情吗？",
                 "yes": [
@@ -308,7 +305,7 @@ main.floors.MT293=
                         "floorId": "MT295",
                         "loc": [
                             7,
-                            7
+                            11
                         ],
                         "direction": "down"
                     }

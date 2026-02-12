@@ -468,7 +468,9 @@ events.prototype.battle = function (id, x, y, force, callback) {
         return core.clearContinueAutomaticRoute(callback);
     }
     // 自动存档
+    if (!core.getFlag('迂回判定中', false)){
     if (!core.status.event.id) core.autosave(true);
+    }
     // 战前事件
     if (!this.beforeBattle(id, x, y))
         return core.clearContinueAutomaticRoute(callback);
@@ -701,11 +703,13 @@ events.prototype.changeFloor = function (floorId, stair, heroLoc, time, callback
     }
     if (!core.hasFlag('__fromLoad__')) {
     if (core.status.floorId)core.searchBlockWithFilter(block => { 
+        core.setFlag('迂回判定中', true);
         if (!block || !block.event.cls.startsWith("enemy"))
 				return false;
 			if (core.hasSpecial(core.material.enemys[block.event.id].special, 69))
 				return true;
     }).forEach(v=>core.battle(null,v.x,v.y,true))// 迂回包抄 69
+    core.setFlag('迂回判定中', false);
 }
     floorId = info.floorId;
     info.locked = core.status.lockControl;

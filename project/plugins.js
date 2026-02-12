@@ -2545,7 +2545,7 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 					ff = core.getEquip(4),
 					fb = core.getEquip(5),
 					cacheFloor = core.status.checkBlock.cache?.cacheFloor;
-				if (cacheFloor.红尾巴) {
+				if (cacheFloor?.红尾巴) {
 					skycontrol = 1;
 				} else {
 					let hasFighter = ff || fb === 'p38' || fb === 'typhoon' || fb === 'mosquito' || fb === 'p47d' || fb === 'p61' || bb === 'eagle' || bb === 'illustrious' || bb === 'raider' || bb === 'essex' || bb === 'enterprise' || bb === 'illus1941' || (core.hasItem('independence') && (core.status.maps[core.status.floorId].area === '海洋' || core.status.maps[core.status.floorId].area === '浅滩')),
@@ -2587,7 +2587,7 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				core.setTextAlign("outerUI", "left") //左对齐
 				if (core.getFlag("escort")) { //存在友军血量 core.getFlag("escort")
 					core.fillBoldText(uictx, "友军血量:", 10, 53, "#33FF99", "#000000", "bold 12px kaiti") //友军血量
-					core.fillBoldText(uictx, 22222266, 64, 54, "#33FF99", "#000000", "12px number", 102) //core.formatBigNumber(core.getFlag("友军血量"))
+					core.fillBoldText(uictx, core.formatBigNumber(core.getFlag("友军血量")), 64, 54, "#33FF99", "#000000", "12px number", 102) //core.formatBigNumber(core.getFlag("友军血量"))
 				}
 
 				core.setTextAlign("outerUI", "left")
@@ -2979,6 +2979,14 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 			if (flags.powerup > 0) {
 				Debuff.push('振奋');
 				Debuffcolor.push('#FFD700');
+			}
+			if (core.status.checkBlock.cache?.cacheFloor?.火力覆盖) {
+				Debuff.push('火力');
+				Debuffcolor.push('#6600CC');
+			}
+			if (core.status.checkBlock.cache?.cacheFloor?.直掩) {
+				Debuff.push('直掩');
+				Debuffcolor.push('#FF0000');
 			}
 			if (core.domStyle.isVertical) { //竖屏
 				core.clearMap(uictx, 161, 681, 160, 50);
@@ -4107,6 +4115,9 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 												core.events.lose();
 											}
 										}
+										if (enemydie === 0) {
+											core.unlockControl();
+										}
 									})
 								});
 							} else {
@@ -4360,6 +4371,9 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 									core.events.lose();
 								}
 							}
+							if (enemydie === 0) {
+								core.unlockControl();
+							}
 						});
 					} else {
 						hero.mana += 150;
@@ -4565,6 +4579,9 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 										if (hero.hp <= 0) {
 											core.events.lose();
 										}
+									}
+									if (enemydie === 0) {
+										core.unlockControl();
 									}
 								})
 							});
@@ -5042,16 +5059,25 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 				const thisfloor = core.status.floorId;
 				if (flags.skill20Floor.includes(thisfloor)) { //检测当前楼层是否已使用技能
 					core.status.hero.mana += 1000;
-					core.drawTip('仅能在海洋使用');
+					core.drawTip('不能在同一楼层重复使用');
 					core.playSound('error.mp3');
 					return;
 				} else {
 					if (!core.isReplaying() && !main.replayChecking) { //不在录像中
-						flags.skill20Floor.push(thisfloor);
-					} else {
-						//动画特效待定
+						core.insertCommonEvent('红色尾翼动画', void 0, void 0, void 0, () => {
+							if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
+								core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
+								core.drawHeroAnimate('sniper');
+								core.updateStatusBar();
+								if (hero.hp <= 0) {
+									core.events.lose();
+								}
+							}
+						}); //公共事件
 						flags.skill20Floor.push(thisfloor);
 						core.updateStatusBar();
+					} else {
+						flags.skill20Floor.push(thisfloor);
 					}
 				}
 			},

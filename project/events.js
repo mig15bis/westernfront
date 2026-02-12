@@ -4199,6 +4199,115 @@ var events_c12a15a8_c380_4b28_8144_256cba95f760 =
 					}
 				]
 			}
+		],
+		"红色尾翼动画": [
+			{
+				"type": "if",
+				"condition": "(flag:anime===true)",
+				"true": [
+					{
+						"type": "showImage",
+						"code": 1,
+						"image": "aircraft8.png",
+						"loc": [
+							0,
+							480
+						],
+						"opacity": 1,
+						"time": 0
+					},
+					{
+						"type": "showImage",
+						"code": 2,
+						"image": "aircraft8.png",
+						"loc": [
+							110,
+							480
+						],
+						"opacity": 1,
+						"time": 0
+					},
+					{
+						"type": "showImage",
+						"code": 3,
+						"image": "aircraft8.png",
+						"loc": [
+							280,
+							480
+						],
+						"opacity": 1,
+						"time": 0
+					},
+					{
+						"type": "playSound",
+						"name": "fighter.mp3"
+					},
+					{
+						"type": "moveImage",
+						"code": 1,
+						"to": [
+							0,
+							-195
+						],
+						"time": 500,
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 200
+					},
+					{
+						"type": "playSound",
+						"name": "fighter.mp3"
+					},
+					{
+						"type": "moveImage",
+						"code": 3,
+						"to": [
+							280,
+							-195
+						],
+						"time": 500,
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 200
+					},
+					{
+						"type": "playSound",
+						"name": "fighter.mp3"
+					},
+					{
+						"type": "moveImage",
+						"code": 2,
+						"to": [
+							110,
+							-195
+						],
+						"time": 500,
+						"async": true
+					},
+					{
+						"type": "waitAsync"
+					},
+					{
+						"type": "hideImage",
+						"code": 1,
+						"time": 0
+					},
+					{
+						"type": "hideImage",
+						"code": 2,
+						"time": 0
+					},
+					{
+						"type": "hideImage",
+						"code": 3,
+						"time": 0
+					}
+				]
+			}
 		]
 	}
 }
