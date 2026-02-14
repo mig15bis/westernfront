@@ -812,6 +812,12 @@ main.floors.MT302=
             "type": "update"
         },
         {
+            "type": "setValue",
+            "name": "item:p51d",
+            "operator": "-=",
+            "value": "1"
+        },
+        {
             "type": "sleep",
             "time": 500
         },
@@ -993,6 +999,9 @@ main.floors.MT302=
             "type": "clearMap"
         },
         {
+            "type": "submitTask"
+        },
+        {
             "type": "moveImage",
             "code": 5,
             "to": [
@@ -1135,7 +1144,7 @@ main.floors.MT302=
                                 255,
                                 1
                             ],
-                            "time": 500,
+                            "time": 200,
                             "times": 1
                         },
                         {
@@ -1151,7 +1160,7 @@ main.floors.MT302=
                         },
                         {
                             "type": "setCurtain",
-                            "time": 0
+                            "time": 200
                         },
                         {
                             "type": "sleep",

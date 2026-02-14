@@ -18,13 +18,15 @@ main.floors.MT304=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        
         {
             "type": "update"
         },
         {
             "type": "setCurtain",
             "time": 500
+        },
+        {
+            "type": "showui"
         },
         {
             "type": "playSound",

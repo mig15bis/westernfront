@@ -4786,7 +4786,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						]
 					},
 					{
-						"text": "北卡罗莱纳号战列舰（20000）",
+						"text": "北卡罗莱纳号战列舰（10000）",
 						"need": "true",
 						"icon": "northcarolina",
 						"condition": "!core.hasEquip('northcarolina')&&!core.hasItem('northcarolina')",
@@ -4803,7 +4803,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"yes": [
 									{
 										"type": "if",
-										"condition": "(status:money>=15000)",
+										"condition": "(status:money>=10000)",
 										"true": [
 											{
 												"type": "playSound",
@@ -4813,7 +4813,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 												"type": "setValue",
 												"name": "status:money",
 												"operator": "-=",
-												"value": "15000"
+												"value": "10000"
 											},
 											{
 												"type": "setValue",
@@ -5236,7 +5236,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						]
 					},
 					{
-						"text": "谢尔曼“萤火虫”坦克（10600/15000）",
+						"text": "谢尔曼“萤火虫”坦克（7600/12000）",
 						"need": "true",
 						"icon": "firefly",
 						"condition": "!core.hasEquip('firefly')&&!core.hasItem('firefly')",
@@ -5256,7 +5256,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 										"text": "你可以从以下三种购买方案中选择一种",
 										"choices": [
 											{
-												"text": "替换手中的“M4A1(76W)谢尔曼”（10600）",
+												"text": "替换手中的“M4A1(76W)谢尔曼”（7600）",
 												"icon": "m4a3",
 												"action": [
 													{
@@ -5265,7 +5265,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 														"true": [
 															{
 																"type": "if",
-																"condition": "(status:money>=10600)",
+																"condition": "(status:money>=7600)",
 																"true": [
 																	{
 																		"type": "playSound",
@@ -5275,7 +5275,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 																		"type": "setValue",
 																		"name": "status:money",
 																		"operator": "-=",
-																		"value": "10600"
+																		"value": "7600"
 																	},
 																	{
 																		"type": "setValue",
@@ -5306,7 +5306,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 												"action": [
 													{
 														"type": "if",
-														"condition": "(status:money>=15000)",
+														"condition": "(status:money>=12000)",
 														"true": [
 															{
 																"type": "playSound",
@@ -5316,7 +5316,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 																"type": "setValue",
 																"name": "status:money",
 																"operator": "-=",
-																"value": "15000"
+																"value": "12000"
 															},
 															{
 																"type": "setValue",
@@ -5341,7 +5341,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						]
 					},
 					{
-						"text": "弗莱彻级驱逐舰（15000）",
+						"text": "弗莱彻级驱逐舰（6000）",
 						"need": "true",
 						"icon": "flecher",
 						"condition": "!core.hasEquip('flecher')&&!core.hasItem('flecher')",
@@ -5358,7 +5358,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"yes": [
 									{
 										"type": "if",
-										"condition": "(status:money>=15000)",
+										"condition": "(status:money>=6000)",
 										"true": [
 											{
 												"type": "playSound",
@@ -5368,7 +5368,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 												"type": "setValue",
 												"name": "status:money",
 												"operator": "-=",
-												"value": "15000"
+												"value": "6000"
 											},
 											{
 												"type": "setValue",
@@ -5389,7 +5389,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						]
 					},
 					{
-						"text": "巴尔的摩级重巡洋舰（20000）",
+						"text": "巴尔的摩级重巡洋舰（12000）",
 						"need": "true",
 						"icon": "baltimore",
 						"condition": "!core.hasEquip('baltimore')&&!core.hasItem('baltimore')",
@@ -5406,7 +5406,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"yes": [
 									{
 										"type": "if",
-										"condition": "(status:money>=20000)",
+										"condition": "(status:money>=12000)",
 										"true": [
 											{
 												"type": "playSound",
@@ -5416,7 +5416,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 												"type": "setValue",
 												"name": "status:money",
 												"operator": "-=",
-												"value": "20000"
+												"value": "12000"
 											},
 											{
 												"type": "setValue",
@@ -5437,7 +5437,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						]
 					},
 					{
-						"text": "衣阿华级战列舰（30000）",
+						"text": "衣阿华级战列舰（18000）",
 						"need": "true",
 						"icon": "iowa",
 						"condition": "!core.hasEquip('iowa')&&!core.hasItem('iowa')",
@@ -5454,7 +5454,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"yes": [
 									{
 										"type": "if",
-										"condition": "(status:money>=30000)",
+										"condition": "(status:money>=18000)",
 										"true": [
 											{
 												"type": "playSound",
@@ -5464,7 +5464,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 												"type": "setValue",
 												"name": "status:money",
 												"operator": "-=",
-												"value": "30000"
+												"value": "18000"
 											},
 											{
 												"type": "setValue",
@@ -5485,7 +5485,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						]
 					},
 					{
-						"text": "埃塞克斯级航空母舰（35000）",
+						"text": "埃塞克斯级航空母舰（25000）",
 						"need": "true",
 						"icon": "essex",
 						"condition": "!core.hasEquip('essex')&&!core.hasItem('essex')",
@@ -5502,7 +5502,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"yes": [
 									{
 										"type": "if",
-										"condition": "(status:money>=35000)",
+										"condition": "(status:money>=25000)",
 										"true": [
 											{
 												"type": "playSound",
@@ -5512,7 +5512,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 												"type": "setValue",
 												"name": "status:money",
 												"operator": "-=",
-												"value": "35000"
+												"value": "25000"
 											},
 											{
 												"type": "setValue",
@@ -5533,7 +5533,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						]
 					},
 					{
-						"text": "喷火MK16战斗机（10000）",
+						"text": "喷火MK16战斗机（5200/8000）",
 						"need": "true",
 						"icon": "spitfiremk16",
 						"condition": "!core.hasEquip('spitfiremk16')&&!core.hasItem('spitfiremk16')",
@@ -5553,7 +5553,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 										"text": "你可以从以下三种购买方案中选择一种",
 										"choices": [
 											{
-												"text": "改造手中的“喷火MK9”（7200）",
+												"text": "改造手中的“喷火MK9”（5200）",
 												"icon": "spitfiremk9",
 												"action": [
 													{
@@ -5562,7 +5562,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 														"true": [
 															{
 																"type": "if",
-																"condition": "(status:money>=7200)",
+																"condition": "(status:money>=5200)",
 																"true": [
 																	{
 																		"type": "playSound",
@@ -5572,7 +5572,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 																		"type": "setValue",
 																		"name": "status:money",
 																		"operator": "-=",
-																		"value": "7200"
+																		"value": "5200"
 																	},
 																	{
 																		"type": "setValue",
@@ -5583,6 +5583,207 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 																	{
 																		"type": "setValue",
 																		"name": "item:spitfiremk16",
+																		"operator": "+=",
+																		"value": "1"
+																	}
+																],
+																"false": [
+																	"大炮一响，黄金万两。再多去赚点钱吧！"
+																]
+															}
+														],
+														"false": [
+															"不符合该项购买条件！"
+														]
+													}
+												]
+											},
+											{
+												"text": "正常购买",
+												"action": [
+													{
+														"type": "if",
+														"condition": "(status:money>=8000)",
+														"true": [
+															{
+																"type": "playSound",
+																"name": "fighter1.mp3"
+															},
+															{
+																"type": "setValue",
+																"name": "status:money",
+																"operator": "-=",
+																"value": "8000"
+															},
+															{
+																"type": "setValue",
+																"name": "item:spitfiremk16",
+																"operator": "+=",
+																"value": "1"
+															}
+														],
+														"false": [
+															"大炮一响，黄金万两。再多去赚点钱吧！"
+														]
+													}
+												]
+											}
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "F4U“海盗”战斗机（舰）（10000）",
+						"need": "true",
+						"icon": "f4u",
+						"condition": "!core.hasEquip('f4u')&&!core.hasItem('f4u')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[f4u.jpg,90,50]F4U“海盗”战斗机是美国第一种速度超过640千米/时的战斗机，也是速度最快的活塞式战斗机之一，加速性能好，火力强大，爬升快，坚固耐用，还能挂载重型炸弹当轰炸机用。太平洋战场上，F4U与F6F并为美国海军战斗机主力，日军称其为“死亡口哨”。据统计，F4U的击落比率为11:1，即每击落11架敌机才有1架被击落。二战后，即便天空已经属于喷气战斗机，F4U仍然参加了朝鲜战争。看到这标志性的倒海鸥机翼，你是否感觉好像在哪里见过它们？提示：《金刚川》",
+							"\f[f4u.jpg,90,50]装备属性：攻+250后额外＋20%，挂载：6火箭弹和2炸弹。\n与陆军和海军作战时抢先发射2轮火箭弹，每枚火箭弹伤害为0.4倍攻击力。仅第2回合投弹，每颗炸弹伤害为4倍攻击力。\n被动：\n死亡口哨：战斗开始前，削减敌人20%血量和攻击力。\n制空权：当前地图没有敌军战斗机时，我军一切空袭伤害提高50%。",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=10000)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "fighter1.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "10000"
+											},
+											{
+												"type": "setValue",
+												"name": "item:f4u",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "P51D“野马”战斗机（12000）",
+						"need": "true",
+						"icon": "p51d",
+						"condition": "!core.hasEquip('p51d')&&!core.hasItem('p51d')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[p51.jpg,90,50]P51“野马”战斗机是美国陆航在二战期间最有名的战斗机之一，也是美国海陆两军所使用的单引擎战斗机当中航程最长，对于欧洲与太平洋战区轰炸机护航最重要的机种。起初的P51只是一款性能中规中矩的普通战斗机，但换装了英国梅林发动机的P51D型出现后，航程和性能得到了极大提升，完全能护送轰炸机深入敌军腹地，把敌军的拦截战斗机痛扁一顿后，顺路扫射一下地面目标再飞回来。P51是战争后期欧洲空战的主角，二战中盟军最优秀的全能活塞动力战斗机之一，也是盟军空权的象征，击落了4950架敌机，击毁4131个地面目标，另外还击落了超过230枚V1飞弹，甚至还击落了德国空军最精锐的喷气式战斗机。新中国开国大典时，9架缴获的P51战斗机飞过天安门广场参与庆典——还飞了两遍。朝鲜战争是P51战斗机参与的最后一战。",
+							"\f[p51.jpg,90,50]装备属性：攻+250后额外＋20%，挂载：10×HVAR火箭弹\n与陆军和水面舰艇战斗时抢先发射2轮火箭弹，每枚火箭弹伤害为0.2倍攻击力。\n被动：\n长途护航：受到的所有战斗伤害减少30%。\n制空霸权：与敌方空军战斗时，战斗方式改为3连击。对喷气机不生效。",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=12000)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "fighter1.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "12000"
+											},
+											{
+												"type": "setValue",
+												"name": "item:p51d",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "P47D“雷电”攻击机（8000/10000）",
+						"need": "true",
+						"icon": "p47d",
+						"condition": "!core.hasEquip('p47d')&&!core.hasItem('p47d')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\f[p47d.jpg,90,50]D型是P47战斗机第一种大批量生产型号，具有更加完善的装甲和可靠性，可挂载至多3枚炸弹，除了可以进行空战外，还能当作对地攻击机使用。",
+							"\f[p47d.jpg,90,50]装备属性：攻击+450后额外加10%。挂载：3×500磅炸弹\n每3回合投掷2轮炸弹，每颗炸弹伤害为1.5倍攻击力。\n被动：\n铜墙铁壁：与空军和高射炮作战时，获得20%减伤。\n舔地狂魔：与地面单位作战时，P47D投掷的炸弹数量翻倍。\n（装备类型为攻击机，不是战斗机）",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "choices",
+										"text": "你可以从以下三种购买方案中选择一种",
+										"choices": [
+											{
+												"text": "改造手中的“P47B雷电”（8000）",
+												"icon": "p47b",
+												"action": [
+													{
+														"type": "if",
+														"condition": "(item:p47b>=1)",
+														"true": [
+															{
+																"type": "if",
+																"condition": "(status:money>=8000)",
+																"true": [
+																	{
+																		"type": "playSound",
+																		"name": "fighter1.mp3"
+																	},
+																	{
+																		"type": "setValue",
+																		"name": "status:money",
+																		"operator": "-=",
+																		"value": "8000"
+																	},
+																	{
+																		"type": "setValue",
+																		"name": "item:p47b",
+																		"operator": "-=",
+																		"value": "1"
+																	},
+																	{
+																		"type": "setValue",
+																		"name": "item:p47d",
 																		"operator": "+=",
 																		"value": "1"
 																	}
@@ -5617,207 +5818,6 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 															},
 															{
 																"type": "setValue",
-																"name": "item:spitfiremk16",
-																"operator": "+=",
-																"value": "1"
-															}
-														],
-														"false": [
-															"大炮一响，黄金万两。再多去赚点钱吧！"
-														]
-													}
-												]
-											}
-										]
-									}
-								],
-								"no": [
-									"已取消购买"
-								]
-							}
-						]
-					},
-					{
-						"text": "F4U“海盗”战斗机（舰）（12000）",
-						"need": "true",
-						"icon": "f4u",
-						"condition": "!core.hasEquip('f4u')&&!core.hasItem('f4u')",
-						"action": [
-							{
-								"type": "comment",
-								"text": "新版商店中需要手动扣减金币和增加访问次数"
-							},
-							"\f[f4u.jpg,90,50]F4U“海盗”战斗机是美国第一种速度超过640千米/时的战斗机，也是速度最快的活塞式战斗机之一，加速性能好，火力强大，爬升快，坚固耐用，还能挂载重型炸弹当轰炸机用。太平洋战场上，F4U与F6F并为美国海军战斗机主力，日军称其为“死亡口哨”。据统计，F4U的击落比率为11:1，即每击落11架敌机才有1架被击落。二战后，即便天空已经属于喷气战斗机，F4U仍然参加了朝鲜战争。看到这标志性的倒海鸥机翼，你是否感觉好像在哪里见过它们？提示：《金刚川》",
-							"\f[f4u.jpg,90,50]装备属性：攻+250后额外＋20%，挂载：6火箭弹和2炸弹。\n与陆军和海军作战时抢先发射2轮火箭弹，每枚火箭弹伤害为0.4倍攻击力。仅第2回合投弹，每颗炸弹伤害为4倍攻击力。\n被动：\n死亡口哨：战斗开始前，削减敌人20%血量和攻击力。\n制空权：当前地图没有敌军战斗机时，我军一切空袭伤害提高50%。",
-							{
-								"type": "confirm",
-								"text": "确定购买？",
-								"yes": [
-									{
-										"type": "if",
-										"condition": "(status:money>=12000)",
-										"true": [
-											{
-												"type": "playSound",
-												"name": "fighter1.mp3"
-											},
-											{
-												"type": "setValue",
-												"name": "status:money",
-												"operator": "-=",
-												"value": "12000"
-											},
-											{
-												"type": "setValue",
-												"name": "item:f4u",
-												"operator": "+=",
-												"value": "1"
-											}
-										],
-										"false": [
-											"大炮一响，黄金万两。再多去赚点钱吧！"
-										]
-									}
-								],
-								"no": [
-									"已取消购买"
-								]
-							}
-						]
-					},
-					{
-						"text": "P-51-D“野马”战斗机（15000）",
-						"need": "true",
-						"icon": "p51d",
-						"condition": "!core.hasEquip('p51d')&&!core.hasItem('p51d')",
-						"action": [
-							{
-								"type": "comment",
-								"text": "新版商店中需要手动扣减金币和增加访问次数"
-							},
-							"\f[p51.jpg,90,50]P51“野马”战斗机是美国陆航在二战期间最有名的战斗机之一，也是美国海陆两军所使用的单引擎战斗机当中航程最长，对于欧洲与太平洋战区轰炸机护航最重要的机种。起初的P51只是一款性能中规中矩的普通战斗机，但换装了英国梅林发动机的P51D型出现后，航程和性能得到了极大提升，完全能护送轰炸机深入敌军腹地，把敌军的拦截战斗机痛扁一顿后，顺路扫射一下地面目标再飞回来。P51是战争后期欧洲空战的主角，二战中盟军最优秀的全能活塞动力战斗机之一，也是盟军空权的象征，击落了4950架敌机，击毁4131个地面目标，另外还击落了超过230枚V1飞弹，甚至还击落了德国空军最精锐的喷气式战斗机。新中国开国大典时，9架缴获的P51战斗机飞过天安门广场参与庆典——还飞了两遍。朝鲜战争是P51战斗机参与的最后一战。",
-							"\f[p51.jpg,90,50]装备属性：攻+250后额外＋20%，挂载：10×HVAR火箭弹\n与陆军和水面舰艇战斗时抢先发射2轮火箭弹，每枚火箭弹伤害为0.2倍攻击力。\n被动：\n长途护航：受到的所有战斗伤害减少30%。\n制空霸权：与敌方空军战斗时，战斗方式改为3连击。对喷气机不生效。",
-							{
-								"type": "confirm",
-								"text": "确定购买？",
-								"yes": [
-									{
-										"type": "if",
-										"condition": "(status:money>=15000)",
-										"true": [
-											{
-												"type": "playSound",
-												"name": "fighter1.mp3"
-											},
-											{
-												"type": "setValue",
-												"name": "status:money",
-												"operator": "-=",
-												"value": "15000"
-											},
-											{
-												"type": "setValue",
-												"name": "item:p51d",
-												"operator": "+=",
-												"value": "1"
-											}
-										],
-										"false": [
-											"大炮一响，黄金万两。再多去赚点钱吧！"
-										]
-									}
-								],
-								"no": [
-									"已取消购买"
-								]
-							}
-						]
-					},
-					{
-						"text": "P47D“雷电”攻击机（10000/12000）",
-						"need": "true",
-						"icon": "p47d",
-						"condition": "!core.hasEquip('p47d')&&!core.hasItem('p47d')",
-						"action": [
-							{
-								"type": "comment",
-								"text": "新版商店中需要手动扣减金币和增加访问次数"
-							},
-							"\f[p47d.jpg,90,50]D型是P47战斗机第一种大批量生产型号，具有更加完善的装甲和可靠性，可挂载至多3枚炸弹，除了可以进行空战外，还能当作对地攻击机使用。",
-							"\f[p47d.jpg,90,50]装备属性：攻击+450后额外加10%。挂载：3×500磅炸弹\n每3回合投掷2轮炸弹，每颗炸弹伤害为1.5倍攻击力。\n被动：\n铜墙铁壁：与空军和高射炮作战时，获得20%减伤。\n舔地狂魔：与地面单位作战时，P47D投掷的炸弹数量翻倍。\n（装备类型为攻击机，不是战斗机）",
-							{
-								"type": "confirm",
-								"text": "确定购买？",
-								"yes": [
-									{
-										"type": "choices",
-										"text": "你可以从以下三种购买方案中选择一种",
-										"choices": [
-											{
-												"text": "改造手中的“P47B雷电”（10000）",
-												"icon": "p47b",
-												"action": [
-													{
-														"type": "if",
-														"condition": "(item:p47b>=1)",
-														"true": [
-															{
-																"type": "if",
-																"condition": "(status:money>=10000)",
-																"true": [
-																	{
-																		"type": "playSound",
-																		"name": "fighter1.mp3"
-																	},
-																	{
-																		"type": "setValue",
-																		"name": "status:money",
-																		"operator": "-=",
-																		"value": "10000"
-																	},
-																	{
-																		"type": "setValue",
-																		"name": "item:p47b",
-																		"operator": "-=",
-																		"value": "1"
-																	},
-																	{
-																		"type": "setValue",
-																		"name": "item:p47d",
-																		"operator": "+=",
-																		"value": "1"
-																	}
-																],
-																"false": [
-																	"大炮一响，黄金万两。再多去赚点钱吧！"
-																]
-															}
-														],
-														"false": [
-															"不符合该项购买条件！"
-														]
-													}
-												]
-											},
-											{
-												"text": "正常购买",
-												"action": [
-													{
-														"type": "if",
-														"condition": "(status:money>=12000)",
-														"true": [
-															{
-																"type": "playSound",
-																"name": "fighter1.mp3"
-															},
-															{
-																"type": "setValue",
-																"name": "status:money",
-																"operator": "-=",
-																"value": "12000"
-															},
-															{
-																"type": "setValue",
 																"name": "item:p47d",
 																"operator": "+=",
 																"value": "1"
@@ -5839,7 +5839,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						]
 					},
 					{
-						"text": "SB2C“地狱俯冲者”俯冲轰炸机（舰）（12000）",
+						"text": "SB2C“地狱俯冲者”俯冲轰炸机（舰）（10000）",
 						"need": "true",
 						"icon": "sb2c",
 						"condition": "!core.hasEquip('sb2c')&&!core.hasItem('sb2c')",
@@ -5856,7 +5856,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"yes": [
 									{
 										"type": "if",
-										"condition": "(status:money>=12000)",
+										"condition": "(status:money>=10000)",
 										"true": [
 											{
 												"type": "playSound",
@@ -5866,7 +5866,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 												"type": "setValue",
 												"name": "status:money",
 												"operator": "-=",
-												"value": "12000"
+												"value": "10000"
 											},
 											{
 												"type": "setValue",
@@ -5887,7 +5887,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						]
 					},
 					{
-						"text": "P61“黑寡妇”重型战斗机（18000）",
+						"text": "P61“黑寡妇”重型战斗机（12000）",
 						"need": "true",
 						"icon": "p61",
 						"condition": "!core.hasEquip('p61')&&!core.hasItem('p61')",
@@ -5904,7 +5904,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"yes": [
 									{
 										"type": "if",
-										"condition": "(status:money>=18000)",
+										"condition": "(status:money>=12000)",
 										"true": [
 											{
 												"type": "playSound",
@@ -5914,7 +5914,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 												"type": "setValue",
 												"name": "status:money",
 												"operator": "-=",
-												"value": "18000"
+												"value": "12000"
 											},
 											{
 												"type": "setValue",
@@ -5935,7 +5935,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						]
 					},
 					{
-						"text": "B17“空中堡垒”G型（8000）",
+						"text": "B17“空中堡垒”G型（2800/10000）",
 						"need": "true",
 						"icon": "b17g",
 						"condition": "!core.hasEquip('b17g')&&!core.hasItem('b17g')",

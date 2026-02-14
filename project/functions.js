@@ -428,17 +428,19 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		return;
 	}
 	//友伤
-	if (flags.skill !== 18 || !core.hasSpecial(enemyId, 91)) { //孟菲斯美女号、决斗
+	if (flags.skill !== 18 && !core.hasSpecial(enemyId, 91)) { //孟菲斯美女号、决斗
 		if (flags.escort && damage >= 0) { //拦截
 			var fredamage = Math.floor((core.hasSpecial(enemyId, 64) ? 2 : 0.4) * damage);
 			if (dd === 'classj') { fredamage *= 0.5 } //检测到装备（J驱），友伤减半
 			if (core.hasItem('casablanca') && (core.status.maps[core.status.floorId].area === '浅滩' || core.status.maps[core.status.floorId].area === '海洋')) { //卡萨布兰卡
 				fredamage *= 0.7;
 			}
-			flags['友军血量'] -= fredamage;
-			if (core.enemys.hasSpecial(special, 83)) { //对空火箭
-				flags['友军血量'] -= 0.05 * enemy.ammo * core.getEnemyInfo(enemy, hero, x, y).atk * turn;
+			if (flags.skill20Floor) {
+				if (flags.skill20Floor.includes(core.status.floorId)) {
+					fredamage *= 0.2;
+				}
 			}
+			flags['友军血量'] -= Math.floor(fredamage);
 			if (flags['友军血量'] <= 0) {
 				core.events.lose('任务失败');
 				// 战斗失败
@@ -2536,7 +2538,11 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			mon_summary += mon_common + mon_bomb + mon_torpedo;
 			mon_perDamage += mon_summary;
 			if (ff === 'p51d') { //野马
-				mon_perDamage *= 0.7;
+				if (junzhong === '空军') {
+					mon_perDamage *= 0.5;
+				} else {
+					mon_perDamage *= 0.7;
+				}
 			}
 			damage += mon_perDamage;
 		}
