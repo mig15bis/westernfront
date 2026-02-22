@@ -234,8 +234,8 @@ main.floors.prepare1=
                 "type": "animate",
                 "name": "explore3",
                 "loc": [
-                    7,
-                    5
+                    "core.status.hero.loc.x",
+                    "core.status.hero.loc.y - 2"
                 ],
                 "async": true
             },
@@ -247,8 +247,8 @@ main.floors.prepare1=
                 "type": "animate",
                 "name": "explore3",
                 "loc": [
-                    6,
-                    7
+                    "core.status.hero.loc.x - 1",
+                    "core.status.hero.loc.y"
                 ],
                 "async": true
             },
@@ -260,8 +260,8 @@ main.floors.prepare1=
                 "type": "animate",
                 "name": "explore3",
                 "loc": [
-                    8,
-                    5
+                    "core.status.hero.loc.x + 1",
+                    "core.status.hero.loc.y - 2"
                 ],
                 "async": true
             },
@@ -273,8 +273,8 @@ main.floors.prepare1=
                 "type": "animate",
                 "name": "explore3",
                 "loc": [
-                    9,
-                    9
+                    "core.status.hero.loc.x + 2",
+                    "core.status.hero.loc.y + 2"
                 ],
                 "async": true
             },
@@ -286,8 +286,8 @@ main.floors.prepare1=
                 "type": "animate",
                 "name": "explore3",
                 "loc": [
-                    5,
-                    6
+                    "core.status.hero.loc.x - 2",
+                    "core.status.hero.loc.y - 1"
                 ],
                 "async": true
             },
@@ -299,8 +299,8 @@ main.floors.prepare1=
                 "type": "animate",
                 "name": "explore3",
                 "loc": [
-                    7,
-                    8
+                    "core.status.hero.loc.x",
+                    "core.status.hero.loc.y + 1"
                 ],
                 "async": true
             },
@@ -312,8 +312,8 @@ main.floors.prepare1=
                 "type": "animate",
                 "name": "explore3",
                 "loc": [
-                    6,
-                    5
+                    "core.status.hero.loc.x - 1",
+                    "core.status.hero.loc.y - 2"
                 ],
                 "async": true
             },
@@ -325,8 +325,8 @@ main.floors.prepare1=
                 "type": "animate",
                 "name": "explore3",
                 "loc": [
-                    8,
-                    7
+                    "core.status.hero.loc.x + 1",
+                    "core.status.hero.loc.y"
                 ],
                 "async": true
             },
@@ -338,8 +338,8 @@ main.floors.prepare1=
                 "type": "animate",
                 "name": "explore3",
                 "loc": [
-                    5,
-                    8
+                    "core.status.hero.loc.x - 2",
+                    "core.status.hero.loc.y + 1"
                 ],
                 "async": true
             },
@@ -351,8 +351,8 @@ main.floors.prepare1=
                 "type": "animate",
                 "name": "explore3",
                 "loc": [
-                    7,
-                    6
+                    "core.status.hero.loc.x",
+                    "core.status.hero.loc.y - 1"
                 ],
                 "async": true
             },
@@ -364,8 +364,8 @@ main.floors.prepare1=
                 "type": "animate",
                 "name": "explore3",
                 "loc": [
-                    9,
-                    5
+                    "core.status.hero.loc.x + 2",
+                    "core.status.hero.loc.y - 2"
                 ],
                 "async": true
             },
@@ -377,8 +377,8 @@ main.floors.prepare1=
                 "type": "animate",
                 "name": "explore3",
                 "loc": [
-                    6,
-                    9
+                    "core.status.hero.loc.x - 1",
+                    "core.status.hero.loc.y + 2"
                 ],
                 "async": true
             },
@@ -390,8 +390,8 @@ main.floors.prepare1=
                 "type": "animate",
                 "name": "explore3",
                 "loc": [
-                    8,
-                    6
+                    "core.status.hero.loc.x + 1",
+                    "core.status.hero.loc.y - 1"
                 ],
                 "async": true
             },
@@ -403,8 +403,8 @@ main.floors.prepare1=
                 "type": "animate",
                 "name": "explore3",
                 "loc": [
-                    5,
-                    7
+                    "core.status.hero.loc.x - 2",
+                    "core.status.hero.loc.y"
                 ],
                 "async": true
             },

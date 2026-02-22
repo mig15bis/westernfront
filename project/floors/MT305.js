@@ -18,7 +18,6 @@ main.floors.MT305=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        
         {
             "type": "setCurtain",
             "time": 500
@@ -32,107 +31,288 @@ main.floors.MT305=
         "\t[系统提示]敌人战力重置中",
         {
             "type": "setEnemy",
-            "id": "me109f4",
+            "id": "flak88",
             "name": "hp",
-            "value": "40000",
+            "value": "200000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "me109f4",
+            "id": "flak88",
             "name": "atk",
-            "value": "3000",
+            "value": "150000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "me109f4",
+            "id": "flak88",
+            "name": "zone",
+            "value": "30000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "flak88",
             "name": "special",
-            "value": "[6]",
+            "value": "[15,40]",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "flak37",
+            "name": "hp",
+            "value": "180000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "flak37",
+            "name": "atk",
+            "value": "10000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "flak37",
+            "name": "special",
+            "value": "[6,40]",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "flak37",
+            "name": "n",
+            "value": "4",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "me109g6",
             "name": "hp",
-            "value": "42000",
+            "value": "180000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "me109g6",
             "name": "atk",
-            "value": "3500",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "me109g6",
-            "name": "special",
-            "value": "[6]",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "me110c",
-            "name": "hp",
-            "value": "60000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "me110c",
-            "name": "atk",
-            "value": "8000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "me110c",
-            "name": "special",
-            "value": "[30,64]",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "ju88c6",
-            "name": "hp",
-            "value": "75000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "ju88c6",
-            "name": "atk",
-            "value": "9500",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "ju88c6",
-            "name": "special",
-            "value": "[30,64]",
+            "value": "15000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "fw190a1",
             "name": "hp",
+            "value": "180000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "fw190a1",
+            "name": "atk",
+            "value": "18000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "fw190a1",
+            "name": "special",
+            "value": "[6,30]",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "fw190a3",
+            "name": "hp",
+            "value": "200000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "fw190a3",
+            "name": "atk",
+            "value": "20000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "fw190a3",
+            "name": "special",
+            "value": "[6,30,90]",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "fw190a3",
+            "name": "ammo",
+            "value": "2"
+        },
+        {
+            "type": "setEnemy",
+            "id": "z1934",
+            "name": "hp",
+            "value": "200000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "z1934",
+            "name": "atk",
+            "value": "90000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "z1934",
+            "name": "zone",
+            "value": "45000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "z1934",
+            "name": "range",
+            "value": "3",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "z1934",
+            "name": "zoneSquare",
+            "value": "true",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "z1934",
+            "name": "special",
+            "value": "[15,40]",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "z1934a",
+            "name": "hp",
+            "value": "220000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "z1934a",
+            "name": "atk",
+            "value": "95000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "z1934a",
+            "name": "zone",
+            "value": "45000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "z1934a",
+            "name": "range",
+            "value": "3",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "z1934a",
+            "name": "zoneSquare",
+            "value": "true",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "z1934a",
+            "name": "special",
+            "value": "[15,40]",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "z1936",
+            "name": "hp",
+            "value": "250000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "z1936",
+            "name": "atk",
+            "value": "95000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "z1936",
+            "name": "zone",
+            "value": "45000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "z1936",
+            "name": "range",
+            "value": "3",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "z1936",
+            "name": "zoneSquare",
+            "value": "true",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "z1936",
+            "name": "special",
+            "value": "[15,40]",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "z1936a",
+            "name": "hp",
+            "value": "300000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "z1936a",
+            "name": "atk",
+            "value": "100000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "z1936a",
+            "name": "zone",
             "value": "50000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "fw190a1",
-            "name": "atk",
-            "value": "4000",
+            "id": "z1936a",
+            "name": "range",
+            "value": "3",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "fw190a1",
+            "id": "z1936a",
+            "name": "zoneSquare",
+            "value": "true",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "z1936a",
             "name": "special",
-            "value": "[6]"
+            "value": "[15,40]"
         },
         "\t[系统提示]敌人战力重置完成",
         {
@@ -147,9 +327,97 @@ main.floors.MT305=
             "type": "playSound",
             "name": "xinxinmagic.mp3"
         },
-        "\t[任务目标]⭐通过当前区域\n⭐积攒物资：下午茶×80，可乐×10\n⭐积攒物资：黄钥匙×15，蓝钥匙×8",
+        "\t[任务目标]⭐通过当前区域\n⭐击落所有敌机\n⭐积攒物资：黄钥匙×20，蓝钥匙×8",
         {
             "type": "callBook"
+        },
+        {
+            "type": "setValue",
+            "name": "flag:第41关通关",
+            "value": "0"
+        },
+        {
+            "type": "setTask",
+            "name": "第41关任务1",
+            "n": 1,
+            "text": "通过当前区域",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "第41关通关",
+                    "operator": "=",
+                    "text": "通过当前区域",
+                    "count": "1"
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第41关任务2",
+            "n": 1,
+            "text": "击落所有敌机",
+            "info": [
+                {
+                    "type": "checkEnemyType",
+                    "checkEnemyType": "战斗机",
+                    "floorId": [
+                        "MT305",
+                        "MT306",
+                        "MT307",
+                        "MT308"
+                    ],
+                    "operator": "<=",
+                    "text": "敌军战斗机剩余",
+                    "count": 0
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第41关任务3",
+            "n": 2,
+            "text": "积攒物资：黄钥匙×20，蓝钥匙×8",
+            "info": [
+                {
+                    "type": "checkItem",
+                    "checkItem": "yellowKey",
+                    "operator": ">=",
+                    "text": "当前持有黄钥匙",
+                    "count": 20
+                },
+                {
+                    "type": "checkItem",
+                    "checkItem": "blueKey",
+                    "operator": ">=",
+                    "text": "当前持有蓝钥匙",
+                    "count": 8
+                }
+            ]
+        },
+        {
+            "type": "animate",
+            "name": "wonder",
+            "loc": "hero",
+            "async": true
+        },
+        {
+            "type": "sleep",
+            "time": 500
+        },
+        {
+            "type": "animate",
+            "name": "explore3",
+            "loc": "hero",
+            "async": true
+        },
+        {
+            "type": "setValue",
+            "name": "status:hp",
+            "operator": "-=",
+            "value": "6000"
+        },
+        {
+            "type": "waitAsync"
         }
     ],
     "eachArrive": [],
@@ -185,7 +453,7 @@ main.floors.MT305=
     [540,540,540,140,542,  0,371,  0,371,  0,  0, 81,544,140, 21],
     [  0,395,  0,140,140,140,140, 81,140,140,396,140,140,140,140],
     [140, 82,140,140,  0,543,543,  0,369,  0,543,  0,371,  0,606],
-    [540,369,  0,140,393,140,140,398,140,369,140,140,140,140, 81],
+    [540,369,  0,140,393,140,140,372,140,369,140,140,140,140, 81],
     [540,140,396, 82,543,543,140, 93,140,543,140, 22, 22, 22,394]
 ],
     "bgmap": [
@@ -208,5 +476,5 @@ main.floors.MT305=
     "fgmap": [
 
 ],
-    "area": "海洋"
+    "area": "天空"
 }

@@ -1313,7 +1313,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 							var dx = Math.abs(block.x - x),
 								dy = Math.abs(block.y - y);
 							// 检查十字和九宫格陷阱
-							if (0 < dx && dx <= range && 0 < dy && dy <= range) inRange = true;
+							if (0 <= dx && dx <= range && 0 <= dy && dy <= range && !(dx === 0 && dy === 0)) inRange = true;
 						}
 						if (inRange) aa_buff += enemy.atk / 5; // 叠加
 					}
@@ -1413,7 +1413,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 
 	var enemyInfo = core.enemys.getEnemyInfo(enemy, hero, x, y, floorId);
 	var hero_hp = core.getRealStatusOrDefault(hero, 'hp'),
-		hero_hpmax = core.getRealStatusOrDefault(hero, 'hpmax') * (core.hasItem('penicillin') ? 1.15 : 1),
+		hero_hpmax = core.getRealStatusOrDefault(hero, 'hpmax'),
 		hero_atk = core.getRealStatusOrDefault(hero, 'atk'),
 		hero_def = core.getRealStatusOrDefault(hero, 'def'),
 		hero_mdef = core.getRealStatusOrDefault(hero, 'mdef'),
@@ -1669,7 +1669,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		for (let m = -4; m <= 4; m++) { //循环遍历身周格子看有没有敌人
 			for (let n = -4; n <= 4; n++) {
 				if (m !== 0 && n !== 0) { //自身不算
-					if (core.getBlockCls(x + m, y + n).startsWith("enemy")) {
+					if (core.getBlockCls(x + m, y + n) === 'enemys') {
 						return null;
 					}
 				}
@@ -3010,7 +3010,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 
 	// 检查HP上限
 	if (core.flags.statusBarItems.indexOf('enableHPMax') >= 0) {
-		core.setStatus('hp', Math.min(core.getRealStatus('hpmax') * (core.hasItem('penicillin') ? 1.15 : 1), core.getStatus('hp')));
+		core.setStatus('hp', Math.min(core.getRealStatus('hpmax'), core.getStatus('hp')));
 	}
 	//更新任务状态
 	core.taskSystem.checkAll();

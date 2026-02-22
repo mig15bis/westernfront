@@ -2593,7 +2593,7 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				core.setTextAlign("outerUI", "left")
 				core.drawIcon(uictx, "statusHp", 6, 55, 24, 24)
 				core.fillRect(uictx, 32, 58.5, 94, 18, "#000000") //血槽
-				let bloodmax = core.getRealStatus('hpmax') * (core.hasItem("penicillin") ? 1.12 : 1),
+				let bloodmax = core.getRealStatus('hpmax'),
 					blood = core.getRealStatus('hp');
 				if (blood >= bloodmax * 0.8) { //变色血
 					core.fillRect(uictx, 34, 60.5, 90 * blood / bloodmax, 14, "#00FF00");
@@ -2716,7 +2716,7 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				core.setTextAlign("outerUI", "center")
 				core.drawIcon(uictx, "statusHp", 4, 103, 32, 32)
 				core.fillRect(uictx, 36, 107, 106, 24, "#000000") //血槽
-				let bloodmax = core.getRealStatus('hpmax') * (core.hasItem("penicillin") ? 1.12 : 1),
+				let bloodmax = core.getRealStatus('hpmax'),
 					blood = core.getRealStatus('hp');
 				if (blood >= bloodmax * 0.8) { //变色血
 					core.fillRect(uictx, 38, 109, 102 * blood / bloodmax, 20, "#00FF00");
@@ -4962,7 +4962,6 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 							}
 						}); //公共事件
 					} else { //在录像中
-						core.lockControl();
 						for (let x = 0; x <= 14; x++) {
 							for (let y = 0; y <= 14; y++) {
 								if (core.getBlockCls(x, y, floorId) === 'enemys') {
@@ -5006,7 +5005,6 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 								}
 							}
 						}
-						core.unlockControl();
 						core.status.hero.hp -= core.status.hero.hpmax * 0.2;
 						if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
 							core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
@@ -5089,7 +5087,78 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 			strategy: true,
 			name: 'T34谢尔曼风琴',
 			cost: 600,
-			description: '仅可在地面使用。呼叫火箭炮覆盖打击，打击目标为以自身为中心7×7正方形区域，其中的敌人陆军受到不同程度的损失：步兵失去70%生命值，炮兵50%，装甲20%'
+			func: function () {
+				let X = core.status.hero.loc.x,
+					Y = core.status.hero.loc.y,
+					floorId = core.status.floorId;
+				if (core.status.thisMap.area === '陆地' || core.status.thisMap.area === '浅滩') {
+					if (!core.isReplaying() && !main.replayChecking) { //不在录像中
+						core.insertCommonEvent('火箭炮动画', void 0, void 0, void 0, () => {
+							core.lockControl();
+							//技能效果
+							for (let a = -3; a <= 3; a++) {
+								for (let b = -3; b <= 3; b++) {
+									if (core.getBlockCls(X + a, Y + b, floorId) === 'enemys') {
+										let Type = core.material.enemys[core.getBlockId(X + a, Y + b)].type,
+											enemyhp = core.getEnemyInfo(core.material.enemys[core.getBlockId(X + a, Y + b)]).hp;
+										if (Type === '步兵') {
+											if (!flags.aoe[(X + a) + ',' + (Y + b) + ',' + floorId]) {
+												flags.aoe[(X + a) + ',' + (Y + b) + ',' + floorId] = enemyhp * 0.7;
+											} else { flags.aoe[(X + a) + ',' + (Y + b) + ',' + floorId] += enemyhp * 0.7; }
+										} else if (Type === '反坦克炮' || Type === '榴弹炮' || Type === '高射炮') {
+											if (!flags.aoe[(X + a) + ',' + (Y + b) + ',' + floorId]) {
+												flags.aoe[(X + a) + ',' + (Y + b) + ',' + floorId] = enemyhp * 0.5;
+											} else { flags.aoe[(X + a) + ',' + (Y + b) + ',' + floorId] += enemyhp * 0.5; }
+										} else if (Type === '轻坦' || Type === '中坦' || Type === '重坦' || Type === '坦歼') {
+											if (!flags.aoe[(X + a) + ',' + (Y + b) + ',' + floorId]) {
+												flags.aoe[(X + a) + ',' + (Y + b) + ',' + floorId] = enemyhp * 0.2;
+											} else { flags.aoe[(X + a) + ',' + (Y + b) + ',' + floorId] += enemyhp * 0.2; }
+										}
+									}
+								}
+							}
+							core.unlockControl();
+							if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
+								core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
+								core.drawHeroAnimate('sniper');
+								core.updateStatusBar();
+								if (hero.hp <= 0) {
+									core.events.lose();
+								}
+							}
+						}); //公共事件
+					} else {
+						//技能效果
+						for (let a = -3; a <= 3; a++) {
+							for (let b = -3; b <= 3; b++) {
+								if (core.getBlockCls(X + a, Y + b, floorId) === 'enemys') {
+									let Type = core.material.enemys[core.getBlockId(X + a, Y + b)].type,
+										enemyhp = core.getEnemyInfo(core.material.enemys[core.getBlockId(X + a, Y + b)]).hp;
+									if (Type === '步兵') {
+										if (!flags.aoe[(X + a) + ',' + (Y + b) + ',' + floorId]) {
+											flags.aoe[(X + a) + ',' + (Y + b) + ',' + floorId] = enemyhp * 0.7;
+										} else { flags.aoe[(X + a) + ',' + (Y + b) + ',' + floorId] += enemyhp * 0.7; }
+									} else if (Type === '反坦克炮' || Type === '榴弹炮' || Type === '高射炮') {
+										if (!flags.aoe[(X + a) + ',' + (Y + b) + ',' + floorId]) {
+											flags.aoe[(X + a) + ',' + (Y + b) + ',' + floorId] = enemyhp * 0.5;
+										} else { flags.aoe[(X + a) + ',' + (Y + b) + ',' + floorId] += enemyhp * 0.5; }
+									} else if (Type === '轻坦' || Type === '中坦' || Type === '重坦' || Type === '坦歼') {
+										if (!flags.aoe[(X + a) + ',' + (Y + b) + ',' + floorId]) {
+											flags.aoe[(X + a) + ',' + (Y + b) + ',' + floorId] = enemyhp * 0.2;
+										} else { flags.aoe[(X + a) + ',' + (Y + b) + ',' + floorId] += enemyhp * 0.2; }
+									}
+								}
+							}
+						}
+					}
+				} else {
+					core.status.hero.mana += 600;
+					core.drawTip('只能用于地面作战');
+					core.playSound('error.mp3');
+					return;
+				}
+			},
+			description: '仅可在地面使用。呼叫火箭炮覆盖打击，打击目标为以自身为中心7×7正方形区域，其中的敌人陆军受到不同程度的损失：步兵失去70%生命值，炮兵50%，装甲20%。对同一目标重复使用，则根据其现有血量计算。'
 		},
 
 		{ // 22

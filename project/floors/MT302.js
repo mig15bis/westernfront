@@ -21,7 +21,15 @@ main.floors.MT302=
     "defaultGround": "grass",
     "bgm": "europe2.mp3",
     "firstArrive": [
-        "\t[赫尔曼·戈林]没有一架轰炸机能到达鲁尔，如果到了鲁尔我就不叫戈林，你可以叫我迈耶（德语中的下等贱人姓氏）",
+        {
+            "type": "text",
+            "text": "\t[赫尔曼·戈林]\f[gorlin.png,0,310]没有一架轰炸机能到达鲁尔，如果到了鲁尔我就不叫戈林，你可以叫我迈耶（德语中的下等贱人姓氏）",
+            "pos": [
+                100,
+                300,
+                380
+            ]
+        },
         {
             "type": "setCurtain",
             "time": 500
@@ -1107,7 +1115,7 @@ main.floors.MT302=
                             "floorId": "MT304",
                             "loc": [
                                 7,
-                                7
+                                10
                             ],
                             "direction": "down"
                         }

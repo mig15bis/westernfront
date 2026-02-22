@@ -18,7 +18,7 @@ main.floors.MT311=
             "type": "sleep",
             "time": 1000
         },
-        "\t[德军士兵]报告长官，发现不明军舰正在接近！",
+        "\t[德军士兵]报告长官，发现敌方军舰正在接近！",
         "\t[德军军官]敌人有所行动了吗？不用担心，上面推测这应该是敌人的佯攻，规模不会很大，正常防守即可。",
         "\t[德军士兵]长官，我建议你走出地堡，上去亲眼看一下。",
         "\t[德军军官]……",
@@ -27,7 +27,7 @@ main.floors.MT311=
         "\t[德军军官]快！给隆美尔元帅发电报！这不是佯攻！是总攻！快去！",
         {
             "type": "sleep",
-            "time": 1000
+            "time": 500
         },
         {
             "type": "playSound",
@@ -82,7 +82,7 @@ main.floors.MT311=
             "time": 500
         },
         "\t[水面炮击编队副将]报告，所有战舰，主炮和副炮，均装填完毕。射击诸元计算完毕，已根据光学测距仪测距结果调整至合适仰角。甲板已确认清空。",
-        "\t[水面炮击编队指挥官]很好。各炮手听令，不要吝惜弹药，目标，诺曼底海滩防御工事——",
+        "\t[水面炮击编队指挥官]很好。各炮手听令——",
         "\t[水面炮击编队指挥官]舷炮，一轮齐射，开火！",
         {
             "type": "playSound",
@@ -90,7 +90,7 @@ main.floors.MT311=
         },
         {
             "type": "sleep",
-            "time": 50
+            "time": 200
         },
         {
             "type": "playSound",
@@ -98,7 +98,7 @@ main.floors.MT311=
         },
         {
             "type": "sleep",
-            "time": 50
+            "time": 200
         },
         {
             "type": "playSound",
@@ -106,7 +106,7 @@ main.floors.MT311=
         },
         {
             "type": "sleep",
-            "time": 50
+            "time": 200
         },
         {
             "type": "playSound",
@@ -114,7 +114,7 @@ main.floors.MT311=
         },
         {
             "type": "sleep",
-            "time": 50
+            "time": 200
         },
         {
             "type": "playSound",
@@ -122,7 +122,7 @@ main.floors.MT311=
         },
         {
             "type": "sleep",
-            "time": 50
+            "time": 200
         },
         {
             "type": "playSound",
@@ -130,7 +130,7 @@ main.floors.MT311=
         },
         {
             "type": "sleep",
-            "time": 50
+            "time": 200
         },
         {
             "type": "playSound",
@@ -138,7 +138,7 @@ main.floors.MT311=
         },
         {
             "type": "sleep",
-            "time": 50
+            "time": 200
         },
         {
             "type": "playSound",
@@ -146,7 +146,7 @@ main.floors.MT311=
         },
         {
             "type": "sleep",
-            "time": 50
+            "time": 200
         },
         {
             "type": "playSound",
@@ -154,29 +154,21 @@ main.floors.MT311=
         },
         {
             "type": "sleep",
-            "time": 50
+            "time": 200
         },
         {
             "type": "playSound",
             "name": "seabattle.mp3",
             "sync": true
         },
-        "\t[陆基航空大队指挥官]第二波次所有战机按序起飞，按预定的计划，进行各自的轰炸任务。尽可能的清除上一波次未摧毁的敌军防御工事。战斗机注意搜索空域，确保制空权牢牢把握在我军手中。",
+        "\t[陆基航空大队指挥官]第二波次所有战机按序起飞。尽可能的清除上一波次未摧毁的敌军防御工事。战斗机注意搜索空域，确保制空权牢牢把握在我军手中。",
         {
             "type": "playSound",
             "name": "fighter1.mp3"
         },
         {
             "type": "sleep",
-            "time": 50
-        },
-        {
-            "type": "playSound",
-            "name": "fighter1.mp3"
-        },
-        {
-            "type": "sleep",
-            "time": 50
+            "time": 100
         },
         {
             "type": "playSound",
@@ -184,7 +176,7 @@ main.floors.MT311=
         },
         {
             "type": "sleep",
-            "time": 50
+            "time": 100
         },
         {
             "type": "playSound",
@@ -192,7 +184,7 @@ main.floors.MT311=
         },
         {
             "type": "sleep",
-            "time": 50
+            "time": 100
         },
         {
             "type": "playSound",
@@ -200,7 +192,15 @@ main.floors.MT311=
         },
         {
             "type": "sleep",
-            "time": 50
+            "time": 100
+        },
+        {
+            "type": "playSound",
+            "name": "fighter1.mp3"
+        },
+        {
+            "type": "sleep",
+            "time": 100
         },
         {
             "type": "playSound",
@@ -216,7 +216,7 @@ main.floors.MT311=
         },
         {
             "type": "sleep",
-            "time": 100
+            "time": 150
         },
         {
             "type": "playSound",
@@ -224,7 +224,7 @@ main.floors.MT311=
         },
         {
             "type": "sleep",
-            "time": 100
+            "time": 150
         },
         {
             "type": "playSound",
@@ -232,7 +232,7 @@ main.floors.MT311=
         },
         {
             "type": "sleep",
-            "time": 100
+            "time": 150
         },
         {
             "type": "playSound",
@@ -240,7 +240,7 @@ main.floors.MT311=
         },
         {
             "type": "sleep",
-            "time": 100
+            "time": 150
         },
         {
             "type": "playSound",
@@ -248,7 +248,7 @@ main.floors.MT311=
         },
         {
             "type": "sleep",
-            "time": 100
+            "time": 150
         },
         {
             "type": "playSound",
@@ -260,14 +260,13 @@ main.floors.MT311=
         "\t[重型轰炸机编队投弹手]清空弹舱！",
         {
             "type": "playSound",
-            "name": "airstrike.mp3",
-            "sync": true
+            "name": "airstrike.mp3"
         },
         {
             "type": "sleep",
-            "time": 2000
+            "time": 3000
         },
-        "\t[战斗机大队长]各单位注意，十二点方向，高度约3千米，发现敌军飞机，看外形像是德国佬的ME109和FW190，还有一些斯图卡。",
+        "\t[战斗机大队长]各单位注意，十二点方向，高度约3千米，发现敌军飞机。",
         "\t[战斗机大队长]来吧伙计们，我们有活干了。抛弃副油箱，跟紧我，俯冲下去，杀他们一个片甲不留！",
         {
             "type": "playSound",
@@ -307,16 +306,12 @@ main.floors.MT311=
         },
         {
             "type": "sleep",
-            "time": 3000
+            "time": 1000
         },
         {
             "type": "playSound",
             "name": "dogfight.mp3",
             "sync": true
-        },
-        {
-            "type": "sleep",
-            "time": 2000
         },
         "\t[空降兵（德军阵线后方）]算算时间，那边差不多也该开始了。",
         "\t[空降兵（德军阵线后方）]所以呢？我们现在要怎么办，就像现在这样跟前面的德国佬干瞪眼吗？",
@@ -332,7 +327,7 @@ main.floors.MT311=
         },
         {
             "type": "sleep",
-            "time": 1500
+            "time": 1000
         },
         {
             "type": "playSound",
@@ -356,13 +351,13 @@ main.floors.MT311=
         },
         {
             "type": "sleep",
-            "time": 2000
+            "time": 500
         },
         {
             "type": "setViewport",
             "loc": [
                 0,
-                30
+                0
             ],
             "time": 5000,
             "async": true
@@ -671,8 +666,8 @@ main.floors.MT311=
         },
         "1944年6月6日，“霸王行动”，也就是诺曼底登陆战，正式打响。",
         "盟军一共调集了153万陆军，17万辆战车，1.3万架飞机，和5000艘舰艇。这是整个人类历史上，迄今为止规模最大的一次登陆战。",
-        "满载兵员装备的登陆艇在诺曼底海滩前的海面上铺开，像一个密集的蚁群，劈开白色的浪花，向着海岸线驶去。",
-        "德军地堡打出的炮弹也不断在海面上炸开，其中有些是专为战列舰准备的巨型舰炮。沿途不断有登陆艇被击中或触雷，有的侧翻，有的连同船上的士兵一起灰飞烟灭。",
+        "满载兵员装备的登陆艇在诺曼底海滩前的海面上铺开，像密集的蚁群，劈开白色的浪花，向着海岸线驶去。",
+        "德军地堡打出的炮弹也不断在海面上炸开，其中有些是专为战列舰准备的巨型舰炮。沿途不断有登陆艇被击中或触雷，连同船上的士兵一起灰飞烟灭。",
         "随着战舰的炮火逐渐沉寂，登陆艇也一艘接一艘抵达海滩。随着登陆艇的舱门被缓缓放下，不等最前排的盟军士兵们反应过来，德军机枪打出的炽热子弹便劈头盖脸的窜了过来……",
         {
             "type": "sleep",
@@ -680,10 +675,10 @@ main.floors.MT311=
         },
         {
             "type": "changeFloor",
-            "floorId": "MT136",
+            "floorId": "MT312",
             "loc": [
-                -1,
-                45
+                7,
+                12
             ]
         }
     ],

@@ -743,13 +743,35 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "M4A3E2“巨无霸”",
 		"canUseItemEffect": "true",
-		"text": "攻+800后额外加60%，穿78，装175。\n被动技能：\n工业底蕴：战后额外加5黄金。判定在“工业潜能”之前触发。\n血之训诫：战后获得的经验翻倍。\n互相刮痧：双方互不击穿时，减少敌人20%伤害。\n杀伤榴弹：对步兵和炮兵增加30%普攻伤害。"
+		"text": "攻+800后额外加60%，穿78，装175。\n被动技能：\n工业底蕴：战后额外加5黄金。判定在“工业潜能”之前触发。\n血之训诫：战后获得的经验翻倍。\n互相刮痧：双方互不击穿时，减少敌人20%伤害。\n杀伤榴弹：对步兵和炮兵增加30%普攻伤害。",
+		"equip": {
+			"type": 0,
+			"value": {
+				"atk": 800,
+				"ap": 78,
+				"arm": 175
+			},
+			"percentage": {
+				"atk": 60
+			}
+		}
 	},
 	"firefly": {
 		"cls": "equips",
 		"name": "谢尔曼“萤火虫”",
 		"canUseItemEffect": "true",
-		"text": "攻+1000后额外加60%，穿155，装110。\n被动技能：\n工业底蕴：战后额外加5黄金。判定在“工业潜能”之前触发。\n血之训诫：战后获得的经验翻倍。\n精准狙击：与“精锐”或“主将”作战时，伤害提升40%。"
+		"text": "攻+1000后额外加60%，穿155，装110。\n被动技能：\n工业底蕴：战后额外加5黄金。判定在“工业潜能”之前触发。\n血之训诫：战后获得的经验翻倍。\n精准狙击：与“精锐”或“主将”作战时，伤害提升40%。",
+		"equip": {
+			"type": 0,
+			"value": {
+				"atk": 1000,
+				"ap": 155,
+				"arm": 110
+			},
+			"percentage": {
+				"atk": 60
+			}
+		}
 	},
 	"a34comet": {
 		"cls": "equips",
@@ -1413,7 +1435,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 				"async": true
 			}
 		],
-		"useItemEffect": "if (core.hasEquip('churchillmk3')) {\n\tif (hero.hp > hero.hpmax * 0.65 && !core.getFlag(\"__statistics__\")) core.drawHeroAnimate('hpfull');\n\tcore.status.hero.hp += hero.hpmax * 0.35;\n} else if (core.hasEquip('a34comet')) {\n\tif (hero.hp > hero.hpmax * 0.6 && !core.getFlag(\"__statistics__\")) core.drawHeroAnimate('hpfull');\n\tcore.status.hero.hp += hero.hpmax * 0.4;\n} else {\n\tif (hero.hp > hero.hpmax * 0.75 && !core.getFlag(\"__statistics__\")) core.drawHeroAnimate('hpfull');\n\tcore.status.hero.hp += hero.hpmax * 0.25;\n}"
+		"useItemEffect": "if (core.hasItem('penicillin')) {\n\tdebugger\n\tlet hp = core.getRealStatus('hp'),\n\t\thpmax = core.getRealStatus('hpmax');\n\tif (hp > hpmax * 0.6 && !core.getFlag(\"__statistics__\")) core.drawHeroAnimate('hpfull');\n\tcore.status.hero.hp += hpmax * 0.4;\n} else if (core.hasEquip('churchillmk3')) {\n\tif (hero.hp > hero.hpmax * 0.65 && !core.getFlag(\"__statistics__\")) core.drawHeroAnimate('hpfull');\n\tcore.status.hero.hp += hero.hpmax * 0.35;\n} else if (core.hasEquip('a34comet')) {\n\tif (hero.hp > hero.hpmax * 0.6 && !core.getFlag(\"__statistics__\")) core.drawHeroAnimate('hpfull');\n\tcore.status.hero.hp += hero.hpmax * 0.4;\n} else {\n\tif (hero.hp > hero.hpmax * 0.75 && !core.getFlag(\"__statistics__\")) core.drawHeroAnimate('hpfull');\n\tcore.status.hero.hp += hero.hpmax * 0.25;\n}"
 	},
 	"cola": {
 		"cls": "tools",
@@ -2102,7 +2124,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "constants",
 		"name": "青霉素",
 		"canUseItemEffect": "true",
-		"text": "持有时，血限提升15%，“一杯茶”治疗效果改为40%。"
+		"text": "持有时，血限提升15%，“一杯茶”治疗效果改为40%（该效果会覆盖丘吉尔坦克的特效）。"
 	},
 	"red6Gem": {
 		"cls": "items",
@@ -2283,7 +2305,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"name": "丘吉尔“鳄鱼”喷火坦克",
 		"canUseItemEffect": "(function () {\n\tlet Block = core.getBlock(core.nextX(), core.nextY());\n\treturn Block && Block.event.cls === 'enemys' && ['步兵', '反坦克炮', '榴弹炮', '高射炮', '建筑'].includes(core.material.enemys[Block.event.id].type) && !core.hasSpecial(core.material.enemys[Block.event.id].special, 57);\n})()",
 		"text": "喷射火焰，消灭主角面前的非boss步兵、火炮或防御建筑并获得金经，无视“无法被攻击”效果。",
-		"useItemEffect": "(function () {\n\tlet Block = core.getBlock(core.nextX(), core.nextY());\n\tif (Block && Block.event.cls === 'enemys' && ['步兵', '反坦克炮', '榴弹炮', '高射炮', '建筑'].includes(core.material.enemys[Block.event.id].type) && !core.hasSpecial(core.material.enemys[Block.event.id].special, 57)) {\n\t\tlet money = core.getEnemyValue(Block.event.id, 'money', Block.x, Block.y),\n\t\t\texp = core.getEnemyValue(Block.event.id, 'exp', Block.x, Block.y),\n\t\t\ttodo = [];\n\t\tif (core.hasEquip('m4') || core.hasEquip('m4a2') || core.hasEquip('m4a3') || core.hasEquip('m4a3e2') || core.hasEquip('firefly')) money += 5; //谢馒头，触发在双倍前\n\t\tif (core.hasEquip('classj')) money += 5; //J级驱逐舰\n\t\tif (flags.warmachine === true) money *= 2; //工业潜能，金币翻倍，计算在下面几个之前\n\t\tif (core.hasEquip('edinburgh')) money += 2; //爱丁堡号巡洋舰，金币+2\n\t\tif (core.hasEquip('hood')) money += 10; //胡德号，金币+10\n\t\tif (core.hasItem('coin')) money *= 2; // 幸运金币：双倍\n\t\tif (core.hasSpecial(core.material.enemys[Block.event.id].special, 61)) money = 0; // 投降\n\t\tcore.status.hero.money += money;\n\t\tcore.status.hero.statistics.money += money;\n\t\tif (core.hasEquip('classv')) exp += 2; //V级驱逐舰\n\t\tif (core.hasEquip('classj')) exp += 5; //J级驱逐舰\n\t\tif (core.hasEquip('hood')) exp += 10; //胡德号，经验+10\n\t\tif (core.hasEquip('m4a2') || core.hasEquip('m4a3') || core.hasEquip('m4a3e2') || core.hasEquip('firefly')) exp *= 2; //馒头\n\t\tif (core.hasSpecial(core.material.enemys[Block.event.id].special, 61)) exp = 0; // 投降\n\t\tcore.status.hero.exp += exp;\n\t\tcore.status.hero.statistics.exp += exp;\n\t\tcore.drawAnimate('explore3', Block.x, Block.y);\n\t\tif (core.status.floorId != null) {\n\t\t\tcore.push(todo, core.floors[core.status.floorId].afterBattle[Block.x + \",\" + Block.y]);\n\t\t}\n\t\tcore.push(todo, core.material.enemys[Block.event.id].afterBattle);\n\t\tdelete((flags.enemyOnPoint || {})[core.status.floorId] || {})[Block.x + \",\" + Block.y];\n\t\tcore.removeBlock(Block.x, Block.y);\n\t\tif (core.hasSpecial(core.material.enemys[Block.event.id].special, 84)) {\n\t\t\tcore.setBlock(\"yellowWall\", Block.x, Block.y);\n\t\t}\n\t\tif (todo.length > 0) {\n\t\t\tcore.insertAction(todo);\n\t\t}\n\t}\n})()"
+		"useItemEffect": "(function () {\n\tlet Block = core.getBlock(core.nextX(), core.nextY());\n\tif (Block && Block.event.cls === 'enemys' && ['步兵', '反坦克炮', '榴弹炮', '高射炮', '建筑'].includes(core.material.enemys[Block.event.id].type) && !core.hasSpecial(core.material.enemys[Block.event.id].special, 57)) {\n\t\tlet money = core.getEnemyValue(Block.event.id, 'money', Block.x, Block.y),\n\t\t\texp = core.getEnemyValue(Block.event.id, 'exp', Block.x, Block.y),\n\t\t\ttodo = [];\n\t\tif (core.hasEquip('m4') || core.hasEquip('m4a2') || core.hasEquip('m4a3') || core.hasEquip('m4a3e2') || core.hasEquip('firefly')) money += 5; //谢馒头，触发在双倍前\n\t\tif (core.hasEquip('classj')) money += 5; //J级驱逐舰\n\t\tif (flags.warmachine === true) money *= 2; //工业潜能，金币翻倍，计算在下面几个之前\n\t\tif (core.hasEquip('edinburgh')) money += 2; //爱丁堡号巡洋舰，金币+2\n\t\tif (core.hasEquip('hood')) money += 10; //胡德号，金币+10\n\t\tif (core.hasItem('coin')) money *= 2; // 幸运金币：双倍\n\t\tif (core.hasSpecial(core.material.enemys[Block.event.id].special, 61)) money = 0; // 投降\n\t\tcore.status.hero.money += money;\n\t\tcore.status.hero.statistics.money += money;\n\t\tif (core.hasEquip('classv')) exp += 2; //V级驱逐舰\n\t\tif (core.hasEquip('classj')) exp += 5; //J级驱逐舰\n\t\tif (core.hasEquip('hood')) exp += 10; //胡德号，经验+10\n\t\tif (core.hasEquip('m4a2') || core.hasEquip('m4a3') || core.hasEquip('m4a3e2') || core.hasEquip('firefly')) exp *= 2; //馒头\n\t\tif (core.hasSpecial(core.material.enemys[Block.event.id].special, 61)) exp = 0; // 投降\n\t\tcore.status.hero.exp += exp;\n\t\tcore.status.hero.statistics.exp += exp;\n\t\tcore.drawAnimate('fire', Block.x, Block.y);\n\t\tif (core.status.floorId != null) {\n\t\t\tcore.push(todo, core.floors[core.status.floorId].afterBattle[Block.x + \",\" + Block.y]);\n\t\t}\n\t\tcore.push(todo, core.material.enemys[Block.event.id].afterBattle);\n\t\tdelete((flags.enemyOnPoint || {})[core.status.floorId] || {})[Block.x + \",\" + Block.y];\n\t\tcore.removeBlock(Block.x, Block.y);\n\t\tif (core.hasSpecial(core.material.enemys[Block.event.id].special, 84)) {\n\t\t\tcore.setBlock(\"yellowWall\", Block.x, Block.y);\n\t\t}\n\t\tif (todo.length > 0) {\n\t\t\tcore.insertAction(todo);\n\t\t}\n\t}\n})()"
 	},
 	"is3": {
 		"cls": "equips",

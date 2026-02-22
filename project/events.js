@@ -4308,6 +4308,248 @@ var events_c12a15a8_c380_4b28_8144_256cba95f760 =
 					}
 				]
 			}
+		],
+		"火箭炮动画": [
+			{
+				"type": "if",
+				"condition": "(flag:anime===true)",
+				"true": [
+					{
+						"type": "showImage",
+						"code": 1,
+						"image": "skill20.jpg",
+						"loc": [
+							-300,
+							50
+						],
+						"opacity": 1,
+						"time": 0
+					},
+					{
+						"type": "moveImage",
+						"code": 1,
+						"to": [
+							90,
+							50
+						],
+						"time": 500,
+						"async": true
+					},
+					{
+						"type": "playSound",
+						"name": "katyusha.mp3"
+					},
+					{
+						"type": "sleep",
+						"time": 300
+					},
+					{
+						"type": "playSound",
+						"name": "katyusha.mp3"
+					},
+					{
+						"type": "sleep",
+						"time": 300
+					},
+					{
+						"type": "playSound",
+						"name": "katyusha.mp3"
+					},
+					{
+						"type": "waitAsync"
+					},
+					{
+						"type": "hideImage",
+						"code": 1,
+						"time": 500
+					},
+					{
+						"type": "sleep",
+						"time": 1000
+					},
+					{
+						"type": "animate",
+						"name": "explore3",
+						"loc": [
+							"core.status.hero.loc.x",
+							"core.status.hero.loc.y - 2"
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 100
+					},
+					{
+						"type": "animate",
+						"name": "explore3",
+						"loc": [
+							"core.status.hero.loc.x - 1",
+							"core.status.hero.loc.y"
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 100
+					},
+					{
+						"type": "animate",
+						"name": "explore3",
+						"loc": [
+							"core.status.hero.loc.x + 1",
+							"core.status.hero.loc.y - 2"
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 100
+					},
+					{
+						"type": "animate",
+						"name": "explore3",
+						"loc": [
+							"core.status.hero.loc.x + 2",
+							"core.status.hero.loc.y + 2"
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 100
+					},
+					{
+						"type": "animate",
+						"name": "explore3",
+						"loc": [
+							"core.status.hero.loc.x - 2",
+							"core.status.hero.loc.y - 1"
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 100
+					},
+					{
+						"type": "animate",
+						"name": "explore3",
+						"loc": [
+							"core.status.hero.loc.x",
+							"core.status.hero.loc.y + 1"
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 100
+					},
+					{
+						"type": "animate",
+						"name": "explore3",
+						"loc": [
+							"core.status.hero.loc.x - 1",
+							"core.status.hero.loc.y - 2"
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 100
+					},
+					{
+						"type": "animate",
+						"name": "explore3",
+						"loc": [
+							"core.status.hero.loc.x + 1",
+							"core.status.hero.loc.y"
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 100
+					},
+					{
+						"type": "animate",
+						"name": "explore3",
+						"loc": [
+							"core.status.hero.loc.x - 2",
+							"core.status.hero.loc.y + 1"
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 100
+					},
+					{
+						"type": "animate",
+						"name": "explore3",
+						"loc": [
+							"core.status.hero.loc.x",
+							"core.status.hero.loc.y - 1"
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 100
+					},
+					{
+						"type": "animate",
+						"name": "explore3",
+						"loc": [
+							"core.status.hero.loc.x + 2",
+							"core.status.hero.loc.y - 2"
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 100
+					},
+					{
+						"type": "animate",
+						"name": "explore3",
+						"loc": [
+							"core.status.hero.loc.x - 1",
+							"core.status.hero.loc.y + 2"
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 100
+					},
+					{
+						"type": "animate",
+						"name": "explore3",
+						"loc": [
+							"core.status.hero.loc.x + 1",
+							"core.status.hero.loc.y - 1"
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 100
+					},
+					{
+						"type": "animate",
+						"name": "explore3",
+						"loc": [
+							"core.status.hero.loc.x - 2",
+							"core.status.hero.loc.y"
+						],
+						"async": true
+					},
+					{
+						"type": "waitAsync"
+					}
+				]
+			}
 		]
 	}
 }

@@ -18,7 +18,6 @@ main.floors.MT312=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        
         "\r[yellow]Mission 43 登陆日——朱诺海滩",
         {
             "type": "setCurtain",
@@ -85,89 +84,6 @@ main.floors.MT312=
             "type": "animate",
             "name": "shoot3",
             "loc": [
-                4,
-                11
-            ],
-            "async": true
-        },
-        {
-            "type": "sleep",
-            "time": 50
-        },
-        {
-            "type": "animate",
-            "name": "shoot3",
-            "loc": [
-                3,
-                12
-            ],
-            "async": true
-        },
-        {
-            "type": "animate",
-            "name": "zone",
-            "loc": [
-                7,
-                10
-            ],
-            "async": true
-        },
-        {
-            "type": "sleep",
-            "time": 50
-        },
-        {
-            "type": "animate",
-            "name": "shoot3",
-            "loc": [
-                6,
-                11
-            ],
-            "async": true
-        },
-        {
-            "type": "sleep",
-            "time": 50
-        },
-        {
-            "type": "animate",
-            "name": "shoot3",
-            "loc": [
-                7,
-                12
-            ],
-            "async": true
-        },
-        {
-            "type": "animate",
-            "name": "zone",
-            "loc": [
-                11,
-                13
-            ],
-            "async": true
-        },
-        {
-            "type": "sleep",
-            "time": 50
-        },
-        {
-            "type": "animate",
-            "name": "shoot3",
-            "loc": [
-                9,
-                10
-            ],
-            "async": true
-        },
-        {
-            "type": "sleep",
-            "time": 50
-        },
-        {
-            "type": "animate",
-            "name": "shoot3",
-            "loc": [
                 10,
                 11
             ],
@@ -218,6 +134,50 @@ main.floors.MT312=
             "async": true
         },
         {
+            "type": "animate",
+            "name": "shoot3",
+            "loc": [
+                4,
+                11
+            ],
+            "async": true
+        },
+        {
+            "type": "sleep",
+            "time": 50
+        },
+        {
+            "type": "animate",
+            "name": "shoot3",
+            "loc": [
+                3,
+                12
+            ],
+            "async": true
+        },
+        {
+            "type": "animate",
+            "name": "zone",
+            "loc": [
+                7,
+                10
+            ],
+            "async": true
+        },
+        {
+            "type": "sleep",
+            "time": 50
+        },
+        {
+            "type": "animate",
+            "name": "shoot3",
+            "loc": [
+                6,
+                11
+            ],
+            "async": true
+        },
+        {
             "type": "sleep",
             "time": 50
         },
@@ -229,6 +189,45 @@ main.floors.MT312=
                 11
             ],
             "async": true
+        },
+        {
+            "type": "sleep",
+            "time": 50
+        },
+        {
+            "type": "animate",
+            "name": "shoot3",
+            "loc": [
+                7,
+                12
+            ],
+            "async": true
+        },
+        {
+            "type": "animate",
+            "name": "zone",
+            "loc": [
+                11,
+                13
+            ],
+            "async": true
+        },
+        {
+            "type": "sleep",
+            "time": 50
+        },
+        {
+            "type": "animate",
+            "name": "shoot3",
+            "loc": [
+                9,
+                10
+            ],
+            "async": true
+        },
+        {
+            "type": "sleep",
+            "time": 50
         },
         {
             "type": "hide",
@@ -460,238 +459,371 @@ main.floors.MT312=
             "type": "setEnemy",
             "id": "commandos",
             "name": "hp",
-            "value": "220000",
+            "value": "1000000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "commandos",
             "name": "atk",
-            "value": "2800",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "mortar",
-            "name": "hp",
-            "value": "120000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "mortar",
-            "name": "atk",
             "value": "10000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
+            "id": "commandos",
+            "name": "ap",
+            "value": "200",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "mortar",
+            "name": "hp",
+            "value": "600000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "mortar",
+            "name": "atk",
+            "value": "80000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "mortar",
+            "name": "zoneSquare",
+            "value": "true",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "mortar",
+            "name": "range",
+            "value": "6",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "mortar",
+            "name": "zone",
+            "value": "5000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
             "id": "sniper",
             "name": "hp",
-            "value": "20000",
+            "value": "300000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "sniper",
             "name": "atk",
-            "value": "40000",
+            "value": "200000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "sniper",
+            "name": "special",
+            "value": "[56,66,71]",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "motorinf",
             "name": "hp",
-            "value": "150000",
+            "value": "750000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "motorinf",
             "name": "atk",
-            "value": "3200",
+            "value": "12000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "motorinf",
+            "name": "ap",
+            "value": "200",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "grenadier",
+            "name": "hp",
+            "value": "650000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "grenadier",
+            "name": "atk",
+            "value": "72000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "grenadier",
+            "name": "ap",
+            "value": "200",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "lightmg",
             "name": "hp",
-            "value": "120000",
+            "value": "600000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "lightmg",
             "name": "atk",
-            "value": "3300",
+            "value": "12000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "lightmg",
+            "name": "special",
+            "value": "[6,15]",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "lightmg",
+            "name": "zoneSquare",
+            "value": "true",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "lightmg",
+            "name": "range",
+            "value": "4",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "lightmg",
+            "name": "zone",
+            "value": "6000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "mg42",
             "name": "hp",
+            "value": "600000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "mg42",
+            "name": "atk",
+            "value": "18000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "mg42",
+            "name": "special",
+            "value": "[6,15]",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "mg42",
+            "name": "zoneSquare",
+            "value": "true",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "mg42",
+            "name": "range",
+            "value": "4",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "mg42",
+            "name": "zone",
+            "value": "2000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "pak40",
+            "name": "hp",
+            "value": "500000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "pak40",
+            "name": "atk",
             "value": "100000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "mg42",
-            "name": "atk",
-            "value": "3800",
+            "id": "pak40",
+            "name": "special",
+            "value": "[59,87]",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "pak38",
-            "name": "hp",
-            "value": "34000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "pak38",
-            "name": "atk",
+            "id": "pak40",
+            "name": "zone",
             "value": "20000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "howitzer105",
+            "id": "howitzer150",
             "name": "hp",
-            "value": "34000",
+            "value": "500000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "howitzer105",
+            "id": "howitzer150",
             "name": "atk",
-            "value": "45000",
+            "value": "500000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "howitzer105",
+            "id": "howitzer150",
             "name": "zone",
-            "value": "35000",
+            "value": "10000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "sdkfz234",
-            "name": "hp",
-            "value": "85000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "sdkfz234",
-            "name": "atk",
-            "value": "15000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "panzer3f",
-            "name": "hp",
-            "value": "95000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "panzer3f",
-            "name": "atk",
-            "value": "15000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "panzer3f",
+            "id": "howitzer150",
             "name": "special",
-            "value": "[55,60]",
+            "value": "[15,72,87]",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "stug3a",
+            "id": "howitzer150",
+            "name": "range",
+            "value": "10",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "panzer4h",
             "name": "hp",
-            "value": "70000",
+            "value": "600000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "stug3a",
+            "id": "panzer4h",
             "name": "atk",
-            "value": "23000",
+            "value": "100000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "panzer4e",
-            "name": "hp",
-            "value": "90000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "panzer4e",
-            "name": "atk",
-            "value": "35000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "panzer4f",
-            "name": "hp",
-            "value": "110000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "panzer4f",
-            "name": "atk",
-            "value": "28000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "panzer4g",
-            "name": "hp",
-            "value": "110000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "panzer4g",
-            "name": "atk",
-            "value": "33000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "panzer4g",
+            "id": "panzer4h",
             "name": "special",
-            "value": "[55]",
+            "value": "[67]",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "panzer5d",
+            "name": "hp",
+            "value": "700000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "panzer5d",
+            "name": "atk",
+            "value": "120000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "panzer5d",
+            "name": "special",
+            "value": "[56,65,86]",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "tigere",
+            "name": "hp",
+            "value": "800000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "tigere",
+            "name": "atk",
+            "value": "150000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "tigere",
+            "name": "special",
+            "value": "[38,65,86,87]",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "stug4",
+            "name": "hp",
+            "value": "600000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "stug4",
+            "name": "atk",
+            "value": "120000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "stug4",
+            "name": "special",
+            "value": "[56,59,87]",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "stug4",
+            "name": "zone",
+            "value": "20000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "flak88",
             "name": "hp",
-            "value": "35000",
+            "value": "500000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "flak88",
             "name": "atk",
-            "value": "35000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "flak88",
-            "name": "special",
-            "value": "[40,51,55,59]",
+            "value": "180000",
             "norefresh": true
         },
         {
@@ -703,122 +835,140 @@ main.floors.MT312=
         },
         {
             "type": "setEnemy",
-            "id": "me109g6",
-            "name": "hp",
-            "value": "45000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "me109g6",
-            "name": "atk",
-            "value": "4000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "me109g6",
+            "id": "flak88",
             "name": "special",
-            "value": "[6,55]",
+            "value": "[40,59,87]",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "me110g",
+            "id": "wildwind",
             "name": "hp",
-            "value": "60000",
+            "value": "600000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "me110g",
+            "id": "wildwind",
             "name": "atk",
-            "value": "8000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "me110g",
-            "name": "special",
-            "value": "[28,30,55]",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "ju87b",
-            "name": "hp",
-            "value": "45000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "ju87b",
-            "name": "atk",
-            "value": "1000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "ju87b",
-            "name": "bom",
-            "value": "120000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "ju87b",
-            "name": "special",
-            "value": "[28,36,55]",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "ju88a",
-            "name": "hp",
-            "value": "95000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "ju88a",
-            "name": "atk",
-            "value": "2000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "ju88a",
-            "name": "bom",
             "value": "15000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "ju88a",
-            "name": "special",
-            "value": "[28,55]",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
             "id": "mgbunker",
             "name": "hp",
-            "value": "100000",
+            "value": "1000000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "mgbunker",
             "name": "atk",
-            "value": "3200",
+            "value": "18000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "mgbunker",
             "name": "special",
-            "value": "[6,55,63]",
+            "value": "[6,15,63,86,87]",
             "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "mgbunker",
+            "name": "zoneSquare",
+            "value": "true",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "mgbunker",
+            "name": "range",
+            "value": "4",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "mgbunker",
+            "name": "zone",
+            "value": "1800",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "gunbunker",
+            "name": "hp",
+            "value": "1000000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "gunbunker",
+            "name": "atk",
+            "value": "100000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "gunbunker",
+            "name": "zone",
+            "value": "10000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "gunbunker",
+            "name": "special",
+            "value": "[15,63,86,87]",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "gunbunker",
+            "name": "range",
+            "value": "10",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "coast381",
+            "name": "hp",
+            "value": "1000000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "coast381",
+            "name": "atk",
+            "value": "500000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "coast381",
+            "name": "special",
+            "value": "[15,32,37,46,84,86,87]",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "coast381",
+            "name": "range",
+            "value": "15",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "coast381",
+            "name": "zone",
+            "value": "50000"
+        },
+        {
+            "type": "setGlobalValue",
+            "name": "lavaDamage",
+            "value": 100000
         },
         "\t[系统提示]敌人战力重置完成",
         {
@@ -836,14 +986,78 @@ main.floors.MT312=
         "\t[任务目标]⭐通过当前区域\n⭐破坏所有防御建筑\n⭐消灭所有步兵",
         {
             "type": "callBook"
+        },
+        {
+            "type": "setValue",
+            "name": "flag:第42关通关",
+            "value": "0"
+        },
+        {
+            "type": "setTask",
+            "name": "第42关任务1",
+            "n": 1,
+            "text": "通过当前区域",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "第42关通关",
+                    "operator": "=",
+                    "text": "通过当前区域",
+                    "count": "1"
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第42关任务2",
+            "n": 1,
+            "text": "破坏所有防御建筑",
+            "info": [
+                {
+                    "type": "checkEnemyType",
+                    "checkEnemyType": "建筑",
+                    "floorId": [
+                        "MT312",
+                        "MT313",
+                        "MT314",
+                        "MT315",
+                        "MT316"
+                    ],
+                    "operator": "<=",
+                    "text": "防御建筑剩余",
+                    "count": 0
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第42关任务3",
+            "n": 1,
+            "text": "消灭所有步兵",
+            "info": [
+                {
+                    "type": "checkEnemyType",
+                    "checkEnemyType": "步兵",
+                    "floorId": [
+                        "MT312",
+                        "MT313",
+                        "MT314",
+                        "MT315",
+                        "MT316"
+                    ],
+                    "operator": "<=",
+                    "text": "步兵剩余",
+                    "count": 0
+                }
+            ]
         }
     ],
     "eachArrive": [],
     "parallelDo": "",
     "events": {
         "6,11": [
-            "\t[伊吹萃香]\f[specialnpc.jpg,30,200,150,300]坦克不在，是不是感觉步履维艰了？避开强敌，向左侧突破，找到星星标记的地点与坦克部队会合！那个，你应该不是左右不分的人吧？",
-            "\t[伊吹萃香]\f[specialnpc.jpg,30,200,150,300]另外，就算等你装上坦克了也别想着接下来会很轻松。看到那些穿甲值200的步兵了没？他们已经开始大规模列装“铁拳”火箭筒了！"
+            "\t[伊吹萃香]\f[specialnpc.jpg,30,200,150,300]坦克不在，是不是感觉步履维艰了？避开强敌，向左侧突破，找到星星\\i[starPortal]标记的地点与坦克部队会合！那个……你应该能分清左右吧？",
+            "\t[伊吹萃香]\f[specialnpc.jpg,30,200,150,300]另外，就算等你装上坦克了也别想着接下来会特别轻松。因为敌人已经开始大规模列装“铁拳”火箭筒了，所以很多步兵的穿甲值已经达到了200，你没法对步兵先攻5回合了！"
         ]
     },
     "changeFloor": {
@@ -884,8 +1098,8 @@ main.floors.MT312=
     "cannotMove": {},
     "cannotMoveIn": {},
     "map": [
-    [ 92,544,236,390,540,248,540,390,228,540,266,544,236,542, 94],
-    [40049,40049,40050,606,267,218,266,267,606,40048,40049,40049,40049,40049,40049],
+    [ 92,544,388,390,540,248,540,390,228,540,266,544,388,542, 94],
+    [40049,40049,40050,606,266,218,267,265,606,40048,40049,40049,40049,40049,40049],
     [40057,40057,40058,40048,40049,40049,40049,40049,40050,40056,40057,40057,40057,40057,40057],
     [631,631,631,40056,40057,40057,40057,40057,40058,631,631,631,215,631,631],
     [631,215,631,518,631,631,631,218,631,215,631,631,203,631,631],
@@ -896,8 +1110,8 @@ main.floors.MT312=
     [543, 11,203,631,244, 11,203,  0,203, 11,203,275, 11,265,541],
     [543,631,544,244,544,631,631, 11,631,631,544,544,631,631,541],
     [631,550,550,550,550,631,601,  0,  0,631,550,494,494,494,550],
-    [145,145,494,  0,494,631,608,  0,608,631,550,145,145,145,145],
-    [145,145,145,145,145,145,145,145,608,145,145,145,145,145,145],
+    [145,145,494,  0,494,631,607,  0,607,631,550,145,145,145,145],
+    [145,145,145,145,145,145,145,145,607,145,145,145,145,145,145],
     [145,145,145,145,145,145,145,145,145,145,145,145,145,145,145]
 ],
     "bgmap": [

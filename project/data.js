@@ -779,6 +779,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"classv.jpg",
 			"cleveland.jpg",
 			"cr42.jpg",
+			"crocodile.png",
 			"cromwell.jpg",
 			"crusades.jpg",
 			"cunningham.jpg",
@@ -884,6 +885,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"schweinfurt.jpg",
 			"shangmian.png",
 			"sheffield.jpg",
+			"shermancrab.jpg",
 			"skill10.png",
 			"skill11.jpg",
 			"skill12.jpg",
@@ -5125,8 +5127,8 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			},
 			{
 				"id": "shop8",
-				"text": "\t[1944级商店]请选择购买项",
-				"textInList": "1944级商店",
+				"text": "\t[1944级商店（第一页）]请选择购买项",
+				"textInList": "1944级商店（第一页）",
 				"mustEnable": true,
 				"disablePreview": true,
 				"choices": [
@@ -5695,7 +5697,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"type": "comment",
 								"text": "新版商店中需要手动扣减金币和增加访问次数"
 							},
-							"\f[p51.jpg,90,50]P51“野马”战斗机是美国陆航在二战期间最有名的战斗机之一，也是美国海陆两军所使用的单引擎战斗机当中航程最长，对于欧洲与太平洋战区轰炸机护航最重要的机种。起初的P51只是一款性能中规中矩的普通战斗机，但换装了英国梅林发动机的P51D型出现后，航程和性能得到了极大提升，完全能护送轰炸机深入敌军腹地，把敌军的拦截战斗机痛扁一顿后，顺路扫射一下地面目标再飞回来。P51是战争后期欧洲空战的主角，二战中盟军最优秀的全能活塞动力战斗机之一，也是盟军空权的象征，击落了4950架敌机，击毁4131个地面目标，另外还击落了超过230枚V1飞弹，甚至还击落了德国空军最精锐的喷气式战斗机。新中国开国大典时，9架缴获的P51战斗机飞过天安门广场参与庆典——还飞了两遍。朝鲜战争是P51战斗机参与的最后一战。",
+							"\f[p51.jpg,90,50]P51“野马”战斗机是美国陆航在二战期间最有名的战斗机之一，也是美国海陆两军所使用的单引擎战斗机当中航程最长，对于欧洲与太平洋战区轰炸机护航最重要的机种。起初的P51只是一款性能中规中矩的普通战斗机，但换装了英国梅林发动机的P51D型出现后，航程和性能得到了极大提升，完全能护送轰炸机深入敌军腹地，把敌军的拦截战斗机痛扁一顿后，顺路扫射一下地面目标再飞回来。P51是战争后期欧洲空战的主角，二战中盟军最优秀的全能活塞动力战斗机之一，也是盟军空权的象征，击落了4950架敌机，击毁4131个地面目标，另外还击落了超过230枚V1飞弹，甚至还击落了德国空军最精锐的喷气式战斗机。新中国开国大典时，9架缴获的P51战斗机飞过天安门广场参与庆典——还飞了两遍。朝鲜战争后退役。",
 							"\f[p51.jpg,90,50]装备属性：攻+250后额外＋20%，挂载：10×HVAR火箭弹\n与陆军和水面舰艇战斗时抢先发射2轮火箭弹，每枚火箭弹伤害为0.2倍攻击力。\n被动：\n长途护航：受到的所有战斗伤害减少30%。\n制空霸权：与敌方空军战斗时，战斗方式改为3连击。对喷气机不生效。",
 							{
 								"type": "confirm",
@@ -5732,7 +5734,16 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								]
 							}
 						]
-					},
+					}
+				]
+			},
+			{
+				"id": "shop9",
+				"text": "\t[1944级商店（第二页）]请选择购买项",
+				"textInList": "1944级商店（第二页）",
+				"mustEnable": true,
+				"disablePreview": true,
+				"choices": [
 					{
 						"text": "P47D“雷电”攻击机（8000/10000）",
 						"need": "true",
@@ -6095,7 +6106,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"type": "comment",
 								"text": "新版商店中需要手动扣减金币和增加访问次数"
 							},
-							"\t[青霉素]持有时，血限提升15%，“一杯茶”治疗效果改为40%。",
+							"\t[青霉素]\f[penicillin.jpg,90,50]持有时，血限提升15%，“一杯茶”治疗效果改为40%。",
 							"\t[历史来源]\f[penicillin.jpg,90,50]青霉素，又名盘尼西林，是一种抗生素。1928年，英国科学家弗莱明最先发现了青霉素，但在当时并未引起重视。直到1940年，德国科学家钱恩提炼出了一点青霉素，是一个重大突破，但还不能临床应用。1941年开始，英国科学家弗洛里在美国军方的协助下开始研究青霉素的医疗用途，最终于1943年末开始批量生产，拯救了前线数以万计的生命。到1944年，药物的供应已经足够治疗所有参战的盟军士兵。因这项伟大发明，1945年，弗莱明、弗洛里和钱恩因“发现青霉素及其临床效用”而共同荣获了诺贝尔生理学或医学奖。直至今天，青霉素仍在不断挽救更多人的生命。",
 							{
 								"type": "confirm",
@@ -6120,6 +6131,106 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 												"name": "item:penicillin",
 												"operator": "+=",
 												"value": "1"
+											},
+											{
+												"type": "function",
+												"function": "function(){\ncore.addBuff('hpmax', 0.15)\n}"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "道具：谢尔曼“螃蟹”扫雷坦克（4000）",
+						"need": "true",
+						"icon": "shermancrab",
+						"condition": "!core.hasItem('shermancrab')",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\t[谢尔曼“螃蟹”扫雷坦克]\f[shermancrab.jpg,90,50]永久道具，无需装备。持有时，地雷伤害-80%，但对水雷无效。",
+							"\t[历史来源]\f[shermancrab.jpg,90,50]为了更高效地处理德军从“大西洋壁垒”到柏林之间的大片雷区，盟军在一部分“谢尔曼”坦克的车体前方安装扫雷犁，并将其命名为“螃蟹”。作战时，扫雷犁会用沉重的铁链不停敲打地面，如果它们砸中地雷，会使其当场引爆，从而保护坦克和步兵免受粉身碎骨的命运。这些坦克在欧洲和太平洋战场发挥了重要的作用，大大减小了地雷的威胁，同时也免去工兵一个个将地雷引信拔除的麻烦。",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=4000)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "move2.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "4000"
+											},
+											{
+												"type": "setValue",
+												"name": "item:shermancrab",
+												"operator": "+=",
+												"value": "1"
+											}
+										],
+										"false": [
+											"大炮一响，黄金万两。再多去赚点钱吧！"
+										]
+									}
+								],
+								"no": [
+									"已取消购买"
+								]
+							}
+						]
+					},
+					{
+						"text": "道具：丘吉尔“鳄鱼”喷火坦克（2000）",
+						"need": "true",
+						"icon": "crocodile",
+						"condition": "true",
+						"action": [
+							{
+								"type": "comment",
+								"text": "新版商店中需要手动扣减金币和增加访问次数"
+							},
+							"\t[丘吉尔“鳄鱼”喷火坦克]\f[crocodile.png,90,50]一次性道具。喷射火焰，消灭主角面前的非boss步兵、火炮或防御建筑并获得金经，无视“无法被攻击”效果。",
+							"\t[历史来源]\f[crocodile.png,90,50]正规的钢筋混凝土防御工事除了不能动以外几乎没什么缺点。即便是飞机大炮随便造的盟军，遇到这些东西也会感到头疼。火焰喷射器对付工事很有效率，但携带喷火器的步兵十分脆弱，怎么接近敌人是个大问题。于是，英国人研发出了可供坦克使用的喷火器，并将其放到“丘吉尔”坦克上。就这样，“鳄鱼”喷火坦克横空出世。丘吉尔坦克本身的厚重装甲可以使其更安全地接近敌军碉堡，并在最远110米外将碉堡里面的敌人烤成焦炭。在诺曼底战役中，这些喷火坦克成功摧毁了许多工事。然而，防御工事毕竟很少，多数时候还是要与敌军坦克作战，所以它们的实际使用场景不多。",
+							{
+								"type": "confirm",
+								"text": "确定购买？",
+								"yes": [
+									{
+										"type": "if",
+										"condition": "(status:money>=2000)",
+										"true": [
+											{
+												"type": "playSound",
+												"name": "move2.mp3"
+											},
+											{
+												"type": "setValue",
+												"name": "status:money",
+												"operator": "-=",
+												"value": "2000"
+											},
+											{
+												"type": "setValue",
+												"name": "item:crocodile",
+												"operator": "+=",
+												"value": "1"
 											}
 										],
 										"false": [
@@ -6136,7 +6247,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 				]
 			},
 			{
-				"id": "shop9",
+				"id": "shop10",
 				"text": "\t[1945级商店]请选择购买项",
 				"textInList": "1945级商店",
 				"mustEnable": true,
@@ -6942,15 +7053,84 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 				"title": "上将",
 				"clear": true,
 				"action": [
-					"晋升上将"
+					"晋升上将，攻击+2000，雷击+35000，血量与血限+200000，后勤+10000",
+					{
+						"type": "setValue",
+						"name": "status:atk",
+						"operator": "+=",
+						"value": "2000",
+						"norefresh": true
+					},
+					{
+						"type": "setValue",
+						"name": "status:top",
+						"operator": "+=",
+						"value": "35000",
+						"norefresh": true
+					},
+					{
+						"type": "setValue",
+						"name": "status:hpmax",
+						"operator": "+=",
+						"value": "200000",
+						"norefresh": true
+					},
+					{
+						"type": "setValue",
+						"name": "status:hp",
+						"operator": "+=",
+						"value": "200000",
+						"norefresh": true
+					},
+					{
+						"type": "setValue",
+						"name": "status:mdef",
+						"operator": "+=",
+						"value": "10000"
+					}
 				]
 			},
 			{
-				"need": "12000",
+				"need": "15000",
 				"title": "元帅",
 				"clear": true,
 				"action": [
-					"晋升元帅"
+					"晋升元帅，攻击+4000，雷击+70000，血量与血限+400000，后勤+20000",
+					"恭喜！您已升至最高军衔！",
+					{
+						"type": "setValue",
+						"name": "status:atk",
+						"operator": "+=",
+						"value": "4000",
+						"norefresh": true
+					},
+					{
+						"type": "setValue",
+						"name": "status:top",
+						"operator": "+=",
+						"value": "70000",
+						"norefresh": true
+					},
+					{
+						"type": "setValue",
+						"name": "status:hpmax",
+						"operator": "+=",
+						"value": "400000",
+						"norefresh": true
+					},
+					{
+						"type": "setValue",
+						"name": "status:hp",
+						"operator": "+=",
+						"value": "400000",
+						"norefresh": true
+					},
+					{
+						"type": "setValue",
+						"name": "status:mdef",
+						"operator": "+=",
+						"value": "20000"
+					}
 				]
 			},
 			{
