@@ -5391,7 +5391,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						]
 					},
 					{
-						"text": "巴尔的摩级重巡洋舰（12000）",
+						"text": "巴尔的摩级重巡洋舰（15000）",
 						"need": "true",
 						"icon": "baltimore",
 						"condition": "!core.hasEquip('baltimore')&&!core.hasItem('baltimore')",
@@ -5439,7 +5439,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						]
 					},
 					{
-						"text": "衣阿华级战列舰（18000）",
+						"text": "衣阿华级战列舰（25000）",
 						"need": "true",
 						"icon": "iowa",
 						"condition": "!core.hasEquip('iowa')&&!core.hasItem('iowa')",
@@ -5487,7 +5487,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						]
 					},
 					{
-						"text": "埃塞克斯级航空母舰（25000）",
+						"text": "埃塞克斯级航空母舰（35000）",
 						"need": "true",
 						"icon": "essex",
 						"condition": "!core.hasEquip('essex')&&!core.hasItem('essex')",

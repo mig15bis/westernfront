@@ -4550,6 +4550,1232 @@ var events_c12a15a8_c380_4b28_8144_256cba95f760 =
 					}
 				]
 			}
+		],
+		"地毯式轰炸动画": [
+			{
+				"type": "if",
+				"condition": "(flag:anime===true)",
+				"true": [
+					{
+						"type": "playSound",
+						"name": "bomber4.mp3"
+					},
+					{
+						"type": "sleep",
+						"time": 2000,
+						"noSkip": true
+					},
+					{
+						"type": "playSound",
+						"name": "airstrike.mp3"
+					},
+					{
+						"type": "showImage",
+						"code": 1,
+						"image": "carpetbomb.png",
+						"loc": [
+							0,
+							480
+						],
+						"opacity": 1,
+						"time": 0
+					},
+					{
+						"type": "moveImage",
+						"code": 1,
+						"to": [
+							0,
+							-1920
+						],
+						"time": 10000,
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 1000
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							14,
+							8
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							13,
+							4
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							6,
+							8
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							4,
+							0
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							0,
+							10
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 300
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							3,
+							8
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							14,
+							3
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							8,
+							14
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							0,
+							12
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							5,
+							1
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 300
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							13,
+							6
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							3,
+							0
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							10,
+							14
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							7,
+							7
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							4,
+							9
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 300
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							1,
+							5
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							6,
+							11
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							9,
+							4
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							11,
+							2
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							14,
+							8
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 300
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							3,
+							13
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							0,
+							7
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							8,
+							1
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							12,
+							10
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							5,
+							14
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 300
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							13,
+							0
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							4,
+							3
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							10,
+							5
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							7,
+							11
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							2,
+							2
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 300
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							14,
+							11
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							6,
+							7
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							9,
+							9
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							1,
+							1
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							11,
+							13
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 300
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							0,
+							0
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							12,
+							4
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							8,
+							8
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							3,
+							3
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							5,
+							5
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 300
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							13,
+							9
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							10,
+							10
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							4,
+							14
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							7,
+							0
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							14,
+							2
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 300
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							6,
+							13
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							9,
+							1
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							2,
+							11
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							11,
+							7
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							1,
+							8
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 300
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							0,
+							3
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							12,
+							12
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							8,
+							5
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							3,
+							10
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							5,
+							8
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 300
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							13,
+							3
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							10,
+							1
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							4,
+							6
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							7,
+							14
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							14,
+							5
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 300
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							6,
+							0
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							9,
+							12
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							2,
+							4
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							11,
+							0
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							1,
+							12
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 300
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							0,
+							9
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							12,
+							7
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							8,
+							11
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							3,
+							5
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							5,
+							11
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 300
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							13,
+							12
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							10,
+							3
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							4,
+							1
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							7,
+							4
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							14,
+							13
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 300
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							6,
+							9
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							9,
+							6
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							2,
+							14
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							11,
+							9
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							1,
+							3
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 300
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							0,
+							5
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							12,
+							1
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							8,
+							3
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							3,
+							8
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							5,
+							0
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 300
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							13,
+							14
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							10,
+							8
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							4,
+							11
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							7,
+							2
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							14,
+							0
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 300
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							6,
+							4
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							9,
+							11
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							2,
+							6
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							11,
+							14
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							1,
+							10
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 300
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							0,
+							14
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							12,
+							5
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							8,
+							9
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							3,
+							1
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							5,
+							3
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 300
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							13,
+							7
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							10,
+							12
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							4,
+							4
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							7,
+							13
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							14,
+							9
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 300
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							6,
+							2
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							9,
+							0
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							2,
+							0
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							11,
+							4
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							1,
+							6
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 300
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							0,
+							10
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							12,
+							13
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							8,
+							6
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							3,
+							12
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							5,
+							7
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 300
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							13,
+							1
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							10,
+							6
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							4,
+							8
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "explore",
+						"loc": [
+							7,
+							9
+						],
+						"async": true
+					},
+					{
+						"type": "animate",
+						"name": "zone",
+						"loc": [
+							14,
+							1
+						],
+						"async": true
+					},
+					{
+						"type": "waitAsync"
+					},
+					{
+						"type": "hideImage",
+						"code": 1,
+						"time": 0
+					}
+				]
+			}
 		]
 	}
 }

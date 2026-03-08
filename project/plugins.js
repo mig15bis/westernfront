@@ -5021,7 +5021,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 					return;
 				}
 			},
-			description: '只能在海上使用且必须装备着航空母舰。使用后，派出舰载机发动空袭，使全图除潜艇外的敌方海军受到5倍攻击力和2倍雷击值的伤害（可致死并获得金经），同时我方损失等同于20%血限的hp。可在同一地图中多次使用，对boss无效。（温馨提示：本技能使用后需要遍历地图上所有敌人以计算伤害，可能会卡顿一段时间）'
+			description: '只能在海上使用且必须装备着航空母舰。使用后，派出舰载机发动空袭，使全图除潜艇外的敌方海军受到5倍攻击力和2倍雷击值的伤害（可致死并获得金经），同时我方损失等同于20%血限的hp。可在同一地图中多次使用，对boss无效。'
 		},
 
 		{ // 17
@@ -5166,15 +5166,98 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 			strategy: true,
 			name: '地毯式轰炸',
 			cost: 3000,
-			description: '仅可在地面使用。呼叫大规模轰炸机群展开全图轰炸，全体敌方陆军损失70%生命值，空军损失15%生命值。'
+			func: function () {
+				let bombed = flags.地毯轰炸楼层,
+					floorId = core.status.floorId,
+					todo = [];
+				if (core.status.thisMap.area === '陆地' || core.status.thisMap.area === '浅滩') {
+					if (bombed.includes(floorId)) {
+						core.status.hero.mana += 3000;
+						core.drawTip('不可在同一地图重复使用');
+						core.playSound('error.mp3');
+						return;
+					} else {
+						//使用成功，以下为技能效果
+						if (!core.isReplaying() && !main.replayChecking) { //不在录像中
+							core.insertCommonEvent('地毯式轰炸动画', void 0, void 0, void 0, () => {
+								for (let x = 0; x <= 14; x++) {
+									for (let y = 0; y <= 14; y++) {
+										if (core.getBlockCls(x, y, floorId) === 'enemys') {
+											let Type = core.material.enemys[core.getBlockId(x, y)].type,
+												heroatk = core.getRealStatus('atk'),
+												herotop = core.getRealStatus('top'),
+												block = core.getBlockId(x, y);
+											if (!core.hasSpecial(block, 57)) {
+												if (Type === '步兵' || Type === '轻坦' || Type === '中坦' || Type === '重坦' || Type === '坦歼' || Type === '反坦克炮' || Type === '榴弹炮' || Type === '高射炮' || Type === '建筑') {
+													if (!flags.aoe[x + ',' + y + ',' + core.status.floorId]) {
+														flags.aoe[x + ',' + y + ',' + floorId] = enemyhp * 0.7;
+													} else { flags.aoe[x + ',' + y + ',' + floorId] += enemyhp * 0.7; }
+												} else if (Type === '战斗机' || Type === '重型战斗机' || Type === '攻击机' || Type === '俯冲轰炸机' || Type === '鱼雷轰炸机' || Type === '中型轰炸机') {
+													if (!flags.aoe[x + ',' + y + ',' + core.status.floorId]) {
+														flags.aoe[x + ',' + y + ',' + floorId] = enemyhp * 0.15;
+													} else { flags.aoe[x + ',' + y + ',' + floorId] += enemyhp * 0.15; }
+												}
+											}
+										}
+									}
+								}
+								if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
+									core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
+									core.drawHeroAnimate('sniper');
+									core.updateStatusBar();
+									if (hero.hp <= 0) {
+										core.events.lose();
+									}
+								}
+							}); //公共事件
+						} else { //在录像中
+							for (let x = 0; x <= 14; x++) {
+								for (let y = 0; y <= 14; y++) {
+									if (core.getBlockCls(x, y, floorId) === 'enemys') {
+										let Type = core.material.enemys[core.getBlockId(x, y)].type,
+											heroatk = core.getRealStatus('atk'),
+											herotop = core.getRealStatus('top'),
+											block = core.getBlockId(x, y);
+										if (!core.hasSpecial(block, 57)) {
+											if (Type === '步兵' || Type === '轻坦' || Type === '中坦' || Type === '重坦' || Type === '坦歼' || Type === '反坦克炮' || Type === '榴弹炮' || Type === '高射炮' || Type === '建筑') {
+												if (!flags.aoe[x + ',' + y + ',' + core.status.floorId]) {
+													flags.aoe[x + ',' + y + ',' + floorId] = enemyhp * 0.7;
+												} else { flags.aoe[x + ',' + y + ',' + floorId] += enemyhp * 0.7; }
+											} else if (Type === '战斗机' || Type === '重型战斗机' || Type === '攻击机' || Type === '俯冲轰炸机' || Type === '鱼雷轰炸机' || Type === '中型轰炸机') {
+												if (!flags.aoe[x + ',' + y + ',' + core.status.floorId]) {
+													flags.aoe[x + ',' + y + ',' + floorId] = enemyhp * 0.15;
+												} else { flags.aoe[x + ',' + y + ',' + floorId] += enemyhp * 0.15; }
+											}
+										}
+									}
+								}
+							}
+							if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
+								core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
+								core.drawHeroAnimate('sniper');
+								core.updateStatusBar();
+								if (hero.hp <= 0) {
+									core.events.lose();
+								}
+							}
+						}
+					}
+				} else {
+					core.status.hero.mana += 3000;
+					core.drawTip('当前地图不可使用');
+					core.playSound('error.mp3');
+					return;
+				}
+			},
+			description: '仅可在陆地或浅滩使用。呼叫大规模轰炸机群展开全图轰炸，全体敌方陆军损失70%生命值，空军损失15%生命值。每张地图仅限使用1次，对boss无效'
 		},
 
 		{ // 23
 			id: 23,
 			strategy: true,
 			name: '铝箔条',
-			cost: 1200,
-			description: '抛洒铝箔条，干扰敌方雷达。在使用过该技能的地图中，光环类（指挥、截断）、协同攻击类（陷阱、防空）等技能无效'
+			cost: 600,
+			description: '抛洒铝箔条，干扰敌方雷达。在接下来的3场战斗中，光环类（指挥、截断）、协同攻击类（陷阱、防空）等技能无效'
 		},
 
 		{ // 24
@@ -5815,5 +5898,59 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 		中型轰炸机2: "crash2.mp3",
 		导弹: "v_jet_pass.mp3"
 	};
+},
+    "怪物位置和范围显示": function () {
+	// 在此增加新插件
+	const setting = {
+		启用: true,
+		炮击: { 本体: '#ff0000', 范围: '#ffff00', 启动: true },
+		指挥: { 本体: '#ff0000', 启动: true },
+		点杀: { 本体: '#8a2be2', 启动: true },
+		防空: { 本体: '#ff00ff', 范围: '#00ffff', 启动: true },
+		谍报: { 本体: '#696969', 启动: true },
+		截断: { 本体: '#00ff00', 启动: true },
+		警戒: { 本体: '#ff0000', 启动: true },
+		堡垒: { 本体: '#8b008b', 范围: '#8b4513', 启动: true },
+		燃烧: { 本体: '#dc143c', 启动: true },
+		遥控: { 本体: '#ffff00', 启动: true },
+		陷阱: { 本体: '#0000ff', 范围: '#ff7f50', 启动: true },
+		阵地: { 本体: '#8b008b', 范围: '#8b4513', 启动: true },
+		迂回包抄: { 本体: '#808000', 启动: true },
+		直掩: { 本体: '#ffd700', 启动: true },
+		观测: { 本体: '#ff8c00', 启动: true },
+		火力覆盖: { 本体: '#0000cd', 启动: true },
+		进水: { 本体: '#1e90ff', 启动: true },
+		alpha: 0.5
+	};
+
+	function draw(temptime) {
+		let ctx = core.createCanvas('location', 0, 0, 480, 480, 61);
+		core.clearMap(ctx);
+		let newsystem = core.getLocalStorage('drawui', setting);
+		if (!newsystem.启用) {
+			return;
+		}
+		core.setAlpha(ctx, newsystem.alpha);
+		ctx.globalCompositeOperation = 'multiply';
+		if (!core.status.checkBlock?.cache?.map) { return }
+		Object.entries(core.status.checkBlock.cache.map).forEach(([key, value]) => {
+			if (!newsystem[key].启动) { return }
+			Object.entries(value).forEach(([k, v]) => {
+				const loc = k.split(",").map(Number);
+				ctx.lineWidth = 1
+				core.drawLine(ctx, 32 * loc[0], 32 * loc[1], 32 * loc[0] + 6, 32 * loc[1], newsystem[key].本体); //左上横线
+				core.drawLine(ctx, 32 * loc[0], 32 * loc[1], 32 * loc[0], 32 * loc[1] + 6, newsystem[key].本体); //左上竖线
+				core.drawLine(ctx, 32 * loc[0] + 32, 32 * loc[1], 32 * loc[0] + 26, 32 * loc[1], newsystem[key].本体); //右上横线
+				core.drawLine(ctx, 32 * loc[0] + 32, 32 * loc[1], 32 * loc[0] + 32, 32 * loc[1] + 6, newsystem[key].本体); //右上竖线
+				core.drawLine(ctx, 32 * loc[0], 32 * loc[1] + 32, 32 * loc[0] + 6, 32 * loc[1] + 32, newsystem[key].本体); //左下横线
+				core.drawLine(ctx, 32 * loc[0], 32 * loc[1] + 32, 32 * loc[0], 32 * loc[1] + 26, newsystem[key].本体); //左下竖线
+				core.drawLine(ctx, 32 * loc[0] + 32, 32 * loc[1] + 32, 32 * loc[0] + 26, 32 * loc[1] + 32, newsystem[key].本体); //右下横线
+				core.drawLine(ctx, 32 * loc[0] + 32, 32 * loc[1] + 32, 32 * loc[0] + 32, 32 * loc[1] + 26, newsystem[key].本体); //右下竖线
+				if (newsystem[key].范围) {
+					core.fillstrokeRect(ctx, 32 * (loc[0] - v), 32 * (loc[1] - v), 32 * (loc[0] + v), 32 * (loc[1] + v), newsystem[key].范围); //领域范围边框
+				}
+			});
+		});
+	}
 }
 }

@@ -145,8 +145,8 @@ var enemys_fcae963b_31c9_42b4_b48c_bb48d09f3f80 =
 	"acepilot": {"name":"王牌飞行员","hp":250000,"atk":20000,"def":0,"money":0,"exp":0,"point":0,"special":[6,30,38,70,91],"type":"战斗机","ap":0,"arm":0,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0,"n":5},
 	"stug4": {"name":"四号坦克歼击车","hp":200000,"atk":55000,"def":0,"money":10,"exp":10,"point":0,"special":[56,59,87],"type":"坦歼","ap":173,"arm":80,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0,"description":"主武器：75mm反坦克炮","value":null,"zone":20000,"zoneSquare":true,"range":2},
 	"h39": {"name":"米歇尔·魏特曼","hp":150,"atk":100,"def":0,"money":200,"exp":200,"point":0,"special":[1,38,42,43,57,59,63,71,72],"type":"重坦","description":"座驾：虎王重型坦克","gro":0,"dod":0,"tpn":0,"bom":0,"top":0,"arm":200,"ap":222},
-	"tigerking": {"name":"虎式B型“虎王”","hp":0,"atk":0,"def":0,"money":10,"exp":10,"point":0,"special":[38,43,51,56,65],"type":"重坦","ap":222,"arm":200,"description":"主武器：88mm长管坦克炮","top":0,"bom":0,"tpn":0,"dod":0,"gro":0},
-	"jagpanzer": {"name":"猎豹歼击车","hp":0,"atk":0,"def":0,"money":6,"exp":6,"point":0,"special":[],"type":"坦歼","ap":222,"arm":130,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0,"description":"主武器：88mm反坦克炮"},
+	"tigerking": {"name":"虎王坦克H型","hp":1700000,"atk":180000,"def":0,"money":20,"exp":20,"point":0,"special":[38,43,51,56,63,65,86,87],"type":"重坦","ap":222,"arm":200,"description":"主武器：88mm长管坦克炮","top":0,"bom":0,"tpn":0,"dod":0,"gro":0},
+	"jagpanzer": {"name":"猎豹坦克歼击车","hp":0,"atk":0,"def":0,"money":6,"exp":6,"point":0,"special":[],"type":"坦歼","ap":222,"arm":130,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0,"description":"主武器：88mm反坦克炮"},
 	"jagtiger": {"name":"猎虎歼击车","hp":0,"atk":0,"def":0,"money":10,"exp":10,"point":0,"special":[],"type":"坦歼","ap":237,"arm":200,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0,"description":"主武器：128mm反坦克炮"},
 	"panzer4h": {"name":"四号H型","hp":300000,"atk":45000,"def":0,"money":10,"exp":10,"point":0,"special":[67],"description":"主武器：75mm长管坦克炮","type":"中坦","ap":130,"arm":80,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0},
 	"v1missile": {"name":"V1巡航导弹","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[48],"type":"导弹","afterBattle":[{"type":"animate","name":"explore3","loc":"hero","async":true}],"ap":0,"arm":0,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0},
@@ -203,5 +203,6 @@ var enemys_fcae963b_31c9_42b4_b48c_bb48d09f3f80 =
 	"japtank3": {"name":"三式中战车","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[],"type":"中坦","description":"主武器：75mm炮","ap":70,"arm":50},
 	"japtank4": {"name":"四式中战车","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[],"type":"中坦","description":"主武器：75mm炮","ap":100,"arm":50},
 	"japtank5": {"name":"五式中战车","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[],"type":"中坦","arm":75,"description":"主武器：75mm炮","ap":112},
-	"japtank6": {"name":"六号重战车“虎式”","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[],"type":"重坦","description":"主武器：88mm炮（德制）","ap":155,"arm":144}
+	"japtank6": {"name":"六号重战车“虎式”","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[],"type":"重坦","description":"主武器：88mm炮（德制）","ap":155,"arm":144},
+	"acemg42": {"name":"海恩·赛弗罗","hp":1400000,"atk":30000,"def":0,"money":100,"exp":100,"point":0,"special":[6,15,42,56,57,71,86,87],"type":"建筑","ap":35,"arm":200,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0,"range":15,"zone":3000,"n":10}
 }

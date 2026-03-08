@@ -19,8 +19,9 @@ main.floors.MT316=
     "events": {
         "14,0": [
             {
-                "type": "function",
-                "function": "function(){\nflags.mission[43][0]=true\n}"
+                "type": "setValue",
+                "name": "flag:第42关通关",
+                "value": "1"
             },
             {
                 "type": "update"
@@ -30,7 +31,7 @@ main.floors.MT316=
                 "time": 500
             },
             {
-                "type": "hideStatusBar"
+                "type": "hideui"
             },
             {
                 "type": "update"
@@ -73,7 +74,7 @@ main.floors.MT316=
             },
             {
                 "type": "function",
-                "function": "function(){\nvar a = flags.mission[core.getFlag('stage')];\ncore.setFlag('@temp@A', a[0] + a[1] + a[2]);\n}"
+                "function": "function(){\nvar a = core.taskSystem.checkTask(0) ? 1 : 0,\n\tb = core.taskSystem.checkTask(1) ? 1 : 0,\n\tc = core.taskSystem.checkTask(2) ? 1 : 0;\ncore.setFlag('@temp@A', a + b + c);\n}"
             },
             {
                 "type": "if",
@@ -99,11 +100,6 @@ main.floors.MT316=
                             90
                         ],
                         "opacity": 1,
-                        "time": 500,
-                        "async": true
-                    },
-                    {
-                        "type": "sleep",
                         "time": 500
                     },
                     {
@@ -130,11 +126,6 @@ main.floors.MT316=
                                     90
                                 ],
                                 "opacity": 1,
-                                "time": 500,
-                                "async": true
-                            },
-                            {
-                                "type": "sleep",
                                 "time": 500
                             },
                             {
@@ -161,11 +152,6 @@ main.floors.MT316=
                                             90
                                         ],
                                         "opacity": 1,
-                                        "time": 500,
-                                        "async": true
-                                    },
-                                    {
-                                        "type": "sleep",
                                         "time": 500
                                     }
                                 ],
@@ -217,12 +203,12 @@ main.floors.MT316=
                 "opacity": 0
             },
             {
+                "type": "submitTask"
+            },
+            {
                 "type": "setValue",
                 "name": "flag:stage",
                 "value": "44"
-            },
-            {
-                "type": "pauseBgm"
             },
             {
                 "type": "confirm",
@@ -277,9 +263,9 @@ main.floors.MT316=
     "cannotMove": {},
     "cannotMoveIn": {},
     "map": [
-    [ 92,541,243,524,265,542,518,390,543,518,406,544,265,228, 89],
+    [ 92,541,390,524,265,542,518,390,543,518,406,544,265,228, 89],
     [541,265,606,606,542,390,518,543,388,265,544,390,540,540,228],
-    [524,541,236,524,266,542,406,267,543,518,248,544,236,540,40050],
+    [524,541,236,341,266,542,406,267,543,518,248,544,236,540,40050],
     [40049,40049,40049,40049,40049,40049,40049,40049,40049,40049,40050,40048,40049,40050,40058],
     [40057,40057,40057,40057,40057,40057,40057,40057,40049,40049,40050,40056,40057,40058,667],
     [518,215,518,631,215,631,218,542,40056,40057,40058,218,542,631,215],

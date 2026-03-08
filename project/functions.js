@@ -1048,7 +1048,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		[69, "迂回包抄", "主角进行楼层切换操作时，进行强制战斗（为防止不必要的错误，每个区域最后一张地图不会出现）"],
 		[70, "直掩", "主角在当前地图中每主动进行一场战斗后，会遭到全体直掩战斗机的一次普攻（攻击×连击）"],
 		[71, "观测", "存在期间，全图领域伤害提升20%，不可叠加", "#FFFF00"],
-		[72, "火力覆盖", "主角每次战斗结束后，以20%攻击力轰炸主角一次"],
+		[72, "火力覆盖", "主角在当前地图与不具有该技能的敌人战斗时，每回合以5%攻击力轰炸主角一次"],
 		[73, "喷气式战机", "速度极快，追不上也打不中。受到的全部伤害减少70%"],
 		[74, "追踪", "主角行至同行或同列，且无障碍物阻拦时，向主角靠近一格。"],
 		[75, "V2导弹", function (enemy) { return "弹道导弹，无法拦截，造成" + enemy.value + "点伤害,并施加一层“惊慌”" }, "#dc143c"],
@@ -1161,8 +1161,12 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		if (!core.status.checkBlock.cache) core.status.checkBlock.cache = {};
 		var cache = core.status.checkBlock.cache[index];
 		let cacheFloor;
+		let map;
 		if (!core.status.checkBlock.cache.cacheFloor?.缓存) { cacheFloor = { 陆军: 0, 海军: 0, 空军: 0, 缓存: false, 航空支援: 0, 主将: 0, 截断: 0, 遥控: 0, 点杀: 0, 直掩: 0, 观测: 0, 火力覆盖: 0, 防御大师: 0, 红尾巴: false } } else {
 			cacheFloor = core.status.checkBlock.cache.cacheFloor;
+		}
+		if (!core.status.checkBlock.cache.map) { map = { 炮击: {}, 指挥: {}, 点杀: {}, 防空: {}, 谍报: {}, 截断: {}, 警戒: {}, 堡垒: {}, 燃烧: {}, 遥控: {}, 陷阱: {}, 阵地: {}, 迂回包抄: {}, 直掩: {}, 观测: {}, 火力覆盖: {}, 进水: {} } } else {
+			map = core.status.checkBlock.cache.map;
 		}
 		if (!cache) {
 			// 没有该点的缓存，则遍历每个图块
@@ -1207,7 +1211,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 							cacheFloor.观测++;
 						}
 						if (core.hasSpecial(enemy.special, 72)) {
-							cacheFloor.火力覆盖 += enemy.atk * 0.2;
+							cacheFloor.火力覆盖 += enemy.atk * 0.05;
 						}
 						if (core.hasSpecial(enemy.special, 77)) {
 							cacheFloor.防御大师++;
@@ -1216,6 +1220,60 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 							if (flags.skill20Floor.includes(floorId)) {
 								cacheFloor.红尾巴 = true;
 							}
+						}
+					}
+					if (enemy) {
+						let location = block.x + ',' + block.y;
+						if (core.hasSpecial(enemy.special, 15)) { //炮击
+							map.炮击[location] = enemy.range;
+						}
+						if (core.hasSpecial(enemy.special, 25)) { //指挥
+							map.指挥[location] = 0;
+						}
+						if (core.hasSpecial(enemy.special, 66)) { //点杀
+							map.点杀[location] = 0;
+						}
+						if (core.hasSpecial(enemy.special, 40)) {
+							map.防空[location] = 2;
+						}
+						if (core.hasSpecial(enemy.special, 41)) {
+							map.谍报[location] = 0;
+						}
+						if (core.hasSpecial(enemy.special, 42)) {
+							map.截断[location] = 0;
+						}
+						if (core.hasSpecial(enemy.special, 45)) {
+							map.警戒[location] = 0;
+						}
+						if (core.hasSpecial(enemy.special, 46)) {
+							map.堡垒[location] = 4;
+						}
+						if (core.hasSpecial(enemy.special, 47)) {
+							map.燃烧[location] = 0;
+						}
+						if (core.hasSpecial(enemy.special, 50)) {
+							map.遥控[location] = 0;
+						}
+						if (core.hasSpecial(enemy.special, 59)) {
+							map.陷阱[location] = enemy.range;
+						}
+						if (core.hasSpecial(enemy.special, 63)) {
+							map.阵地[location] = 2;
+						}
+						if (core.hasSpecial(enemy.special, 69)) {
+							map.迂回包抄[location] = 0;
+						}
+						if (core.hasSpecial(enemy.special, 70)) {
+							map.直掩[location] = 0;
+						}
+						if (core.hasSpecial(enemy.special, 71)) {
+							map.观测[location] = 0;
+						}
+						if (core.hasSpecial(enemy.special, 72)) {
+							map.火力覆盖[location] = 0;
+						}
+						if (core.hasSpecial(enemy.special, 88)) {
+							map.进水[location] = 0;
 						}
 					}
 					// 检查【光环】技能，数字25
@@ -1339,6 +1397,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			core.status.checkBlock.cache[index] = { hp_buff, atk_buff, top_buff, bom_buff, trap_buff, zone_buff, aa_buff, guards, damage_debuff };
 			cacheFloor.缓存 = true;
 			core.status.checkBlock.cache.cacheFloor = cacheFloor;
+			core.status.checkBlock.cache.map = map;
 		} else {
 			// 直接使用缓存数据
 			hp_buff = cache.hp_buff;
@@ -1833,6 +1892,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		flood = false,
 		flooding = core.getFlag('进水', false),
 		lianji = 1;
+	let howitzer = (core.hasSpecial(mon_special, 72) ? false : true);
 
 	if (ff === 'p51d' && junzhong === '空军' && !core.hasSpecial(mon_special, 73)) {
 		p51lianji = true;
@@ -2321,9 +2381,9 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		}
 		if (ff === 'f4u' || bb === 'enterprise') { //海盗·空域肃清
 			if ((hasFighter && !enemyFighter) || cacheFloor?.红尾巴) {
-				hero_bomb *= 1.5;
-				hero_rocket *= 1.5;
-				hero_skytorpedo *= 1.5;
+				hero_bomb *= 1.2;
+				hero_rocket *= 1.2;
+				hero_skytorpedo *= 1.2;
 			} else if (isfighter) {
 				hero_common *= 1.2;
 			}
@@ -2537,6 +2597,9 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			}
 			mon_summary += mon_common + mon_bomb + mon_torpedo;
 			mon_perDamage += mon_summary;
+			if (howitzer) {
+				mon_perDamage += cacheFloor.火力覆盖;
+			}
 			if (ff === 'p51d') { //野马
 				if (junzhong === '空军') {
 					mon_perDamage *= 0.5;
@@ -2591,7 +2654,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	}
 	damage *= finalDamage;
 	damage *= burndamage;
-	damage += cacheFloor.直掩 + cacheFloor.火力覆盖;
+	damage += cacheFloor.直掩;
 	if (flooding) { //进水
 		damage += core.status.hero.hpmax * 0.1;
 	}
