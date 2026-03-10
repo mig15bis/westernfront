@@ -382,7 +382,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	if (ff === 'f6f5' && core.status.hero.hp < core.status.hero.hpmax * 0.3) {
 		core.status.hero.hp += core.status.hero.hpmax * 0.05;
 	}
-	if (bb === 'exxex' && core.status.hero.hp < core.status.hero.hpmax * 0.3) { //埃塞克斯舰载机
+	if (bb === 'essex' && core.status.hero.hp < core.status.hero.hpmax * 0.3) { //埃塞克斯舰载机
 		core.status.hero.hp += core.status.hero.hpmax * 0.05;
 	}
 	if (flags.ussrair === true) {
@@ -1043,7 +1043,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		[64, "拦截", "对主角的伤害降为50%，但对受保护的友军伤害倍率改为100%", "#ffcc33"],
 		[65, "抗破", "秒杀类技能无法对该敌人生效", "#d3d3d3"],
 		[66, "点杀", "主角在当前地图使用即时战略技能时（例如扫雷），以2倍攻击力攻击主角一次", "#c677dd"],
-		[67, "好战", "主角经过该敌人周围4格时，与主角发生强制战斗（这不就是捕捉吗？）", "#ff8c00"],
+		[67, "好战", "主角经过该敌人周围4格时，与主角发生强制战斗", "#ff8c00"],
 		[68, "尖啸死神", "斯图卡轰炸机专属技能。投弹命中主角后，施加3层“惊慌”debuff，每层debuff会使主角攻击力减少10%，每过一次战斗减少一层，可无限叠加", "#dc143c"],
 		[69, "迂回包抄", "主角进行楼层切换操作时，进行强制战斗（为防止不必要的错误，每个区域最后一张地图不会出现）"],
 		[70, "直掩", "主角在当前地图中每主动进行一场战斗后，会遭到全体直掩战斗机的一次普攻（攻击×连击）"],
@@ -3084,6 +3084,8 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	core.updateDamage();
 	// 更新状态栏
 	core.ui.statusBar.update();
+	//更新光环
+	core.draw();
 
 },
         "updateCheckBlock": function (floorId) {

@@ -5184,8 +5184,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 									for (let y = 0; y <= 14; y++) {
 										if (core.getBlockCls(x, y, floorId) === 'enemys') {
 											let Type = core.material.enemys[core.getBlockId(x, y)].type,
-												heroatk = core.getRealStatus('atk'),
-												herotop = core.getRealStatus('top'),
+												enemyhp = core.getEnemyInfo(core.material.enemys[core.getBlockId(x, y)]).hp,
 												block = core.getBlockId(x, y);
 											if (!core.hasSpecial(block, 57)) {
 												if (Type === '步兵' || Type === '轻坦' || Type === '中坦' || Type === '重坦' || Type === '坦歼' || Type === '反坦克炮' || Type === '榴弹炮' || Type === '高射炮' || Type === '建筑') {
@@ -5201,6 +5200,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 										}
 									}
 								}
+								flags.地毯轰炸楼层.push(floorId);
 								if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
 									core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
 									core.drawHeroAnimate('sniper');
@@ -5215,8 +5215,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 								for (let y = 0; y <= 14; y++) {
 									if (core.getBlockCls(x, y, floorId) === 'enemys') {
 										let Type = core.material.enemys[core.getBlockId(x, y)].type,
-											heroatk = core.getRealStatus('atk'),
-											herotop = core.getRealStatus('top'),
+											enemyhp = core.getEnemyInfo(core.material.enemys[core.getBlockId(x, y)]).hp,
 											block = core.getBlockId(x, y);
 										if (!core.hasSpecial(block, 57)) {
 											if (Type === '步兵' || Type === '轻坦' || Type === '中坦' || Type === '重坦' || Type === '坦歼' || Type === '反坦克炮' || Type === '榴弹炮' || Type === '高射炮' || Type === '建筑') {
@@ -5232,6 +5231,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 									}
 								}
 							}
+							flags.地毯轰炸楼层.push(floorId);
 							if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
 								core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
 								core.drawHeroAnimate('sniper');
@@ -5920,24 +5920,31 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 		观测: { 本体: '#ff8c00', 启动: true },
 		火力覆盖: { 本体: '#0000cd', 启动: true },
 		进水: { 本体: '#1e90ff', 启动: true },
-		alpha: 0.5
+		alpha: 0.2
 	};
 
-	function draw(temptime) {
-		let ctx = core.createCanvas('location', 0, 0, 480, 480, 61);
+
+	core.draw = function draw() {
+		let ctx = core.dymCanvas.location;
+		if (!ctx) {
+			ctx = core.createCanvas('location', 0, 0, 480, 480, 61);
+			ctx.globalCompositeOperation = 'multiply';
+		}
 		core.clearMap(ctx);
+		//if (core.status.event.id) return;
 		let newsystem = core.getLocalStorage('drawui', setting);
 		if (!newsystem.启用) {
 			return;
 		}
-		core.setAlpha(ctx, newsystem.alpha);
-		ctx.globalCompositeOperation = 'multiply';
+		core.setOpacity(ctx, newsystem.alpha);
 		if (!core.status.checkBlock?.cache?.map) { return }
 		Object.entries(core.status.checkBlock.cache.map).forEach(([key, value]) => {
 			if (!newsystem[key].启动) { return }
+			//console.log(value);
 			Object.entries(value).forEach(([k, v]) => {
+				//console.log(k, v);
 				const loc = k.split(",").map(Number);
-				ctx.lineWidth = 1
+				ctx.lineWidth = 3;
 				core.drawLine(ctx, 32 * loc[0], 32 * loc[1], 32 * loc[0] + 6, 32 * loc[1], newsystem[key].本体); //左上横线
 				core.drawLine(ctx, 32 * loc[0], 32 * loc[1], 32 * loc[0], 32 * loc[1] + 6, newsystem[key].本体); //左上竖线
 				core.drawLine(ctx, 32 * loc[0] + 32, 32 * loc[1], 32 * loc[0] + 26, 32 * loc[1], newsystem[key].本体); //右上横线
@@ -5946,11 +5953,16 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 				core.drawLine(ctx, 32 * loc[0], 32 * loc[1] + 32, 32 * loc[0], 32 * loc[1] + 26, newsystem[key].本体); //左下竖线
 				core.drawLine(ctx, 32 * loc[0] + 32, 32 * loc[1] + 32, 32 * loc[0] + 26, 32 * loc[1] + 32, newsystem[key].本体); //右下横线
 				core.drawLine(ctx, 32 * loc[0] + 32, 32 * loc[1] + 32, 32 * loc[0] + 32, 32 * loc[1] + 26, newsystem[key].本体); //右下竖线
+				//console.log('本体边框');
 				if (newsystem[key].范围) {
-					core.fillstrokeRect(ctx, 32 * (loc[0] - v), 32 * (loc[1] - v), 32 * (loc[0] + v), 32 * (loc[1] + v), newsystem[key].范围); //领域范围边框
+					//console.log('领域范围');
+					ctx.lineWidth = 2;
+					core.fillRect(ctx, 32 * (loc[0] - v), 32 * (loc[1] - v), (2 * v + 1) * 32, (2 * v + 1) * 32, newsystem[key].范围); //领域范围
+					core.strokeRect(ctx, 32 * (loc[0] - v), 32 * (loc[1] - v), (2 * v + 1) * 32, (2 * v + 1) * 32, newsystem[key].本体); //领域边框
 				}
 			});
 		});
 	}
+	//core.registerAnimationFrame('drawui', true, draw);
 }
 }

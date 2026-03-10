@@ -33,21 +33,21 @@ main.floors.MT325=
             "type": "setEnemy",
             "id": "commandos",
             "name": "hp",
-            "value": "2000000",
+            "value": "3000000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "commandos",
             "name": "atk",
-            "value": "18000",
+            "value": "40000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "mortar",
             "name": "hp",
-            "value": "1800000",
+            "value": "2800000",
             "norefresh": true
         },
         {
@@ -82,7 +82,7 @@ main.floors.MT325=
             "type": "setEnemy",
             "id": "sniper",
             "name": "hp",
-            "value": "500000",
+            "value": "100000",
             "norefresh": true
         },
         {
@@ -96,7 +96,7 @@ main.floors.MT325=
             "type": "setEnemy",
             "id": "motorinf",
             "name": "hp",
-            "value": "1800000",
+            "value": "2800000",
             "norefresh": true
         },
         {
@@ -110,7 +110,7 @@ main.floors.MT325=
             "type": "setEnemy",
             "id": "grenadier",
             "name": "hp",
-            "value": "1800000",
+            "value": "2800000",
             "norefresh": true
         },
         {
@@ -124,7 +124,7 @@ main.floors.MT325=
             "type": "setEnemy",
             "id": "lightmg",
             "name": "hp",
-            "value": "1800000",
+            "value": "2800000",
             "norefresh": true
         },
         {
@@ -138,14 +138,14 @@ main.floors.MT325=
             "type": "setEnemy",
             "id": "lightmg",
             "name": "special",
-            "value": "[6]",
+            "value": "[6,87]",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "mg42",
             "name": "hp",
-            "value": "1700000",
+            "value": "2700000",
             "norefresh": true
         },
         {
@@ -159,14 +159,14 @@ main.floors.MT325=
             "type": "setEnemy",
             "id": "mg42",
             "name": "special",
-            "value": "[6]",
+            "value": "[6,87]",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "attankinf",
             "name": "hp",
-            "value": "1700000",
+            "value": "2700000",
             "norefresh": true
         },
         {
@@ -178,9 +178,30 @@ main.floors.MT325=
         },
         {
             "type": "setEnemy",
+            "id": "me109k6",
+            "name": "hp",
+            "value": "2000000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "me109k6",
+            "name": "atk",
+            "value": "20000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "me109k6",
+            "name": "n",
+            "value": "5",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
             "id": "pak40",
             "name": "hp",
-            "value": "1200000",
+            "value": "1800000",
             "norefresh": true
         },
         {
@@ -194,7 +215,7 @@ main.floors.MT325=
             "type": "setEnemy",
             "id": "howitzer150",
             "name": "hp",
-            "value": "1200000",
+            "value": "1800000",
             "norefresh": true
         },
         {
@@ -222,7 +243,7 @@ main.floors.MT325=
             "type": "setEnemy",
             "id": "panzer4h",
             "name": "hp",
-            "value": "1200000",
+            "value": "1800000",
             "norefresh": true
         },
         {
@@ -236,7 +257,7 @@ main.floors.MT325=
             "type": "setEnemy",
             "id": "panzer5d",
             "name": "hp",
-            "value": "1200000",
+            "value": "1800000",
             "norefresh": true
         },
         {
@@ -250,7 +271,7 @@ main.floors.MT325=
             "type": "setEnemy",
             "id": "panzer5g",
             "name": "hp",
-            "value": "1400000",
+            "value": "2000000",
             "norefresh": true
         },
         {
@@ -264,7 +285,7 @@ main.floors.MT325=
             "type": "setEnemy",
             "id": "tigere",
             "name": "hp",
-            "value": "1600000",
+            "value": "2400000",
             "norefresh": true
         },
         {
@@ -276,9 +297,23 @@ main.floors.MT325=
         },
         {
             "type": "setEnemy",
+            "id": "tigerking",
+            "name": "hp",
+            "value": "2800000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "tigerking",
+            "name": "atk",
+            "value": "180000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
             "id": "stug4",
             "name": "hp",
-            "value": "1200000",
+            "value": "1800000",
             "norefresh": true
         },
         {
@@ -299,7 +334,7 @@ main.floors.MT325=
             "type": "setEnemy",
             "id": "flak88",
             "name": "hp",
-            "value": "1200000",
+            "value": "1800000",
             "norefresh": true
         },
         {
@@ -320,7 +355,7 @@ main.floors.MT325=
             "type": "setEnemy",
             "id": "wildwind",
             "name": "hp",
-            "value": "1000000",
+            "value": "2000000",
             "norefresh": true
         },
         {
@@ -328,20 +363,6 @@ main.floors.MT325=
             "id": "wildwind",
             "name": "atk",
             "value": "15000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "mgbunker",
-            "name": "hp",
-            "value": "1400000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "mgbunker",
-            "name": "atk",
-            "value": "20000",
             "norefresh": true
         },
         {
@@ -355,7 +376,7 @@ main.floors.MT325=
             "type": "setEnemy",
             "id": "gunbunker",
             "name": "hp",
-            "value": "1400000",
+            "value": "2500000",
             "norefresh": true
         },
         {
@@ -369,7 +390,7 @@ main.floors.MT325=
             "type": "setEnemy",
             "id": "gunbunker",
             "name": "special",
-            "value": "[15,63,86,87]",
+            "value": "[15,63,84,86,87]",
             "norefresh": true
         },
         {
@@ -378,12 +399,6 @@ main.floors.MT325=
             "name": "range",
             "value": "3",
             "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "gunbunker",
-            "name": "zone",
-            "value": "50000"
         },
         "\t[系统提示]敌人战力重置完成",
         {
@@ -401,6 +416,91 @@ main.floors.MT325=
         "\t[任务目标]⭐占领战区：A\n⭐占领战区：B\n⭐占领战区：C",
         {
             "type": "callBook"
+        },
+        {
+            "type": "setValue",
+            "name": "flag:MT329baseA",
+            "value": "0"
+        },
+        {
+            "type": "setValue",
+            "name": "flag:MT327baseB",
+            "value": "0"
+        },
+        {
+            "type": "setValue",
+            "name": "flag:MT328baseC",
+            "value": "0"
+        },
+        {
+            "type": "setTask",
+            "name": "第44关任务1",
+            "n": 1,
+            "text": "占领战区：A",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "MT329baseA",
+                    "operator": "=",
+                    "text": "击败守点敌人",
+                    "count": "24"
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第44关任务2",
+            "n": 1,
+            "text": "占领战区：B",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "MT327baseB",
+                    "operator": "=",
+                    "text": "击败守点敌人",
+                    "count": "30"
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第44关任务3",
+            "n": 1,
+            "text": "占领战区：C",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "MT328baseC",
+                    "operator": "=",
+                    "text": "击败守点敌人",
+                    "count": "24"
+                }
+            ]
+        },
+        {
+            "type": "animate",
+            "name": "wonder",
+            "loc": "hero",
+            "async": true
+        },
+        {
+            "type": "sleep",
+            "time": 500
+        },
+        {
+            "type": "animate",
+            "name": "explore3",
+            "loc": "hero",
+            "async": true
+        },
+        {
+            "type": "setValue",
+            "name": "status:hp",
+            "operator": "-=",
+            "value": "6000"
+        },
+        {
+            "type": "waitAsync"
         }
     ],
     "eachArrive": [],

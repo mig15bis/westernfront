@@ -1504,7 +1504,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 				"async": true
 			}
 		],
-		"useItemEffect": "if (core.hasItem('penicillin')) {\n\tdebugger\n\tlet hp = core.getRealStatus('hp'),\n\t\thpmax = core.getRealStatus('hpmax');\n\tif (hp > hpmax * 0.6 && !core.getFlag(\"__statistics__\")) core.drawHeroAnimate('hpfull');\n\tcore.status.hero.hp += hpmax * 0.4;\n} else if (core.hasEquip('churchillmk3')) {\n\tif (hero.hp > hero.hpmax * 0.65 && !core.getFlag(\"__statistics__\")) core.drawHeroAnimate('hpfull');\n\tcore.status.hero.hp += hero.hpmax * 0.35;\n} else if (core.hasEquip('a34comet')) {\n\tif (hero.hp > hero.hpmax * 0.6 && !core.getFlag(\"__statistics__\")) core.drawHeroAnimate('hpfull');\n\tcore.status.hero.hp += hero.hpmax * 0.4;\n} else {\n\tif (hero.hp > hero.hpmax * 0.75 && !core.getFlag(\"__statistics__\")) core.drawHeroAnimate('hpfull');\n\tcore.status.hero.hp += hero.hpmax * 0.25;\n}"
+		"useItemEffect": "if (core.hasItem('penicillin')) {\n\tlet hp = core.getRealStatus('hp'),\n\t\thpmax = core.getRealStatus('hpmax');\n\tif (hp > hpmax * 0.6 && !core.getFlag(\"__statistics__\")) core.drawHeroAnimate('hpfull');\n\tcore.status.hero.hp += hpmax * 0.4;\n} else if (core.hasEquip('churchillmk3')) {\n\tif (hero.hp > hero.hpmax * 0.65 && !core.getFlag(\"__statistics__\")) core.drawHeroAnimate('hpfull');\n\tcore.status.hero.hp += hero.hpmax * 0.35;\n} else if (core.hasEquip('a34comet')) {\n\tif (hero.hp > hero.hpmax * 0.6 && !core.getFlag(\"__statistics__\")) core.drawHeroAnimate('hpfull');\n\tcore.status.hero.hp += hero.hpmax * 0.4;\n} else {\n\tif (hero.hp > hero.hpmax * 0.75 && !core.getFlag(\"__statistics__\")) core.drawHeroAnimate('hpfull');\n\tcore.status.hero.hp += hero.hpmax * 0.25;\n}"
 	},
 	"cola": {
 		"cls": "tools",

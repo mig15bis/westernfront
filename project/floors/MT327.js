@@ -8894,7 +8894,7 @@ main.floors.MT327=
             },
             {
                 "type": "playBgm",
-                "name": "7days3.mp3",
+                "name": "wot1.mp3",
                 "keep": true
             },
             {

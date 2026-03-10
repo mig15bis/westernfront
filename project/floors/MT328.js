@@ -7310,7 +7310,7 @@ main.floors.MT328=
             },
             {
                 "type": "playBgm",
-                "name": "7days3.mp3",
+                "name": "wot1.mp3",
                 "keep": true
             },
             {
