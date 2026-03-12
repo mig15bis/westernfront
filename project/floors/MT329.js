@@ -73,10 +73,6 @@ main.floors.MT329=
                 "pos": 6
             },
             {
-                "type": "function",
-                "function": "function(){\nflags.skillList=[0,0,0,0,0,0,0]\n}"
-            },
-            {
                 "type": "update"
             },
             {
@@ -84,7 +80,7 @@ main.floors.MT329=
                 "time": 500
             },
             {
-                "type": "hideStatusBar"
+                "type": "hideui"
             },
             {
                 "type": "update"
@@ -127,7 +123,7 @@ main.floors.MT329=
             },
             {
                 "type": "function",
-                "function": "function(){\nvar a = flags.mission[core.getFlag('stage')];\ncore.setFlag('@temp@A', a[0] + a[1] + a[2]);\n}"
+                "function": "function(){\nvar a = core.taskSystem.checkTask(0) ? 1 : 0,\n\tb = core.taskSystem.checkTask(1) ? 1 : 0,\n\tc = core.taskSystem.checkTask(2) ? 1 : 0;\ncore.setFlag('@temp@A', a + b + c);\n}"
             },
             {
                 "type": "if",
@@ -153,11 +149,6 @@ main.floors.MT329=
                             90
                         ],
                         "opacity": 1,
-                        "time": 500,
-                        "async": true
-                    },
-                    {
-                        "type": "sleep",
                         "time": 500
                     },
                     {
@@ -184,11 +175,6 @@ main.floors.MT329=
                                     90
                                 ],
                                 "opacity": 1,
-                                "time": 500,
-                                "async": true
-                            },
-                            {
-                                "type": "sleep",
                                 "time": 500
                             },
                             {
@@ -215,11 +201,6 @@ main.floors.MT329=
                                             90
                                         ],
                                         "opacity": 1,
-                                        "time": 500,
-                                        "async": true
-                                    },
-                                    {
-                                        "type": "sleep",
                                         "time": 500
                                     }
                                 ],
@@ -230,6 +211,9 @@ main.floors.MT329=
                     }
                 ],
                 "false": []
+            },
+            {
+                "type": "waitAsync"
             },
             {
                 "type": "showImage",
@@ -274,6 +258,9 @@ main.floors.MT329=
             },
             {
                 "type": "clearMap"
+            },
+            {
+                "type": "submitTask"
             },
             {
                 "type": "moveImage",
@@ -359,7 +346,7 @@ main.floors.MT329=
                     "负责防守卡昂的是德军第12SS装甲师。在战役之前，这支军队被盟军戏称为“娃娃师”，因为成员多为十几岁的德国青少年。但很快，他们就不得不开始重视起这支狂热的年轻部队。",
                     "诺曼底登陆当天，盟军的空中轰炸给德军造成了不小的伤亡和混乱，卡昂城内遭受严重破坏，已不再适合街巷战。德军决定严守城外阵地。",
                     "战斗过程血腥而残酷。德军的虎豹坦克比盟军的更优秀，成为推进的主力，稚气未脱的年轻士兵们手持“铁拳”火箭筒，义无反顾冲向盟军坦克，在中弹倒下前，他们的眼神中既包含着为国捐躯的狂热，也有对战争的恐惧。虽然被希特勒洗脑成为杀戮机器，但到底也是一群在生命的尽头，仍在哭喊着叫妈妈的年轻孩子。",
-                    "诺曼底登陆一个星期后，卡昂仍然在德军手中。从一线撤回的德军一起构筑成一道坚固防线，将盟军挡在卡昂城外。但在14日那天，德军12SS师的师长维特，在盟军舰队的轰炸中阵亡，这给年轻的士兵们造成了一些恐慌和悲伤。",
+                    "诺曼底登陆一个星期后，卡昂仍然在德军手中。守军与从一线撤回的德军一起构筑成一道坚固防线，将盟军挡在卡昂城外。但在14日那天，德军12SS师的师长维特，在盟军舰队的轰炸中阵亡，这给年轻的士兵们造成了一些恐慌和悲伤。",
                     "到6月24日，卡昂的防御仍然未被撼动。德军虽然损失超过2500人，但重型装备损失并不严重。蒙哥马利决定发起代号“埃普索姆”的行动，试图从西侧包围卡昂。但这一次，盟军的无线电通信被德军拦截。",
                     "德军将重型火力和狙击手藏匿于废墟之中，在街道上埋设地雷，静待英军的攻击。这是一场对双方都十分残酷的战斗，英军装备了可以击穿德军重型坦克的谢尔曼“萤火虫”，但德军的战斗意志更强，反坦克手段更多。",
                     "德军的防御体系遭到破坏，反坦克火箭炮都打光了弹药，但盟军坦克却像潮水一般无穷无尽。到蒙哥马利下令停止时，第12SS师已经用尽了最后的力量，士兵们陷入绝望之中。他们抵达新的阵线，利用最后残存的力量组织起最后一道防线。盟军也付出了巨大损失，停下休整。",
@@ -400,13 +387,13 @@ main.floors.MT329=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT329baseA===8)",
+                "condition": "(flag:MT329baseA===16)",
                 "true": [
                     {
                         "type": "jumpHero",
                         "loc": [
                             7,
-                            7
+                            10
                         ],
                         "time": 50
                     },
@@ -469,19 +456,42 @@ main.floors.MT329=
                         "time": 0
                     },
                     {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                7,
+                                9
+                            ],
+                            [
+                                6,
+                                10
+                            ],
+                            [
+                                8,
+                                10
+                            ],
+                            [
+                                7,
+                                11
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
                         "type": "waitAsync"
                     }
                 ],
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT329baseA===16)",
+                        "condition": "(flag:MT329baseA===28)",
                         "true": [
                             {
                                 "type": "jumpHero",
                                 "loc": [
                                     7,
-                                    7
+                                    10
                                 ],
                                 "time": 50
                             },
@@ -522,22 +532,45 @@ main.floors.MT329=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "me109k6",
+                                "number": "fw190f8",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ],
+                                    [
+                                        9,
+                                        8
+                                    ],
+                                    [
+                                        9,
+                                        12
+                                    ],
+                                    [
+                                        5,
+                                        12
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
                                 "loc": [
                                     [
                                         6,
-                                        10
-                                    ],
-                                    [
-                                        7,
                                         9
                                     ],
                                     [
                                         8,
-                                        10
+                                        9
                                     ],
                                     [
-                                        7,
+                                        8,
+                                        11
+                                    ],
+                                    [
+                                        6,
                                         11
                                     ]
                                 ],
@@ -550,12 +583,8 @@ main.floors.MT329=
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT329baseA===24)",
+                                "condition": "(flag:MT329baseA===40)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][0]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -567,7 +596,7 @@ main.floors.MT329=
                                         "type": "openDoor",
                                         "loc": [
                                             7,
-                                            7
+                                            6
                                         ],
                                         "async": true
                                     },
@@ -618,13 +647,13 @@ main.floors.MT329=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT329baseA===8)",
+                "condition": "(flag:MT329baseA===16)",
                 "true": [
                     {
                         "type": "jumpHero",
                         "loc": [
                             7,
-                            7
+                            10
                         ],
                         "time": 50
                     },
@@ -687,19 +716,42 @@ main.floors.MT329=
                         "time": 0
                     },
                     {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                7,
+                                9
+                            ],
+                            [
+                                6,
+                                10
+                            ],
+                            [
+                                8,
+                                10
+                            ],
+                            [
+                                7,
+                                11
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
                         "type": "waitAsync"
                     }
                 ],
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT329baseA===16)",
+                        "condition": "(flag:MT329baseA===28)",
                         "true": [
                             {
                                 "type": "jumpHero",
                                 "loc": [
                                     7,
-                                    7
+                                    10
                                 ],
                                 "time": 50
                             },
@@ -740,22 +792,45 @@ main.floors.MT329=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "me109k6",
+                                "number": "fw190f8",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ],
+                                    [
+                                        9,
+                                        8
+                                    ],
+                                    [
+                                        9,
+                                        12
+                                    ],
+                                    [
+                                        5,
+                                        12
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
                                 "loc": [
                                     [
                                         6,
-                                        10
-                                    ],
-                                    [
-                                        7,
                                         9
                                     ],
                                     [
                                         8,
-                                        10
+                                        9
                                     ],
                                     [
-                                        7,
+                                        8,
+                                        11
+                                    ],
+                                    [
+                                        6,
                                         11
                                     ]
                                 ],
@@ -768,12 +843,8 @@ main.floors.MT329=
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT329baseA===24)",
+                                "condition": "(flag:MT329baseA===40)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][0]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -785,7 +856,7 @@ main.floors.MT329=
                                         "type": "openDoor",
                                         "loc": [
                                             7,
-                                            7
+                                            6
                                         ],
                                         "async": true
                                     },
@@ -836,13 +907,13 @@ main.floors.MT329=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT329baseA===8)",
+                "condition": "(flag:MT329baseA===16)",
                 "true": [
                     {
                         "type": "jumpHero",
                         "loc": [
                             7,
-                            7
+                            10
                         ],
                         "time": 50
                     },
@@ -905,19 +976,42 @@ main.floors.MT329=
                         "time": 0
                     },
                     {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                7,
+                                9
+                            ],
+                            [
+                                6,
+                                10
+                            ],
+                            [
+                                8,
+                                10
+                            ],
+                            [
+                                7,
+                                11
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
                         "type": "waitAsync"
                     }
                 ],
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT329baseA===16)",
+                        "condition": "(flag:MT329baseA===28)",
                         "true": [
                             {
                                 "type": "jumpHero",
                                 "loc": [
                                     7,
-                                    7
+                                    10
                                 ],
                                 "time": 50
                             },
@@ -958,22 +1052,45 @@ main.floors.MT329=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "me109k6",
+                                "number": "fw190f8",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ],
+                                    [
+                                        9,
+                                        8
+                                    ],
+                                    [
+                                        9,
+                                        12
+                                    ],
+                                    [
+                                        5,
+                                        12
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
                                 "loc": [
                                     [
                                         6,
-                                        10
-                                    ],
-                                    [
-                                        7,
                                         9
                                     ],
                                     [
                                         8,
-                                        10
+                                        9
                                     ],
                                     [
-                                        7,
+                                        8,
+                                        11
+                                    ],
+                                    [
+                                        6,
                                         11
                                     ]
                                 ],
@@ -986,12 +1103,8 @@ main.floors.MT329=
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT329baseA===24)",
+                                "condition": "(flag:MT329baseA===40)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][0]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -1003,7 +1116,7 @@ main.floors.MT329=
                                         "type": "openDoor",
                                         "loc": [
                                             7,
-                                            7
+                                            6
                                         ],
                                         "async": true
                                     },
@@ -1054,13 +1167,13 @@ main.floors.MT329=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT329baseA===8)",
+                "condition": "(flag:MT329baseA===16)",
                 "true": [
                     {
                         "type": "jumpHero",
                         "loc": [
                             7,
-                            7
+                            10
                         ],
                         "time": 50
                     },
@@ -1123,19 +1236,42 @@ main.floors.MT329=
                         "time": 0
                     },
                     {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                7,
+                                9
+                            ],
+                            [
+                                6,
+                                10
+                            ],
+                            [
+                                8,
+                                10
+                            ],
+                            [
+                                7,
+                                11
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
                         "type": "waitAsync"
                     }
                 ],
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT329baseA===16)",
+                        "condition": "(flag:MT329baseA===28)",
                         "true": [
                             {
                                 "type": "jumpHero",
                                 "loc": [
                                     7,
-                                    7
+                                    10
                                 ],
                                 "time": 50
                             },
@@ -1176,22 +1312,45 @@ main.floors.MT329=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "me109k6",
+                                "number": "fw190f8",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ],
+                                    [
+                                        9,
+                                        8
+                                    ],
+                                    [
+                                        9,
+                                        12
+                                    ],
+                                    [
+                                        5,
+                                        12
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
                                 "loc": [
                                     [
                                         6,
-                                        10
-                                    ],
-                                    [
-                                        7,
                                         9
                                     ],
                                     [
                                         8,
-                                        10
+                                        9
                                     ],
                                     [
-                                        7,
+                                        8,
+                                        11
+                                    ],
+                                    [
+                                        6,
                                         11
                                     ]
                                 ],
@@ -1204,12 +1363,8 @@ main.floors.MT329=
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT329baseA===24)",
+                                "condition": "(flag:MT329baseA===40)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][0]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -1221,7 +1376,7 @@ main.floors.MT329=
                                         "type": "openDoor",
                                         "loc": [
                                             7,
-                                            7
+                                            6
                                         ],
                                         "async": true
                                     },
@@ -1272,13 +1427,13 @@ main.floors.MT329=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT329baseA===8)",
+                "condition": "(flag:MT329baseA===16)",
                 "true": [
                     {
                         "type": "jumpHero",
                         "loc": [
                             7,
-                            7
+                            10
                         ],
                         "time": 50
                     },
@@ -1341,19 +1496,42 @@ main.floors.MT329=
                         "time": 0
                     },
                     {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                7,
+                                9
+                            ],
+                            [
+                                6,
+                                10
+                            ],
+                            [
+                                8,
+                                10
+                            ],
+                            [
+                                7,
+                                11
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
                         "type": "waitAsync"
                     }
                 ],
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT329baseA===16)",
+                        "condition": "(flag:MT329baseA===28)",
                         "true": [
                             {
                                 "type": "jumpHero",
                                 "loc": [
                                     7,
-                                    7
+                                    10
                                 ],
                                 "time": 50
                             },
@@ -1394,22 +1572,45 @@ main.floors.MT329=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "me109k6",
+                                "number": "fw190f8",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ],
+                                    [
+                                        9,
+                                        8
+                                    ],
+                                    [
+                                        9,
+                                        12
+                                    ],
+                                    [
+                                        5,
+                                        12
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
                                 "loc": [
                                     [
                                         6,
-                                        10
-                                    ],
-                                    [
-                                        7,
                                         9
                                     ],
                                     [
                                         8,
-                                        10
+                                        9
                                     ],
                                     [
-                                        7,
+                                        8,
+                                        11
+                                    ],
+                                    [
+                                        6,
                                         11
                                     ]
                                 ],
@@ -1422,12 +1623,8 @@ main.floors.MT329=
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT329baseA===24)",
+                                "condition": "(flag:MT329baseA===40)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][0]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -1439,7 +1636,7 @@ main.floors.MT329=
                                         "type": "openDoor",
                                         "loc": [
                                             7,
-                                            7
+                                            6
                                         ],
                                         "async": true
                                     },
@@ -1490,13 +1687,13 @@ main.floors.MT329=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT329baseA===8)",
+                "condition": "(flag:MT329baseA===16)",
                 "true": [
                     {
                         "type": "jumpHero",
                         "loc": [
                             7,
-                            7
+                            10
                         ],
                         "time": 50
                     },
@@ -1559,19 +1756,42 @@ main.floors.MT329=
                         "time": 0
                     },
                     {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                7,
+                                9
+                            ],
+                            [
+                                6,
+                                10
+                            ],
+                            [
+                                8,
+                                10
+                            ],
+                            [
+                                7,
+                                11
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
                         "type": "waitAsync"
                     }
                 ],
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT329baseA===16)",
+                        "condition": "(flag:MT329baseA===28)",
                         "true": [
                             {
                                 "type": "jumpHero",
                                 "loc": [
                                     7,
-                                    7
+                                    10
                                 ],
                                 "time": 50
                             },
@@ -1612,22 +1832,45 @@ main.floors.MT329=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "me109k6",
+                                "number": "fw190f8",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ],
+                                    [
+                                        9,
+                                        8
+                                    ],
+                                    [
+                                        9,
+                                        12
+                                    ],
+                                    [
+                                        5,
+                                        12
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
                                 "loc": [
                                     [
                                         6,
-                                        10
-                                    ],
-                                    [
-                                        7,
                                         9
                                     ],
                                     [
                                         8,
-                                        10
+                                        9
                                     ],
                                     [
-                                        7,
+                                        8,
+                                        11
+                                    ],
+                                    [
+                                        6,
                                         11
                                     ]
                                 ],
@@ -1640,12 +1883,8 @@ main.floors.MT329=
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT329baseA===24)",
+                                "condition": "(flag:MT329baseA===40)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][0]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -1657,7 +1896,7 @@ main.floors.MT329=
                                         "type": "openDoor",
                                         "loc": [
                                             7,
-                                            7
+                                            6
                                         ],
                                         "async": true
                                     },
@@ -1708,13 +1947,13 @@ main.floors.MT329=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT329baseA===8)",
+                "condition": "(flag:MT329baseA===16)",
                 "true": [
                     {
                         "type": "jumpHero",
                         "loc": [
                             7,
-                            7
+                            10
                         ],
                         "time": 50
                     },
@@ -1777,19 +2016,42 @@ main.floors.MT329=
                         "time": 0
                     },
                     {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                7,
+                                9
+                            ],
+                            [
+                                6,
+                                10
+                            ],
+                            [
+                                8,
+                                10
+                            ],
+                            [
+                                7,
+                                11
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
                         "type": "waitAsync"
                     }
                 ],
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT329baseA===16)",
+                        "condition": "(flag:MT329baseA===28)",
                         "true": [
                             {
                                 "type": "jumpHero",
                                 "loc": [
                                     7,
-                                    7
+                                    10
                                 ],
                                 "time": 50
                             },
@@ -1830,22 +2092,45 @@ main.floors.MT329=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "me109k6",
+                                "number": "fw190f8",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ],
+                                    [
+                                        9,
+                                        8
+                                    ],
+                                    [
+                                        9,
+                                        12
+                                    ],
+                                    [
+                                        5,
+                                        12
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
                                 "loc": [
                                     [
                                         6,
-                                        10
-                                    ],
-                                    [
-                                        7,
                                         9
                                     ],
                                     [
                                         8,
-                                        10
+                                        9
                                     ],
                                     [
-                                        7,
+                                        8,
+                                        11
+                                    ],
+                                    [
+                                        6,
                                         11
                                     ]
                                 ],
@@ -1858,12 +2143,8 @@ main.floors.MT329=
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT329baseA===24)",
+                                "condition": "(flag:MT329baseA===40)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][0]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -1875,7 +2156,7 @@ main.floors.MT329=
                                         "type": "openDoor",
                                         "loc": [
                                             7,
-                                            7
+                                            6
                                         ],
                                         "async": true
                                     },
@@ -1926,13 +2207,13 @@ main.floors.MT329=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT329baseA===8)",
+                "condition": "(flag:MT329baseA===16)",
                 "true": [
                     {
                         "type": "jumpHero",
                         "loc": [
                             7,
-                            7
+                            10
                         ],
                         "time": 50
                     },
@@ -1995,19 +2276,42 @@ main.floors.MT329=
                         "time": 0
                     },
                     {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                7,
+                                9
+                            ],
+                            [
+                                6,
+                                10
+                            ],
+                            [
+                                8,
+                                10
+                            ],
+                            [
+                                7,
+                                11
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
                         "type": "waitAsync"
                     }
                 ],
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT329baseA===16)",
+                        "condition": "(flag:MT329baseA===28)",
                         "true": [
                             {
                                 "type": "jumpHero",
                                 "loc": [
                                     7,
-                                    7
+                                    10
                                 ],
                                 "time": 50
                             },
@@ -2048,22 +2352,45 @@ main.floors.MT329=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "me109k6",
+                                "number": "fw190f8",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ],
+                                    [
+                                        9,
+                                        8
+                                    ],
+                                    [
+                                        9,
+                                        12
+                                    ],
+                                    [
+                                        5,
+                                        12
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
                                 "loc": [
                                     [
                                         6,
-                                        10
-                                    ],
-                                    [
-                                        7,
                                         9
                                     ],
                                     [
                                         8,
-                                        10
+                                        9
                                     ],
                                     [
-                                        7,
+                                        8,
+                                        11
+                                    ],
+                                    [
+                                        6,
                                         11
                                     ]
                                 ],
@@ -2076,12 +2403,8 @@ main.floors.MT329=
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT329baseA===24)",
+                                "condition": "(flag:MT329baseA===40)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][0]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -2093,7 +2416,7 @@ main.floors.MT329=
                                         "type": "openDoor",
                                         "loc": [
                                             7,
-                                            7
+                                            6
                                         ],
                                         "async": true
                                     },
@@ -2144,13 +2467,13 @@ main.floors.MT329=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT329baseA===8)",
+                "condition": "(flag:MT329baseA===16)",
                 "true": [
                     {
                         "type": "jumpHero",
                         "loc": [
                             7,
-                            7
+                            10
                         ],
                         "time": 50
                     },
@@ -2213,19 +2536,42 @@ main.floors.MT329=
                         "time": 0
                     },
                     {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                7,
+                                9
+                            ],
+                            [
+                                6,
+                                10
+                            ],
+                            [
+                                8,
+                                10
+                            ],
+                            [
+                                7,
+                                11
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
                         "type": "waitAsync"
                     }
                 ],
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT329baseA===16)",
+                        "condition": "(flag:MT329baseA===28)",
                         "true": [
                             {
                                 "type": "jumpHero",
                                 "loc": [
                                     7,
-                                    7
+                                    10
                                 ],
                                 "time": 50
                             },
@@ -2266,22 +2612,45 @@ main.floors.MT329=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "me109k6",
+                                "number": "fw190f8",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ],
+                                    [
+                                        9,
+                                        8
+                                    ],
+                                    [
+                                        9,
+                                        12
+                                    ],
+                                    [
+                                        5,
+                                        12
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
                                 "loc": [
                                     [
                                         6,
-                                        10
-                                    ],
-                                    [
-                                        7,
                                         9
                                     ],
                                     [
                                         8,
-                                        10
+                                        9
                                     ],
                                     [
-                                        7,
+                                        8,
+                                        11
+                                    ],
+                                    [
+                                        6,
                                         11
                                     ]
                                 ],
@@ -2294,12 +2663,8 @@ main.floors.MT329=
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT329baseA===24)",
+                                "condition": "(flag:MT329baseA===40)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][0]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -2311,7 +2676,7 @@ main.floors.MT329=
                                         "type": "openDoor",
                                         "loc": [
                                             7,
-                                            7
+                                            6
                                         ],
                                         "async": true
                                     },
@@ -2362,13 +2727,13 @@ main.floors.MT329=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT329baseA===8)",
+                "condition": "(flag:MT329baseA===16)",
                 "true": [
                     {
                         "type": "jumpHero",
                         "loc": [
                             7,
-                            7
+                            10
                         ],
                         "time": 50
                     },
@@ -2431,19 +2796,42 @@ main.floors.MT329=
                         "time": 0
                     },
                     {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                7,
+                                9
+                            ],
+                            [
+                                6,
+                                10
+                            ],
+                            [
+                                8,
+                                10
+                            ],
+                            [
+                                7,
+                                11
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
                         "type": "waitAsync"
                     }
                 ],
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT329baseA===16)",
+                        "condition": "(flag:MT329baseA===28)",
                         "true": [
                             {
                                 "type": "jumpHero",
                                 "loc": [
                                     7,
-                                    7
+                                    10
                                 ],
                                 "time": 50
                             },
@@ -2484,22 +2872,45 @@ main.floors.MT329=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "me109k6",
+                                "number": "fw190f8",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ],
+                                    [
+                                        9,
+                                        8
+                                    ],
+                                    [
+                                        9,
+                                        12
+                                    ],
+                                    [
+                                        5,
+                                        12
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
                                 "loc": [
                                     [
                                         6,
-                                        10
-                                    ],
-                                    [
-                                        7,
                                         9
                                     ],
                                     [
                                         8,
-                                        10
+                                        9
                                     ],
                                     [
-                                        7,
+                                        8,
+                                        11
+                                    ],
+                                    [
+                                        6,
                                         11
                                     ]
                                 ],
@@ -2512,12 +2923,8 @@ main.floors.MT329=
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT329baseA===24)",
+                                "condition": "(flag:MT329baseA===40)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][0]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -2529,7 +2936,7 @@ main.floors.MT329=
                                         "type": "openDoor",
                                         "loc": [
                                             7,
-                                            7
+                                            6
                                         ],
                                         "async": true
                                     },
@@ -2580,13 +2987,13 @@ main.floors.MT329=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT329baseA===8)",
+                "condition": "(flag:MT329baseA===16)",
                 "true": [
                     {
                         "type": "jumpHero",
                         "loc": [
                             7,
-                            7
+                            10
                         ],
                         "time": 50
                     },
@@ -2649,19 +3056,42 @@ main.floors.MT329=
                         "time": 0
                     },
                     {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                7,
+                                9
+                            ],
+                            [
+                                6,
+                                10
+                            ],
+                            [
+                                8,
+                                10
+                            ],
+                            [
+                                7,
+                                11
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
                         "type": "waitAsync"
                     }
                 ],
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT329baseA===16)",
+                        "condition": "(flag:MT329baseA===28)",
                         "true": [
                             {
                                 "type": "jumpHero",
                                 "loc": [
                                     7,
-                                    7
+                                    10
                                 ],
                                 "time": 50
                             },
@@ -2702,22 +3132,45 @@ main.floors.MT329=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "me109k6",
+                                "number": "fw190f8",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ],
+                                    [
+                                        9,
+                                        8
+                                    ],
+                                    [
+                                        9,
+                                        12
+                                    ],
+                                    [
+                                        5,
+                                        12
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
                                 "loc": [
                                     [
                                         6,
-                                        10
-                                    ],
-                                    [
-                                        7,
                                         9
                                     ],
                                     [
                                         8,
-                                        10
+                                        9
                                     ],
                                     [
-                                        7,
+                                        8,
+                                        11
+                                    ],
+                                    [
+                                        6,
                                         11
                                     ]
                                 ],
@@ -2730,12 +3183,8 @@ main.floors.MT329=
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT329baseA===24)",
+                                "condition": "(flag:MT329baseA===40)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][0]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -2747,7 +3196,7 @@ main.floors.MT329=
                                         "type": "openDoor",
                                         "loc": [
                                             7,
-                                            7
+                                            6
                                         ],
                                         "async": true
                                     },
@@ -2798,13 +3247,13 @@ main.floors.MT329=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT329baseA===8)",
+                "condition": "(flag:MT329baseA===16)",
                 "true": [
                     {
                         "type": "jumpHero",
                         "loc": [
                             7,
-                            7
+                            10
                         ],
                         "time": 50
                     },
@@ -2867,19 +3316,42 @@ main.floors.MT329=
                         "time": 0
                     },
                     {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                7,
+                                9
+                            ],
+                            [
+                                6,
+                                10
+                            ],
+                            [
+                                8,
+                                10
+                            ],
+                            [
+                                7,
+                                11
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
                         "type": "waitAsync"
                     }
                 ],
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT329baseA===16)",
+                        "condition": "(flag:MT329baseA===28)",
                         "true": [
                             {
                                 "type": "jumpHero",
                                 "loc": [
                                     7,
-                                    7
+                                    10
                                 ],
                                 "time": 50
                             },
@@ -2920,22 +3392,45 @@ main.floors.MT329=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "me109k6",
+                                "number": "fw190f8",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ],
+                                    [
+                                        9,
+                                        8
+                                    ],
+                                    [
+                                        9,
+                                        12
+                                    ],
+                                    [
+                                        5,
+                                        12
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
                                 "loc": [
                                     [
                                         6,
-                                        10
-                                    ],
-                                    [
-                                        7,
                                         9
                                     ],
                                     [
                                         8,
-                                        10
+                                        9
                                     ],
                                     [
-                                        7,
+                                        8,
+                                        11
+                                    ],
+                                    [
+                                        6,
                                         11
                                     ]
                                 ],
@@ -2948,12 +3443,8 @@ main.floors.MT329=
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT329baseA===24)",
+                                "condition": "(flag:MT329baseA===40)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][0]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -2965,7 +3456,7 @@ main.floors.MT329=
                                         "type": "openDoor",
                                         "loc": [
                                             7,
-                                            7
+                                            6
                                         ],
                                         "async": true
                                     },
@@ -3016,13 +3507,13 @@ main.floors.MT329=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT329baseA===8)",
+                "condition": "(flag:MT329baseA===16)",
                 "true": [
                     {
                         "type": "jumpHero",
                         "loc": [
                             7,
-                            7
+                            10
                         ],
                         "time": 50
                     },
@@ -3085,19 +3576,42 @@ main.floors.MT329=
                         "time": 0
                     },
                     {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                7,
+                                9
+                            ],
+                            [
+                                6,
+                                10
+                            ],
+                            [
+                                8,
+                                10
+                            ],
+                            [
+                                7,
+                                11
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
                         "type": "waitAsync"
                     }
                 ],
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT329baseA===16)",
+                        "condition": "(flag:MT329baseA===28)",
                         "true": [
                             {
                                 "type": "jumpHero",
                                 "loc": [
                                     7,
-                                    7
+                                    10
                                 ],
                                 "time": 50
                             },
@@ -3138,22 +3652,45 @@ main.floors.MT329=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "me109k6",
+                                "number": "fw190f8",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ],
+                                    [
+                                        9,
+                                        8
+                                    ],
+                                    [
+                                        9,
+                                        12
+                                    ],
+                                    [
+                                        5,
+                                        12
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
                                 "loc": [
                                     [
                                         6,
-                                        10
-                                    ],
-                                    [
-                                        7,
                                         9
                                     ],
                                     [
                                         8,
-                                        10
+                                        9
                                     ],
                                     [
-                                        7,
+                                        8,
+                                        11
+                                    ],
+                                    [
+                                        6,
                                         11
                                     ]
                                 ],
@@ -3166,12 +3703,8 @@ main.floors.MT329=
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT329baseA===24)",
+                                "condition": "(flag:MT329baseA===40)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][0]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -3183,7 +3716,7 @@ main.floors.MT329=
                                         "type": "openDoor",
                                         "loc": [
                                             7,
-                                            7
+                                            6
                                         ],
                                         "async": true
                                     },
@@ -3234,13 +3767,13 @@ main.floors.MT329=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT329baseA===8)",
+                "condition": "(flag:MT329baseA===16)",
                 "true": [
                     {
                         "type": "jumpHero",
                         "loc": [
                             7,
-                            7
+                            10
                         ],
                         "time": 50
                     },
@@ -3303,19 +3836,42 @@ main.floors.MT329=
                         "time": 0
                     },
                     {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                7,
+                                9
+                            ],
+                            [
+                                6,
+                                10
+                            ],
+                            [
+                                8,
+                                10
+                            ],
+                            [
+                                7,
+                                11
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
                         "type": "waitAsync"
                     }
                 ],
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT329baseA===16)",
+                        "condition": "(flag:MT329baseA===28)",
                         "true": [
                             {
                                 "type": "jumpHero",
                                 "loc": [
                                     7,
-                                    7
+                                    10
                                 ],
                                 "time": 50
                             },
@@ -3356,22 +3912,45 @@ main.floors.MT329=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "me109k6",
+                                "number": "fw190f8",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ],
+                                    [
+                                        9,
+                                        8
+                                    ],
+                                    [
+                                        9,
+                                        12
+                                    ],
+                                    [
+                                        5,
+                                        12
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
                                 "loc": [
                                     [
                                         6,
-                                        10
-                                    ],
-                                    [
-                                        7,
                                         9
                                     ],
                                     [
                                         8,
-                                        10
+                                        9
                                     ],
                                     [
-                                        7,
+                                        8,
+                                        11
+                                    ],
+                                    [
+                                        6,
                                         11
                                     ]
                                 ],
@@ -3384,12 +3963,8 @@ main.floors.MT329=
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT329baseA===24)",
+                                "condition": "(flag:MT329baseA===40)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][0]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -3401,7 +3976,7 @@ main.floors.MT329=
                                         "type": "openDoor",
                                         "loc": [
                                             7,
-                                            7
+                                            6
                                         ],
                                         "async": true
                                     },
@@ -3452,13 +4027,13 @@ main.floors.MT329=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT329baseA===8)",
+                "condition": "(flag:MT329baseA===16)",
                 "true": [
                     {
                         "type": "jumpHero",
                         "loc": [
                             7,
-                            7
+                            10
                         ],
                         "time": 50
                     },
@@ -3521,19 +4096,42 @@ main.floors.MT329=
                         "time": 0
                     },
                     {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                7,
+                                9
+                            ],
+                            [
+                                6,
+                                10
+                            ],
+                            [
+                                8,
+                                10
+                            ],
+                            [
+                                7,
+                                11
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
                         "type": "waitAsync"
                     }
                 ],
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT329baseA===16)",
+                        "condition": "(flag:MT329baseA===28)",
                         "true": [
                             {
                                 "type": "jumpHero",
                                 "loc": [
                                     7,
-                                    7
+                                    10
                                 ],
                                 "time": 50
                             },
@@ -3574,22 +4172,45 @@ main.floors.MT329=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "me109k6",
+                                "number": "fw190f8",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ],
+                                    [
+                                        9,
+                                        8
+                                    ],
+                                    [
+                                        9,
+                                        12
+                                    ],
+                                    [
+                                        5,
+                                        12
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
                                 "loc": [
                                     [
                                         6,
-                                        10
-                                    ],
-                                    [
-                                        7,
                                         9
                                     ],
                                     [
                                         8,
-                                        10
+                                        9
                                     ],
                                     [
-                                        7,
+                                        8,
+                                        11
+                                    ],
+                                    [
+                                        6,
                                         11
                                     ]
                                 ],
@@ -3602,12 +4223,8 @@ main.floors.MT329=
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT329baseA===24)",
+                                "condition": "(flag:MT329baseA===40)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][0]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -3619,7 +4236,7 @@ main.floors.MT329=
                                         "type": "openDoor",
                                         "loc": [
                                             7,
-                                            7
+                                            6
                                         ],
                                         "async": true
                                     },
@@ -3670,13 +4287,13 @@ main.floors.MT329=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT329baseA===8)",
+                "condition": "(flag:MT329baseA===16)",
                 "true": [
                     {
                         "type": "jumpHero",
                         "loc": [
                             7,
-                            7
+                            10
                         ],
                         "time": 50
                     },
@@ -3739,19 +4356,42 @@ main.floors.MT329=
                         "time": 0
                     },
                     {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                7,
+                                9
+                            ],
+                            [
+                                6,
+                                10
+                            ],
+                            [
+                                8,
+                                10
+                            ],
+                            [
+                                7,
+                                11
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
                         "type": "waitAsync"
                     }
                 ],
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT329baseA===16)",
+                        "condition": "(flag:MT329baseA===28)",
                         "true": [
                             {
                                 "type": "jumpHero",
                                 "loc": [
                                     7,
-                                    7
+                                    10
                                 ],
                                 "time": 50
                             },
@@ -3792,22 +4432,45 @@ main.floors.MT329=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "me109k6",
+                                "number": "fw190f8",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ],
+                                    [
+                                        9,
+                                        8
+                                    ],
+                                    [
+                                        9,
+                                        12
+                                    ],
+                                    [
+                                        5,
+                                        12
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
                                 "loc": [
                                     [
                                         6,
-                                        10
-                                    ],
-                                    [
-                                        7,
                                         9
                                     ],
                                     [
                                         8,
-                                        10
+                                        9
                                     ],
                                     [
-                                        7,
+                                        8,
+                                        11
+                                    ],
+                                    [
+                                        6,
                                         11
                                     ]
                                 ],
@@ -3820,12 +4483,8 @@ main.floors.MT329=
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT329baseA===24)",
+                                "condition": "(flag:MT329baseA===40)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][0]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -3837,7 +4496,7 @@ main.floors.MT329=
                                         "type": "openDoor",
                                         "loc": [
                                             7,
-                                            7
+                                            6
                                         ],
                                         "async": true
                                     },
@@ -3888,13 +4547,13 @@ main.floors.MT329=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT329baseA===8)",
+                "condition": "(flag:MT329baseA===16)",
                 "true": [
                     {
                         "type": "jumpHero",
                         "loc": [
                             7,
-                            7
+                            10
                         ],
                         "time": 50
                     },
@@ -3957,19 +4616,42 @@ main.floors.MT329=
                         "time": 0
                     },
                     {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                7,
+                                9
+                            ],
+                            [
+                                6,
+                                10
+                            ],
+                            [
+                                8,
+                                10
+                            ],
+                            [
+                                7,
+                                11
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
                         "type": "waitAsync"
                     }
                 ],
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT329baseA===16)",
+                        "condition": "(flag:MT329baseA===28)",
                         "true": [
                             {
                                 "type": "jumpHero",
                                 "loc": [
                                     7,
-                                    7
+                                    10
                                 ],
                                 "time": 50
                             },
@@ -4010,22 +4692,45 @@ main.floors.MT329=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "me109k6",
+                                "number": "fw190f8",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ],
+                                    [
+                                        9,
+                                        8
+                                    ],
+                                    [
+                                        9,
+                                        12
+                                    ],
+                                    [
+                                        5,
+                                        12
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
                                 "loc": [
                                     [
                                         6,
-                                        10
-                                    ],
-                                    [
-                                        7,
                                         9
                                     ],
                                     [
                                         8,
-                                        10
+                                        9
                                     ],
                                     [
-                                        7,
+                                        8,
+                                        11
+                                    ],
+                                    [
+                                        6,
                                         11
                                     ]
                                 ],
@@ -4038,12 +4743,8 @@ main.floors.MT329=
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT329baseA===24)",
+                                "condition": "(flag:MT329baseA===40)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][0]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -4055,7 +4756,7 @@ main.floors.MT329=
                                         "type": "openDoor",
                                         "loc": [
                                             7,
-                                            7
+                                            6
                                         ],
                                         "async": true
                                     },
@@ -4106,13 +4807,13 @@ main.floors.MT329=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT329baseA===8)",
+                "condition": "(flag:MT329baseA===16)",
                 "true": [
                     {
                         "type": "jumpHero",
                         "loc": [
                             7,
-                            7
+                            10
                         ],
                         "time": 50
                     },
@@ -4175,19 +4876,42 @@ main.floors.MT329=
                         "time": 0
                     },
                     {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                7,
+                                9
+                            ],
+                            [
+                                6,
+                                10
+                            ],
+                            [
+                                8,
+                                10
+                            ],
+                            [
+                                7,
+                                11
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
                         "type": "waitAsync"
                     }
                 ],
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT329baseA===16)",
+                        "condition": "(flag:MT329baseA===28)",
                         "true": [
                             {
                                 "type": "jumpHero",
                                 "loc": [
                                     7,
-                                    7
+                                    10
                                 ],
                                 "time": 50
                             },
@@ -4228,22 +4952,45 @@ main.floors.MT329=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "me109k6",
+                                "number": "fw190f8",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ],
+                                    [
+                                        9,
+                                        8
+                                    ],
+                                    [
+                                        9,
+                                        12
+                                    ],
+                                    [
+                                        5,
+                                        12
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
                                 "loc": [
                                     [
                                         6,
-                                        10
-                                    ],
-                                    [
-                                        7,
                                         9
                                     ],
                                     [
                                         8,
-                                        10
+                                        9
                                     ],
                                     [
-                                        7,
+                                        8,
+                                        11
+                                    ],
+                                    [
+                                        6,
                                         11
                                     ]
                                 ],
@@ -4256,12 +5003,8 @@ main.floors.MT329=
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT329baseA===24)",
+                                "condition": "(flag:MT329baseA===40)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][0]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -4273,7 +5016,7 @@ main.floors.MT329=
                                         "type": "openDoor",
                                         "loc": [
                                             7,
-                                            7
+                                            6
                                         ],
                                         "async": true
                                     },
@@ -4324,13 +5067,13 @@ main.floors.MT329=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT329baseA===8)",
+                "condition": "(flag:MT329baseA===16)",
                 "true": [
                     {
                         "type": "jumpHero",
                         "loc": [
                             7,
-                            7
+                            10
                         ],
                         "time": 50
                     },
@@ -4393,19 +5136,42 @@ main.floors.MT329=
                         "time": 0
                     },
                     {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                7,
+                                9
+                            ],
+                            [
+                                6,
+                                10
+                            ],
+                            [
+                                8,
+                                10
+                            ],
+                            [
+                                7,
+                                11
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
                         "type": "waitAsync"
                     }
                 ],
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT329baseA===16)",
+                        "condition": "(flag:MT329baseA===28)",
                         "true": [
                             {
                                 "type": "jumpHero",
                                 "loc": [
                                     7,
-                                    7
+                                    10
                                 ],
                                 "time": 50
                             },
@@ -4446,22 +5212,45 @@ main.floors.MT329=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "me109k6",
+                                "number": "fw190f8",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ],
+                                    [
+                                        9,
+                                        8
+                                    ],
+                                    [
+                                        9,
+                                        12
+                                    ],
+                                    [
+                                        5,
+                                        12
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
                                 "loc": [
                                     [
                                         6,
-                                        10
-                                    ],
-                                    [
-                                        7,
                                         9
                                     ],
                                     [
                                         8,
-                                        10
+                                        9
                                     ],
                                     [
-                                        7,
+                                        8,
+                                        11
+                                    ],
+                                    [
+                                        6,
                                         11
                                     ]
                                 ],
@@ -4474,12 +5263,8 @@ main.floors.MT329=
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT329baseA===24)",
+                                "condition": "(flag:MT329baseA===40)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][0]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -4491,7 +5276,7 @@ main.floors.MT329=
                                         "type": "openDoor",
                                         "loc": [
                                             7,
-                                            7
+                                            6
                                         ],
                                         "async": true
                                     },
@@ -4542,13 +5327,13 @@ main.floors.MT329=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT329baseA===8)",
+                "condition": "(flag:MT329baseA===16)",
                 "true": [
                     {
                         "type": "jumpHero",
                         "loc": [
                             7,
-                            7
+                            10
                         ],
                         "time": 50
                     },
@@ -4611,19 +5396,42 @@ main.floors.MT329=
                         "time": 0
                     },
                     {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                7,
+                                9
+                            ],
+                            [
+                                6,
+                                10
+                            ],
+                            [
+                                8,
+                                10
+                            ],
+                            [
+                                7,
+                                11
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
                         "type": "waitAsync"
                     }
                 ],
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT329baseA===16)",
+                        "condition": "(flag:MT329baseA===28)",
                         "true": [
                             {
                                 "type": "jumpHero",
                                 "loc": [
                                     7,
-                                    7
+                                    10
                                 ],
                                 "time": 50
                             },
@@ -4664,22 +5472,45 @@ main.floors.MT329=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "me109k6",
+                                "number": "fw190f8",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ],
+                                    [
+                                        9,
+                                        8
+                                    ],
+                                    [
+                                        9,
+                                        12
+                                    ],
+                                    [
+                                        5,
+                                        12
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
                                 "loc": [
                                     [
                                         6,
-                                        10
-                                    ],
-                                    [
-                                        7,
                                         9
                                     ],
                                     [
                                         8,
-                                        10
+                                        9
                                     ],
                                     [
-                                        7,
+                                        8,
+                                        11
+                                    ],
+                                    [
+                                        6,
                                         11
                                     ]
                                 ],
@@ -4692,12 +5523,8 @@ main.floors.MT329=
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT329baseA===24)",
+                                "condition": "(flag:MT329baseA===40)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][0]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -4709,7 +5536,7 @@ main.floors.MT329=
                                         "type": "openDoor",
                                         "loc": [
                                             7,
-                                            7
+                                            6
                                         ],
                                         "async": true
                                     },
@@ -4760,13 +5587,13 @@ main.floors.MT329=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT329baseA===8)",
+                "condition": "(flag:MT329baseA===16)",
                 "true": [
                     {
                         "type": "jumpHero",
                         "loc": [
                             7,
-                            7
+                            10
                         ],
                         "time": 50
                     },
@@ -4829,19 +5656,42 @@ main.floors.MT329=
                         "time": 0
                     },
                     {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                7,
+                                9
+                            ],
+                            [
+                                6,
+                                10
+                            ],
+                            [
+                                8,
+                                10
+                            ],
+                            [
+                                7,
+                                11
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
                         "type": "waitAsync"
                     }
                 ],
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT329baseA===16)",
+                        "condition": "(flag:MT329baseA===28)",
                         "true": [
                             {
                                 "type": "jumpHero",
                                 "loc": [
                                     7,
-                                    7
+                                    10
                                 ],
                                 "time": 50
                             },
@@ -4882,22 +5732,45 @@ main.floors.MT329=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "me109k6",
+                                "number": "fw190f8",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ],
+                                    [
+                                        9,
+                                        8
+                                    ],
+                                    [
+                                        9,
+                                        12
+                                    ],
+                                    [
+                                        5,
+                                        12
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
                                 "loc": [
                                     [
                                         6,
-                                        10
-                                    ],
-                                    [
-                                        7,
                                         9
                                     ],
                                     [
                                         8,
-                                        10
+                                        9
                                     ],
                                     [
-                                        7,
+                                        8,
+                                        11
+                                    ],
+                                    [
+                                        6,
                                         11
                                     ]
                                 ],
@@ -4910,12 +5783,8 @@ main.floors.MT329=
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT329baseA===24)",
+                                "condition": "(flag:MT329baseA===40)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][0]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -4927,7 +5796,7 @@ main.floors.MT329=
                                         "type": "openDoor",
                                         "loc": [
                                             7,
-                                            7
+                                            6
                                         ],
                                         "async": true
                                     },
@@ -4978,13 +5847,13 @@ main.floors.MT329=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT329baseA===8)",
+                "condition": "(flag:MT329baseA===16)",
                 "true": [
                     {
                         "type": "jumpHero",
                         "loc": [
                             7,
-                            7
+                            10
                         ],
                         "time": 50
                     },
@@ -5047,19 +5916,42 @@ main.floors.MT329=
                         "time": 0
                     },
                     {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                7,
+                                9
+                            ],
+                            [
+                                6,
+                                10
+                            ],
+                            [
+                                8,
+                                10
+                            ],
+                            [
+                                7,
+                                11
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
                         "type": "waitAsync"
                     }
                 ],
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT329baseA===16)",
+                        "condition": "(flag:MT329baseA===28)",
                         "true": [
                             {
                                 "type": "jumpHero",
                                 "loc": [
                                     7,
-                                    7
+                                    10
                                 ],
                                 "time": 50
                             },
@@ -5100,22 +5992,45 @@ main.floors.MT329=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "me109k6",
+                                "number": "fw190f8",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ],
+                                    [
+                                        9,
+                                        8
+                                    ],
+                                    [
+                                        9,
+                                        12
+                                    ],
+                                    [
+                                        5,
+                                        12
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
                                 "loc": [
                                     [
                                         6,
-                                        10
-                                    ],
-                                    [
-                                        7,
                                         9
                                     ],
                                     [
                                         8,
-                                        10
+                                        9
                                     ],
                                     [
-                                        7,
+                                        8,
+                                        11
+                                    ],
+                                    [
+                                        6,
                                         11
                                     ]
                                 ],
@@ -5128,12 +6043,8 @@ main.floors.MT329=
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT329baseA===24)",
+                                "condition": "(flag:MT329baseA===40)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][0]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -5145,7 +6056,7 @@ main.floors.MT329=
                                         "type": "openDoor",
                                         "loc": [
                                             7,
-                                            7
+                                            6
                                         ],
                                         "async": true
                                     },
@@ -5196,13 +6107,13 @@ main.floors.MT329=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT329baseA===8)",
+                "condition": "(flag:MT329baseA===16)",
                 "true": [
                     {
                         "type": "jumpHero",
                         "loc": [
                             7,
-                            7
+                            10
                         ],
                         "time": 50
                     },
@@ -5265,19 +6176,42 @@ main.floors.MT329=
                         "time": 0
                     },
                     {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                7,
+                                9
+                            ],
+                            [
+                                6,
+                                10
+                            ],
+                            [
+                                8,
+                                10
+                            ],
+                            [
+                                7,
+                                11
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
                         "type": "waitAsync"
                     }
                 ],
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT329baseA===16)",
+                        "condition": "(flag:MT329baseA===28)",
                         "true": [
                             {
                                 "type": "jumpHero",
                                 "loc": [
                                     7,
-                                    7
+                                    10
                                 ],
                                 "time": 50
                             },
@@ -5318,22 +6252,45 @@ main.floors.MT329=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "me109k6",
+                                "number": "fw190f8",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ],
+                                    [
+                                        9,
+                                        8
+                                    ],
+                                    [
+                                        9,
+                                        12
+                                    ],
+                                    [
+                                        5,
+                                        12
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
                                 "loc": [
                                     [
                                         6,
-                                        10
-                                    ],
-                                    [
-                                        7,
                                         9
                                     ],
                                     [
                                         8,
-                                        10
+                                        9
                                     ],
                                     [
-                                        7,
+                                        8,
+                                        11
+                                    ],
+                                    [
+                                        6,
                                         11
                                     ]
                                 ],
@@ -5346,12 +6303,8 @@ main.floors.MT329=
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT329baseA===24)",
+                                "condition": "(flag:MT329baseA===40)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][0]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -5363,7 +6316,7 @@ main.floors.MT329=
                                         "type": "openDoor",
                                         "loc": [
                                             7,
-                                            7
+                                            6
                                         ],
                                         "async": true
                                     },
@@ -5414,13 +6367,13 @@ main.floors.MT329=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT329baseA===8)",
+                "condition": "(flag:MT329baseA===16)",
                 "true": [
                     {
                         "type": "jumpHero",
                         "loc": [
                             7,
-                            7
+                            10
                         ],
                         "time": 50
                     },
@@ -5483,19 +6436,42 @@ main.floors.MT329=
                         "time": 0
                     },
                     {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                7,
+                                9
+                            ],
+                            [
+                                6,
+                                10
+                            ],
+                            [
+                                8,
+                                10
+                            ],
+                            [
+                                7,
+                                11
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
                         "type": "waitAsync"
                     }
                 ],
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT329baseA===16)",
+                        "condition": "(flag:MT329baseA===28)",
                         "true": [
                             {
                                 "type": "jumpHero",
                                 "loc": [
                                     7,
-                                    7
+                                    10
                                 ],
                                 "time": 50
                             },
@@ -5536,22 +6512,45 @@ main.floors.MT329=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "me109k6",
+                                "number": "fw190f8",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ],
+                                    [
+                                        9,
+                                        8
+                                    ],
+                                    [
+                                        9,
+                                        12
+                                    ],
+                                    [
+                                        5,
+                                        12
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer4h",
                                 "loc": [
                                     [
                                         6,
-                                        10
-                                    ],
-                                    [
-                                        7,
                                         9
                                     ],
                                     [
                                         8,
-                                        10
+                                        9
                                     ],
                                     [
-                                        7,
+                                        8,
+                                        11
+                                    ],
+                                    [
+                                        6,
                                         11
                                     ]
                                 ],
@@ -5564,12 +6563,8 @@ main.floors.MT329=
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT329baseA===24)",
+                                "condition": "(flag:MT329baseA===40)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][0]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -5581,7 +6576,7 @@ main.floors.MT329=
                                         "type": "openDoor",
                                         "loc": [
                                             7,
-                                            7
+                                            6
                                         ],
                                         "async": true
                                     },
@@ -5642,7 +6637,7 @@ main.floors.MT329=
                 "id": "specialDoor",
                 "loc": [
                     7,
-                    7
+                    6
                 ],
                 "async": true
             },
@@ -5712,13 +6707,63 @@ main.floors.MT329=
                 "time": 0
             },
             {
+                "type": "setBlock",
+                "number": "attankinf",
+                "loc": [
+                    [
+                        6,
+                        9
+                    ],
+                    [
+                        8,
+                        9
+                    ],
+                    [
+                        8,
+                        11
+                    ],
+                    [
+                        6,
+                        11
+                    ]
+                ],
+                "time": 0
+            },
+            {
+                "type": "setBlock",
+                "number": "jagpanzer",
+                "loc": [
+                    [
+                        5,
+                        8
+                    ],
+                    [
+                        9,
+                        8
+                    ],
+                    [
+                        9,
+                        12
+                    ],
+                    [
+                        5,
+                        12
+                    ]
+                ],
+                "time": 0
+            },
+            {
                 "type": "waitAsync"
             },
             {
                 "type": "playSound",
                 "name": "xinxinmagic.mp3"
             },
-            "\t[系统提示]击败敌人的多次反扑以占领区域"
+            "\t[系统提示]击败敌人的多次反扑以占领区域",
+            {
+                "type": "hide",
+                "remove": true
+            }
         ]
     },
     "autoEvent": {
@@ -5740,11 +6785,11 @@ main.floors.MT329=
     [142,142,142, 81,109,109,109, 86,109,109,109, 81,142,142,142],
     [635,635,635,228,109,  0,  0,  0,  0,  0,109,228,636,636,636],
     [109,109,109,109,109,  0,  0,  0,  0,  0,109,109,109,109,109],
-    [266,275,244,250, 85,  0,  0,  0,  0,  0, 85,275,275,275,275],
+    [266,275,244,390, 85,  0,  0,  0,  0,  0, 85,390,275,275,275],
     [ 82,152,152,152,109,  0,  0,  0,  0,  0,109, 82,152,152, 82],
-    [275,218,664,266,109,  0,  0,  0,  0,  0,109,228,152,  0,228],
-    [152,152,152, 82,109,109,109, 85,109,109,109,218,152,218,667],
-    [590,590,218,228,590,590,109, 89,109,519,519,519,152,650,650]
+    [275,218,664,218,109,  0,  0,  0,  0,  0,109,218,152,  0,228],
+    [152,152,152, 82,109,109,109, 85,109,109,109,228,152,218,667],
+    [636,636,266,228,636,636,109, 89,109,580,580,580,152,650,650]
 ],
     "bgmap": [
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],

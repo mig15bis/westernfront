@@ -37,7 +37,7 @@ main.floors.MT327=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT327baseB===8)",
+                "condition": "(flag:MT327baseB===12)",
                 "true": [
                     {
                         "type": "jumpHero",
@@ -64,7 +64,7 @@ main.floors.MT327=
                         "number": "me109k6",
                         "loc": [
                             [
-                                6,
+                                7,
                                 6
                             ]
                         ],
@@ -76,7 +76,7 @@ main.floors.MT327=
                         "loc": [
                             [
                                 6,
-                                8
+                                7
                             ]
                         ],
                         "time": 0
@@ -84,6 +84,127 @@ main.floors.MT327=
                     {
                         "type": "setBlock",
                         "number": "me109k6",
+                        "loc": [
+                            [
+                                8,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                7,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                5,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                5,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                8,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                7,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
                         "loc": [
                             [
                                 5,
@@ -94,29 +215,18 @@ main.floors.MT327=
                     },
                     {
                         "type": "setBlock",
-                        "number": "fw190f8",
+                        "number": "flak88",
                         "loc": [
                             [
-                                8,
-                                6
+                                7,
+                                9
                             ]
                         ],
                         "time": 0
                     },
                     {
                         "type": "setBlock",
-                        "number": "fw190f8",
-                        "loc": [
-                            [
-                                8,
-                                8
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "fw190f8",
+                        "number": "flak88",
                         "loc": [
                             [
                                 9,
@@ -132,7 +242,7 @@ main.floors.MT327=
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT327baseB===14)",
+                        "condition": "(flag:MT327baseB===28)",
                         "true": [
                             {
                                 "type": "jumpHero",
@@ -159,7 +269,7 @@ main.floors.MT327=
                                 "number": "pak40",
                                 "loc": [
                                     [
-                                        5,
+                                        7,
                                         5
                                     ]
                                 ],
@@ -170,8 +280,8 @@ main.floors.MT327=
                                 "number": "pak40",
                                 "loc": [
                                     [
-                                        9,
-                                        5
+                                        5,
+                                        7
                                     ]
                                 ],
                                 "time": 0
@@ -182,7 +292,7 @@ main.floors.MT327=
                                 "loc": [
                                     [
                                         9,
-                                        9
+                                        7
                                     ]
                                 ],
                                 "time": 0
@@ -190,6 +300,39 @@ main.floors.MT327=
                             {
                                 "type": "setBlock",
                                 "number": "pak40",
+                                "loc": [
+                                    [
+                                        7,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        5,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "sniper",
                                 "loc": [
                                     [
                                         5,
@@ -200,7 +343,18 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "sniper",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         7,
@@ -211,7 +365,18 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5d",
+                                "loc": [
+                                    [
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         8,
@@ -222,7 +387,7 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         7,
@@ -233,65 +398,10 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5g",
                                 "loc": [
                                     [
                                         6,
-                                        7
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        5,
-                                        8
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        6,
-                                        9
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        8,
-                                        9
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        9,
-                                        8
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        9,
                                         6
                                     ]
                                 ],
@@ -299,18 +409,40 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "panzer5g",
                                 "loc": [
                                     [
                                         8,
-                                        5
+                                        6
                                     ]
                                 ],
                                 "time": 0
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        6,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        8,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
                                 "loc": [
                                     [
                                         6,
@@ -321,11 +453,77 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "attankinf",
                                 "loc": [
                                     [
                                         5,
                                         6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        9,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        6,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        9,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
                                     ]
                                 ],
                                 "time": 0
@@ -337,12 +535,8 @@ main.floors.MT327=
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT327baseB===30)",
+                                "condition": "(flag:MT327baseB===52)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][1]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -361,7 +555,7 @@ main.floors.MT327=
                                     {
                                         "type": "openDoor",
                                         "loc": [
-                                            10,
+                                            11,
                                             7
                                         ],
                                         "async": true
@@ -405,7 +599,7 @@ main.floors.MT327=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT327baseB===8)",
+                "condition": "(flag:MT327baseB===12)",
                 "true": [
                     {
                         "type": "jumpHero",
@@ -432,7 +626,7 @@ main.floors.MT327=
                         "number": "me109k6",
                         "loc": [
                             [
-                                6,
+                                7,
                                 6
                             ]
                         ],
@@ -444,7 +638,7 @@ main.floors.MT327=
                         "loc": [
                             [
                                 6,
-                                8
+                                7
                             ]
                         ],
                         "time": 0
@@ -452,6 +646,127 @@ main.floors.MT327=
                     {
                         "type": "setBlock",
                         "number": "me109k6",
+                        "loc": [
+                            [
+                                8,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                7,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                5,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                5,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                8,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                7,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
                         "loc": [
                             [
                                 5,
@@ -462,29 +777,18 @@ main.floors.MT327=
                     },
                     {
                         "type": "setBlock",
-                        "number": "fw190f8",
+                        "number": "flak88",
                         "loc": [
                             [
-                                8,
-                                6
+                                7,
+                                9
                             ]
                         ],
                         "time": 0
                     },
                     {
                         "type": "setBlock",
-                        "number": "fw190f8",
-                        "loc": [
-                            [
-                                8,
-                                8
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "fw190f8",
+                        "number": "flak88",
                         "loc": [
                             [
                                 9,
@@ -500,7 +804,7 @@ main.floors.MT327=
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT327baseB===14)",
+                        "condition": "(flag:MT327baseB===28)",
                         "true": [
                             {
                                 "type": "jumpHero",
@@ -527,7 +831,7 @@ main.floors.MT327=
                                 "number": "pak40",
                                 "loc": [
                                     [
-                                        5,
+                                        7,
                                         5
                                     ]
                                 ],
@@ -538,8 +842,8 @@ main.floors.MT327=
                                 "number": "pak40",
                                 "loc": [
                                     [
-                                        9,
-                                        5
+                                        5,
+                                        7
                                     ]
                                 ],
                                 "time": 0
@@ -550,7 +854,7 @@ main.floors.MT327=
                                 "loc": [
                                     [
                                         9,
-                                        9
+                                        7
                                     ]
                                 ],
                                 "time": 0
@@ -558,6 +862,39 @@ main.floors.MT327=
                             {
                                 "type": "setBlock",
                                 "number": "pak40",
+                                "loc": [
+                                    [
+                                        7,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        5,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "sniper",
                                 "loc": [
                                     [
                                         5,
@@ -568,7 +905,18 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "sniper",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         7,
@@ -579,7 +927,18 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5d",
+                                "loc": [
+                                    [
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         8,
@@ -590,7 +949,7 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         7,
@@ -601,65 +960,10 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5g",
                                 "loc": [
                                     [
                                         6,
-                                        7
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        5,
-                                        8
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        6,
-                                        9
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        8,
-                                        9
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        9,
-                                        8
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        9,
                                         6
                                     ]
                                 ],
@@ -667,18 +971,40 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "panzer5g",
                                 "loc": [
                                     [
                                         8,
-                                        5
+                                        6
                                     ]
                                 ],
                                 "time": 0
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        6,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        8,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
                                 "loc": [
                                     [
                                         6,
@@ -689,11 +1015,77 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "attankinf",
                                 "loc": [
                                     [
                                         5,
                                         6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        9,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        6,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        9,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
                                     ]
                                 ],
                                 "time": 0
@@ -705,12 +1097,8 @@ main.floors.MT327=
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT327baseB===30)",
+                                "condition": "(flag:MT327baseB===52)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][1]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -729,7 +1117,7 @@ main.floors.MT327=
                                     {
                                         "type": "openDoor",
                                         "loc": [
-                                            10,
+                                            11,
                                             7
                                         ],
                                         "async": true
@@ -773,7 +1161,7 @@ main.floors.MT327=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT327baseB===8)",
+                "condition": "(flag:MT327baseB===12)",
                 "true": [
                     {
                         "type": "jumpHero",
@@ -800,7 +1188,7 @@ main.floors.MT327=
                         "number": "me109k6",
                         "loc": [
                             [
-                                6,
+                                7,
                                 6
                             ]
                         ],
@@ -812,7 +1200,7 @@ main.floors.MT327=
                         "loc": [
                             [
                                 6,
-                                8
+                                7
                             ]
                         ],
                         "time": 0
@@ -820,6 +1208,127 @@ main.floors.MT327=
                     {
                         "type": "setBlock",
                         "number": "me109k6",
+                        "loc": [
+                            [
+                                8,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                7,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                5,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                5,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                8,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                7,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
                         "loc": [
                             [
                                 5,
@@ -830,29 +1339,18 @@ main.floors.MT327=
                     },
                     {
                         "type": "setBlock",
-                        "number": "fw190f8",
+                        "number": "flak88",
                         "loc": [
                             [
-                                8,
-                                6
+                                7,
+                                9
                             ]
                         ],
                         "time": 0
                     },
                     {
                         "type": "setBlock",
-                        "number": "fw190f8",
-                        "loc": [
-                            [
-                                8,
-                                8
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "fw190f8",
+                        "number": "flak88",
                         "loc": [
                             [
                                 9,
@@ -868,7 +1366,7 @@ main.floors.MT327=
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT327baseB===14)",
+                        "condition": "(flag:MT327baseB===28)",
                         "true": [
                             {
                                 "type": "jumpHero",
@@ -895,7 +1393,7 @@ main.floors.MT327=
                                 "number": "pak40",
                                 "loc": [
                                     [
-                                        5,
+                                        7,
                                         5
                                     ]
                                 ],
@@ -906,8 +1404,8 @@ main.floors.MT327=
                                 "number": "pak40",
                                 "loc": [
                                     [
-                                        9,
-                                        5
+                                        5,
+                                        7
                                     ]
                                 ],
                                 "time": 0
@@ -918,7 +1416,7 @@ main.floors.MT327=
                                 "loc": [
                                     [
                                         9,
-                                        9
+                                        7
                                     ]
                                 ],
                                 "time": 0
@@ -926,6 +1424,39 @@ main.floors.MT327=
                             {
                                 "type": "setBlock",
                                 "number": "pak40",
+                                "loc": [
+                                    [
+                                        7,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        5,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "sniper",
                                 "loc": [
                                     [
                                         5,
@@ -936,7 +1467,18 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "sniper",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         7,
@@ -947,7 +1489,18 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5d",
+                                "loc": [
+                                    [
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         8,
@@ -958,7 +1511,7 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         7,
@@ -969,65 +1522,10 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5g",
                                 "loc": [
                                     [
                                         6,
-                                        7
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        5,
-                                        8
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        6,
-                                        9
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        8,
-                                        9
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        9,
-                                        8
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        9,
                                         6
                                     ]
                                 ],
@@ -1035,18 +1533,40 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "panzer5g",
                                 "loc": [
                                     [
                                         8,
-                                        5
+                                        6
                                     ]
                                 ],
                                 "time": 0
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        6,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        8,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
                                 "loc": [
                                     [
                                         6,
@@ -1057,11 +1577,77 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "attankinf",
                                 "loc": [
                                     [
                                         5,
                                         6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        9,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        6,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        9,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
                                     ]
                                 ],
                                 "time": 0
@@ -1073,12 +1659,8 @@ main.floors.MT327=
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT327baseB===30)",
+                                "condition": "(flag:MT327baseB===52)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][1]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -1097,7 +1679,7 @@ main.floors.MT327=
                                     {
                                         "type": "openDoor",
                                         "loc": [
-                                            10,
+                                            11,
                                             7
                                         ],
                                         "async": true
@@ -1141,7 +1723,7 @@ main.floors.MT327=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT327baseB===8)",
+                "condition": "(flag:MT327baseB===12)",
                 "true": [
                     {
                         "type": "jumpHero",
@@ -1168,7 +1750,7 @@ main.floors.MT327=
                         "number": "me109k6",
                         "loc": [
                             [
-                                6,
+                                7,
                                 6
                             ]
                         ],
@@ -1180,7 +1762,7 @@ main.floors.MT327=
                         "loc": [
                             [
                                 6,
-                                8
+                                7
                             ]
                         ],
                         "time": 0
@@ -1188,6 +1770,127 @@ main.floors.MT327=
                     {
                         "type": "setBlock",
                         "number": "me109k6",
+                        "loc": [
+                            [
+                                8,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                7,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                5,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                5,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                8,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                7,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
                         "loc": [
                             [
                                 5,
@@ -1198,29 +1901,18 @@ main.floors.MT327=
                     },
                     {
                         "type": "setBlock",
-                        "number": "fw190f8",
+                        "number": "flak88",
                         "loc": [
                             [
-                                8,
-                                6
+                                7,
+                                9
                             ]
                         ],
                         "time": 0
                     },
                     {
                         "type": "setBlock",
-                        "number": "fw190f8",
-                        "loc": [
-                            [
-                                8,
-                                8
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "fw190f8",
+                        "number": "flak88",
                         "loc": [
                             [
                                 9,
@@ -1236,7 +1928,7 @@ main.floors.MT327=
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT327baseB===14)",
+                        "condition": "(flag:MT327baseB===28)",
                         "true": [
                             {
                                 "type": "jumpHero",
@@ -1263,7 +1955,7 @@ main.floors.MT327=
                                 "number": "pak40",
                                 "loc": [
                                     [
-                                        5,
+                                        7,
                                         5
                                     ]
                                 ],
@@ -1274,8 +1966,8 @@ main.floors.MT327=
                                 "number": "pak40",
                                 "loc": [
                                     [
-                                        9,
-                                        5
+                                        5,
+                                        7
                                     ]
                                 ],
                                 "time": 0
@@ -1286,7 +1978,7 @@ main.floors.MT327=
                                 "loc": [
                                     [
                                         9,
-                                        9
+                                        7
                                     ]
                                 ],
                                 "time": 0
@@ -1294,6 +1986,39 @@ main.floors.MT327=
                             {
                                 "type": "setBlock",
                                 "number": "pak40",
+                                "loc": [
+                                    [
+                                        7,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        5,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "sniper",
                                 "loc": [
                                     [
                                         5,
@@ -1304,7 +2029,18 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "sniper",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         7,
@@ -1315,7 +2051,18 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5d",
+                                "loc": [
+                                    [
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         8,
@@ -1326,7 +2073,7 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         7,
@@ -1337,65 +2084,10 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5g",
                                 "loc": [
                                     [
                                         6,
-                                        7
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        5,
-                                        8
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        6,
-                                        9
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        8,
-                                        9
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        9,
-                                        8
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        9,
                                         6
                                     ]
                                 ],
@@ -1403,18 +2095,40 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "panzer5g",
                                 "loc": [
                                     [
                                         8,
-                                        5
+                                        6
                                     ]
                                 ],
                                 "time": 0
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        6,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        8,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
                                 "loc": [
                                     [
                                         6,
@@ -1425,11 +2139,77 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "attankinf",
                                 "loc": [
                                     [
                                         5,
                                         6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        9,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        6,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        9,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
                                     ]
                                 ],
                                 "time": 0
@@ -1441,12 +2221,8 @@ main.floors.MT327=
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT327baseB===30)",
+                                "condition": "(flag:MT327baseB===52)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][1]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -1465,7 +2241,7 @@ main.floors.MT327=
                                     {
                                         "type": "openDoor",
                                         "loc": [
-                                            10,
+                                            11,
                                             7
                                         ],
                                         "async": true
@@ -1509,7 +2285,7 @@ main.floors.MT327=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT327baseB===8)",
+                "condition": "(flag:MT327baseB===12)",
                 "true": [
                     {
                         "type": "jumpHero",
@@ -1536,7 +2312,7 @@ main.floors.MT327=
                         "number": "me109k6",
                         "loc": [
                             [
-                                6,
+                                7,
                                 6
                             ]
                         ],
@@ -1548,7 +2324,7 @@ main.floors.MT327=
                         "loc": [
                             [
                                 6,
-                                8
+                                7
                             ]
                         ],
                         "time": 0
@@ -1556,6 +2332,127 @@ main.floors.MT327=
                     {
                         "type": "setBlock",
                         "number": "me109k6",
+                        "loc": [
+                            [
+                                8,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                7,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                5,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                5,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                8,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                7,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
                         "loc": [
                             [
                                 5,
@@ -1566,29 +2463,18 @@ main.floors.MT327=
                     },
                     {
                         "type": "setBlock",
-                        "number": "fw190f8",
+                        "number": "flak88",
                         "loc": [
                             [
-                                8,
-                                6
+                                7,
+                                9
                             ]
                         ],
                         "time": 0
                     },
                     {
                         "type": "setBlock",
-                        "number": "fw190f8",
-                        "loc": [
-                            [
-                                8,
-                                8
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "fw190f8",
+                        "number": "flak88",
                         "loc": [
                             [
                                 9,
@@ -1604,7 +2490,7 @@ main.floors.MT327=
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT327baseB===14)",
+                        "condition": "(flag:MT327baseB===28)",
                         "true": [
                             {
                                 "type": "jumpHero",
@@ -1631,7 +2517,7 @@ main.floors.MT327=
                                 "number": "pak40",
                                 "loc": [
                                     [
-                                        5,
+                                        7,
                                         5
                                     ]
                                 ],
@@ -1642,8 +2528,8 @@ main.floors.MT327=
                                 "number": "pak40",
                                 "loc": [
                                     [
-                                        9,
-                                        5
+                                        5,
+                                        7
                                     ]
                                 ],
                                 "time": 0
@@ -1654,7 +2540,7 @@ main.floors.MT327=
                                 "loc": [
                                     [
                                         9,
-                                        9
+                                        7
                                     ]
                                 ],
                                 "time": 0
@@ -1662,6 +2548,39 @@ main.floors.MT327=
                             {
                                 "type": "setBlock",
                                 "number": "pak40",
+                                "loc": [
+                                    [
+                                        7,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        5,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "sniper",
                                 "loc": [
                                     [
                                         5,
@@ -1672,7 +2591,18 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "sniper",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         7,
@@ -1683,7 +2613,18 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5d",
+                                "loc": [
+                                    [
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         8,
@@ -1694,7 +2635,7 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         7,
@@ -1705,65 +2646,10 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5g",
                                 "loc": [
                                     [
                                         6,
-                                        7
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        5,
-                                        8
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        6,
-                                        9
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        8,
-                                        9
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        9,
-                                        8
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        9,
                                         6
                                     ]
                                 ],
@@ -1771,18 +2657,40 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "panzer5g",
                                 "loc": [
                                     [
                                         8,
-                                        5
+                                        6
                                     ]
                                 ],
                                 "time": 0
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        6,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        8,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
                                 "loc": [
                                     [
                                         6,
@@ -1793,11 +2701,77 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "attankinf",
                                 "loc": [
                                     [
                                         5,
                                         6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        9,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        6,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        9,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
                                     ]
                                 ],
                                 "time": 0
@@ -1809,12 +2783,8 @@ main.floors.MT327=
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT327baseB===30)",
+                                "condition": "(flag:MT327baseB===52)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][1]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -1833,7 +2803,7 @@ main.floors.MT327=
                                     {
                                         "type": "openDoor",
                                         "loc": [
-                                            10,
+                                            11,
                                             7
                                         ],
                                         "async": true
@@ -1877,7 +2847,7 @@ main.floors.MT327=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT327baseB===8)",
+                "condition": "(flag:MT327baseB===12)",
                 "true": [
                     {
                         "type": "jumpHero",
@@ -1904,7 +2874,7 @@ main.floors.MT327=
                         "number": "me109k6",
                         "loc": [
                             [
-                                6,
+                                7,
                                 6
                             ]
                         ],
@@ -1916,7 +2886,7 @@ main.floors.MT327=
                         "loc": [
                             [
                                 6,
-                                8
+                                7
                             ]
                         ],
                         "time": 0
@@ -1924,6 +2894,127 @@ main.floors.MT327=
                     {
                         "type": "setBlock",
                         "number": "me109k6",
+                        "loc": [
+                            [
+                                8,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                7,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                5,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                5,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                8,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                7,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
                         "loc": [
                             [
                                 5,
@@ -1934,29 +3025,18 @@ main.floors.MT327=
                     },
                     {
                         "type": "setBlock",
-                        "number": "fw190f8",
+                        "number": "flak88",
                         "loc": [
                             [
-                                8,
-                                6
+                                7,
+                                9
                             ]
                         ],
                         "time": 0
                     },
                     {
                         "type": "setBlock",
-                        "number": "fw190f8",
-                        "loc": [
-                            [
-                                8,
-                                8
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "fw190f8",
+                        "number": "flak88",
                         "loc": [
                             [
                                 9,
@@ -1972,7 +3052,7 @@ main.floors.MT327=
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT327baseB===14)",
+                        "condition": "(flag:MT327baseB===28)",
                         "true": [
                             {
                                 "type": "jumpHero",
@@ -1999,7 +3079,7 @@ main.floors.MT327=
                                 "number": "pak40",
                                 "loc": [
                                     [
-                                        5,
+                                        7,
                                         5
                                     ]
                                 ],
@@ -2010,8 +3090,8 @@ main.floors.MT327=
                                 "number": "pak40",
                                 "loc": [
                                     [
-                                        9,
-                                        5
+                                        5,
+                                        7
                                     ]
                                 ],
                                 "time": 0
@@ -2022,7 +3102,7 @@ main.floors.MT327=
                                 "loc": [
                                     [
                                         9,
-                                        9
+                                        7
                                     ]
                                 ],
                                 "time": 0
@@ -2030,6 +3110,39 @@ main.floors.MT327=
                             {
                                 "type": "setBlock",
                                 "number": "pak40",
+                                "loc": [
+                                    [
+                                        7,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        5,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "sniper",
                                 "loc": [
                                     [
                                         5,
@@ -2040,7 +3153,18 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "sniper",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         7,
@@ -2051,7 +3175,18 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5d",
+                                "loc": [
+                                    [
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         8,
@@ -2062,7 +3197,7 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         7,
@@ -2073,65 +3208,10 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5g",
                                 "loc": [
                                     [
                                         6,
-                                        7
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        5,
-                                        8
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        6,
-                                        9
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        8,
-                                        9
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        9,
-                                        8
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        9,
                                         6
                                     ]
                                 ],
@@ -2139,18 +3219,40 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "panzer5g",
                                 "loc": [
                                     [
                                         8,
-                                        5
+                                        6
                                     ]
                                 ],
                                 "time": 0
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        6,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        8,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
                                 "loc": [
                                     [
                                         6,
@@ -2161,11 +3263,77 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "attankinf",
                                 "loc": [
                                     [
                                         5,
                                         6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        9,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        6,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        9,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
                                     ]
                                 ],
                                 "time": 0
@@ -2177,12 +3345,8 @@ main.floors.MT327=
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT327baseB===30)",
+                                "condition": "(flag:MT327baseB===52)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][1]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -2201,7 +3365,7 @@ main.floors.MT327=
                                     {
                                         "type": "openDoor",
                                         "loc": [
-                                            10,
+                                            11,
                                             7
                                         ],
                                         "async": true
@@ -2245,7 +3409,7 @@ main.floors.MT327=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT327baseB===8)",
+                "condition": "(flag:MT327baseB===12)",
                 "true": [
                     {
                         "type": "jumpHero",
@@ -2272,7 +3436,7 @@ main.floors.MT327=
                         "number": "me109k6",
                         "loc": [
                             [
-                                6,
+                                7,
                                 6
                             ]
                         ],
@@ -2284,7 +3448,7 @@ main.floors.MT327=
                         "loc": [
                             [
                                 6,
-                                8
+                                7
                             ]
                         ],
                         "time": 0
@@ -2292,6 +3456,127 @@ main.floors.MT327=
                     {
                         "type": "setBlock",
                         "number": "me109k6",
+                        "loc": [
+                            [
+                                8,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                7,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                5,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                5,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                8,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                7,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
                         "loc": [
                             [
                                 5,
@@ -2302,29 +3587,18 @@ main.floors.MT327=
                     },
                     {
                         "type": "setBlock",
-                        "number": "fw190f8",
+                        "number": "flak88",
                         "loc": [
                             [
-                                8,
-                                6
+                                7,
+                                9
                             ]
                         ],
                         "time": 0
                     },
                     {
                         "type": "setBlock",
-                        "number": "fw190f8",
-                        "loc": [
-                            [
-                                8,
-                                8
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "fw190f8",
+                        "number": "flak88",
                         "loc": [
                             [
                                 9,
@@ -2340,7 +3614,7 @@ main.floors.MT327=
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT327baseB===14)",
+                        "condition": "(flag:MT327baseB===28)",
                         "true": [
                             {
                                 "type": "jumpHero",
@@ -2367,7 +3641,7 @@ main.floors.MT327=
                                 "number": "pak40",
                                 "loc": [
                                     [
-                                        5,
+                                        7,
                                         5
                                     ]
                                 ],
@@ -2378,8 +3652,8 @@ main.floors.MT327=
                                 "number": "pak40",
                                 "loc": [
                                     [
-                                        9,
-                                        5
+                                        5,
+                                        7
                                     ]
                                 ],
                                 "time": 0
@@ -2390,7 +3664,7 @@ main.floors.MT327=
                                 "loc": [
                                     [
                                         9,
-                                        9
+                                        7
                                     ]
                                 ],
                                 "time": 0
@@ -2398,6 +3672,39 @@ main.floors.MT327=
                             {
                                 "type": "setBlock",
                                 "number": "pak40",
+                                "loc": [
+                                    [
+                                        7,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        5,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "sniper",
                                 "loc": [
                                     [
                                         5,
@@ -2408,7 +3715,18 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "sniper",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         7,
@@ -2419,7 +3737,18 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5d",
+                                "loc": [
+                                    [
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         8,
@@ -2430,7 +3759,7 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         7,
@@ -2441,65 +3770,10 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5g",
                                 "loc": [
                                     [
                                         6,
-                                        7
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        5,
-                                        8
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        6,
-                                        9
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        8,
-                                        9
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        9,
-                                        8
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        9,
                                         6
                                     ]
                                 ],
@@ -2507,18 +3781,40 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "panzer5g",
                                 "loc": [
                                     [
                                         8,
-                                        5
+                                        6
                                     ]
                                 ],
                                 "time": 0
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        6,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        8,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
                                 "loc": [
                                     [
                                         6,
@@ -2529,11 +3825,77 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "attankinf",
                                 "loc": [
                                     [
                                         5,
                                         6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        9,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        6,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        9,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
                                     ]
                                 ],
                                 "time": 0
@@ -2545,12 +3907,8 @@ main.floors.MT327=
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT327baseB===30)",
+                                "condition": "(flag:MT327baseB===52)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][1]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -2569,7 +3927,7 @@ main.floors.MT327=
                                     {
                                         "type": "openDoor",
                                         "loc": [
-                                            10,
+                                            11,
                                             7
                                         ],
                                         "async": true
@@ -2613,7 +3971,7 @@ main.floors.MT327=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT327baseB===8)",
+                "condition": "(flag:MT327baseB===12)",
                 "true": [
                     {
                         "type": "jumpHero",
@@ -2640,7 +3998,7 @@ main.floors.MT327=
                         "number": "me109k6",
                         "loc": [
                             [
-                                6,
+                                7,
                                 6
                             ]
                         ],
@@ -2652,7 +4010,7 @@ main.floors.MT327=
                         "loc": [
                             [
                                 6,
-                                8
+                                7
                             ]
                         ],
                         "time": 0
@@ -2660,6 +4018,127 @@ main.floors.MT327=
                     {
                         "type": "setBlock",
                         "number": "me109k6",
+                        "loc": [
+                            [
+                                8,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                7,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                5,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                5,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                8,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                7,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
                         "loc": [
                             [
                                 5,
@@ -2670,29 +4149,18 @@ main.floors.MT327=
                     },
                     {
                         "type": "setBlock",
-                        "number": "fw190f8",
+                        "number": "flak88",
                         "loc": [
                             [
-                                8,
-                                6
+                                7,
+                                9
                             ]
                         ],
                         "time": 0
                     },
                     {
                         "type": "setBlock",
-                        "number": "fw190f8",
-                        "loc": [
-                            [
-                                8,
-                                8
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "fw190f8",
+                        "number": "flak88",
                         "loc": [
                             [
                                 9,
@@ -2708,7 +4176,7 @@ main.floors.MT327=
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT327baseB===14)",
+                        "condition": "(flag:MT327baseB===28)",
                         "true": [
                             {
                                 "type": "jumpHero",
@@ -2735,7 +4203,7 @@ main.floors.MT327=
                                 "number": "pak40",
                                 "loc": [
                                     [
-                                        5,
+                                        7,
                                         5
                                     ]
                                 ],
@@ -2746,8 +4214,8 @@ main.floors.MT327=
                                 "number": "pak40",
                                 "loc": [
                                     [
-                                        9,
-                                        5
+                                        5,
+                                        7
                                     ]
                                 ],
                                 "time": 0
@@ -2758,7 +4226,7 @@ main.floors.MT327=
                                 "loc": [
                                     [
                                         9,
-                                        9
+                                        7
                                     ]
                                 ],
                                 "time": 0
@@ -2766,6 +4234,39 @@ main.floors.MT327=
                             {
                                 "type": "setBlock",
                                 "number": "pak40",
+                                "loc": [
+                                    [
+                                        7,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        5,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "sniper",
                                 "loc": [
                                     [
                                         5,
@@ -2776,7 +4277,18 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "sniper",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         7,
@@ -2787,7 +4299,18 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5d",
+                                "loc": [
+                                    [
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         8,
@@ -2798,7 +4321,7 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         7,
@@ -2809,65 +4332,10 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5g",
                                 "loc": [
                                     [
                                         6,
-                                        7
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        5,
-                                        8
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        6,
-                                        9
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        8,
-                                        9
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        9,
-                                        8
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        9,
                                         6
                                     ]
                                 ],
@@ -2875,18 +4343,40 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "panzer5g",
                                 "loc": [
                                     [
                                         8,
-                                        5
+                                        6
                                     ]
                                 ],
                                 "time": 0
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        6,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        8,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
                                 "loc": [
                                     [
                                         6,
@@ -2897,11 +4387,77 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "attankinf",
                                 "loc": [
                                     [
                                         5,
                                         6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        9,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        6,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        9,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
                                     ]
                                 ],
                                 "time": 0
@@ -2913,12 +4469,8 @@ main.floors.MT327=
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT327baseB===30)",
+                                "condition": "(flag:MT327baseB===52)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][1]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -2937,7 +4489,7 @@ main.floors.MT327=
                                     {
                                         "type": "openDoor",
                                         "loc": [
-                                            10,
+                                            11,
                                             7
                                         ],
                                         "async": true
@@ -2981,7 +4533,7 @@ main.floors.MT327=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT327baseB===8)",
+                "condition": "(flag:MT327baseB===12)",
                 "true": [
                     {
                         "type": "jumpHero",
@@ -3008,7 +4560,7 @@ main.floors.MT327=
                         "number": "me109k6",
                         "loc": [
                             [
-                                6,
+                                7,
                                 6
                             ]
                         ],
@@ -3020,7 +4572,7 @@ main.floors.MT327=
                         "loc": [
                             [
                                 6,
-                                8
+                                7
                             ]
                         ],
                         "time": 0
@@ -3028,6 +4580,127 @@ main.floors.MT327=
                     {
                         "type": "setBlock",
                         "number": "me109k6",
+                        "loc": [
+                            [
+                                8,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                7,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                5,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                5,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                8,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                7,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
                         "loc": [
                             [
                                 5,
@@ -3038,29 +4711,18 @@ main.floors.MT327=
                     },
                     {
                         "type": "setBlock",
-                        "number": "fw190f8",
+                        "number": "flak88",
                         "loc": [
                             [
-                                8,
-                                6
+                                7,
+                                9
                             ]
                         ],
                         "time": 0
                     },
                     {
                         "type": "setBlock",
-                        "number": "fw190f8",
-                        "loc": [
-                            [
-                                8,
-                                8
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "fw190f8",
+                        "number": "flak88",
                         "loc": [
                             [
                                 9,
@@ -3076,7 +4738,7 @@ main.floors.MT327=
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT327baseB===14)",
+                        "condition": "(flag:MT327baseB===28)",
                         "true": [
                             {
                                 "type": "jumpHero",
@@ -3103,7 +4765,7 @@ main.floors.MT327=
                                 "number": "pak40",
                                 "loc": [
                                     [
-                                        5,
+                                        7,
                                         5
                                     ]
                                 ],
@@ -3114,8 +4776,8 @@ main.floors.MT327=
                                 "number": "pak40",
                                 "loc": [
                                     [
-                                        9,
-                                        5
+                                        5,
+                                        7
                                     ]
                                 ],
                                 "time": 0
@@ -3126,7 +4788,7 @@ main.floors.MT327=
                                 "loc": [
                                     [
                                         9,
-                                        9
+                                        7
                                     ]
                                 ],
                                 "time": 0
@@ -3134,6 +4796,39 @@ main.floors.MT327=
                             {
                                 "type": "setBlock",
                                 "number": "pak40",
+                                "loc": [
+                                    [
+                                        7,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        5,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "sniper",
                                 "loc": [
                                     [
                                         5,
@@ -3144,7 +4839,18 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "sniper",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         7,
@@ -3155,7 +4861,18 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5d",
+                                "loc": [
+                                    [
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         8,
@@ -3166,7 +4883,7 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         7,
@@ -3177,65 +4894,10 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5g",
                                 "loc": [
                                     [
                                         6,
-                                        7
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        5,
-                                        8
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        6,
-                                        9
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        8,
-                                        9
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        9,
-                                        8
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        9,
                                         6
                                     ]
                                 ],
@@ -3243,18 +4905,40 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "panzer5g",
                                 "loc": [
                                     [
                                         8,
-                                        5
+                                        6
                                     ]
                                 ],
                                 "time": 0
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        6,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        8,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
                                 "loc": [
                                     [
                                         6,
@@ -3265,11 +4949,77 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "attankinf",
                                 "loc": [
                                     [
                                         5,
                                         6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        9,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        6,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        9,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
                                     ]
                                 ],
                                 "time": 0
@@ -3281,12 +5031,8 @@ main.floors.MT327=
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT327baseB===30)",
+                                "condition": "(flag:MT327baseB===52)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][1]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -3305,7 +5051,7 @@ main.floors.MT327=
                                     {
                                         "type": "openDoor",
                                         "loc": [
-                                            10,
+                                            11,
                                             7
                                         ],
                                         "async": true
@@ -3349,7 +5095,7 @@ main.floors.MT327=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT327baseB===8)",
+                "condition": "(flag:MT327baseB===12)",
                 "true": [
                     {
                         "type": "jumpHero",
@@ -3376,7 +5122,7 @@ main.floors.MT327=
                         "number": "me109k6",
                         "loc": [
                             [
-                                6,
+                                7,
                                 6
                             ]
                         ],
@@ -3388,7 +5134,7 @@ main.floors.MT327=
                         "loc": [
                             [
                                 6,
-                                8
+                                7
                             ]
                         ],
                         "time": 0
@@ -3396,6 +5142,127 @@ main.floors.MT327=
                     {
                         "type": "setBlock",
                         "number": "me109k6",
+                        "loc": [
+                            [
+                                8,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                7,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                5,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                5,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                8,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                7,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
                         "loc": [
                             [
                                 5,
@@ -3406,29 +5273,18 @@ main.floors.MT327=
                     },
                     {
                         "type": "setBlock",
-                        "number": "fw190f8",
+                        "number": "flak88",
                         "loc": [
                             [
-                                8,
-                                6
+                                7,
+                                9
                             ]
                         ],
                         "time": 0
                     },
                     {
                         "type": "setBlock",
-                        "number": "fw190f8",
-                        "loc": [
-                            [
-                                8,
-                                8
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "fw190f8",
+                        "number": "flak88",
                         "loc": [
                             [
                                 9,
@@ -3444,7 +5300,7 @@ main.floors.MT327=
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT327baseB===14)",
+                        "condition": "(flag:MT327baseB===28)",
                         "true": [
                             {
                                 "type": "jumpHero",
@@ -3471,7 +5327,7 @@ main.floors.MT327=
                                 "number": "pak40",
                                 "loc": [
                                     [
-                                        5,
+                                        7,
                                         5
                                     ]
                                 ],
@@ -3482,8 +5338,8 @@ main.floors.MT327=
                                 "number": "pak40",
                                 "loc": [
                                     [
-                                        9,
-                                        5
+                                        5,
+                                        7
                                     ]
                                 ],
                                 "time": 0
@@ -3494,7 +5350,7 @@ main.floors.MT327=
                                 "loc": [
                                     [
                                         9,
-                                        9
+                                        7
                                     ]
                                 ],
                                 "time": 0
@@ -3502,6 +5358,39 @@ main.floors.MT327=
                             {
                                 "type": "setBlock",
                                 "number": "pak40",
+                                "loc": [
+                                    [
+                                        7,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        5,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "sniper",
                                 "loc": [
                                     [
                                         5,
@@ -3512,7 +5401,18 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "sniper",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         7,
@@ -3523,7 +5423,18 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5d",
+                                "loc": [
+                                    [
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         8,
@@ -3534,7 +5445,7 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         7,
@@ -3545,65 +5456,10 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5g",
                                 "loc": [
                                     [
                                         6,
-                                        7
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        5,
-                                        8
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        6,
-                                        9
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        8,
-                                        9
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        9,
-                                        8
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        9,
                                         6
                                     ]
                                 ],
@@ -3611,18 +5467,40 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "panzer5g",
                                 "loc": [
                                     [
                                         8,
-                                        5
+                                        6
                                     ]
                                 ],
                                 "time": 0
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        6,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        8,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
                                 "loc": [
                                     [
                                         6,
@@ -3633,11 +5511,77 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "attankinf",
                                 "loc": [
                                     [
                                         5,
                                         6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        9,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        6,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        9,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
                                     ]
                                 ],
                                 "time": 0
@@ -3649,12 +5593,8 @@ main.floors.MT327=
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT327baseB===30)",
+                                "condition": "(flag:MT327baseB===52)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][1]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -3673,7 +5613,7 @@ main.floors.MT327=
                                     {
                                         "type": "openDoor",
                                         "loc": [
-                                            10,
+                                            11,
                                             7
                                         ],
                                         "async": true
@@ -3717,7 +5657,7 @@ main.floors.MT327=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT327baseB===8)",
+                "condition": "(flag:MT327baseB===12)",
                 "true": [
                     {
                         "type": "jumpHero",
@@ -3744,7 +5684,7 @@ main.floors.MT327=
                         "number": "me109k6",
                         "loc": [
                             [
-                                6,
+                                7,
                                 6
                             ]
                         ],
@@ -3756,7 +5696,7 @@ main.floors.MT327=
                         "loc": [
                             [
                                 6,
-                                8
+                                7
                             ]
                         ],
                         "time": 0
@@ -3764,6 +5704,127 @@ main.floors.MT327=
                     {
                         "type": "setBlock",
                         "number": "me109k6",
+                        "loc": [
+                            [
+                                8,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                7,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                5,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                5,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                8,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                7,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
                         "loc": [
                             [
                                 5,
@@ -3774,29 +5835,18 @@ main.floors.MT327=
                     },
                     {
                         "type": "setBlock",
-                        "number": "fw190f8",
+                        "number": "flak88",
                         "loc": [
                             [
-                                8,
-                                6
+                                7,
+                                9
                             ]
                         ],
                         "time": 0
                     },
                     {
                         "type": "setBlock",
-                        "number": "fw190f8",
-                        "loc": [
-                            [
-                                8,
-                                8
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "fw190f8",
+                        "number": "flak88",
                         "loc": [
                             [
                                 9,
@@ -3812,7 +5862,7 @@ main.floors.MT327=
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT327baseB===14)",
+                        "condition": "(flag:MT327baseB===28)",
                         "true": [
                             {
                                 "type": "jumpHero",
@@ -3839,7 +5889,7 @@ main.floors.MT327=
                                 "number": "pak40",
                                 "loc": [
                                     [
-                                        5,
+                                        7,
                                         5
                                     ]
                                 ],
@@ -3850,8 +5900,8 @@ main.floors.MT327=
                                 "number": "pak40",
                                 "loc": [
                                     [
-                                        9,
-                                        5
+                                        5,
+                                        7
                                     ]
                                 ],
                                 "time": 0
@@ -3862,7 +5912,7 @@ main.floors.MT327=
                                 "loc": [
                                     [
                                         9,
-                                        9
+                                        7
                                     ]
                                 ],
                                 "time": 0
@@ -3870,6 +5920,39 @@ main.floors.MT327=
                             {
                                 "type": "setBlock",
                                 "number": "pak40",
+                                "loc": [
+                                    [
+                                        7,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        5,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "sniper",
                                 "loc": [
                                     [
                                         5,
@@ -3880,7 +5963,18 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "sniper",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         7,
@@ -3891,7 +5985,18 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5d",
+                                "loc": [
+                                    [
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         8,
@@ -3902,7 +6007,7 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         7,
@@ -3913,65 +6018,10 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5g",
                                 "loc": [
                                     [
                                         6,
-                                        7
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        5,
-                                        8
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        6,
-                                        9
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        8,
-                                        9
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        9,
-                                        8
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        9,
                                         6
                                     ]
                                 ],
@@ -3979,18 +6029,40 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "panzer5g",
                                 "loc": [
                                     [
                                         8,
-                                        5
+                                        6
                                     ]
                                 ],
                                 "time": 0
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        6,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        8,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
                                 "loc": [
                                     [
                                         6,
@@ -4001,11 +6073,77 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "attankinf",
                                 "loc": [
                                     [
                                         5,
                                         6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        9,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        6,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        9,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
                                     ]
                                 ],
                                 "time": 0
@@ -4017,12 +6155,8 @@ main.floors.MT327=
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT327baseB===30)",
+                                "condition": "(flag:MT327baseB===52)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][1]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -4041,7 +6175,7 @@ main.floors.MT327=
                                     {
                                         "type": "openDoor",
                                         "loc": [
-                                            10,
+                                            11,
                                             7
                                         ],
                                         "async": true
@@ -4085,7 +6219,7 @@ main.floors.MT327=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT327baseB===8)",
+                "condition": "(flag:MT327baseB===12)",
                 "true": [
                     {
                         "type": "jumpHero",
@@ -4112,7 +6246,7 @@ main.floors.MT327=
                         "number": "me109k6",
                         "loc": [
                             [
-                                6,
+                                7,
                                 6
                             ]
                         ],
@@ -4124,7 +6258,7 @@ main.floors.MT327=
                         "loc": [
                             [
                                 6,
-                                8
+                                7
                             ]
                         ],
                         "time": 0
@@ -4132,6 +6266,127 @@ main.floors.MT327=
                     {
                         "type": "setBlock",
                         "number": "me109k6",
+                        "loc": [
+                            [
+                                8,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                7,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                5,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                5,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                8,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                7,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
                         "loc": [
                             [
                                 5,
@@ -4142,29 +6397,18 @@ main.floors.MT327=
                     },
                     {
                         "type": "setBlock",
-                        "number": "fw190f8",
+                        "number": "flak88",
                         "loc": [
                             [
-                                8,
-                                6
+                                7,
+                                9
                             ]
                         ],
                         "time": 0
                     },
                     {
                         "type": "setBlock",
-                        "number": "fw190f8",
-                        "loc": [
-                            [
-                                8,
-                                8
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "fw190f8",
+                        "number": "flak88",
                         "loc": [
                             [
                                 9,
@@ -4180,7 +6424,7 @@ main.floors.MT327=
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT327baseB===14)",
+                        "condition": "(flag:MT327baseB===28)",
                         "true": [
                             {
                                 "type": "jumpHero",
@@ -4207,7 +6451,7 @@ main.floors.MT327=
                                 "number": "pak40",
                                 "loc": [
                                     [
-                                        5,
+                                        7,
                                         5
                                     ]
                                 ],
@@ -4218,8 +6462,8 @@ main.floors.MT327=
                                 "number": "pak40",
                                 "loc": [
                                     [
-                                        9,
-                                        5
+                                        5,
+                                        7
                                     ]
                                 ],
                                 "time": 0
@@ -4230,7 +6474,7 @@ main.floors.MT327=
                                 "loc": [
                                     [
                                         9,
-                                        9
+                                        7
                                     ]
                                 ],
                                 "time": 0
@@ -4238,6 +6482,39 @@ main.floors.MT327=
                             {
                                 "type": "setBlock",
                                 "number": "pak40",
+                                "loc": [
+                                    [
+                                        7,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        5,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "sniper",
                                 "loc": [
                                     [
                                         5,
@@ -4248,7 +6525,18 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "sniper",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         7,
@@ -4259,7 +6547,18 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5d",
+                                "loc": [
+                                    [
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         8,
@@ -4270,7 +6569,7 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         7,
@@ -4281,65 +6580,10 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5g",
                                 "loc": [
                                     [
                                         6,
-                                        7
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        5,
-                                        8
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        6,
-                                        9
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        8,
-                                        9
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        9,
-                                        8
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        9,
                                         6
                                     ]
                                 ],
@@ -4347,18 +6591,40 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "panzer5g",
                                 "loc": [
                                     [
                                         8,
-                                        5
+                                        6
                                     ]
                                 ],
                                 "time": 0
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        6,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        8,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
                                 "loc": [
                                     [
                                         6,
@@ -4369,11 +6635,77 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "attankinf",
                                 "loc": [
                                     [
                                         5,
                                         6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        9,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        6,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        9,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
                                     ]
                                 ],
                                 "time": 0
@@ -4385,12 +6717,8 @@ main.floors.MT327=
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT327baseB===30)",
+                                "condition": "(flag:MT327baseB===52)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][1]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -4409,7 +6737,7 @@ main.floors.MT327=
                                     {
                                         "type": "openDoor",
                                         "loc": [
-                                            10,
+                                            11,
                                             7
                                         ],
                                         "async": true
@@ -4453,7 +6781,7 @@ main.floors.MT327=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT327baseB===8)",
+                "condition": "(flag:MT327baseB===12)",
                 "true": [
                     {
                         "type": "jumpHero",
@@ -4480,7 +6808,7 @@ main.floors.MT327=
                         "number": "me109k6",
                         "loc": [
                             [
-                                6,
+                                7,
                                 6
                             ]
                         ],
@@ -4492,7 +6820,7 @@ main.floors.MT327=
                         "loc": [
                             [
                                 6,
-                                8
+                                7
                             ]
                         ],
                         "time": 0
@@ -4500,6 +6828,127 @@ main.floors.MT327=
                     {
                         "type": "setBlock",
                         "number": "me109k6",
+                        "loc": [
+                            [
+                                8,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                7,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                5,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                5,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                8,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                7,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
                         "loc": [
                             [
                                 5,
@@ -4510,29 +6959,18 @@ main.floors.MT327=
                     },
                     {
                         "type": "setBlock",
-                        "number": "fw190f8",
+                        "number": "flak88",
                         "loc": [
                             [
-                                8,
-                                6
+                                7,
+                                9
                             ]
                         ],
                         "time": 0
                     },
                     {
                         "type": "setBlock",
-                        "number": "fw190f8",
-                        "loc": [
-                            [
-                                8,
-                                8
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "fw190f8",
+                        "number": "flak88",
                         "loc": [
                             [
                                 9,
@@ -4548,7 +6986,7 @@ main.floors.MT327=
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT327baseB===14)",
+                        "condition": "(flag:MT327baseB===28)",
                         "true": [
                             {
                                 "type": "jumpHero",
@@ -4575,7 +7013,7 @@ main.floors.MT327=
                                 "number": "pak40",
                                 "loc": [
                                     [
-                                        5,
+                                        7,
                                         5
                                     ]
                                 ],
@@ -4586,8 +7024,8 @@ main.floors.MT327=
                                 "number": "pak40",
                                 "loc": [
                                     [
-                                        9,
-                                        5
+                                        5,
+                                        7
                                     ]
                                 ],
                                 "time": 0
@@ -4598,7 +7036,7 @@ main.floors.MT327=
                                 "loc": [
                                     [
                                         9,
-                                        9
+                                        7
                                     ]
                                 ],
                                 "time": 0
@@ -4606,6 +7044,39 @@ main.floors.MT327=
                             {
                                 "type": "setBlock",
                                 "number": "pak40",
+                                "loc": [
+                                    [
+                                        7,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        5,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "sniper",
                                 "loc": [
                                     [
                                         5,
@@ -4616,7 +7087,18 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "sniper",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         7,
@@ -4627,7 +7109,18 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5d",
+                                "loc": [
+                                    [
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         8,
@@ -4638,7 +7131,7 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         7,
@@ -4649,65 +7142,10 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5g",
                                 "loc": [
                                     [
                                         6,
-                                        7
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        5,
-                                        8
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        6,
-                                        9
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        8,
-                                        9
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        9,
-                                        8
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        9,
                                         6
                                     ]
                                 ],
@@ -4715,18 +7153,40 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "panzer5g",
                                 "loc": [
                                     [
                                         8,
-                                        5
+                                        6
                                     ]
                                 ],
                                 "time": 0
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        6,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        8,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
                                 "loc": [
                                     [
                                         6,
@@ -4737,11 +7197,77 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "attankinf",
                                 "loc": [
                                     [
                                         5,
                                         6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        9,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        6,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        9,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
                                     ]
                                 ],
                                 "time": 0
@@ -4753,12 +7279,8 @@ main.floors.MT327=
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT327baseB===30)",
+                                "condition": "(flag:MT327baseB===52)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][1]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -4777,7 +7299,7 @@ main.floors.MT327=
                                     {
                                         "type": "openDoor",
                                         "loc": [
-                                            10,
+                                            11,
                                             7
                                         ],
                                         "async": true
@@ -4821,7 +7343,7 @@ main.floors.MT327=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT327baseB===8)",
+                "condition": "(flag:MT327baseB===12)",
                 "true": [
                     {
                         "type": "jumpHero",
@@ -4848,7 +7370,7 @@ main.floors.MT327=
                         "number": "me109k6",
                         "loc": [
                             [
-                                6,
+                                7,
                                 6
                             ]
                         ],
@@ -4860,7 +7382,7 @@ main.floors.MT327=
                         "loc": [
                             [
                                 6,
-                                8
+                                7
                             ]
                         ],
                         "time": 0
@@ -4868,6 +7390,127 @@ main.floors.MT327=
                     {
                         "type": "setBlock",
                         "number": "me109k6",
+                        "loc": [
+                            [
+                                8,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                7,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                5,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                5,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                8,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                7,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
                         "loc": [
                             [
                                 5,
@@ -4878,29 +7521,18 @@ main.floors.MT327=
                     },
                     {
                         "type": "setBlock",
-                        "number": "fw190f8",
+                        "number": "flak88",
                         "loc": [
                             [
-                                8,
-                                6
+                                7,
+                                9
                             ]
                         ],
                         "time": 0
                     },
                     {
                         "type": "setBlock",
-                        "number": "fw190f8",
-                        "loc": [
-                            [
-                                8,
-                                8
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "fw190f8",
+                        "number": "flak88",
                         "loc": [
                             [
                                 9,
@@ -4916,7 +7548,7 @@ main.floors.MT327=
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT327baseB===14)",
+                        "condition": "(flag:MT327baseB===28)",
                         "true": [
                             {
                                 "type": "jumpHero",
@@ -4943,7 +7575,7 @@ main.floors.MT327=
                                 "number": "pak40",
                                 "loc": [
                                     [
-                                        5,
+                                        7,
                                         5
                                     ]
                                 ],
@@ -4954,8 +7586,8 @@ main.floors.MT327=
                                 "number": "pak40",
                                 "loc": [
                                     [
-                                        9,
-                                        5
+                                        5,
+                                        7
                                     ]
                                 ],
                                 "time": 0
@@ -4966,7 +7598,7 @@ main.floors.MT327=
                                 "loc": [
                                     [
                                         9,
-                                        9
+                                        7
                                     ]
                                 ],
                                 "time": 0
@@ -4974,6 +7606,39 @@ main.floors.MT327=
                             {
                                 "type": "setBlock",
                                 "number": "pak40",
+                                "loc": [
+                                    [
+                                        7,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        5,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "sniper",
                                 "loc": [
                                     [
                                         5,
@@ -4984,7 +7649,18 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "sniper",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         7,
@@ -4995,7 +7671,18 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5d",
+                                "loc": [
+                                    [
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         8,
@@ -5006,7 +7693,7 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         7,
@@ -5017,65 +7704,10 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5g",
                                 "loc": [
                                     [
                                         6,
-                                        7
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        5,
-                                        8
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        6,
-                                        9
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        8,
-                                        9
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        9,
-                                        8
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        9,
                                         6
                                     ]
                                 ],
@@ -5083,18 +7715,40 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "panzer5g",
                                 "loc": [
                                     [
                                         8,
-                                        5
+                                        6
                                     ]
                                 ],
                                 "time": 0
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        6,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        8,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
                                 "loc": [
                                     [
                                         6,
@@ -5105,11 +7759,77 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "attankinf",
                                 "loc": [
                                     [
                                         5,
                                         6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        9,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        6,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        9,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
                                     ]
                                 ],
                                 "time": 0
@@ -5121,12 +7841,8 @@ main.floors.MT327=
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT327baseB===30)",
+                                "condition": "(flag:MT327baseB===52)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][1]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -5145,7 +7861,7 @@ main.floors.MT327=
                                     {
                                         "type": "openDoor",
                                         "loc": [
-                                            10,
+                                            11,
                                             7
                                         ],
                                         "async": true
@@ -5189,7 +7905,7 @@ main.floors.MT327=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT327baseB===8)",
+                "condition": "(flag:MT327baseB===12)",
                 "true": [
                     {
                         "type": "jumpHero",
@@ -5216,7 +7932,7 @@ main.floors.MT327=
                         "number": "me109k6",
                         "loc": [
                             [
-                                6,
+                                7,
                                 6
                             ]
                         ],
@@ -5228,7 +7944,7 @@ main.floors.MT327=
                         "loc": [
                             [
                                 6,
-                                8
+                                7
                             ]
                         ],
                         "time": 0
@@ -5236,6 +7952,127 @@ main.floors.MT327=
                     {
                         "type": "setBlock",
                         "number": "me109k6",
+                        "loc": [
+                            [
+                                8,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                7,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                5,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                5,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                8,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                7,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
                         "loc": [
                             [
                                 5,
@@ -5246,29 +8083,18 @@ main.floors.MT327=
                     },
                     {
                         "type": "setBlock",
-                        "number": "fw190f8",
+                        "number": "flak88",
                         "loc": [
                             [
-                                8,
-                                6
+                                7,
+                                9
                             ]
                         ],
                         "time": 0
                     },
                     {
                         "type": "setBlock",
-                        "number": "fw190f8",
-                        "loc": [
-                            [
-                                8,
-                                8
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "fw190f8",
+                        "number": "flak88",
                         "loc": [
                             [
                                 9,
@@ -5284,7 +8110,7 @@ main.floors.MT327=
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT327baseB===14)",
+                        "condition": "(flag:MT327baseB===28)",
                         "true": [
                             {
                                 "type": "jumpHero",
@@ -5311,7 +8137,7 @@ main.floors.MT327=
                                 "number": "pak40",
                                 "loc": [
                                     [
-                                        5,
+                                        7,
                                         5
                                     ]
                                 ],
@@ -5322,8 +8148,8 @@ main.floors.MT327=
                                 "number": "pak40",
                                 "loc": [
                                     [
-                                        9,
-                                        5
+                                        5,
+                                        7
                                     ]
                                 ],
                                 "time": 0
@@ -5334,7 +8160,7 @@ main.floors.MT327=
                                 "loc": [
                                     [
                                         9,
-                                        9
+                                        7
                                     ]
                                 ],
                                 "time": 0
@@ -5342,6 +8168,39 @@ main.floors.MT327=
                             {
                                 "type": "setBlock",
                                 "number": "pak40",
+                                "loc": [
+                                    [
+                                        7,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        5,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "sniper",
                                 "loc": [
                                     [
                                         5,
@@ -5352,7 +8211,18 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "sniper",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         7,
@@ -5363,7 +8233,18 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5d",
+                                "loc": [
+                                    [
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         8,
@@ -5374,7 +8255,7 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         7,
@@ -5385,65 +8266,10 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5g",
                                 "loc": [
                                     [
                                         6,
-                                        7
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        5,
-                                        8
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        6,
-                                        9
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        8,
-                                        9
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        9,
-                                        8
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        9,
                                         6
                                     ]
                                 ],
@@ -5451,18 +8277,40 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "panzer5g",
                                 "loc": [
                                     [
                                         8,
-                                        5
+                                        6
                                     ]
                                 ],
                                 "time": 0
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        6,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        8,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
                                 "loc": [
                                     [
                                         6,
@@ -5473,11 +8321,77 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "attankinf",
                                 "loc": [
                                     [
                                         5,
                                         6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        9,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        6,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        9,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
                                     ]
                                 ],
                                 "time": 0
@@ -5489,12 +8403,8 @@ main.floors.MT327=
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT327baseB===30)",
+                                "condition": "(flag:MT327baseB===52)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][1]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -5513,7 +8423,7 @@ main.floors.MT327=
                                     {
                                         "type": "openDoor",
                                         "loc": [
-                                            10,
+                                            11,
                                             7
                                         ],
                                         "async": true
@@ -5557,7 +8467,7 @@ main.floors.MT327=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT327baseB===8)",
+                "condition": "(flag:MT327baseB===12)",
                 "true": [
                     {
                         "type": "jumpHero",
@@ -5584,7 +8494,7 @@ main.floors.MT327=
                         "number": "me109k6",
                         "loc": [
                             [
-                                6,
+                                7,
                                 6
                             ]
                         ],
@@ -5596,7 +8506,7 @@ main.floors.MT327=
                         "loc": [
                             [
                                 6,
-                                8
+                                7
                             ]
                         ],
                         "time": 0
@@ -5604,6 +8514,127 @@ main.floors.MT327=
                     {
                         "type": "setBlock",
                         "number": "me109k6",
+                        "loc": [
+                            [
+                                8,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                7,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                5,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                5,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                8,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                7,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
                         "loc": [
                             [
                                 5,
@@ -5614,29 +8645,18 @@ main.floors.MT327=
                     },
                     {
                         "type": "setBlock",
-                        "number": "fw190f8",
+                        "number": "flak88",
                         "loc": [
                             [
-                                8,
-                                6
+                                7,
+                                9
                             ]
                         ],
                         "time": 0
                     },
                     {
                         "type": "setBlock",
-                        "number": "fw190f8",
-                        "loc": [
-                            [
-                                8,
-                                8
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "fw190f8",
+                        "number": "flak88",
                         "loc": [
                             [
                                 9,
@@ -5652,7 +8672,7 @@ main.floors.MT327=
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT327baseB===14)",
+                        "condition": "(flag:MT327baseB===28)",
                         "true": [
                             {
                                 "type": "jumpHero",
@@ -5679,7 +8699,7 @@ main.floors.MT327=
                                 "number": "pak40",
                                 "loc": [
                                     [
-                                        5,
+                                        7,
                                         5
                                     ]
                                 ],
@@ -5690,8 +8710,8 @@ main.floors.MT327=
                                 "number": "pak40",
                                 "loc": [
                                     [
-                                        9,
-                                        5
+                                        5,
+                                        7
                                     ]
                                 ],
                                 "time": 0
@@ -5702,7 +8722,7 @@ main.floors.MT327=
                                 "loc": [
                                     [
                                         9,
-                                        9
+                                        7
                                     ]
                                 ],
                                 "time": 0
@@ -5710,6 +8730,39 @@ main.floors.MT327=
                             {
                                 "type": "setBlock",
                                 "number": "pak40",
+                                "loc": [
+                                    [
+                                        7,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        5,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "sniper",
                                 "loc": [
                                     [
                                         5,
@@ -5720,7 +8773,18 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "sniper",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         7,
@@ -5731,7 +8795,18 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5d",
+                                "loc": [
+                                    [
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         8,
@@ -5742,7 +8817,7 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         7,
@@ -5753,65 +8828,10 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5g",
                                 "loc": [
                                     [
                                         6,
-                                        7
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        5,
-                                        8
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        6,
-                                        9
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        8,
-                                        9
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        9,
-                                        8
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        9,
                                         6
                                     ]
                                 ],
@@ -5819,18 +8839,40 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "panzer5g",
                                 "loc": [
                                     [
                                         8,
-                                        5
+                                        6
                                     ]
                                 ],
                                 "time": 0
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        6,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        8,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
                                 "loc": [
                                     [
                                         6,
@@ -5841,11 +8883,77 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "attankinf",
                                 "loc": [
                                     [
                                         5,
                                         6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        9,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        6,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        9,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
                                     ]
                                 ],
                                 "time": 0
@@ -5857,12 +8965,8 @@ main.floors.MT327=
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT327baseB===30)",
+                                "condition": "(flag:MT327baseB===52)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][1]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -5881,7 +8985,7 @@ main.floors.MT327=
                                     {
                                         "type": "openDoor",
                                         "loc": [
-                                            10,
+                                            11,
                                             7
                                         ],
                                         "async": true
@@ -5925,7 +9029,7 @@ main.floors.MT327=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT327baseB===8)",
+                "condition": "(flag:MT327baseB===12)",
                 "true": [
                     {
                         "type": "jumpHero",
@@ -5952,7 +9056,7 @@ main.floors.MT327=
                         "number": "me109k6",
                         "loc": [
                             [
-                                6,
+                                7,
                                 6
                             ]
                         ],
@@ -5964,7 +9068,7 @@ main.floors.MT327=
                         "loc": [
                             [
                                 6,
-                                8
+                                7
                             ]
                         ],
                         "time": 0
@@ -5972,6 +9076,127 @@ main.floors.MT327=
                     {
                         "type": "setBlock",
                         "number": "me109k6",
+                        "loc": [
+                            [
+                                8,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                7,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                5,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                5,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                8,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                7,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
                         "loc": [
                             [
                                 5,
@@ -5982,29 +9207,18 @@ main.floors.MT327=
                     },
                     {
                         "type": "setBlock",
-                        "number": "fw190f8",
+                        "number": "flak88",
                         "loc": [
                             [
-                                8,
-                                6
+                                7,
+                                9
                             ]
                         ],
                         "time": 0
                     },
                     {
                         "type": "setBlock",
-                        "number": "fw190f8",
-                        "loc": [
-                            [
-                                8,
-                                8
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "fw190f8",
+                        "number": "flak88",
                         "loc": [
                             [
                                 9,
@@ -6020,7 +9234,7 @@ main.floors.MT327=
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT327baseB===14)",
+                        "condition": "(flag:MT327baseB===28)",
                         "true": [
                             {
                                 "type": "jumpHero",
@@ -6047,7 +9261,7 @@ main.floors.MT327=
                                 "number": "pak40",
                                 "loc": [
                                     [
-                                        5,
+                                        7,
                                         5
                                     ]
                                 ],
@@ -6058,8 +9272,8 @@ main.floors.MT327=
                                 "number": "pak40",
                                 "loc": [
                                     [
-                                        9,
-                                        5
+                                        5,
+                                        7
                                     ]
                                 ],
                                 "time": 0
@@ -6070,7 +9284,7 @@ main.floors.MT327=
                                 "loc": [
                                     [
                                         9,
-                                        9
+                                        7
                                     ]
                                 ],
                                 "time": 0
@@ -6078,6 +9292,39 @@ main.floors.MT327=
                             {
                                 "type": "setBlock",
                                 "number": "pak40",
+                                "loc": [
+                                    [
+                                        7,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        5,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "sniper",
                                 "loc": [
                                     [
                                         5,
@@ -6088,7 +9335,18 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "sniper",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         7,
@@ -6099,7 +9357,18 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5d",
+                                "loc": [
+                                    [
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         8,
@@ -6110,7 +9379,7 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         7,
@@ -6121,65 +9390,10 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5g",
                                 "loc": [
                                     [
                                         6,
-                                        7
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        5,
-                                        8
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        6,
-                                        9
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        8,
-                                        9
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        9,
-                                        8
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        9,
                                         6
                                     ]
                                 ],
@@ -6187,18 +9401,40 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "panzer5g",
                                 "loc": [
                                     [
                                         8,
-                                        5
+                                        6
                                     ]
                                 ],
                                 "time": 0
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        6,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        8,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
                                 "loc": [
                                     [
                                         6,
@@ -6209,11 +9445,77 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "attankinf",
                                 "loc": [
                                     [
                                         5,
                                         6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        9,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        6,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        9,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
                                     ]
                                 ],
                                 "time": 0
@@ -6225,12 +9527,8 @@ main.floors.MT327=
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT327baseB===30)",
+                                "condition": "(flag:MT327baseB===52)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][1]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -6249,7 +9547,7 @@ main.floors.MT327=
                                     {
                                         "type": "openDoor",
                                         "loc": [
-                                            10,
+                                            11,
                                             7
                                         ],
                                         "async": true
@@ -6293,7 +9591,7 @@ main.floors.MT327=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT327baseB===8)",
+                "condition": "(flag:MT327baseB===12)",
                 "true": [
                     {
                         "type": "jumpHero",
@@ -6320,7 +9618,7 @@ main.floors.MT327=
                         "number": "me109k6",
                         "loc": [
                             [
-                                6,
+                                7,
                                 6
                             ]
                         ],
@@ -6332,7 +9630,7 @@ main.floors.MT327=
                         "loc": [
                             [
                                 6,
-                                8
+                                7
                             ]
                         ],
                         "time": 0
@@ -6340,6 +9638,127 @@ main.floors.MT327=
                     {
                         "type": "setBlock",
                         "number": "me109k6",
+                        "loc": [
+                            [
+                                8,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                7,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                5,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                5,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                8,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                7,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
                         "loc": [
                             [
                                 5,
@@ -6350,29 +9769,18 @@ main.floors.MT327=
                     },
                     {
                         "type": "setBlock",
-                        "number": "fw190f8",
+                        "number": "flak88",
                         "loc": [
                             [
-                                8,
-                                6
+                                7,
+                                9
                             ]
                         ],
                         "time": 0
                     },
                     {
                         "type": "setBlock",
-                        "number": "fw190f8",
-                        "loc": [
-                            [
-                                8,
-                                8
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "fw190f8",
+                        "number": "flak88",
                         "loc": [
                             [
                                 9,
@@ -6388,7 +9796,7 @@ main.floors.MT327=
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT327baseB===14)",
+                        "condition": "(flag:MT327baseB===28)",
                         "true": [
                             {
                                 "type": "jumpHero",
@@ -6415,7 +9823,7 @@ main.floors.MT327=
                                 "number": "pak40",
                                 "loc": [
                                     [
-                                        5,
+                                        7,
                                         5
                                     ]
                                 ],
@@ -6426,8 +9834,8 @@ main.floors.MT327=
                                 "number": "pak40",
                                 "loc": [
                                     [
-                                        9,
-                                        5
+                                        5,
+                                        7
                                     ]
                                 ],
                                 "time": 0
@@ -6438,7 +9846,7 @@ main.floors.MT327=
                                 "loc": [
                                     [
                                         9,
-                                        9
+                                        7
                                     ]
                                 ],
                                 "time": 0
@@ -6446,6 +9854,39 @@ main.floors.MT327=
                             {
                                 "type": "setBlock",
                                 "number": "pak40",
+                                "loc": [
+                                    [
+                                        7,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        5,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "sniper",
                                 "loc": [
                                     [
                                         5,
@@ -6456,7 +9897,18 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "sniper",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         7,
@@ -6467,7 +9919,18 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5d",
+                                "loc": [
+                                    [
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         8,
@@ -6478,7 +9941,7 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         7,
@@ -6489,65 +9952,10 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5g",
                                 "loc": [
                                     [
                                         6,
-                                        7
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        5,
-                                        8
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        6,
-                                        9
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        8,
-                                        9
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        9,
-                                        8
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        9,
                                         6
                                     ]
                                 ],
@@ -6555,18 +9963,40 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "panzer5g",
                                 "loc": [
                                     [
                                         8,
-                                        5
+                                        6
                                     ]
                                 ],
                                 "time": 0
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        6,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        8,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
                                 "loc": [
                                     [
                                         6,
@@ -6577,11 +10007,77 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "attankinf",
                                 "loc": [
                                     [
                                         5,
                                         6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        9,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        6,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        9,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
                                     ]
                                 ],
                                 "time": 0
@@ -6593,12 +10089,8 @@ main.floors.MT327=
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT327baseB===30)",
+                                "condition": "(flag:MT327baseB===52)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][1]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -6617,7 +10109,7 @@ main.floors.MT327=
                                     {
                                         "type": "openDoor",
                                         "loc": [
-                                            10,
+                                            11,
                                             7
                                         ],
                                         "async": true
@@ -6661,7 +10153,7 @@ main.floors.MT327=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT327baseB===8)",
+                "condition": "(flag:MT327baseB===12)",
                 "true": [
                     {
                         "type": "jumpHero",
@@ -6688,7 +10180,7 @@ main.floors.MT327=
                         "number": "me109k6",
                         "loc": [
                             [
-                                6,
+                                7,
                                 6
                             ]
                         ],
@@ -6700,7 +10192,7 @@ main.floors.MT327=
                         "loc": [
                             [
                                 6,
-                                8
+                                7
                             ]
                         ],
                         "time": 0
@@ -6708,6 +10200,127 @@ main.floors.MT327=
                     {
                         "type": "setBlock",
                         "number": "me109k6",
+                        "loc": [
+                            [
+                                8,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                7,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                5,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                5,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                8,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                7,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
                         "loc": [
                             [
                                 5,
@@ -6718,29 +10331,18 @@ main.floors.MT327=
                     },
                     {
                         "type": "setBlock",
-                        "number": "fw190f8",
+                        "number": "flak88",
                         "loc": [
                             [
-                                8,
-                                6
+                                7,
+                                9
                             ]
                         ],
                         "time": 0
                     },
                     {
                         "type": "setBlock",
-                        "number": "fw190f8",
-                        "loc": [
-                            [
-                                8,
-                                8
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "fw190f8",
+                        "number": "flak88",
                         "loc": [
                             [
                                 9,
@@ -6756,7 +10358,7 @@ main.floors.MT327=
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT327baseB===14)",
+                        "condition": "(flag:MT327baseB===28)",
                         "true": [
                             {
                                 "type": "jumpHero",
@@ -6783,7 +10385,7 @@ main.floors.MT327=
                                 "number": "pak40",
                                 "loc": [
                                     [
-                                        5,
+                                        7,
                                         5
                                     ]
                                 ],
@@ -6794,8 +10396,8 @@ main.floors.MT327=
                                 "number": "pak40",
                                 "loc": [
                                     [
-                                        9,
-                                        5
+                                        5,
+                                        7
                                     ]
                                 ],
                                 "time": 0
@@ -6806,7 +10408,7 @@ main.floors.MT327=
                                 "loc": [
                                     [
                                         9,
-                                        9
+                                        7
                                     ]
                                 ],
                                 "time": 0
@@ -6814,6 +10416,39 @@ main.floors.MT327=
                             {
                                 "type": "setBlock",
                                 "number": "pak40",
+                                "loc": [
+                                    [
+                                        7,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        5,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "sniper",
                                 "loc": [
                                     [
                                         5,
@@ -6824,7 +10459,18 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "sniper",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         7,
@@ -6835,7 +10481,18 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5d",
+                                "loc": [
+                                    [
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         8,
@@ -6846,7 +10503,7 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         7,
@@ -6857,65 +10514,10 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5g",
                                 "loc": [
                                     [
                                         6,
-                                        7
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        5,
-                                        8
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        6,
-                                        9
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        8,
-                                        9
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        9,
-                                        8
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        9,
                                         6
                                     ]
                                 ],
@@ -6923,18 +10525,40 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "panzer5g",
                                 "loc": [
                                     [
                                         8,
-                                        5
+                                        6
                                     ]
                                 ],
                                 "time": 0
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        6,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        8,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
                                 "loc": [
                                     [
                                         6,
@@ -6945,11 +10569,77 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "attankinf",
                                 "loc": [
                                     [
                                         5,
                                         6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        9,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        6,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        9,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
                                     ]
                                 ],
                                 "time": 0
@@ -6961,12 +10651,8 @@ main.floors.MT327=
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT327baseB===30)",
+                                "condition": "(flag:MT327baseB===52)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][1]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -6985,7 +10671,7 @@ main.floors.MT327=
                                     {
                                         "type": "openDoor",
                                         "loc": [
-                                            10,
+                                            11,
                                             7
                                         ],
                                         "async": true
@@ -7029,7 +10715,7 @@ main.floors.MT327=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT327baseB===8)",
+                "condition": "(flag:MT327baseB===12)",
                 "true": [
                     {
                         "type": "jumpHero",
@@ -7056,7 +10742,7 @@ main.floors.MT327=
                         "number": "me109k6",
                         "loc": [
                             [
-                                6,
+                                7,
                                 6
                             ]
                         ],
@@ -7068,7 +10754,7 @@ main.floors.MT327=
                         "loc": [
                             [
                                 6,
-                                8
+                                7
                             ]
                         ],
                         "time": 0
@@ -7076,6 +10762,127 @@ main.floors.MT327=
                     {
                         "type": "setBlock",
                         "number": "me109k6",
+                        "loc": [
+                            [
+                                8,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                7,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                5,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                5,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                8,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                7,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
                         "loc": [
                             [
                                 5,
@@ -7086,29 +10893,18 @@ main.floors.MT327=
                     },
                     {
                         "type": "setBlock",
-                        "number": "fw190f8",
+                        "number": "flak88",
                         "loc": [
                             [
-                                8,
-                                6
+                                7,
+                                9
                             ]
                         ],
                         "time": 0
                     },
                     {
                         "type": "setBlock",
-                        "number": "fw190f8",
-                        "loc": [
-                            [
-                                8,
-                                8
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "fw190f8",
+                        "number": "flak88",
                         "loc": [
                             [
                                 9,
@@ -7124,7 +10920,7 @@ main.floors.MT327=
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT327baseB===14)",
+                        "condition": "(flag:MT327baseB===28)",
                         "true": [
                             {
                                 "type": "jumpHero",
@@ -7151,7 +10947,7 @@ main.floors.MT327=
                                 "number": "pak40",
                                 "loc": [
                                     [
-                                        5,
+                                        7,
                                         5
                                     ]
                                 ],
@@ -7162,8 +10958,8 @@ main.floors.MT327=
                                 "number": "pak40",
                                 "loc": [
                                     [
-                                        9,
-                                        5
+                                        5,
+                                        7
                                     ]
                                 ],
                                 "time": 0
@@ -7174,7 +10970,7 @@ main.floors.MT327=
                                 "loc": [
                                     [
                                         9,
-                                        9
+                                        7
                                     ]
                                 ],
                                 "time": 0
@@ -7182,6 +10978,39 @@ main.floors.MT327=
                             {
                                 "type": "setBlock",
                                 "number": "pak40",
+                                "loc": [
+                                    [
+                                        7,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        5,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "sniper",
                                 "loc": [
                                     [
                                         5,
@@ -7192,7 +11021,18 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "sniper",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         7,
@@ -7203,7 +11043,18 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5d",
+                                "loc": [
+                                    [
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         8,
@@ -7214,7 +11065,7 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         7,
@@ -7225,65 +11076,10 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5g",
                                 "loc": [
                                     [
                                         6,
-                                        7
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        5,
-                                        8
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        6,
-                                        9
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        8,
-                                        9
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        9,
-                                        8
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        9,
                                         6
                                     ]
                                 ],
@@ -7291,18 +11087,40 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "panzer5g",
                                 "loc": [
                                     [
                                         8,
-                                        5
+                                        6
                                     ]
                                 ],
                                 "time": 0
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        6,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        8,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
                                 "loc": [
                                     [
                                         6,
@@ -7313,11 +11131,77 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "attankinf",
                                 "loc": [
                                     [
                                         5,
                                         6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        9,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        6,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        9,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
                                     ]
                                 ],
                                 "time": 0
@@ -7329,12 +11213,8 @@ main.floors.MT327=
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT327baseB===30)",
+                                "condition": "(flag:MT327baseB===52)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][1]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -7353,7 +11233,7 @@ main.floors.MT327=
                                     {
                                         "type": "openDoor",
                                         "loc": [
-                                            10,
+                                            11,
                                             7
                                         ],
                                         "async": true
@@ -7397,7 +11277,7 @@ main.floors.MT327=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT327baseB===8)",
+                "condition": "(flag:MT327baseB===12)",
                 "true": [
                     {
                         "type": "jumpHero",
@@ -7424,7 +11304,7 @@ main.floors.MT327=
                         "number": "me109k6",
                         "loc": [
                             [
-                                6,
+                                7,
                                 6
                             ]
                         ],
@@ -7436,7 +11316,7 @@ main.floors.MT327=
                         "loc": [
                             [
                                 6,
-                                8
+                                7
                             ]
                         ],
                         "time": 0
@@ -7444,6 +11324,127 @@ main.floors.MT327=
                     {
                         "type": "setBlock",
                         "number": "me109k6",
+                        "loc": [
+                            [
+                                8,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                7,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                5,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                5,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                8,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                7,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
                         "loc": [
                             [
                                 5,
@@ -7454,29 +11455,18 @@ main.floors.MT327=
                     },
                     {
                         "type": "setBlock",
-                        "number": "fw190f8",
+                        "number": "flak88",
                         "loc": [
                             [
-                                8,
-                                6
+                                7,
+                                9
                             ]
                         ],
                         "time": 0
                     },
                     {
                         "type": "setBlock",
-                        "number": "fw190f8",
-                        "loc": [
-                            [
-                                8,
-                                8
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "fw190f8",
+                        "number": "flak88",
                         "loc": [
                             [
                                 9,
@@ -7492,7 +11482,7 @@ main.floors.MT327=
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT327baseB===14)",
+                        "condition": "(flag:MT327baseB===28)",
                         "true": [
                             {
                                 "type": "jumpHero",
@@ -7519,7 +11509,7 @@ main.floors.MT327=
                                 "number": "pak40",
                                 "loc": [
                                     [
-                                        5,
+                                        7,
                                         5
                                     ]
                                 ],
@@ -7530,8 +11520,8 @@ main.floors.MT327=
                                 "number": "pak40",
                                 "loc": [
                                     [
-                                        9,
-                                        5
+                                        5,
+                                        7
                                     ]
                                 ],
                                 "time": 0
@@ -7542,7 +11532,7 @@ main.floors.MT327=
                                 "loc": [
                                     [
                                         9,
-                                        9
+                                        7
                                     ]
                                 ],
                                 "time": 0
@@ -7550,6 +11540,39 @@ main.floors.MT327=
                             {
                                 "type": "setBlock",
                                 "number": "pak40",
+                                "loc": [
+                                    [
+                                        7,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        5,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "sniper",
                                 "loc": [
                                     [
                                         5,
@@ -7560,7 +11583,18 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "sniper",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         7,
@@ -7571,7 +11605,18 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5d",
+                                "loc": [
+                                    [
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         8,
@@ -7582,7 +11627,7 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         7,
@@ -7593,65 +11638,10 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5g",
                                 "loc": [
                                     [
                                         6,
-                                        7
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        5,
-                                        8
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        6,
-                                        9
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        8,
-                                        9
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        9,
-                                        8
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        9,
                                         6
                                     ]
                                 ],
@@ -7659,18 +11649,40 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "panzer5g",
                                 "loc": [
                                     [
                                         8,
-                                        5
+                                        6
                                     ]
                                 ],
                                 "time": 0
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        6,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        8,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
                                 "loc": [
                                     [
                                         6,
@@ -7681,11 +11693,77 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "attankinf",
                                 "loc": [
                                     [
                                         5,
                                         6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        9,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        6,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        9,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
                                     ]
                                 ],
                                 "time": 0
@@ -7697,12 +11775,8 @@ main.floors.MT327=
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT327baseB===30)",
+                                "condition": "(flag:MT327baseB===52)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][1]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -7721,7 +11795,7 @@ main.floors.MT327=
                                     {
                                         "type": "openDoor",
                                         "loc": [
-                                            10,
+                                            11,
                                             7
                                         ],
                                         "async": true
@@ -7765,7 +11839,7 @@ main.floors.MT327=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT327baseB===8)",
+                "condition": "(flag:MT327baseB===12)",
                 "true": [
                     {
                         "type": "jumpHero",
@@ -7792,7 +11866,7 @@ main.floors.MT327=
                         "number": "me109k6",
                         "loc": [
                             [
-                                6,
+                                7,
                                 6
                             ]
                         ],
@@ -7804,7 +11878,7 @@ main.floors.MT327=
                         "loc": [
                             [
                                 6,
-                                8
+                                7
                             ]
                         ],
                         "time": 0
@@ -7812,6 +11886,127 @@ main.floors.MT327=
                     {
                         "type": "setBlock",
                         "number": "me109k6",
+                        "loc": [
+                            [
+                                8,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                7,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                5,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                5,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                8,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                7,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
                         "loc": [
                             [
                                 5,
@@ -7822,29 +12017,18 @@ main.floors.MT327=
                     },
                     {
                         "type": "setBlock",
-                        "number": "fw190f8",
+                        "number": "flak88",
                         "loc": [
                             [
-                                8,
-                                6
+                                7,
+                                9
                             ]
                         ],
                         "time": 0
                     },
                     {
                         "type": "setBlock",
-                        "number": "fw190f8",
-                        "loc": [
-                            [
-                                8,
-                                8
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "fw190f8",
+                        "number": "flak88",
                         "loc": [
                             [
                                 9,
@@ -7860,7 +12044,7 @@ main.floors.MT327=
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT327baseB===14)",
+                        "condition": "(flag:MT327baseB===28)",
                         "true": [
                             {
                                 "type": "jumpHero",
@@ -7887,7 +12071,7 @@ main.floors.MT327=
                                 "number": "pak40",
                                 "loc": [
                                     [
-                                        5,
+                                        7,
                                         5
                                     ]
                                 ],
@@ -7898,8 +12082,8 @@ main.floors.MT327=
                                 "number": "pak40",
                                 "loc": [
                                     [
-                                        9,
-                                        5
+                                        5,
+                                        7
                                     ]
                                 ],
                                 "time": 0
@@ -7910,7 +12094,7 @@ main.floors.MT327=
                                 "loc": [
                                     [
                                         9,
-                                        9
+                                        7
                                     ]
                                 ],
                                 "time": 0
@@ -7918,6 +12102,39 @@ main.floors.MT327=
                             {
                                 "type": "setBlock",
                                 "number": "pak40",
+                                "loc": [
+                                    [
+                                        7,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        5,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "sniper",
                                 "loc": [
                                     [
                                         5,
@@ -7928,7 +12145,18 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "sniper",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         7,
@@ -7939,7 +12167,18 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5d",
+                                "loc": [
+                                    [
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         8,
@@ -7950,7 +12189,7 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         7,
@@ -7961,65 +12200,10 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5g",
                                 "loc": [
                                     [
                                         6,
-                                        7
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        5,
-                                        8
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        6,
-                                        9
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        8,
-                                        9
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        9,
-                                        8
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        9,
                                         6
                                     ]
                                 ],
@@ -8027,18 +12211,40 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "panzer5g",
                                 "loc": [
                                     [
                                         8,
-                                        5
+                                        6
                                     ]
                                 ],
                                 "time": 0
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        6,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        8,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
                                 "loc": [
                                     [
                                         6,
@@ -8049,11 +12255,77 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "attankinf",
                                 "loc": [
                                     [
                                         5,
                                         6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        9,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        6,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        9,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
                                     ]
                                 ],
                                 "time": 0
@@ -8065,12 +12337,8 @@ main.floors.MT327=
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT327baseB===30)",
+                                "condition": "(flag:MT327baseB===52)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][1]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -8089,7 +12357,7 @@ main.floors.MT327=
                                     {
                                         "type": "openDoor",
                                         "loc": [
-                                            10,
+                                            11,
                                             7
                                         ],
                                         "async": true
@@ -8133,7 +12401,7 @@ main.floors.MT327=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT327baseB===8)",
+                "condition": "(flag:MT327baseB===12)",
                 "true": [
                     {
                         "type": "jumpHero",
@@ -8160,7 +12428,7 @@ main.floors.MT327=
                         "number": "me109k6",
                         "loc": [
                             [
-                                6,
+                                7,
                                 6
                             ]
                         ],
@@ -8172,7 +12440,7 @@ main.floors.MT327=
                         "loc": [
                             [
                                 6,
-                                8
+                                7
                             ]
                         ],
                         "time": 0
@@ -8180,6 +12448,127 @@ main.floors.MT327=
                     {
                         "type": "setBlock",
                         "number": "me109k6",
+                        "loc": [
+                            [
+                                8,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                7,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                5,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                5,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                8,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                7,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
                         "loc": [
                             [
                                 5,
@@ -8190,29 +12579,18 @@ main.floors.MT327=
                     },
                     {
                         "type": "setBlock",
-                        "number": "fw190f8",
+                        "number": "flak88",
                         "loc": [
                             [
-                                8,
-                                6
+                                7,
+                                9
                             ]
                         ],
                         "time": 0
                     },
                     {
                         "type": "setBlock",
-                        "number": "fw190f8",
-                        "loc": [
-                            [
-                                8,
-                                8
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "fw190f8",
+                        "number": "flak88",
                         "loc": [
                             [
                                 9,
@@ -8228,7 +12606,7 @@ main.floors.MT327=
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT327baseB===14)",
+                        "condition": "(flag:MT327baseB===28)",
                         "true": [
                             {
                                 "type": "jumpHero",
@@ -8255,7 +12633,7 @@ main.floors.MT327=
                                 "number": "pak40",
                                 "loc": [
                                     [
-                                        5,
+                                        7,
                                         5
                                     ]
                                 ],
@@ -8266,8 +12644,8 @@ main.floors.MT327=
                                 "number": "pak40",
                                 "loc": [
                                     [
-                                        9,
-                                        5
+                                        5,
+                                        7
                                     ]
                                 ],
                                 "time": 0
@@ -8278,7 +12656,7 @@ main.floors.MT327=
                                 "loc": [
                                     [
                                         9,
-                                        9
+                                        7
                                     ]
                                 ],
                                 "time": 0
@@ -8286,6 +12664,39 @@ main.floors.MT327=
                             {
                                 "type": "setBlock",
                                 "number": "pak40",
+                                "loc": [
+                                    [
+                                        7,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        5,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "sniper",
                                 "loc": [
                                     [
                                         5,
@@ -8296,7 +12707,18 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "sniper",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         7,
@@ -8307,7 +12729,18 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5d",
+                                "loc": [
+                                    [
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         8,
@@ -8318,7 +12751,7 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         7,
@@ -8329,65 +12762,10 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5g",
                                 "loc": [
                                     [
                                         6,
-                                        7
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        5,
-                                        8
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        6,
-                                        9
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        8,
-                                        9
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        9,
-                                        8
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        9,
                                         6
                                     ]
                                 ],
@@ -8395,18 +12773,40 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "panzer5g",
                                 "loc": [
                                     [
                                         8,
-                                        5
+                                        6
                                     ]
                                 ],
                                 "time": 0
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        6,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        8,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
                                 "loc": [
                                     [
                                         6,
@@ -8417,11 +12817,77 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "attankinf",
                                 "loc": [
                                     [
                                         5,
                                         6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        9,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        6,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        9,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
                                     ]
                                 ],
                                 "time": 0
@@ -8433,12 +12899,8 @@ main.floors.MT327=
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT327baseB===30)",
+                                "condition": "(flag:MT327baseB===52)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][1]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -8457,7 +12919,7 @@ main.floors.MT327=
                                     {
                                         "type": "openDoor",
                                         "loc": [
-                                            10,
+                                            11,
                                             7
                                         ],
                                         "async": true
@@ -8501,7 +12963,7 @@ main.floors.MT327=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT327baseB===8)",
+                "condition": "(flag:MT327baseB===12)",
                 "true": [
                     {
                         "type": "jumpHero",
@@ -8528,7 +12990,7 @@ main.floors.MT327=
                         "number": "me109k6",
                         "loc": [
                             [
-                                6,
+                                7,
                                 6
                             ]
                         ],
@@ -8540,7 +13002,7 @@ main.floors.MT327=
                         "loc": [
                             [
                                 6,
-                                8
+                                7
                             ]
                         ],
                         "time": 0
@@ -8548,6 +13010,127 @@ main.floors.MT327=
                     {
                         "type": "setBlock",
                         "number": "me109k6",
+                        "loc": [
+                            [
+                                8,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "me109k6",
+                        "loc": [
+                            [
+                                7,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                5,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                5,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "fw190f8",
+                        "loc": [
+                            [
+                                9,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                8,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                7,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
                         "loc": [
                             [
                                 5,
@@ -8558,29 +13141,18 @@ main.floors.MT327=
                     },
                     {
                         "type": "setBlock",
-                        "number": "fw190f8",
+                        "number": "flak88",
                         "loc": [
                             [
-                                8,
-                                6
+                                7,
+                                9
                             ]
                         ],
                         "time": 0
                     },
                     {
                         "type": "setBlock",
-                        "number": "fw190f8",
-                        "loc": [
-                            [
-                                8,
-                                8
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "fw190f8",
+                        "number": "flak88",
                         "loc": [
                             [
                                 9,
@@ -8596,7 +13168,7 @@ main.floors.MT327=
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT327baseB===14)",
+                        "condition": "(flag:MT327baseB===28)",
                         "true": [
                             {
                                 "type": "jumpHero",
@@ -8623,7 +13195,7 @@ main.floors.MT327=
                                 "number": "pak40",
                                 "loc": [
                                     [
-                                        5,
+                                        7,
                                         5
                                     ]
                                 ],
@@ -8634,8 +13206,8 @@ main.floors.MT327=
                                 "number": "pak40",
                                 "loc": [
                                     [
-                                        9,
-                                        5
+                                        5,
+                                        7
                                     ]
                                 ],
                                 "time": 0
@@ -8646,7 +13218,7 @@ main.floors.MT327=
                                 "loc": [
                                     [
                                         9,
-                                        9
+                                        7
                                     ]
                                 ],
                                 "time": 0
@@ -8654,6 +13226,39 @@ main.floors.MT327=
                             {
                                 "type": "setBlock",
                                 "number": "pak40",
+                                "loc": [
+                                    [
+                                        7,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        5,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "howitzer150",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "sniper",
                                 "loc": [
                                     [
                                         5,
@@ -8664,7 +13269,18 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "sniper",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         7,
@@ -8675,7 +13291,18 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5d",
+                                "loc": [
+                                    [
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         8,
@@ -8686,7 +13313,7 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         7,
@@ -8697,65 +13324,10 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer4h",
+                                "number": "panzer5g",
                                 "loc": [
                                     [
                                         6,
-                                        7
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        5,
-                                        8
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        6,
-                                        9
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        8,
-                                        9
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        9,
-                                        8
-                                    ]
-                                ],
-                                "time": 0
-                            },
-                            {
-                                "type": "setBlock",
-                                "number": "grenadier",
-                                "loc": [
-                                    [
-                                        9,
                                         6
                                     ]
                                 ],
@@ -8763,18 +13335,40 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "panzer5g",
                                 "loc": [
                                     [
                                         8,
-                                        5
+                                        6
                                     ]
                                 ],
                                 "time": 0
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        6,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        8,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
                                 "loc": [
                                     [
                                         6,
@@ -8785,11 +13379,77 @@ main.floors.MT327=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "grenadier",
+                                "number": "attankinf",
                                 "loc": [
                                     [
                                         5,
                                         6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        9,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        6,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        9,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "attankinf",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
                                     ]
                                 ],
                                 "time": 0
@@ -8801,12 +13461,8 @@ main.floors.MT327=
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT327baseB===30)",
+                                "condition": "(flag:MT327baseB===52)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][1]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -8825,7 +13481,7 @@ main.floors.MT327=
                                     {
                                         "type": "openDoor",
                                         "loc": [
-                                            10,
+                                            11,
                                             7
                                         ],
                                         "async": true
@@ -8878,7 +13534,7 @@ main.floors.MT327=
                 "type": "closeDoor",
                 "id": "specialDoor",
                 "loc": [
-                    10,
+                    11,
                     7
                 ],
                 "async": true
@@ -8900,6 +13556,54 @@ main.floors.MT327=
             {
                 "type": "playSound",
                 "name": "048-Explosion01.mp3"
+            },
+            {
+                "type": "setBlock",
+                "number": "pak40",
+                "loc": [
+                    [
+                        5,
+                        5
+                    ]
+                ],
+                "time": 0,
+                "async": true
+            },
+            {
+                "type": "setBlock",
+                "number": "pak40",
+                "loc": [
+                    [
+                        9,
+                        5
+                    ]
+                ],
+                "time": 0,
+                "async": true
+            },
+            {
+                "type": "setBlock",
+                "number": "pak40",
+                "loc": [
+                    [
+                        5,
+                        9
+                    ]
+                ],
+                "time": 0,
+                "async": true
+            },
+            {
+                "type": "setBlock",
+                "number": "pak40",
+                "loc": [
+                    [
+                        9,
+                        9
+                    ]
+                ],
+                "time": 0,
+                "async": true
             },
             {
                 "type": "setBlock",
@@ -9012,7 +13716,11 @@ main.floors.MT327=
                 "type": "playSound",
                 "name": "xinxinmagic.mp3"
             },
-            "\t[系统提示]击败敌人的多次反扑以占领区域"
+            "\t[系统提示]击败敌人的多次反扑以占领区域",
+            {
+                "type": "hide",
+                "remove": true
+            }
         ]
     },
     "autoEvent": {

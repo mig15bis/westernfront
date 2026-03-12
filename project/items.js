@@ -2321,7 +2321,13 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"canUseItemEffect": "true",
 		"text": "，全属性提升",
 		"itemEffectTip": "，全属性提升",
-		"itemEffect": "core.status.hero.hpmax += 10000;\ncore.status.hero.hp += 10000;\ncore.status.hero.mana += 300;\ncore.status.hero.atk += 100;\ncore.status.hero.top += 1500;\ncore.status.hero.mdef += 500;\nif (flags.anime === true&&!core.getFlag(\"__statistics__\")) {\n\tcore.drawHeroAnimate('allup');\n}"
+		"itemEffect": "core.status.hero.hpmax += 10000;\ncore.status.hero.hp += 10000;\ncore.status.hero.mana += 300;\ncore.status.hero.atk += 100;\ncore.status.hero.top += 1500;\ncore.status.hero.mdef += 500;\nif (flags.anime === true&&!core.getFlag(\"__statistics__\")) {\n\tcore.drawHeroAnimate('allup');\n}",
+		"useItemEvent": [
+			{
+				"type": "playSound",
+				"name": "xinxinbazhe.mp3"
+			}
+		]
 	},
 	"medal7": {
 		"cls": "items",
@@ -2329,7 +2335,13 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"canUseItemEffect": "true",
 		"text": "，全属性提升",
 		"itemEffectTip": "，全属性提升",
-		"itemEffect": "core.status.hero.hpmax += 20000;\ncore.status.hero.hp += 20000;\ncore.status.hero.mana += 400;\ncore.status.hero.atk += 200;\ncore.status.hero.top += 5000;\ncore.status.hero.mdef += 1000;\nif (flags.anime === true&&!core.getFlag(\"__statistics__\")) {\n\tcore.drawHeroAnimate('allup');\n}"
+		"itemEffect": "core.status.hero.hpmax += 20000;\ncore.status.hero.hp += 20000;\ncore.status.hero.mana += 400;\ncore.status.hero.atk += 200;\ncore.status.hero.top += 5000;\ncore.status.hero.mdef += 1000;\nif (flags.anime === true&&!core.getFlag(\"__statistics__\")) {\n\tcore.drawHeroAnimate('allup');\n}",
+		"useItemEvent": [
+			{
+				"type": "playSound",
+				"name": "xinxinbazhe.mp3"
+			}
+		]
 	},
 	"medal8": {
 		"cls": "items",
@@ -2337,7 +2349,13 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"canUseItemEffect": "true",
 		"text": "，全属性提升",
 		"itemEffectTip": "，全属性提升",
-		"itemEffect": "core.status.hero.hpmax += 50000;\ncore.status.hero.hp += 50000;\ncore.status.hero.mana += 500;\ncore.status.hero.atk += 500;\ncore.status.hero.top += 15000;\ncore.status.hero.mdef += 2000;\nif (flags.anime === true&&!core.getFlag(\"__statistics__\")) {\n\tcore.drawHeroAnimate('allup');\n}"
+		"itemEffect": "core.status.hero.hpmax += 50000;\ncore.status.hero.hp += 50000;\ncore.status.hero.mana += 500;\ncore.status.hero.atk += 500;\ncore.status.hero.top += 15000;\ncore.status.hero.mdef += 2000;\nif (flags.anime === true&&!core.getFlag(\"__statistics__\")) {\n\tcore.drawHeroAnimate('allup');\n}",
+		"useItemEvent": [
+			{
+				"type": "playSound",
+				"name": "xinxinbazhe.mp3"
+			}
+		]
 	},
 	"rocketLauncher": {
 		"cls": "constants",

@@ -485,34 +485,7 @@ main.floors.MT340=
     "afterGetItem": {},
     "afterOpenDoor": {},
     "autoEvent": {
-        "3,0": {
-            "0": {
-                "condition": "core.maps.searchBlockWithFilter(x=>['步兵','反坦克炮','榴弹炮','高射炮','轻坦','中坦','重坦','坦歼'].includes(core.material.enemys[x?.event?.id]?.type),['MT332','MT333','MT334','MT335','MT336','MT337','MT338','MT339','MT340']).length===0",
-                "currentFloor": false,
-                "priority": 0,
-                "delayExecute": false,
-                "multiExecute": false,
-                "data": [
-                    {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[46][2]=true\n}"
-                    }
-                ]
-            },
-            "1": {
-                "condition": "core.maps.searchBlockWithFilter(x=>['战斗机','重型战斗机','俯冲轰炸机','中型轰炸机','鱼雷轰炸机'].includes(core.material.enemys[x?.event?.id]?.type),['MT332','MT333','MT334','MT335','MT336','MT337','MT338','MT339','MT340']).length===0",
-                "currentFloor": false,
-                "priority": 0,
-                "delayExecute": false,
-                "multiExecute": false,
-                "data": [
-                    {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[46][1]=true\n}"
-                    }
-                ]
-            }
-        }
+        "3,0": {}
     },
     "cannotMove": {},
     "cannotMoveIn": {},

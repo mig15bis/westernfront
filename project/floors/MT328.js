@@ -37,7 +37,7 @@ main.floors.MT328=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT328baseC===8)",
+                "condition": "(flag:MT328baseC===12)",
                 "true": [
                     {
                         "type": "jumpHero",
@@ -61,6 +61,116 @@ main.floors.MT328=
                     },
                     {
                         "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                8,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                8,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                6,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                6,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                9,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                9,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                5,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                5,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
                         "number": "panzer4h",
                         "loc": [
                             [
@@ -76,6 +186,39 @@ main.floors.MT328=
                         "loc": [
                             [
                                 8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                7,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                7,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                6,
                                 7
                             ]
                         ],
@@ -83,33 +226,11 @@ main.floors.MT328=
                     },
                     {
                         "type": "setBlock",
-                        "number": "panzer4h",
+                        "number": "panzer5g",
                         "loc": [
                             [
                                 8,
-                                8
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "panzer4h",
-                        "loc": [
-                            [
-                                9,
-                                6
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "panzer4h",
-                        "loc": [
-                            [
-                                9,
-                                8
+                                7
                             ]
                         ],
                         "time": 0
@@ -126,13 +247,68 @@ main.floors.MT328=
                         "time": 0
                     },
                     {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                9,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                9,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
                         "type": "waitAsync"
                     }
                 ],
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT328baseC===14)",
+                        "condition": "(flag:MT328baseC===34)",
                         "true": [
                             {
                                 "type": "jumpHero",
@@ -189,11 +365,66 @@ main.floors.MT328=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "flak88",
+                                "number": "tigere",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "tigere",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
                                 "loc": [
                                     [
                                         9,
                                         7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        5,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        7,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        7,
+                                        9
                                     ]
                                 ],
                                 "time": 0
@@ -222,7 +453,18 @@ main.floors.MT328=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer5g",
+                                "number": "panzer5d",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         6,
@@ -236,7 +478,29 @@ main.floors.MT328=
                                 "number": "panzer5g",
                                 "loc": [
                                     [
-                                        5,
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        7,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        7,
                                         8
                                     ]
                                 ],
@@ -265,18 +529,36 @@ main.floors.MT328=
                                 "time": 0
                             },
                             {
+                                "type": "setBlock",
+                                "number": "flak88",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "flak88",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
                                 "type": "waitAsync"
                             }
                         ],
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT328baseC===24)",
+                                "condition": "(flag:MT328baseC===54)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][2]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -311,7 +593,7 @@ main.floors.MT328=
                                     {
                                         "type": "openDoor",
                                         "loc": [
-                                            4,
+                                            3,
                                             7
                                         ],
                                         "async": true
@@ -339,7 +621,7 @@ main.floors.MT328=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT328baseC===8)",
+                "condition": "(flag:MT328baseC===12)",
                 "true": [
                     {
                         "type": "jumpHero",
@@ -363,6 +645,116 @@ main.floors.MT328=
                     },
                     {
                         "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                8,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                8,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                6,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                6,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                9,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                9,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                5,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                5,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
                         "number": "panzer4h",
                         "loc": [
                             [
@@ -378,6 +770,39 @@ main.floors.MT328=
                         "loc": [
                             [
                                 8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                7,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                7,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                6,
                                 7
                             ]
                         ],
@@ -385,33 +810,11 @@ main.floors.MT328=
                     },
                     {
                         "type": "setBlock",
-                        "number": "panzer4h",
+                        "number": "panzer5g",
                         "loc": [
                             [
                                 8,
-                                8
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "panzer4h",
-                        "loc": [
-                            [
-                                9,
-                                6
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "panzer4h",
-                        "loc": [
-                            [
-                                9,
-                                8
+                                7
                             ]
                         ],
                         "time": 0
@@ -428,13 +831,68 @@ main.floors.MT328=
                         "time": 0
                     },
                     {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                9,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                9,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
                         "type": "waitAsync"
                     }
                 ],
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT328baseC===14)",
+                        "condition": "(flag:MT328baseC===34)",
                         "true": [
                             {
                                 "type": "jumpHero",
@@ -491,11 +949,66 @@ main.floors.MT328=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "flak88",
+                                "number": "tigere",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "tigere",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
                                 "loc": [
                                     [
                                         9,
                                         7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        5,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        7,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        7,
+                                        9
                                     ]
                                 ],
                                 "time": 0
@@ -524,7 +1037,18 @@ main.floors.MT328=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer5g",
+                                "number": "panzer5d",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         6,
@@ -538,7 +1062,29 @@ main.floors.MT328=
                                 "number": "panzer5g",
                                 "loc": [
                                     [
-                                        5,
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        7,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        7,
                                         8
                                     ]
                                 ],
@@ -567,18 +1113,36 @@ main.floors.MT328=
                                 "time": 0
                             },
                             {
+                                "type": "setBlock",
+                                "number": "flak88",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "flak88",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
                                 "type": "waitAsync"
                             }
                         ],
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT328baseC===24)",
+                                "condition": "(flag:MT328baseC===54)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][2]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -613,7 +1177,7 @@ main.floors.MT328=
                                     {
                                         "type": "openDoor",
                                         "loc": [
-                                            4,
+                                            3,
                                             7
                                         ],
                                         "async": true
@@ -641,7 +1205,7 @@ main.floors.MT328=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT328baseC===8)",
+                "condition": "(flag:MT328baseC===12)",
                 "true": [
                     {
                         "type": "jumpHero",
@@ -665,6 +1229,116 @@ main.floors.MT328=
                     },
                     {
                         "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                8,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                8,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                6,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                6,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                9,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                9,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                5,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                5,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
                         "number": "panzer4h",
                         "loc": [
                             [
@@ -680,6 +1354,39 @@ main.floors.MT328=
                         "loc": [
                             [
                                 8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                7,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                7,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                6,
                                 7
                             ]
                         ],
@@ -687,33 +1394,11 @@ main.floors.MT328=
                     },
                     {
                         "type": "setBlock",
-                        "number": "panzer4h",
+                        "number": "panzer5g",
                         "loc": [
                             [
                                 8,
-                                8
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "panzer4h",
-                        "loc": [
-                            [
-                                9,
-                                6
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "panzer4h",
-                        "loc": [
-                            [
-                                9,
-                                8
+                                7
                             ]
                         ],
                         "time": 0
@@ -730,13 +1415,68 @@ main.floors.MT328=
                         "time": 0
                     },
                     {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                9,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                9,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
                         "type": "waitAsync"
                     }
                 ],
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT328baseC===14)",
+                        "condition": "(flag:MT328baseC===34)",
                         "true": [
                             {
                                 "type": "jumpHero",
@@ -793,11 +1533,66 @@ main.floors.MT328=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "flak88",
+                                "number": "tigere",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "tigere",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
                                 "loc": [
                                     [
                                         9,
                                         7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        5,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        7,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        7,
+                                        9
                                     ]
                                 ],
                                 "time": 0
@@ -826,7 +1621,18 @@ main.floors.MT328=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer5g",
+                                "number": "panzer5d",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         6,
@@ -840,7 +1646,29 @@ main.floors.MT328=
                                 "number": "panzer5g",
                                 "loc": [
                                     [
-                                        5,
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        7,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        7,
                                         8
                                     ]
                                 ],
@@ -869,18 +1697,36 @@ main.floors.MT328=
                                 "time": 0
                             },
                             {
+                                "type": "setBlock",
+                                "number": "flak88",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "flak88",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
                                 "type": "waitAsync"
                             }
                         ],
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT328baseC===24)",
+                                "condition": "(flag:MT328baseC===54)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][2]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -915,7 +1761,7 @@ main.floors.MT328=
                                     {
                                         "type": "openDoor",
                                         "loc": [
-                                            4,
+                                            3,
                                             7
                                         ],
                                         "async": true
@@ -943,7 +1789,7 @@ main.floors.MT328=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT328baseC===8)",
+                "condition": "(flag:MT328baseC===12)",
                 "true": [
                     {
                         "type": "jumpHero",
@@ -967,6 +1813,116 @@ main.floors.MT328=
                     },
                     {
                         "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                8,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                8,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                6,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                6,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                9,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                9,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                5,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                5,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
                         "number": "panzer4h",
                         "loc": [
                             [
@@ -982,6 +1938,39 @@ main.floors.MT328=
                         "loc": [
                             [
                                 8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                7,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                7,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                6,
                                 7
                             ]
                         ],
@@ -989,33 +1978,11 @@ main.floors.MT328=
                     },
                     {
                         "type": "setBlock",
-                        "number": "panzer4h",
+                        "number": "panzer5g",
                         "loc": [
                             [
                                 8,
-                                8
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "panzer4h",
-                        "loc": [
-                            [
-                                9,
-                                6
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "panzer4h",
-                        "loc": [
-                            [
-                                9,
-                                8
+                                7
                             ]
                         ],
                         "time": 0
@@ -1032,13 +1999,68 @@ main.floors.MT328=
                         "time": 0
                     },
                     {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                9,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                9,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
                         "type": "waitAsync"
                     }
                 ],
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT328baseC===14)",
+                        "condition": "(flag:MT328baseC===34)",
                         "true": [
                             {
                                 "type": "jumpHero",
@@ -1095,11 +2117,66 @@ main.floors.MT328=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "flak88",
+                                "number": "tigere",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "tigere",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
                                 "loc": [
                                     [
                                         9,
                                         7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        5,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        7,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        7,
+                                        9
                                     ]
                                 ],
                                 "time": 0
@@ -1128,7 +2205,18 @@ main.floors.MT328=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer5g",
+                                "number": "panzer5d",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         6,
@@ -1142,7 +2230,29 @@ main.floors.MT328=
                                 "number": "panzer5g",
                                 "loc": [
                                     [
-                                        5,
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        7,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        7,
                                         8
                                     ]
                                 ],
@@ -1171,18 +2281,36 @@ main.floors.MT328=
                                 "time": 0
                             },
                             {
+                                "type": "setBlock",
+                                "number": "flak88",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "flak88",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
                                 "type": "waitAsync"
                             }
                         ],
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT328baseC===24)",
+                                "condition": "(flag:MT328baseC===54)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][2]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -1217,7 +2345,7 @@ main.floors.MT328=
                                     {
                                         "type": "openDoor",
                                         "loc": [
-                                            4,
+                                            3,
                                             7
                                         ],
                                         "async": true
@@ -1245,7 +2373,7 @@ main.floors.MT328=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT328baseC===8)",
+                "condition": "(flag:MT328baseC===12)",
                 "true": [
                     {
                         "type": "jumpHero",
@@ -1269,6 +2397,116 @@ main.floors.MT328=
                     },
                     {
                         "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                8,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                8,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                6,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                6,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                9,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                9,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                5,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                5,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
                         "number": "panzer4h",
                         "loc": [
                             [
@@ -1284,6 +2522,39 @@ main.floors.MT328=
                         "loc": [
                             [
                                 8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                7,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                7,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                6,
                                 7
                             ]
                         ],
@@ -1291,33 +2562,11 @@ main.floors.MT328=
                     },
                     {
                         "type": "setBlock",
-                        "number": "panzer4h",
+                        "number": "panzer5g",
                         "loc": [
                             [
                                 8,
-                                8
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "panzer4h",
-                        "loc": [
-                            [
-                                9,
-                                6
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "panzer4h",
-                        "loc": [
-                            [
-                                9,
-                                8
+                                7
                             ]
                         ],
                         "time": 0
@@ -1334,13 +2583,68 @@ main.floors.MT328=
                         "time": 0
                     },
                     {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                9,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                9,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
                         "type": "waitAsync"
                     }
                 ],
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT328baseC===14)",
+                        "condition": "(flag:MT328baseC===34)",
                         "true": [
                             {
                                 "type": "jumpHero",
@@ -1397,11 +2701,66 @@ main.floors.MT328=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "flak88",
+                                "number": "tigere",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "tigere",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
                                 "loc": [
                                     [
                                         9,
                                         7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        5,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        7,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        7,
+                                        9
                                     ]
                                 ],
                                 "time": 0
@@ -1430,7 +2789,18 @@ main.floors.MT328=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer5g",
+                                "number": "panzer5d",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         6,
@@ -1444,7 +2814,29 @@ main.floors.MT328=
                                 "number": "panzer5g",
                                 "loc": [
                                     [
-                                        5,
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        7,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        7,
                                         8
                                     ]
                                 ],
@@ -1473,18 +2865,36 @@ main.floors.MT328=
                                 "time": 0
                             },
                             {
+                                "type": "setBlock",
+                                "number": "flak88",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "flak88",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
                                 "type": "waitAsync"
                             }
                         ],
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT328baseC===24)",
+                                "condition": "(flag:MT328baseC===54)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][2]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -1519,7 +2929,7 @@ main.floors.MT328=
                                     {
                                         "type": "openDoor",
                                         "loc": [
-                                            4,
+                                            3,
                                             7
                                         ],
                                         "async": true
@@ -1547,7 +2957,7 @@ main.floors.MT328=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT328baseC===8)",
+                "condition": "(flag:MT328baseC===12)",
                 "true": [
                     {
                         "type": "jumpHero",
@@ -1571,6 +2981,116 @@ main.floors.MT328=
                     },
                     {
                         "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                8,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                8,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                6,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                6,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                9,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                9,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                5,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                5,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
                         "number": "panzer4h",
                         "loc": [
                             [
@@ -1586,6 +3106,39 @@ main.floors.MT328=
                         "loc": [
                             [
                                 8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                7,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                7,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                6,
                                 7
                             ]
                         ],
@@ -1593,33 +3146,11 @@ main.floors.MT328=
                     },
                     {
                         "type": "setBlock",
-                        "number": "panzer4h",
+                        "number": "panzer5g",
                         "loc": [
                             [
                                 8,
-                                8
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "panzer4h",
-                        "loc": [
-                            [
-                                9,
-                                6
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "panzer4h",
-                        "loc": [
-                            [
-                                9,
-                                8
+                                7
                             ]
                         ],
                         "time": 0
@@ -1636,13 +3167,68 @@ main.floors.MT328=
                         "time": 0
                     },
                     {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                9,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                9,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
                         "type": "waitAsync"
                     }
                 ],
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT328baseC===14)",
+                        "condition": "(flag:MT328baseC===34)",
                         "true": [
                             {
                                 "type": "jumpHero",
@@ -1699,11 +3285,66 @@ main.floors.MT328=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "flak88",
+                                "number": "tigere",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "tigere",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
                                 "loc": [
                                     [
                                         9,
                                         7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        5,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        7,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        7,
+                                        9
                                     ]
                                 ],
                                 "time": 0
@@ -1732,7 +3373,18 @@ main.floors.MT328=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer5g",
+                                "number": "panzer5d",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         6,
@@ -1746,7 +3398,29 @@ main.floors.MT328=
                                 "number": "panzer5g",
                                 "loc": [
                                     [
-                                        5,
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        7,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        7,
                                         8
                                     ]
                                 ],
@@ -1775,18 +3449,36 @@ main.floors.MT328=
                                 "time": 0
                             },
                             {
+                                "type": "setBlock",
+                                "number": "flak88",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "flak88",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
                                 "type": "waitAsync"
                             }
                         ],
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT328baseC===24)",
+                                "condition": "(flag:MT328baseC===54)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][2]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -1821,7 +3513,7 @@ main.floors.MT328=
                                     {
                                         "type": "openDoor",
                                         "loc": [
-                                            4,
+                                            3,
                                             7
                                         ],
                                         "async": true
@@ -1849,7 +3541,7 @@ main.floors.MT328=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT328baseC===8)",
+                "condition": "(flag:MT328baseC===12)",
                 "true": [
                     {
                         "type": "jumpHero",
@@ -1873,6 +3565,116 @@ main.floors.MT328=
                     },
                     {
                         "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                8,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                8,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                6,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                6,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                9,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                9,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                5,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                5,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
                         "number": "panzer4h",
                         "loc": [
                             [
@@ -1888,6 +3690,39 @@ main.floors.MT328=
                         "loc": [
                             [
                                 8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                7,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                7,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                6,
                                 7
                             ]
                         ],
@@ -1895,33 +3730,11 @@ main.floors.MT328=
                     },
                     {
                         "type": "setBlock",
-                        "number": "panzer4h",
+                        "number": "panzer5g",
                         "loc": [
                             [
                                 8,
-                                8
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "panzer4h",
-                        "loc": [
-                            [
-                                9,
-                                6
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "panzer4h",
-                        "loc": [
-                            [
-                                9,
-                                8
+                                7
                             ]
                         ],
                         "time": 0
@@ -1938,13 +3751,68 @@ main.floors.MT328=
                         "time": 0
                     },
                     {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                9,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                9,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
                         "type": "waitAsync"
                     }
                 ],
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT328baseC===14)",
+                        "condition": "(flag:MT328baseC===34)",
                         "true": [
                             {
                                 "type": "jumpHero",
@@ -2001,11 +3869,66 @@ main.floors.MT328=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "flak88",
+                                "number": "tigere",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "tigere",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
                                 "loc": [
                                     [
                                         9,
                                         7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        5,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        7,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        7,
+                                        9
                                     ]
                                 ],
                                 "time": 0
@@ -2034,7 +3957,18 @@ main.floors.MT328=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer5g",
+                                "number": "panzer5d",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         6,
@@ -2048,7 +3982,29 @@ main.floors.MT328=
                                 "number": "panzer5g",
                                 "loc": [
                                     [
-                                        5,
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        7,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        7,
                                         8
                                     ]
                                 ],
@@ -2077,18 +4033,36 @@ main.floors.MT328=
                                 "time": 0
                             },
                             {
+                                "type": "setBlock",
+                                "number": "flak88",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "flak88",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
                                 "type": "waitAsync"
                             }
                         ],
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT328baseC===24)",
+                                "condition": "(flag:MT328baseC===54)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][2]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -2123,7 +4097,7 @@ main.floors.MT328=
                                     {
                                         "type": "openDoor",
                                         "loc": [
-                                            4,
+                                            3,
                                             7
                                         ],
                                         "async": true
@@ -2151,7 +4125,7 @@ main.floors.MT328=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT328baseC===8)",
+                "condition": "(flag:MT328baseC===12)",
                 "true": [
                     {
                         "type": "jumpHero",
@@ -2175,6 +4149,116 @@ main.floors.MT328=
                     },
                     {
                         "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                8,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                8,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                6,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                6,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                9,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                9,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                5,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                5,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
                         "number": "panzer4h",
                         "loc": [
                             [
@@ -2190,6 +4274,39 @@ main.floors.MT328=
                         "loc": [
                             [
                                 8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                7,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                7,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                6,
                                 7
                             ]
                         ],
@@ -2197,33 +4314,11 @@ main.floors.MT328=
                     },
                     {
                         "type": "setBlock",
-                        "number": "panzer4h",
+                        "number": "panzer5g",
                         "loc": [
                             [
                                 8,
-                                8
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "panzer4h",
-                        "loc": [
-                            [
-                                9,
-                                6
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "panzer4h",
-                        "loc": [
-                            [
-                                9,
-                                8
+                                7
                             ]
                         ],
                         "time": 0
@@ -2240,13 +4335,68 @@ main.floors.MT328=
                         "time": 0
                     },
                     {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                9,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                9,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
                         "type": "waitAsync"
                     }
                 ],
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT328baseC===14)",
+                        "condition": "(flag:MT328baseC===34)",
                         "true": [
                             {
                                 "type": "jumpHero",
@@ -2303,11 +4453,66 @@ main.floors.MT328=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "flak88",
+                                "number": "tigere",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "tigere",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
                                 "loc": [
                                     [
                                         9,
                                         7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        5,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        7,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        7,
+                                        9
                                     ]
                                 ],
                                 "time": 0
@@ -2336,7 +4541,18 @@ main.floors.MT328=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer5g",
+                                "number": "panzer5d",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         6,
@@ -2350,7 +4566,29 @@ main.floors.MT328=
                                 "number": "panzer5g",
                                 "loc": [
                                     [
-                                        5,
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        7,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        7,
                                         8
                                     ]
                                 ],
@@ -2379,18 +4617,36 @@ main.floors.MT328=
                                 "time": 0
                             },
                             {
+                                "type": "setBlock",
+                                "number": "flak88",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "flak88",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
                                 "type": "waitAsync"
                             }
                         ],
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT328baseC===24)",
+                                "condition": "(flag:MT328baseC===54)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][2]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -2425,7 +4681,7 @@ main.floors.MT328=
                                     {
                                         "type": "openDoor",
                                         "loc": [
-                                            4,
+                                            3,
                                             7
                                         ],
                                         "async": true
@@ -2453,7 +4709,7 @@ main.floors.MT328=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT328baseC===8)",
+                "condition": "(flag:MT328baseC===12)",
                 "true": [
                     {
                         "type": "jumpHero",
@@ -2477,6 +4733,116 @@ main.floors.MT328=
                     },
                     {
                         "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                8,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                8,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                6,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                6,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                9,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                9,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                5,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                5,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
                         "number": "panzer4h",
                         "loc": [
                             [
@@ -2492,6 +4858,39 @@ main.floors.MT328=
                         "loc": [
                             [
                                 8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                7,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                7,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                6,
                                 7
                             ]
                         ],
@@ -2499,33 +4898,11 @@ main.floors.MT328=
                     },
                     {
                         "type": "setBlock",
-                        "number": "panzer4h",
+                        "number": "panzer5g",
                         "loc": [
                             [
                                 8,
-                                8
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "panzer4h",
-                        "loc": [
-                            [
-                                9,
-                                6
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "panzer4h",
-                        "loc": [
-                            [
-                                9,
-                                8
+                                7
                             ]
                         ],
                         "time": 0
@@ -2542,13 +4919,68 @@ main.floors.MT328=
                         "time": 0
                     },
                     {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                9,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                9,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
                         "type": "waitAsync"
                     }
                 ],
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT328baseC===14)",
+                        "condition": "(flag:MT328baseC===34)",
                         "true": [
                             {
                                 "type": "jumpHero",
@@ -2605,11 +5037,66 @@ main.floors.MT328=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "flak88",
+                                "number": "tigere",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "tigere",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
                                 "loc": [
                                     [
                                         9,
                                         7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        5,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        7,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        7,
+                                        9
                                     ]
                                 ],
                                 "time": 0
@@ -2638,7 +5125,18 @@ main.floors.MT328=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer5g",
+                                "number": "panzer5d",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         6,
@@ -2652,7 +5150,29 @@ main.floors.MT328=
                                 "number": "panzer5g",
                                 "loc": [
                                     [
-                                        5,
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        7,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        7,
                                         8
                                     ]
                                 ],
@@ -2681,18 +5201,36 @@ main.floors.MT328=
                                 "time": 0
                             },
                             {
+                                "type": "setBlock",
+                                "number": "flak88",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "flak88",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
                                 "type": "waitAsync"
                             }
                         ],
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT328baseC===24)",
+                                "condition": "(flag:MT328baseC===54)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][2]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -2727,7 +5265,7 @@ main.floors.MT328=
                                     {
                                         "type": "openDoor",
                                         "loc": [
-                                            4,
+                                            3,
                                             7
                                         ],
                                         "async": true
@@ -2755,7 +5293,7 @@ main.floors.MT328=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT328baseC===8)",
+                "condition": "(flag:MT328baseC===12)",
                 "true": [
                     {
                         "type": "jumpHero",
@@ -2779,6 +5317,116 @@ main.floors.MT328=
                     },
                     {
                         "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                8,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                8,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                6,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                6,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                9,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                9,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                5,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                5,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
                         "number": "panzer4h",
                         "loc": [
                             [
@@ -2794,6 +5442,39 @@ main.floors.MT328=
                         "loc": [
                             [
                                 8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                7,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                7,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                6,
                                 7
                             ]
                         ],
@@ -2801,33 +5482,11 @@ main.floors.MT328=
                     },
                     {
                         "type": "setBlock",
-                        "number": "panzer4h",
+                        "number": "panzer5g",
                         "loc": [
                             [
                                 8,
-                                8
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "panzer4h",
-                        "loc": [
-                            [
-                                9,
-                                6
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "panzer4h",
-                        "loc": [
-                            [
-                                9,
-                                8
+                                7
                             ]
                         ],
                         "time": 0
@@ -2844,13 +5503,68 @@ main.floors.MT328=
                         "time": 0
                     },
                     {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                9,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                9,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
                         "type": "waitAsync"
                     }
                 ],
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT328baseC===14)",
+                        "condition": "(flag:MT328baseC===34)",
                         "true": [
                             {
                                 "type": "jumpHero",
@@ -2907,11 +5621,66 @@ main.floors.MT328=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "flak88",
+                                "number": "tigere",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "tigere",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
                                 "loc": [
                                     [
                                         9,
                                         7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        5,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        7,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        7,
+                                        9
                                     ]
                                 ],
                                 "time": 0
@@ -2940,7 +5709,18 @@ main.floors.MT328=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer5g",
+                                "number": "panzer5d",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         6,
@@ -2954,7 +5734,29 @@ main.floors.MT328=
                                 "number": "panzer5g",
                                 "loc": [
                                     [
-                                        5,
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        7,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        7,
                                         8
                                     ]
                                 ],
@@ -2983,18 +5785,36 @@ main.floors.MT328=
                                 "time": 0
                             },
                             {
+                                "type": "setBlock",
+                                "number": "flak88",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "flak88",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
                                 "type": "waitAsync"
                             }
                         ],
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT328baseC===24)",
+                                "condition": "(flag:MT328baseC===54)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][2]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -3029,7 +5849,7 @@ main.floors.MT328=
                                     {
                                         "type": "openDoor",
                                         "loc": [
-                                            4,
+                                            3,
                                             7
                                         ],
                                         "async": true
@@ -3057,7 +5877,7 @@ main.floors.MT328=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT328baseC===8)",
+                "condition": "(flag:MT328baseC===12)",
                 "true": [
                     {
                         "type": "jumpHero",
@@ -3081,6 +5901,116 @@ main.floors.MT328=
                     },
                     {
                         "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                8,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                8,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                6,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                6,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                9,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                9,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                5,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                5,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
                         "number": "panzer4h",
                         "loc": [
                             [
@@ -3096,6 +6026,39 @@ main.floors.MT328=
                         "loc": [
                             [
                                 8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                7,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                7,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                6,
                                 7
                             ]
                         ],
@@ -3103,33 +6066,11 @@ main.floors.MT328=
                     },
                     {
                         "type": "setBlock",
-                        "number": "panzer4h",
+                        "number": "panzer5g",
                         "loc": [
                             [
                                 8,
-                                8
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "panzer4h",
-                        "loc": [
-                            [
-                                9,
-                                6
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "panzer4h",
-                        "loc": [
-                            [
-                                9,
-                                8
+                                7
                             ]
                         ],
                         "time": 0
@@ -3146,13 +6087,68 @@ main.floors.MT328=
                         "time": 0
                     },
                     {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                9,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                9,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
                         "type": "waitAsync"
                     }
                 ],
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT328baseC===14)",
+                        "condition": "(flag:MT328baseC===34)",
                         "true": [
                             {
                                 "type": "jumpHero",
@@ -3209,11 +6205,66 @@ main.floors.MT328=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "flak88",
+                                "number": "tigere",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "tigere",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
                                 "loc": [
                                     [
                                         9,
                                         7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        5,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        7,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        7,
+                                        9
                                     ]
                                 ],
                                 "time": 0
@@ -3242,7 +6293,18 @@ main.floors.MT328=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer5g",
+                                "number": "panzer5d",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         6,
@@ -3256,7 +6318,29 @@ main.floors.MT328=
                                 "number": "panzer5g",
                                 "loc": [
                                     [
-                                        5,
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        7,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        7,
                                         8
                                     ]
                                 ],
@@ -3285,18 +6369,36 @@ main.floors.MT328=
                                 "time": 0
                             },
                             {
+                                "type": "setBlock",
+                                "number": "flak88",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "flak88",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
                                 "type": "waitAsync"
                             }
                         ],
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT328baseC===24)",
+                                "condition": "(flag:MT328baseC===54)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][2]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -3331,7 +6433,7 @@ main.floors.MT328=
                                     {
                                         "type": "openDoor",
                                         "loc": [
-                                            4,
+                                            3,
                                             7
                                         ],
                                         "async": true
@@ -3359,7 +6461,7 @@ main.floors.MT328=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT328baseC===8)",
+                "condition": "(flag:MT328baseC===12)",
                 "true": [
                     {
                         "type": "jumpHero",
@@ -3383,6 +6485,116 @@ main.floors.MT328=
                     },
                     {
                         "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                8,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                8,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                6,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                6,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                9,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                9,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                5,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                5,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
                         "number": "panzer4h",
                         "loc": [
                             [
@@ -3398,6 +6610,39 @@ main.floors.MT328=
                         "loc": [
                             [
                                 8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                7,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                7,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                6,
                                 7
                             ]
                         ],
@@ -3405,33 +6650,11 @@ main.floors.MT328=
                     },
                     {
                         "type": "setBlock",
-                        "number": "panzer4h",
+                        "number": "panzer5g",
                         "loc": [
                             [
                                 8,
-                                8
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "panzer4h",
-                        "loc": [
-                            [
-                                9,
-                                6
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "panzer4h",
-                        "loc": [
-                            [
-                                9,
-                                8
+                                7
                             ]
                         ],
                         "time": 0
@@ -3448,13 +6671,68 @@ main.floors.MT328=
                         "time": 0
                     },
                     {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                9,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                9,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
                         "type": "waitAsync"
                     }
                 ],
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT328baseC===14)",
+                        "condition": "(flag:MT328baseC===34)",
                         "true": [
                             {
                                 "type": "jumpHero",
@@ -3511,11 +6789,66 @@ main.floors.MT328=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "flak88",
+                                "number": "tigere",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "tigere",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
                                 "loc": [
                                     [
                                         9,
                                         7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        5,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        7,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        7,
+                                        9
                                     ]
                                 ],
                                 "time": 0
@@ -3544,7 +6877,18 @@ main.floors.MT328=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer5g",
+                                "number": "panzer5d",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         6,
@@ -3558,7 +6902,29 @@ main.floors.MT328=
                                 "number": "panzer5g",
                                 "loc": [
                                     [
-                                        5,
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        7,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        7,
                                         8
                                     ]
                                 ],
@@ -3587,18 +6953,36 @@ main.floors.MT328=
                                 "time": 0
                             },
                             {
+                                "type": "setBlock",
+                                "number": "flak88",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "flak88",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
                                 "type": "waitAsync"
                             }
                         ],
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT328baseC===24)",
+                                "condition": "(flag:MT328baseC===54)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][2]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -3633,7 +7017,7 @@ main.floors.MT328=
                                     {
                                         "type": "openDoor",
                                         "loc": [
-                                            4,
+                                            3,
                                             7
                                         ],
                                         "async": true
@@ -3661,7 +7045,7 @@ main.floors.MT328=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT328baseC===8)",
+                "condition": "(flag:MT328baseC===12)",
                 "true": [
                     {
                         "type": "jumpHero",
@@ -3685,6 +7069,116 @@ main.floors.MT328=
                     },
                     {
                         "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                8,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                8,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                6,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                6,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                9,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                9,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                5,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                5,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
                         "number": "panzer4h",
                         "loc": [
                             [
@@ -3700,6 +7194,39 @@ main.floors.MT328=
                         "loc": [
                             [
                                 8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                7,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                7,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                6,
                                 7
                             ]
                         ],
@@ -3707,33 +7234,11 @@ main.floors.MT328=
                     },
                     {
                         "type": "setBlock",
-                        "number": "panzer4h",
+                        "number": "panzer5g",
                         "loc": [
                             [
                                 8,
-                                8
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "panzer4h",
-                        "loc": [
-                            [
-                                9,
-                                6
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "panzer4h",
-                        "loc": [
-                            [
-                                9,
-                                8
+                                7
                             ]
                         ],
                         "time": 0
@@ -3750,13 +7255,68 @@ main.floors.MT328=
                         "time": 0
                     },
                     {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                9,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                9,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
                         "type": "waitAsync"
                     }
                 ],
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT328baseC===14)",
+                        "condition": "(flag:MT328baseC===34)",
                         "true": [
                             {
                                 "type": "jumpHero",
@@ -3813,11 +7373,66 @@ main.floors.MT328=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "flak88",
+                                "number": "tigere",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "tigere",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
                                 "loc": [
                                     [
                                         9,
                                         7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        5,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        7,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        7,
+                                        9
                                     ]
                                 ],
                                 "time": 0
@@ -3846,7 +7461,18 @@ main.floors.MT328=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer5g",
+                                "number": "panzer5d",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         6,
@@ -3860,7 +7486,29 @@ main.floors.MT328=
                                 "number": "panzer5g",
                                 "loc": [
                                     [
-                                        5,
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        7,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        7,
                                         8
                                     ]
                                 ],
@@ -3889,18 +7537,36 @@ main.floors.MT328=
                                 "time": 0
                             },
                             {
+                                "type": "setBlock",
+                                "number": "flak88",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "flak88",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
                                 "type": "waitAsync"
                             }
                         ],
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT328baseC===24)",
+                                "condition": "(flag:MT328baseC===54)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][2]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -3935,7 +7601,7 @@ main.floors.MT328=
                                     {
                                         "type": "openDoor",
                                         "loc": [
-                                            4,
+                                            3,
                                             7
                                         ],
                                         "async": true
@@ -3963,7 +7629,7 @@ main.floors.MT328=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT328baseC===8)",
+                "condition": "(flag:MT328baseC===12)",
                 "true": [
                     {
                         "type": "jumpHero",
@@ -3987,6 +7653,116 @@ main.floors.MT328=
                     },
                     {
                         "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                8,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                8,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                6,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                6,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                9,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                9,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                5,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                5,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
                         "number": "panzer4h",
                         "loc": [
                             [
@@ -4002,6 +7778,39 @@ main.floors.MT328=
                         "loc": [
                             [
                                 8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                7,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                7,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                6,
                                 7
                             ]
                         ],
@@ -4009,33 +7818,11 @@ main.floors.MT328=
                     },
                     {
                         "type": "setBlock",
-                        "number": "panzer4h",
+                        "number": "panzer5g",
                         "loc": [
                             [
                                 8,
-                                8
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "panzer4h",
-                        "loc": [
-                            [
-                                9,
-                                6
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "panzer4h",
-                        "loc": [
-                            [
-                                9,
-                                8
+                                7
                             ]
                         ],
                         "time": 0
@@ -4052,13 +7839,68 @@ main.floors.MT328=
                         "time": 0
                     },
                     {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                9,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                9,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
                         "type": "waitAsync"
                     }
                 ],
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT328baseC===14)",
+                        "condition": "(flag:MT328baseC===34)",
                         "true": [
                             {
                                 "type": "jumpHero",
@@ -4115,11 +7957,66 @@ main.floors.MT328=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "flak88",
+                                "number": "tigere",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "tigere",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
                                 "loc": [
                                     [
                                         9,
                                         7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        5,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        7,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        7,
+                                        9
                                     ]
                                 ],
                                 "time": 0
@@ -4148,7 +8045,18 @@ main.floors.MT328=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer5g",
+                                "number": "panzer5d",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         6,
@@ -4162,7 +8070,29 @@ main.floors.MT328=
                                 "number": "panzer5g",
                                 "loc": [
                                     [
-                                        5,
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        7,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        7,
                                         8
                                     ]
                                 ],
@@ -4191,18 +8121,36 @@ main.floors.MT328=
                                 "time": 0
                             },
                             {
+                                "type": "setBlock",
+                                "number": "flak88",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "flak88",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
                                 "type": "waitAsync"
                             }
                         ],
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT328baseC===24)",
+                                "condition": "(flag:MT328baseC===54)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][2]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -4237,7 +8185,7 @@ main.floors.MT328=
                                     {
                                         "type": "openDoor",
                                         "loc": [
-                                            4,
+                                            3,
                                             7
                                         ],
                                         "async": true
@@ -4265,7 +8213,7 @@ main.floors.MT328=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT328baseC===8)",
+                "condition": "(flag:MT328baseC===12)",
                 "true": [
                     {
                         "type": "jumpHero",
@@ -4289,6 +8237,116 @@ main.floors.MT328=
                     },
                     {
                         "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                8,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                8,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                6,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                6,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                9,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                9,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                5,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                5,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
                         "number": "panzer4h",
                         "loc": [
                             [
@@ -4304,6 +8362,39 @@ main.floors.MT328=
                         "loc": [
                             [
                                 8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                7,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                7,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                6,
                                 7
                             ]
                         ],
@@ -4311,33 +8402,11 @@ main.floors.MT328=
                     },
                     {
                         "type": "setBlock",
-                        "number": "panzer4h",
+                        "number": "panzer5g",
                         "loc": [
                             [
                                 8,
-                                8
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "panzer4h",
-                        "loc": [
-                            [
-                                9,
-                                6
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "panzer4h",
-                        "loc": [
-                            [
-                                9,
-                                8
+                                7
                             ]
                         ],
                         "time": 0
@@ -4354,13 +8423,68 @@ main.floors.MT328=
                         "time": 0
                     },
                     {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                9,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                9,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
                         "type": "waitAsync"
                     }
                 ],
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT328baseC===14)",
+                        "condition": "(flag:MT328baseC===34)",
                         "true": [
                             {
                                 "type": "jumpHero",
@@ -4417,11 +8541,66 @@ main.floors.MT328=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "flak88",
+                                "number": "tigere",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "tigere",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
                                 "loc": [
                                     [
                                         9,
                                         7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        5,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        7,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        7,
+                                        9
                                     ]
                                 ],
                                 "time": 0
@@ -4450,7 +8629,18 @@ main.floors.MT328=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer5g",
+                                "number": "panzer5d",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         6,
@@ -4464,7 +8654,29 @@ main.floors.MT328=
                                 "number": "panzer5g",
                                 "loc": [
                                     [
-                                        5,
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        7,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        7,
                                         8
                                     ]
                                 ],
@@ -4493,18 +8705,36 @@ main.floors.MT328=
                                 "time": 0
                             },
                             {
+                                "type": "setBlock",
+                                "number": "flak88",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "flak88",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
                                 "type": "waitAsync"
                             }
                         ],
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT328baseC===24)",
+                                "condition": "(flag:MT328baseC===54)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][2]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -4539,7 +8769,7 @@ main.floors.MT328=
                                     {
                                         "type": "openDoor",
                                         "loc": [
-                                            4,
+                                            3,
                                             7
                                         ],
                                         "async": true
@@ -4567,7 +8797,7 @@ main.floors.MT328=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT328baseC===8)",
+                "condition": "(flag:MT328baseC===12)",
                 "true": [
                     {
                         "type": "jumpHero",
@@ -4591,6 +8821,116 @@ main.floors.MT328=
                     },
                     {
                         "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                8,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                8,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                6,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                6,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                9,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                9,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                5,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                5,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
                         "number": "panzer4h",
                         "loc": [
                             [
@@ -4606,6 +8946,39 @@ main.floors.MT328=
                         "loc": [
                             [
                                 8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                7,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                7,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                6,
                                 7
                             ]
                         ],
@@ -4613,33 +8986,11 @@ main.floors.MT328=
                     },
                     {
                         "type": "setBlock",
-                        "number": "panzer4h",
+                        "number": "panzer5g",
                         "loc": [
                             [
                                 8,
-                                8
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "panzer4h",
-                        "loc": [
-                            [
-                                9,
-                                6
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "panzer4h",
-                        "loc": [
-                            [
-                                9,
-                                8
+                                7
                             ]
                         ],
                         "time": 0
@@ -4656,13 +9007,68 @@ main.floors.MT328=
                         "time": 0
                     },
                     {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                9,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                9,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
                         "type": "waitAsync"
                     }
                 ],
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT328baseC===14)",
+                        "condition": "(flag:MT328baseC===34)",
                         "true": [
                             {
                                 "type": "jumpHero",
@@ -4719,11 +9125,66 @@ main.floors.MT328=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "flak88",
+                                "number": "tigere",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "tigere",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
                                 "loc": [
                                     [
                                         9,
                                         7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        5,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        7,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        7,
+                                        9
                                     ]
                                 ],
                                 "time": 0
@@ -4752,7 +9213,18 @@ main.floors.MT328=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer5g",
+                                "number": "panzer5d",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         6,
@@ -4766,7 +9238,29 @@ main.floors.MT328=
                                 "number": "panzer5g",
                                 "loc": [
                                     [
-                                        5,
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        7,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        7,
                                         8
                                     ]
                                 ],
@@ -4795,18 +9289,36 @@ main.floors.MT328=
                                 "time": 0
                             },
                             {
+                                "type": "setBlock",
+                                "number": "flak88",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "flak88",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
                                 "type": "waitAsync"
                             }
                         ],
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT328baseC===24)",
+                                "condition": "(flag:MT328baseC===54)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][2]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -4841,7 +9353,7 @@ main.floors.MT328=
                                     {
                                         "type": "openDoor",
                                         "loc": [
-                                            4,
+                                            3,
                                             7
                                         ],
                                         "async": true
@@ -4869,7 +9381,7 @@ main.floors.MT328=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT328baseC===8)",
+                "condition": "(flag:MT328baseC===12)",
                 "true": [
                     {
                         "type": "jumpHero",
@@ -4893,6 +9405,116 @@ main.floors.MT328=
                     },
                     {
                         "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                8,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                8,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                6,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                6,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                9,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                9,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                5,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                5,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
                         "number": "panzer4h",
                         "loc": [
                             [
@@ -4908,6 +9530,39 @@ main.floors.MT328=
                         "loc": [
                             [
                                 8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                7,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                7,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                6,
                                 7
                             ]
                         ],
@@ -4915,33 +9570,11 @@ main.floors.MT328=
                     },
                     {
                         "type": "setBlock",
-                        "number": "panzer4h",
+                        "number": "panzer5g",
                         "loc": [
                             [
                                 8,
-                                8
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "panzer4h",
-                        "loc": [
-                            [
-                                9,
-                                6
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "panzer4h",
-                        "loc": [
-                            [
-                                9,
-                                8
+                                7
                             ]
                         ],
                         "time": 0
@@ -4958,13 +9591,68 @@ main.floors.MT328=
                         "time": 0
                     },
                     {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                9,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                9,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
                         "type": "waitAsync"
                     }
                 ],
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT328baseC===14)",
+                        "condition": "(flag:MT328baseC===34)",
                         "true": [
                             {
                                 "type": "jumpHero",
@@ -5021,11 +9709,66 @@ main.floors.MT328=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "flak88",
+                                "number": "tigere",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "tigere",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
                                 "loc": [
                                     [
                                         9,
                                         7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        5,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        7,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        7,
+                                        9
                                     ]
                                 ],
                                 "time": 0
@@ -5054,7 +9797,18 @@ main.floors.MT328=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer5g",
+                                "number": "panzer5d",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         6,
@@ -5068,7 +9822,29 @@ main.floors.MT328=
                                 "number": "panzer5g",
                                 "loc": [
                                     [
-                                        5,
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        7,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        7,
                                         8
                                     ]
                                 ],
@@ -5097,18 +9873,36 @@ main.floors.MT328=
                                 "time": 0
                             },
                             {
+                                "type": "setBlock",
+                                "number": "flak88",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "flak88",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
                                 "type": "waitAsync"
                             }
                         ],
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT328baseC===24)",
+                                "condition": "(flag:MT328baseC===54)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][2]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -5143,7 +9937,7 @@ main.floors.MT328=
                                     {
                                         "type": "openDoor",
                                         "loc": [
-                                            4,
+                                            3,
                                             7
                                         ],
                                         "async": true
@@ -5171,7 +9965,7 @@ main.floors.MT328=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT328baseC===8)",
+                "condition": "(flag:MT328baseC===12)",
                 "true": [
                     {
                         "type": "jumpHero",
@@ -5195,6 +9989,116 @@ main.floors.MT328=
                     },
                     {
                         "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                8,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                8,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                6,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                6,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                9,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                9,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                5,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                5,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
                         "number": "panzer4h",
                         "loc": [
                             [
@@ -5210,6 +10114,39 @@ main.floors.MT328=
                         "loc": [
                             [
                                 8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                7,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                7,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                6,
                                 7
                             ]
                         ],
@@ -5217,33 +10154,11 @@ main.floors.MT328=
                     },
                     {
                         "type": "setBlock",
-                        "number": "panzer4h",
+                        "number": "panzer5g",
                         "loc": [
                             [
                                 8,
-                                8
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "panzer4h",
-                        "loc": [
-                            [
-                                9,
-                                6
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "panzer4h",
-                        "loc": [
-                            [
-                                9,
-                                8
+                                7
                             ]
                         ],
                         "time": 0
@@ -5260,13 +10175,68 @@ main.floors.MT328=
                         "time": 0
                     },
                     {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                9,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                9,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
                         "type": "waitAsync"
                     }
                 ],
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT328baseC===14)",
+                        "condition": "(flag:MT328baseC===34)",
                         "true": [
                             {
                                 "type": "jumpHero",
@@ -5323,11 +10293,66 @@ main.floors.MT328=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "flak88",
+                                "number": "tigere",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "tigere",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
                                 "loc": [
                                     [
                                         9,
                                         7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        5,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        7,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        7,
+                                        9
                                     ]
                                 ],
                                 "time": 0
@@ -5356,7 +10381,18 @@ main.floors.MT328=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer5g",
+                                "number": "panzer5d",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         6,
@@ -5370,7 +10406,29 @@ main.floors.MT328=
                                 "number": "panzer5g",
                                 "loc": [
                                     [
-                                        5,
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        7,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        7,
                                         8
                                     ]
                                 ],
@@ -5399,18 +10457,36 @@ main.floors.MT328=
                                 "time": 0
                             },
                             {
+                                "type": "setBlock",
+                                "number": "flak88",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "flak88",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
                                 "type": "waitAsync"
                             }
                         ],
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT328baseC===24)",
+                                "condition": "(flag:MT328baseC===54)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][2]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -5445,7 +10521,7 @@ main.floors.MT328=
                                     {
                                         "type": "openDoor",
                                         "loc": [
-                                            4,
+                                            3,
                                             7
                                         ],
                                         "async": true
@@ -5473,7 +10549,7 @@ main.floors.MT328=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT328baseC===8)",
+                "condition": "(flag:MT328baseC===12)",
                 "true": [
                     {
                         "type": "jumpHero",
@@ -5497,6 +10573,116 @@ main.floors.MT328=
                     },
                     {
                         "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                8,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                8,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                6,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                6,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                9,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                9,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                5,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                5,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
                         "number": "panzer4h",
                         "loc": [
                             [
@@ -5512,6 +10698,39 @@ main.floors.MT328=
                         "loc": [
                             [
                                 8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                7,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                7,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                6,
                                 7
                             ]
                         ],
@@ -5519,33 +10738,11 @@ main.floors.MT328=
                     },
                     {
                         "type": "setBlock",
-                        "number": "panzer4h",
+                        "number": "panzer5g",
                         "loc": [
                             [
                                 8,
-                                8
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "panzer4h",
-                        "loc": [
-                            [
-                                9,
-                                6
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "panzer4h",
-                        "loc": [
-                            [
-                                9,
-                                8
+                                7
                             ]
                         ],
                         "time": 0
@@ -5562,13 +10759,68 @@ main.floors.MT328=
                         "time": 0
                     },
                     {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                9,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                9,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
                         "type": "waitAsync"
                     }
                 ],
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT328baseC===14)",
+                        "condition": "(flag:MT328baseC===34)",
                         "true": [
                             {
                                 "type": "jumpHero",
@@ -5625,11 +10877,66 @@ main.floors.MT328=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "flak88",
+                                "number": "tigere",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "tigere",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
                                 "loc": [
                                     [
                                         9,
                                         7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        5,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        7,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        7,
+                                        9
                                     ]
                                 ],
                                 "time": 0
@@ -5658,7 +10965,18 @@ main.floors.MT328=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer5g",
+                                "number": "panzer5d",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         6,
@@ -5672,7 +10990,29 @@ main.floors.MT328=
                                 "number": "panzer5g",
                                 "loc": [
                                     [
-                                        5,
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        7,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        7,
                                         8
                                     ]
                                 ],
@@ -5701,18 +11041,36 @@ main.floors.MT328=
                                 "time": 0
                             },
                             {
+                                "type": "setBlock",
+                                "number": "flak88",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "flak88",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
                                 "type": "waitAsync"
                             }
                         ],
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT328baseC===24)",
+                                "condition": "(flag:MT328baseC===54)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][2]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -5747,7 +11105,7 @@ main.floors.MT328=
                                     {
                                         "type": "openDoor",
                                         "loc": [
-                                            4,
+                                            3,
                                             7
                                         ],
                                         "async": true
@@ -5775,7 +11133,7 @@ main.floors.MT328=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT328baseC===8)",
+                "condition": "(flag:MT328baseC===12)",
                 "true": [
                     {
                         "type": "jumpHero",
@@ -5799,6 +11157,116 @@ main.floors.MT328=
                     },
                     {
                         "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                8,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                8,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                6,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                6,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                9,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                9,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                5,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                5,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
                         "number": "panzer4h",
                         "loc": [
                             [
@@ -5814,6 +11282,39 @@ main.floors.MT328=
                         "loc": [
                             [
                                 8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                7,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                7,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                6,
                                 7
                             ]
                         ],
@@ -5821,33 +11322,11 @@ main.floors.MT328=
                     },
                     {
                         "type": "setBlock",
-                        "number": "panzer4h",
+                        "number": "panzer5g",
                         "loc": [
                             [
                                 8,
-                                8
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "panzer4h",
-                        "loc": [
-                            [
-                                9,
-                                6
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "panzer4h",
-                        "loc": [
-                            [
-                                9,
-                                8
+                                7
                             ]
                         ],
                         "time": 0
@@ -5864,13 +11343,68 @@ main.floors.MT328=
                         "time": 0
                     },
                     {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                9,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                9,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
                         "type": "waitAsync"
                     }
                 ],
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT328baseC===14)",
+                        "condition": "(flag:MT328baseC===34)",
                         "true": [
                             {
                                 "type": "jumpHero",
@@ -5927,11 +11461,66 @@ main.floors.MT328=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "flak88",
+                                "number": "tigere",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "tigere",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
                                 "loc": [
                                     [
                                         9,
                                         7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        5,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        7,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        7,
+                                        9
                                     ]
                                 ],
                                 "time": 0
@@ -5960,7 +11549,18 @@ main.floors.MT328=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer5g",
+                                "number": "panzer5d",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         6,
@@ -5974,7 +11574,29 @@ main.floors.MT328=
                                 "number": "panzer5g",
                                 "loc": [
                                     [
-                                        5,
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        7,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        7,
                                         8
                                     ]
                                 ],
@@ -6003,18 +11625,36 @@ main.floors.MT328=
                                 "time": 0
                             },
                             {
+                                "type": "setBlock",
+                                "number": "flak88",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "flak88",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
                                 "type": "waitAsync"
                             }
                         ],
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT328baseC===24)",
+                                "condition": "(flag:MT328baseC===54)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][2]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -6049,7 +11689,7 @@ main.floors.MT328=
                                     {
                                         "type": "openDoor",
                                         "loc": [
-                                            4,
+                                            3,
                                             7
                                         ],
                                         "async": true
@@ -6077,7 +11717,7 @@ main.floors.MT328=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT328baseC===8)",
+                "condition": "(flag:MT328baseC===12)",
                 "true": [
                     {
                         "type": "jumpHero",
@@ -6101,6 +11741,116 @@ main.floors.MT328=
                     },
                     {
                         "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                8,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                8,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                6,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                6,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                9,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                9,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                5,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                5,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
                         "number": "panzer4h",
                         "loc": [
                             [
@@ -6116,6 +11866,39 @@ main.floors.MT328=
                         "loc": [
                             [
                                 8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                7,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                7,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                6,
                                 7
                             ]
                         ],
@@ -6123,33 +11906,11 @@ main.floors.MT328=
                     },
                     {
                         "type": "setBlock",
-                        "number": "panzer4h",
+                        "number": "panzer5g",
                         "loc": [
                             [
                                 8,
-                                8
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "panzer4h",
-                        "loc": [
-                            [
-                                9,
-                                6
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "panzer4h",
-                        "loc": [
-                            [
-                                9,
-                                8
+                                7
                             ]
                         ],
                         "time": 0
@@ -6166,13 +11927,68 @@ main.floors.MT328=
                         "time": 0
                     },
                     {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                9,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                9,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
                         "type": "waitAsync"
                     }
                 ],
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT328baseC===14)",
+                        "condition": "(flag:MT328baseC===34)",
                         "true": [
                             {
                                 "type": "jumpHero",
@@ -6229,11 +12045,66 @@ main.floors.MT328=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "flak88",
+                                "number": "tigere",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "tigere",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
                                 "loc": [
                                     [
                                         9,
                                         7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        5,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        7,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        7,
+                                        9
                                     ]
                                 ],
                                 "time": 0
@@ -6262,7 +12133,18 @@ main.floors.MT328=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer5g",
+                                "number": "panzer5d",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         6,
@@ -6276,7 +12158,29 @@ main.floors.MT328=
                                 "number": "panzer5g",
                                 "loc": [
                                     [
-                                        5,
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        7,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        7,
                                         8
                                     ]
                                 ],
@@ -6305,18 +12209,36 @@ main.floors.MT328=
                                 "time": 0
                             },
                             {
+                                "type": "setBlock",
+                                "number": "flak88",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "flak88",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
                                 "type": "waitAsync"
                             }
                         ],
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT328baseC===24)",
+                                "condition": "(flag:MT328baseC===54)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][2]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -6351,7 +12273,7 @@ main.floors.MT328=
                                     {
                                         "type": "openDoor",
                                         "loc": [
-                                            4,
+                                            3,
                                             7
                                         ],
                                         "async": true
@@ -6379,7 +12301,7 @@ main.floors.MT328=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT328baseC===8)",
+                "condition": "(flag:MT328baseC===12)",
                 "true": [
                     {
                         "type": "jumpHero",
@@ -6403,6 +12325,116 @@ main.floors.MT328=
                     },
                     {
                         "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                8,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                8,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                6,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                6,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                9,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                9,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                5,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                5,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
                         "number": "panzer4h",
                         "loc": [
                             [
@@ -6418,6 +12450,39 @@ main.floors.MT328=
                         "loc": [
                             [
                                 8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                7,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                7,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                6,
                                 7
                             ]
                         ],
@@ -6425,33 +12490,11 @@ main.floors.MT328=
                     },
                     {
                         "type": "setBlock",
-                        "number": "panzer4h",
+                        "number": "panzer5g",
                         "loc": [
                             [
                                 8,
-                                8
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "panzer4h",
-                        "loc": [
-                            [
-                                9,
-                                6
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "panzer4h",
-                        "loc": [
-                            [
-                                9,
-                                8
+                                7
                             ]
                         ],
                         "time": 0
@@ -6468,13 +12511,68 @@ main.floors.MT328=
                         "time": 0
                     },
                     {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                9,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                9,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
                         "type": "waitAsync"
                     }
                 ],
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT328baseC===14)",
+                        "condition": "(flag:MT328baseC===34)",
                         "true": [
                             {
                                 "type": "jumpHero",
@@ -6531,11 +12629,66 @@ main.floors.MT328=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "flak88",
+                                "number": "tigere",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "tigere",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
                                 "loc": [
                                     [
                                         9,
                                         7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        5,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        7,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        7,
+                                        9
                                     ]
                                 ],
                                 "time": 0
@@ -6564,7 +12717,18 @@ main.floors.MT328=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer5g",
+                                "number": "panzer5d",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         6,
@@ -6578,7 +12742,29 @@ main.floors.MT328=
                                 "number": "panzer5g",
                                 "loc": [
                                     [
-                                        5,
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        7,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        7,
                                         8
                                     ]
                                 ],
@@ -6607,18 +12793,36 @@ main.floors.MT328=
                                 "time": 0
                             },
                             {
+                                "type": "setBlock",
+                                "number": "flak88",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "flak88",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
                                 "type": "waitAsync"
                             }
                         ],
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT328baseC===24)",
+                                "condition": "(flag:MT328baseC===54)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][2]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -6653,7 +12857,7 @@ main.floors.MT328=
                                     {
                                         "type": "openDoor",
                                         "loc": [
-                                            4,
+                                            3,
                                             7
                                         ],
                                         "async": true
@@ -6681,7 +12885,7 @@ main.floors.MT328=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT328baseC===8)",
+                "condition": "(flag:MT328baseC===12)",
                 "true": [
                     {
                         "type": "jumpHero",
@@ -6705,6 +12909,116 @@ main.floors.MT328=
                     },
                     {
                         "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                8,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                8,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                6,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                6,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                9,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                9,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                5,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                5,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
                         "number": "panzer4h",
                         "loc": [
                             [
@@ -6720,6 +13034,39 @@ main.floors.MT328=
                         "loc": [
                             [
                                 8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                7,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                7,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                6,
                                 7
                             ]
                         ],
@@ -6727,33 +13074,11 @@ main.floors.MT328=
                     },
                     {
                         "type": "setBlock",
-                        "number": "panzer4h",
+                        "number": "panzer5g",
                         "loc": [
                             [
                                 8,
-                                8
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "panzer4h",
-                        "loc": [
-                            [
-                                9,
-                                6
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "panzer4h",
-                        "loc": [
-                            [
-                                9,
-                                8
+                                7
                             ]
                         ],
                         "time": 0
@@ -6770,13 +13095,68 @@ main.floors.MT328=
                         "time": 0
                     },
                     {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                9,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                9,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
                         "type": "waitAsync"
                     }
                 ],
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT328baseC===14)",
+                        "condition": "(flag:MT328baseC===34)",
                         "true": [
                             {
                                 "type": "jumpHero",
@@ -6833,11 +13213,66 @@ main.floors.MT328=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "flak88",
+                                "number": "tigere",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "tigere",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
                                 "loc": [
                                     [
                                         9,
                                         7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        5,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        7,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        7,
+                                        9
                                     ]
                                 ],
                                 "time": 0
@@ -6866,7 +13301,18 @@ main.floors.MT328=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer5g",
+                                "number": "panzer5d",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         6,
@@ -6880,7 +13326,29 @@ main.floors.MT328=
                                 "number": "panzer5g",
                                 "loc": [
                                     [
-                                        5,
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        7,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        7,
                                         8
                                     ]
                                 ],
@@ -6909,18 +13377,36 @@ main.floors.MT328=
                                 "time": 0
                             },
                             {
+                                "type": "setBlock",
+                                "number": "flak88",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "flak88",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
                                 "type": "waitAsync"
                             }
                         ],
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT328baseC===24)",
+                                "condition": "(flag:MT328baseC===54)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][2]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -6955,7 +13441,7 @@ main.floors.MT328=
                                     {
                                         "type": "openDoor",
                                         "loc": [
-                                            4,
+                                            3,
                                             7
                                         ],
                                         "async": true
@@ -6983,7 +13469,7 @@ main.floors.MT328=
             },
             {
                 "type": "if",
-                "condition": "(flag:MT328baseC===8)",
+                "condition": "(flag:MT328baseC===12)",
                 "true": [
                     {
                         "type": "jumpHero",
@@ -7007,6 +13493,116 @@ main.floors.MT328=
                     },
                     {
                         "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                8,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                8,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                6,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5d",
+                        "loc": [
+                            [
+                                6,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                9,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                9,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                5,
+                                5
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "pak40",
+                        "loc": [
+                            [
+                                5,
+                                9
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer4h",
+                        "loc": [
+                            [
+                                6,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
                         "number": "panzer4h",
                         "loc": [
                             [
@@ -7022,6 +13618,39 @@ main.floors.MT328=
                         "loc": [
                             [
                                 8,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                7,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                7,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "panzer5g",
+                        "loc": [
+                            [
+                                6,
                                 7
                             ]
                         ],
@@ -7029,33 +13658,11 @@ main.floors.MT328=
                     },
                     {
                         "type": "setBlock",
-                        "number": "panzer4h",
+                        "number": "panzer5g",
                         "loc": [
                             [
                                 8,
-                                8
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "panzer4h",
-                        "loc": [
-                            [
-                                9,
-                                6
-                            ]
-                        ],
-                        "time": 0
-                    },
-                    {
-                        "type": "setBlock",
-                        "number": "panzer4h",
-                        "loc": [
-                            [
-                                9,
-                                8
+                                7
                             ]
                         ],
                         "time": 0
@@ -7072,13 +13679,68 @@ main.floors.MT328=
                         "time": 0
                     },
                     {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                9,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                9,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                8
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                7
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "flak88",
+                        "loc": [
+                            [
+                                5,
+                                6
+                            ]
+                        ],
+                        "time": 0
+                    },
+                    {
                         "type": "waitAsync"
                     }
                 ],
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT328baseC===14)",
+                        "condition": "(flag:MT328baseC===34)",
                         "true": [
                             {
                                 "type": "jumpHero",
@@ -7135,11 +13797,66 @@ main.floors.MT328=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "flak88",
+                                "number": "tigere",
+                                "loc": [
+                                    [
+                                        8,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "tigere",
+                                "loc": [
+                                    [
+                                        8,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
                                 "loc": [
                                     [
                                         9,
                                         7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        5,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        7,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        7,
+                                        9
                                     ]
                                 ],
                                 "time": 0
@@ -7168,7 +13885,18 @@ main.floors.MT328=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer5g",
+                                "number": "panzer5d",
+                                "loc": [
+                                    [
+                                        5,
+                                        8
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5d",
                                 "loc": [
                                     [
                                         6,
@@ -7182,7 +13910,29 @@ main.floors.MT328=
                                 "number": "panzer5g",
                                 "loc": [
                                     [
-                                        5,
+                                        6,
+                                        7
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        7,
+                                        6
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        7,
                                         8
                                     ]
                                 ],
@@ -7211,18 +13961,36 @@ main.floors.MT328=
                                 "time": 0
                             },
                             {
+                                "type": "setBlock",
+                                "number": "flak88",
+                                "loc": [
+                                    [
+                                        9,
+                                        5
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "flak88",
+                                "loc": [
+                                    [
+                                        9,
+                                        9
+                                    ]
+                                ],
+                                "time": 0
+                            },
+                            {
                                 "type": "waitAsync"
                             }
                         ],
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT328baseC===24)",
+                                "condition": "(flag:MT328baseC===54)",
                                 "true": [
-                                    {
-                                        "type": "function",
-                                        "function": "function(){\nflags.mission[45][2]=true\n}"
-                                    },
                                     {
                                         "type": "pauseBgm"
                                     },
@@ -7257,7 +14025,7 @@ main.floors.MT328=
                                     {
                                         "type": "openDoor",
                                         "loc": [
-                                            4,
+                                            3,
                                             7
                                         ],
                                         "async": true
@@ -7294,7 +14062,7 @@ main.floors.MT328=
                 "type": "closeDoor",
                 "id": "specialDoor",
                 "loc": [
-                    4,
+                    3,
                     7
                 ],
                 "async": true
@@ -7330,7 +14098,7 @@ main.floors.MT328=
                 "number": "attankinf",
                 "loc": [
                     [
-                        6,
+                        7,
                         6
                     ]
                 ],
@@ -7342,7 +14110,7 @@ main.floors.MT328=
                 "loc": [
                     [
                         8,
-                        6
+                        7
                     ]
                 ],
                 "time": 0
@@ -7350,32 +14118,65 @@ main.floors.MT328=
             {
                 "type": "setBlock",
                 "number": "attankinf",
-                "loc": [
-                    [
-                        8,
-                        8
-                    ]
-                ],
-                "time": 0
-            },
-            {
-                "type": "setBlock",
-                "number": "attankinf",
-                "loc": [
-                    [
-                        6,
-                        8
-                    ]
-                ],
-                "time": 0
-            },
-            {
-                "type": "setBlock",
-                "number": "pak40",
                 "loc": [
                     [
                         7,
+                        8
+                    ]
+                ],
+                "time": 0
+            },
+            {
+                "type": "setBlock",
+                "number": "attankinf",
+                "loc": [
+                    [
+                        6,
+                        7
+                    ]
+                ],
+                "time": 0
+            },
+            {
+                "type": "setBlock",
+                "number": "howitzer150",
+                "loc": [
+                    [
+                        5,
                         5
+                    ]
+                ],
+                "time": 0
+            },
+            {
+                "type": "setBlock",
+                "number": "howitzer150",
+                "loc": [
+                    [
+                        9,
+                        5
+                    ]
+                ],
+                "time": 0
+            },
+            {
+                "type": "setBlock",
+                "number": "howitzer150",
+                "loc": [
+                    [
+                        5,
+                        9
+                    ]
+                ],
+                "time": 0
+            },
+            {
+                "type": "setBlock",
+                "number": "howitzer150",
+                "loc": [
+                    [
+                        9,
+                        9
                     ]
                 ],
                 "time": 0
@@ -7414,13 +14215,28 @@ main.floors.MT328=
                 "time": 0
             },
             {
+                "type": "setBlock",
+                "number": "pak40",
+                "loc": [
+                    [
+                        7,
+                        5
+                    ]
+                ],
+                "time": 0
+            },
+            {
                 "type": "waitAsync"
             },
             {
                 "type": "playSound",
                 "name": "xinxinmagic.mp3"
             },
-            "\t[系统提示]击败敌人的多次反扑以占领区域"
+            "\t[系统提示]击败敌人的多次反扑以占领区域",
+            {
+                "type": "hide",
+                "remove": true
+            }
         ]
     },
     "autoEvent": {

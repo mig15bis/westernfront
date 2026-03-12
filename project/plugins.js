@@ -5167,6 +5167,9 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 			name: '地毯式轰炸',
 			cost: 3000,
 			func: function () {
+				if (!flags.地毯轰炸楼层) {
+					flags.地毯轰炸楼层 = [];
+				}
 				let bombed = flags.地毯轰炸楼层,
 					floorId = core.status.floorId,
 					todo = [];
@@ -5903,40 +5906,47 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 	// 在此增加新插件
 	const setting = {
 		启用: true,
-		炮击: { 本体: '#ff0000', 范围: '#ffff00', 启动: true },
+		炮击: { 本体: '#ffa500', 范围: '#ee82ee', 启动: true },
 		指挥: { 本体: '#ff0000', 启动: true },
 		点杀: { 本体: '#8a2be2', 启动: true },
-		防空: { 本体: '#ff00ff', 范围: '#00ffff', 启动: true },
-		谍报: { 本体: '#696969', 启动: true },
+		防空: { 本体: '#7fffd4', 范围: '#f0ffff', 启动: true },
+		谍报: { 本体: '#ffffff', 启动: true },
 		截断: { 本体: '#00ff00', 启动: true },
-		警戒: { 本体: '#ff0000', 启动: true },
-		堡垒: { 本体: '#8b008b', 范围: '#8b4513', 启动: true },
+		警戒: { 本体: '#800000', 启动: true },
+		堡垒: { 本体: '#000000', 范围: '#c0c0c0', 启动: true },
 		燃烧: { 本体: '#dc143c', 启动: true },
-		遥控: { 本体: '#ffff00', 启动: true },
-		陷阱: { 本体: '#0000ff', 范围: '#ff7f50', 启动: true },
-		阵地: { 本体: '#8b008b', 范围: '#8b4513', 启动: true },
-		迂回包抄: { 本体: '#808000', 启动: true },
+		遥控: { 本体: '#00ffff', 启动: true },
+		陷阱: { 本体: '#ffff00', 范围: '#ffa07a', 启动: true },
+		阵地: { 本体: '#8b008b', 范围: '#ff00ff', 启动: true },
+		迂回包抄: { 本体: '#ff69b4', 启动: true },
 		直掩: { 本体: '#ffd700', 启动: true },
 		观测: { 本体: '#ff8c00', 启动: true },
 		火力覆盖: { 本体: '#0000cd', 启动: true },
 		进水: { 本体: '#1e90ff', 启动: true },
-		alpha: 0.2
+		alpha: 0.3
 	};
 
 
 	core.draw = function draw() {
 		let ctx = core.dymCanvas.location;
+		let ctx2 = core.dymCanvas.location2;
 		if (!ctx) {
 			ctx = core.createCanvas('location', 0, 0, 480, 480, 61);
-			ctx.globalCompositeOperation = 'multiply';
+			ctx.globalCompositeOperation = 'color';
+		}
+		if (!ctx2) {
+			ctx2 = core.createCanvas("location2", 0, 0, 480, 480, 62);
+			ctx2.globalCompositeOperation = 'color';
 		}
 		core.clearMap(ctx);
+		core.clearMap(ctx2);
 		//if (core.status.event.id) return;
 		let newsystem = core.getLocalStorage('drawui', setting);
 		if (!newsystem.启用) {
 			return;
 		}
 		core.setOpacity(ctx, newsystem.alpha);
+		core.setOpacity(ctx2, 0.8);
 		if (!core.status.checkBlock?.cache?.map) { return }
 		Object.entries(core.status.checkBlock.cache.map).forEach(([key, value]) => {
 			if (!newsystem[key].启动) { return }
@@ -5944,21 +5954,24 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 			Object.entries(value).forEach(([k, v]) => {
 				//console.log(k, v);
 				const loc = k.split(",").map(Number);
-				ctx.lineWidth = 3;
-				core.drawLine(ctx, 32 * loc[0], 32 * loc[1], 32 * loc[0] + 6, 32 * loc[1], newsystem[key].本体); //左上横线
-				core.drawLine(ctx, 32 * loc[0], 32 * loc[1], 32 * loc[0], 32 * loc[1] + 6, newsystem[key].本体); //左上竖线
-				core.drawLine(ctx, 32 * loc[0] + 32, 32 * loc[1], 32 * loc[0] + 26, 32 * loc[1], newsystem[key].本体); //右上横线
-				core.drawLine(ctx, 32 * loc[0] + 32, 32 * loc[1], 32 * loc[0] + 32, 32 * loc[1] + 6, newsystem[key].本体); //右上竖线
-				core.drawLine(ctx, 32 * loc[0], 32 * loc[1] + 32, 32 * loc[0] + 6, 32 * loc[1] + 32, newsystem[key].本体); //左下横线
-				core.drawLine(ctx, 32 * loc[0], 32 * loc[1] + 32, 32 * loc[0], 32 * loc[1] + 26, newsystem[key].本体); //左下竖线
-				core.drawLine(ctx, 32 * loc[0] + 32, 32 * loc[1] + 32, 32 * loc[0] + 26, 32 * loc[1] + 32, newsystem[key].本体); //右下横线
-				core.drawLine(ctx, 32 * loc[0] + 32, 32 * loc[1] + 32, 32 * loc[0] + 32, 32 * loc[1] + 26, newsystem[key].本体); //右下竖线
+				ctx2.lineWidth = 2;
+				core.drawLine(ctx2, 32 * loc[0], 32 * loc[1], 32 * loc[0] + 6, 32 * loc[1], newsystem[key].本体); //左上横线
+				core.drawLine(ctx2, 32 * loc[0], 32 * loc[1], 32 * loc[0], 32 * loc[1] + 6, newsystem[key].本体); //左上竖线
+				core.drawLine(ctx2, 32 * loc[0] + 32, 32 * loc[1], 32 * loc[0] + 26, 32 * loc[1], newsystem[key].本体); //右上横线
+				core.drawLine(ctx2, 32 * loc[0] + 32, 32 * loc[1], 32 * loc[0] + 32, 32 * loc[1] + 6, newsystem[key].本体); //右上竖线
+				core.drawLine(ctx2, 32 * loc[0], 32 * loc[1] + 32, 32 * loc[0] + 6, 32 * loc[1] + 32, newsystem[key].本体); //左下横线
+				core.drawLine(ctx2, 32 * loc[0], 32 * loc[1] + 32, 32 * loc[0], 32 * loc[1] + 26, newsystem[key].本体); //左下竖线
+				core.drawLine(ctx2, 32 * loc[0] + 32, 32 * loc[1] + 32, 32 * loc[0] + 26, 32 * loc[1] + 32, newsystem[key].本体); //右下横线
+				core.drawLine(ctx2, 32 * loc[0] + 32, 32 * loc[1] + 32, 32 * loc[0] + 32, 32 * loc[1] + 26, newsystem[key].本体); //右下竖线
+				core.drawLine(ctx2, 32 * loc[0], 32 * loc[1] + 16, 32 * loc[0] + 32, 32 * loc[1] + 16, newsystem[key].本体); //准星-横
+				core.drawLine(ctx2, 32 * loc[0] + 16, 32 * loc[1], 32 * loc[0] + 16, 32 * loc[1] + 32, newsystem[key].本体); //准星-竖
+				core.strokeCircle(ctx2, 32 * loc[0] + 16, 32 * loc[1] + 16, 8, newsystem[key].本体); //准星-圆
 				//console.log('本体边框');
 				if (newsystem[key].范围) {
 					//console.log('领域范围');
-					ctx.lineWidth = 2;
+					ctx.lineWidth = 3;
 					core.fillRect(ctx, 32 * (loc[0] - v), 32 * (loc[1] - v), (2 * v + 1) * 32, (2 * v + 1) * 32, newsystem[key].范围); //领域范围
-					core.strokeRect(ctx, 32 * (loc[0] - v), 32 * (loc[1] - v), (2 * v + 1) * 32, (2 * v + 1) * 32, newsystem[key].本体); //领域边框
+					core.strokeRect(ctx2, 32 * (loc[0] - v), 32 * (loc[1] - v), (2 * v + 1) * 32, (2 * v + 1) * 32, newsystem[key].本体); //领域边框
 				}
 			});
 		});

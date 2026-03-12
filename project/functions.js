@@ -1067,7 +1067,9 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		[88, "进水", "主角被该敌人的鱼雷命中后会获得“进水”debuff，存在期间主角每次战后损失等同于10%血限的血量。“金牌损管”可以在战后完成修复，或是通关后可自动消除", "#00FFFF"],
 		[89, "殉爆", "如果主角带着燃烧状态与该敌人战斗，则会消除所有燃烧层数，受到一次60%血量上限的殉爆伤害", "#FF0000"],
 		[90, "WG42火箭弹", function (enemy) { return "主角首次进入当前楼层时，会被所有携带WG.42火箭弹的敌机集火一次，每架飞机造成15%攻击力×载弹量的伤害。如果存在友军，则该伤害的80%由友军承受。该敌机携带" + (enemy.ammo ?? 0) + "枚WG42火箭弹" }],
-		[91, "决斗", "与该敌人战斗时，不会波及友军", "#ffffff"]
+		[91, "决斗", "与该敌人战斗时，不会波及友军", "#ffffff"],
+		[92, "绕侧", "该敌人会直接从主角侧翼发起先手攻击，造成一次2倍攻击力的暴击伤害，且战斗全程无视主角装甲值。“破译”或“预警”技能生效时，本技能无效", "#ffcc33"],
+		[93, "伪装", "主角无法在第一回合命中该敌人", "#dc143c"]
 	];
 },
         "getEnemyInfo": function (enemy, hero, x, y, floorId) {
@@ -1638,6 +1640,11 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 				b -= 3;
 			}
 		}
+		if (core.hasSpecial(mon_special, 92)) { //绕侧
+			if ((flags.skill !== 5 && flags.skill !== 10) || flags.spy) { //没有相应技能或存在谍报，生效
+				b = 0;
+			}
+		}
 		if (flags.skill === 17 && tk) { //技能17：装突
 			yongshi.atk *= 1.3;
 		}
@@ -1674,6 +1681,9 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	}
 	if (core.getFlag('powerup', 0) > 0) { //振奋
 		yongshi.atk *= 1.1;
+	}
+	if (flags.skill === 9 && core.getFlag('龙骑兵行动', false)) { //抵抗运动（龙骑兵行动强化）
+		yongshi.atk *= 1.2;
 	}
 
 	if (core.getFlag('scare', 0) > 0 && tk !== 'is3') { //惊慌
@@ -1769,6 +1779,11 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	}
 	if (core.hasSpecial(mon_special, 56)) { //技能 狙击
 		damage += guaiwu.atk * 2;
+	}
+	if (core.hasSpecial(mon_special, 92)) { //绕侧
+		if ((flags.skill !== 5 && flags.skill !== 10) || flags.spy) { //没有相应技能或存在谍报，生效
+			damage += guaiwu.atk * 2
+		}
 	}
 	if (core.hasSpecial(mon_special, 57) && (cacheFloor.陆军 + cacheFloor.海军 + cacheFloor.空军 > cacheFloor.主将)) { //技能 主将
 		return null;
@@ -1889,6 +1904,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		monsk86 = 1,
 		monsk87 = 1,
 		monsk88 = false,
+		monsk93 = core.hasSpecial(mon_special, 93) ? 1 : 0,
 		flood = false,
 		flooding = core.getFlag('进水', false),
 		lianji = 1;
@@ -2472,6 +2488,9 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		if (p51lianji) { //P51连击
 			hero_perDamage *= 2;
 		}
+		if (turn === 1 && monsk93 === 1) { //伪装，伤害归0
+			hero_perDamage = 0;
+		}
 		guaiwu.hp -= hero_perDamage;
 
 		if (guaiwu.hp < mon_hp * 0.2 && ca === 'norfolk' && norfolkattack === 0) { //诺福克·最后一击
@@ -2513,8 +2532,14 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 
 		//怪物回合
 		if (b === 0) {
-			if (flags.skill === 9 && junzhong === "陆军" && turn <= 7 && !flags.spy) { //抵抗运动
-				guaiwu.atk -= mon_atk * 0.1;
+			if (flags.skill === 9 && junzhong === '陆军' && flags.spy) { //抵抗运动
+				if (core.getFlag('龙骑兵行动', false)) {
+					if (turn <= 6) {
+						guaiwu.atk -= mon_atk * 0.15;
+					} else if (turn <= 7) {
+						guaiwu.atk -= mon_atk * 0.1;
+					}
+				}
 			}
 			mon_common += guaiwu.atk;
 			if (core.hasSpecial(mon_special, 28)) { //技能 航弹

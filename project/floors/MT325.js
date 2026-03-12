@@ -400,6 +400,12 @@ main.floors.MT325=
             "value": "3",
             "norefresh": true
         },
+        {
+            "type": "setEnemy",
+            "id": "gunbunker",
+            "name": "zoneSquare",
+            "value": "true"
+        },
         "\t[系统提示]敌人战力重置完成",
         {
             "type": "playSound",
@@ -443,7 +449,7 @@ main.floors.MT325=
                     "checkFlag": "MT329baseA",
                     "operator": "=",
                     "text": "击败守点敌人",
-                    "count": "24"
+                    "count": "30"
                 }
             ]
         },
@@ -458,7 +464,7 @@ main.floors.MT325=
                     "checkFlag": "MT327baseB",
                     "operator": "=",
                     "text": "击败守点敌人",
-                    "count": "30"
+                    "count": "52"
                 }
             ]
         },
@@ -473,7 +479,7 @@ main.floors.MT325=
                     "checkFlag": "MT328baseC",
                     "operator": "=",
                     "text": "击败守点敌人",
-                    "count": "24"
+                    "count": "54"
                 }
             ]
         },
