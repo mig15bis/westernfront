@@ -449,7 +449,7 @@ main.floors.MT325=
                     "checkFlag": "MT329baseA",
                     "operator": "=",
                     "text": "击败守点敌人",
-                    "count": "30"
+                    "count": "40"
                 }
             ]
         },

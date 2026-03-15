@@ -1069,7 +1069,8 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		[90, "WG42火箭弹", function (enemy) { return "主角首次进入当前楼层时，会被所有携带WG.42火箭弹的敌机集火一次，每架飞机造成15%攻击力×载弹量的伤害。如果存在友军，则该伤害的80%由友军承受。该敌机携带" + (enemy.ammo ?? 0) + "枚WG42火箭弹" }],
 		[91, "决斗", "与该敌人战斗时，不会波及友军", "#ffffff"],
 		[92, "绕侧", "该敌人会直接从主角侧翼发起先手攻击，造成一次2倍攻击力的暴击伤害，且战斗全程无视主角装甲值。“破译”或“预警”技能生效时，本技能无效", "#ffcc33"],
-		[93, "伪装", "主角无法在第一回合命中该敌人", "#dc143c"]
+		[93, "伪装", "主角无法在第一回合命中该敌人", "#dc143c"],
+		[94, "装填", "该敌人每次攻击后需要装填2回合才能发起下一轮攻击（第一回合正常攻击）"]
 	];
 },
         "getEnemyInfo": function (enemy, hero, x, y, floorId) {
@@ -1905,6 +1906,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		monsk87 = 1,
 		monsk88 = false,
 		monsk93 = core.hasSpecial(mon_special, 93) ? 1 : 0,
+		monsk94 = core.hasSpecial(mon_special, 94),
 		flood = false,
 		flooding = core.getFlag('进水', false),
 		lianji = 1;
@@ -2532,7 +2534,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 
 		//怪物回合
 		if (b === 0) {
-			if (flags.skill === 9 && junzhong === '陆军' && flags.spy) { //抵抗运动
+			if (flags.skill === 9 && junzhong === '陆军' && !flags.spy) { //抵抗运动
 				if (core.getFlag('龙骑兵行动', false)) {
 					if (turn <= 6) {
 						guaiwu.atk -= mon_atk * 0.15;
@@ -2619,6 +2621,11 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			}
 			if (monsk88 && mon_torpedo > 0) { //技能88：进水
 				flood = true;
+			}
+			if (monsk94) { //技能94：装填
+				if (turn % 3 !== 1) {
+					mon_common = 0;
+				}
 			}
 			mon_summary += mon_common + mon_bomb + mon_torpedo;
 			mon_perDamage += mon_summary;
