@@ -149,10 +149,10 @@ var enemys_fcae963b_31c9_42b4_b48c_bb48d09f3f80 =
 	"jagpanzer": {"name":"猎豹坦克歼击车","hp":2000000,"atk":180000,"def":0,"money":6,"exp":6,"point":0,"special":[56,59,86],"type":"坦歼","ap":222,"arm":130,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0,"description":"主武器：88mm反坦克炮","range":2,"zoneSquare":true},
 	"jagtiger": {"name":"猎虎歼击车","hp":0,"atk":0,"def":0,"money":10,"exp":10,"point":0,"special":[],"type":"坦歼","ap":237,"arm":200,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0,"description":"主武器：128mm反坦克炮"},
 	"panzer4h": {"name":"四号H型","hp":300000,"atk":45000,"def":0,"money":10,"exp":10,"point":0,"special":[67],"description":"主武器：75mm长管坦克炮","type":"中坦","ap":130,"arm":80,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0},
-	"v1missile": {"name":"V1巡航导弹","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[48],"type":"导弹","afterBattle":[{"type":"animate","name":"explore3","loc":"hero","async":true}],"ap":0,"arm":0,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0},
-	"v2missile": {"name":"V2弹道导弹","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[22,65],"type":"导弹","afterBattle":[{"type":"animate","name":"explore3","loc":"hero","async":true}],"ap":0,"arm":0,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0},
-	"fritzx": {"name":"弗里茨X","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[49,65],"type":"导弹","afterBattle":[{"type":"animate","name":"explore3","loc":"hero","async":true}],"ap":0,"arm":0,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0},
-	"sakura": {"name":"樱花","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[44,65],"type":"导弹","afterBattle":[{"type":"animate","name":"explore3","loc":"hero","async":true}],"ap":0,"arm":0,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0},
+	"v1missile": {"name":"V1巡航导弹","hp":4300000,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[48],"type":"导弹","afterBattle":[{"type":"animate","name":"explore3","loc":"hero","async":true}],"ap":0,"arm":0,"top":4500000,"bom":0,"tpn":0,"dod":0,"gro":0},
+	"v2missile": {"name":"V2弹道导弹","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[22],"type":"导弹","afterBattle":[{"type":"animate","name":"explore3","loc":"hero","async":true}],"ap":0,"arm":0,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0},
+	"fritzx": {"name":"弗里茨X","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[49],"type":"导弹","afterBattle":[{"type":"animate","name":"explore3","loc":"hero","async":true}],"ap":0,"arm":0,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0},
+	"sakura": {"name":"樱花","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[44,74],"type":"导弹","afterBattle":[{"type":"animate","name":"explore3","loc":"hero","async":true}],"ap":0,"arm":0,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0},
 	"model": {"name":"莫德尔","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[25,42,57,59,63,71],"type":"重坦","gro":0,"dod":0,"tpn":0,"bom":0,"top":0,"ap":151,"arm":144},
 	"stugtiger": {"name":"突击虎","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[],"type":"坦歼","ap":999,"arm":144,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0,"description":"主武器：380mm臼炮（火箭助推榴弹）"},
 	"manstein": {"name":"曼施坦因","hp":1000,"atk":500,"def":0,"money":0,"exp":0,"point":0,"special":[25,39,43,57],"notBomb":true,"type":"重坦","ap":222,"arm":200,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0},
@@ -204,5 +204,7 @@ var enemys_fcae963b_31c9_42b4_b48c_bb48d09f3f80 =
 	"japtank4": {"name":"四式中战车","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[],"type":"中坦","description":"主武器：75mm炮","ap":100,"arm":50},
 	"japtank5": {"name":"五式中战车","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[],"type":"中坦","arm":75,"description":"主武器：75mm炮","ap":112},
 	"japtank6": {"name":"六号重战车“虎式”","hp":0,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[],"type":"重坦","description":"主武器：88mm炮（德制）","ap":155,"arm":144},
-	"acemg42": {"name":"海恩·赛弗罗","hp":1400000,"atk":30000,"def":0,"money":100,"exp":100,"point":0,"special":[6,15,42,56,57,71,86,87],"type":"建筑","ap":35,"arm":200,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0,"range":15,"zone":3000,"n":10}
+	"acemg42": {"name":"海恩·赛弗罗","hp":1400000,"atk":30000,"def":0,"money":100,"exp":100,"point":0,"special":[6,15,42,56,57,71,86,87],"type":"建筑","ap":35,"arm":200,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0,"range":15,"zone":3000,"n":10},
+	"spy": {"name":"间谍","hp":1,"atk":0,"def":0,"money":0,"exp":0,"point":0,"special":[41],"ap":0,"arm":0,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0,"type":"步兵"},
+	"aatower": {"name":"柏林防空塔","hp":999999999999999,"atk":100000,"def":0,"money":10000,"exp":10000,"point":0,"special":[6,15,25,38,40,42,46,56,57,59,71,72,84,86,87],"type":"建筑","ap":220,"arm":900,"top":0,"bom":0,"tpn":0,"dod":0,"gro":0,"n":10,"zone":10000,"range":3}
 }

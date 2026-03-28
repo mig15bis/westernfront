@@ -5776,6 +5776,162 @@ var events_c12a15a8_c380_4b28_8144_256cba95f760 =
 					}
 				]
 			}
+		],
+		"铝箔条动画": [
+			{
+				"type": "if",
+				"condition": "(flag:anime===true)",
+				"true": [
+					{
+						"type": "showImage",
+						"code": 1,
+						"image": "aircraft9.png",
+						"loc": [
+							480,
+							115
+						],
+						"opacity": 1,
+						"time": 0
+					},
+					{
+						"type": "moveImage",
+						"code": 1,
+						"to": [
+							-195,
+							115
+						],
+						"time": 700,
+						"async": true
+					},
+					{
+						"type": "playSound",
+						"name": "fighter.mp3"
+					},
+					{
+						"type": "sleep",
+						"time": 100,
+						"noSkip": true
+					},
+					{
+						"type": "playSound",
+						"name": "Saint4.mp3"
+					},
+					{
+						"type": "animate",
+						"name": "disturb",
+						"loc": [
+							9,
+							12
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 100,
+						"noSkip": true
+					},
+					{
+						"type": "animate",
+						"name": "disturb",
+						"loc": [
+							4,
+							10
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 100,
+						"noSkip": true
+					},
+					{
+						"type": "animate",
+						"name": "disturb",
+						"loc": [
+							3,
+							5
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 100,
+						"noSkip": true
+					},
+					{
+						"type": "animate",
+						"name": "disturb",
+						"loc": [
+							8,
+							4
+						],
+						"async": true
+					},
+					{
+						"type": "sleep",
+						"time": 100,
+						"noSkip": true
+					},
+					{
+						"type": "animate",
+						"name": "disturb",
+						"loc": [
+							7,
+							7
+						],
+						"async": true
+					},
+					{
+						"type": "waitAsync"
+					},
+					{
+						"type": "hideImage",
+						"code": 1,
+						"time": 0
+					}
+				]
+			}
+		],
+		"推导弹": [
+			{
+				"type": "if",
+				"condition": "(flag:anime===true)",
+				"true": [
+					{
+						"type": "animate",
+						"name": "hand",
+						"loc": [
+							"core.nextX()",
+							"core.nextY()"
+						],
+						"async": true
+					},
+					{
+						"type": "jump",
+						"from": [
+							"core.nextX()",
+							"core.nextY()"
+						],
+						"to": [
+							"core.nextX(2)",
+							"core.nextY(2)"
+						],
+						"time": 500,
+						"async": true
+					},
+					{
+						"type": "waitAsync"
+					},
+					{
+						"type": "animate",
+						"name": "bigexplore",
+						"loc": [
+							"core.nextX(2)",
+							"core.nextY(2)"
+						]
+					}
+				]
+			}
 		]
 	}
 }

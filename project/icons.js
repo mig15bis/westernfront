@@ -433,7 +433,9 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"japtank4": 158,
 		"japtank5": 159,
 		"japtank6": 160,
-		"acemg42": 196
+		"acemg42": 196,
+		"spy": 197,
+		"aatower": 198
 	},
 	"enemy48": {
 		"angel": 0,

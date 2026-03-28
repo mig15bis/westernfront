@@ -657,6 +657,8 @@ var maps_90f36752_8815_4be8_b32b_d7fad1d0542e =
 	"741": {"cls":"terrains","id":"statusMoney"},
 	"742": {"cls":"terrains","id":"statusLevel"},
 	"743": {"cls":"enemys","id":"acemg42"},
+	"744": {"cls":"enemys","id":"spy"},
+	"745": {"cls":"enemys","id":"aatower"},
 	"10014": {"cls":"tileset","id":"X10014","canBreak":true},
 	"10015": {"cls":"tileset","id":"X10015","canBreak":true},
 	"10295": {"cls":"tileset","id":"X10295","canBreak":true},

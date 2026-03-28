@@ -713,6 +713,10 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	if (core.getFlag("fire", 0) > 0) {
 		flags.fire--;
 	}
+	//铝箔条
+	if (core.getFlag('铝箔条', 0) > 0) {
+		flags.铝箔条--;
+	}
 	if (core.hasSpecial(special, 47) && damage > 0) {
 		flags.fire = (flags.fire ?? 0) + 3;
 	}
@@ -725,6 +729,10 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		flags.fire = 0;
 		flags.进水 = false;
 	}
+	// 谍报
+	if (flags.spy && flags.skill) { //消buff
+		flags.spy -= 1;
+	}
 	//战后关技能并扣mana
 	if (flags.skill > 0) {
 		hero.mana -= core.plugin.skillInfo[flags.skill].cost;
@@ -733,6 +741,13 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	//清楚可乐buff层数
 	if (flags.colabuff > 0) {
 		flags.colabuff = 0;
+	}
+	if (core.hasSpecial(special, 48)) { //V1导弹特殊任务
+		if (core.status.floorId === 'MT343' || core.status.floorId === 'MT344' || core.status.floorId === 'MT345' || core.status.floorId === 'MT346' || core.status.floorId === 'MT347') {
+			if (turn <= 5) {
+				flags.成功拦截 += 1;
+			}
+		}
 	}
 
 
@@ -771,12 +786,9 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		if (core.status.hero.atk < 0) core.status.hero.atk = 0;
 		if (core.status.hero.def < 0) core.status.hero.def = 0;
 	}
-	// 谍报
-	if (flags.spy) { //消buff
-		flags.spy -= 1;
-	}
+
 	if (core.hasSpecial(special, 41)) {
-		flags.spy = (flags.spy ?? 0) + 1;
+		flags.spy = (flags.spy ?? 0) + 3;
 	}
 	// 惊慌
 	if (damageInfo.bool && core.hasSpecial(special, 75)) { // v2
@@ -1018,14 +1030,14 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		[38, "精锐", "对主角造成的伤害翻倍", "#dc143c"],
 		[39, "装甲之父", "曼施坦因专属技能，在场时全体德军装甲部队获得20%增伤，无视主角后勤值，并且包括自身在内每个装甲单位战败时额外造成一次2倍攻击力的亡语"],
 		[40, "防空", "以自身为中心5*5范围内（包括自身）张开防空领域，主角与防空领域内的轴心国部队战斗时，每回合额外受到该防空炮20%攻击力的伤害", "#e6e099", 1],
-		[41, "谍报", "战后主角获得1层“谍报”debuff。“谍报”存在期间，主角使用的下一个任意技能无效化，随后消除一层debuff。可叠加。", "#d3d3d3"],
+		[41, "谍报", "战后主角获得3层“谍报”debuff。“谍报”存在期间，主角使用的下一个任意技能无效化，随后消除一层debuff。可叠加。该敌人伤害不会小于1。", "#d3d3d3"],
 		[42, "截断", "当前地图中，该敌人在场时，主角后勤值失效", "#228b22"],
 		[43, "超压", "该陆军单位的穿甲值大于主角装甲值时，造成的回合伤害额外提升40%", "#ff8c00"],
 		[44, "神风特攻", function (enemy) { return "丧心病狂且泯灭人性的碳基制导系统。不攻击，" + (enemy.spd ?? 0) + "回合后撞击主角，造成1倍雷击伤害和2层惊慌debuff。", "#e6e099" }],
 		[45, "警戒", "若主角与该敌人发生战斗，则永久为全图轴心国部队提供10%的攻击力加成", "#e6e099"],
 		[46, "堡垒", "为身周9×9范围内轴心国军队提供20%伤害减免，且该范围内存在轴心国军队时，堡垒自身无法被攻击", "#e6e099"],
 		[47, "燃烧", "战后为主角施加3层燃烧debuff。该debuff存在时，主角受到的战斗伤害提升20%×燃烧层数，火焰每过一场战斗会熄灭一层，可叠加。伤害<=0或被技能秒杀时不会触发", "#FF8000"],
-		[48, "V1导弹", "巡航导弹，不会主动攻击。若主角未能在10回合内成功拦截该导弹，则立即爆炸并造成等同于自身雷击值的伤害。若成功拦截，则只造成20%伤害"],
+		[48, "V1导弹", "巡航导弹，不会主动攻击。若主角未能在5回合内成功拦截该导弹，则立即爆炸并造成等同于自身雷击值的伤害。若成功拦截，则只造成20%伤害"],
 		[49, "无线制导", "无线电遥控导弹。当前地图内存在具有“遥控”技能的敌人时，对主角造成1倍雷击的伤害，否则失控坠毁。"],
 		[50, "遥控", "该敌人控制着“弗里茨X”导弹进行攻击。被摧毁后，“弗里茨X”就会失控坠毁"],
 		[51, "歼灭", "主角经过该敌人十字范围内1格时，若生命值低于10%生命上限，则会立即死亡", "#ff0000"],
@@ -1280,7 +1292,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 						}
 					}
 					// 检查【光环】技能，数字25
-					if (enemy && core.hasSpecial(enemy.special, 25)) {
+					if (enemy && core.hasSpecial(enemy.special, 25) && core.getFlag('铝箔条', 0) <= 0) {
 						// 检查是否是范围光环
 						var inRange = enemy.haloRange == null;
 						if (enemy.haloRange != null && x != null && y != null) {
@@ -1311,15 +1323,15 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 						}
 					}
 					//检查“观测”技能，数字71
-					if (enemy && core.hasSpecial(enemy.special, 71)) {
+					if (enemy && core.hasSpecial(enemy.special, 71) && core.getFlag('铝箔条', 0) <= 0) {
 						zone_buff += 20;
 					}
 					// 检查【狼群】技能，数字58
-					if (enemy && enemy.type === "潜艇" && core.hasSpecial(mon_special, 58)) { // 这里要判断一下两个怪都有狼群
+					if (enemy && enemy.type === "潜艇" && core.hasSpecial(mon_special, 58) && core.getFlag('铝箔条', 0) <= 0) { // 这里要判断一下两个怪都有狼群
 						if (x !== block.x || y !== block.y) top_buff += 10;
 					}
 					// 检查【阵地】技能，数字63（其他阵地给当前怪物加光环）
-					if (enemy && core.hasSpecial(enemy.special, 63)) {
+					if (enemy && core.hasSpecial(enemy.special, 63) && core.getFlag('铝箔条', 0) <= 0) {
 						var inRange = false;
 						if (x != null && y != null) {
 							var dx = Math.abs(block.x - x),
@@ -1332,7 +1344,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 						}
 					}
 					// 检查【阵地】技能，数字63（其他怪物给当前阵地加光环）
-					if (enemy && core.hasSpecial(mon_special, 63)) {
+					if (enemy && core.hasSpecial(mon_special, 63) && core.getFlag('铝箔条', 0) <= 0) {
 						var inRange = false;
 						if (x != null && y != null) {
 							var dx = Math.abs(block.x - x),
@@ -1387,7 +1399,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 				atk_buff -= 30;
 				top_buff -= 60;
 			}
-			if (cacheFloor.航空支援) {
+			if (cacheFloor.航空支援 && core.getFlag('铝箔条', 0) <= 0) {
 				if (core.plugin.Luftwaffe.includes(core.getEnemyValue(enemy, 'type', x, y, floorId))) {
 					hp_buff += 20;
 					atk_buff += 10;
@@ -1887,7 +1899,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	}*/
 	//战斗过程循环
 	let norfolkattack = 0,
-		trapdamage = cache.trap_buff || 0; //陷阱
+		trapdamage = core.getFlag('铝箔条', 0) > 0 ? 0 : (cache.trap_buff || 0); //陷阱
 	if (fb === 'mosquito') { trapdamage *= 0.5 } else if (fb === 'p61') { trapdamage *= 0.2 }
 	let burndamage = (core.getFlag("fire", 0) > 0 ? (0.2 * flags.fire) + 1 : 1), //燃烧
 		nodud = flags.引信改良 || core.hasItem('hard1'),
@@ -2522,7 +2534,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			bool = true;
 		}
 
-		if (core.hasSpecial(mon_special, 48) && turn >= 10) { // v1导弹 
+		if (core.hasSpecial(mon_special, 48) && turn >= 5) { // v1导弹 
 			damage += guaiwu.top;
 			v1 = true;
 			break;
@@ -2616,7 +2628,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 				mon_common *= mon_skillNum.n;
 			}*/
 			mon_common *= lianji;
-			if (x !== null && y !== null) { //技能 防空 40
+			if (x !== null && y !== null && core.getFlag('铝箔条', 0) <= 0) { //技能 防空 40
 				mon_common += cache.aa_buff || 0;
 			}
 			if (monsk88 && mon_torpedo > 0) { //技能88：进水
@@ -2629,7 +2641,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			}
 			mon_summary += mon_common + mon_bomb + mon_torpedo;
 			mon_perDamage += mon_summary;
-			if (howitzer) {
+			if (howitzer && core.getFlag('铝箔条', 0) <= 0) {
 				mon_perDamage += cacheFloor.火力覆盖;
 			}
 			if (ff === 'p51d') { //野马
@@ -2686,7 +2698,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	}
 	damage *= finalDamage;
 	damage *= burndamage;
-	damage += cacheFloor.直掩;
+	damage += core.getFlag('铝箔条', 0) > 0 ? 0 : cacheFloor.直掩;
 	if (flooding) { //进水
 		damage += core.status.hero.hpmax * 0.1;
 	}
@@ -2706,14 +2718,14 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	} else if (core.hasItem('hard2')) {
 		damage *= 0.8;
 	}
-	if (!cacheFloor.截断) { //后勤
+	if (!cacheFloor.截断 || core.getFlag('铝箔条', 0)) { //后勤
 		damage -= yongshi.mdef;
 		if (flags.temmdef) {
 			damage -= flags.temmdef;
 		}
 	}
 	//狼群改
-	if (core.hasSpecial(mon_special, 85) && flags.skill !== 19 && x !== null && y !== null) {
+	if (core.hasSpecial(mon_special, 85) && flags.skill !== 19 && x !== null && y !== null && core.getFlag('铝箔条', 0) <= 0) {
 		for (let m = -2; m <= 2; m++) {
 			for (let n = -2; n <= 2; n++) {
 				if (m !== 0 || n !== 0) {
@@ -2731,6 +2743,9 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	}*/
 	if (core.hasItem('unicorn') && damage < 0) { //独角兽号
 		damage *= 1.2;
+	}
+	if (core.hasSpecial(mon_special, 41) && damage < 1) { //谍报锁伤害
+		damage = 1;
 	}
 	if (core.status.maps[floorId].area === '海洋' && flags.skill === 13 && !flags.spy && damage < hero_hp) { //技能13：金牌损管
 		damage = hero_hp - hero_hpmax;

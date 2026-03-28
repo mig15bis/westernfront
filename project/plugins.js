@@ -2988,6 +2988,14 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				Debuff.push('直掩');
 				Debuffcolor.push('#FF0000');
 			}
+			if (flags.spy) {
+				Debuff.push('谍' + flags.spy);
+				Debuffcolor.push('#FFFFFF');
+			}
+			if (flags.铝箔条) {
+				Debuff.push('铝' + flags.铝箔条);
+				Debuffcolor.push('#FFD700');
+			}
 			if (core.domStyle.isVertical) { //竖屏
 				core.clearMap(uictx, 161, 681, 160, 50);
 				core.fillRoundRect(uictx, 168, 688, 135, 35, 15, "rgba(0,0,0,0.5)") //任务底板								 
@@ -3965,6 +3973,9 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 							if (core.hasSpecial(nextair, 57)) {
 								hero.mana += 100;
 								core.drawTip("无法对敌方boss使用");
+							} else if (core.material.enemys[nextair].type === '导弹') {
+								hero.mana += 100;
+								core.drawTip("无法对导弹使用");
 							} else if (core.hasSpecial(nextair, 65)) {
 								if (flags.aoe[范围伤害目标]) {
 									flags.aoe[范围伤害目标] += core.getRealStatus('atk') * 3;
@@ -4054,6 +4065,9 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 							if (core.hasSpecial(nextair, 57)) {
 								hero.mana += 100;
 								core.drawTip("无法对敌方boss使用");
+							} else if (core.material.enemys[nextair].type === '导弹') {
+								hero.mana += 100;
+								core.drawTip("无法对导弹使用");
 							} else if (core.hasSpecial(nextair, 65)) {
 								let enemydie = 0,
 									getexp = 0;
@@ -5260,7 +5274,22 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 			strategy: true,
 			name: '铝箔条',
 			cost: 600,
-			description: '抛洒铝箔条，干扰敌方雷达。在接下来的3场战斗中，光环类（指挥、截断）、协同攻击类（陷阱、防空）等技能无效'
+			func: function () {
+				if (core.getFlag('铝箔条', false)) {
+					core.status.hero.mana += 600;
+					core.drawTip('敌人已被干扰，无需重复释放');
+					core.playSound('error.mp3');
+					return;
+				} else {
+					if (!core.isReplaying() && !main.replayChecking) { //不在录像中
+						core.insertCommonEvent('铝箔条动画', void 0, void 0, void 0);
+						flags.铝箔条 += 3;
+					} else { //在录像中
+						flags.铝箔条 += 3;
+					}
+				}
+			},
+			description: '抛洒铝箔条，干扰敌方雷达。在接下来的3场战斗中，光环类（指挥、截断等）、协同攻击类（陷阱、防空等）技能无效'
 		},
 
 		{ // 24
@@ -5268,7 +5297,121 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 			strategy: true,
 			name: '翼尖挑衅',
 			cost: 200,
-			description: '将面前的V1导弹向前推1格并引爆。如果引爆地点是可破墙壁或非boss敌人，可将其摧毁（不获得金经）'
+			func: function () {
+				let x = core.nextX(),
+					y = core.nextY(),
+					X = core.nextX(2),
+					Y = core.nextY(2),
+					floorId = core.status.floorId,
+					范围伤害目标 = X + ',' + Y + ',' + floorId,
+					bomblocal = core.getBlockId(X, Y),
+					nextair = core.getBlockId(x, y);
+				let todo = [];
+				if (core.isReplaying() || main.replayChecking) { //录像播放
+					if (nextair === 'v1missile') {
+						core.removeBlock(x, y);
+						if (bomblocal) {
+							if (core.getBlockCls(X, Y) === 'enemys' && core.plugin.Army.includes(core.material.enemys[bomblocal].type) && !core.hasSpecial(bomblocal, 57)) {
+								let money = core.getEnemyValue(bomblocal, 'money', X, Y),
+									exp = core.getEnemyValue(bomblocal, 'exp', X, Y);
+								if (core.hasEquip('m4') || core.hasEquip('m4a2') || core.hasEquip('m4a3') || core.hasEquip('m4a3e2') || core.hasEquip('firefly')) money += 5; //谢馒头，触发在双倍前
+								if (core.hasEquip('classj')) money += 5; //J级驱逐舰
+								if (flags.warmachine === true) money *= 2; //工业潜能，金币翻倍，计算在下面几个之前
+								if (core.hasEquip('edinburgh')) money += 2; //爱丁堡号巡洋舰，金币+2
+								if (core.hasEquip('hood')) money += 10; //胡德号，金币+10
+								if (core.hasItem('coin')) money *= 2; // 幸运金币：双倍
+								if (core.hasSpecial(bomblocal, 61) || flags.咒 === true) money = 0; // 投降
+								core.status.hero.money += money;
+								core.status.hero.statistics.money += money;
+								if (core.hasEquip('classv')) exp += 2; //V级驱逐舰
+								if (core.hasEquip('classj')) exp += 5; //J级驱逐舰
+								if (core.hasEquip('hood')) exp += 10; //胡德号，经验+10
+								if (core.hasEquip('m4a2') || core.hasEquip('m4a3') || core.hasEquip('m4a3e2') || core.hasEquip('firefly')) exp *= 2; //馒头
+								if (core.hasSpecial(bomblocal, 61) || flags.咒 === true) exp = 0; // 投降
+								core.status.hero.exp += exp;
+								core.status.hero.statistics.exp += exp;
+								enemydie = 1;
+								getexp = exp;
+								core.push(todo, core.floors[floorId].afterBattle[X + "," + Y]);
+								core.push(todo, core.material.enemys[bomblocal].afterBattle);
+								delete((flags.enemyOnPoint || {})[floorId] || {})[X + "," + Y];
+								delete flags.aoe[范围伤害目标];
+								core.removeBlock(X, Y);
+							} else if (core.getBlockCls(X, Y) === 'animates' || core.getBlockCls(X, Y) === 'terrains' || core.getBlockCls(X, Y) === 'npcs' || core.getBlockCls(X, Y) === 'autotile' || core.getBlockCls(X, Y) === 'tileset') {
+								if (bomblocal.event.canBreak) {
+									core.removeBlock(X, Y);
+								}
+							}
+						}
+						if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
+							core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
+							core.updateStatusBar();
+							core.drawHeroAnimate('sniper');
+							if (hero.hp <= 0) {
+								core.events.lose();
+							}
+						}
+					} else {
+						core.status.hero.mana += 200;
+						core.drawTip('此技能仅对V1导弹生效');
+						core.playSound('error.mp3');
+						return;
+					}
+				} else { //正常执行
+					if (nextair === 'v1missile') {
+						core.insertCommonEvent('推导弹', void 0, void 0, void 0, () => {
+							if (bomblocal) {
+								if (core.getBlockCls(X, Y) === 'enemys' && core.plugin.Army.includes(core.material.enemys[bomblocal].type) && !core.hasSpecial(bomblocal, 57)) {
+									let money = core.getEnemyValue(bomblocal, 'money', X, Y),
+										exp = core.getEnemyValue(bomblocal, 'exp', X, Y);
+									if (core.hasEquip('m4') || core.hasEquip('m4a2') || core.hasEquip('m4a3') || core.hasEquip('m4a3e2') || core.hasEquip('firefly')) money += 5; //谢馒头，触发在双倍前
+									if (core.hasEquip('classj')) money += 5; //J级驱逐舰
+									if (flags.warmachine === true) money *= 2; //工业潜能，金币翻倍，计算在下面几个之前
+									if (core.hasEquip('edinburgh')) money += 2; //爱丁堡号巡洋舰，金币+2
+									if (core.hasEquip('hood')) money += 10; //胡德号，金币+10
+									if (core.hasItem('coin')) money *= 2; // 幸运金币：双倍
+									if (core.hasSpecial(bomblocal, 61) || flags.咒 === true) money = 0; // 投降
+									core.status.hero.money += money;
+									core.status.hero.statistics.money += money;
+									if (core.hasEquip('classv')) exp += 2; //V级驱逐舰
+									if (core.hasEquip('classj')) exp += 5; //J级驱逐舰
+									if (core.hasEquip('hood')) exp += 10; //胡德号，经验+10
+									if (core.hasEquip('m4a2') || core.hasEquip('m4a3') || core.hasEquip('m4a3e2') || core.hasEquip('firefly')) exp *= 2; //馒头
+									if (core.hasSpecial(bomblocal, 61) || flags.咒 === true) exp = 0; // 投降
+									core.status.hero.exp += exp;
+									core.status.hero.statistics.exp += exp;
+									enemydie = 1;
+									getexp = exp;
+									core.push(todo, core.floors[floorId].afterBattle[X + "," + Y]);
+									core.push(todo, core.material.enemys[bomblocal].afterBattle);
+									delete((flags.enemyOnPoint || {})[floorId] || {})[X + "," + Y];
+									delete flags.aoe[范围伤害目标];
+									core.removeBlock(X, Y);
+								} else if (core.getBlockCls(X, Y) === 'animates' || core.getBlockCls(X, Y) === 'terrains' || core.getBlockCls(X, Y) === 'npcs' || core.getBlockCls(X, Y) === 'autotile' || core.getBlockCls(X, Y) === 'tileset') {
+									if (bomblocal.event.canBreak) {
+										core.removeBlock(X, Y);
+									}
+								}
+							}
+						});
+						if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
+							core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
+							core.updateStatusBar();
+							core.drawHeroAnimate('sniper');
+							if (hero.hp <= 0) {
+								core.events.lose();
+							}
+						}
+					} else {
+						core.status.hero.mana += 200;
+						core.drawTip('此技能仅对V1导弹生效');
+						core.playSound('error.mp3');
+						return;
+					}
+				}
+				core.updateStatusBar();
+			},
+			description: '将面前的V1导弹向前推1格并引爆。如果引爆地点是可破墙壁或非boss地面单位，可将其摧毁（不获得金经）'
 		},
 
 		{ // 25
@@ -5276,7 +5419,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 			strategy: true,
 			name: '高脚柜炸弹',
 			cost: 1000,
-			description: '只能在陆地或浅滩使用，且必须装备着特定轰炸机。使用后在前方一格投下一枚“高脚柜”炸弹，直接摧毁面前的非boss陆军（无视抗破），并在爆炸地点九宫格3格半径内引发小范围地震，摧毁可破墙壁，范围内其他敌方陆军损失80%血量'
+			description: '只能在陆地或浅滩使用，且必须装备着特定轰炸机。使用后在当前地图中指定地点投下一枚“高脚柜”炸弹，直接摧毁面前的非boss陆军（无视抗破），并在爆炸地点九宫格3格半径内引发小范围地震，摧毁可破墙壁，范围内其他敌方陆军损失80%血量'
 		},
 
 		{ // 26
