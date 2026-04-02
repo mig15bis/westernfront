@@ -19,17 +19,9 @@ main.floors.MT353=
     ],
     "ratio": 1,
     "defaultGround": "ground6",
-    "bgm": "europe3.mp3",
+    "bgm": "europe4.mp3",
     "firstArrive": [
         "\t[系统提示]已深入德军腹地。航程不够的空军类装备将撤退。",
-        {
-            "type": "unloadEquip",
-            "pos": 2
-        },
-        {
-            "type": "unloadEquip",
-            "pos": 3
-        },
         {
             "type": "unloadEquip",
             "pos": 5
@@ -44,6 +36,42 @@ main.floors.MT353=
                 }
             ],
             "false": []
+        },
+        {
+            "type": "comment",
+            "text": "me109k, 30000atk;fw190a3, 32000atk;fw190f8, 35000atk;me410, 55000atk;he219, 60000atk;me262, 70000atk"
+        },
+        {
+            "type": "animate",
+            "name": "wonder",
+            "loc": "hero",
+            "async": true
+        },
+        {
+            "type": "sleep",
+            "time": 500
+        },
+        {
+            "type": "animate",
+            "name": "explore3",
+            "loc": "hero",
+            "async": true
+        },
+        {
+            "type": "setValue",
+            "name": "status:hp",
+            "operator": "-=",
+            "value": "89880",
+            "norefresh": true
+        },
+        {
+            "type": "setValue",
+            "name": "flag:友军血量",
+            "operator": "-=",
+            "value": "359520"
+        },
+        {
+            "type": "waitAsync"
         }
     ],
     "eachArrive": [],
@@ -111,7 +139,7 @@ main.floors.MT353=
     [140,140,140,140,140,  0,  0,140,  0,  0,140,  0,371,  0,  0],
     [  0,  0,  0,390,  0,  0,  0,380,  0,  0,390,  0,140,140, 81],
     [140,376,140,140, 81,140,140,  0,140,140, 81,140,140,  0,  0],
-    [341,341,140,  0,371,  0,140,  0,140,  0,371,  0,140,370,140],
+    [341,341,140,  0,373,  0,140,  0,140,  0,373,  0,140,370,140],
     [635,635,140,637, 21,637,140, 93,140,638, 21,638,140, 21, 21]
 ],
     "bgmap": [

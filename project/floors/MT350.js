@@ -19,10 +19,11 @@ main.floors.MT350=
     ],
     "ratio": 1,
     "defaultGround": "ground6",
-    "bgm": "europe3.mp3",
+    "bgm": "europe4.mp3",
     "firstArrive": [
         {
-            "type": "pauseBgm"
+            "type": "playBgm",
+            "name": "relax.mp3"
         },
         {
             "type": "setHeroOpacity",
@@ -62,7 +63,7 @@ main.floors.MT350=
         },
         {
             "type": "playSound",
-            "name": "jet.mp3"
+            "name": "v_jet_pass.mp3"
         },
         {
             "type": "move",
@@ -70,7 +71,7 @@ main.floors.MT350=
                 0,
                 13
             ],
-            "time": 100,
+            "time": 50,
             "async": true,
             "steps": [
                 "right:14"
@@ -115,7 +116,8 @@ main.floors.MT350=
             "type": "waitAsync"
         },
         {
-            "type": "resumeBgm"
+            "type": "playBgm",
+            "name": "europe4.mp3"
         },
         "\t[第八航空队飞行员,N622]What the f...?",
         "\t[盟军指挥官,hero]什么东西？有人看清了吗？",
@@ -128,7 +130,7 @@ main.floors.MT350=
         },
         {
             "type": "sleep",
-            "time": 1000
+            "time": 500
         },
         {
             "type": "moveHero",
@@ -139,7 +141,7 @@ main.floors.MT350=
         },
         {
             "type": "sleep",
-            "time": 1000
+            "time": 500
         },
         {
             "type": "moveHero",
@@ -213,7 +215,7 @@ main.floors.MT350=
                 7,
                 13
             ],
-            "time": 100,
+            "time": 50,
             "keep": true,
             "async": true,
             "steps": [
@@ -226,7 +228,7 @@ main.floors.MT350=
                 6,
                 14
             ],
-            "time": 100,
+            "time": 50,
             "keep": true,
             "async": true,
             "steps": [
@@ -239,7 +241,7 @@ main.floors.MT350=
                 8,
                 14
             ],
-            "time": 100,
+            "time": 50,
             "keep": true,
             "async": true,
             "steps": [

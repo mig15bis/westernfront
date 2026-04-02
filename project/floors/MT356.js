@@ -19,12 +19,13 @@ main.floors.MT356=
     ],
     "ratio": 1,
     "defaultGround": "ground6",
-    "bgm": "cao7.mp3",
+    "bgm": "europe4.mp3",
     "firstArrive": [
         {
             "type": "setCurtain",
             "time": 500
         },
+        "\t[第八航空队飞行员,N622]已抵达目标空域。来吧伙计们，让小胡子也尝尝挨炸的滋味吧！",
         {
             "type": "playSound",
             "name": "airstrike.mp3"
@@ -37,8 +38,47 @@ main.floors.MT356=
             "type": "animate",
             "name": "fire",
             "loc": [
+                5,
+                13
+            ],
+            "async": true
+        },
+        {
+            "type": "sleep",
+            "time": 50
+        },
+        {
+            "type": "animate",
+            "name": "fire",
+            "loc": [
                 7,
                 13
+            ],
+            "async": true
+        },
+        {
+            "type": "sleep",
+            "time": 50
+        },
+        {
+            "type": "animate",
+            "name": "fire",
+            "loc": [
+                4,
+                12
+            ],
+            "async": true
+        },
+        {
+            "type": "sleep",
+            "time": 50
+        },
+        {
+            "type": "animate",
+            "name": "fire",
+            "loc": [
+                6,
+                12
             ],
             "async": true
         },
@@ -89,8 +129,60 @@ main.floors.MT356=
             "type": "animate",
             "name": "fire",
             "loc": [
+                3,
+                11
+            ],
+            "async": true
+        },
+        {
+            "type": "sleep",
+            "time": 50
+        },
+        {
+            "type": "animate",
+            "name": "fire",
+            "loc": [
+                5,
+                11
+            ],
+            "async": true
+        },
+        {
+            "type": "sleep",
+            "time": 50
+        },
+        {
+            "type": "animate",
+            "name": "fire",
+            "loc": [
                 7,
                 11
+            ],
+            "async": true
+        },
+        {
+            "type": "sleep",
+            "time": 50
+        },
+        {
+            "type": "animate",
+            "name": "fire",
+            "loc": [
+                4,
+                10
+            ],
+            "async": true
+        },
+        {
+            "type": "sleep",
+            "time": 50
+        },
+        {
+            "type": "animate",
+            "name": "fire",
+            "loc": [
+                6,
+                10
             ],
             "async": true
         },
@@ -141,8 +233,21 @@ main.floors.MT356=
             "type": "animate",
             "name": "fire",
             "loc": [
+                3,
+                9
+            ],
+            "async": true
+        },
+        {
+            "type": "sleep",
+            "time": 50
+        },
+        {
+            "type": "animate",
+            "name": "fire",
+            "loc": [
                 5,
-                11
+                9
             ],
             "async": true
         },
@@ -156,6 +261,32 @@ main.floors.MT356=
             "loc": [
                 7,
                 9
+            ],
+            "async": true
+        },
+        {
+            "type": "sleep",
+            "time": 50
+        },
+        {
+            "type": "animate",
+            "name": "fire",
+            "loc": [
+                4,
+                8
+            ],
+            "async": true
+        },
+        {
+            "type": "sleep",
+            "time": 50
+        },
+        {
+            "type": "animate",
+            "name": "fire",
+            "loc": [
+                6,
+                8
             ],
             "async": true
         },
@@ -206,8 +337,21 @@ main.floors.MT356=
             "type": "animate",
             "name": "fire",
             "loc": [
+                3,
+                7
+            ],
+            "async": true
+        },
+        {
+            "type": "sleep",
+            "time": 50
+        },
+        {
+            "type": "animate",
+            "name": "fire",
+            "loc": [
                 5,
-                9
+                7
             ],
             "async": true
         },
@@ -221,6 +365,32 @@ main.floors.MT356=
             "loc": [
                 7,
                 7
+            ],
+            "async": true
+        },
+        {
+            "type": "sleep",
+            "time": 50
+        },
+        {
+            "type": "animate",
+            "name": "fire",
+            "loc": [
+                4,
+                6
+            ],
+            "async": true
+        },
+        {
+            "type": "sleep",
+            "time": 50
+        },
+        {
+            "type": "animate",
+            "name": "fire",
+            "loc": [
+                6,
+                6
             ],
             "async": true
         },
@@ -271,8 +441,21 @@ main.floors.MT356=
             "type": "animate",
             "name": "fire",
             "loc": [
+                3,
+                5
+            ],
+            "async": true
+        },
+        {
+            "type": "sleep",
+            "time": 50
+        },
+        {
+            "type": "animate",
+            "name": "fire",
+            "loc": [
                 5,
-                7
+                5
             ],
             "async": true
         },
@@ -286,6 +469,32 @@ main.floors.MT356=
             "loc": [
                 7,
                 5
+            ],
+            "async": true
+        },
+        {
+            "type": "sleep",
+            "time": 50
+        },
+        {
+            "type": "animate",
+            "name": "fire",
+            "loc": [
+                4,
+                4
+            ],
+            "async": true
+        },
+        {
+            "type": "sleep",
+            "time": 50
+        },
+        {
+            "type": "animate",
+            "name": "fire",
+            "loc": [
+                6,
+                4
             ],
             "async": true
         },
@@ -599,10 +808,6 @@ main.floors.MT356=
             "pos": 6
         },
         {
-            "type": "function",
-            "function": "function(){\nflags.skillList=[0,0,0,0,0,0,0]\n}"
-        },
-        {
             "type": "update"
         },
         {
@@ -610,7 +815,7 @@ main.floors.MT356=
             "time": 500
         },
         {
-            "type": "hideStatusBar"
+            "type": "hideui"
         },
         {
             "type": "update"
@@ -653,7 +858,7 @@ main.floors.MT356=
         },
         {
             "type": "function",
-            "function": "function(){\nvar a = flags.mission[core.getFlag('stage')];\ncore.setFlag('@temp@A', a[0] + a[1] + a[2]);\n}"
+            "function": "function(){\nvar a = core.taskSystem.checkTask(0) ? 1 : 0,\n\tb = core.taskSystem.checkTask(1) ? 1 : 0,\n\tc = core.taskSystem.checkTask(2) ? 1 : 0;\ncore.setFlag('@temp@A', a + b + c);\n}"
         },
         {
             "type": "if",
@@ -679,11 +884,6 @@ main.floors.MT356=
                         90
                     ],
                     "opacity": 1,
-                    "time": 500,
-                    "async": true
-                },
-                {
-                    "type": "sleep",
                     "time": 500
                 },
                 {
@@ -710,11 +910,6 @@ main.floors.MT356=
                                 90
                             ],
                             "opacity": 1,
-                            "time": 500,
-                            "async": true
-                        },
-                        {
-                            "type": "sleep",
                             "time": 500
                         },
                         {
@@ -741,11 +936,6 @@ main.floors.MT356=
                                         90
                                     ],
                                     "opacity": 1,
-                                    "time": 500,
-                                    "async": true
-                                },
-                                {
-                                    "type": "sleep",
                                     "time": 500
                                 }
                             ],
@@ -783,7 +973,7 @@ main.floors.MT356=
         },
         {
             "type": "drawTextContent",
-            "text": "   受到敌军新型战斗机的干扰，这次\n空袭的损失稍微有些大。不过指挥官阁\n下靠着他无与伦比的技术赶走了那些烦\n人的家伙，保护了轰炸机。\n   原来喷气引擎的动力是如此的强劲\n，好在敌军的产能已经被破坏的差不多\n了，他们不可能生产出足够的新型战机\n来阻止我们，更何况实战暴露出它们的\n可靠性真的很差，我们现有的战机是可\n以与其抗衡的。",
+            "text": "   受到敌军新型战斗机的干扰，这次\n空袭的损失稍微有些大。不过指挥官阁\n下靠着他无与伦比的技术赶走了那些烦\n人的家伙，保护了轰炸机。\n   原来喷气式引擎的动力是如此的强劲\n，好在敌军的产能已经被破坏的差不多\n了，他们不可能生产出足够的新型战机\n来阻止我们。更何况它们在实战中表现\n出的可靠性真的很差。通过合理规划战\n术，我们现有的战机是可以与其抗衡的。",
             "left": 60,
             "top": 100,
             "align": "left",
@@ -800,6 +990,9 @@ main.floors.MT356=
         },
         {
             "type": "clearMap"
+        },
+        {
+            "type": "submitTask"
         },
         {
             "type": "moveImage",
@@ -872,22 +1065,17 @@ main.floors.MT356=
                     "type": "changeFloor",
                     "floorId": "MT358",
                     "loc": [
-                        1,
-                        7
+                        3,
+                        6
                     ],
                     "direction": "down"
                 }
             ],
             "no": [
-                {
-                    "type": "playBgm",
-                    "name": "europe3.mp3",
-                    "keep": true
-                },
                 "1944年6月，欧洲的天空中出现了一抹拖着白色尾迹的黑色身影，那是世界上第一种投入实战的喷气式战斗机——ME262。",
                 "870km/h的速度一夜间就远远甩开了盟军速度最快的战斗机，机首的4门30毫米机关炮可以毫不费力撕裂任何一架盟军飞机。欧洲的天空似乎又重新回到了德国人手中——",
                 "——那是不可能的。ME262虽然强大，但缺陷也比较突出。作为人类历史上第一款喷气战机，它的可靠性并不好，并且，机动性很差。只能一击脱离，不适合与战斗机缠斗。",
-                "德军的产能早已被炸的青黄不接，普通的战斗机尚且不够用，消耗更大的喷气式战机更是没法大量生产，就算生产出来，有没有足够的燃油供其成功起飞也是个问题。直到战争结束，ME262共生产了1433架，完全不够。",
+                "德军的产能早已被炸的青黄不接，普通的战斗机尚且不够用，消耗更大的喷气式战机更是没法大量生产，就算生产出来，有没有足够的燃油供其成功起飞也是个问题。直到战争结束，ME262共生产了1433架，完全是杯水车薪。",
                 "而且另一个坏消息是，希特勒更希望把这种飞机当成进攻用的攻击机使用——这个疯子是真的不喜欢防御，哪怕是大势所趋。于是，一部分ME262被改造成战斗轰炸型，挂上笨重的炸弹去攻击地面目标。",
                 "结果可想而知。过快的速度导致飞行员根本没法瞄准目标，投下的炸弹全部炸偏，此外还严重影响了飞机性能。据说盟军高层得知希特勒这一做法后，当晚就开香槟庆祝了一番。",
                 "作为德国最后的疯狂产物，ME262以及其他型号的喷气式战机没能扭转战争的局势，只是在属于盟军的天空中泛起一些小小的“浪花”。不过，它也让人们彻底看清：未来的空战，将是喷气机的主场。",

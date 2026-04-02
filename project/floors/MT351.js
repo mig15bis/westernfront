@@ -19,7 +19,7 @@ main.floors.MT351=
     ],
     "ratio": 1,
     "defaultGround": "ground6",
-    "bgm": "europe3.mp3",
+    "bgm": "europe4.mp3",
     "firstArrive": [
         {
             "type": "setValue",
@@ -29,7 +29,12 @@ main.floors.MT351=
         {
             "type": "setValue",
             "name": "flag:友军血量",
-            "value": "10000000"
+            "value": "100000000"
+        },
+        {
+            "type": "setValue",
+            "name": "flag:mission48tsk2",
+            "value": "0"
         },
         {
             "type": "setHeroOpacity",
@@ -64,73 +69,198 @@ main.floors.MT351=
         "\t[系统提示]敌人战力重置中",
         {
             "type": "setEnemy",
-            "id": "flak88",
+            "id": "me109k6",
             "name": "hp",
-            "value": "35000",
+            "value": "1500000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "flak88",
+            "id": "me109k6",
+            "name": "atk",
+            "value": "30000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "me109k6",
+            "name": "n",
+            "value": "5",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "me109k6",
+            "name": "special",
+            "value": "[6,83]",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "me109k6",
+            "name": "ammo",
+            "value": "8",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "fw190a1",
+            "name": "hp",
+            "value": "2000000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "fw190a1",
+            "name": "atk",
+            "value": "32000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "fw190a3",
+            "name": "hp",
+            "value": "2200000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "fw190a3",
+            "name": "atk",
+            "value": "38000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "fw190f8",
+            "name": "hp",
+            "value": "2000000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "fw190f8",
             "name": "atk",
             "value": "35000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
+            "id": "fw190f8",
+            "name": "bom",
+            "value": "250000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "fw190f8",
+            "name": "special",
+            "value": "[6,90]",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "fw190f8",
+            "name": "ammo",
+            "value": "2",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "ju88c6",
+            "name": "hp",
+            "value": "2400000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "ju88c6",
+            "name": "atk",
+            "value": "50000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "ju88c6",
+            "name": "special",
+            "value": "[30,64]",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "me410",
+            "name": "hp",
+            "value": "2400000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "me410",
+            "name": "atk",
+            "value": "55000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "me410",
+            "name": "special",
+            "value": "[30,64,90]",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "he219",
+            "name": "hp",
+            "value": "2800000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "he219",
+            "name": "atk",
+            "value": "60000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "do335",
+            "name": "hp",
+            "value": "2000000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "do335",
+            "name": "atk",
+            "value": "43000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "flak88",
+            "name": "hp",
+            "value": "500000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
+            "id": "flak88",
+            "name": "atk",
+            "value": "320000",
+            "norefresh": true
+        },
+        {
+            "type": "setEnemy",
             "id": "flak88",
             "name": "special",
-            "value": "[40,51,55,59]",
+            "value": "[15,40,64]",
             "norefresh": true
         },
         {
             "type": "setEnemy",
             "id": "flak88",
             "name": "zone",
-            "value": "25000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "me109g6",
-            "name": "hp",
-            "value": "45000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "me109g6",
-            "name": "atk",
-            "value": "4000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "me109g6",
-            "name": "special",
-            "value": "[6,55]",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "me110g",
-            "name": "hp",
-            "value": "60000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "me110g",
-            "name": "atk",
-            "value": "8000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "me110g",
-            "name": "special",
-            "value": "[28,30,55]",
-            "norefresh": true
+            "value": "32000"
         },
         "\t[系统提示]敌人战力重置完成",
         {
@@ -145,9 +275,92 @@ main.floors.MT351=
             "type": "playSound",
             "name": "xinxinmagic.mp3"
         },
-        "\t[任务目标]⭐通过当前区域\n⭐至少击落8架ME262战机\n⭐友军血量不少于20%",
+        "\t[任务目标]⭐通过当前区域\n⭐至少击落8架ME262战机\n⭐友军血量不少于5000w",
         {
             "type": "callBook"
+        },
+        {
+            "type": "setValue",
+            "name": "flag:第47关通关",
+            "value": "0",
+            "norefresh": true
+        },
+        {
+            "type": "setTask",
+            "name": "第47关任务1",
+            "n": 1,
+            "text": "通过当前区域",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "第47关通关",
+                    "operator": "=",
+                    "text": "抵达终点",
+                    "count": "1"
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第47关任务2",
+            "n": 1,
+            "text": "至少击落8架ME262战机",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "mission48tsk2",
+                    "operator": ">=",
+                    "text": "已击落ME262",
+                    "count": "8"
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第47关任务3",
+            "n": 1,
+            "text": "友军血量不少于5000w",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "友军血量",
+                    "operator": ">=",
+                    "text": "友军血量剩余",
+                    "count": "50000000"
+                }
+            ]
+        },
+        {
+            "type": "animate",
+            "name": "wonder",
+            "loc": "hero",
+            "async": true
+        },
+        {
+            "type": "sleep",
+            "time": 500
+        },
+        {
+            "type": "animate",
+            "name": "explore3",
+            "loc": "hero",
+            "async": true
+        },
+        {
+            "type": "setValue",
+            "name": "status:hp",
+            "operator": "-=",
+            "value": "60960",
+            "norefresh": true
+        },
+        {
+            "type": "setValue",
+            "name": "flag:友军血量",
+            "operator": "-=",
+            "value": "243840"
+        },
+        {
+            "type": "waitAsync"
         }
     ],
     "eachArrive": [],
@@ -183,14 +396,6 @@ main.floors.MT351=
                 "operator": "+=",
                 "value": "1"
             }
-        ],
-        "9,1": [
-            {
-                "type": "setValue",
-                "name": "flag:mission48tsk2",
-                "operator": "+=",
-                "value": "1"
-            }
         ]
     },
     "afterGetItem": {},
@@ -200,7 +405,7 @@ main.floors.MT351=
     "cannotMoveIn": {},
     "map": [
     [519,519, 22, 22,140,518,140, 91,140,341,341,140,519,341,519],
-    [140,140,140,376,140,518,140,370,140,376,140,140,140,376,140],
+    [140,140,140,376,140,518,140,370,140,371,140,140,140,376,140],
     [  0,  0,379,  0,140,  0,370,  0,390,  0,  0,140,643,  0,643],
     [140,140, 81,140,140, 81,140,140,140,140,  0,140,140,372,140],
     [636,140,  0,  0,390,  0,  0,371,  0,140,  0,140,  0,390,  0],

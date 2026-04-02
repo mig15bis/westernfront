@@ -694,7 +694,12 @@ main.floors.MT343=
                     "count": 0
                 }
             ]
-        }
+        },
+        {
+            "type": "playSound",
+            "name": "xinxinmagic.mp3"
+        },
+        "\t[系统提示]当心间谍！"
     ],
     "eachArrive": [],
     "parallelDo": "",

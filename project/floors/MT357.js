@@ -29,8 +29,8 @@ main.floors.MT357=
             "type": "changeFloor",
             "floorId": "MT358",
             "loc": [
-                1,
-                7
+                3,
+                6
             ],
             "direction": "down"
         }

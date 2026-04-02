@@ -27,7 +27,12 @@ main.floors.MT349=
         },
         {
             "type": "showui"
-        }
+        },
+        {
+            "type": "playSound",
+            "name": "xinxinmagic.mp3"
+        },
+        "\t[系统提示]这关不能带航母，你装备了也会在进关卡后给你卸下来。"
     ],
     "eachArrive": [],
     "parallelDo": "",
@@ -76,6 +81,14 @@ main.floors.MT349=
                                             11
                                         ],
                                         "direction": "up"
+                                    },
+                                    {
+                                        "type": "unloadEquip",
+                                        "pos": 2
+                                    },
+                                    {
+                                        "type": "unloadEquip",
+                                        "pos": 3
                                     }
                                 ],
                                 "false": [
@@ -92,7 +105,19 @@ main.floors.MT349=
                 "type": "playSound",
                 "name": "xinxinmagic.mp3"
             },
-            "\t[系统提示]当前区域敌人特点：空战，存在强敌。\n推荐携带技能：防空弹幕、空战王牌、破译、补给线、孟菲斯美女、红色尾翼\n推荐出战装备：巴尔的摩号重巡、埃塞克斯级航母、P51野马、P47D雷电、B17空中堡垒。"
+            "\t[系统提示]当前区域敌人特点：空战，存在强敌。\n推荐携带技能：防空弹幕、空战王牌、破译、补给线、孟菲斯美女、红色尾翼、铝箔条\n推荐出战装备：巴尔的摩号重巡、埃塞克斯级航母、P51野马、P47D雷电、B17空中堡垒。",
+            "可以在此清空技能槽，以便于玩家重新选择技能",
+            {
+                "type": "confirm",
+                "text": "清空技能槽？",
+                "yes": [
+                    {
+                        "type": "function",
+                        "function": "function(){\nflags.skillList=[0,0,0,0,0,0,0]\n}"
+                    }
+                ],
+                "no": []
+            }
         ],
         "6,12": [
             "\t[机场后勤,N516]长官，我方空军已就绪！",

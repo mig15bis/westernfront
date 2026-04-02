@@ -19,9 +19,45 @@ main.floors.MT355=
     ],
     "ratio": 1,
     "defaultGround": "ground6",
-    "bgm": "europe3.mp3",
+    "bgm": "europe4.mp3",
     "firstArrive": [
-        "\t[系统提示]防空塔几乎无法被摧毁！注意绕行！"
+        "\t[系统提示]防空塔几乎无法被摧毁！注意绕行！",
+        {
+            "type": "comment",
+            "text": "me109k, 30000atk;fw190a3, 32000atk;fw190f8, 35000atk;me410, 55000atk;he219, 60000atk;me262, 70000atk"
+        },
+        {
+            "type": "animate",
+            "name": "wonder",
+            "loc": "hero",
+            "async": true
+        },
+        {
+            "type": "sleep",
+            "time": 500
+        },
+        {
+            "type": "animate",
+            "name": "explore3",
+            "loc": "hero",
+            "async": true
+        },
+        {
+            "type": "setValue",
+            "name": "status:hp",
+            "operator": "-=",
+            "value": "78600",
+            "norefresh": true
+        },
+        {
+            "type": "setValue",
+            "name": "flag:友军血量",
+            "operator": "-=",
+            "value": "314400"
+        },
+        {
+            "type": "waitAsync"
+        }
     ],
     "eachArrive": [],
     "parallelDo": "",

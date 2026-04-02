@@ -3976,6 +3976,9 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 							} else if (core.material.enemys[nextair].type === '导弹') {
 								hero.mana += 100;
 								core.drawTip("无法对导弹使用");
+							} else if (core.hasSpecial(nextair, 73)) {
+								hero.mana += 100;
+								core.drawTip("无法对喷气机使用");
 							} else if (core.hasSpecial(nextair, 65)) {
 								if (flags.aoe[范围伤害目标]) {
 									flags.aoe[范围伤害目标] += core.getRealStatus('atk') * 3;
@@ -4065,9 +4068,15 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 							if (core.hasSpecial(nextair, 57)) {
 								hero.mana += 100;
 								core.drawTip("无法对敌方boss使用");
+								core.unlockControl();
 							} else if (core.material.enemys[nextair].type === '导弹') {
 								hero.mana += 100;
 								core.drawTip("无法对导弹使用");
+								core.unlockControl();
+							} else if (core.hasSpecial(nextair, 73)) {
+								hero.mana += 100;
+								core.drawTip("无法对喷气机使用");
+								core.unlockControl();
 							} else if (core.hasSpecial(nextair, 65)) {
 								let enemydie = 0,
 									getexp = 0;

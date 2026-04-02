@@ -1061,7 +1061,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		[70, "直掩", "主角在当前地图中每主动进行一场战斗后，会遭到全体直掩战斗机的一次普攻（攻击×连击）"],
 		[71, "观测", "存在期间，全图领域伤害提升20%，不可叠加", "#FFFF00"],
 		[72, "火力覆盖", "主角在当前地图与不具有该技能的敌人战斗时，每回合以5%攻击力轰炸主角一次"],
-		[73, "喷气式战机", "速度极快，追不上也打不中。受到的全部伤害减少70%"],
+		[73, "喷气式战机", "普攻伤害提高40%，受到伤害-20%，免疫“空战王牌”技能。"],
 		[74, "追踪", "主角行至同行或同列，且无障碍物阻拦时，向主角靠近一格。"],
 		[75, "V2导弹", function (enemy) { return "弹道导弹，无法拦截，造成" + enemy.value + "点伤害,并施加一层“惊慌”" }, "#dc143c"],
 		[76, "北方的孤独女王", "对此目标使用“高脚柜炸弹”以解除无敌状态"],
@@ -1082,7 +1082,8 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		[91, "决斗", "与该敌人战斗时，不会波及友军", "#ffffff"],
 		[92, "绕侧", "该敌人会直接从主角侧翼发起先手攻击，造成一次2倍攻击力的暴击伤害，且战斗全程无视主角装甲值。“破译”或“预警”技能生效时，本技能无效", "#ffcc33"],
 		[93, "伪装", "主角无法在第一回合命中该敌人", "#dc143c"],
-		[94, "装填", "该敌人每次攻击后需要装填2回合才能发起下一轮攻击（第一回合正常攻击）"]
+		[94, "装填", "该敌人每次攻击后需要装填2回合才能发起下一轮攻击（第一回合正常攻击）"],
+		[95, "无敌", "你无法摧毁该敌人", "#d3d3d3"]
 	];
 },
         "getEnemyInfo": function (enemy, hero, x, y, floorId) {
@@ -1567,10 +1568,13 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		}
 	}
 	if (core.hasSpecial(mon_special, 76)) { //北宅
-		return null;
+		return { "turn": 0 };
 	}
 	if (core.hasSpecial(mon_special, 78)) { //雪亲王可是无敌的nanoda！
-		return null;
+		return { "turn": 0 };
+	}
+	if (core.hasSpecial(mon_special, 95)) { //无敌
+		return { "turn": 0 };
 	}
 
 	var damage = 0, //勇士受到伤害
@@ -1597,6 +1601,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	if (core.status.floorId === 'MT284' || core.status.floorId === 'MT285' || core.status.floorId === 'MT286' || core.status.floorId === 'MT287' || core.status.floorId === 'MT288' || core.status.floorId === 'MT289' || core.status.floorId === 'MT290' || core.status.floorId === 'MT291' || core.status.floorId === 'MT292' || core.status.floorId === 'MT293') {
 		casino = true;
 	}
+
 
 	//陆军特判
 	if (junzhong === '陆军') {
@@ -1745,14 +1750,14 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		beilv *= 1 - (cache.damage_debuff || 0);
 	}
 	if (core.hasSpecial(mon_special, 73)) { //喷气机
-		beilv *= 0.3;
+		beilv *= 0.8;
 	}
 	if (core.hasSpecial(mon_special, 46) && x !== null && y !== null) { //不可被攻击（堡垒）
 		for (let m = -4; m <= 4; m++) { //循环遍历身周格子看有没有敌人
 			for (let n = -4; n <= 4; n++) {
 				if (m !== 0 && n !== 0) { //自身不算
 					if (core.getBlockCls(x + m, y + n) === 'enemys') {
-						return null;
+						return { "turn": 0 };
 					}
 				}
 			}
@@ -1799,7 +1804,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		}
 	}
 	if (core.hasSpecial(mon_special, 57) && (cacheFloor.陆军 + cacheFloor.海军 + cacheFloor.空军 > cacheFloor.主将)) { //技能 主将
-		return null;
+		return { "turn": 0 };
 	}
 	/*if (core.searchBlockWithFilter(block => {
 			if (!block || !block.event.cls.startsWith("enemy"))
@@ -1921,6 +1926,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		monsk94 = core.hasSpecial(mon_special, 94),
 		flood = false,
 		flooding = core.getFlag('进水', false),
+		jet = core.hasSpecial(mon_special, 73) ? 1.4 : 1,
 		lianji = 1;
 	let howitzer = (core.hasSpecial(mon_special, 72) ? false : true);
 
@@ -2627,7 +2633,8 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			if (core.hasSpecial(mon_special, 6)) { //技能 n连击
 				mon_common *= mon_skillNum.n;
 			}*/
-			mon_common *= lianji;
+			mon_common *= lianji; //连击
+			mon_common *= jet; //喷气机
 			if (x !== null && y !== null && core.getFlag('铝箔条', 0) <= 0) { //技能 防空 40
 				mon_common += cache.aa_buff || 0;
 			}
