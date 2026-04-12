@@ -442,10 +442,10 @@ actions.prototype._sys_keyUp_lockControl = function (keyCode, altKey) {
     return true;
 }
 
-actions.prototype._sys_keyUp = function (keyCode, altKey) {
+actions.prototype._sys_keyUp = async function (keyCode, altKey) {
     if (!core.status.played)
         return true;
-    this.actionsdata.onKeyUp(keyCode, altKey);
+    await this.actionsdata.onKeyUp(keyCode, altKey);
     if (core.status.automaticRoute && core.status.automaticRoute.autoHeroMove) {
         core.stopAutomaticRoute();
     }
@@ -989,14 +989,14 @@ actions.prototype._clickc47 = function (x, y) {
     if (core.plugin.c47[x + ',' + y] === 1){
         core.status.hero.hp -= core.status.hero.hpmax * 0.8;
     }
-    if (!core.isReplaying() && !main.replayChecking){
-        core.lockControl();
+    
         core.playSound('bomber.mp3');
 		core.showImage(1, 'aircraft5.png', null, [480, 32 * y - 109], 1, 0, () => {
             core.clearMap('hero');
             core.moveImage(1, [-195, 32 * y - 109], 1, null, 500, () => {
 									core.hideImage(1, 0);
                                     core.unlockControl();
+                                    core.status.route.push('key:' + 51)
 core.setHeroLoc('x', core.bigmap.width - 1 - core.getHeroLoc('x'));
 core.setHeroLoc('y', core.bigmap.height - 1 - core.getHeroLoc('y'));
 core.drawHero();
@@ -1015,31 +1015,22 @@ core.drawHero();
                                     }
 								})
         });
-    }
-    else {
-        core.clearMap('hero');
-core.setHeroLoc('x', core.bigmap.width - 1 - core.getHeroLoc('x'));
-core.setHeroLoc('y', core.bigmap.height - 1 - core.getHeroLoc('y'));
-core.drawHero();
-if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
-						core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
-                        core.updateStatusBar();
-					}
-        if (core.plugin.c47[x + ',' + y] === 1){
-                                            core.updateStatusBar();
-                                    }
-                                    if (hero.hp <= 0) {
-							core.events.lose();
-						}
-                                }
+ 
         }
         else {
+            core.status.route.pop()
             core.status.hero.mana += 300;
             core.playSound('操作失败');
             core.drawTip('空降地点存在障碍物！');
         }
+    }else{
+        core.status.route.pop()
+        core.status.hero.mana += 300;
+        core.playSound('操作失败');
+        core.drawTip('取消技能！');
     }
 } else {
+    core.status.route.pop()
     core.status.hero.mana += 300;
     core.playSound('操作失败');
     core.drawTip('当前楼层不能空降！');
@@ -1055,7 +1046,7 @@ actions.prototype._keyUpc47 = function (keycode) {
     if (core.plugin.c47[x + ',' + y] === 1){
         core.status.hero.hp -= core.status.hero.hpmax * 0.8;
     }
-    if (!core.isReplaying() && !main.replayChecking){
+
         core.lockControl();
         core.playSound('bomber.mp3');
 		core.showImage(1, 'aircraft5.png', null, [480, 32 * y - 109], 1, 0, () => {
@@ -1063,6 +1054,7 @@ actions.prototype._keyUpc47 = function (keycode) {
             core.moveImage(1, [-195, 32 * y - 109], 1, null, 500, () => {
 									core.hideImage(1, 0);
                                     core.unlockControl();
+                                    core.status.route.push('key:' + 51)
 core.setHeroLoc('x', core.bigmap.width - 1 - core.getHeroLoc('x'));
 core.setHeroLoc('y', core.bigmap.height - 1 - core.getHeroLoc('y'));
 core.drawHero();
@@ -1081,38 +1073,25 @@ core.drawHero();
                                     }
 								})
         });
-    }
-    else {
-        core.clearMap('hero');
-core.setHeroLoc('x', core.bigmap.width - 1 - core.getHeroLoc('x'));
-core.setHeroLoc('y', core.bigmap.height - 1 - core.getHeroLoc('y'));
-core.drawHero();
-        if (core.plugin.c47[x + ',' + y] === 1){
-                                            core.updateStatusBar();
-                                            if(core.status.hero.hp <= 0){
-                                        core.lose();
-                                    }
-                                    }
-                                    if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
-						                core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
-                                        core.updateStatusBar();
-							            core.drawHeroAnimate('sniper');
-						                   if (hero.hp <= 0) {
-							                 core.events.lose();
-						                    }
-                                        }
-                                }
+
         }
         else {
+            core.status.route.pop()
             core.status.hero.mana += 300;
             core.playSound('操作失败');
             core.drawTip('空降地点存在障碍物！');
         }
     } else {
+        core.status.route.pop()
         core.status.hero.mana += 300;
         core.playSound('操作失败');
         core.drawTip('当前楼层不能空降！');
     }
+    }else {
+        core.status.route.pop()
+        core.status.hero.mana += 300;
+        core.playSound('操作失败');
+        core.drawTip('取消技能！');
     }
 }
 

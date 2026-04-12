@@ -278,7 +278,6 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		},
         "afterBattle": function (enemyId, x, y) {
 	// 战斗结束后触发的事件
-
 	var enemy = core.material.enemys[enemyId];
 	var special = enemy.special;
 	var type = enemy.type;
@@ -472,62 +471,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			}
 			let target = core.getEnemyInfo(Block.event.id, null, Block.x, Block.y, core.status.floorId);
 			if (target.hp <= 0) {
-				delete flags.aoe[Block.x + ',' + Block.y + ',' + core.status.floorId];
-				let money = core.getEnemyValue(Block.event.id, 'money', Block.x, Block.y),
-					exp = core.getEnemyValue(Block.event.id, 'exp', Block.x, Block.y);
-				if (tk === 'm4' || tk === 'm4a2' || tk === 'm4a3' || tk === 'm4a3e2' || tk === 'firefly') money += 5; //谢馒头，触发在双倍前
-				if (dd === 'classj') money += 5; //J级驱逐舰
-				if (flags.warmachine === true) money *= 2; //工业潜能，金币翻倍，计算在下面几个之前
-				if (ca === 'edinburgh') money += 2; //爱丁堡号巡洋舰，金币+2
-				if (bb === 'hood') money += 10; //胡德号，金币+10
-				if (core.hasItem('coin')) money *= 2; // 幸运金币：双倍
-				if (core.hasSpecial(target.special, 61) || flags.咒 === true) money = 0; // 投降
-				core.status.hero.money += money;
-				core.status.hero.statistics.money += money;
-				if (dd === 'classv') exp += 2; //V级驱逐舰
-				if (dd === 'classj') exp += 5; //J级驱逐舰
-				if (bb === 'hood') exp += 10; //胡德号，经验+10
-				if (tk === 'm4a2' || tk === 'm4a3' || tk === 'm4a3e2' || tk === 'firefly') exp *= 2; //馒头
-				if (core.hasSpecial(target.special, 61) || flags.咒 === true) exp = 0; // 投降
-				core.status.hero.exp += exp;
-				core.status.hero.statistics.exp += exp;
-				core.drawAnimate('explore3', Block.x, Block.y);
-				if (core.status.floorId != null) {
-					core.push(todo, core.floors[core.status.floorId].afterBattle[Block.x + "," + Block.y]);
-				}
-				core.push(todo, core.material.enemys[Block.event.id].afterBattle);
-				//战后任务检测
-				core.taskSystem.tasksInfo.forEach(v => v.tasks.forEach(a => {
-					if (a.type === "kill" && (!a.floorId || a.floorId.includes(core.status.floorId))) {
-						if (a.kill && a.kill === core.material.enemys[Block.event.id].id) {
-							a.has++;
-						} else if (!a.kill) {
-							a.has++;
-						}
-
-					} else if (a.type === "killSpecial" && (!a.floorId || a.floorId.includes(core.status.floorId))) {
-						if (core.hasSpecial(core.material.enemys[Block.event.id].special, a.killSpecial))
-							a.has++;
-					} else if (a.type === "killLocs" && a.floorId === core.status.floorId) {
-						if (a.loc[0] instanceof Array) {
-							a.loc.forEach(v => {
-								if (Block.x === v[0] && Block.y === v[1] && (!a.floorId || a.floorId.includes(core.status.floorId)))
-									a.has++;
-							})
-						} else {
-							if (Block.x === a.loc[0] && Block.y === a.loc[1] && (!a.floorId || a.floorId.includes(core.status.floorId)))
-								a.has++;
-						}
-					} else if (a.type === "killType" && (!a.floorId || a.floorId.includes(core.status.floorId))) {
-						if (a.killType === blocktype)
-							a.has++;
-					}
-				}));
-				delete((flags.enemyOnPoint || {})[core.status.floorId] || {})[Block.x + "," + Block.y];
-				core.removeBlock(Block.x, Block.y);
-				if (core.hasSpecial(target.special, 84)) {
-					core.setBlock("yellowWall", Block.x, Block.y);
-				}
+				core.plugin.kill(Block.x, Block.y, core.status.floorId)
 			}
 		}
 	}
@@ -665,7 +609,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	if (flags.skill === 13 && hero.hp * 10 / 3 < hero.hpmax && core.status.thisMap.area === "海洋") hero.hp = hero.hpmax; // 金牌损管
 
 	// 计算当前怪物的支援怪物
-	var guards = [];
+	/*var guards = [];
 	if (x != null && y != null) {
 		guards = core.getFlag("__guards__" + x + "_" + y, []);
 		core.removeFlag("__guards__" + x + "_" + y);
@@ -703,7 +647,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	if (core.flags.statusBarItems.indexOf('enableExp') >= 0)
 		hint += ',' + core.getStatusLabel('exp') + '+' + exp; // hint += "，经验+" + exp;
 	core.drawTip(hint, enemy.id);
-
+*/
 	//清除临时护盾
 	flags.temmdef = 0;
 	if (core.hasSpecial(enemyId, 89) && core.getFlag('fire', 0) > 0) { //殉爆清火
@@ -792,7 +736,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	}
 	// 惊慌
 	if (damageInfo.bool && core.hasSpecial(special, 75)) { // v2
-		flags.scare = (flags.scare ?? 0) + 1;
+		flags.scare = (flags.scare ?? 0) + 2;
 	}
 	if (damageInfo.bool && core.hasSpecial(special, 68)) { //尖啸死神
 		flags.scare = (flags.scare ?? 0) + 3
@@ -814,24 +758,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		flags.jingjie[core.stauts.floorId] = (flags.jingjie[core.stauts.floorId] ?? 1) + 0.1
 
 	}
-	// 遥控				
-	if (core.hasSpecial(special, 50) && core.searchBlockWithFilter(block => { //有且仅有最后一个
-			if (!block || !block.event.cls.startsWith("enemy"))
-				return false;
-			if (core.hasSpecial(block.event.special, 50))
-				return true;
-		}).length === 1) {
-		let wuxianNum = core.searchBlockWithFilter(block => {
-			if (!block || !block.event.cls.startsWith("enemy"))
-				return false;
-			if (core.hasSpecial(block.event.special, 49))
-				return true;
-		})
-		wuxianNum.forEach(v => {
-			delete((flags.enemyOnPoint || {})[core.status.floorId] || {})[v.x + "," + v.y];
-			core.removeBlock(v.x, v.y);
-		})
-	}
+
 	// 细菌弹				 
 	if (core.hasSpecial(special, 54)) {
 		flags.xijun = (flags.xijun ?? 0) + 1;
@@ -852,24 +779,24 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		core.setFlag('skillName', '无');
 	}
 	//二区任务：击杀40敌人
-	if (['MT8', 'MT9', 'MT10', 'MT11'].includes(core.status.floorId)) core.addFlag('二区杀敌', 1);
+
 
 
 	// 事件的处理
 
 	// 加点事件
-	var point = guards.reduce(function (curr, g) {
+	/*r point = guards.reduce(function (curr, g) {
 		return curr + core.material.enemys[g[2]].point;
 	}, core.getEnemyValue(enemy, "point", x, y)) || 0;
 	if (core.flags.enableAddPoint && point > 0) {
 		core.push(todo, [{ "type": "insert", "name": "加点事件", "args": [point] }]);
-	}
+	}*/
 
 	// 战后事件
-	if (core.status.floorId != null) {
+	/*if (core.status.floorId != null) {
 		core.push(todo, core.floors[core.status.floorId].afterBattle[x + "," + y]);
 	}
-	core.push(todo, enemy.afterBattle);
+	core.push(todo, enemy.afterBattle);*/
 
 	// 在这里增加其他的自定义事件需求
 	/*
@@ -881,14 +808,14 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	*/
 
 	// 如果事件不为空，将其插入
-	if (todo.length > 0) core.insertAction(todo, x, y);
+	//if (todo.length > 0) core.insertAction(todo, x, y);
 
 	// 删除该点设置的怪物信息
-	delete((flags.enemyOnPoint || {})[core.status.floorId] || {})[x + "," + y];
-	delete flags.aoe[x + ',' + y + ',' + core.status.floorId];
+	//delete((flags.enemyOnPoint || {})[core.status.floorId] || {})[x + "," + y];
+	//delete flags.aoe[x + ',' + y + ',' + core.status.floorId];
 
 	//战后任务检测
-	core.taskSystem.tasksInfo.forEach(v => v.tasks.forEach(a => {
+	/*core.taskSystem.tasksInfo.forEach(v => v.tasks.forEach(a => {
 		if (a.type === "kill" && (!a.floorId || a.floorId.includes(core.status.floorId))) {
 			if (a.kill && a.kill === enemyId) {
 				a.has++;
@@ -916,9 +843,9 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		}
 	}));
 
-
+*/
 	// 因为removeBlock和hideBlock都会刷新状态栏，因此将删除部分移动到这里并保证刷新只执行一次，以提升效率
-	if (core.getBlock(x, y) != null) {
+	/*if (core.getBlock(x, y) != null) {
 		// 检查是否是重生怪物；如果是则仅隐藏不删除
 		if (core.hasSpecial(enemy.special, 23)) {
 			core.hideBlock(x, y);
@@ -927,11 +854,9 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		}
 	} else {
 		core.updateStatusBar();
-	}
-	if (core.hasSpecial(special, 84)) {
-		core.setBlock("yellowWall", x, y);
-	}
+	}*/
 
+	core.plugin.kill(x, y, core.status.floorId, enemyId)
 	// 如果已有事件正在处理中
 	if (core.status.event.id == null)
 		core.continueAutomaticRoute();
@@ -1063,7 +988,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		[72, "火力覆盖", "主角在当前地图与不具有该技能的敌人战斗时，每回合以5%攻击力轰炸主角一次"],
 		[73, "喷气式战机", "普攻伤害提高40%，受到伤害-20%，免疫“空战王牌”技能。"],
 		[74, "追踪", "主角行至同行或同列，且无障碍物阻拦时，向主角靠近一格。"],
-		[75, "V2导弹", function (enemy) { return "弹道导弹，无法拦截，造成" + enemy.value + "点伤害,并施加一层“惊慌”" }, "#dc143c"],
+		[75, "V2导弹", "弹道导弹，无法拦截，造成1倍雷击值的伤害,并施加2层“惊慌”", "#dc143c"],
 		[76, "北方的孤独女王", "对此目标使用“高脚柜炸弹”以解除无敌状态"],
 		[77, "防御大师", "莫德尔专属技能，在场时全体德军获得30%减伤"],
 		[78, "祥瑞之舰", "无法被击沉，核弹也不行。存在时当前地图中所有友军血量-40%，攻击力-30%，雷击-60%。"],
@@ -1137,29 +1062,30 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	} else if (diji > 0) {
 		skycontrol = 2;
 	}*/
-	if (flags.jingjie) { //警戒 45
-		mon_atk *= flags.jingjie[floorId] ?? 1;
-	}
-	var mon_id = core.getEnemyValue(enemy, 'id', x, y, floorId);
 
-	var guards = [];
-
-	//检查辐射楼层
-	if (flags.nuked && flags.nuked.includes(floorId)) {
-		if (core.hasSpecial(mon_special, 57)) { //主将
-			mon_hp *= 0.1;
-		} else if (core.hasSpecial(mon_special, 78)) { //雪风（写个mon_hp *= 1纯粹是因为感觉啥也不写看着别扭）
-			mon_hp *= 1;
-		} else {
-			mon_hp = 0;
-		}
-	}
 
 	// 光环和支援检查
 	if (!core.status.checkBlock) core.status.checkBlock = {};
 
 	let damage_debuff = 0;
 	if (core.status.checkBlock.needCache) {
+		if (flags.jingjie) { //警戒 45
+			mon_atk *= flags.jingjie[floorId] ?? 1;
+		}
+		var mon_id = core.getEnemyValue(enemy, 'id', x, y, floorId);
+
+		var guards = [];
+
+		//检查辐射楼层
+		if (flags.nuked && flags.nuked.includes(floorId)) {
+			if (core.hasSpecial(mon_special, 57)) { //主将
+				mon_hp *= 0.1;
+			} else if (core.hasSpecial(mon_special, 78)) { //雪风（写个mon_hp *= 1纯粹是因为感觉啥也不写看着别扭）
+				mon_hp *= 1;
+			} else {
+				mon_hp = 0;
+			}
+		}
 		// 从V2.5.4开始，对光环效果增加缓存，以解决多次重复计算的问题，从而大幅提升运行效率。
 		var atk_buff = 0,
 			top_buff = 0,
@@ -1178,7 +1104,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		var cache = core.status.checkBlock.cache[index];
 		let cacheFloor;
 		let map;
-		if (!core.status.checkBlock.cache.cacheFloor?.缓存) { cacheFloor = { 陆军: 0, 海军: 0, 空军: 0, 缓存: false, 航空支援: 0, 主将: 0, 截断: 0, 遥控: 0, 点杀: 0, 直掩: 0, 观测: 0, 火力覆盖: 0, 防御大师: 0, 红尾巴: false } } else {
+		if (!core.status.checkBlock.cache.cacheFloor?.缓存) { cacheFloor = { 陆军: 0, 海军: 0, 空军: 0, 缓存: false, 航空支援: 0, 主将: 0, 截断: 0, 点杀: 0, 直掩: 0, 观测: 0, 火力覆盖: 0, 防御大师: 0, 红尾巴: false } } else {
 			cacheFloor = core.status.checkBlock.cache.cacheFloor;
 		}
 		if (!core.status.checkBlock.cache.map) { map = { 炮击: {}, 指挥: {}, 点杀: {}, 防空: {}, 谍报: {}, 截断: {}, 警戒: {}, 堡垒: {}, 燃烧: {}, 遥控: {}, 陷阱: {}, 阵地: {}, 迂回包抄: {}, 直掩: {}, 观测: {}, 火力覆盖: {}, 进水: {} } } else {
@@ -1189,6 +1115,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			core.extractBlocks(floorId);
 			core.status.maps[floorId].blocks.forEach(function (block) {
 				if (!block.disable) {
+
 					// 获得该图块的ID
 					var id = block.event.id,
 						enemy = core.material.enemys[id];
@@ -1211,9 +1138,6 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 						}
 						if (core.hasSpecial(enemy.special, 42) || core.hasSpecial(enemy.special, 39)) {
 							cacheFloor.截断++;
-						}
-						if (core.hasSpecial(enemy.special, 50)) {
-							cacheFloor.遥控++;
 						}
 						if (core.hasSpecial(enemy.special, 66)) {
 							cacheFloor.点杀 += enemy.atk * 2;
@@ -1258,6 +1182,9 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 						if (core.hasSpecial(enemy.special, 42)) {
 							map.截断[location] = 0;
 						}
+						if (core.hasSpecial(enemy.special, 50)) {
+							cacheFloor.遥控++;
+						}
 						if (core.hasSpecial(enemy.special, 45)) {
 							map.警戒[location] = 0;
 						}
@@ -1266,9 +1193,6 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 						}
 						if (core.hasSpecial(enemy.special, 47)) {
 							map.燃烧[location] = 0;
-						}
-						if (core.hasSpecial(enemy.special, 50)) {
-							map.遥控[location] = 0;
 						}
 						if (core.hasSpecial(enemy.special, 59)) {
 							map.陷阱[location] = enemy.range;
@@ -1562,7 +1486,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			"mon_atk": Math.floor(mon_atk),
 			"mon_def": Math.floor(mon_def),
 			"turn": 1,
-			"damage": mon_skillNum.value,
+			"damage": mon_skillNum.top,
 			"bool": true,
 			"v1": false
 		}
@@ -1695,6 +1619,9 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		}
 		if (ca === 'cleveland' && core.status.maps[floorId].area === '海洋') { //克利夫兰·防空轻巡
 			beilv *= 1.25;
+		}
+		if (cacheFloor?.红尾巴 && mon_skillNum.type !== '导弹') { //红色尾翼
+			beilv *= 1.1;
 		}
 	}
 	if (core.getFlag('powerup', 0) > 0) { //振奋
@@ -2863,38 +2790,83 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	case 53:
 	case 54:
 	case 55:
-		core.status.route.push('key:' + keyCode);
-		var skill = flags.skillList[keyCode - 49];
-		if (skill === flags.skill) skill = 0;
-		if (skill === 0) {
-			flags.skill = 0;
-			core.drawTip('已取消当前战术指令');
-		} else {
-			var info = core.plugin.skillInfo[skill];
-			if (info.strategy)
-				if (hero.mana - core.plugin.skillInfo[flags.skill].cost < info.cost) {
-					core.playSound('error.mp3');
-					core.drawTip('指挥点不足，无法启用战略指令' + info.name);
-				} else {
-					core.control.autosave(true); // 自动存档
-					hero.mana -= info.cost; //扣mp
-					if ((flags.spy ?? 0) > 0) {
-						flags.spy--;
+		(async function () {
+			core.status.route.push('key:' + keyCode);
+			var skill = flags.skillList[keyCode - 49];
+			if (skill === flags.skill) skill = 0;
+			if (skill === 0) {
+				flags.skill = 0;
+				core.drawTip('已取消当前战术指令');
+			} else {
+				var info = core.plugin.skillInfo[skill];
+				if (info.strategy)
+					if (hero.mana - core.plugin.skillInfo[flags.skill].cost < info.cost) {
+						core.playSound('error.mp3');
+						core.drawTip('指挥点不足，无法启用战略指令' + info.name);
 					} else {
-						info.func();
-					}
-				}
-			else {
-				if (hero.mana < info.cost) {
-					core.playSound('error.mp3');
-					core.drawTip('指挥点不足，无法启用战术指令' + info.name);
-				} else {
-					flags.skill = info.id;
-				}
+						core.control.autosave(true); // 自动存档
+						hero.mana -= info.cost; //扣mp
+						if ((flags.spy ?? 0) > 0) {
+							flags.spy--;
+						} else {
+							core.lockControl()
+							if (await info.func() && core.status.event.id !== 'c47' && core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
+								core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
+								core.updateStatusBar();
+								if (hero.hp <= 0) {
+									core.events.lose();
+								}
+							}
+							if (!core.status.event.data && core.status.event.id !== 'c47') core.unlockControl()
+							core.updateStatusBar();
+							if (core.status.event.id == 'c47' && (core.isReplaying() || main.replayChecking)) {
+								let a = core.status.replay.toReplay.shift()
+								if (a === 'key:51') {
+									core.status.route.push('key:51')
+									var x = core.status.event.data.posX,
+										y = core.status.event.data.posY;
+									core.ui.closePanel();
+									if (core.status.floorId !== 'MT284' && core.status.floorId !== 'MT293') {
 
+										if (!core.getBlockId(x, y)) {
+											if (core.plugin.c47[x + ',' + y] === 1) {
+												core.status.hero.hp -= core.status.hero.hpmax * 0.8;
+											}
+											core.clearMap('hero');
+											core.setHeroLoc('x', core.bigmap.width - 1 - core.getHeroLoc('x'));
+											core.setHeroLoc('y', core.bigmap.height - 1 - core.getHeroLoc('y'));
+											core.drawHero();
+											if (core.status.checkBlock.cache?.cacheFloor?.点杀 > 0) { //点杀判定
+												core.status.hero.hp -= core.status.checkBlock.cache?.cacheFloor.点杀;
+												core.updateStatusBar();
+											}
+											if (core.plugin.c47[x + ',' + y] === 1) {
+												core.updateStatusBar();
+											}
+											if (hero.hp <= 0) {
+												core.events.lose();
+											}
+										}
+
+									}
+								}
+							}
+						}
+					}
+				else {
+					if (hero.mana < info.cost) {
+						core.playSound('error.mp3');
+						core.drawTip('指挥点不足，无法启用战术指令' + info.name);
+					} else {
+						flags.skill = info.id;
+					}
+
+				}
 			}
-		}
-		core.updateStatusBar(true, true);
+			core.updateStatusBar(true, true);
+		})()
+
+
 	}
 },
         "onStatusBarClick": function (px, py, vertical) {
@@ -3154,7 +3126,8 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	var damage = {}, // 每个点的伤害值
 		type = {}, // 每个点的伤害类型
 		repulse = {}, // 每个点的阻击怪信息
-		ambush = {}; // 每个点的捕捉信息
+		ambush = {}, // 每个点的捕捉信息
+		追踪 = {}; //每个点的追踪信息
 	var betweenAttackLocs = {}; // 所有可能的夹击点
 	var needCache = true;
 	var canGoDeadZone = core.flags.canGoDeadZone;
@@ -3276,6 +3249,20 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 				}
 			}
 		}
+		if (enemy && core.hasSpecial(enemy.special, 74)) {
+			var scan = core.utils.scan;
+			for (var dir in scan) {
+				for (let i = 1; i < Math.max(width, height); i++) {
+					var nx = x + scan[dir].x * i,
+						ny = y + scan[dir].y * i,
+						currloc = nx + "," + ny;
+					if (nx < 0 || nx >= width || ny < 0 || ny >= height) break;
+					追踪[currloc] = (追踪[currloc] || []).concat([
+						[x, y, id, dir]
+					]);
+				}
+			}
+		}
 
 		// 捕捉
 		// 如果要防止捕捉效果，可以直接简单的将 flag:no_ambush 设为true
@@ -3306,8 +3293,8 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		}
 
 		// 检查地图范围类技能
-		/*var specialFlag = core.getSpecialFlag(enemy);
-		if (specialFlag & 1) needCache = true;*/
+		var specialFlag = core.getSpecialFlag(enemy);
+		if (specialFlag & 1) needCache = true;
 		if (core.status.event.id == 'viewMaps') needCache = true;
 		if ((core.status.event.id == 'book' || core.status.event.id == 'bool-detail') && core.status.event.ui) needCache = true;
 	}
@@ -3370,6 +3357,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		type: type,
 		repulse: repulse,
 		ambush: ambush,
+		追踪: 追踪,
 		needCache: needCache,
 		cache: {} // clear cache
 	};

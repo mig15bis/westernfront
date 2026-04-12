@@ -1146,6 +1146,7 @@ control.prototype.checkBlock = function () {
         }
     }
     this._checkBlock_ambush(core.status.checkBlock.ambush[loc]);
+    this._checkBlock_追踪(core.status.checkBlock.追踪[loc]);
     this._checkBlock_repulse(core.status.checkBlock.repulse[loc]);
 }
 
@@ -1188,7 +1189,31 @@ control.prototype._checkBlock_ambush = function (ambush) {
     });
     core.insertAction(actions);
 }
-
+////// 追踪 //////
+control.prototype._checkBlock_追踪 = function (ambush) {
+    if (!ambush || ambush.length == 0) return;
+    // 捕捉效果
+    var actions = [];
+    let i=0
+    ambush.forEach(function (t) {if(core.getBlockId(t[0]+core.utils.scan[t[3]].x,t[1]+core.utils.scan[t[3]].y))i++})
+    if(i===ambush.length)return
+    ambush.forEach(function (t) {
+        if(!core.getBlockId(t[0]+core.utils.scan[t[3]].x,t[1]+core.utils.scan[t[3]].y)){
+            if(t[0]+core.utils.scan[t[3]].x===core.status.hero.loc.x&&t[1]+core.utils.scan[t[3]].y===core.status.hero.loc.y)actions.push({ "type": "move", "loc": [t[0], t[1]], "steps": [t[3]], "time": 250, "keep": false, "async": true });
+           else actions.push({ "type": "move", "loc": [t[0], t[1]], "steps": [t[3]], "time": 250, "keep": true, "async": true });
+        }
+    });
+    actions.push({ "type": "waitAsync" });
+    // 强制战斗
+     ambush.forEach(function (t) {
+       if(t[0]+core.utils.scan[t[3]].x===core.status.hero.loc.x&&t[1]+core.utils.scan[t[3]].y===core.status.hero.loc.y)actions.push({
+            "type": "function", "function": "function() { " +
+                "core.battle('" + t[2] + "', " + t[0] + "," + t[1] + ", true, core.doAction); " +
+                "}", "async": true
+        });
+    });
+    core.insertAction(actions);
+}
 ////// 更新全地图显伤 //////
 control.prototype.updateDamage = function (floorId, ctx) {
     floorId = floorId || core.status.floorId;
@@ -1915,9 +1940,9 @@ control.prototype._replayAction_moveDirectly = function (action) {
     return true;
 }
 
-control.prototype._replayAction_key = function (action) {
+control.prototype._replayAction_key = async function (action) {
     if (action.indexOf("key:") != 0) return false;
-    core.actions.keyUp(parseInt(action.substring(4)), false, true);
+    await core.actions.keyUp(parseInt(action.substring(4)), false, true);
     core.replay();
     return true;
 }

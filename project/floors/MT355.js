@@ -64,28 +64,14 @@ main.floors.MT355=
     "events": {
         "7,0": [
             {
-                "type": "function",
-                "function": "function(){\nflags.mission[48][0]=true\n}"
+                "type": "setValue",
+                "name": "flag:第47关通关",
+                "value": "1"
             },
             {
-                "type": "if",
-                "condition": "(flag:mission48tsk2>=8)",
-                "true": [
-                    {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[48][1]=true\n}"
-                    }
-                ]
-            },
-            {
-                "type": "if",
-                "condition": "(flag:友军血量>=200000)",
-                "true": [
-                    {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[48][2]=true\n}"
-                    }
-                ]
+                "type": "setValue",
+                "name": "flag:铝箔条",
+                "value": "0"
             },
             {
                 "type": "setCurtain",

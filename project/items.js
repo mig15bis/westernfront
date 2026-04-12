@@ -867,7 +867,19 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "弗莱彻级驱逐舰",
 		"canUseItemEffect": "true",
-		"text": "攻+n后额外加m%。雷击＋a后额外加b%。鱼雷管+12，闪避数+5。\n被动：\n数量优势：我方海军发射鱼雷时，额外发射一轮。\n勇气迸发：面对重巡和战列舰时，提前5回合发射鱼雷。\n反潜：每3回合对潜艇造成2倍攻击力的反潜伤害。\n哑弹：发射的鱼雷不会爆炸。"
+		"text": "攻+250，雷击＋3000后额外加30%。鱼雷管+10，闪避数+5。\n被动：\n数量优势：我方海军发射鱼雷时，额外发射一轮。\n勇气迸发：面对重巡和战列舰时，提前5回合发射鱼雷。\n反潜：每3回合对潜艇造成1.5倍攻击力的反潜伤害。\n哑弹：发射的鱼雷不会爆炸。",
+		"equip": {
+			"type": 1,
+			"value": {
+				"atk": 250,
+				"tpn": 10,
+				"top": 3000,
+				"dod": 5
+			},
+			"percentage": {
+				"top": 30
+			}
+		}
 	},
 	"edinburgh": {
 		"cls": "equips",
@@ -1494,7 +1506,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"tea": {
 		"cls": "tools",
 		"name": "下午茶",
-		"canUseItemEffect": "core.status.hero.hp < core.status.hero.hpmax",
+		"canUseItemEffect": "core.getRealStatus('hp') < core.getRealStatus('hpmax')",
 		"text": "英式下午茶，能让人的精神得到放松。\n饮用后恢复25%血量。快捷键8。",
 		"useItemEvent": [
 			{
