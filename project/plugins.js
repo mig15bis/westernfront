@@ -4819,14 +4819,14 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 						Y = core.nextY(2),
 						floorId = core.status.floorId,
 						范围伤害目标 = X + ',' + Y + ',' + floorId,
-						bomblocal = core.getBlockId(X, Y),
+						bomblocal = core.getBlock(X, Y),
 						nextair = core.getBlockId(x, y);
 					let todo = [];
 					if (core.isReplaying() || main.replayChecking) { //录像播放
 						if (nextair === 'v1missile') {
 							core.removeBlock(x, y);
 							if (bomblocal) {
-								if (core.getBlockCls(X, Y) === 'enemys' && core.plugin.Army.includes(core.material.enemys[bomblocal].type) && !core.hasSpecial(bomblocal, 57)) {
+								if (core.getBlockCls(X, Y) === 'enemys' && core.plugin.Army.includes(core.material.enemys[core.getBlockId(X, Y)].type) && !core.hasSpecial(bomblocal, 57)) {
 									core.plugin.kill(X, Y, floorId)
 								} else if (core.getBlockCls(X, Y) === 'animates' || core.getBlockCls(X, Y) === 'terrains' || core.getBlockCls(X, Y) === 'npcs' || core.getBlockCls(X, Y) === 'autotile' || core.getBlockCls(X, Y) === 'tileset') {
 									if (bomblocal.event.canBreak) {
@@ -4845,7 +4845,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 						if (nextair === 'v1missile') {
 							core.insertCommonEvent('推导弹', void 0, void 0, void 0, () => {
 								if (bomblocal) {
-									if (core.getBlockCls(X, Y) === 'enemys' && core.plugin.Army.includes(core.material.enemys[bomblocal].type) && !core.hasSpecial(bomblocal, 57)) {
+									if (core.getBlockCls(X, Y) === 'enemys' && core.plugin.Army.includes(core.material.enemys[core.getBlockId(X, Y)].type) && !core.hasSpecial(bomblocal, 57)) {
 										core.plugin.kill(X, Y, floorId)
 									} else if (core.getBlockCls(X, Y) === 'animates' || core.getBlockCls(X, Y) === 'terrains' || core.getBlockCls(X, Y) === 'npcs' || core.getBlockCls(X, Y) === 'autotile' || core.getBlockCls(X, Y) === 'tileset') {
 										if (bomblocal.event.canBreak) {
