@@ -953,7 +953,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		[36, "防雷带", "受到的鱼雷攻击伤害减少50%", "#00ffff"],
 		[37, "跨射", "强大的舰炮具有更远的射程。若主角未装备战列舰，该敌人首先以3倍攻击力攻击主角3次"],
 		[38, "精锐", "对主角造成的伤害翻倍", "#dc143c"],
-		[39, "装甲之父", "曼施坦因专属技能，在场时全体德军装甲部队获得20%增伤，无视主角后勤值，并且包括自身在内每个装甲单位战败时额外造成一次2倍攻击力的亡语"],
+		[39, "装甲之父", "曼施坦因专属技能，在场时全体德军装甲部队获得20%普攻增伤，并且包括自身在内每个装甲单位战败时额外造成一次1.5倍攻击力的亡语"],
 		[40, "防空", "以自身为中心5*5范围内（包括自身）张开防空领域，主角与防空领域内的轴心国部队战斗时，每回合额外受到该防空炮20%攻击力的伤害", "#e6e099", 1],
 		[41, "谍报", "战后主角获得3层“谍报”debuff。“谍报”存在期间，主角使用的下一个任意技能无效化，随后消除一层debuff。可叠加。该敌人伤害不会小于1。", "#d3d3d3"],
 		[42, "截断", "当前地图中，该敌人在场时，主角后勤值失效", "#228b22"],
@@ -989,7 +989,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		[73, "喷气式战机", "普攻伤害提高40%，受到伤害-20%，免疫“空战王牌”技能。"],
 		[74, "追踪", "主角行至同行或同列，且无障碍物阻拦时，向主角靠近一格。"],
 		[75, "V2导弹", "弹道导弹，无法拦截，造成1倍雷击值的伤害,并施加2层“惊慌”", "#dc143c"],
-		[76, "北方的孤独女王", "对此目标使用“高脚柜炸弹”以解除无敌状态"],
+		[76, "北方的孤独女王", "不可进行常规战斗。被“高脚柜炸弹”直接命中时，损失40%血量"],
 		[77, "防御大师", "莫德尔专属技能，在场时全体德军获得30%减伤"],
 		[78, "祥瑞之舰", "无法被击沉，核弹也不行。存在时当前地图中所有友军血量-40%，攻击力-30%，雷击-60%。"],
 		[79, "航空支援", "在场期间，所有空军单位血量提升20%，攻击力提升10%，雷击和空袭提升50%。"],
@@ -1104,7 +1104,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		var cache = core.status.checkBlock.cache[index];
 		let cacheFloor;
 		let map;
-		if (!core.status.checkBlock.cache.cacheFloor?.缓存) { cacheFloor = { 陆军: 0, 海军: 0, 空军: 0, 缓存: false, 航空支援: 0, 主将: 0, 截断: 0, 点杀: 0, 直掩: 0, 观测: 0, 火力覆盖: 0, 防御大师: 0, 红尾巴: false } } else {
+		if (!core.status.checkBlock.cache.cacheFloor?.缓存) { cacheFloor = { 陆军: 0, 海军: 0, 空军: 0, 缓存: false, 航空支援: 0, 主将: 0, 截断: 0, 点杀: 0, 直掩: 0, 观测: 0, 火力覆盖: 0, 防御大师: 0, 装甲之父: 0, 红尾巴: false } } else {
 			cacheFloor = core.status.checkBlock.cache.cacheFloor;
 		}
 		if (!core.status.checkBlock.cache.map) { map = { 炮击: {}, 指挥: {}, 点杀: {}, 防空: {}, 谍报: {}, 截断: {}, 警戒: {}, 堡垒: {}, 燃烧: {}, 遥控: {}, 陷阱: {}, 阵地: {}, 迂回包抄: {}, 直掩: {}, 观测: {}, 火力覆盖: {}, 进水: {} } } else {
@@ -1155,6 +1155,9 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 						}
 						if (core.hasSpecial(enemy.special, 77)) {
 							cacheFloor.防御大师++;
+						}
+						if (core.hasSpecial(enemy.special, 39)) {
+							cacheFloor.装甲之父++;
 						}
 						if (flags.skill20Floor) {
 							if (flags.skill20Floor.includes(floorId)) {
@@ -1521,6 +1524,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		isfighter = mon_skillNum.type === '战斗机' || mon_skillNum.type === '重型战斗机',
 		istank = mon_skillNum.type === '轻坦' || mon_skillNum.type === '中坦' || mon_skillNum.type === '重坦' || mon_skillNum.type === '坦歼',
 		isgun = mon_skillNum.type === '反坦克炮' || mon_skillNum.type === '榴弹炮' || mon_skillNum.type === '高射炮',
+		manstein = cacheFloor?.装甲之父 > 0 ? true : false,
 		casino = false;
 	if (core.status.floorId === 'MT284' || core.status.floorId === 'MT285' || core.status.floorId === 'MT286' || core.status.floorId === 'MT287' || core.status.floorId === 'MT288' || core.status.floorId === 'MT289' || core.status.floorId === 'MT290' || core.status.floorId === 'MT291' || core.status.floorId === 'MT292' || core.status.floorId === 'MT293') {
 		casino = true;
@@ -1795,6 +1799,10 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		if (istank) {
 			beilv *= 1.05;
 		}
+	}
+	if (bb === 'essex' && junzhong === '海军' && mon_skillNum.type !== '潜艇') { //埃塞克斯·制海权
+		finalDamage *= 0.7;
+		beilv *= 1.5;
 	}
 	if ((lb === 'b17' || lb === 'b17g') && (mon_skillNum.type === '高射炮' || mon_skillNum.type === '战斗机' || mon_skillNum.type === '重型战斗机')) { //B17堡垒·飞行混凝土
 		finalDamage *= 0.8;
@@ -2568,8 +2576,11 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			if (monsk88 && mon_torpedo > 0) { //技能88：进水
 				flood = true;
 			}
+			if (manstein) { //装甲之父
+				mon_common *= 1.2;
+			}
 			if (monsk94) { //技能94：装填
-				if (turn % 3 !== 1) {
+				if (turn !== 1 && (turn - 1) % 3 !== 0) {
 					mon_common = 0;
 				}
 			}
@@ -2651,6 +2662,9 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		damage *= 0.6;
 	} else if (core.hasItem('hard2')) {
 		damage *= 0.8;
+	}
+	if (manstein && istank) { //装甲之父
+		damage += mon_atk * 1.5;
 	}
 	if (!cacheFloor.截断 || core.getFlag('铝箔条', 0)) { //后勤
 		damage -= yongshi.mdef;

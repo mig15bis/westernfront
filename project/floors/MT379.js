@@ -12,7 +12,7 @@ main.floors.MT379=
     "images": [],
     "ratio": 1,
     "defaultGround": "ground6",
-    "bgm": "cao7.mp3",
+    "bgm": "bgm5.mp3",
     "firstArrive": [
         {
             "type": "setCurtain",
@@ -47,7 +47,7 @@ main.floors.MT379=
             "type": "changeFloor",
             "floorId": "MT380",
             "loc": [
-                7,
+                3,
                 7
             ],
             "direction": "down"

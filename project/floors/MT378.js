@@ -15,15 +15,22 @@ main.floors.MT378=
     "bgm": "5minutes.mp3",
     "firstArrive": [
         {
+            "type": "setCurtain",
+            "time": 500
+        },
+        {
             "type": "moveHero",
             "time": 500,
             "steps": [
                 "up:1"
             ]
         },
-        "\t[盟军指挥官,hero]机群抵达指定位置，发现任务目标：提尔皮茨！",
-        "\t[盟军指挥官,hero]战斗机做好掩护，扫清防空炮威胁，俯冲轰炸机开始进攻！",
-        "\t[提尔皮茨号舰长,bismark]雷达发现大量敌机接近，一级战备！",
+        {
+            "type": "sleep",
+            "time": 500
+        },
+        "\t[盟军指挥官,hero]发现首要任务目标。第一组，进入攻击位置。",
+        "\t[提尔皮茨号舰长,bismark]雷达发现大量敌机接近，全舰进入一级战备！",
         {
             "type": "playSound",
             "name": "xinxinmagic.mp3"
@@ -100,9 +107,9 @@ main.floors.MT378=
         },
         {
             "type": "if",
-            "condition": "['eagle', 'raider', 'illustrious','essex','enterprise'].includes(core.getEquip(4))",
+            "condition": "['eagle', 'raider', 'illustrious','essex','enterprise'].includes(core.getEquip(3))",
             "true": [
-                "检测到玩家正在装备航空母舰，敌军岸炮和提尔皮茨号的主炮将不再构成威胁！",
+                "\t[系统提示]检测到玩家正在装备航空母舰，敌军岸炮、鱼雷和的主炮武器将不再构成威胁！",
                 {
                     "type": "hide",
                     "loc": [
@@ -124,10 +131,45 @@ main.floors.MT378=
                         ]
                     ],
                     "remove": true
+                },
+                {
+                    "type": "setEnemy",
+                    "id": "bismark",
+                    "name": "special",
+                    "value": "[36,38,40,57,86]"
+                },
+                {
+                    "type": "setEnemy",
+                    "id": "z1936",
+                    "name": "hp",
+                    "value": "40000000",
+                    "norefresh": true
+                },
+                {
+                    "type": "setEnemy",
+                    "id": "z1936",
+                    "name": "atk",
+                    "value": "30000",
+                    "norefresh": true
+                },
+                {
+                    "type": "setEnemy",
+                    "id": "z1936",
+                    "name": "top",
+                    "value": "500000",
+                    "norefresh": true
+                },
+                {
+                    "type": "setEnemy",
+                    "id": "z1936",
+                    "name": "special",
+                    "value": "[6,35]",
+                    "norefresh": true
                 }
             ],
             "false": []
-        }
+        },
+        "\t[系统提示]也许你会发现“金牌损管”技能用不了，这是因为“金牌损管”的生效条件是必须在海洋地图中，而这里属于“浅滩”！"
     ],
     "eachArrive": [],
     "parallelDo": "",
@@ -138,14 +180,51 @@ main.floors.MT378=
         "7,6": [
             {
                 "type": "if",
-                "condition": "(flag:MT378boss===0)",
+                "condition": "(flag:bosshp===4)",
                 "true": [
                     {
-                        "type": "clearMap",
-                        "x": 322,
-                        "y": 64,
-                        "width": 64,
-                        "height": 16
+                        "type": "previewUI",
+                        "action": [
+                            {
+                                "type": "setValue",
+                                "name": "flag:bosshp",
+                                "operator": "-=",
+                                "value": "1"
+                            },
+                            {
+                                "type": "clearMap",
+                                "x": 128,
+                                "y": 30,
+                                "width": 100,
+                                "height": 30
+                            },
+                            {
+                                "type": "clearMap",
+                                "x": "386 - ((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                "y": 64,
+                                "width": "((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                "height": 16
+                            },
+                            {
+                                "type": "fillBoldText",
+                                "x": 130,
+                                "y": 48,
+                                "style": [
+                                    255,
+                                    0,
+                                    0,
+                                    1
+                                ],
+                                "strokeStyle": [
+                                    255,
+                                    140,
+                                    0,
+                                    1
+                                ],
+                                "font": "20px number",
+                                "text": "3/4"
+                            }
+                        ]
                     },
                     {
                         "type": "setBlock",
@@ -176,20 +255,15 @@ main.floors.MT378=
                         "type": "waitAsync"
                     },
                     {
-                        "type": "setValue",
-                        "name": "flag:MT378boss",
-                        "operator": "+=",
-                        "value": "1"
-                    },
-                    {
                         "type": "sleep",
                         "time": 500
                     },
+                    "\t[盟军指挥官,hero]第二组，攻击准备。",
                     {
                         "type": "playSound",
                         "name": "xinxinmagic.mp3"
                     },
-                    "\t[系统提示]敌军护卫舰艇和移动式高射炮已就位",
+                    "\t[系统提示]敌军护卫舰艇和移动式高射炮已就位，提尔皮茨号释放烟幕隐蔽自身！",
                     {
                         "type": "setBlock",
                         "number": "wildwind",
@@ -219,7 +293,7 @@ main.floors.MT378=
                     },
                     {
                         "type": "setBlock",
-                        "number": "z1936a",
+                        "number": "z1936",
                         "loc": [
                             [
                                 5,
@@ -239,19 +313,96 @@ main.floors.MT378=
                             ]
                         ],
                         "time": 0
+                    },
+                    {
+                        "type": "setEnemy",
+                        "id": "bismark",
+                        "name": "special",
+                        "value": "[36,38,40,57,86,87]"
+                    },
+                    {
+                        "type": "if",
+                        "condition": "(!['eagle', 'raider', 'illustrious','essex','enterprise'].includes(core.getEquip(3)))",
+                        "true": [
+                            {
+                                "type": "setBlock",
+                                "number": "coast381",
+                                "loc": [
+                                    [
+                                        0,
+                                        0
+                                    ],
+                                    [
+                                        1,
+                                        1
+                                    ],
+                                    [
+                                        13,
+                                        1
+                                    ],
+                                    [
+                                        14,
+                                        0
+                                    ]
+                                ]
+                            },
+                            {
+                                "type": "setEnemy",
+                                "id": "bismark",
+                                "name": "special",
+                                "value": "[32,36,37,38,40,57,86,87]"
+                            }
+                        ]
                     }
                 ],
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT378boss===1)",
+                        "condition": "(flag:bosshp===3)",
                         "true": [
                             {
-                                "type": "clearMap",
-                                "x": 258,
-                                "y": 64,
-                                "width": 64,
-                                "height": 16
+                                "type": "previewUI",
+                                "action": [
+                                    {
+                                        "type": "setValue",
+                                        "name": "flag:bosshp",
+                                        "operator": "-=",
+                                        "value": "1"
+                                    },
+                                    {
+                                        "type": "clearMap",
+                                        "x": 128,
+                                        "y": 30,
+                                        "width": 100,
+                                        "height": 30
+                                    },
+                                    {
+                                        "type": "clearMap",
+                                        "x": "386 - ((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                        "y": 64,
+                                        "width": "((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                        "height": 16
+                                    },
+                                    {
+                                        "type": "fillBoldText",
+                                        "x": 130,
+                                        "y": 48,
+                                        "style": [
+                                            255,
+                                            0,
+                                            0,
+                                            1
+                                        ],
+                                        "strokeStyle": [
+                                            255,
+                                            140,
+                                            0,
+                                            1
+                                        ],
+                                        "font": "20px number",
+                                        "text": "2/4"
+                                    }
+                                ]
                             },
                             {
                                 "type": "setBlock",
@@ -282,20 +433,21 @@ main.floors.MT378=
                                 "type": "waitAsync"
                             },
                             {
-                                "type": "setValue",
-                                "name": "flag:MT378boss",
-                                "operator": "+=",
-                                "value": "1"
-                            },
-                            {
                                 "type": "sleep",
                                 "time": 500
                             },
+                            "\t[盟军指挥官,hero]第三组，攻击准备。",
                             {
                                 "type": "playSound",
                                 "name": "xinxinmagic.mp3"
                             },
-                            "\t[系统提示]敌军战斗机抵达战场",
+                            "\t[系统提示]敌军战斗机抵达战场，提尔皮茨号攻击力提升！",
+                            {
+                                "type": "setEnemy",
+                                "id": "bismark",
+                                "name": "atk",
+                                "value": "350000"
+                            },
                             {
                                 "type": "setBlock",
                                 "number": "fw190f8",
@@ -330,19 +482,84 @@ main.floors.MT378=
                                     ]
                                 ],
                                 "time": 0
+                            },
+                            {
+                                "type": "if",
+                                "condition": "(!['eagle', 'raider', 'illustrious','essex','enterprise'].includes(core.getEquip(3)))",
+                                "true": [
+                                    {
+                                        "type": "setBlock",
+                                        "number": "coast381",
+                                        "loc": [
+                                            [
+                                                0,
+                                                0
+                                            ],
+                                            [
+                                                1,
+                                                1
+                                            ],
+                                            [
+                                                13,
+                                                1
+                                            ],
+                                            [
+                                                14,
+                                                0
+                                            ]
+                                        ]
+                                    }
+                                ]
                             }
                         ],
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT378boss===2)",
+                                "condition": "(flag:bosshp===2)",
                                 "true": [
                                     {
-                                        "type": "clearMap",
-                                        "x": 194,
-                                        "y": 64,
-                                        "width": 64,
-                                        "height": 16
+                                        "type": "previewUI",
+                                        "action": [
+                                            {
+                                                "type": "setValue",
+                                                "name": "flag:bosshp",
+                                                "operator": "-=",
+                                                "value": "1"
+                                            },
+                                            {
+                                                "type": "clearMap",
+                                                "x": 128,
+                                                "y": 30,
+                                                "width": 100,
+                                                "height": 30
+                                            },
+                                            {
+                                                "type": "clearMap",
+                                                "x": "386 - ((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                                "y": 64,
+                                                "width": "((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                                "height": 16
+                                            },
+                                            {
+                                                "type": "fillBoldText",
+                                                "x": 130,
+                                                "y": 48,
+                                                "style": [
+                                                    255,
+                                                    0,
+                                                    0,
+                                                    1
+                                                ],
+                                                "strokeStyle": [
+                                                    255,
+                                                    140,
+                                                    0,
+                                                    1
+                                                ],
+                                                "font": "20px number",
+                                                "text": "1/4"
+                                            }
+                                        ]
                                     },
                                     {
                                         "type": "setBlock",
@@ -382,13 +599,61 @@ main.floors.MT378=
                                         "type": "sleep",
                                         "time": 500
                                     },
-                                    "\t[盟军指挥官,hero]我们虽然重创了提尔皮茨号，但没能彻底将其击沉。返回航母，剩下的由皇家空军的重型轰炸机来处理。",
-                                    "\t[系统提示]还记得开局让你带的轰炸机和专属技能吗？",
+                                    "\t[盟军指挥官,hero]我们虽然重创了提尔皮茨号，但没能彻底将其击沉。全体返回航母，剩下的由皇家空军的重型轰炸机来处理。",
+                                    "\t[系统提示]还记得开局让你带的高脚柜炸弹吗？",
+                                    {
+                                        "type": "setBlock",
+                                        "number": "blue6Gem",
+                                        "loc": [
+                                            [
+                                                0,
+                                                14
+                                            ],
+                                            [
+                                                1,
+                                                14
+                                            ],
+                                            [
+                                                2,
+                                                14
+                                            ],
+                                            [
+                                                12,
+                                                14
+                                            ],
+                                            [
+                                                13,
+                                                14
+                                            ],
+                                            [
+                                                14,
+                                                14
+                                            ],
+                                            [
+                                                3,
+                                                14
+                                            ],
+                                            [
+                                                11,
+                                                14
+                                            ]
+                                        ]
+                                    },
+                                    {
+                                        "type": "setValue",
+                                        "name": "item:lancaster",
+                                        "operator": "+=",
+                                        "value": "1"
+                                    },
+                                    {
+                                        "type": "loadEquip",
+                                        "id": "lancaster"
+                                    },
                                     {
                                         "type": "setEnemy",
                                         "id": "bismark",
                                         "name": "special",
-                                        "value": "100",
+                                        "value": "[57,76]",
                                         "norefresh": true
                                     },
                                     {
@@ -411,14 +676,70 @@ main.floors.MT378=
                                 "false": [
                                     {
                                         "type": "if",
-                                        "condition": "(flag:MT378boss===3)",
+                                        "condition": "(flag:bosshp===1)",
                                         "true": [
                                             {
-                                                "type": "clearMap",
-                                                "x": 130,
-                                                "y": 64,
-                                                "width": 64,
-                                                "height": 16
+                                                "type": "setValue",
+                                                "name": "flag:第50关通关",
+                                                "value": "1"
+                                            },
+                                            {
+                                                "type": "sleep",
+                                                "time": 500
+                                            },
+                                            {
+                                                "type": "unloadEquip",
+                                                "pos": 6
+                                            },
+                                            {
+                                                "type": "setValue",
+                                                "name": "item:lancaster",
+                                                "operator": "-=",
+                                                "value": "1"
+                                            },
+                                            {
+                                                "type": "previewUI",
+                                                "action": [
+                                                    {
+                                                        "type": "setValue",
+                                                        "name": "flag:bosshp",
+                                                        "operator": "-=",
+                                                        "value": "1"
+                                                    },
+                                                    {
+                                                        "type": "clearMap",
+                                                        "x": 128,
+                                                        "y": 30,
+                                                        "width": 100,
+                                                        "height": 30
+                                                    },
+                                                    {
+                                                        "type": "clearMap",
+                                                        "x": "386 - ((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                                        "y": 64,
+                                                        "width": "((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                                        "height": 16
+                                                    },
+                                                    {
+                                                        "type": "fillBoldText",
+                                                        "x": 130,
+                                                        "y": 48,
+                                                        "style": [
+                                                            255,
+                                                            0,
+                                                            0,
+                                                            1
+                                                        ],
+                                                        "strokeStyle": [
+                                                            255,
+                                                            140,
+                                                            0,
+                                                            1
+                                                        ],
+                                                        "font": "20px number",
+                                                        "text": "0/4"
+                                                    }
+                                                ]
                                             },
                                             {
                                                 "type": "setBlock",
@@ -430,12 +751,6 @@ main.floors.MT378=
                                                     ]
                                                 ],
                                                 "time": 0
-                                            },
-                                            {
-                                                "type": "setValue",
-                                                "name": "flag:MT378boss",
-                                                "operator": "+=",
-                                                "value": "1"
                                             },
                                             {
                                                 "type": "sleep",
@@ -457,18 +772,8 @@ main.floors.MT378=
                                                 "time": 1000
                                             },
                                             {
-                                                "type": "function",
-                                                "function": "function(){\nflags.mission[51][0]=true\n}"
-                                            },
-                                            {
-                                                "type": "if",
-                                                "condition": "(status:money>=20000)",
-                                                "true": [
-                                                    {
-                                                        "type": "function",
-                                                        "function": "function(){\nflags.mission[51][2]=true\n}"
-                                                    }
-                                                ]
+                                                "type": "sleep",
+                                                "time": 1000
                                             },
                                             {
                                                 "type": "clearMap",
@@ -502,6 +807,11 @@ main.floors.MT378=
                                                 "opacity": 1,
                                                 "time": 0
                                             },
+                                            "1944年4月2日，来自英国“胜利”和“暴怒”两艘大型航母和5艘小型护航航母的机群，对停泊在港内的提尔皮茨号实施空袭。",
+                                            "空袭从早上五点持续到八点，德军完全没有料到这场空袭，只能仓促组织起零碎的防空炮火予以还击。",
+                                            "14枚炸弹命中了提尔皮茨号，将舰体上层建筑炸的不成样子，122名船员当场殒命。但这些轰炸机飞行员投弹高度太低，炸弹没有获得足够的高度，没有击穿战列舰的装甲。提尔皮茨号依旧漂浮在海上。",
+                                            "提尔皮茨号3个月内是没法再战了。而英军仅有3架轰炸机被击落，某种意义上算是成功了一半。",
+                                            "德军将这艘战舰转移至特罗姆瑟当作浮动火炮阵地使用，苏联情报人员发现了她，并将这一消息告知英国方面。期间，英美空军又做了几次尝试，试图彻底击沉她，均未成功。但也迫使提尔皮茨号一直呆在船坞里维修，无法出航。",
                                             {
                                                 "type": "setCurtain",
                                                 "time": 500
@@ -510,13 +820,8 @@ main.floors.MT378=
                                                 "type": "sleep",
                                                 "time": 1000
                                             },
-                                            "1944年4月2日，来自英国“胜利”和“暴怒”两艘大型航母和5艘小型护航航母的机群，对停泊在港内的提尔皮茨号实施空袭。",
-                                            "空袭从早上五点持续到八点，德军完全没有料到这场空袭，只能仓促组织起零碎的防空炮火予以还击。",
-                                            "14枚炸弹命中了提尔皮茨号，将舰体上层建筑炸的不成样子，122名船员当场殒命。但这些轰炸机飞行员投弹高度太低，炸弹没有获得足够的高度，没有击穿战列舰的装甲。提尔皮茨号依旧漂浮在海上。",
-                                            "刚刚修好的提尔皮茨号，3个月内是没法再战了。而英军仅有3架轰炸机被击落，某种意义上算是成功了一半。",
-                                            "德军将这艘战舰转移至特罗姆瑟当作浮动火炮阵地使用。期间，英美空军又做了几次尝试，试图彻底击沉她。",
                                             "最终，1944年11月12日，英军的兰开斯特式轰炸机使用高脚柜炸弹成功命中提尔皮茨号3次。没有哪艘战舰能够承受这种巨大的装药量。其中2枚炸弹洞穿了提尔皮茨号的装甲，砸出一个两百英寸的大洞，剧烈的爆炸顷刻间夺取了数百人的生命，并引爆弹药库。",
-                                            "提尔皮茨号左倾135度，倒扣在了水中，随同一起沉没的，还有船上的902人。至此，德国最后一艘大型战列舰宣告覆灭。",
+                                            "提尔皮茨号左倾135度，倒扣在了水中，随同一起沉没的，还有船上的902人。至此，两艘“俾斯麦”级战列舰全部被击沉，德国海军失去了最后一艘战斗力尚存的战列舰。“格奈森瑙”号战列舰虽未被击沉，但却被希特勒认定为“无用之物”而彻底闲置。最终于1945年3月为阻滞苏军攻势，被德军自己凿沉作为沉船障碍使用。",
                                             "不仅是战列舰，德军曾引以为傲的潜艇大队也遭受了失败。随着盟军反潜技术的进步，德军潜艇很难再对盟军船队实施有效打击了。德国海军，已名存实亡。",
                                             {
                                                 "type": "hideImage",
@@ -552,10 +857,6 @@ main.floors.MT378=
                                                 "pos": 6
                                             },
                                             {
-                                                "type": "function",
-                                                "function": "function(){\nflags.skillList=[0,0,0,0,0,0,0]\n}"
-                                            },
-                                            {
                                                 "type": "update"
                                             },
                                             {
@@ -563,7 +864,7 @@ main.floors.MT378=
                                                 "time": 500
                                             },
                                             {
-                                                "type": "hideStatusBar"
+                                                "type": "hideui"
                                             },
                                             {
                                                 "type": "update"
@@ -606,7 +907,7 @@ main.floors.MT378=
                                             },
                                             {
                                                 "type": "function",
-                                                "function": "function(){\nvar a = flags.mission[core.getFlag('stage')];\ncore.setFlag('@temp@A', a[0] + a[1] + a[2]);\n}"
+                                                "function": "function(){\nvar a = core.taskSystem.checkTask(0) ? 1 : 0,\n\tb = core.taskSystem.checkTask(1) ? 1 : 0,\n\tc = core.taskSystem.checkTask(2) ? 1 : 0;\ncore.setFlag('@temp@A', a + b + c);\n}"
                                             },
                                             {
                                                 "type": "if",
@@ -632,11 +933,6 @@ main.floors.MT378=
                                                             90
                                                         ],
                                                         "opacity": 1,
-                                                        "time": 500,
-                                                        "async": true
-                                                    },
-                                                    {
-                                                        "type": "sleep",
                                                         "time": 500
                                                     },
                                                     {
@@ -663,11 +959,6 @@ main.floors.MT378=
                                                                     90
                                                                 ],
                                                                 "opacity": 1,
-                                                                "time": 500,
-                                                                "async": true
-                                                            },
-                                                            {
-                                                                "type": "sleep",
                                                                 "time": 500
                                                             },
                                                             {
@@ -694,11 +985,6 @@ main.floors.MT378=
                                                                             90
                                                                         ],
                                                                         "opacity": 1,
-                                                                        "time": 500,
-                                                                        "async": true
-                                                                    },
-                                                                    {
-                                                                        "type": "sleep",
                                                                         "time": 500
                                                                     }
                                                                 ],
@@ -736,7 +1022,7 @@ main.floors.MT378=
                                             },
                                             {
                                                 "type": "drawTextContent",
-                                                "text": "   指挥官阁下的机群重创了“提尔皮茨\n”号，使其无法再出航，最终被我们的重\n型轰炸机结果了她的船生。\n   德军再也没有可供使用的水面舰艇了\n，他们引以为傲的水下狼群也没能力再翻\n起什么浪花，更别提我们还轰炸了他们的\n潜艇基地。现在的海上，再没有德军的容\n身之地了。",
+                                                "text": "   指挥官阁下带领的机群重创了“提尔皮\n茨”号，使其无法再出航，最终被我们的\n重型轰炸机结果了她的船生。\n   德军再也没有可供使用的水面舰艇了，\n他们引以为傲的水下狼群也没能力再翻起\n什么浪花，更别提我们还轰炸了他们的潜\n艇基地。现在的大西洋上，再无德军的容\n身之所。",
                                                 "left": 60,
                                                 "top": 100,
                                                 "align": "left",
@@ -753,6 +1039,9 @@ main.floors.MT378=
                                             },
                                             {
                                                 "type": "clearMap"
+                                            },
+                                            {
+                                                "type": "submitTask"
                                             },
                                             {
                                                 "type": "moveImage",
@@ -809,11 +1098,6 @@ main.floors.MT378=
                                             },
                                             {
                                                 "type": "setValue",
-                                                "name": "flag:escort",
-                                                "value": "false"
-                                            },
-                                            {
-                                                "type": "setValue",
                                                 "name": "flag:stage",
                                                 "value": "52"
                                             },
@@ -839,7 +1123,7 @@ main.floors.MT378=
                                                                 "type": "changeFloor",
                                                                 "floorId": "MT380",
                                                                 "loc": [
-                                                                    7,
+                                                                    3,
                                                                     7
                                                                 ],
                                                                 "direction": "down"
@@ -848,7 +1132,7 @@ main.floors.MT378=
                                                         "no": [
                                                             {
                                                                 "type": "playBgm",
-                                                                "name": "wots4.mp3"
+                                                                "name": "bgm5.mp3"
                                                             },
                                                             "盟军没能在1944年圣诞节之前结束战争，但也用不了多久。",
                                                             "此时，无论是欧洲战场，还是太平洋战场，轴心国军队都已是强弩之末。虽然反扑更加猛烈而疯狂，但也不过是困兽犹斗。",
@@ -867,7 +1151,7 @@ main.floors.MT378=
                                                             },
                                                             {
                                                                 "type": "setCurtain",
-                                                                "time": 0
+                                                                "time": 500
                                                             },
                                                             {
                                                                 "type": "sleep",

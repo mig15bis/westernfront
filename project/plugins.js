@@ -3955,12 +3955,15 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 								if (core.hasSpecial(nextair, 57)) {
 									hero.mana += 100;
 									core.drawTip("无法对敌方boss使用");
+									res(false)
 								} else if (core.material.enemys[nextair].type === '导弹') {
 									hero.mana += 100;
 									core.drawTip("无法对导弹使用");
+									res(false)
 								} else if (core.hasSpecial(nextair, 73)) {
 									hero.mana += 100;
 									core.drawTip("无法对喷气机使用");
+									res(false)
 								} else if (core.hasSpecial(nextair, 65)) {
 									if (flags.aoe[范围伤害目标]) {
 										flags.aoe[范围伤害目标] += core.getRealStatus('atk') * 3;
@@ -3978,10 +3981,12 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 							} else {
 								hero.mana += 100;
 								core.drawTip("只能对空中目标使用");
+								res(false)
 							}
 						} else {
 							hero.mana += 100;
 							core.drawTip("受剧情影响，无法使用！");
+							res(false)
 						}
 					} else { //正常执行
 						if (!flags.nofighter) {
@@ -3990,14 +3995,17 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 								if (core.hasSpecial(nextair, 57)) {
 									hero.mana += 100;
 									core.drawTip("无法对敌方boss使用");
+									res(false)
 
 								} else if (core.material.enemys[nextair].type === '导弹') {
 									hero.mana += 100;
 									core.drawTip("无法对导弹使用");
+									res(false)
 
 								} else if (core.hasSpecial(nextair, 73)) {
 									hero.mana += 100;
 									core.drawTip("无法对喷气机使用");
+									res(false)
 
 								} else if (core.hasSpecial(nextair, 65)) {
 									//动画
@@ -4038,10 +4046,12 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 							} else {
 								hero.mana += 100;
 								core.drawTip("只能对空中目标使用");
+								res(false)
 							}
 						} else {
 							hero.mana += 100;
 							core.drawTip("受剧情影响，无法使用");
+							res(false)
 						}
 					}
 				})
@@ -4082,6 +4092,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 						core.playSound('error.mp3');
 						hero.mana += 20;
 						core.drawTip('仅能对地雷或水雷使用');
+						res(false)
 					}
 				})
 
@@ -4125,6 +4136,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 						} else {
 							hero.mana += 150;
 							core.drawTip("只能对水面舰艇使用");
+							res(false)
 						}
 					} else { //正常执行
 
@@ -4164,6 +4176,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 						} else {
 							hero.mana += 150;
 							core.drawTip("只能对水面舰艇使用");
+							res(false)
 						}
 					}
 					core.updateStatusBar();
@@ -4207,6 +4220,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 							if (core.hasSpecial(nextair, 57)) {
 								hero.mana += 200;
 								core.drawTip("无法对敌方boss使用");
+								res(false)
 							} else if (!['轻坦', '中坦', '重坦', '坦歼'].includes(core.material.enemys[nextair].type) || core.hasSpecial(nextair, 65)) {
 								if (flags.aoe[范围伤害目标]) {
 									if (!core.hasSpecial(core.material.enemys[nextair].special, 87)) {
@@ -4234,6 +4248,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 						} else {
 							hero.mana += 200;
 							core.drawTip("只能对地面目标使用");
+							res(false)
 						}
 					} else { //正常执行
 
@@ -4241,6 +4256,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 							if (core.hasSpecial(nextair, 57)) {
 								hero.mana += 200;
 								core.drawTip("无法对敌方boss使用");
+								res(false)
 							} else if (!['轻坦', '中坦', '重坦', '坦歼'].includes(core.material.enemys[nextair].type) || core.hasSpecial(nextair, 65)) {
 
 								//动画
@@ -4288,6 +4304,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 						} else {
 							hero.mana += 200;
 							core.drawTip("只能对地面目标使用");
+							res(false)
 						}
 					}
 				})
@@ -4331,6 +4348,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 					if (core.status.thisMap.area !== '陆地' && core.status.thisMap.area !== '浅滩') {
 						core.status.hero.mana += 300;
 						core.drawTip('只能在陆地或浅滩使用');
+						res(false)
 						return;
 					}
 					let blocks = core.searchBlockWithFilter((block) => {
@@ -4403,6 +4421,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 						core.status.hero.mana += 1000;
 						core.drawTip('未装备航空母舰');
 						core.playSound('error.mp3');
+						res(false)
 						return;
 					}
 					if (core.getEquip(3) === 'enterprise') {
@@ -4410,6 +4429,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 							core.status.hero.mana += 1000;
 							core.drawTip('已装备企业号，本技能需消耗2500，指挥点数不足')
 							core.playSound('error.mp3');
+							res(false)
 							return;
 						} else {
 							//使用成功，以下为技能效果
@@ -4555,6 +4575,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 						core.status.hero.mana += 1000;
 						core.drawTip('仅能在海洋使用');
 						core.playSound('error.mp3');
+						res(false)
 						return;
 					}
 				})
@@ -4599,6 +4620,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 						core.status.hero.mana += 1000;
 						core.drawTip('不能在同一楼层重复使用');
 						core.playSound('error.mp3');
+						res(false)
 						return;
 					} else {
 						if (!core.isReplaying() && !main.replayChecking) { //不在录像中
@@ -4688,6 +4710,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 						core.status.hero.mana += 600;
 						core.drawTip('只能用于地面作战');
 						core.playSound('error.mp3');
+						res(false)
 						return;
 					}
 				})
@@ -4714,6 +4737,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 							core.status.hero.mana += 3000;
 							core.drawTip('不可在同一地图重复使用');
 							core.playSound('error.mp3');
+							res(false)
 							return;
 						} else {
 							//使用成功，以下为技能效果
@@ -4771,6 +4795,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 						core.status.hero.mana += 3000;
 						core.drawTip('当前地图不可使用');
 						core.playSound('error.mp3');
+						res(false)
 						return;
 					}
 				})
@@ -4790,6 +4815,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 						core.status.hero.mana += 600;
 						core.drawTip('敌人已被干扰，无需重复释放');
 						core.playSound('error.mp3');
+						res(false)
 						return;
 					} else {
 						if (!core.isReplaying() && !main.replayChecking) { //不在录像中
@@ -4839,6 +4865,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 							core.status.hero.mana += 200;
 							core.drawTip('此技能仅对V1导弹生效');
 							core.playSound('error.mp3');
+							res(false)
 							return;
 						}
 					} else { //正常执行
@@ -4859,6 +4886,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 							core.status.hero.mana += 200;
 							core.drawTip('此技能仅对V1导弹生效');
 							core.playSound('error.mp3');
+							res(false)
 							return;
 						}
 					}
@@ -4874,7 +4902,166 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 			strategy: true,
 			name: '高脚柜炸弹',
 			cost: 1000,
-			description: '只能在陆地或浅滩使用，且必须装备着特定轰炸机。使用后在当前地图中指定地点投下一枚“高脚柜”炸弹，直接摧毁面前的非boss陆军（无视抗破），并在爆炸地点九宫格3格半径内引发小范围地震，摧毁可破墙壁，范围内其他敌方陆军损失80%血量'
+			func: function () {
+				return new Promise(res => {
+					if (core.getEquip(6) === 'lancaster' || core.getEquip(6) === 'b29' || core.getEquip(6) === 'tu4') {
+						if (core.status.thisMap.area === '陆地' || core.status.thisMap.area === '浅滩') {
+							if (core.isReplaying() || main.replayChecking) { //在录像中
+								core.insertCommonEvent('高脚柜选择目标', void 0, void 0, void 0, () => {
+									let X = flags.x,
+										Y = flags.y,
+										floorId = core.status.floorId;
+									//爆炸中心
+									if (flags.touchenemy !== 'failed') { //是怪
+										if (core.hasSpecial(core.getBlockId(X, Y), 76)) { //北宅
+											if (!flags.aoe[X + ',' + Y + ',' + floorId]) {
+												flags.aoe[X + ',' + Y + ',' + floorId] = core.getEnemyInfo(core.material.enemys[core.getBlockId(X, Y)]).hp * 0.4;
+												if (core.getEnemyInfo(core.getBlockId(X, Y), null, X, Y).hp <= 0) core.kill(X, Y);
+											} else {
+												flags.aoe[X + ',' + Y + ',' + floorId] += core.getEnemyInfo(core.material.enemys[core.getBlockId(X, Y)]).hp * 0.4;
+												if (core.getEnemyInfo(core.getBlockId(X, Y), null, X, Y).hp <= 0) core.kill(X, Y);
+											}
+										} else if (core.hasSpecial(core.getBlockId(X, Y), 57) && core.plugin.Army.includes(core.material.enemys[core.getBlockId(X, Y)].type)) { //主将
+											if (!flags.aoe[X + ',' + Y + ',' + core.status.floorId]) {
+												flags.aoe[X + ',' + Y + ',' + floorId] = core.getEnemyInfo(core.material.enemys[core.getBlockId(X, Y)]).hp * 0.6;
+												if (core.getEnemyInfo(core.getBlockId(X, Y), null, X, Y).hp <= 0) core.kill(X, Y);
+											} else {
+												flags.aoe[X + ',' + Y + ',' + floorId] += core.getEnemyInfo(core.material.enemys[core.getBlockId(X, Y)]).hp * 0.6;
+												if (core.getEnemyInfo(core.getBlockId(X, Y), null, X, Y).hp <= 0) core.kill(X, Y);
+											}
+										} else if (core.plugin.Army.includes(core.material.enemys[core.getBlockId(X, Y)].type)) { //常规怪
+											core.kill(X, Y);
+										}
+									} else if (core.getBlockCls(X, Y) === 'animates' || core.getBlockCls(X, Y) === 'terrains' || core.getBlockCls(X, Y) === 'npcs' || core.getBlockCls(X, Y) === 'autotile' || core.getBlockCls(X, Y) === 'tileset') {
+										if (core.getBlock(X, Y).event.canBreak) {
+											core.removeBlock(X, Y);
+										}
+									}
+									//爆炸冲击范围
+									for (let a = -3; a <= 3; a++) {
+										for (let b = -3; b <= 3; b++) {
+											if (a === 0 && b === 0) { continue }
+											if (core.getBlockCls(X + a, Y + b, floorId) === 'enemys') { //是怪
+												if (!core.hasSpecial(core.getBlockId(X + a, Y + b), 57) && core.plugin.Army.includes(core.material.enemys[core.getBlockId(X + a, Y + b)].type)) { //主将
+													if (!flags.aoe[(X + a) + ',' + (Y + b) + ',' + core.status.floorId]) {
+														flags.aoe[(X + a) + ',' + (Y + b) + ',' + floorId] = enemyhp * 0.4;
+														if (core.getEnemyInfo(core.getBlockId(X + a, Y + b), null, X + a, Y + b).hp <= 0) core.kill(X + a, Y + b);
+													} else {
+														flags.aoe[(X + a) + ',' + (Y + b) + ',' + floorId] += enemyhp * 0.4;
+														if (core.getEnemyInfo(core.getBlockId(X + a, Y + b), null, X + a, Y + b).hp <= 0) core.kill(X + a, Y + b);
+													}
+												} else if (core.plugin.Army.includes(core.material.enemys[core.getBlockId(X + a, Y + b)].type)) { //常规怪
+													if (!flags.aoe[(X + a) + ',' + (Y + b) + ',' + core.status.floorId]) {
+														flags.aoe[(X + a) + ',' + (Y + b) + ',' + floorId] = enemyhp * 0.8;
+														if (core.getEnemyInfo(core.getBlockId(X + a, Y + b), null, X + a, Y + b).hp <= 0) core.kill(X + a, Y + b);
+													} else {
+														flags.aoe[(X + a) + ',' + (Y + b) + ',' + floorId] += enemyhp * 0.8;
+														if (core.getEnemyInfo(core.getBlockId(X + a, Y + b), null, X + a, Y + b).hp <= 0) core.kill(X + a, Y + b);
+													}
+												}
+												if (core.getEnemyInfo(core.getBlockId(X + a, Y + b), null, X + a, Y + b).hp <= 0) core.kill(X + a, Y + b)
+											} else if (core.getBlockCls(X + a, Y + b) === 'animates' || core.getBlockCls(X + a, Y + b) === 'terrains' || core.getBlockCls(X + a, Y + b) === 'npcs' || core.getBlockCls(X + a, Y + b) === 'autotile' || core.getBlockCls(X + a, Y + b) === 'tileset') { //是墙
+												if (core.getBlock(X + a, Y + b).event.canBreak) {
+													core.removeBlock(X + a, Y + b);
+												}
+											}
+										}
+									}
+									res(true)
+								});
+							} else { //不在录像中
+								core.insertCommonEvent('高脚柜选择目标', void 0, void 0, void 0, () => {
+									let X = flags.x,
+										Y = flags.y,
+										floorId = core.status.floorId;
+									//动画
+									core.playSound('bomber1.mp3');
+									core.showImage(1, 'aircraft4.png', null, [32 * X - 109, 480], 1, 0, () => {
+										setTimeout(() => {
+											core.drawAnimate('bigexplore', X, Y);
+											core.vibrate('horizontal', 1000, 50, 100);
+											//爆炸中心
+											if (flags.touchenemy !== 'failed') { //是怪
+												if (core.hasSpecial(core.getBlockId(X, Y), 76)) { //北宅
+													if (!flags.aoe[X + ',' + Y + ',' + floorId]) {
+														flags.aoe[X + ',' + Y + ',' + floorId] = core.getEnemyInfo(core.material.enemys[core.getBlockId(X, Y)]).hp * 0.4;
+														if (core.getEnemyInfo(core.getBlockId(X, Y), null, X, Y).hp <= 0) core.kill(X, Y);
+													} else {
+														flags.aoe[X + ',' + Y + ',' + floorId] += core.getEnemyInfo(core.material.enemys[core.getBlockId(X, Y)]).hp * 0.4;
+														if (core.getEnemyInfo(core.getBlockId(X, Y), null, X, Y).hp <= 0) core.kill(X, Y);
+													}
+												} else if (core.hasSpecial(core.getBlockId(X, Y), 57) && core.plugin.Army.includes(core.material.enemys[core.getBlockId(X, Y)].type)) { //主将
+													if (!flags.aoe[X + ',' + Y + ',' + core.status.floorId]) {
+														flags.aoe[X + ',' + Y + ',' + floorId] = core.getEnemyInfo(core.material.enemys[core.getBlockId(X, Y)]).hp * 0.6;
+														if (core.getEnemyInfo(core.getBlockId(X, Y), null, X, Y).hp <= 0) core.kill(X, Y);
+													} else {
+														flags.aoe[X + ',' + Y + ',' + floorId] += core.getEnemyInfo(core.material.enemys[core.getBlockId(X, Y)]).hp * 0.6;
+														if (core.getEnemyInfo(core.getBlockId(X, Y), null, X, Y).hp <= 0) core.kill(X, Y);
+													}
+												} else if (core.plugin.Army.includes(core.material.enemys[core.getBlockId(X, Y)].type)) { //常规怪
+													core.kill(X, Y);
+												}
+											} else if (core.getBlockCls(X, Y) === 'animates' || core.getBlockCls(X, Y) === 'terrains' || core.getBlockCls(X, Y) === 'npcs' || core.getBlockCls(X, Y) === 'autotile' || core.getBlockCls(X, Y) === 'tileset') {
+												if (core.getBlock(X, Y).event.canBreak) {
+													core.removeBlock(X, Y);
+												}
+											}
+											//爆炸冲击范围
+											for (let a = -3; a <= 3; a++) {
+												for (let b = -3; b <= 3; b++) {
+													if (a === 0 && b === 0) { continue }
+													if (core.getBlockCls(X + a, Y + b, floorId) === 'enemys') { //是怪
+														if (!core.hasSpecial(core.getBlockId(X + a, Y + b), 57) && core.plugin.Army.includes(core.material.enemys[core.getBlockId(X + a, Y + b)].type)) { //主将
+															if (!flags.aoe[(X + a) + ',' + (Y + b) + ',' + core.status.floorId]) {
+																flags.aoe[(X + a) + ',' + (Y + b) + ',' + floorId] = enemyhp * 0.4;
+																if (core.getEnemyInfo(core.getBlockId(X + a, Y + b), null, X + a, Y + b).hp <= 0) core.kill(X + a, Y + b);
+															} else {
+																flags.aoe[(X + a) + ',' + (Y + b) + ',' + floorId] += enemyhp * 0.4;
+																if (core.getEnemyInfo(core.getBlockId(X + a, Y + b), null, X + a, Y + b).hp <= 0) core.kill(X + a, Y + b);
+															}
+														} else if (core.plugin.Army.includes(core.material.enemys[core.getBlockId(X + a, Y + b)].type)) { //常规怪
+															if (!flags.aoe[(X + a) + ',' + (Y + b) + ',' + core.status.floorId]) {
+																flags.aoe[(X + a) + ',' + (Y + b) + ',' + floorId] = enemyhp * 0.8;
+																if (core.getEnemyInfo(core.getBlockId(X + a, Y + b), null, X + a, Y + b).hp <= 0) core.kill(X + a, Y + b);
+															} else {
+																flags.aoe[(X + a) + ',' + (Y + b) + ',' + floorId] += enemyhp * 0.8;
+																if (core.getEnemyInfo(core.getBlockId(X + a, Y + b), null, X + a, Y + b).hp <= 0) core.kill(X + a, Y + b);
+															}
+														}
+														if (core.getEnemyInfo(core.getBlockId(X + a, Y + b), null, X + a, Y + b).hp <= 0) core.kill(X + a, Y + b)
+													} else if (core.getBlockCls(X + a, Y + b) === 'animates' || core.getBlockCls(X + a, Y + b) === 'terrains' || core.getBlockCls(X + a, Y + b) === 'npcs' || core.getBlockCls(X + a, Y + b) === 'autotile' || core.getBlockCls(X + a, Y + b) === 'tileset') { //是墙
+														if (core.getBlock(X + a, Y + b).event.canBreak) {
+															core.removeBlock(X + a, Y + b);
+														}
+													}
+												}
+											}
+											core.updateStatusBar();
+										}, (18 - X) / 21 * 2000);
+										core.moveImage(1, [32 * X - 109, -195], 1, null, 2000, () => {
+											core.hideImage(1, 0);
+											res(true)
+										})
+									});
+								});
+							}
+						} else {
+							core.status.hero.mana += 1000;
+							core.drawTip('只能在陆地或浅滩使用');
+							core.playSound('error.mp3');
+							res(false)
+							return;
+						}
+					} else {
+						core.status.hero.mana += 1000;
+						core.drawTip('未装备合适载体，无法投放');
+						core.playSound('error.mp3');
+						res(false)
+						return;
+					}
+				})
+			},
+			description: '只能在陆地或浅滩使用，且必须装备着特定轰炸机。使用后在当前地图中指定地点投下一枚“高脚柜”炸弹，爆炸中心的非boss陆军将被直接摧毁（无视抗破），boss失去60%生命值。同时，爆炸中心九宫格3格半径内将发生小范围地震，摧毁可破墙壁，范围内其他敌方陆军损失80%血量（boss为40%）'
 		},
 
 		{ // 26
@@ -4882,7 +5069,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 			strategy: true,
 			name: '钳形攻势',
 			cost: 2000,
-			description: '主角能够从当前地图任意出口通行时可用。发动此技能后，在当前地图战斗时攻击力+50%，伤害减免40%。'
+			description: '废案'
 		}
 	]
 

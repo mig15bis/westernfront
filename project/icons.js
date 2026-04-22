@@ -244,7 +244,6 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"poisonZombie": 55,
 		"octopus": 57,
 		"princessEnemy": 59,
-		"magicMaster": 46,
 		"devilWarrior": 41,
 		"fairyEnemy": 58,
 		"dragon": 56,
@@ -435,7 +434,8 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"japtank6": 160,
 		"acemg42": 196,
 		"spy": 197,
-		"aatower": 198
+		"aatower": 198,
+		"rocket41": 46
 	},
 	"enemy48": {
 		"angel": 0,

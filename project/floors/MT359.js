@@ -489,7 +489,7 @@ main.floors.MT359=
             "type": "setTask",
             "name": "第48关任务2",
             "n": 1,
-            "text": "友军血量不少于1000w",
+            "text": "友军血量不少于2500w",
             "info": [
                 {
                     "type": "checkFlag",

@@ -5,8 +5,8 @@ main.floors.MT393=
     "name": "阿登",
     "width": 15,
     "height": 15,
-    "canFlyTo": true,
-    "canFlyFrom": true,
+    "canFlyTo": false,
+    "canFlyFrom": false,
     "canUseQuickShop": true,
     "cannotViewMap": false,
     "images": [],
@@ -18,7 +18,7 @@ main.floors.MT393=
             "type": "moveHero",
             "time": 500,
             "steps": [
-                "down:1"
+                "down:2"
             ]
         },
         {
@@ -47,14 +47,24 @@ main.floors.MT393=
             "type": "previewUI",
             "action": [
                 {
+                    "type": "setValue",
+                    "name": "flag:bosshp",
+                    "value": "4"
+                },
+                {
+                    "type": "setValue",
+                    "name": "flag:bosshpmax",
+                    "value": "4"
+                },
+                {
                     "type": "strokeRect",
                     "x": 130,
                     "y": 64,
-                    "width": 64,
+                    "width": 256,
                     "height": 16,
                     "style": [
                         255,
-                        165,
+                        255,
                         0,
                         1
                     ],
@@ -64,7 +74,7 @@ main.floors.MT393=
                     "type": "fillRect",
                     "x": 130,
                     "y": 64,
-                    "width": 64,
+                    "width": 256,
                     "height": 16,
                     "style": [
                         255,
@@ -74,85 +84,23 @@ main.floors.MT393=
                     ]
                 },
                 {
-                    "type": "strokeRect",
-                    "x": 194,
-                    "y": 64,
-                    "width": 64,
-                    "height": 16,
+                    "type": "fillBoldText",
+                    "x": 130,
+                    "y": 48,
                     "style": [
                         255,
-                        165,
+                        0,
                         0,
                         1
                     ],
-                    "lineWidth": 5
-                },
-                {
-                    "type": "fillRect",
-                    "x": 194,
-                    "y": 64,
-                    "width": 64,
-                    "height": 16,
-                    "style": [
+                    "strokeStyle": [
                         255,
-                        0,
-                        0,
-                        1
-                    ]
-                },
-                {
-                    "type": "strokeRect",
-                    "x": 258,
-                    "y": 64,
-                    "width": 64,
-                    "height": 16,
-                    "style": [
-                        255,
-                        165,
+                        140,
                         0,
                         1
                     ],
-                    "lineWidth": 5
-                },
-                {
-                    "type": "fillRect",
-                    "x": 258,
-                    "y": 64,
-                    "width": 64,
-                    "height": 16,
-                    "style": [
-                        255,
-                        0,
-                        0,
-                        1
-                    ]
-                },
-                {
-                    "type": "strokeRect",
-                    "x": 322,
-                    "y": 64,
-                    "width": 64,
-                    "height": 16,
-                    "style": [
-                        255,
-                        165,
-                        0,
-                        1
-                    ],
-                    "lineWidth": 5
-                },
-                {
-                    "type": "fillRect",
-                    "x": 322,
-                    "y": 64,
-                    "width": 64,
-                    "height": 16,
-                    "style": [
-                        255,
-                        0,
-                        0,
-                        1
-                    ]
+                    "font": "20px number",
+                    "text": "4/4"
                 }
             ]
         }
@@ -190,10 +138,6 @@ main.floors.MT393=
                 "pos": 6
             },
             {
-                "type": "function",
-                "function": "function(){\nflags.skillList=[0,0,0,0,0,0,0]\n}"
-            },
-            {
                 "type": "update"
             },
             {
@@ -201,7 +145,7 @@ main.floors.MT393=
                 "time": 500
             },
             {
-                "type": "hideStatusBar"
+                "type": "hideui"
             },
             {
                 "type": "update"
@@ -244,7 +188,7 @@ main.floors.MT393=
             },
             {
                 "type": "function",
-                "function": "function(){\nvar a = flags.mission[core.getFlag('stage')];\ncore.setFlag('@temp@A', a[0] + a[1] + a[2]);\n}"
+                "function": "function(){\nvar a = core.taskSystem.checkTask(0) ? 1 : 0,\n\tb = core.taskSystem.checkTask(1) ? 1 : 0,\n\tc = core.taskSystem.checkTask(2) ? 1 : 0;\ncore.setFlag('@temp@A', a + b + c);\n}"
             },
             {
                 "type": "if",
@@ -270,11 +214,6 @@ main.floors.MT393=
                             90
                         ],
                         "opacity": 1,
-                        "time": 500,
-                        "async": true
-                    },
-                    {
-                        "type": "sleep",
                         "time": 500
                     },
                     {
@@ -301,11 +240,6 @@ main.floors.MT393=
                                     90
                                 ],
                                 "opacity": 1,
-                                "time": 500,
-                                "async": true
-                            },
-                            {
-                                "type": "sleep",
                                 "time": 500
                             },
                             {
@@ -332,11 +266,6 @@ main.floors.MT393=
                                             90
                                         ],
                                         "opacity": 1,
-                                        "time": 500,
-                                        "async": true
-                                    },
-                                    {
-                                        "type": "sleep",
                                         "time": 500
                                     }
                                 ],
@@ -393,6 +322,9 @@ main.floors.MT393=
                 "type": "clearMap"
             },
             {
+                "type": "submitTask"
+            },
+            {
                 "type": "moveImage",
                 "code": 5,
                 "to": [
@@ -446,9 +378,6 @@ main.floors.MT393=
                 "opacity": 0
             },
             {
-                "type": "pauseBgm"
-            },
-            {
                 "type": "setValue",
                 "name": "flag:stage",
                 "value": "54"
@@ -468,15 +397,12 @@ main.floors.MT393=
                     }
                 ],
                 "no": [
-                    {
-                        "type": "playBgm",
-                        "name": "europe6.mp3"
-                    },
-                    "盟军本来心心念念的圣诞节逐渐被恐惧的阴霾所笼罩。至1944年12月25日，德军向西突入纵深达百余公里，形成突出部。",
+                    "盟军本来心心念念的圣诞节逐渐被恐惧的阴霾所笼罩。至1944年12月25日，德军三路大军向西突入纵深达百余公里，形成突出部——阿登反击战由此展开。",
                     "艾森豪威尔紧急采取措施，调派大批增援部队阻击德军，并积极准备反突击。到24日，盟军已集结起60万大军，而德军总兵力仅20万。",
-                    "经验丰富的德军老兵早就阵亡的差不多了，现在的德军大多是没受过训练的青年团。并且，与1940年机动灵活的三号和四号坦克相比，虎豹坦克每走一步都更加消耗燃料，这对本就缺乏燃油的德军而言无疑是个麻烦。",
-                    "圣诞节当天，德军第2装甲师与美军第2装甲师在塞勒斯展开激战，结果是这支德军损失了所有的坦克，美第2装甲师由此获得“活动地狱”的称号。",
-                    "第二天，美军第四装甲师一路血战杀进巴斯托涅，并且，天气情况好转，盟军的空中优势得以发挥，战场的天平开始向盟军倾斜。",
+                    "经验丰富的德军老兵早就阵亡的差不多了，现在的德军大多是没受过训练的青年团。并且，与1940年机动灵活的三号和四号坦克相比，虎豹坦克每走一步都更加消耗燃料，这对本就缺乏燃油的德军而言无疑是雪上加霜。许多坦克不是被盟军击毁，而是缺油少弹不得不遗弃在路上。",
+                    "除此之外，德军后期的坦克和歼击车普遍有一个巨大的共性问题——可靠性很差，虎王、猎虎等重型战车更是重灾区。如果这些大家伙能顺利开上战场，确实可以大开杀戒，但它们当中的大多数在半路就抛锚了。许多有经验的德军坦克兵就吐槽，还不如让他们开谢尔曼坦克去作战，虽然脆了点，但好歹不会坏在半路，即便坏了也很容易修复或替换。",
+                    "圣诞节当天，德军第2装甲师与美军第2装甲师在塞勒斯展开激战。按照以往的情况，本应又是德军虎豹坦克重创美军的戏码，但这次却不一样——德军损失了所有的坦克，美军的损失却可以接受。美第2装甲师由此获得“活动地狱”的称号。",
+                    "第二天，美军第四装甲师一路血战，打破包围圈，杀进巴斯托涅。并且，天气情况好转，盟军的空中优势得以发挥，轰炸机投下的炸弹犹如一记重锤，将德军装甲部队的攻势炸的粉碎。战场的天平开始再次向盟军倾斜。",
                     "然而，就在盟军刚准备松一口气，好好弥补下圣诞节的遗憾时，1945年1月1日，德军再次送上了一份意外的“新年贺礼”。",
                     {
                         "type": "changeFloor",
@@ -504,14 +430,51 @@ main.floors.MT393=
         "7,12": [
             {
                 "type": "if",
-                "condition": "(flag:MT393boss===0)",
+                "condition": "(flag:bosshp===4)",
                 "true": [
                     {
-                        "type": "clearMap",
-                        "x": 322,
-                        "y": 64,
-                        "width": 64,
-                        "height": 16
+                        "type": "previewUI",
+                        "action": [
+                            {
+                                "type": "setValue",
+                                "name": "flag:bosshp",
+                                "operator": "-=",
+                                "value": "1"
+                            },
+                            {
+                                "type": "clearMap",
+                                "x": 128,
+                                "y": 30,
+                                "width": 100,
+                                "height": 30
+                            },
+                            {
+                                "type": "clearMap",
+                                "x": "386 - ((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                "y": 64,
+                                "width": "((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                "height": 16
+                            },
+                            {
+                                "type": "fillBoldText",
+                                "x": 130,
+                                "y": 48,
+                                "style": [
+                                    255,
+                                    0,
+                                    0,
+                                    1
+                                ],
+                                "strokeStyle": [
+                                    255,
+                                    140,
+                                    0,
+                                    1
+                                ],
+                                "font": "20px number",
+                                "text": "3/4"
+                            }
+                        ]
                     },
                     {
                         "type": "setBlock",
@@ -542,51 +505,33 @@ main.floors.MT393=
                         "type": "waitAsync"
                     },
                     {
-                        "type": "setValue",
-                        "name": "flag:MT393boss",
-                        "operator": "+=",
-                        "value": "1"
-                    },
-                    {
                         "type": "sleep",
                         "time": 500
+                    },
+                    {
+                        "type": "playSound",
+                        "name": "xinxinmagic.mp3"
                     },
                     "\t[系统提示]敌军增援抵达",
                     {
                         "type": "setBlock",
-                        "number": "panzer4h",
+                        "number": "panzer5d",
                         "loc": [
                             [
                                 3,
-                                4
-                            ],
-                            [
-                                2,
-                                5
-                            ],
-                            [
-                                4,
-                                5
-                            ],
-                            [
-                                3,
-                                6
+                                7
                             ],
                             [
                                 11,
-                                5
+                                7
                             ],
                             [
-                                10,
-                                4
+                                2,
+                                10
                             ],
                             [
-                                9,
-                                5
-                            ],
-                            [
-                                10,
-                                6
+                                12,
+                                10
                             ]
                         ],
                         "time": 0,
@@ -597,12 +542,20 @@ main.floors.MT393=
                         "number": "panzer5g",
                         "loc": [
                             [
-                                6,
-                                11
+                                2,
+                                7
                             ],
                             [
-                                8,
-                                11
+                                12,
+                                7
+                            ],
+                            [
+                                1,
+                                10
+                            ],
+                            [
+                                13,
+                                10
                             ]
                         ],
                         "time": 0,
@@ -613,12 +566,152 @@ main.floors.MT393=
                         "number": "pak44",
                         "loc": [
                             [
-                                10,
+                                1,
+                                6
+                            ],
+                            [
+                                1,
+                                8
+                            ],
+                            [
+                                13,
+                                6
+                            ],
+                            [
+                                13,
+                                8
+                            ],
+                            [
+                                1,
+                                11
+                            ],
+                            [
+                                13,
+                                11
+                            ],
+                            [
+                                7,
+                                8
+                            ]
+                        ],
+                        "time": 0,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "jagpanzer",
+                        "loc": [
+                            [
+                                2,
+                                6
+                            ],
+                            [
+                                2,
+                                8
+                            ],
+                            [
+                                12,
+                                8
+                            ],
+                            [
+                                12,
+                                6
+                            ],
+                            [
+                                6,
+                                6
+                            ],
+                            [
+                                8,
+                                6
+                            ]
+                        ],
+                        "time": 0,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "tigere",
+                        "loc": [
+                            [
+                                3,
+                                4
+                            ],
+                            [
+                                11,
+                                4
+                            ],
+                            [
+                                7,
                                 5
                             ],
                             [
-                                3,
-                                5
+                                7,
+                                6
+                            ]
+                        ],
+                        "time": 0,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "tigerking",
+                        "loc": [
+                            [
+                                1,
+                                12
+                            ],
+                            [
+                                13,
+                                12
+                            ]
+                        ],
+                        "time": 0,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "rocket41",
+                        "loc": [
+                            [
+                                1,
+                                4
+                            ],
+                            [
+                                13,
+                                4
+                            ]
+                        ],
+                        "time": 0,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "jagtiger",
+                        "loc": [
+                            [
+                                2,
+                                4
+                            ],
+                            [
+                                12,
+                                4
+                            ]
+                        ],
+                        "time": 0,
+                        "async": true
+                    },
+                    {
+                        "type": "setBlock",
+                        "number": "stugtiger",
+                        "loc": [
+                            [
+                                1,
+                                13
+                            ],
+                            [
+                                13,
+                                13
                             ]
                         ],
                         "time": 0,
@@ -631,14 +724,51 @@ main.floors.MT393=
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT393boss===1)",
+                        "condition": "(flag:bosshp===3)",
                         "true": [
                             {
-                                "type": "clearMap",
-                                "x": 258,
-                                "y": 64,
-                                "width": 64,
-                                "height": 16
+                                "type": "previewUI",
+                                "action": [
+                                    {
+                                        "type": "setValue",
+                                        "name": "flag:bosshp",
+                                        "operator": "-=",
+                                        "value": "1"
+                                    },
+                                    {
+                                        "type": "clearMap",
+                                        "x": 128,
+                                        "y": 30,
+                                        "width": 100,
+                                        "height": 30
+                                    },
+                                    {
+                                        "type": "clearMap",
+                                        "x": "386 - ((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                        "y": 64,
+                                        "width": "((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                        "height": 16
+                                    },
+                                    {
+                                        "type": "fillBoldText",
+                                        "x": 130,
+                                        "y": 48,
+                                        "style": [
+                                            255,
+                                            0,
+                                            0,
+                                            1
+                                        ],
+                                        "strokeStyle": [
+                                            255,
+                                            140,
+                                            0,
+                                            1
+                                        ],
+                                        "font": "20px number",
+                                        "text": "2/4"
+                                    }
+                                ]
                             },
                             {
                                 "type": "setBlock",
@@ -669,14 +799,12 @@ main.floors.MT393=
                                 "type": "waitAsync"
                             },
                             {
-                                "type": "setValue",
-                                "name": "flag:MT393boss",
-                                "operator": "+=",
-                                "value": "1"
-                            },
-                            {
                                 "type": "sleep",
                                 "time": 500
+                            },
+                            {
+                                "type": "playSound",
+                                "name": "xinxinmagic.mp3"
                             },
                             "\t[系统提示]敌军增援抵达",
                             {
@@ -684,11 +812,23 @@ main.floors.MT393=
                                 "number": "flak120",
                                 "loc": [
                                     [
-                                        4,
+                                        5,
+                                        10
+                                    ],
+                                    [
+                                        7,
+                                        10
+                                    ],
+                                    [
+                                        9,
+                                        10
+                                    ],
+                                    [
+                                        8,
                                         9
                                     ],
                                     [
-                                        10,
+                                        6,
                                         9
                                     ]
                                 ],
@@ -697,7 +837,71 @@ main.floors.MT393=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "tigere",
+                                "number": "rocket41",
+                                "loc": [
+                                    [
+                                        1,
+                                        13
+                                    ],
+                                    [
+                                        13,
+                                        13
+                                    ]
+                                ],
+                                "time": 0,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "pak44",
+                                "loc": [
+                                    [
+                                        1,
+                                        12
+                                    ],
+                                    [
+                                        13,
+                                        12
+                                    ]
+                                ],
+                                "time": 0,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "panzer5g",
+                                "loc": [
+                                    [
+                                        1,
+                                        11
+                                    ],
+                                    [
+                                        1,
+                                        10
+                                    ],
+                                    [
+                                        2,
+                                        10
+                                    ],
+                                    [
+                                        13,
+                                        11
+                                    ],
+                                    [
+                                        13,
+                                        10
+                                    ],
+                                    [
+                                        12,
+                                        10
+                                    ]
+                                ],
+                                "time": 0,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "tigerking",
                                 "loc": [
                                     [
                                         6,
@@ -713,39 +917,31 @@ main.floors.MT393=
                             },
                             {
                                 "type": "setBlock",
-                                "number": "panzer5g",
+                                "number": "tigere",
                                 "loc": [
                                     [
-                                        4,
+                                        6,
+                                        7
+                                    ],
+                                    [
+                                        7,
+                                        7
+                                    ],
+                                    [
+                                        8,
+                                        7
+                                    ]
+                                ],
+                                "time": 0,
+                                "async": true
+                            },
+                            {
+                                "type": "setBlock",
+                                "number": "jagpanzer",
+                                "loc": [
+                                    [
+                                        7,
                                         8
-                                    ],
-                                    [
-                                        3,
-                                        9
-                                    ],
-                                    [
-                                        4,
-                                        10
-                                    ],
-                                    [
-                                        5,
-                                        9
-                                    ],
-                                    [
-                                        10,
-                                        8
-                                    ],
-                                    [
-                                        9,
-                                        9
-                                    ],
-                                    [
-                                        10,
-                                        10
-                                    ],
-                                    [
-                                        11,
-                                        9
                                     ]
                                 ],
                                 "time": 0,
@@ -758,14 +954,51 @@ main.floors.MT393=
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT393boss===2)",
+                                "condition": "(flag:bosshp===2)",
                                 "true": [
                                     {
-                                        "type": "clearMap",
-                                        "x": 194,
-                                        "y": 64,
-                                        "width": 64,
-                                        "height": 16
+                                        "type": "previewUI",
+                                        "action": [
+                                            {
+                                                "type": "setValue",
+                                                "name": "flag:bosshp",
+                                                "operator": "-=",
+                                                "value": "1"
+                                            },
+                                            {
+                                                "type": "clearMap",
+                                                "x": 128,
+                                                "y": 30,
+                                                "width": 100,
+                                                "height": 30
+                                            },
+                                            {
+                                                "type": "clearMap",
+                                                "x": "386 - ((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                                "y": 64,
+                                                "width": "((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                                "height": 16
+                                            },
+                                            {
+                                                "type": "fillBoldText",
+                                                "x": 130,
+                                                "y": 48,
+                                                "style": [
+                                                    255,
+                                                    0,
+                                                    0,
+                                                    1
+                                                ],
+                                                "strokeStyle": [
+                                                    255,
+                                                    140,
+                                                    0,
+                                                    1
+                                                ],
+                                                "font": "20px number",
+                                                "text": "1/4"
+                                            }
+                                        ]
                                     },
                                     {
                                         "type": "setBlock",
@@ -796,19 +1029,45 @@ main.floors.MT393=
                                         "type": "waitAsync"
                                     },
                                     {
-                                        "type": "setValue",
-                                        "name": "flag:MT371boss",
-                                        "operator": "+=",
-                                        "value": "1"
-                                    },
-                                    {
                                         "type": "sleep",
                                         "time": 500
+                                    },
+                                    {
+                                        "type": "playSound",
+                                        "name": "xinxinmagic.mp3"
                                     },
                                     "\t[系统提示]敌军增援抵达",
                                     {
                                         "type": "setBlock",
                                         "number": "tigerking",
+                                        "loc": [
+                                            [
+                                                7,
+                                                5
+                                            ],
+                                            [
+                                                3,
+                                                7
+                                            ],
+                                            [
+                                                11,
+                                                7
+                                            ],
+                                            [
+                                                12,
+                                                10
+                                            ],
+                                            [
+                                                2,
+                                                10
+                                            ]
+                                        ],
+                                        "time": 0,
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "setBlock",
+                                        "number": "tigere",
                                         "loc": [
                                             [
                                                 6,
@@ -824,10 +1083,14 @@ main.floors.MT393=
                                     },
                                     {
                                         "type": "setBlock",
-                                        "number": "tigere",
+                                        "number": "jagpanzer",
                                         "loc": [
                                             [
                                                 5,
+                                                10
+                                            ],
+                                            [
+                                                7,
                                                 10
                                             ],
                                             [
@@ -835,7 +1098,87 @@ main.floors.MT393=
                                                 10
                                             ],
                                             [
+                                                8,
+                                                9
+                                            ],
+                                            [
+                                                6,
+                                                9
+                                            ]
+                                        ],
+                                        "time": 0,
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "setBlock",
+                                        "number": "jagtiger",
+                                        "loc": [
+                                            [
+                                                5,
+                                                12
+                                            ],
+                                            [
+                                                9,
+                                                12
+                                            ]
+                                        ],
+                                        "time": 0,
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "setBlock",
+                                        "number": "attankinf",
+                                        "loc": [
+                                            [
+                                                4,
+                                                13
+                                            ],
+                                            [
+                                                10,
+                                                13
+                                            ],
+                                            [
+                                                3,
+                                                11
+                                            ],
+                                            [
+                                                11,
+                                                11
+                                            ],
+                                            [
+                                                6,
+                                                8
+                                            ],
+                                            [
+                                                8,
+                                                8
+                                            ]
+                                        ],
+                                        "time": 0,
+                                        "async": true
+                                    },
+                                    {
+                                        "type": "setBlock",
+                                        "number": "panzer5g",
+                                        "loc": [
+                                            [
+                                                2,
+                                                7
+                                            ],
+                                            [
+                                                12,
+                                                7
+                                            ],
+                                            [
                                                 7,
+                                                6
+                                            ],
+                                            [
+                                                1,
+                                                10
+                                            ],
+                                            [
+                                                13,
                                                 10
                                             ]
                                         ],
@@ -844,19 +1187,23 @@ main.floors.MT393=
                                     },
                                     {
                                         "type": "setBlock",
-                                        "number": "jagpanzer",
+                                        "number": "pak44",
                                         "loc": [
                                             [
-                                                7,
-                                                8
+                                                1,
+                                                7
                                             ],
                                             [
-                                                5,
-                                                8
+                                                13,
+                                                7
                                             ],
                                             [
-                                                9,
-                                                8
+                                                1,
+                                                12
+                                            ],
+                                            [
+                                                13,
+                                                12
                                             ]
                                         ],
                                         "time": 0,
@@ -866,14 +1213,14 @@ main.floors.MT393=
                                         "type": "setEnemy",
                                         "id": "manstein",
                                         "name": "money",
-                                        "value": "100",
+                                        "value": "500",
                                         "norefresh": true
                                     },
                                     {
                                         "type": "setEnemy",
                                         "id": "manstein",
                                         "name": "exp",
-                                        "value": "100"
+                                        "value": "500"
                                     },
                                     {
                                         "type": "waitAsync"
@@ -882,18 +1229,55 @@ main.floors.MT393=
                                 "false": [
                                     {
                                         "type": "if",
-                                        "condition": "(flag:MT393boss===3)",
+                                        "condition": "(flag:bosshp===1)",
                                         "true": [
                                             {
-                                                "type": "clearMap",
-                                                "x": 130,
-                                                "y": 64,
-                                                "width": 64,
-                                                "height": 16
+                                                "type": "previewUI",
+                                                "action": [
+                                                    {
+                                                        "type": "setValue",
+                                                        "name": "flag:bosshp",
+                                                        "operator": "-=",
+                                                        "value": "1"
+                                                    },
+                                                    {
+                                                        "type": "clearMap",
+                                                        "x": 128,
+                                                        "y": 30,
+                                                        "width": 100,
+                                                        "height": 30
+                                                    },
+                                                    {
+                                                        "type": "clearMap",
+                                                        "x": "386 - ((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                                        "y": 64,
+                                                        "width": "((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                                        "height": 16
+                                                    },
+                                                    {
+                                                        "type": "fillBoldText",
+                                                        "x": 130,
+                                                        "y": 48,
+                                                        "style": [
+                                                            255,
+                                                            0,
+                                                            0,
+                                                            1
+                                                        ],
+                                                        "strokeStyle": [
+                                                            255,
+                                                            140,
+                                                            0,
+                                                            1
+                                                        ],
+                                                        "font": "20px number",
+                                                        "text": "0/4"
+                                                    }
+                                                ]
                                             },
                                             {
                                                 "type": "setValue",
-                                                "name": "flag:MT393boss",
+                                                "name": "flag:第52关通关",
                                                 "operator": "+=",
                                                 "value": "1"
                                             },
@@ -901,11 +1285,11 @@ main.floors.MT393=
                                                 "type": "sleep",
                                                 "time": 500
                                             },
-                                            "\t[系统提示]主线boss战 胜利！",
                                             {
-                                                "type": "function",
-                                                "function": "function(){\nflags.mission[53][0]=true\n}"
+                                                "type": "playSound",
+                                                "name": "xinxinmagic.mp3"
                                             },
+                                            "\t[系统提示]主线boss战 胜利！",
                                             {
                                                 "type": "openDoor",
                                                 "loc": [
@@ -918,6 +1302,20 @@ main.floors.MT393=
                                                 "loc": [
                                                     7,
                                                     13
+                                                ]
+                                            },
+                                            {
+                                                "type": "openDoor",
+                                                "loc": [
+                                                    1,
+                                                    3
+                                                ]
+                                            },
+                                            {
+                                                "type": "openDoor",
+                                                "loc": [
+                                                    13,
+                                                    3
                                                 ]
                                             },
                                             {
@@ -948,19 +1346,19 @@ main.floors.MT393=
     "cannotMoveIn": {},
     "map": [
     [109,109,109,109,109,109,109, 91,109,109,109,109,109,109,109],
-    [109,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,109],
-    [109,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,109],
-    [109,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,109],
-    [109,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,109],
-    [109,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,109],
-    [109,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,109],
-    [109,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,109],
-    [109,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,109],
-    [109,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,109],
-    [109,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,109],
-    [109,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,109],
-    [109,  0,  0,  0,  0,  0,  0,229,  0,  0,  0,  0,  0,  0,109],
-    [109,  0,  0,  0,  0,  0,  0, 85,  0,  0,  0,  0,  0,  0,109],
+    [109,590,590,651,651,109,609,  0,609,109,519,519,524,524,109],
+    [109,590,590,651,651,109,609,  0,609,109,519,519,524,524,109],
+    [109, 85,109,109,109,109,109,  0,109,109,109,109,109, 85,109],
+    [109,  0,  0,  0,  0,275,  0,  0,  0,275,  0,  0,  0,  0,109],
+    [109,109,109,  0,275,109,109,228,109,109,275,  0,109,109,109],
+    [109,  0,  0,109,227,109,  0,270,  0,109,227,109,  0,  0,109],
+    [109,  0,  0,391,  0,109,664,  0,664,109,  0,391,  0,  0,109],
+    [109,  0,  0,109,  0,109,  0,670,  0,109,  0,109,  0,  0,109],
+    [109,109,109,  0,228,109,247,109,247,109,228,  0,109,109,109],
+    [109,  0,  0,  0,109,279,109,279,109,279,109,  0,  0,  0,109],
+    [109,  0,109,  0,109,  0,275,384,275,  0,109,  0,109,  0,109],
+    [109,  0,109,  0,109,275,109,229,109,275,109,  0,109,  0,109],
+    [109,  0,109,  0,665,  0,109, 85,109,  0,665,  0,109,  0,109],
     [109,109,109,109,109,109,109, 89,109,109,109,109,109,109,109]
 ],
     "bgmap": [

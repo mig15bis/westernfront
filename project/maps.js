@@ -184,7 +184,7 @@ var maps_90f36752_8815_4be8_b32b_d7fad1d0542e =
 	"244": {"cls":"enemys","id":"grenadier"},
 	"245": {"cls":"enemys","id":"redKing"},
 	"246": {"cls":"enemys","id":"blueKing"},
-	"247": {"cls":"enemys","id":"magicMaster"},
+	"247": {"cls":"enemys","id":"rocket41"},
 	"248": {"cls":"enemys","id":"sniper"},
 	"249": {"cls":"enemys","id":"blademaster"},
 	"250": {"cls":"enemys","id":"motorinf"},

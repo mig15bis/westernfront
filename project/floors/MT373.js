@@ -12,7 +12,7 @@ main.floors.MT373=
     "images": [],
     "ratio": 1,
     "defaultGround": "ground6",
-    "bgm": "cao7.mp3",
+    "bgm": "cao6.mp3",
     "firstArrive": [
         {
             "type": "setHeroOpacity",
@@ -91,33 +91,24 @@ main.floors.MT373=
                         "text": "现在出发",
                         "action": [
                             {
-                                "type": "if",
-                                "condition": "core.hasEquip('lancaster')",
-                                "true": [
-                                    {
-                                        "type": "setCurtain",
-                                        "color": [
-                                            0,
-                                            0,
-                                            0,
-                                            1
-                                        ],
-                                        "time": 500,
-                                        "keep": true
-                                    },
-                                    {
-                                        "type": "changeFloor",
-                                        "floorId": "MT374",
-                                        "loc": [
-                                            7,
-                                            14
-                                        ],
-                                        "direction": "up"
-                                    }
+                                "type": "setCurtain",
+                                "color": [
+                                    0,
+                                    0,
+                                    0,
+                                    1
                                 ],
-                                "false": [
-                                    "必须装备兰开斯特轰炸机才可执行任务！（作者技术不够，不会检测你选择的技能，请自觉装备高脚柜炸弹，否则会卡关）"
-                                ]
+                                "time": 500,
+                                "keep": true
+                            },
+                            {
+                                "type": "changeFloor",
+                                "floorId": "MT374",
+                                "loc": [
+                                    7,
+                                    14
+                                ],
+                                "direction": "up"
                             }
                         ]
                     }

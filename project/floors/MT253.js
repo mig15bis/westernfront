@@ -16,7 +16,7 @@ main.floors.MT253=
     "firstArrive": [
         {
             "type": "if",
-            "condition": "!['eagle', 'raider', 'illustrious','essex','enterprise'].includes(core.getEquip(4))",
+            "condition": "(!['eagle', 'raider', 'illustrious','essex','enterprise'].includes(core.getEquip(3)))",
             "true": [],
             "false": [
                 {

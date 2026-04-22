@@ -5932,6 +5932,68 @@ var events_c12a15a8_c380_4b28_8144_256cba95f760 =
 					}
 				]
 			}
+		],
+		"高脚柜选择目标": [
+			{
+				"type": "tip",
+				"text": "请选择投弹位置"
+			},
+			{
+				"type": "while",
+				"condition": "true",
+				"data": [
+					{
+						"type": "wait"
+					},
+					{
+						"type": "if",
+						"condition": "(flag:type===1)",
+						"true": [
+							{
+								"type": "if",
+								"condition": "((temp:X===flag:x)&&(temp:Y===flag:y))",
+								"true": [
+									{
+										"type": "break",
+										"n": 1
+									}
+								]
+							},
+							{
+								"type": "setValue",
+								"name": "temp:X",
+								"value": "flag:x"
+							},
+							{
+								"type": "setValue",
+								"name": "temp:Y",
+								"value": "flag:y"
+							},
+							{
+								"type": "tip",
+								"text": "再次点击闪烁位置确认"
+							},
+							{
+								"type": "drawSelector",
+								"image": "winskin.png",
+								"code": 1,
+								"x": "32*temp:X",
+								"y": "32*temp:Y",
+								"width": 32,
+								"height": 32
+							}
+						]
+					}
+				]
+			},
+			{
+				"type": "drawSelector",
+				"code": 1
+			},
+			{
+				"type": "function",
+				"function": "function(){\nif (core.getBlockCls(flags.x, flags.y) === \"enemys\") flags.touchenemy = [flags.x, flags.y]\nelse flags.touchenemy = \"failed\"\nif (core.getBlockCls(flags.x, flags.y) === \"items\") flags.touchitem = [flags.x, flags.y]\nelse flags.touchitem = \"failed\"\nif (core.getBlockId(flags.x, flags.y, void 0, true) === null) flags.touchnullblock = [flags.x, flags.y]\nelse flags.touchnullblock = \"failed\"\nif ([\"yellowDoor\", \"blueDoor\", \"redDoor\"].includes(core.getBlockId(flags.x, flags.y, void 0, true))) flags.touchdoor = [flags.x, flags.y]\nelse flags.touchdoor = \"failed\"\n}"
+			}
 		]
 	}
 }
