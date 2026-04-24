@@ -12,8 +12,14 @@ main.floors.MT407=
     "images": [],
     "ratio": 1,
     "defaultGround": "grass3",
-    "bgm": "allthis.mp3",
-    "firstArrive": [],
+    "bgm": "cao3.mp3",
+    "firstArrive": [
+        {
+            "type": "playSound",
+            "name": "xinxinmagic.mp3"
+        },
+        "\t[系统提示]击败本地图中我方河岸所有敌人可开启机关门"
+    ],
     "eachArrive": [],
     "parallelDo": "",
     "events": {
@@ -214,7 +220,7 @@ main.floors.MT407=
             },
             {
                 "type": "sleep",
-                "time": 100
+                "time": 50
             },
             {
                 "type": "playSound",
@@ -222,7 +228,7 @@ main.floors.MT407=
             },
             {
                 "type": "sleep",
-                "time": 100
+                "time": 50
             },
             {
                 "type": "playSound",
@@ -230,7 +236,7 @@ main.floors.MT407=
             },
             {
                 "type": "sleep",
-                "time": 100
+                "time": 50
             },
             {
                 "type": "playSound",
@@ -238,7 +244,7 @@ main.floors.MT407=
             },
             {
                 "type": "sleep",
-                "time": 100
+                "time": 50
             },
             {
                 "type": "playSound",
@@ -282,7 +288,7 @@ main.floors.MT407=
             },
             {
                 "type": "sleep",
-                "time": 500
+                "time": 100
             },
             {
                 "type": "animate",
@@ -322,7 +328,7 @@ main.floors.MT407=
             },
             {
                 "type": "sleep",
-                "time": 500
+                "time": 100
             },
             {
                 "type": "animate",
@@ -362,7 +368,7 @@ main.floors.MT407=
             },
             {
                 "type": "sleep",
-                "time": 500
+                "time": 100
             },
             {
                 "type": "animate",
@@ -402,7 +408,7 @@ main.floors.MT407=
             },
             {
                 "type": "sleep",
-                "time": 500
+                "time": 100
             },
             {
                 "type": "animate",
@@ -442,7 +448,7 @@ main.floors.MT407=
             },
             {
                 "type": "sleep",
-                "time": 500
+                "time": 100
             },
             {
                 "type": "animate",
@@ -495,11 +501,8 @@ main.floors.MT407=
                         0
                     ]
                 ],
-                "time": 500
-            },
-            {
-                "type": "playSound",
-                "name": "move2.mp3"
+                "time": 500,
+                "async": true
             },
             {
                 "type": "show",
@@ -509,11 +512,8 @@ main.floors.MT407=
                         2
                     ]
                 ],
-                "time": 500
-            },
-            {
-                "type": "playSound",
-                "name": "move2.mp3"
+                "time": 500,
+                "async": true
             },
             {
                 "type": "show",
@@ -523,11 +523,8 @@ main.floors.MT407=
                         4
                     ]
                 ],
-                "time": 500
-            },
-            {
-                "type": "playSound",
-                "name": "move2.mp3"
+                "time": 500,
+                "async": true
             },
             {
                 "type": "show",
@@ -537,11 +534,8 @@ main.floors.MT407=
                         7
                     ]
                 ],
-                "time": 500
-            },
-            {
-                "type": "playSound",
-                "name": "move2.mp3"
+                "time": 500,
+                "async": true
             },
             {
                 "type": "show",
@@ -551,11 +545,8 @@ main.floors.MT407=
                         10
                     ]
                 ],
-                "time": 500
-            },
-            {
-                "type": "playSound",
-                "name": "move2.mp3"
+                "time": 500,
+                "async": true
             },
             {
                 "type": "show",
@@ -565,11 +556,8 @@ main.floors.MT407=
                         12
                     ]
                 ],
-                "time": 500
-            },
-            {
-                "type": "playSound",
-                "name": "move2.mp3"
+                "time": 500,
+                "async": true
             },
             {
                 "type": "show",
@@ -579,7 +567,11 @@ main.floors.MT407=
                         14
                     ]
                 ],
-                "time": 500
+                "time": 500,
+                "async": true
+            },
+            {
+                "type": "waitAsync"
             },
             {
                 "type": "playSound",
@@ -593,11 +585,8 @@ main.floors.MT407=
                         1
                     ]
                 ],
-                "time": 500
-            },
-            {
-                "type": "playSound",
-                "name": "move3.mp3"
+                "time": 500,
+                "async": true
             },
             {
                 "type": "show",
@@ -607,11 +596,8 @@ main.floors.MT407=
                         5
                     ]
                 ],
-                "time": 500
-            },
-            {
-                "type": "playSound",
-                "name": "move3.mp3"
+                "time": 500,
+                "async": true
             },
             {
                 "type": "show",
@@ -621,11 +607,8 @@ main.floors.MT407=
                         9
                     ]
                 ],
-                "time": 500
-            },
-            {
-                "type": "playSound",
-                "name": "move3.mp3"
+                "time": 500,
+                "async": true
             },
             {
                 "type": "show",
@@ -635,7 +618,11 @@ main.floors.MT407=
                         13
                     ]
                 ],
-                "time": 500
+                "time": 500,
+                "async": true
+            },
+            {
+                "type": "waitAsync"
             },
             {
                 "type": "animate",
@@ -1003,18 +990,9 @@ main.floors.MT407=
         ],
         "7,7": [
             {
-                "type": "function",
-                "function": "function(){\nflags.mission[55][0]=true\n}"
-            },
-            {
-                "type": "if",
-                "condition": "(item:yellowKey>=20)",
-                "true": [
-                    {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[55][2]=true\n}"
-                    }
-                ]
+                "type": "setValue",
+                "name": "flag:第54关通关",
+                "value": "1"
             },
             {
                 "type": "unloadEquip",
@@ -1045,10 +1023,6 @@ main.floors.MT407=
                 "pos": 6
             },
             {
-                "type": "function",
-                "function": "function(){\nflags.skillList=[0,0,0,0,0,0,0]\n}"
-            },
-            {
                 "type": "update"
             },
             {
@@ -1056,7 +1030,7 @@ main.floors.MT407=
                 "time": 500
             },
             {
-                "type": "hideStatusBar"
+                "type": "hideui"
             },
             {
                 "type": "update"
@@ -1099,7 +1073,7 @@ main.floors.MT407=
             },
             {
                 "type": "function",
-                "function": "function(){\nvar a = flags.mission[core.getFlag('stage')];\ncore.setFlag('@temp@A', a[0] + a[1] + a[2]);\n}"
+                "function": "function(){\nvar a = core.taskSystem.checkTask(0) ? 1 : 0,\n\tb = core.taskSystem.checkTask(1) ? 1 : 0,\n\tc = core.taskSystem.checkTask(2) ? 1 : 0;\ncore.setFlag('@temp@A', a + b + c);\n}"
             },
             {
                 "type": "if",
@@ -1125,11 +1099,6 @@ main.floors.MT407=
                             90
                         ],
                         "opacity": 1,
-                        "time": 500,
-                        "async": true
-                    },
-                    {
-                        "type": "sleep",
                         "time": 500
                     },
                     {
@@ -1156,11 +1125,6 @@ main.floors.MT407=
                                     90
                                 ],
                                 "opacity": 1,
-                                "time": 500,
-                                "async": true
-                            },
-                            {
-                                "type": "sleep",
                                 "time": 500
                             },
                             {
@@ -1187,11 +1151,6 @@ main.floors.MT407=
                                             90
                                         ],
                                         "opacity": 1,
-                                        "time": 500,
-                                        "async": true
-                                    },
-                                    {
-                                        "type": "sleep",
                                         "time": 500
                                     }
                                 ],
@@ -1229,7 +1188,7 @@ main.floors.MT407=
             },
             {
                 "type": "drawTextContent",
-                "text": "   德军组织起的零散防御根本没法阻\n挡指挥官阁下的扫荡。在易北河的另一\n端，我们遇见了一支友善的苏军部队。\n   来自地球两端的两国军队居然碰到\n了一起，猜猜这意味着什么？我们把德\n国人彻底包围了！战争马上要结束了！\n管他那么多干什么，我们与这些苏联朋\n友热情拥抱，交换香烟和美酒。不得不\n说，那些伏特加的酒劲真大！",
+                "text": "   德军组织起的零散防御根本没法阻挡\n指挥官阁下的扫荡。在易北河的另一端\n，我们遇见了一支友善的苏军部队。\n   来自地球两端的两国军队居然碰到了\n一起，猜猜这意味着什么？我们把德国\n人彻底包围了！战争马上要结束了！管\n他那么多干什么，我们与这些苏联朋友\n热情拥抱，交换香烟和美酒。不得不说\n，那些伏特加的酒劲真大！",
                 "left": 60,
                 "top": 100,
                 "align": "left",
@@ -1246,6 +1205,9 @@ main.floors.MT407=
             },
             {
                 "type": "clearMap"
+            },
+            {
+                "type": "submitTask"
             },
             {
                 "type": "moveImage",
@@ -1301,9 +1263,6 @@ main.floors.MT407=
                 "opacity": 0
             },
             {
-                "type": "pauseBgm"
-            },
-            {
                 "type": "setValue",
                 "name": "flag:stage",
                 "value": "56"
@@ -1324,10 +1283,6 @@ main.floors.MT407=
                 ],
                 "no": [
                     {
-                        "type": "playBgm",
-                        "name": "allthis.mp3"
-                    },
-                    {
                         "type": "showImage",
                         "code": 1,
                         "image": "joinforces.jpg",
@@ -1341,6 +1296,10 @@ main.floors.MT407=
                     {
                         "type": "setCurtain",
                         "time": 500
+                    },
+                    {
+                        "type": "sleep",
+                        "time": 1000
                     },
                     "1945年4月25日，一支美军侦察队与苏军在易北河畔一座断桥上不期而遇，东西两线并肩作战的两军进行了历史性握手。这张历史性的照片很快传遍全世界。",
                     "这意味着负隅顽抗的纳粹德国被拦腰截成两段，柏林已被重重包围，反法西斯战争已胜利在望。",
@@ -1667,22 +1626,10 @@ main.floors.MT407=
     "afterOpenDoor": {},
     "autoEvent": {
         "5,7": {
+            "0": null,
             "1": null
         },
         "7,0": {
-            "0": {
-                "condition": "!core.hasEnemyLeft(undefined,['MT403','MT404','MT405','MT406'])",
-                "currentFloor": false,
-                "priority": 0,
-                "delayExecute": false,
-                "multiExecute": false,
-                "data": [
-                    {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[55][1]=true\n}"
-                    }
-                ]
-            },
             "1": null
         }
     },
@@ -1691,15 +1638,15 @@ main.floors.MT407=
     "map": [
     [ 91,141,639,640,  0,151,151,151,151,151,  0,  0,250,548,  0],
     [  0,141,639,640,228,151,151,151,151,151,275,  0,  0,  0,673],
-    [  0,141,141,141, 81,151,151,151,151,151,  0,270,  0,548,  0],
+    [ 11,141,141,141, 81,151,151,151,151,151,  0,270,  0,548,  0],
     [  0,279,  0, 21, 21,151,151,151,151,151,  0,  0,  0,  0,  0],
     [  0,279,  0, 21, 21,151,151,151,151,151,228,  0,250,548,  0],
     [ 81,141,141,141,141,151,151,151,151,151,  0,265,  0,  0,673],
-    [632,  0,141,665,  0,151,151,151,151,151,  0,  0,  0,  0,  0],
+    [228,  0,141,665,  0,151,151,151,151,151,  0,  0,  0,  0,  0],
     [  0,275, 82,  0,666, 85,  0, 89,  0,  0,  0,228,  0,548,677],
-    [632,  0,141,665,  0,151,151,151,151,151,  0,  0,  0,  0,  0],
+    [228,  0,141,665,  0,151,151,151,151,151,  0,  0,  0,  0,  0],
     [ 81,141,141,141,141,151,151,151,151,151,  0,265,  0,  0,673],
-    [  0,  0,275,641,641,151,151,151,151,151,228,  0,250,548,  0],
+    [ 11,  0,275,641,641,151,151,151,151,151,228,  0,250,548,  0],
     [141,141,141,141, 81,151,151,151,151,151,  0,  0,  0,  0,  0],
     [ 22, 21, 21,141,228,151,151,151,151,151,  0,270,  0,548,  0],
     [279,141,141,141,  0,151,151,151,151,151,275,  0,250,  0,673],

@@ -5994,6 +5994,1077 @@ var events_c12a15a8_c380_4b28_8144_256cba95f760 =
 				"type": "function",
 				"function": "function(){\nif (core.getBlockCls(flags.x, flags.y) === \"enemys\") flags.touchenemy = [flags.x, flags.y]\nelse flags.touchenemy = \"failed\"\nif (core.getBlockCls(flags.x, flags.y) === \"items\") flags.touchitem = [flags.x, flags.y]\nelse flags.touchitem = \"failed\"\nif (core.getBlockId(flags.x, flags.y, void 0, true) === null) flags.touchnullblock = [flags.x, flags.y]\nelse flags.touchnullblock = \"failed\"\nif ([\"yellowDoor\", \"blueDoor\", \"redDoor\"].includes(core.getBlockId(flags.x, flags.y, void 0, true))) flags.touchdoor = [flags.x, flags.y]\nelse flags.touchdoor = \"failed\"\n}"
 			}
+		],
+		"结尾剧情": [
+			{
+				"type": "setText",
+				"position": "center",
+				"align": "center"
+			},
+			{
+				"type": "showImage",
+				"code": 1,
+				"image": "black.png",
+				"loc": [
+					0,
+					0
+				],
+				"opacity": 1,
+				"time": 0
+			},
+			{
+				"type": "setCurtain",
+				"time": 0
+			},
+			{
+				"type": "playBgm",
+				"name": "pearlharbor.mp3",
+				"keep": true
+			},
+			{
+				"type": "sleep",
+				"time": 2000
+			},
+			{
+				"type": "showImage",
+				"code": 2,
+				"image": "title1.png",
+				"sloc": [
+					0,
+					0,
+					null
+				],
+				"loc": [
+					70,
+					100,
+					360,
+					90
+				],
+				"opacity": 1,
+				"time": 500
+			},
+			{
+				"type": "showImage",
+				"code": 3,
+				"image": "title2.png",
+				"sloc": [
+					0,
+					0,
+					null
+				],
+				"loc": [
+					70,
+					190,
+					350,
+					120
+				],
+				"opacity": 1,
+				"time": 500
+			},
+			{
+				"type": "sleep",
+				"time": 2000
+			},
+			{
+				"type": "moveImage",
+				"code": 2,
+				"to": [
+					70,
+					-180
+				],
+				"time": 500,
+				"async": true
+			},
+			{
+				"type": "moveImage",
+				"code": 3,
+				"to": [
+					70,
+					-90
+				],
+				"time": 500,
+				"async": true
+			},
+			{
+				"type": "waitAsync"
+			},
+			{
+				"type": "hideImage",
+				"code": 2,
+				"time": 0
+			},
+			{
+				"type": "hideImage",
+				"code": 3,
+				"time": 0
+			},
+			{
+				"type": "sleep",
+				"time": 2000
+			},
+			{
+				"type": "showImage",
+				"code": 3,
+				"image": "end1.jpg",
+				"sloc": [
+					0,
+					0,
+					null
+				],
+				"loc": [
+					0,
+					0,
+					null
+				],
+				"opacity": 1,
+				"time": 500
+			},
+			{
+				"type": "sleep",
+				"time": 2000
+			},
+			{
+				"type": "showImage",
+				"code": 4,
+				"image": "aircraft7.png",
+				"loc": [
+					640,
+					115
+				],
+				"opacity": 1,
+				"time": 0
+			},
+			{
+				"type": "showTextImage",
+				"code": 2,
+				"text": "作者：\n喜食佩刀的米格\n策划：\n喜食佩刀的米格\n剧情：\n由历史现实改编",
+				"loc": [
+					0,
+					150
+				],
+				"lineHeight": 1.4,
+				"opacity": 1,
+				"time": 500,
+				"async": true
+			},
+			{
+				"type": "moveImage",
+				"code": 4,
+				"to": [
+					-195,
+					115
+				],
+				"time": 500,
+				"async": true
+			},
+			{
+				"type": "moveImage",
+				"code": 3,
+				"to": [
+					-480,
+					0
+				],
+				"time": 500,
+				"async": true
+			},
+			{
+				"type": "waitAsync"
+			},
+			{
+				"type": "hideImage",
+				"code": 3,
+				"time": 0
+			},
+			{
+				"type": "hideImage",
+				"code": 4,
+				"time": 0
+			},
+			{
+				"type": "sleep",
+				"time": 5000
+			},
+			{
+				"type": "hideImage",
+				"code": 2,
+				"time": 500
+			},
+			{
+				"type": "sleep",
+				"time": 500
+			},
+			{
+				"type": "showImage",
+				"code": 3,
+				"image": "end2.jpg",
+				"sloc": [
+					0,
+					0,
+					null
+				],
+				"loc": [
+					0,
+					0,
+					null
+				],
+				"opacity": 1,
+				"time": 500
+			},
+			{
+				"type": "sleep",
+				"time": 2000
+			},
+			{
+				"type": "showImage",
+				"code": 4,
+				"image": "aircraft1.png",
+				"loc": [
+					-195,
+					115
+				],
+				"opacity": 1,
+				"time": 0
+			},
+			{
+				"type": "rotateImage",
+				"code": 4,
+				"angle": 180,
+				"time": 0
+			},
+			{
+				"type": "showTextImage",
+				"code": 2,
+				"text": "脚本：\n秋橙（前期）\n草莓（后期）\n美工：\n喜食佩刀的米格\n永葆一颗童心\n草莓\n测试：\n待定",
+				"loc": [
+					0,
+					140
+				],
+				"lineHeight": 1.4,
+				"opacity": 1,
+				"time": 500,
+				"async": true
+			},
+			{
+				"type": "moveImage",
+				"code": 4,
+				"to": [
+					640,
+					115
+				],
+				"time": 500,
+				"async": true
+			},
+			{
+				"type": "moveImage",
+				"code": 3,
+				"to": [
+					640,
+					0
+				],
+				"time": 500,
+				"async": true
+			},
+			{
+				"type": "waitAsync"
+			},
+			{
+				"type": "hideImage",
+				"code": 3,
+				"time": 0
+			},
+			{
+				"type": "hideImage",
+				"code": 4,
+				"time": 0
+			},
+			{
+				"type": "waitAsync"
+			},
+			{
+				"type": "sleep",
+				"time": 5000
+			},
+			{
+				"type": "hideImage",
+				"code": 2,
+				"time": 500
+			},
+			{
+				"type": "sleep",
+				"time": 500
+			},
+			{
+				"type": "showImage",
+				"code": 3,
+				"image": "end3.jpg",
+				"sloc": [
+					0,
+					0,
+					null
+				],
+				"loc": [
+					0,
+					0,
+					null
+				],
+				"opacity": 1,
+				"time": 500
+			},
+			{
+				"type": "sleep",
+				"time": 2000
+			},
+			{
+				"type": "showImage",
+				"code": 4,
+				"image": "aircraft7.png",
+				"loc": [
+					143,
+					480
+				],
+				"opacity": 1,
+				"time": 0
+			},
+			{
+				"type": "rotateImage",
+				"code": 4,
+				"angle": 90,
+				"time": 0
+			},
+			{
+				"type": "showTextImage",
+				"code": 2,
+				"text": "制作工具：\nHTML5魔塔样板v2.8",
+				"loc": [
+					0,
+					170
+				],
+				"lineHeight": 1.4,
+				"opacity": 1,
+				"time": 500,
+				"async": true
+			},
+			{
+				"type": "moveImage",
+				"code": 4,
+				"to": [
+					143,
+					-115
+				],
+				"time": 500,
+				"async": true
+			},
+			{
+				"type": "moveImage",
+				"code": 3,
+				"to": [
+					0,
+					-480
+				],
+				"time": 500,
+				"async": true
+			},
+			{
+				"type": "waitAsync"
+			},
+			{
+				"type": "hideImage",
+				"code": 3,
+				"time": 0
+			},
+			{
+				"type": "hideImage",
+				"code": 4,
+				"time": 0
+			},
+			{
+				"type": "sleep",
+				"time": 5000
+			},
+			{
+				"type": "hideImage",
+				"code": 2,
+				"time": 500
+			},
+			{
+				"type": "sleep",
+				"time": 500
+			},
+			{
+				"type": "showImage",
+				"code": 3,
+				"image": "end4.jpg",
+				"sloc": [
+					0,
+					0,
+					null
+				],
+				"loc": [
+					0,
+					0,
+					null
+				],
+				"opacity": 1,
+				"time": 500
+			},
+			{
+				"type": "sleep",
+				"time": 2000
+			},
+			{
+				"type": "showImage",
+				"code": 4,
+				"image": "aircraft2.png",
+				"loc": [
+					143,
+					-251
+				],
+				"opacity": 1,
+				"time": 0
+			},
+			{
+				"type": "rotateImage",
+				"code": 4,
+				"angle": -90,
+				"time": 0
+			},
+			{
+				"type": "showTextImage",
+				"code": 2,
+				"text": "图片来源：\n互联网\nWar in the Pacific（游戏）\n如发现图片内容与文本不符，欢迎指正",
+				"loc": [
+					0,
+					160
+				],
+				"lineHeight": 1.4,
+				"opacity": 1,
+				"time": 500,
+				"async": true
+			},
+			{
+				"type": "moveImage",
+				"code": 4,
+				"to": [
+					143,
+					480
+				],
+				"time": 500,
+				"async": true
+			},
+			{
+				"type": "moveImage",
+				"code": 3,
+				"to": [
+					0,
+					480
+				],
+				"time": 500,
+				"async": true
+			},
+			{
+				"type": "waitAsync"
+			},
+			{
+				"type": "hideImage",
+				"code": 3,
+				"time": 0
+			},
+			{
+				"type": "hideImage",
+				"code": 4,
+				"time": 0
+			},
+			{
+				"type": "sleep",
+				"time": 5000
+			},
+			{
+				"type": "hideImage",
+				"code": 2,
+				"time": 500
+			},
+			{
+				"type": "sleep",
+				"time": 500
+			},
+			{
+				"type": "showImage",
+				"code": 3,
+				"image": "end5.jpg",
+				"sloc": [
+					0,
+					0,
+					null
+				],
+				"loc": [
+					0,
+					0,
+					null
+				],
+				"opacity": 1,
+				"time": 500
+			},
+			{
+				"type": "sleep",
+				"time": 2000
+			},
+			{
+				"type": "showImage",
+				"code": 4,
+				"image": "aircraft9.png",
+				"loc": [
+					640,
+					115
+				],
+				"opacity": 1,
+				"time": 0
+			},
+			{
+				"type": "showTextImage",
+				"code": 2,
+				"text": "音乐来源：\n碧蓝航线\n永远的七日之都\n双星物语\n将军的荣耀\n钢铁雄心\n坦克世界\n三国志曹操传\n冰封前线系列\n欧洲空战英雄\n战争雷霆\n空中冲突太平洋航母\nWar on the Sea\n艾丽卡（小孩版本）\nfarthestend\nHarbinger\nExodus",
+				"loc": [
+					0,
+					30
+				],
+				"lineHeight": 1.4,
+				"opacity": 1,
+				"time": 500,
+				"async": true
+			},
+			{
+				"type": "moveImage",
+				"code": 4,
+				"to": [
+					-195,
+					115
+				],
+				"time": 500,
+				"async": true
+			},
+			{
+				"type": "moveImage",
+				"code": 3,
+				"to": [
+					-480,
+					0
+				],
+				"time": 500,
+				"async": true
+			},
+			{
+				"type": "waitAsync"
+			},
+			{
+				"type": "hideImage",
+				"code": 3,
+				"time": 0
+			},
+			{
+				"type": "hideImage",
+				"code": 4,
+				"time": 0
+			},
+			{
+				"type": "sleep",
+				"time": 5000
+			},
+			{
+				"type": "hideImage",
+				"code": 2,
+				"time": 500
+			},
+			{
+				"type": "sleep",
+				"time": 500
+			},
+			{
+				"type": "showImage",
+				"code": 3,
+				"image": "end6.jpg",
+				"sloc": [
+					0,
+					0,
+					null
+				],
+				"loc": [
+					0,
+					0,
+					null
+				],
+				"opacity": 1,
+				"time": 500
+			},
+			{
+				"type": "sleep",
+				"time": 2000
+			},
+			{
+				"type": "showImage",
+				"code": 4,
+				"image": "aircraft3.png",
+				"loc": [
+					143,
+					480
+				],
+				"opacity": 1,
+				"time": 0
+			},
+			{
+				"type": "showTextImage",
+				"code": 2,
+				"text": "音效来源：（样板自带及群文件中的不算在内）\nWar in the Pacific\nKards\n新抢摊登陆\n抢摊登陆2006\n战争雷霆\n偷袭珍珠港\n猎杀潜航\n太平洋风暴：盟军\n还有各种地方瞎搜罗的",
+				"loc": [
+					0,
+					100
+				],
+				"lineHeight": 1.4,
+				"opacity": 1,
+				"time": 500,
+				"async": true
+			},
+			{
+				"type": "moveImage",
+				"code": 4,
+				"to": [
+					143,
+					-251
+				],
+				"time": 500,
+				"async": true
+			},
+			{
+				"type": "moveImage",
+				"code": 3,
+				"to": [
+					0,
+					-480
+				],
+				"time": 500,
+				"async": true
+			},
+			{
+				"type": "waitAsync"
+			},
+			{
+				"type": "hideImage",
+				"code": 3,
+				"time": 0
+			},
+			{
+				"type": "hideImage",
+				"code": 4,
+				"time": 0
+			},
+			{
+				"type": "sleep",
+				"time": 5000
+			},
+			{
+				"type": "hideImage",
+				"code": 2,
+				"time": 500
+			},
+			{
+				"type": "sleep",
+				"time": 500
+			},
+			{
+				"type": "showImage",
+				"code": 3,
+				"image": "end7.jpg",
+				"sloc": [
+					0,
+					0,
+					null
+				],
+				"loc": [
+					0,
+					0,
+					null
+				],
+				"opacity": 1,
+				"time": 500
+			},
+			{
+				"type": "sleep",
+				"time": 2000
+			},
+			{
+				"type": "showImage",
+				"code": 4,
+				"image": "aircraft8.png",
+				"loc": [
+					-195,
+					115
+				],
+				"opacity": 1,
+				"time": 0
+			},
+			{
+				"type": "rotateImage",
+				"code": 4,
+				"angle": 90,
+				"time": 0
+			},
+			{
+				"type": "showTextImage",
+				"code": 2,
+				"text": "声明：\n本游戏目前仅在h5mota.com发布\n完全免费，纯爱发电，不用于商业用途\n剧情改编自真实历史，如有雷同，纯属正常\n（不雷同那就怪了）\n若您在其他网站发现并游玩本游戏\n建议前往上述网站支持原版\n不会有人付费玩这游戏吧？不会吧？",
+				"loc": [
+					0,
+					120
+				],
+				"lineHeight": 1.4,
+				"opacity": 1,
+				"time": 500,
+				"async": true
+			},
+			{
+				"type": "moveImage",
+				"code": 4,
+				"to": [
+					640,
+					115
+				],
+				"time": 500,
+				"async": true
+			},
+			{
+				"type": "moveImage",
+				"code": 3,
+				"to": [
+					640,
+					0
+				],
+				"time": 500,
+				"async": true
+			},
+			{
+				"type": "waitAsync"
+			},
+			{
+				"type": "hideImage",
+				"code": 3,
+				"time": 0
+			},
+			{
+				"type": "hideImage",
+				"code": 4,
+				"time": 0
+			},
+			{
+				"type": "sleep",
+				"time": 5000
+			},
+			{
+				"type": "hideImage",
+				"code": 2,
+				"time": 500
+			},
+			{
+				"type": "sleep",
+				"time": 500
+			},
+			{
+				"type": "showImage",
+				"code": 3,
+				"image": "end8.jpg",
+				"sloc": [
+					0,
+					0,
+					null
+				],
+				"loc": [
+					0,
+					0,
+					null
+				],
+				"opacity": 1,
+				"time": 500
+			},
+			{
+				"type": "sleep",
+				"time": 2000
+			},
+			{
+				"type": "showImage",
+				"code": 4,
+				"image": "cvairgroup.png",
+				"loc": [
+					0,
+					-1920
+				],
+				"opacity": 1,
+				"time": 0
+			},
+			{
+				"type": "showTextImage",
+				"code": 2,
+				"text": "作者B站名：大傻米格\nuid：279738052\n欢迎关注！",
+				"loc": [
+					0,
+					170
+				],
+				"lineHeight": 1.4,
+				"opacity": 1,
+				"time": 500,
+				"async": true
+			},
+			{
+				"type": "moveImage",
+				"code": 4,
+				"to": [
+					0,
+					480
+				],
+				"time": 500,
+				"async": true
+			},
+			{
+				"type": "moveImage",
+				"code": 3,
+				"to": [
+					0,
+					480
+				],
+				"time": 500,
+				"async": true
+			},
+			{
+				"type": "waitAsync"
+			},
+			{
+				"type": "hideImage",
+				"code": 3,
+				"time": 0
+			},
+			{
+				"type": "hideImage",
+				"code": 4,
+				"time": 0
+			},
+			{
+				"type": "sleep",
+				"time": 5000
+			},
+			{
+				"type": "hideImage",
+				"code": 2,
+				"time": 500
+			},
+			{
+				"type": "sleep",
+				"time": 500
+			},
+			{
+				"type": "showImage",
+				"code": 3,
+				"image": "end9.jpg",
+				"sloc": [
+					0,
+					0,
+					null
+				],
+				"loc": [
+					0,
+					0,
+					null
+				],
+				"opacity": 1,
+				"time": 500
+			},
+			{
+				"type": "sleep",
+				"time": 2000
+			},
+			{
+				"type": "showImage",
+				"code": 4,
+				"image": "carpetbomb.png",
+				"loc": [
+					0,
+					480
+				],
+				"opacity": 1,
+				"time": 0
+			},
+			{
+				"type": "showTextImage",
+				"code": 2,
+				"text": "如有意见或建议\n可发评论区\n或私信作者\n欢迎一切积极友善的讨论！",
+				"loc": [
+					0,
+					150
+				],
+				"lineHeight": 1.4,
+				"opacity": 1,
+				"time": 500,
+				"async": true
+			},
+			{
+				"type": "moveImage",
+				"code": 4,
+				"to": [
+					0,
+					-1920
+				],
+				"time": 500,
+				"async": true
+			},
+			{
+				"type": "moveImage",
+				"code": 3,
+				"to": [
+					0,
+					-480
+				],
+				"time": 500,
+				"async": true
+			},
+			{
+				"type": "waitAsync"
+			},
+			{
+				"type": "hideImage",
+				"code": 3,
+				"time": 0
+			},
+			{
+				"type": "hideImage",
+				"code": 4,
+				"time": 0
+			},
+			{
+				"type": "sleep",
+				"time": 5000
+			},
+			{
+				"type": "hideImage",
+				"code": 2,
+				"time": 500
+			},
+			{
+				"type": "sleep",
+				"time": 500
+			},
+			{
+				"type": "showImage",
+				"code": 3,
+				"image": "end10.jpg",
+				"sloc": [
+					0,
+					0,
+					null
+				],
+				"loc": [
+					0,
+					0,
+					null
+				],
+				"opacity": 1,
+				"time": 500
+			},
+			{
+				"type": "sleep",
+				"time": 2000
+			},
+			{
+				"type": "showImage",
+				"code": 4,
+				"image": "aircraft6.png",
+				"loc": [
+					20,
+					480
+				],
+				"opacity": 1,
+				"time": 0
+			},
+			{
+				"type": "showTextImage",
+				"code": 2,
+				"text": "谨以本作以及另外两部前作\n向所有在第二次世界大战中\n为反法西斯事业做出贡献的\n来自世界各地的英勇战士们\n   致以最崇高的敬意！",
+				"loc": [
+					0,
+					150
+				],
+				"lineHeight": 1.4,
+				"opacity": 1,
+				"time": 500,
+				"async": true
+			},
+			{
+				"type": "moveImage",
+				"code": 4,
+				"to": [
+					20,
+					-330
+				],
+				"time": 500,
+				"async": true
+			},
+			{
+				"type": "moveImage",
+				"code": 3,
+				"to": [
+					0,
+					-480
+				],
+				"time": 500,
+				"async": true
+			},
+			{
+				"type": "waitAsync"
+			},
+			{
+				"type": "hideImage",
+				"code": 3,
+				"time": 0
+			},
+			{
+				"type": "hideImage",
+				"code": 4,
+				"time": 0
+			},
+			{
+				"type": "sleep",
+				"time": 5000
+			},
+			{
+				"type": "hideImage",
+				"code": 2,
+				"time": 500
+			},
+			{
+				"type": "sleep",
+				"time": 500
+			},
+			{
+				"type": "setCurtain",
+				"color": [
+					0,
+					0,
+					0,
+					1
+				],
+				"time": 0,
+				"keep": true
+			},
+			{
+				"type": "hideImage",
+				"code": 1,
+				"time": 0
+			},
+			{
+				"type": "changeFloor",
+				"floorId": "MT451",
+				"loc": [
+					7,
+					0
+				],
+				"direction": "down",
+				"time": 1000
+			}
 		]
 	}
 }

@@ -983,7 +983,7 @@ actions.prototype._keyUpCenterFly = function (keycode) {
 actions.prototype._clickc47 = function (x, y) {
     var posX = core.status.event.data.posX, posY = core.status.event.data.posY;
     core.ui.closePanel();
-    if (core.status.floorId !== 'MT284' && core.status.floorId !== 'MT293'){
+    if (core.status.floorId !== 'MT284' && core.status.floorId !== 'MT293' && core.status.floorId !== 'MT407'){
     if (x == posX && y == posY) {
         if (!core.getBlockId(x, y)) {
     if (core.plugin.c47[x + ',' + y] === 1){
@@ -1041,7 +1041,7 @@ actions.prototype._keyUpc47 = function (keycode) {
     y = core.bigmap.height - 1 - core.getHeroLoc('y');
     core.ui.closePanel();
     if (keycode == 51 || keycode == 13 || keycode == 32 || keycode == 67) {
-        if (core.status.floorId !== 'MT284' && core.status.floorId !== 'MT293') {
+        if (core.status.floorId !== 'MT284' && core.status.floorId !== 'MT293' && core.status.floorId !== 'MT407') {
         if (!core.getBlockId(x, y)) {
     if (core.plugin.c47[x + ',' + y] === 1){
         core.status.hero.hp -= core.status.hero.hpmax * 0.8;

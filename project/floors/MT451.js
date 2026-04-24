@@ -15,6 +15,15 @@ main.floors.MT451=
     "defaultGround": "grass",
     "firstArrive": [
         {
+            "type": "setText",
+            "position": "down",
+            "offset": 10,
+            "align": "left",
+            "bold": false,
+            "background": "15.png",
+            "time": 40
+        },
+        {
             "type": "setHeroOpacity",
             "opacity": 1
         },
@@ -398,6 +407,11 @@ main.floors.MT451=
             "type": "waitAsync"
         },
         {
+            "type": "setText",
+            "position": "center",
+            "align": "center"
+        },
+        {
             "type": "setViewport",
             "loc": [
                 0,
@@ -422,10 +436,10 @@ main.floors.MT451=
         {
             "type": "showTextImage",
             "code": 2,
-            "text": "第二次世界大战，共有61个国家参战，约20亿人口被卷入战争。\n占世界总人口80%以上。",
+            "text": "第二次世界大战，共有61个国家参战，约20亿人口被卷入战争\n占世界总人口80%以上",
             "loc": [
-                100,
-                200
+                0,
+                170
             ],
             "lineHeight": 1.4,
             "opacity": 1,
@@ -443,10 +457,10 @@ main.floors.MT451=
         {
             "type": "showTextImage",
             "code": 2,
-            "text": "从1931年9月18日开始，直至1945年9月2日。\n这场战争夺去了7000万人的生命，1.3亿人受伤。",
+            "text": "从1931年9月18日开始，直至1945年9月2日\n这场战争夺去了7000万人的生命，1.3亿人受伤",
             "loc": [
-                150,
-                200
+                0,
+                170
             ],
             "lineHeight": 1.4,
             "opacity": 1,
@@ -466,8 +480,8 @@ main.floors.MT451=
             "code": 2,
             "text": "与第一次世界大战不同\n士兵们不是为了政客的利益而战\n而是为了保护自己的家园、亲人和朋友",
             "loc": [
-                200,
-                200
+                0,
+                160
             ],
             "lineHeight": 1.4,
             "opacity": 1,
@@ -487,8 +501,8 @@ main.floors.MT451=
             "code": 2,
             "text": "没有人能够保证自己一定能活着回家\n也没几个人知道这场战争能不能打赢\n但同盟国的战士们仍然义无反顾地争相奔赴战场\n哪怕自己接到的是一个必死的任务",
             "loc": [
-                200,
-                200
+                0,
+                150
             ],
             "lineHeight": 1.4,
             "opacity": 1,
@@ -508,29 +522,8 @@ main.floors.MT451=
             "code": 2,
             "text": "无论国家，无论民族\n无关肤色，无关性别\n为了从法西斯的暴政中挽救自己的家园\n他们用各自的方式不停战斗着",
             "loc": [
-                200,
-                200
-            ],
-            "lineHeight": 1.4,
-            "opacity": 1,
-            "time": 500
-        },
-        {
-            "type": "sleep",
-            "time": 5000
-        },
-        {
-            "type": "hideImage",
-            "code": 2,
-            "time": 500
-        },
-        {
-            "type": "showTextImage",
-            "code": 2,
-            "text": "他们当中\n有的人不惧死亡\n有的人战力高强\n还有的人听见枪声就会抱头蹲防\n但他们每个人都在贡献着自己的力量",
-            "loc": [
-                200,
-                200
+                0,
+                150
             ],
             "lineHeight": 1.4,
             "opacity": 1,
@@ -550,8 +543,29 @@ main.floors.MT451=
             "code": 2,
             "text": "他们在前线奋战\n他们在后方忙碌\n他们在民间抵抗\n他们在敌营潜伏",
             "loc": [
-                200,
-                200
+                0,
+                150
+            ],
+            "lineHeight": 1.4,
+            "opacity": 1,
+            "time": 500
+        },
+        {
+            "type": "sleep",
+            "time": 5000
+        },
+        {
+            "type": "hideImage",
+            "code": 2,
+            "time": 500
+        },
+        {
+            "type": "showTextImage",
+            "code": 2,
+            "text": "他们当中\n有的人不惧死亡\n有的人战力高强\n还有的人听见枪声就会抱头蹲防\n但他们每个人都在贡献着自己的力量",
+            "loc": [
+                0,
+                150
             ],
             "lineHeight": 1.4,
             "opacity": 1,
@@ -571,8 +585,8 @@ main.floors.MT451=
             "code": 2,
             "text": "直到自己的身体逐渐冰冷\n直到敌人被消灭殆尽\n直到家园恢复昔日的宁静\n直到人们可以自由行走在阳光下",
             "loc": [
-                150,
-                200
+                0,
+                150
             ],
             "lineHeight": 1.4,
             "opacity": 1,
@@ -592,8 +606,8 @@ main.floors.MT451=
             "code": 2,
             "text": "也许他们没有一骑当千的实力\n也许他们没有读档重来的机会\n也许他们看不见对手的属性值\n也许他们没能看到明天的太阳\n也许他们甚至不知道\n自己的所作所为有没有意义",
             "loc": [
-                150,
-                150
+                0,
+                140
             ],
             "lineHeight": 1.4,
             "opacity": 1,
@@ -611,10 +625,10 @@ main.floors.MT451=
         {
             "type": "showTextImage",
             "code": 2,
-            "text": "但这恰恰表明了\n他们才是",
+            "text": "但这恰恰证明了\n他们才是",
             "loc": [
-                200,
-                200
+                0,
+                170
             ],
             "lineHeight": 1.4,
             "opacity": 1,
@@ -631,8 +645,6 @@ main.floors.MT451=
         },
         {
             "type": "setText",
-            "position": "down",
-            "offset": 10,
             "bold": false,
             "text": [
                 255,
@@ -649,8 +661,8 @@ main.floors.MT451=
             "code": 2,
             "text": "真正的勇者",
             "loc": [
-                150,
-                200
+                0,
+                170
             ],
             "lineHeight": 1.4,
             "opacity": 1,
@@ -669,6 +681,7 @@ main.floors.MT451=
             "type": "setText",
             "position": "down",
             "offset": 10,
+            "align": "left",
             "bold": false,
             "text": [
                 255,
@@ -677,6 +690,7 @@ main.floors.MT451=
                 1
             ],
             "background": "15.png",
+            "textfont": 16,
             "time": 40
         },
         {
@@ -699,6 +713,31 @@ main.floors.MT451=
             ],
             "opacity": 1,
             "time": 500
+        },
+        {
+            "type": "sleep",
+            "time": 5000
+        },
+        {
+            "type": "setCurtain",
+            "color": [
+                0,
+                0,
+                0,
+                1
+            ],
+            "time": 500,
+            "keep": true
+        },
+        {
+            "type": "hideImage",
+            "code": 1,
+            "time": 0
+        },
+        {
+            "type": "hideImage",
+            "code": 2,
+            "time": 0
         }
     ],
     "eachArrive": [],
