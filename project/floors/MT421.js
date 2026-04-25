@@ -26,8 +26,9 @@ main.floors.MT421=
     "events": {
         "7,0": [
             {
-                "type": "function",
-                "function": "function(){\nflags.mission[57][0]=true\n}"
+                "type": "setValue",
+                "name": "flag:第56关通关",
+                "value": "1"
             },
             {
                 "type": "unloadEquip",
@@ -58,10 +59,6 @@ main.floors.MT421=
                 "pos": 6
             },
             {
-                "type": "function",
-                "function": "function(){\nflags.skillList=[0,0,0,0,0,0,0]\n}"
-            },
-            {
                 "type": "update"
             },
             {
@@ -69,7 +66,7 @@ main.floors.MT421=
                 "time": 500
             },
             {
-                "type": "hideStatusBar"
+                "type": "hideui"
             },
             {
                 "type": "update"
@@ -112,7 +109,7 @@ main.floors.MT421=
             },
             {
                 "type": "function",
-                "function": "function(){\nvar a = flags.mission[core.getFlag('stage')];\ncore.setFlag('@temp@A', a[0] + a[1] + a[2]);\n}"
+                "function": "function(){\nvar a = core.taskSystem.checkTask(0) ? 1 : 0,\n\tb = core.taskSystem.checkTask(1) ? 1 : 0,\n\tc = core.taskSystem.checkTask(2) ? 1 : 0;\ncore.setFlag('@temp@A', a + b + c);\n}"
             },
             {
                 "type": "if",
@@ -138,11 +135,6 @@ main.floors.MT421=
                             90
                         ],
                         "opacity": 1,
-                        "time": 500,
-                        "async": true
-                    },
-                    {
-                        "type": "sleep",
                         "time": 500
                     },
                     {
@@ -169,11 +161,6 @@ main.floors.MT421=
                                     90
                                 ],
                                 "opacity": 1,
-                                "time": 500,
-                                "async": true
-                            },
-                            {
-                                "type": "sleep",
                                 "time": 500
                             },
                             {
@@ -200,11 +187,6 @@ main.floors.MT421=
                                             90
                                         ],
                                         "opacity": 1,
-                                        "time": 500,
-                                        "async": true
-                                    },
-                                    {
-                                        "type": "sleep",
                                         "time": 500
                                     }
                                 ],
@@ -230,6 +212,9 @@ main.floors.MT421=
                 ],
                 "time": 500,
                 "keep": true
+            },
+            {
+                "type": "submitTask"
             },
             {
                 "type": "hideImage",
@@ -272,7 +257,7 @@ main.floors.MT421=
                         "floorId": "MT423",
                         "loc": [
                             7,
-                            7
+                            3
                         ],
                         "direction": "down"
                     }
@@ -305,19 +290,7 @@ main.floors.MT421=
     "afterOpenDoor": {},
     "autoEvent": {
         "6,0": {
-            "0": {
-                "condition": "!core.hasEnemyLeft(undefined,['MT417','MT418','MT419','MT420','MT421'])",
-                "currentFloor": false,
-                "priority": 0,
-                "delayExecute": false,
-                "multiExecute": false,
-                "data": [
-                    {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[57][1]=true\n}"
-                    }
-                ]
-            }
+            "1": null
         }
     },
     "cannotMove": {},
@@ -330,7 +303,7 @@ main.floors.MT421=
     [ 21,  0,140,140,140,140,140, 81,140,140,140,140,140,  0, 21],
     [140,696,140,645,646,649,698,705,698,649,646,645,140,696,140],
     [519,  0,140,140,140,140,140,704,140,140,140,140,140,  0,  0],
-    [  0,710,  0,140,610,610,140, 82,140,610,610,140,  0,710,  0],
+    [  0,710,  0,140,609,609,140, 82,140,609,609,140,  0,710,  0],
     [140, 81,140,140,  0,  0,698,  0,698,  0,  0,140,140, 81,140],
     [  0,708,  0,140,697,140,140, 81,140,140,697,140,  0,708,  0],
     [709,140,  0, 81,  0,140, 21,702, 21,140,  0, 81,  0,140,709],

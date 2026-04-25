@@ -25,6 +25,11 @@ main.floors.MT238=
             },
             {
                 "type": "setValue",
+                "name": "flag:fire",
+                "value": "0"
+            },
+            {
+                "type": "setValue",
                 "name": "flag:第33关通关",
                 "value": "1"
             },

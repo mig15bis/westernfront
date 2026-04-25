@@ -2468,5 +2468,11 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 			"value": {},
 			"percentage": {}
 		}
+	},
+	"I746": {
+		"cls": "constants",
+		"name": "怪物特技显示辅助系统设置",
+		"canUseItemEffect": "true",
+		"useItemEffect": "if (!core.isReplaying() && !main.replayChecking) {\n\tcore.plugin.范围显示开关();\n}"
 	}
 }

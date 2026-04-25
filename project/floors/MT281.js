@@ -111,6 +111,21 @@ main.floors.MT281=
     "events": {
         "14,0": [
             {
+                "type": "setValue",
+                "name": "flag:进水",
+                "value": "false"
+            },
+            {
+                "type": "setValue",
+                "name": "flag:fire",
+                "value": "0"
+            },
+            {
+                "type": "setValue",
+                "name": "item:icePickaxe",
+                "value": "0"
+            },
+            {
                 "type": "unloadEquip",
                 "pos": 0
             },

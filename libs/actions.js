@@ -467,6 +467,12 @@ actions.prototype._sys_ondown_lockControl = function (x, y, px, py) {
         case 'c47':
             this._clickc47(x, y, px, py);
             break;
+        case '特技显示设置中':
+            core.plugin.点击切换(x, y, px, py);
+            break;
+        case '特技显示颜色切换':
+            core.plugin.颜色选择(x, y, px, py);
+            break;
         case 'centerFly':
             this._clickCenterFly(x, y, px, py);
             break;

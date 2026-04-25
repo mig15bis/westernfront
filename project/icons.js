@@ -405,7 +405,6 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"b7a": 178,
 		"g4m": 179,
 		"p1y": 180,
-		"ki49": 181,
 		"asashio": 182,
 		"shiratsuyu": 183,
 		"yugumo": 184,
@@ -435,7 +434,8 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"acemg42": 196,
 		"spy": 197,
 		"aatower": 198,
-		"rocket41": 46
+		"rocket41": 46,
+		"h8k": 181
 	},
 	"enemy48": {
 		"angel": 0,
@@ -675,7 +675,8 @@ var icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1 =
 		"la9": 223,
 		"il10": 224,
 		"tu4": 225,
-		"b17g": 136
+		"b17g": 136,
+		"I746": 228
 	},
 	"autotile": {
 		"autotile": 0,

@@ -58,6 +58,11 @@ main.floors.MT162=
                 "value": "1"
             },
             {
+                "type": "setValue",
+                "name": "item:icePickaxe",
+                "value": "0"
+            },
+            {
                 "type": "unloadEquip",
                 "pos": 0
             },
@@ -415,8 +420,7 @@ main.floors.MT162=
                     }
                 ]
             }
-        ],
-        "1,10": []
+        ]
     },
     "changeFloor": {
         "0,7": {
@@ -428,14 +432,7 @@ main.floors.MT162=
         }
     },
     "beforeBattle": {},
-    "afterBattle": {
-        "1,10": [
-            {
-                "type": "successTask",
-                "index": 2
-            }
-        ]
-    },
+    "afterBattle": {},
     "afterGetItem": {},
     "afterOpenDoor": {},
     "autoEvent": {},

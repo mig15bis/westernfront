@@ -512,12 +512,47 @@ main.floors.MT414=
                                         "floorId": "MT416",
                                         "loc": [
                                             7,
-                                            7
+                                            3
                                         ],
                                         "direction": "down"
                                     }
                                 ],
                                 "no": [
+                                    {
+                                        "type": "showImage",
+                                        "code": 1,
+                                        "image": "chapter12.jpg",
+                                        "loc": [
+                                            0,
+                                            0
+                                        ],
+                                        "opacity": 1,
+                                        "time": 0
+                                    },
+                                    {
+                                        "type": "setCurtain",
+                                        "time": 500
+                                    },
+                                    {
+                                        "type": "sleep",
+                                        "time": 2000
+                                    },
+                                    {
+                                        "type": "setCurtain",
+                                        "color": [
+                                            0,
+                                            0,
+                                            0,
+                                            1
+                                        ],
+                                        "time": 500,
+                                        "keep": true
+                                    },
+                                    {
+                                        "type": "hideImage",
+                                        "code": 1,
+                                        "time": 0
+                                    },
                                     {
                                         "type": "changeFloor",
                                         "floorId": "MT415",

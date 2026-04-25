@@ -123,10 +123,10 @@ main.floors.MT415=
         },
         {
             "type": "changeFloor",
-            "floorId": "MT409",
+            "floorId": "MT416",
             "loc": [
                 7,
-                7
+                3
             ],
             "direction": "down"
         }

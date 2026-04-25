@@ -5708,7 +5708,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 		观测: { 本体: '#ff8c00', 启动: true },
 		火力覆盖: { 本体: '#0000cd', 启动: true },
 		进水: { 本体: '#1e90ff', 启动: true },
-		alpha: 1
+		alpha: 0.5
 	};
 
 
@@ -5730,7 +5730,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 		if (!newsystem.启用) {
 			return;
 		}
-		core.setOpacity(ctx, newsystem.alpha);
+		core.setOpacity(ctx, 1);
 
 		//core.setOpacity(ctx2, 0.8);
 		if (!core.status.checkBlock?.cache?.map) { return }
@@ -5756,7 +5756,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 				//console.log('本体边框');
 				if (newsystem[key].范围) {
 					//console.log('领域范围');
-					core.setAlpha(ctx, 0.1);
+					core.setAlpha(ctx, newsystem.alpha);
 					ctx.lineWidth = 3;
 					core.fillRect(ctx, 32 * (loc[0] - v), 32 * (loc[1] - v), (2 * v + 1) * 32, (2 * v + 1) * 32, newsystem[key].范围); //领域范围
 					core.setAlpha(ctx, 0.8);
@@ -5857,5 +5857,704 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 		}
 
 	}
+},
+    "玩家控制范围显示系统": function () {
+	// 在此增加新插件
+	const setting = {
+		启用: true,
+		炮击: { 本体: '#ffa500', 范围: '#ee82ee', 启动: true },
+		指挥: { 本体: '#ff0000', 启动: true },
+		点杀: { 本体: '#8a2be2', 启动: true },
+		防空: { 本体: '#7fffd4', 范围: '#f0ffff', 启动: true },
+		谍报: { 本体: '#ffffff', 启动: true },
+		截断: { 本体: '#00ff00', 启动: true },
+		警戒: { 本体: '#800000', 启动: true },
+		堡垒: { 本体: '#ffffff', 范围: '#c0c0c0', 启动: true },
+		燃烧: { 本体: '#dc143c', 启动: true },
+		遥控: { 本体: '#00ffff', 启动: true },
+		陷阱: { 本体: '#ffff00', 范围: '#ffa07a', 启动: true },
+		阵地: { 本体: '#8b008b', 范围: '#ff00ff', 启动: true },
+		迂回包抄: { 本体: '#ff69b4', 启动: true },
+		直掩: { 本体: '#ffd700', 启动: true },
+		观测: { 本体: '#ff8c00', 启动: true },
+		火力覆盖: { 本体: '#0000cd', 启动: true },
+		进水: { 本体: '#1e90ff', 启动: true },
+		alpha: 0.5
+	};
+	this.范围显示开关 = function () {
+		core.lockControl();
+		core.status.event.id = '特技显示设置中';
+		let newsystem = core.getLocalStorage('drawui', setting);
+		let ctx = core.createCanvas('底层画布', 0, 0, 480, 480, 1000);
+		core.setTextAlign(ctx, 'left');
+		core.fillRect(ctx, 0, 0, 480, 480, 'rgba(0, 0, 0, 1)');
+		core.fillText(ctx, '怪物特技显示辅助系统设置', 50, 30, '#fff', '32px kaiti');
+		core.fillText(ctx, '开关□', 30, 80, '#ffff00', '24px kaiti');
+		//core.strokeRect(ctx, 80, 62, 20, 20, '#fff', 2);
+		if (newsystem.启用) {
+			core.fillText(ctx, '√', 80, 77, '#00ff00', "24px kaiti");
+			core.fillText(ctx, '□炮击:本体□ 范围□', 10, 110, '#fff', '24px kaiti');
+			if (newsystem.炮击.启动) {
+				core.fillText(ctx, '√', 10, 108, '#00ff00', '24px kaiti');
+			}
+			core.fillRect(ctx, 138, 92, 20, 20, newsystem.炮击.本体);
+			core.fillRect(ctx, 216, 92, 20, 20, newsystem.炮击.范围);
+
+			core.fillText(ctx, '□指挥:本体□', 10, 140, '#fff', '24px kaiti');
+			if (newsystem.指挥.启动) {
+				core.fillText(ctx, '√', 10, 138, '#00ff00', '24px kaiti');
+			}
+			core.fillRect(ctx, 138, 122, 20, 20, newsystem.指挥.本体);
+
+			core.fillText(ctx, '□点杀:本体□', 10, 170, '#fff', '24px kaiti');
+			if (newsystem.点杀.启动) {
+				core.fillText(ctx, '√', 10, 168, '#00ff00', '24px kaiti');
+			}
+			core.fillRect(ctx, 138, 152, 20, 20, newsystem.点杀.本体);
+
+			core.fillText(ctx, '□防空:本体□ 范围□', 10, 200, '#fff', '24px kaiti');
+			if (newsystem.防空.启动) {
+				core.fillText(ctx, '√', 10, 198, '#00ff00', '24px kaiti');
+			}
+			core.fillRect(ctx, 138, 182, 20, 20, newsystem.防空.本体);
+			core.fillRect(ctx, 216, 182, 20, 20, newsystem.防空.范围);
+
+			core.fillText(ctx, '□谍报:本体□', 10, 230, '#fff', '24px kaiti');
+			if (newsystem.谍报.启动) {
+				core.fillText(ctx, '√', 10, 228, '#00ff00', '24px kaiti');
+			}
+			core.fillRect(ctx, 138, 212, 20, 20, newsystem.谍报.本体);
+
+			core.fillText(ctx, '□截断:本体□', 10, 260, '#fff', '24px kaiti');
+			if (newsystem.截断.启动) {
+				core.fillText(ctx, '√', 10, 258, '#00ff00', '24px kaiti');
+			}
+			core.fillRect(ctx, 138, 242, 20, 20, newsystem.截断.本体);
+
+			core.fillText(ctx, '□警戒:本体□', 10, 290, '#fff', '24px kaiti');
+			if (newsystem.警戒.启动) {
+				core.fillText(ctx, '√', 10, 288, '#00ff00', '24px kaiti');
+			}
+			core.fillRect(ctx, 138, 272, 20, 20, newsystem.警戒.本体);
+
+			core.fillText(ctx, '□堡垒:本体□ 范围□', 10, 320, '#fff', '24px kaiti');
+			if (newsystem.堡垒.启动) {
+				core.fillText(ctx, '√', 10, 318, '#00ff00', '24px kaiti');
+			}
+			core.fillRect(ctx, 138, 302, 20, 20, newsystem.堡垒.本体);
+			core.fillRect(ctx, 216, 302, 20, 20, newsystem.堡垒.范围);
+
+			core.fillText(ctx, '□燃烧:本体□', 10, 350, '#fff', '24px kaiti');
+			if (newsystem.燃烧.启动) {
+				core.fillText(ctx, '√', 10, 348, '#00ff00', '24px kaiti');
+			}
+			core.fillRect(ctx, 138, 332, 20, 20, newsystem.燃烧.本体);
+
+			core.fillText(ctx, '□遥控:本体□', 10, 380, '#fff', '24px kaiti');
+			if (newsystem.遥控.启动) {
+				core.fillText(ctx, '√', 10, 378, '#00ff00', '24px kaiti');
+			}
+			core.fillRect(ctx, 138, 362, 20, 20, newsystem.遥控.本体);
+
+			core.fillText(ctx, '□陷阱:本体□ 范围□', 10, 410, '#fff', '24px kaiti');
+			if (newsystem.陷阱.启动) {
+				core.fillText(ctx, '√', 10, 408, '#00ff00', '24px kaiti');
+			}
+			core.fillRect(ctx, 138, 392, 20, 20, newsystem.陷阱.本体);
+			core.fillRect(ctx, 216, 392, 20, 20, newsystem.陷阱.范围);
+
+			core.fillText(ctx, '□阵地:本体□ 范围□', 10, 440, '#fff', '24px kaiti');
+			if (newsystem.阵地.启动) {
+				core.fillText(ctx, '√', 10, 438, '#00ff00', '24px kaiti');
+			}
+			core.fillRect(ctx, 138, 422, 20, 20, newsystem.阵地.本体);
+			core.fillRect(ctx, 216, 422, 20, 20, newsystem.阵地.范围);
+
+			core.fillText(ctx, '□迂回:本体□', 250, 110, '#fff', '24px kaiti');
+			if (newsystem.迂回包抄.启动) {
+				core.fillText(ctx, '√', 250, 108, '#00ff00', '24px kaiti');
+			}
+			core.fillRect(ctx, 378, 92, 20, 20, newsystem.迂回包抄.本体);
+
+			core.fillText(ctx, '□直掩:本体□', 250, 140, '#fff', '24px kaiti');
+			if (newsystem.直掩.启动) {
+				core.fillText(ctx, '√', 250, 138, '#00ff00', '24px kaiti');
+			}
+			core.fillRect(ctx, 378, 122, 20, 20, newsystem.直掩.本体);
+
+			core.fillText(ctx, '□观测:本体□', 250, 170, '#fff', '24px kaiti');
+			if (newsystem.观测.启动) {
+				core.fillText(ctx, '√', 250, 168, '#00ff00', '24px kaiti');
+			}
+			core.fillRect(ctx, 378, 152, 20, 20, newsystem.观测.本体);
+
+			core.fillText(ctx, '□火力:本体□', 250, 200, '#fff', '24px kaiti');
+			if (newsystem.火力覆盖.启动) {
+				core.fillText(ctx, '√', 250, 198, '#00ff00', '24px kaiti');
+			}
+			core.fillRect(ctx, 378, 182, 20, 20, newsystem.火力覆盖.本体);
+
+			core.fillText(ctx, '□进水:本体□', 250, 230, '#fff', '24px kaiti');
+			if (newsystem.进水.启动) {
+				core.fillText(ctx, '√', 250, 228, '#00ff00', '24px kaiti');
+			}
+			core.fillRect(ctx, 378, 212, 20, 20, newsystem.进水.本体);
+			core.fillText(ctx, '范围透明度:', 250, 260, '#fff', '24px kaiti');
+			core.drawLine(ctx, 250, 280, 400, 280, '#808080', 4);
+			core.fillCircle(ctx, 150 * (1 - newsystem.alpha) + 250, 280, 4, '#ffffff');
+			core.fillText(ctx, Math.floor(100 - newsystem.alpha * 100), 410, 285);
+		}
+		core.fillText(ctx, '退出', 400, 440, '#ffff00', '24px kaiti');
+	}
+
+	function rect(x, y, w, h, px, py) {
+		return px >= x && px <= x + w && py >= y && py <= y + h;
+	}
+	let skillname, type = '本体';
+	this.点击切换 = function (x, y, px, py) {
+		let newsystem = core.getLocalStorage('drawui', setting);
+		if (rect(80, 62, 20, 20, px, py)) {
+			newsystem.启用 = !newsystem.启用;
+		}
+		if (newsystem.启用) {
+			if (rect(12, 92, 20, 20, px, py)) {
+				newsystem.炮击.启动 = !newsystem.炮击.启动;
+			} else if (rect(12, 122, 20, 20, px, py)) {
+				newsystem.指挥.启动 = !newsystem.指挥.启动;
+			} else if (rect(12, 152, 20, 20, px, py)) {
+				newsystem.点杀.启动 = !newsystem.点杀.启动;
+			} else if (rect(12, 182, 20, 20, px, py)) {
+				newsystem.防空.启动 = !newsystem.防空.启动;
+			} else if (rect(12, 212, 20, 20, px, py)) {
+				newsystem.谍报.启动 = !newsystem.谍报.启动;
+			} else if (rect(12, 242, 20, 20, px, py)) {
+				newsystem.截断.启动 = !newsystem.截断.启动;
+			} else if (rect(12, 272, 20, 20, px, py)) {
+				newsystem.警戒.启动 = !newsystem.警戒.启动;
+			} else if (rect(12, 302, 20, 20, px, py)) {
+				newsystem.堡垒.启动 = !newsystem.堡垒.启动;
+			} else if (rect(12, 332, 20, 20, px, py)) {
+				newsystem.燃烧.启动 = !newsystem.燃烧.启动;
+			} else if (rect(12, 362, 20, 20, px, py)) {
+				newsystem.遥控.启动 = !newsystem.遥控.启动;
+			} else if (rect(12, 392, 20, 20, px, py)) {
+				newsystem.陷阱.启动 = !newsystem.陷阱.启动;
+			} else if (rect(12, 422, 20, 20, px, py)) {
+				newsystem.阵地.启动 = !newsystem.阵地.启动;
+			} else if (rect(252, 92, 20, 20, px, py)) {
+				newsystem.迂回包抄.启动 = !newsystem.迂回包抄.启动;
+			} else if (rect(252, 122, 20, 20, px, py)) {
+				newsystem.直掩.启动 = !newsystem.直掩.启动;
+			} else if (rect(252, 152, 20, 20, px, py)) {
+				newsystem.观测.启动 = !newsystem.观测.启动;
+			} else if (rect(252, 182, 20, 20, px, py)) {
+				newsystem.火力覆盖.启动 = !newsystem.火力覆盖.启动;
+			} else if (rect(252, 212, 20, 20, px, py)) {
+				newsystem.进水.启动 = !newsystem.进水.启动;
+			} else if (rect(138, 92, 20, 20, px, py)) {
+				skillname = '炮击';
+				type = '本体'
+				core.plugin.颜色变化();
+				return;
+			} else if (rect(216, 92, 20, 20, px, py)) {
+				skillname = '炮击';
+				type = '范围'
+				core.plugin.颜色变化();
+				return;
+			} else if (rect(138, 122, 20, 20, px, py)) {
+				skillname = '指挥';
+				type = '本体'
+				core.plugin.颜色变化();
+				return;
+			} else if (rect(138, 152, 20, 20, px, py)) {
+				skillname = '点杀';
+				type = '本体'
+				core.plugin.颜色变化();
+				return;
+			} else if (rect(138, 182, 20, 20, px, py)) {
+				skillname = '防空';
+				type = '本体'
+				core.plugin.颜色变化();
+				return;
+			} else if (rect(216, 182, 20, 20, px, py)) {
+				skillname = '防空';
+				type = '范围'
+				core.plugin.颜色变化();
+				return;
+			} else if (rect(138, 212, 20, 20, px, py)) {
+				skillname = '谍报';
+				type = '本体'
+				core.plugin.颜色变化();
+				return;
+			} else if (rect(138, 242, 20, 20, px, py)) {
+				skillname = '截断';
+				type = '本体'
+				core.plugin.颜色变化();
+				return;
+			} else if (rect(138, 272, 20, 20, px, py)) {
+				skillname = '警戒';
+				type = '本体'
+				core.plugin.颜色变化();
+				return;
+			} else if (rect(138, 302, 20, 20, px, py)) {
+				skillname = '堡垒';
+				type = '本体'
+				core.plugin.颜色变化();
+				return;
+			} else if (rect(216, 302, 20, 20, px, py)) {
+				skillname = '堡垒';
+				type = '范围'
+				core.plugin.颜色变化();
+				return;
+			} else if (rect(138, 332, 20, 20, px, py)) {
+				skillname = '燃烧';
+				type = '本体'
+				core.plugin.颜色变化();
+				return;
+			} else if (rect(138, 362, 20, 20, px, py)) {
+				skillname = '遥控';
+				type = '本体'
+				core.plugin.颜色变化();
+				return;
+			} else if (rect(138, 392, 20, 20, px, py)) {
+				skillname = '陷阱';
+				type = '本体'
+				core.plugin.颜色变化();
+				return;
+			} else if (rect(216, 392, 20, 20, px, py)) {
+				skillname = '陷阱';
+				type = '范围'
+				core.plugin.颜色变化();
+				return;
+			} else if (rect(138, 422, 20, 20, px, py)) {
+				skillname = '阵地';
+				type = '本体'
+				core.plugin.颜色变化();
+				return;
+			} else if (rect(216, 422, 20, 20, px, py)) {
+				skillname = '阵地';
+				type = '范围'
+				core.plugin.颜色变化();
+				return;
+			} else if (rect(378, 92, 20, 20, px, py)) {
+				skillname = '迂回包抄';
+				type = '本体'
+				core.plugin.颜色变化();
+				return;
+			} else if (rect(378, 122, 20, 20, px, py)) {
+				skillname = '直掩';
+				type = '本体'
+				core.plugin.颜色变化();
+				return;
+			} else if (rect(378, 152, 20, 20, px, py)) {
+				skillname = '观测';
+				type = '本体'
+				core.plugin.颜色变化();
+				return;
+			} else if (rect(378, 182, 20, 20, px, py)) {
+				skillname = '火力覆盖';
+				type = '本体'
+				core.plugin.颜色变化();
+				return;
+			} else if (rect(378, 212, 20, 20, px, py)) {
+				skillname = '进水';
+				type = '本体'
+				core.plugin.颜色变化();
+				return;
+			} else if (rect(246, 276, 404, 284, px, py)) {
+				newsystem.alpha = Math.max(0, Math.min(1 - (px - 250) / 150, 1));
+			}
+		}
+		if (rect(400, 418, 48, 24, px, py)) {
+			core.status.event.id = null;
+			core.unlockControl();
+			core.deleteCanvas('底层画布');
+			core.updateStatusBar();
+			return;
+		}
+		core.setLocalStorage('drawui', newsystem);
+		core.plugin.范围显示开关();
+	}
+
+	function hslToRgb(h, s, l) {
+		h = Math.max(0, Math.min(360, h));
+		s = Math.max(0, Math.min(1, s));
+		l = Math.max(0, Math.min(1, l));
+
+		let c = (1 - Math.abs(2 * l - 1)) * s; // 色度
+		let hp = h / 60.0;
+		let x = c * (1 - Math.abs((hp % 2) - 1));
+		let m = l - c / 2;
+
+		let r1, g1, b1;
+		if (hp >= 0 && hp < 1) {
+			r1 = c;
+			g1 = x;
+			b1 = 0;
+		} else if (hp >= 1 && hp < 2) {
+			r1 = x;
+			g1 = c;
+			b1 = 0;
+		} else if (hp >= 2 && hp < 3) {
+			r1 = 0;
+			g1 = c;
+			b1 = x;
+		} else if (hp >= 3 && hp < 4) {
+			r1 = 0;
+			g1 = x;
+			b1 = c;
+		} else if (hp >= 4 && hp < 5) {
+			r1 = x;
+			g1 = 0;
+			b1 = c;
+		} else {
+			r1 = c;
+			g1 = 0;
+			b1 = x;
+		}
+
+		const r = Math.round((r1 + m) * 255);
+		const g = Math.round((g1 + m) * 255);
+		const b = Math.round((b1 + m) * 255);
+		return { r, g, b };
+	}
+	let newcolor = '';
+	this.颜色变化 = function () {
+		core.status.event.id = '特技显示颜色切换';
+		let newsystem = core.getLocalStorage('drawui', setting);
+		let ctx = core.createCanvas('底层画布', 0, 0, 480, 480, 1000);
+		core.fillRect(ctx, 0, 0, 480, 480, 'rgba(0, 0, 0, 1)');
+		core.setTextAlign(ctx, 'center');
+		core.fillText(ctx, `${skillname}${type}颜色切换`, 240, 30, '#fff', '32px kaiti');
+		core.setTextAlign(ctx, 'left');
+		core.fillText(ctx, '确定', 10, 440, '#ffff00', '24px kaiti');
+		core.fillText(ctx, '取消', 400, 440, '#ffff00', '24px kaiti');
+		core.strokeRect(ctx, 90, 50, 300, 300, '#ffffff', 2);
+		const canvas = document.createElement("canvas");
+		canvas.width = 480;
+		canvas.height = 480;
+		const ctx1 = canvas.getContext("2d")
+		const imagedata = ctx1.getImageData(0, 0, 480, 480);
+		const data = imagedata.data;
+		for (let y = 0; y < 480; y++) {
+			const dri = 1.0 - (y / 480) * 0.75;
+			for (let x = 0; x < 480; x++) {
+				let hue = (x / 480) * 360;
+				const rgb = hslToRgb(hue, 1.0, dri);
+				const idx = (y * 480 + x) * 4;
+				data[idx] = rgb.r;
+				data[idx + 1] = rgb.g;
+				data[idx + 2] = rgb.b;
+				data[idx + 3] = 255;
+			}
+		}
+		ctx1.putImageData(imagedata, 0, 0);
+		ctx.drawImage(canvas, 90, 50, 300, 300);
+		core.fillText(ctx, '原色:□', 10, 100, '#ffffff', '24px kaiti');
+		core.fillRect(ctx, 66, 84, 20, 20, newsystem[skillname][type])
+		core.fillText(ctx, '更改:□', 10, 130, '#ffffff', '24px kaiti');
+		if (newcolor) {
+			core.fillRect(ctx, 66, 114, 20, 20, newcolor);
+		}
+		/*let ratio = core.domStyle.ratio;
+		ratio *= devicePixelRatio;
+		const imagedata = ctx.getImageData(90 * ratio, 50 * ratio, 300 * ratio, 300 * ratio);
+		const data = imagedata.data;
+		for (let y = 0; y < 300 * ratio; y++) {
+			const dri = 1.0 - (y / (300 * ratio)) * 0.75;
+			for (let x = 0; x < 300 * ratio; x++) {
+				let hue = (x / (300 * ratio)) * 360;
+				const rgb = hslToRgb(hue, 1.0, dri);
+				const idx = (y * 300 * ratio + x) * 4;
+				data[idx] = rgb.r;
+				data[idx + 1] = rgb.g;
+				data[idx + 2] = rgb.b;
+				data[idx + 3] = 255;
+			}
+		}
+		ctx.putImageData(imagedata, 90 * ratio, 50 * ratio);*/
+
+	}
+	this.颜色选择 = function (x, y, px, py) {
+		let newsystem = core.getLocalStorage('drawui', setting);
+		if (rect(400, 418, 48, 24, px, py)) {
+			core.plugin.范围显示开关();
+			newcolor = '';
+			return;
+		} else if (rect(90, 50, 300, 300, px, py)) {
+			let ratio = core.domStyle.ratio;
+			ratio *= devicePixelRatio;
+			px = Math.max(90, Math.min(390 - 1, px));
+			py = Math.max(50, Math.min(350 - 1, py));
+			const data = core.dymCanvas.底层画布.getImageData(Math.floor(px * ratio), Math.floor(py * ratio), 1, 1).data;
+			newcolor = `rgba(${data[0]},${data[1]},${data[2]},${data[3]})`
+			this.颜色变化();
+		} else if (rect(10, 418, 48, 24, px, py)) {
+			if (newcolor) {
+				newsystem[skillname][type] = newcolor;
+				newcolor = '';
+				core.setLocalStorage('drawui', newsystem);
+			}
+			core.plugin.范围显示开关();
+			return;
+		}
+	}
+},
+    "热重载": function () {
+	/* ---------- 功能说明 ---------- *
+	
+		1. 当 libs/ main.js index.html 中的任意一个文件被更改后，会自动刷新塔的页面
+		2. 修改楼层文件后自动在塔的页面上显示出来，不需要刷新
+		3. 修改脚本编辑或插件编写后也能自动更新更改的插件或脚本，但不保证不会出问题（一般都不会有问题的
+		4. 修改图块属性、怪物属性等后会自动更新
+		5. 当全塔属性被修改时，会自动刷新塔的页面
+		6. 样板的 styles.css 被修改后也可以直接显示，不需要刷新
+		7. 其余内容修改后不会自动更新也不会刷新
+	
+		/* ---------- 使用方式 ---------- *
+	
+		1. 前往 https://nodejs.org/en/ 下载node.js的LTS版本（点左边那个绿色按钮）并安装
+		2. 将该插件复制到插件编写中
+		3. 在造塔群的群文件-魔塔样板·改中找到server.js，下载并放到塔的根目录（与启动服务同一级）
+		4. 在该目录下按下shift+鼠标右键（win11只按右键即可），选择在终端打开或在powershell打开
+		5. 运行node server.js即可
+	
+		*/
+
+	if (main.mode !== "play" || main.replayChecking) return;
+
+	/**
+	 * 发送请求
+	 * @param {string} url
+	 * @param {string} type
+	 * @param {string} data
+	 * @returns {Promise<string>}
+	 */
+	async function post(url, type, data) {
+		const xhr = new XMLHttpRequest();
+		xhr.open(type, url);
+		xhr.send(data);
+		const res = await new Promise((res) => {
+			xhr.onload = (e) => {
+				if (xhr.status !== 200) {
+					console.error(`hot reload: http ${xhr.status}`);
+					res("@error");
+				} else res("success");
+			};
+			xhr.onerror = (e) => {
+				res("@error");
+				console.error(`hot reload: error on connection`);
+			};
+		});
+		if (res === "success") return xhr.response;
+		else return "@error";
+	}
+
+	/**
+	 * 热重载css
+	 * @param {string} data
+	 */
+	function reloadCss(data) {
+		const all = Array.from(document.getElementsByTagName("link"));
+		all.forEach((v) => {
+			if (v.rel !== "stylesheet") return;
+			if (v.href === `http://127.0.0.1:3000/${data}`) {
+				v.remove();
+				const link = document.createElement("link");
+				link.rel = "stylesheet";
+				link.type = "text/css";
+				link.href = data;
+				document.head.appendChild(link);
+				console.log(`css hot reload: ${data}`);
+			}
+		});
+	}
+
+	/**
+	 * 热重载楼层
+	 * @param {string} data
+	 */
+	async function reloadFloor(data) {
+		// 首先重新加载main.floors对应的楼层
+		await import(`/project/floors/${data}.js?v=${Date.now()}`);
+		// 然后写入core.floors并解析
+		core.floors[data] = main.floors[data];
+		const floor = core.loadFloor(data);
+		if (core.isPlaying()) {
+			core.status.maps[data] = floor;
+			delete core.status.mapBlockObjs[data];
+			core.extractBlocks(data);
+			if (data === core.status.floorId) {
+				core.drawMap(data);
+				core.setWeather(
+					core.animateFrame.weather.type,
+					core.animateFrame.weather.level
+				);
+			}
+			core.updateStatusBar(true, true);
+		}
+		console.log(`floor hot reload: ${data}`);
+	}
+
+	/**
+	 * 热重载脚本编辑及插件编写
+	 * @param {string} data
+	 */
+	async function reloadScript(data) {
+		if (data === "plugins") {
+			// 插件编写比较好办
+			const before = plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1;
+			// 这里不能用动态导入，因为动态导入会变成模块，变量就不是全局的了
+			const script = document.createElement("script");
+			script.src = `/project/plugins.js?v=${Date.now()}`;
+			document.body.appendChild(script);
+			await new Promise((res) => {
+				script.onload = () => res("success");
+			});
+			const after = plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1;
+			// 找到差异的函数
+			for (const id in before) {
+				const fn = before[id];
+				if (typeof fn !== "function") continue;
+				if (fn.toString() !== after[id]?.toString()) {
+					try {
+						core.plugin[id] = after[id];
+						core.plugin[id].call(core.plugin);
+						core.updateStatusBar(true, true);
+						console.log(`plugin hot reload: ${id}`);
+					} catch (e) {
+						console.error(e);
+					}
+				}
+			}
+		} else if (data === "functions") {
+			// 脚本编辑略微麻烦点
+			const before = functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a;
+			// 这里不能用动态导入，因为动态导入会变成模块，变量就不是全局的了
+			const script = document.createElement("script");
+			script.src = `/project/functions.js?v=${Date.now()}`;
+			document.body.appendChild(script);
+			await new Promise((res) => {
+				script.onload = () => res("success");
+			});
+			const after = functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a;
+			// 找到差异的函数
+			for (const mod in before) {
+				const fns = before[mod];
+				for (const id in fns) {
+					const fn = fns[id];
+					if (typeof fn !== "function" || id === "hasSpecial") continue;
+					const now = after[mod][id];
+					if (fn.toString() !== now.toString()) {
+						try {
+							if (mod === "events") {
+								core.events.eventdata[id] = now;
+							} else if (mod === "enemys") {
+								core.enemys.enemydata[id] = now;
+							} else if (mod === "actions") {
+								core.actions.actionsdata[id] = now;
+							} else if (mod === "control") {
+								core.control.controldata[id] = now;
+							} else if (mod === "ui") {
+								core.ui.uidata[id] = now;
+							}
+							core.updateStatusBar(true, true);
+							console.log(`function hot reload: ${mod}.${id}`);
+						} catch (e) {
+							console.error(e);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	/**
+	 * 属性热重载，包括全塔属性等
+	 * @param {string} data
+	 */
+	async function reloadData(data) {
+		const script = document.createElement("script");
+		script.src = `/project/${data}.js?v=${Date.now()}`;
+		document.body.appendChild(script);
+		await new Promise((res) => {
+			script.onload = () => res("success");
+		});
+
+		let after;
+		if (data === "data") after = data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d;
+		if (data === "enemys")
+			after = enemys_fcae963b_31c9_42b4_b48c_bb48d09f3f80;
+		if (data === "icons") after = icons_4665ee12_3a1f_44a4_bea3_0fccba634dc1;
+		if (data === "items") after = items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a;
+		if (data === "maps") after = maps_90f36752_8815_4be8_b32b_d7fad1d0542e;
+		if (data === "events")
+			after = events_c12a15a8_c380_4b28_8144_256cba95f760;
+
+		if (data === "enemys") {
+			core.enemys.enemys = after;
+			for (var enemyId in after) {
+				core.enemys.enemys[enemyId].id = enemyId;
+			}
+			core.material.enemys = core.getEnemys();
+		} else if (data === "icons") {
+			core.icons.icons = after;
+			core.material.icons = core.getIcons();
+		} else if (data === "items") {
+			core.items.items = after;
+			for (var itemId in after) {
+				core.items.items[itemId].id = itemId;
+			}
+			core.material.items = core.getItems();
+		} else if (data === "maps") {
+			core.maps.blocksInfo = after;
+			core.status.mapBlockObjs = {};
+			core.status.number2block = {};
+			Object.values(core.status.maps).forEach((v) => delete v.blocks);
+			core.extractBlocks();
+			core.setWeather(
+				core.animateFrame.weather.type,
+				core.animateFrame.weather.level
+			);
+			core.drawMap();
+		} else if (data === "events") {
+			core.events.commonEvent = after.commonEvent;
+		} else if (data === "data") {
+			location.reload();
+		}
+		core.updateStatusBar(true, true);
+		console.log(`data hot reload: ${data}`);
+	}
+
+	// 初始化
+	(async function () {
+		const data = await post("/reload", "POST", "test");
+		if (data === "@error") {
+			console.log(`未检测到node服务，热重载插件将无法使用`);
+		} else {
+			console.log(`热重载插件加载成功`);
+			// reload
+			setInterval(async () => {
+				const res = await post("/reload", "POST");
+				if (res === "@error") return;
+				if (res === "true") location.reload();
+				else return;
+			}, 1000);
+
+			// hot reload
+			setInterval(async () => {
+				const res = await post("/hotReload", "POST");
+				const data = res.split("@@");
+				data.forEach((v) => {
+					if (v === "") return;
+					const [type, file] = v.split(":");
+					if (type === "css") reloadCss(file);
+					if (type === "data") reloadData(file);
+					if (type === "floor") reloadFloor(file);
+					if (type === "script") reloadScript(file);
+				});
+			}, 1000);
+		}
+	})();
 }
 }
