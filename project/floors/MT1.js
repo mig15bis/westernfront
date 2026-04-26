@@ -41,6 +41,12 @@ main.floors.MT1=
             "value": "1"
         },
         {
+            "type": "setValue",
+            "name": "item:I746",
+            "operator": "+=",
+            "value": "1"
+        },
+        {
             "type": "setHeroOpacity",
             "opacity": 1
         },

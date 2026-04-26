@@ -33,7 +33,7 @@ main.floors.MT429=
             "type": "playSound",
             "name": "xinxinmagic.mp3"
         },
-        "\t[警告]走错片场的家伙 白龙号航空母舰 袭来",
+        "\t[警告]17小时速沉传说 信浓号航空母舰 出现！",
         "\t[系统提示]进入boss战，即将进入存档界面！",
         {
             "type": "callSave"
@@ -46,14 +46,24 @@ main.floors.MT429=
             "type": "previewUI",
             "action": [
                 {
+                    "type": "setValue",
+                    "name": "flag:bosshp",
+                    "value": "4"
+                },
+                {
+                    "type": "setValue",
+                    "name": "flag:bosshpmax",
+                    "value": "4"
+                },
+                {
                     "type": "strokeRect",
                     "x": 130,
                     "y": 64,
-                    "width": 64,
+                    "width": 256,
                     "height": 16,
                     "style": [
                         255,
-                        165,
+                        255,
                         0,
                         1
                     ],
@@ -63,7 +73,7 @@ main.floors.MT429=
                     "type": "fillRect",
                     "x": 130,
                     "y": 64,
-                    "width": 64,
+                    "width": 256,
                     "height": 16,
                     "style": [
                         255,
@@ -73,85 +83,23 @@ main.floors.MT429=
                     ]
                 },
                 {
-                    "type": "strokeRect",
-                    "x": 194,
-                    "y": 64,
-                    "width": 64,
-                    "height": 16,
+                    "type": "fillBoldText",
+                    "x": 130,
+                    "y": 48,
                     "style": [
                         255,
-                        165,
+                        0,
                         0,
                         1
                     ],
-                    "lineWidth": 5
-                },
-                {
-                    "type": "fillRect",
-                    "x": 194,
-                    "y": 64,
-                    "width": 64,
-                    "height": 16,
-                    "style": [
+                    "strokeStyle": [
                         255,
-                        0,
-                        0,
-                        1
-                    ]
-                },
-                {
-                    "type": "strokeRect",
-                    "x": 258,
-                    "y": 64,
-                    "width": 64,
-                    "height": 16,
-                    "style": [
-                        255,
-                        165,
+                        140,
                         0,
                         1
                     ],
-                    "lineWidth": 5
-                },
-                {
-                    "type": "fillRect",
-                    "x": 258,
-                    "y": 64,
-                    "width": 64,
-                    "height": 16,
-                    "style": [
-                        255,
-                        0,
-                        0,
-                        1
-                    ]
-                },
-                {
-                    "type": "strokeRect",
-                    "x": 322,
-                    "y": 64,
-                    "width": 64,
-                    "height": 16,
-                    "style": [
-                        255,
-                        165,
-                        0,
-                        1
-                    ],
-                    "lineWidth": 5
-                },
-                {
-                    "type": "fillRect",
-                    "x": 322,
-                    "y": 64,
-                    "width": 64,
-                    "height": 16,
-                    "style": [
-                        255,
-                        0,
-                        0,
-                        1
-                    ]
+                    "font": "20px number",
+                    "text": "4/4"
                 }
             ]
         },
@@ -174,14 +122,51 @@ main.floors.MT429=
         "7,2": [
             {
                 "type": "if",
-                "condition": "(flag:MT429boss===0)",
+                "condition": "(flag:bosshp===4)",
                 "true": [
                     {
-                        "type": "clearMap",
-                        "x": 322,
-                        "y": 64,
-                        "width": 64,
-                        "height": 16
+                        "type": "previewUI",
+                        "action": [
+                            {
+                                "type": "setValue",
+                                "name": "flag:bosshp",
+                                "operator": "-=",
+                                "value": "1"
+                            },
+                            {
+                                "type": "clearMap",
+                                "x": 128,
+                                "y": 30,
+                                "width": 100,
+                                "height": 30
+                            },
+                            {
+                                "type": "clearMap",
+                                "x": "386 - ((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                "y": 64,
+                                "width": "((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                "height": 16
+                            },
+                            {
+                                "type": "fillBoldText",
+                                "x": 130,
+                                "y": 48,
+                                "style": [
+                                    255,
+                                    0,
+                                    0,
+                                    1
+                                ],
+                                "strokeStyle": [
+                                    255,
+                                    140,
+                                    0,
+                                    1
+                                ],
+                                "font": "20px number",
+                                "text": "3/4"
+                            }
+                        ]
                     },
                     {
                         "type": "setBlock",
@@ -210,12 +195,6 @@ main.floors.MT429=
                     },
                     {
                         "type": "waitAsync"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "flag:MT429boss",
-                        "operator": "+=",
-                        "value": "1"
                     },
                     {
                         "type": "sleep",
@@ -309,14 +288,51 @@ main.floors.MT429=
                 "false": [
                     {
                         "type": "if",
-                        "condition": "(flag:MT429boss===1)",
+                        "condition": "(flag:bosshp===3)",
                         "true": [
                             {
-                                "type": "clearMap",
-                                "x": 258,
-                                "y": 64,
-                                "width": 64,
-                                "height": 16
+                                "type": "previewUI",
+                                "action": [
+                                    {
+                                        "type": "setValue",
+                                        "name": "flag:bosshp",
+                                        "operator": "-=",
+                                        "value": "1"
+                                    },
+                                    {
+                                        "type": "clearMap",
+                                        "x": 128,
+                                        "y": 30,
+                                        "width": 100,
+                                        "height": 30
+                                    },
+                                    {
+                                        "type": "clearMap",
+                                        "x": "386 - ((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                        "y": 64,
+                                        "width": "((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                        "height": 16
+                                    },
+                                    {
+                                        "type": "fillBoldText",
+                                        "x": 130,
+                                        "y": 48,
+                                        "style": [
+                                            255,
+                                            0,
+                                            0,
+                                            1
+                                        ],
+                                        "strokeStyle": [
+                                            255,
+                                            140,
+                                            0,
+                                            1
+                                        ],
+                                        "font": "20px number",
+                                        "text": "2/4"
+                                    }
+                                ]
                             },
                             {
                                 "type": "setBlock",
@@ -347,12 +363,6 @@ main.floors.MT429=
                                 "type": "waitAsync"
                             },
                             {
-                                "type": "setValue",
-                                "name": "flag:MT429boss",
-                                "operator": "+=",
-                                "value": "1"
-                            },
-                            {
                                 "type": "sleep",
                                 "time": 500
                             },
@@ -360,7 +370,7 @@ main.floors.MT429=
                                 "type": "playSound",
                                 "name": "xinxinmagic.mp3"
                             },
-                            "\t[系统提示]白龙号航母 放飞舰载机",
+                            "\t[系统提示]信浓号航母 放飞舰载机",
                             {
                                 "type": "setBlock",
                                 "number": "a7m",
@@ -452,14 +462,51 @@ main.floors.MT429=
                         "false": [
                             {
                                 "type": "if",
-                                "condition": "(flag:MT429boss===2)",
+                                "condition": "(flag:bosshp===2)",
                                 "true": [
                                     {
-                                        "type": "clearMap",
-                                        "x": 194,
-                                        "y": 64,
-                                        "width": 64,
-                                        "height": 16
+                                        "type": "previewUI",
+                                        "action": [
+                                            {
+                                                "type": "setValue",
+                                                "name": "flag:bosshp",
+                                                "operator": "-=",
+                                                "value": "1"
+                                            },
+                                            {
+                                                "type": "clearMap",
+                                                "x": 128,
+                                                "y": 30,
+                                                "width": 100,
+                                                "height": 30
+                                            },
+                                            {
+                                                "type": "clearMap",
+                                                "x": "386 - ((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                                "y": 64,
+                                                "width": "((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                                "height": 16
+                                            },
+                                            {
+                                                "type": "fillBoldText",
+                                                "x": 130,
+                                                "y": 48,
+                                                "style": [
+                                                    255,
+                                                    0,
+                                                    0,
+                                                    1
+                                                ],
+                                                "strokeStyle": [
+                                                    255,
+                                                    140,
+                                                    0,
+                                                    1
+                                                ],
+                                                "font": "20px number",
+                                                "text": "1/4"
+                                            }
+                                        ]
                                     },
                                     {
                                         "type": "setBlock",
@@ -490,12 +537,6 @@ main.floors.MT429=
                                         "type": "waitAsync"
                                     },
                                     {
-                                        "type": "setValue",
-                                        "name": "flag:MT429boss",
-                                        "operator": "+=",
-                                        "value": "1"
-                                    },
-                                    {
                                         "type": "sleep",
                                         "time": 500
                                     },
@@ -503,7 +544,7 @@ main.floors.MT429=
                                         "type": "playSound",
                                         "name": "xinxinmagic.mp3"
                                     },
-                                    "\t[系统提示]白龙号航母 召唤最后的援军，放飞所有舰载机",
+                                    "\t[系统提示]信浓号航母 召唤最后的援军，放飞所有舰载机",
                                     {
                                         "type": "setBlock",
                                         "number": "g4m",
@@ -768,14 +809,14 @@ main.floors.MT429=
                                         "type": "setEnemy",
                                         "id": "hakuryu",
                                         "name": "money",
-                                        "value": "200",
+                                        "value": "500",
                                         "norefresh": true
                                     },
                                     {
                                         "type": "setEnemy",
                                         "id": "hakuryu",
                                         "name": "exp",
-                                        "value": "200"
+                                        "value": "500"
                                     },
                                     {
                                         "type": "waitAsync"
@@ -784,20 +825,87 @@ main.floors.MT429=
                                 "false": [
                                     {
                                         "type": "if",
-                                        "condition": "(flag:MT429boss===3)",
+                                        "condition": "(flag:bosshp===1)",
                                         "true": [
                                             {
-                                                "type": "clearMap",
-                                                "x": 130,
-                                                "y": 64,
-                                                "width": 64,
-                                                "height": 16
+                                                "type": "previewUI",
+                                                "action": [
+                                                    {
+                                                        "type": "setValue",
+                                                        "name": "flag:bosshp",
+                                                        "operator": "-=",
+                                                        "value": "1"
+                                                    },
+                                                    {
+                                                        "type": "clearMap",
+                                                        "x": 128,
+                                                        "y": 30,
+                                                        "width": 100,
+                                                        "height": 30
+                                                    },
+                                                    {
+                                                        "type": "clearMap",
+                                                        "x": "386 - ((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                                        "y": 64,
+                                                        "width": "((flags.bosshpmax - flags.bosshp) / flags.bosshpmax) * 256",
+                                                        "height": 16
+                                                    },
+                                                    {
+                                                        "type": "fillBoldText",
+                                                        "x": 130,
+                                                        "y": 48,
+                                                        "style": [
+                                                            255,
+                                                            0,
+                                                            0,
+                                                            1
+                                                        ],
+                                                        "strokeStyle": [
+                                                            255,
+                                                            140,
+                                                            0,
+                                                            1
+                                                        ],
+                                                        "font": "20px number",
+                                                        "text": "0/4"
+                                                    }
+                                                ]
                                             },
                                             {
                                                 "type": "setValue",
                                                 "name": "flag:MT429boss",
                                                 "operator": "+=",
                                                 "value": "1"
+                                            },
+                                            {
+                                                "type": "setBlock",
+                                                "number": "hakuryu",
+                                                "loc": [
+                                                    [
+                                                        7,
+                                                        2
+                                                    ]
+                                                ],
+                                                "time": 0
+                                            },
+                                            {
+                                                "type": "playSound",
+                                                "name": "torpeodoexplo.wav"
+                                            },
+                                            {
+                                                "type": "hide",
+                                                "loc": [
+                                                    [
+                                                        7,
+                                                        2
+                                                    ]
+                                                ],
+                                                "remove": true,
+                                                "time": 1000
+                                            },
+                                            {
+                                                "type": "sleep",
+                                                "time": 1000
                                             },
                                             {
                                                 "type": "openDoor",
@@ -820,11 +928,7 @@ main.floors.MT429=
                                                     12
                                                 ]
                                             },
-                                            "\t[系统提示]主线boss战 胜利！",
-                                            {
-                                                "type": "function",
-                                                "function": "function(){\nflags.mission[58][2]=true\n}"
-                                            },
+                                            "\t[系统提示]支线boss战 胜利！",
                                             {
                                                 "type": "clearMap",
                                                 "x": 0,

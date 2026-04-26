@@ -18,35 +18,14 @@ main.floors.MT424=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        
         {
             "type": "setCurtain",
             "time": 500
         },
-        {
-            "type": "showImage",
-            "code": 1,
-            "image": "chapter12.jpg",
-            "loc": [
-                0,
-                0
-            ],
-            "opacity": 1,
-            "time": 500
-        },
-        {
-            "type": "sleep",
-            "time": 1000
-        },
-        {
-            "type": "hideImage",
-            "code": 1,
-            "time": 500
-        },
-        "\r[yellow]Mission 58 最后的海战",
+        "\r[yellow]Mission 57 最后的海战",
         {
             "type": "text",
-            "text": "\t[尼米兹]\f[nimitz.png,0,310]航空母舰特混舰队集结完毕，开始空袭，密切注意敌机动向。",
+            "text": "\t[尼米兹]\f[nimitz.png,0,310]航空母舰特混舰队集结完毕，开始空袭，同时密切注意敌机动向。",
             "pos": [
                 100,
                 300,
@@ -69,248 +48,86 @@ main.floors.MT424=
         "\t[系统提示]敌人战力重置中",
         {
             "type": "setEnemy",
-            "id": "sdkfz234",
+            "id": "a6m52",
             "name": "hp",
-            "value": "85000",
+            "value": "6000000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "sdkfz234",
-            "name": "atk",
-            "value": "15000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "panzer3f",
-            "name": "hp",
-            "value": "95000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "panzer3f",
-            "name": "atk",
-            "value": "15000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "panzer3f",
+            "id": "a6m52",
             "name": "special",
-            "value": "[55,60]",
+            "value": "[44]",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "stug3a",
+            "id": "ki61",
             "name": "hp",
-            "value": "70000",
+            "value": "6500000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "stug3a",
-            "name": "atk",
-            "value": "23000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "panzer4e",
-            "name": "hp",
-            "value": "90000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "panzer4e",
-            "name": "atk",
-            "value": "35000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "panzer4f",
-            "name": "hp",
-            "value": "110000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "panzer4f",
-            "name": "atk",
-            "value": "28000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "panzer4g",
-            "name": "hp",
-            "value": "110000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "panzer4g",
-            "name": "atk",
-            "value": "33000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "panzer4g",
+            "id": "ki61",
             "name": "special",
-            "value": "[55]",
+            "value": "[44]",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "flak88",
+            "id": "ki84",
             "name": "hp",
-            "value": "35000",
+            "value": "8000000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "flak88",
+            "id": "ki84",
             "name": "atk",
-            "value": "35000",
+            "value": "300000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "flak88",
-            "name": "special",
-            "value": "[40,51,55,59]",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "flak88",
-            "name": "zone",
-            "value": "25000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "me109g6",
+            "id": "a7m",
             "name": "hp",
-            "value": "45000",
+            "value": "8000000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "me109g6",
-            "name": "atk",
-            "value": "4000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "me109g6",
+            "id": "a7m",
             "name": "special",
-            "value": "[6,55]",
+            "value": "[6,28,30]",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "me110g",
+            "id": "j2m",
             "name": "hp",
-            "value": "60000",
+            "value": "7000000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "me110g",
-            "name": "atk",
-            "value": "8000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "me110g",
+            "id": "j2m",
             "name": "special",
-            "value": "[28,30,55]",
+            "value": "[44]",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "ju87b",
+            "id": "ne12",
             "name": "hp",
-            "value": "45000",
+            "value": "1000000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "ju87b",
-            "name": "atk",
-            "value": "1000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "ju87b",
-            "name": "bom",
-            "value": "120000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "ju87b",
+            "id": "ne12",
             "name": "special",
-            "value": "[28,36,55]",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "ju88a",
-            "name": "hp",
-            "value": "95000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "ju88a",
-            "name": "atk",
-            "value": "2000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "ju88a",
-            "name": "bom",
-            "value": "15000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "ju88a",
-            "name": "special",
-            "value": "[28,55]",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "mgbunker",
-            "name": "hp",
-            "value": "100000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "mgbunker",
-            "name": "atk",
-            "value": "3200",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "mgbunker",
-            "name": "special",
-            "value": "[6,55,63]",
-            "norefresh": true
+            "value": "[44,73]"
         },
         "\t[系统提示]敌人战力重置完成",
         {
@@ -325,9 +142,69 @@ main.floors.MT424=
             "type": "playSound",
             "name": "xinxinmagic.mp3"
         },
-        "\t[任务目标]⭐击沉所有敌舰\n⭐击沉白龙号航空母舰（支线boss）\n⭐指挥企业号航空母舰完成任务",
+        "\t[任务目标]⭐通过当前区域\n⭐击沉信浓号航空母舰（支线boss）\n⭐指挥企业号航空母舰完成任务",
         {
             "type": "callBook"
+        },
+        {
+            "type": "setValue",
+            "name": "flag:第57关通关",
+            "value": "0"
+        },
+        {
+            "type": "setValue",
+            "name": "flag:MT429boss",
+            "value": "0"
+        },
+        {
+            "type": "setValue",
+            "name": "flag:mission58tsk3",
+            "value": "0"
+        },
+        {
+            "type": "setTask",
+            "name": "第57关任务1",
+            "n": 1,
+            "text": "通过当前区域",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "第57关通关",
+                    "operator": "=",
+                    "text": "抵达终点",
+                    "count": "1"
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第57关任务2",
+            "n": 1,
+            "text": "击沉信浓号航空母舰（支线boss）",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "MT429boss",
+                    "operator": "=",
+                    "text": "支线boss击破",
+                    "count": "1"
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第57关任务3",
+            "n": 1,
+            "text": "指挥企业号航空母舰完成任务",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "mission58tsk3",
+                    "operator": "=",
+                    "text": "指挥企业号航空母舰完成任务",
+                    "count": "1"
+                }
+            ]
         }
     ],
     "eachArrive": [],
@@ -342,16 +219,15 @@ main.floors.MT424=
         "7,2": [
             {
                 "type": "animate",
-                "name": "fire",
-                "loc": "hero"
-            },
-            {
-                "type": "animate",
-                "name": "sing",
+                "name": "attention",
                 "loc": [
                     7,
                     2
                 ]
+            },
+            {
+                "type": "playSound",
+                "name": "fighter.mp3"
             },
             {
                 "type": "move",
@@ -359,7 +235,7 @@ main.floors.MT424=
                     7,
                     2
                 ],
-                "time": 500,
+                "time": 100,
                 "keep": true,
                 "steps": [
                     "up:3"
@@ -389,59 +265,26 @@ main.floors.MT424=
     "beforeBattle": {},
     "afterBattle": {},
     "afterGetItem": {},
-    "afterOpenDoor": {
-        "7,11": [
-            {
-                "type": "if",
-                "condition": "core.hasEquip('enterprise')",
-                "true": [
-                    {
-                        "type": "text",
-                        "text": "\t[小泽治三郎]\f[ozawa.jpg,0,310]那是……企业号！又是那艘该死的企业号！混蛋，她居然还没沉！",
-                        "pos": [
-                            100,
-                            300,
-                            380
-                        ]
-                    },
-                    {
-                        "type": "text",
-                        "text": "\t[小泽治三郎]\f[ozawa.jpg,0,310]我不相信这世上有不沉的航母！其他军舰已经不重要了，给我集中火力击沉企业号！",
-                        "pos": [
-                            100,
-                            300,
-                            380
-                        ]
-                    },
-                    {
-                        "type": "playSound",
-                        "name": "xinxinmagic.mp3"
-                    },
-                    "\t[系统提示]日军被激怒，战力提升。不过……怕什么？你开的可是传奇航母企业号！"
-                ],
-                "false": []
-            }
-        ]
-    },
+    "afterOpenDoor": {},
     "autoEvent": {},
     "cannotMove": {},
     "cannotMoveIn": {},
     "map": [
     [  3,646, 22,646,  3, 21,  3, 91,  3,519,723,649,649,645,645],
     [  3,519,724,519,  3, 21,  3, 82,  3,  3, 82,  3,  3,  3,  3],
-    [  3,  3, 81,  3,  3,718,  3,696,  0,716,718,  3,646, 22,646],
-    [341,341,718,  0,  0,  0,717,  0,721,  3,518,  3,  0,712,  0],
+    [  3,  3, 81,  3,  3,718,  3,573,  0,716,718,  3,646, 22,646],
+    [524,524,718,  0,  0,  0,717,  0,721,  3,518,  3,  0,712,  0],
     [  3,  3,  3,  3, 81,  3,  3,  3, 81,  3,518,  3,  3, 81,  3],
     [518,  3,518,  3,695,  0,  3, 21,  0,  3,  3,  3,  0,717,  0],
     [  0,706,  0, 81,  0,719,  3,  0,695,  0,  0, 81,723,648,645],
     [719,  3,  3,  3,  3,  0,716,518,  3,717,  3,  3,  0,645,648],
     [ 21, 21, 21, 22,  3, 81,  3,  3,  3, 21, 21,  3,  3, 82,  3],
     [  3,  3,  3,  3,  3,  0,721,  0,  3,  3,695,  3,518,518,518],
-    [  0,719, 21,  3,  0,610,  3,  0,695,  0,610,717,  0,711,  0],
+    [  0,719, 21,  3,  0,  0,  3,  0,695,  0,  0,717,  0,711,  0],
     [518,  3,648,  3,716,  3,  3, 86,  3,  3, 81,  3,  3, 81,  3],
     [  0,  3,648,  3,  0,  3,129,  0,601,  3,703,  3,  0,716,  0],
-    [711,  3,  3,  3,695,  3,613,  0,613,  3, 21,  3,649,647,649],
-    [  0,  0,706, 81,  0,  3,613,  0,613,  3, 21,  3,647,647,647]
+    [711,  3,  3,  3,695,  3,610,  0,610,  3, 21,  3,649,647,649],
+    [  0,  0,706, 81,  0,  3,610,  0,610,  3, 21,  3,647,647,647]
 ],
     "bgmap": [
     [ 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16],

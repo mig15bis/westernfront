@@ -739,7 +739,10 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		flags.scare = (flags.scare ?? 0) + 2;
 	}
 	if (damageInfo.bool && core.hasSpecial(special, 68)) { //尖啸死神
-		flags.scare = (flags.scare ?? 0) + 3
+		flags.scare = (flags.scare ?? 0) + 3;
+	}
+	if (damageInfo.bool && core.hasSpecial(special, 44)) { //神风
+		flags.scare = (flags.scare ?? 0) + 2;
 	}
 	if (flags.scare > 0) {
 		flags.scare--;
@@ -958,7 +961,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		[41, "谍报", "战后主角获得3层“谍报”debuff。“谍报”存在期间，主角使用的下一个任意技能无效化，随后消除一层debuff。可叠加。该敌人伤害不会小于1。", "#d3d3d3"],
 		[42, "截断", "当前地图中，该敌人在场时，主角后勤值失效", "#228b22"],
 		[43, "超压", "该陆军单位的穿甲值大于主角装甲值时，造成的回合伤害额外提升40%", "#ff8c00"],
-		[44, "神风特攻", function (enemy) { return "丧心病狂且泯灭人性的碳基制导系统。不攻击，" + (enemy.spd ?? 0) + "回合后撞击主角，造成1倍雷击伤害和2层惊慌debuff。", "#e6e099" }],
+		[44, "神风特攻", function (enemy) { return "丧心病狂且泯灭人性的碳基制导系统。不攻击，" + (enemy.spd ?? 0) + "回合后撞击主角，造成1倍雷击伤害和2层惊慌debuff。" }, "#e6e099"],
 		[45, "警戒", "若主角与该敌人发生战斗，则永久为全图轴心国部队提供10%的攻击力加成", "#e6e099"],
 		[46, "堡垒", "为身周9×9范围内轴心国军队提供20%伤害减免，且该范围内存在轴心国军队时，堡垒自身无法被攻击", "#e6e099"],
 		[47, "燃烧", "战后为主角施加3层燃烧debuff。该debuff存在时，主角受到的战斗伤害提升20%×燃烧层数，火焰每过一场战斗会熄灭一层，可叠加。伤害<=0或被技能秒杀时不会触发", "#FF8000"],
@@ -1848,12 +1851,13 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		ft17 = (tk === 'ft17' && mon_skillNum.type === '步兵') ? 1.05 : 1,
 		independencefly = core.hasItem('independence') && !havecv && (core.status.maps[floorId].area === '海洋' || core.status.maps[floorId].area === '浅滩'),
 		swordfish = bb === 'eagle' || bb === 'illus1941' || bb === 'illustrious',
-		hvar = mon_skillNum.type === '步兵' || mon_skillNum.type === '反坦克炮' || mon_skillNum.type === '榴弹炮' || mon_skillNum.type === '高射炮' || mon_skillNum.type === '驱逐舰',
+		hvar = mon_skillNum.type === '步兵' || mon_skillNum.type === '反坦克炮' || mon_skillNum.type === '榴弹炮' || mon_skillNum.type === '高射炮' || mon_skillNum.type === '驱逐',
 		rp3 = mon_skillNum.type === '轻坦' || mon_skillNum.type === '中坦' || mon_skillNum.type === '重坦' || mon_skillNum.type === '坦歼' || mon_skillNum.type === '建筑',
 		p51lianji = false,
 		radaron = ((fb === "beautifighter" || fb === "mosquito" || fb === 'p61') || (bb === 'essex' || bb === "enterprise") || lb === 'tbf') && core.hasSpecial(mon_special, 1);
 	let monsk30 = 1,
 		monsk36 = 1,
+		monsk44 = core.hasSpecial(mon_special, 44) ? 0 : 1,
 		monsk86 = 1,
 		monsk87 = 1,
 		monsk88 = false,
@@ -2366,7 +2370,10 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		if (ca === 'baltimore') { //巴尔的摩·航空引导
 			if (bb === 'essex' || bb === 'enterprise') {
 				if (junzhong === '空军') { beilv *= 1.4 }
-				if (junzhong === '海军') { hero_torpedo *= 1.6 }
+				if (junzhong === '海军') {
+					hero_torpedo *= 1.6;
+					hero_skytorpedo *= 1.6;
+				}
 				if (junzhong === '陆军') { hero_bomb *= 1.3 }
 			}
 		}
@@ -2586,6 +2593,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			}
 			mon_summary += mon_common + mon_bomb + mon_torpedo;
 			mon_perDamage += mon_summary;
+			mon_perDamage *= monsk44;
 			if (howitzer && core.getFlag('铝箔条', 0) <= 0) {
 				mon_perDamage += cacheFloor.火力覆盖;
 			}

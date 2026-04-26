@@ -2984,6 +2984,10 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				Debuff.push('火力');
 				Debuffcolor.push('#6600CC');
 			}
+			if (core.status.checkBlock.cache?.cacheFloor?.航空支援) {
+				Debuff.push('航空');
+				Debuffcolor.push('#CCFFFF');
+			}
 			if (core.status.checkBlock.cache?.cacheFloor?.直掩) {
 				Debuff.push('直掩');
 				Debuffcolor.push('#FF0000');
@@ -3814,6 +3818,9 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 				damage += "^";
 			if (core.enemys.hasSpecial(enemy, 42))
 				damage += "截";
+			if (core.enemys.hasSpecial(enemy, 44)) {
+				damage += "风";
+			}
 			if (core.enemys.hasSpecial(enemy, 51))
 				damage += "歼";
 			if (core.enemys.hasSpecial(enemy, 52))
@@ -4425,79 +4432,38 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 						return;
 					}
 					if (core.getEquip(3) === 'enterprise') {
-						if (core.status.hero.mana < 1500) {
-							core.status.hero.mana += 1000;
-							core.drawTip('已装备企业号，本技能需消耗2500，指挥点数不足')
-							core.playSound('error.mp3');
-							res(false)
-							return;
-						} else {
-							//使用成功，以下为技能效果
-							core.status.hero.mana -= 1500;
-							if (!core.isReplaying() && !main.replayChecking) { //不在录像中
-								core.insertCommonEvent('海上霸主动画', void 0, void 0, void 0, () => {
+						//使用成功，以下为技能效果
+						if (!core.isReplaying() && !main.replayChecking) { //不在录像中
+							core.insertCommonEvent('海上霸主动画', void 0, void 0, void 0, () => {
 
-									for (let x = 0; x <= 14; x++) {
-										for (let y = 0; y <= 14; y++) {
-											if (core.getBlockCls(x, y, floorId) === 'enemys') {
-												let Type = core.material.enemys[core.getBlockId(x, y)].type,
-													enemyhp = core.getEnemyInfo(core.material.enemys[core.getBlockId(x, y)].hp),
-													heroatk = core.getRealStatus('atk'),
-													herotop = core.getRealStatus('top'),
-													block = core.getBlockId(x, y);
-												if (!core.hasSpecial(block, 57)) {
-													if (!flags.aoe[x + ',' + y + ',' + core.status.floorId]) {
-														if (Type === '驱逐' || Type === '轻巡' || Type === '重巡' || Type === '战列' || Type === '航母') {
-															flags.aoe[x + ',' + y + ',' + floorId] = heroatk * 10 + herotop * 5;
-														} else if (core.plugin.Luftwaffe.includes(Type) && Type !== '导弹') {
-															flags.aoe[x + ',' + y + ',' + floorId] = heroatk * 4;
-														} else if (core.plugin.Army.includes(Type)) {
-															flags.aoe[x + ',' + y + ',' + floorId] = enemyhp * 0.3;
-														}
-													} else {
-														if (Type === '驱逐' || Type === '轻巡' || Type === '重巡' || Type === '战列' || Type === '航母') {
-															flags.aoe[x + ',' + y + ',' + floorId] += heroatk * 10 + herotop * 5;
-														} else if (core.plugin.Luftwaffe.includes(Type) && Type !== '导弹') {
-															flags.aoe[x + ',' + y + ',' + floorId] += heroatk * 4;
-														} else if (core.plugin.Army.includes(Type)) {
-															flags.aoe[x + ',' + y + ',' + floorId] += enemyhp * 0.3;
-														}
-													}
-												}
-												if (core.getEnemyInfo(block, hero, x, y, floorId).hp <= 0) {
-													core.plugin.kill(x, y, floorId)
-													core.drawAnimate('fire', x, y, false);
-
-												}
-											}
-										}
-									}
-									res(true)
-								}); //公共事件
-							} else { //在录像中
-								core.lockControl();
 								for (let x = 0; x <= 14; x++) {
 									for (let y = 0; y <= 14; y++) {
 										if (core.getBlockCls(x, y, floorId) === 'enemys') {
 											let Type = core.material.enemys[core.getBlockId(x, y)].type,
-												enemyhp = core.getEnemyInfo(core.material.enemys[core.getBlockId(x, y)].hp),
+												enemyhp = core.getEnemyInfo(core.material.enemys[core.getBlockId(x, y)]).hp,
 												heroatk = core.getRealStatus('atk'),
 												herotop = core.getRealStatus('top'),
 												block = core.getBlockId(x, y);
 											if (!core.hasSpecial(block, 57)) {
 												if (!flags.aoe[x + ',' + y + ',' + core.status.floorId]) {
 													if (Type === '驱逐' || Type === '轻巡' || Type === '重巡' || Type === '战列' || Type === '航母') {
-														flags.aoe[x + ',' + y + ',' + floorId] = heroatk * 10 + herotop * 5;
+														flags.aoe[x + ',' + y + ',' + floorId] = heroatk * 200 + herotop * 40;
+														if (Type === '重巡' || Type === '战列' || Type === '航母') {
+															flags.aoe[x + ',' + y + ',' + floorId] += enemyhp * 0.3;
+														}
 													} else if (core.plugin.Luftwaffe.includes(Type) && Type !== '导弹') {
-														flags.aoe[x + ',' + y + ',' + floorId] = heroatk * 4;
+														flags.aoe[x + ',' + y + ',' + floorId] = heroatk * 15;
 													} else if (core.plugin.Army.includes(Type)) {
 														flags.aoe[x + ',' + y + ',' + floorId] = enemyhp * 0.3;
 													}
 												} else {
 													if (Type === '驱逐' || Type === '轻巡' || Type === '重巡' || Type === '战列' || Type === '航母') {
-														flags.aoe[x + ',' + y + ',' + floorId] += heroatk * 10 + herotop * 5;
+														flags.aoe[x + ',' + y + ',' + floorId] += heroatk * 200 + herotop * 40;
+														if (Type === '重巡' || Type === '战列' || Type === '航母') {
+															flags.aoe[x + ',' + y + ',' + floorId] += enemyhp * 0.3;
+														}
 													} else if (core.plugin.Luftwaffe.includes(Type) && Type !== '导弹') {
-														flags.aoe[x + ',' + y + ',' + floorId] += heroatk * 4;
+														flags.aoe[x + ',' + y + ',' + floorId] += heroatk * 15;
 													} else if (core.plugin.Army.includes(Type)) {
 														flags.aoe[x + ',' + y + ',' + floorId] += enemyhp * 0.3;
 													}
@@ -4505,12 +4471,56 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 											}
 											if (core.getEnemyInfo(block, hero, x, y, floorId).hp <= 0) {
 												core.plugin.kill(x, y, floorId)
+												core.drawAnimate('fire', x, y, false);
+
 											}
 										}
 									}
 								}
 								res(true)
+							}); //公共事件
+						} else { //在录像中
+							core.lockControl();
+							for (let x = 0; x <= 14; x++) {
+								for (let y = 0; y <= 14; y++) {
+									if (core.getBlockCls(x, y, floorId) === 'enemys') {
+										let Type = core.material.enemys[core.getBlockId(x, y)].type,
+											enemyhp = core.getEnemyInfo(core.material.enemys[core.getBlockId(x, y)]).hp,
+											heroatk = core.getRealStatus('atk'),
+											herotop = core.getRealStatus('top'),
+											block = core.getBlockId(x, y);
+										if (!core.hasSpecial(block, 57)) {
+											if (!flags.aoe[x + ',' + y + ',' + core.status.floorId]) {
+												if (Type === '驱逐' || Type === '轻巡' || Type === '重巡' || Type === '战列' || Type === '航母') {
+													flags.aoe[x + ',' + y + ',' + floorId] = heroatk * 200 + herotop * 40;
+													if (Type === '重巡' || Type === '战列' || Type === '航母') {
+														flags.aoe[x + ',' + y + ',' + floorId] += enemyhp * 0.3;
+													}
+												} else if (core.plugin.Luftwaffe.includes(Type) && Type !== '导弹') {
+													flags.aoe[x + ',' + y + ',' + floorId] = heroatk * 15;
+												} else if (core.plugin.Army.includes(Type)) {
+													flags.aoe[x + ',' + y + ',' + floorId] = enemyhp * 0.3;
+												}
+											} else {
+												if (Type === '驱逐' || Type === '轻巡' || Type === '重巡' || Type === '战列' || Type === '航母') {
+													flags.aoe[x + ',' + y + ',' + floorId] += heroatk * 200 + herotop * 40;
+													if (Type === '重巡' || Type === '战列' || Type === '航母') {
+														flags.aoe[x + ',' + y + ',' + floorId] += enemyhp * 0.3;
+													}
+												} else if (core.plugin.Luftwaffe.includes(Type) && Type !== '导弹') {
+													flags.aoe[x + ',' + y + ',' + floorId] += heroatk * 15;
+												} else if (core.plugin.Army.includes(Type)) {
+													flags.aoe[x + ',' + y + ',' + floorId] += enemyhp * 0.3;
+												}
+											}
+										}
+										if (core.getEnemyInfo(block, hero, x, y, floorId).hp <= 0) {
+											core.plugin.kill(x, y, floorId)
+										}
+									}
+								}
 							}
+							res(true)
 						}
 					} else if (core.status.thisMap.area === '海洋') {
 						//使用成功，以下为技能效果
@@ -4520,14 +4530,23 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 									for (let y = 0; y <= 14; y++) {
 										if (core.getBlockCls(x, y, floorId) === 'enemys') {
 											let Type = core.material.enemys[core.getBlockId(x, y)].type,
+												enemyhp = core.getEnemyInfo(core.material.enemys[core.getBlockId(x, y)]).hp,
 												heroatk = core.getRealStatus('atk'),
 												herotop = core.getRealStatus('top'),
 												block = core.getBlockId(x, y);
 											if (!core.hasSpecial(block, 57)) {
 												if (Type === '驱逐' || Type === '轻巡' || Type === '重巡' || Type === '战列' || Type === '航母') {
 													if (!flags.aoe[x + ',' + y + ',' + core.status.floorId]) {
-														flags.aoe[x + ',' + y + ',' + floorId] = heroatk * 5 + herotop * 2;
-													} else { flags.aoe[x + ',' + y + ',' + floorId] += heroatk * 5 + herotop * 2; }
+														flags.aoe[x + ',' + y + ',' + floorId] = heroatk * 100 + herotop * 20;
+													} else { flags.aoe[x + ',' + y + ',' + floorId] += heroatk * 100 + herotop * 20; }
+													if (core.getEnemyInfo(block, hero, x, y, floorId).hp <= 0) {
+														core.plugin.kill(x, y, floorId)
+														core.drawAnimate('fire', x, y, false);
+													}
+												} else if (core.plugin.Luftwaffe.includes(Type) && Type !== '导弹') {
+													if (!flags.aoe[x + ',' + y + ',' + core.status.floorId]) {
+														flags.aoe[x + ',' + y + ',' + floorId] = heroatk * 5;
+													} else { flags.aoe[x + ',' + y + ',' + floorId] += heroatk * 5; }
 													if (core.getEnemyInfo(block, hero, x, y, floorId).hp <= 0) {
 														core.plugin.kill(x, y, floorId)
 														core.drawAnimate('fire', x, y, false);
@@ -4549,16 +4568,25 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 								for (let y = 0; y <= 14; y++) {
 									if (core.getBlockCls(x, y, floorId) === 'enemys') {
 										let Type = core.material.enemys[core.getBlockId(x, y)].type,
+											enemyhp = core.getEnemyInfo(core.material.enemys[core.getBlockId(x, y)]).hp,
 											heroatk = core.getRealStatus('atk'),
 											herotop = core.getRealStatus('top'),
 											block = core.getBlockId(x, y);
 										if (!core.hasSpecial(block, 57)) {
 											if (Type === '驱逐' || Type === '轻巡' || Type === '重巡' || Type === '战列' || Type === '航母') {
 												if (!flags.aoe[x + ',' + y + ',' + core.status.floorId]) {
-													flags.aoe[x + ',' + y + ',' + floorId] = core.status.hero.atk * 5 + core.status.hero.top * 2;
-												} else { flags.aoe[x + ',' + y + ',' + floorId] += core.status.hero.atk * 5 + core.status.hero.top * 2; }
+													flags.aoe[x + ',' + y + ',' + floorId] = core.status.hero.atk * 100 + core.status.hero.top * 20;
+												} else { flags.aoe[x + ',' + y + ',' + floorId] += core.status.hero.atk * 100 + core.status.hero.top * 20; }
 												if (core.getEnemyInfo(block, hero, x, y, floorId).hp <= 0) {
 													core.plugin.kill(x, y, floorId)
+												}
+											} else if (core.plugin.Luftwaffe.includes(Type) && Type !== '导弹') {
+												if (!flags.aoe[x + ',' + y + ',' + core.status.floorId]) {
+													flags.aoe[x + ',' + y + ',' + floorId] = heroatk * 5;
+												} else { flags.aoe[x + ',' + y + ',' + floorId] += heroatk * 5; }
+												if (core.getEnemyInfo(block, hero, x, y, floorId).hp <= 0) {
+													core.plugin.kill(x, y, floorId)
+													core.drawAnimate('fire', x, y, false);
 												}
 											}
 										}
@@ -4581,7 +4609,7 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 				})
 
 			},
-			description: '只能在海上使用且必须装备着航空母舰。使用后，派出舰载机发动空袭，使全图除潜艇外的敌方海军受到5倍攻击力和2倍雷击值的伤害（可致死并获得金经），同时我方损失等同于20%血限的hp。可在同一地图中多次使用，对boss无效。'
+			description: '只能在海上使用且必须装备着航空母舰。使用后，派出舰载机发动空袭，使全图除潜艇外的敌方海军受到100倍攻击力和20倍雷击值的伤害，敌方空军受到5倍攻击力的伤害（可致死并获得金经），同时我方损失等同于20%血限的hp。可在同一地图中多次使用，对boss无效。'
 		},
 
 		{ // 17
