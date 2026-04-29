@@ -19,22 +19,9 @@ main.floors.MT443=
     "events": {
         "7,4": [
             {
-                "type": "function",
-                "function": "function(){\nflags.mission[60][0]=true\n}"
-            },
-            {
-                "type": "if",
-                "condition": "(flag:clearcommunist===13)",
-                "true": [
-                    {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[60][1]=true\n}"
-                    }
-                ]
-            },
-            {
-                "type": "function",
-                "function": "function(){\nif(core.searchBlock('japinf6',['MT439','MT440','MT441','MT442','MT443']).length>=1)flags.mission[60][2]=true\n}"
+                "type": "setValue",
+                "name": "flag:第59关通关",
+                "value": "1"
             },
             {
                 "type": "unloadEquip",
@@ -65,10 +52,6 @@ main.floors.MT443=
                 "pos": 6
             },
             {
-                "type": "function",
-                "function": "function(){\nflags.skillList=[0,0,0,0,0,0,0]\n}"
-            },
-            {
                 "type": "update"
             },
             {
@@ -76,7 +59,7 @@ main.floors.MT443=
                 "time": 500
             },
             {
-                "type": "hideStatusBar"
+                "type": "hideui"
             },
             {
                 "type": "update"
@@ -145,11 +128,6 @@ main.floors.MT443=
                             90
                         ],
                         "opacity": 1,
-                        "time": 500,
-                        "async": true
-                    },
-                    {
-                        "type": "sleep",
                         "time": 500
                     },
                     {
@@ -176,11 +154,6 @@ main.floors.MT443=
                                     90
                                 ],
                                 "opacity": 1,
-                                "time": 500,
-                                "async": true
-                            },
-                            {
-                                "type": "sleep",
                                 "time": 500
                             },
                             {
@@ -207,11 +180,6 @@ main.floors.MT443=
                                             90
                                         ],
                                         "opacity": 1,
-                                        "time": 500,
-                                        "async": true
-                                    },
-                                    {
-                                        "type": "sleep",
                                         "time": 500
                                     }
                                 ],
@@ -237,6 +205,9 @@ main.floors.MT443=
                 ],
                 "time": 500,
                 "keep": true
+            },
+            {
+                "type": "submitTask"
             },
             {
                 "type": "hideImage",
@@ -802,11 +773,11 @@ main.floors.MT443=
     [  2,  2,  2, 82,  2,692,692,705,692,692,  2,  2,  2,  2, 82],
     [  0,691,518,519,  2,687,687,688,687,687,  2,687, 81,518,691],
     [687,  2,  2,  2,  2,  2,  2, 83,  2,  2,  2,  0,  2,687,  2],
-    [  0, 81,687,  0,  2,613,  2,686,  2,  0,685,  0,  2,518,518],
+    [  0, 81,687,  0,  2,609,  2,686,  2,  0,685,  0,  2,518,518],
     [691,  2,  0,518,685,  0, 81,686, 81,  0,  2,  2,  2,  2,688],
-    [518,  2,  2,  2,  2, 81,  2,685,  2,695,  2,646,  2,  0,  0],
-    [646,  2,647,648,695,695,  2,  0,  2,518,  2,518,691,695,  2],
-    [646,  2,647,648,524,695,  2, 93,  2,518, 81,646,  2,518,519]
+    [518,  2,  2,  2,  2, 81,  2,685,  2,747,  2,646,  2,  0,  0],
+    [646,  2,647,648,748,750,  2,  0,  2,518,  2,518,691,747,  2],
+    [646,  2,647,648,524,748,  2, 93,  2,518, 81,646,  2,518,519]
 ],
     "bgmap": [
 

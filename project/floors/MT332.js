@@ -22,7 +22,7 @@ main.floors.MT332=
             "type": "setCurtain",
             "time": 500
         },
-        "\r[yellow]Mission 46 龙骑兵行动",
+        "\r[yellow]Mission 45 龙骑兵行动",
         "\t[盟军指挥官,hero]德军的主力部队都在诺曼底方向，法国南部果然防御薄弱。",
         "\t[盟军指挥官,hero]开始进攻，与法国游击队和伞兵部队打好配合，一举拿下法国南部控制权！",
         {

@@ -110,32 +110,9 @@ main.floors.MT393=
     "events": {
         "7,14": [
             {
-                "type": "unloadEquip",
-                "pos": 0
-            },
-            {
-                "type": "unloadEquip",
-                "pos": 1
-            },
-            {
-                "type": "unloadEquip",
-                "pos": 2
-            },
-            {
-                "type": "unloadEquip",
-                "pos": 3
-            },
-            {
-                "type": "unloadEquip",
-                "pos": 4
-            },
-            {
-                "type": "unloadEquip",
-                "pos": 5
-            },
-            {
-                "type": "unloadEquip",
-                "pos": 6
+                "type": "setValue",
+                "name": "flag:铝箔条",
+                "value": "0"
             },
             {
                 "type": "update"

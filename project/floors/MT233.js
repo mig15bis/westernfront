@@ -22,7 +22,7 @@ main.floors.MT233=
             "type": "setCurtain",
             "time": 500
         },
-        "\r[yellow]Mission 34 海上封锁",
+        "\r[yellow]Mission 33 海上封锁",
         {
             "type": "text",
             "text": "\t[坎宁安]\f[cunningham.jpg,0,310]敌人的水面舰队不是我们的对手，但要注意潜艇，潜艇和德国空军仍然是我们最主要的威胁。",

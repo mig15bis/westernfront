@@ -18,10 +18,13 @@ main.floors.MT439=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        
         {
             "type": "setCurtain",
             "time": 500
+        },
+        {
+            "type": "unloadEquip",
+            "pos": 1
         },
         "\r[yellow]Mission 60 凋零的樱花",
         {
@@ -44,7 +47,7 @@ main.floors.MT439=
         },
         {
             "type": "text",
-            "text": "\t[麦克阿瑟]\f[macarthur.png,0,310]一些日本共产党人正趁势发起叛乱，推翻天皇统治。我们不会容忍共产党出现在我们的管辖范围内。为了战后的稳定，见到一个，就除掉一个。",
+            "text": "\t[麦克阿瑟]\f[macarthur.png,0,310]我们马上将要成为接管这片土地的主人，而我们的下一个目标是苏联。所以，我们不能容忍日共的存在，哪怕他们现在与我们暂时处于同一战线。见到一个，就除掉一个。",
             "pos": [
                 100,
                 300,
@@ -58,248 +61,79 @@ main.floors.MT439=
         "\t[系统提示]敌人战力重置中",
         {
             "type": "setEnemy",
-            "id": "sdkfz234",
+            "id": "japinf1",
             "name": "hp",
-            "value": "85000",
+            "value": "120000000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "sdkfz234",
+            "id": "japinf1",
             "name": "atk",
-            "value": "15000",
+            "value": "1000000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "panzer3f",
+            "id": "japinf3",
             "name": "hp",
-            "value": "95000",
+            "value": "100000000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "panzer3f",
+            "id": "japinf3",
             "name": "atk",
-            "value": "15000",
+            "value": "2000000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "panzer3f",
-            "name": "special",
-            "value": "[55,60]",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "stug3a",
+            "id": "ki100",
             "name": "hp",
-            "value": "70000",
+            "value": "12000000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "stug3a",
+            "id": "ki100",
             "name": "atk",
-            "value": "23000",
+            "value": "700000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "panzer4e",
+            "id": "j7w1",
             "name": "hp",
-            "value": "90000",
+            "value": "12000000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "panzer4e",
+            "id": "j7w1",
             "name": "atk",
-            "value": "35000",
+            "value": "1400000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "panzer4f",
+            "id": "j7w2",
             "name": "hp",
-            "value": "110000",
+            "value": "12000000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "panzer4f",
+            "id": "j7w2",
             "name": "atk",
-            "value": "28000",
+            "value": "1400000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "panzer4g",
+            "id": "ne12",
             "name": "hp",
-            "value": "110000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "panzer4g",
-            "name": "atk",
-            "value": "33000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "panzer4g",
-            "name": "special",
-            "value": "[55]",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "flak88",
-            "name": "hp",
-            "value": "35000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "flak88",
-            "name": "atk",
-            "value": "35000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "flak88",
-            "name": "special",
-            "value": "[40,51,55,59]",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "flak88",
-            "name": "zone",
-            "value": "25000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "me109g6",
-            "name": "hp",
-            "value": "45000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "me109g6",
-            "name": "atk",
-            "value": "4000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "me109g6",
-            "name": "special",
-            "value": "[6,55]",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "me110g",
-            "name": "hp",
-            "value": "60000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "me110g",
-            "name": "atk",
-            "value": "8000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "me110g",
-            "name": "special",
-            "value": "[28,30,55]",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "ju87b",
-            "name": "hp",
-            "value": "45000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "ju87b",
-            "name": "atk",
-            "value": "1000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "ju87b",
-            "name": "bom",
-            "value": "120000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "ju87b",
-            "name": "special",
-            "value": "[28,36,55]",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "ju88a",
-            "name": "hp",
-            "value": "95000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "ju88a",
-            "name": "atk",
-            "value": "2000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "ju88a",
-            "name": "bom",
-            "value": "15000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "ju88a",
-            "name": "special",
-            "value": "[28,55]",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "mgbunker",
-            "name": "hp",
-            "value": "100000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "mgbunker",
-            "name": "atk",
-            "value": "3200",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "mgbunker",
-            "name": "special",
-            "value": "[6,55,63]",
-            "norefresh": true
+            "value": "5000000"
         },
         "\t[系统提示]敌人战力重置完成",
         {
@@ -314,7 +148,7 @@ main.floors.MT439=
             "type": "playSound",
             "name": "xinxinmagic.mp3"
         },
-        "\t[任务目标]⭐占领东京\n⭐除掉所有日共党员\n⭐尽可能保留敌方生化部队",
+        "\t[任务目标]⭐占领东京\n⭐除掉所有日共党员\n⭐至少保留3支敌方生化部队",
         {
             "type": "callBook"
         },
@@ -322,7 +156,69 @@ main.floors.MT439=
             "type": "playSound",
             "name": "xinxinmagic.mp3"
         },
-        "\t[系统提示]地图中存在的没有显伤的NPC就是你的第二个目标，必须亲自触碰他们才会完成击杀。"
+        "\t[系统提示]地图中存在的没有显伤的NPC就是你的第二个目标，必须亲自触碰他们才会完成击杀。",
+        {
+            "type": "setValue",
+            "name": "flag:第59关通关",
+            "value": "0"
+        },
+        {
+            "type": "setValue",
+            "name": "flag:clearcommunist",
+            "value": "0"
+        },
+        {
+            "type": "setTask",
+            "name": "第59关任务1",
+            "n": 1,
+            "text": "占领东京",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "第59关通关",
+                    "operator": "=",
+                    "text": "抵达终点",
+                    "count": "1"
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第59关任务2",
+            "n": 1,
+            "text": "除掉所有日共党员",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "clearcommunist",
+                    "operator": "=",
+                    "text": "任务完成进度",
+                    "count": "13"
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第59关任务3",
+            "n": 1,
+            "text": "至少保留3支敌方生化部队",
+            "info": [
+                {
+                    "type": "checkBlock",
+                    "checkBlock": "japinf6",
+                    "floorId": [
+                        "MT439",
+                        "MT440",
+                        "MT441",
+                        "MT442",
+                        "MT443"
+                    ],
+                    "operator": ">=",
+                    "text": "当前区域剩余生化部队",
+                    "count": 3
+                }
+            ]
+        }
     ],
     "eachArrive": [],
     "parallelDo": "",
@@ -396,21 +292,21 @@ main.floors.MT439=
     "cannotMove": {},
     "cannotMoveIn": {},
     "map": [
-    [ 21, 21,152,646, 22,646,152, 91,152,645,647,695,700,518,494],
+    [ 21, 21,152,646, 22,646,152, 91,152,645,647,747,700,518,494],
     [ 21, 21,152,518,702,518,152,688,152,645,647,152, 82,152,152],
     [686,152,152,152, 81,152,152, 81,152,152,152,152,518,518,518],
-    [  0,690, 81,685,684,  0,683,686,  0, 81,685,152,152,152,686],
+    [  0,690, 81,685,684,  0,750,686,  0, 81,748,152,152,152,686],
     [647,494,152,152,152,152,152,152,683,152,684, 81,687,690,  0],
     [152,152,152,  0,685,647,152, 21, 21,152,687,152,152,152,152],
-    [647,  0,152,647,152, 22,152,152,152,152,  0, 81,687,695,646],
+    [647,  0,152,647,152, 22,152,152,152,152,  0, 81,687,749,646],
     [  0,700, 81,  0,152,152,152,152, 21,152,684,152,152,646,648],
     [687,152,152,152,152, 21, 21,152, 21,685,  0,685,152,648, 22],
     [  0,683,648,  0,152,683,152,152,152,152, 81,152,152,152,152],
-    [152,152,  0,684, 81,  0,684,  0,683,  0,  0,683,  0,684,648],
+    [152,152,  0,749, 81,  0,684,  0,683,  0,  0,683,  0,684,648],
     [645,152,687,152,152,152,152, 86,152,152,152,152,152, 82,152],
-    [645,152,  0,152,614,590,519,  0,519,590,614,152,494,691,  0],
-    [524,152,683,152,614,590,519,  0,519,590,614,152,648,646,648],
-    [691, 82,  0,152,614,590,519,  0,519,590,614,152,645,646,645]
+    [645,152,  0,152,610,590,519,  0,519,590,610,152,494,691,  0],
+    [524,152,683,152,610,590,519,  0,519,590,610,152,648,646,648],
+    [691, 82,  0,152,610,590,519,  0,519,590,610,152,645,646,645]
 ],
     "bgmap": [
 

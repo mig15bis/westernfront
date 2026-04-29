@@ -27,7 +27,7 @@ main.floors.MT187=
             "name": "flag:dry",
             "value": "false"
         },
-        "\r[yellow]Mission 28 石油禁运",
+        "\r[yellow]Mission 27 石油禁运",
         "\t[盟军指挥官,hero]全速行驶！必须赶在敌人之前到达指定地点！",
         {
             "type": "playSound",

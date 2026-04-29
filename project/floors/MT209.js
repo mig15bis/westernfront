@@ -25,7 +25,7 @@ main.floors.MT209=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        "\r[yellow]Mission 31 空中堡垒",
+        "\r[yellow]Mission 30 空中堡垒",
         {
             "type": "setValue",
             "name": "flag:escort",

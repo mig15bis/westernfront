@@ -18,12 +18,11 @@ main.floors.MT432=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        
         {
             "type": "setCurtain",
             "time": 500
         },
-        "\r[yellow]Mission 59 血腥海岸线",
+        "\r[yellow]Mission 58 血腥海岸线",
         {
             "type": "text",
             "text": "\t[麦克阿瑟]\f[macarthur.png,0,310]冲上海岸，就像在菲律宾那时候一样！",
@@ -58,248 +57,65 @@ main.floors.MT432=
         "\t[系统提示]敌人战力重置中",
         {
             "type": "setEnemy",
-            "id": "sdkfz234",
+            "id": "ki100",
             "name": "hp",
-            "value": "85000",
+            "value": "12000000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "sdkfz234",
+            "id": "ki100",
             "name": "atk",
-            "value": "15000",
+            "value": "350000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "panzer3f",
+            "id": "j7w1",
             "name": "hp",
-            "value": "95000",
+            "value": "12000000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "panzer3f",
+            "id": "j7w1",
             "name": "atk",
-            "value": "15000",
+            "value": "700000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "panzer3f",
-            "name": "special",
-            "value": "[55,60]",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "stug3a",
+            "id": "j7w2",
             "name": "hp",
-            "value": "70000",
+            "value": "12000000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "stug3a",
+            "id": "j7w2",
             "name": "atk",
-            "value": "23000",
+            "value": "700000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "panzer4e",
+            "id": "ne12",
             "name": "hp",
-            "value": "90000",
+            "value": "3000000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "panzer4e",
-            "name": "atk",
-            "value": "35000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "panzer4f",
+            "id": "d4y",
             "name": "hp",
-            "value": "110000",
+            "value": "10000000",
             "norefresh": true
         },
         {
             "type": "setEnemy",
-            "id": "panzer4f",
-            "name": "atk",
-            "value": "28000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "panzer4g",
-            "name": "hp",
-            "value": "110000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "panzer4g",
-            "name": "atk",
-            "value": "33000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "panzer4g",
-            "name": "special",
-            "value": "[55]",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "flak88",
-            "name": "hp",
-            "value": "35000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "flak88",
-            "name": "atk",
-            "value": "35000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "flak88",
-            "name": "special",
-            "value": "[40,51,55,59]",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "flak88",
-            "name": "zone",
-            "value": "25000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "me109g6",
-            "name": "hp",
-            "value": "45000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "me109g6",
-            "name": "atk",
-            "value": "4000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "me109g6",
-            "name": "special",
-            "value": "[6,55]",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "me110g",
-            "name": "hp",
-            "value": "60000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "me110g",
-            "name": "atk",
-            "value": "8000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "me110g",
-            "name": "special",
-            "value": "[28,30,55]",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "ju87b",
-            "name": "hp",
-            "value": "45000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "ju87b",
-            "name": "atk",
-            "value": "1000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "ju87b",
-            "name": "bom",
-            "value": "120000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "ju87b",
-            "name": "special",
-            "value": "[28,36,55]",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "ju88a",
-            "name": "hp",
-            "value": "95000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "ju88a",
-            "name": "atk",
-            "value": "2000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "ju88a",
-            "name": "bom",
-            "value": "15000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "ju88a",
-            "name": "special",
-            "value": "[28,55]",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "mgbunker",
-            "name": "hp",
-            "value": "100000",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "mgbunker",
-            "name": "atk",
-            "value": "3200",
-            "norefresh": true
-        },
-        {
-            "type": "setEnemy",
-            "id": "mgbunker",
-            "name": "special",
-            "value": "[6,55,63]",
-            "norefresh": true
+            "id": "d4y",
+            "name": "top",
+            "value": "6000000"
         },
         "\t[系统提示]敌人战力重置完成",
         {
@@ -318,11 +134,163 @@ main.floors.MT432=
         {
             "type": "callBook"
         },
-        "\t[系统提示]后面没有海战环节了，所以也不会再有橙色宝石！"
+        "\t[系统提示]后面没有海战环节了，所以也不会再有橙色宝石！",
+        {
+            "type": "setValue",
+            "name": "flag:第58关通关",
+            "value": "0"
+        },
+        {
+            "type": "setTask",
+            "name": "第58关任务1",
+            "n": 1,
+            "text": "占领大阪",
+            "info": [
+                {
+                    "type": "checkFlag",
+                    "checkFlag": "第58关通关",
+                    "operator": "=",
+                    "text": "抵达终点",
+                    "count": "1"
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第58关任务2",
+            "n": 6,
+            "text": "消灭所有地面目标",
+            "info": [
+                {
+                    "type": "checkEnemyType",
+                    "checkEnemyType": "步兵",
+                    "floorId": [
+                        "MT432",
+                        "MT433",
+                        "MT434",
+                        "MT435",
+                        "MT436"
+                    ],
+                    "operator": "<=",
+                    "text": "残余步兵",
+                    "count": 0
+                },
+                {
+                    "type": "checkEnemyType",
+                    "checkEnemyType": "中坦",
+                    "floorId": [
+                        "MT432",
+                        "MT433",
+                        "MT434",
+                        "MT435",
+                        "MT436"
+                    ],
+                    "operator": "<=",
+                    "text": "残余中型坦克",
+                    "count": 0
+                },
+                {
+                    "type": "checkEnemyType",
+                    "checkEnemyType": "重坦",
+                    "floorId": [
+                        "MT432",
+                        "MT433",
+                        "MT434",
+                        "MT435",
+                        "MT436"
+                    ],
+                    "operator": "<=",
+                    "text": "残余重型坦克",
+                    "count": 0
+                },
+                {
+                    "type": "checkEnemyType",
+                    "checkEnemyType": "反坦克炮",
+                    "floorId": [
+                        "MT432",
+                        "MT433",
+                        "MT434",
+                        "MT435",
+                        "MT436"
+                    ],
+                    "operator": "<=",
+                    "text": "残余反坦克炮",
+                    "count": 0
+                },
+                {
+                    "type": "checkEnemyType",
+                    "checkEnemyType": "榴弹炮",
+                    "floorId": [
+                        "MT432",
+                        "MT433",
+                        "MT434",
+                        "MT435",
+                        "MT436"
+                    ],
+                    "operator": "<=",
+                    "text": "残余榴弹炮",
+                    "count": 0
+                },
+                {
+                    "type": "checkEnemyType",
+                    "checkEnemyType": "高射炮",
+                    "floorId": [
+                        "MT432",
+                        "MT433",
+                        "MT434",
+                        "MT435",
+                        "MT436"
+                    ],
+                    "operator": "<=",
+                    "text": "残余高射炮",
+                    "count": 0
+                }
+            ]
+        },
+        {
+            "type": "setTask",
+            "name": "第58关任务3",
+            "n": 2,
+            "text": "消灭所有空中目标",
+            "info": [
+                {
+                    "type": "checkEnemyType",
+                    "checkEnemyType": "战斗机",
+                    "floorId": [
+                        "MT432",
+                        "MT433",
+                        "MT434",
+                        "MT435",
+                        "MT436"
+                    ],
+                    "operator": "<=",
+                    "text": "残余战斗机",
+                    "count": 0
+                },
+                {
+                    "type": "checkEnemyType",
+                    "checkEnemyType": "俯冲轰炸机",
+                    "floorId": [
+                        "MT432",
+                        "MT433",
+                        "MT434",
+                        "MT435",
+                        "MT436"
+                    ],
+                    "operator": "<=",
+                    "text": "残余俯冲轰炸机",
+                    "count": 0
+                }
+            ]
+        }
     ],
     "eachArrive": [],
     "parallelDo": "",
-    "events": {},
+    "events": {
+        "6,13": [
+            "\t[伊吹萃香]\f[specialnpc.jpg,30,200,150,300]坏消息是，这帮鬼子都跟超雄一样，只要靠近它们就会直接冲上来板载。好消息是，鬼子极度缺乏有效的反坦克武器，哪怕是在那些“决战武器”里面，能打穿你的敌人也极其稀少。"
+        ]
+    },
     "changeFloor": {
         "7,0": {
             "floorId": "MT433",
@@ -340,20 +308,20 @@ main.floors.MT432=
     "cannotMove": {},
     "cannotMoveIn": {},
     "map": [
-    [150,645,646,645,150, 22,150, 91,150,645,648,701,648,645,150],
-    [150,647,646,647,150,519,150,695,150,150,150, 82,150,150,150],
-    [150,  0,710,  0,150,519,150,683,150,646,646,691,646,646,150],
+    [150,645,646,645,150, 22,150, 91,150,645,648,700,648,645,150],
+    [150,647,646,647,150,519,150,750,150,150,150, 82,150,150,150],
+    [150,  0,706,  0,150,519,150,690,150,646,646,747,646,646,150],
     [150,150, 82,150,150,684,150, 82,150,150,150, 81,150,150,150],
-    [518,683,  0,  0,689,685,  0,685,  0,684,  0,685,  0,683,689],
-    [150,150,150,150,150, 81,150,150,150,150,150,150,  0,150, 81],
+    [518,683,  0,747,691,685,  0,689,  0,684,  0,685,  0,683,689],
+    [150,150,150,150,150, 81,150,150,150,150,150,150,749,150, 81],
     [648,648,150,  0,518,518, 21,150, 21,518,  0, 81,684,150,693],
-    [647,647,150,683,150,150,150,150,150,150,684,150, 21,150,648],
-    [695,150,150,  0,518,150, 21,150, 21,  0,689,150,150,150,648],
-    [  0,690, 81,684,  0,  0,683,  0,683,150, 81,150, 21,150,645],
+    [647,647,150,689,150,150,150,150,150,150,689,150, 21,150,648],
+    [700,150,150,  0,749,150, 21,150, 21,  0,690,150,150,150,648],
+    [747,690, 81,684,  0,  0,683,  0,683,150, 81,150, 21,150,645],
     [150,150,150,150, 81,150,150, 86,150,150,  0,150, 21,150,645],
-    [145,145,647,518,690,150,613,  0,613,150,  0,689, 22,145,145],
-    [145,145,145,647,  0,150,613,  0,613,150,145,145,145,145,145],
-    [145,145,145,145,145,145,145,  0,145,145,145,145,145,145,145],
+    [145,145,647,518,690,150,610,  0,610,150,  0,689, 22,145,145],
+    [145,145,145,647,  0,150,610,  0,610,150,145,145,145,145,145],
+    [145,145,145,145,145,145,601,  0,145,145,145,145,145,145,145],
     [145,145,145,145,145,145,145,  0,145,145,145,145,145,145,145]
 ],
     "bgmap": [

@@ -25,7 +25,7 @@ main.floors.MT267=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        "\r[yellow]Mission 38 黑色星期四",
+        "\r[yellow]Mission 37 黑色星期四",
         {
             "type": "setValue",
             "name": "flag:escort",

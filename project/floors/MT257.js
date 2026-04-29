@@ -29,34 +29,6 @@ main.floors.MT257=
     "events": {
         "14,7": [
             {
-                "type": "unloadEquip",
-                "pos": 0
-            },
-            {
-                "type": "unloadEquip",
-                "pos": 1
-            },
-            {
-                "type": "unloadEquip",
-                "pos": 2
-            },
-            {
-                "type": "unloadEquip",
-                "pos": 3
-            },
-            {
-                "type": "unloadEquip",
-                "pos": 4
-            },
-            {
-                "type": "unloadEquip",
-                "pos": 5
-            },
-            {
-                "type": "unloadEquip",
-                "pos": 6
-            },
-            {
                 "type": "setValue",
                 "name": "flag:第35关通关",
                 "value": "1"

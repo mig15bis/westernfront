@@ -19,40 +19,14 @@ main.floors.MT436=
     "events": {
         "7,0": [
             {
-                "type": "function",
-                "function": "function(){\nflags.mission[59][0]=true\n}"
+                "type": "setValue",
+                "name": "flag:第58关通关",
+                "value": "1"
             },
             {
-                "type": "unloadEquip",
-                "pos": 0
-            },
-            {
-                "type": "unloadEquip",
-                "pos": 1
-            },
-            {
-                "type": "unloadEquip",
-                "pos": 2
-            },
-            {
-                "type": "unloadEquip",
-                "pos": 3
-            },
-            {
-                "type": "unloadEquip",
-                "pos": 4
-            },
-            {
-                "type": "unloadEquip",
-                "pos": 5
-            },
-            {
-                "type": "unloadEquip",
-                "pos": 6
-            },
-            {
-                "type": "function",
-                "function": "function(){\nflags.skillList=[0,0,0,0,0,0,0]\n}"
+                "type": "setValue",
+                "name": "flag:铝箔条",
+                "value": "0"
             },
             {
                 "type": "update"
@@ -62,7 +36,7 @@ main.floors.MT436=
                 "time": 500
             },
             {
-                "type": "hideStatusBar"
+                "type": "hideui"
             },
             {
                 "type": "update"
@@ -131,11 +105,6 @@ main.floors.MT436=
                             90
                         ],
                         "opacity": 1,
-                        "time": 500,
-                        "async": true
-                    },
-                    {
-                        "type": "sleep",
                         "time": 500
                     },
                     {
@@ -162,11 +131,6 @@ main.floors.MT436=
                                     90
                                 ],
                                 "opacity": 1,
-                                "time": 500,
-                                "async": true
-                            },
-                            {
-                                "type": "sleep",
                                 "time": 500
                             },
                             {
@@ -193,11 +157,6 @@ main.floors.MT436=
                                             90
                                         ],
                                         "opacity": 1,
-                                        "time": 500,
-                                        "async": true
-                                    },
-                                    {
-                                        "type": "sleep",
                                         "time": 500
                                     }
                                 ],
@@ -223,6 +182,9 @@ main.floors.MT436=
                 ],
                 "time": 500,
                 "keep": true
+            },
+            {
+                "type": "submitTask"
             },
             {
                 "type": "hideImage",
@@ -257,42 +219,49 @@ main.floors.MT436=
                 "value": "60"
             },
             {
-                "type": "choices",
-                "text": "\t[战斗即将接近尾声]只能有一支部队来给这场旷日持久的战争画上句号。你选择？（提示：如果选择美军，你的任务将是在占领东京时保留一部分军国主义残党，以便日后利用这份力量威胁亚洲。如果选择苏军，你的任务将是彻底清算日军的罪孽，避免军国主义畜生死灰复燃）",
-                "choices": [
+                "type": "while",
+                "condition": "(flag:final!==2)",
+                "data": [
                     {
-                        "text": "美国",
-                        "color": [
-                            0,
-                            0,
-                            255,
-                            1
-                        ],
-                        "action": [
+                        "type": "choices",
+                        "text": "\t[战斗即将接近尾声]只能有一支部队来给这场旷日持久的战争画上句号。你选择？（提示：如果选择美军，你的任务将是在占领东京时保留一部分军国主义残党，以便日后利用这份力量威胁亚洲。如果选择苏军，你的任务将是彻底清算日军的罪孽，避免军国主义畜生死灰复燃）",
+                        "choices": [
                             {
-                                "type": "setValue",
-                                "name": "flag:final",
-                                "value": "1"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "苏联",
-                        "color": [
-                            255,
-                            0,
-                            0,
-                            1
-                        ],
-                        "action": [
-                            {
-                                "type": "setValue",
-                                "name": "flag:final",
-                                "value": "2"
+                                "text": "美国",
+                                "color": [
+                                    0,
+                                    0,
+                                    255,
+                                    1
+                                ],
+                                "action": [
+                                    {
+                                        "type": "setValue",
+                                        "name": "flag:final",
+                                        "value": "1"
+                                    },
+                                    "\t[系统提示]考虑到本支线剧情过于政治敏感，为避免不必要的麻烦，作者最终决定取消这一支线任务。请重新选择。"
+                                ]
                             },
                             {
-                                "type": "setHeroIcon",
-                                "name": "hero2.png"
+                                "text": "苏联",
+                                "color": [
+                                    255,
+                                    0,
+                                    0,
+                                    1
+                                ],
+                                "action": [
+                                    {
+                                        "type": "setValue",
+                                        "name": "flag:final",
+                                        "value": "2"
+                                    },
+                                    {
+                                        "type": "setHeroIcon",
+                                        "name": "hero2.png"
+                                    }
+                                ]
                             }
                         ]
                     }
@@ -301,8 +270,60 @@ main.floors.MT436=
             {
                 "type": "confirm",
                 "text": "跳过剧情吗？",
-                "yes": [],
-                "no": []
+                "yes": [
+                    {
+                        "type": "if",
+                        "condition": "(flag:final===1)",
+                        "true": [
+                            {
+                                "type": "changeFloor",
+                                "floorId": "MT438",
+                                "loc": [
+                                    11,
+                                    7
+                                ],
+                                "direction": "left"
+                            }
+                        ],
+                        "false": [
+                            {
+                                "type": "changeFloor",
+                                "floorId": "MT445",
+                                "loc": [
+                                    7,
+                                    9
+                                ],
+                                "direction": "down"
+                            }
+                        ]
+                    }
+                ],
+                "no": [
+                    {
+                        "type": "if",
+                        "condition": "(flag:final===1)",
+                        "true": [
+                            {
+                                "type": "changeFloor",
+                                "floorId": "MT437",
+                                "loc": [
+                                    -1,
+                                    -1
+                                ]
+                            }
+                        ],
+                        "false": [
+                            {
+                                "type": "changeFloor",
+                                "floorId": "MT444",
+                                "loc": [
+                                    -1,
+                                    -1
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ]
     },
@@ -319,52 +340,23 @@ main.floors.MT436=
     "afterBattle": {},
     "afterGetItem": {},
     "afterOpenDoor": {},
-    "autoEvent": {
-        "6,0": {
-            "0": {
-                "condition": "core.maps.searchBlockWithFilter(x=>['步兵','反坦克炮','榴弹炮','高射炮','轻坦','中坦','重坦','坦歼'].includes(core.material.enemys[x?.event?.id]?.type),['MT432','MT433','MT434','MT435','MT436']).length===0",
-                "currentFloor": false,
-                "priority": 0,
-                "delayExecute": false,
-                "multiExecute": false,
-                "data": [
-                    {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[59][1]=true\n}"
-                    }
-                ]
-            },
-            "1": {
-                "condition": "core.maps.searchBlockWithFilter(x=>['战斗机','重型战斗机','俯冲轰炸机','鱼雷轰炸机','中型轰炸机'].includes(core.material.enemys[x?.event?.id]?.type),['MT432','MT433','MT434','MT435','MT436']).length===0",
-                "currentFloor": false,
-                "priority": 0,
-                "delayExecute": false,
-                "multiExecute": false,
-                "data": [
-                    {
-                        "type": "function",
-                        "function": "function(){\nflags.mission[59][2]=true\n}"
-                    }
-                ]
-            }
-        }
-    },
+    "autoEvent": {},
     "cannotMove": {},
     "cannotMoveIn": {},
     "map": [
     [ 21, 21,  2,  0,648,645,  2, 89,  2,645,648,  0,  2, 21, 21],
     [  2,687, 82,705,648,645,  2,694,  2,645,648,705, 82,687,  2],
-    [710,  0,  2,  0,648,645,  2,694,  2,645,648,  0,  2,  0,710],
+    [706,  0,  2,  0,648,645,  2,694,  2,645,648,  0,  2,  0,706],
     [ 81,  2,  2,  2,  2,  2,  2,693,  2,  2,  2,  2,  2,  2, 81],
-    [684,  0,691,  0,  2,647,  2,693,  2,647,  2,  0,691,  0,684],
+    [684,  0,691,750,  2,647,  2,693,  2,647,  2,750,691,  0,684],
     [  2,  2,  2,687,  2,647,  2,692,  2,647,  2,687,  2,  2,  2],
-    [646,  0,  2,  0,  2,647,687,  0,687,647,  2,  0,  2,  0,646],
+    [646,  0,  2,749,  2,647,687,749,687,647,  2,749,  2,  0,646],
     [646,700, 81,684,  2,  2,  2, 82,  2,  2,  2,684, 81,700,646],
-    [646,  0,  2,691,  0,  0,695,702,695,  0,  0,691,  2,  0,646],
+    [646,  0,  2,691,  0,747,748,702,748,747,  0,691,  2,  0,646],
     [  2,  2,  2, 81,  2,  2,  2, 81,  2,  2,  2, 81,  2,  2,  2],
     [  0,701,  0,691,686,685,  2, 21,  2,685,686,691,  0,701,  0],
-    [687,  2,  2,  2,  2, 21,  2,695,  2, 21,  2,  2,  2,  2,687],
-    [  0,  2,524,524,  2, 21,  2,695,  2, 21,  2,524,524,  2,  0],
+    [687,  2,  2,  2,  2, 21,  2,747,  2, 21,  2,  2,  2,  2,687],
+    [  0,  2,524,524,  2, 21,  2,747,  2, 21,  2,524,524,  2,  0],
     [684,  2,518,518,  2, 22,  2,  0,  2, 22,  2,518,518,  2,684],
     [  0, 81,692,  0,  2, 22,  2, 93,  2, 22,  2,  0,692, 81,  0]
 ],

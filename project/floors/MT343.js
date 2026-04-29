@@ -22,7 +22,7 @@ main.floors.MT343=
             "type": "setCurtain",
             "time": 500
         },
-        "\r[yellow]Mission 47 会飞的炸弹",
+        "\r[yellow]Mission 46 会飞的炸弹",
         "\t[盟军指挥官,hero]开始进攻，把敌人打回他们的老家去！",
         {
             "type": "playSound",

@@ -3000,6 +3000,10 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				Debuff.push('铝' + flags.铝箔条);
 				Debuffcolor.push('#FFD700');
 			}
+			if (flags.xijun) {
+				Debuff.push('感染' + flags.xijun);
+				Debuffcolor.push('#00FF00');
+			}
 			if (core.domStyle.isVertical) { //竖屏
 				core.clearMap(uictx, 161, 681, 160, 50);
 				core.fillRoundRect(uictx, 168, 688, 135, 35, 15, "rgba(0,0,0,0.5)") //任务底板								 
@@ -4972,22 +4976,21 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 											if (core.getBlockCls(X + a, Y + b, floorId) === 'enemys') { //是怪
 												if (!core.hasSpecial(core.getBlockId(X + a, Y + b), 57) && core.plugin.Army.includes(core.material.enemys[core.getBlockId(X + a, Y + b)].type)) { //主将
 													if (!flags.aoe[(X + a) + ',' + (Y + b) + ',' + core.status.floorId]) {
-														flags.aoe[(X + a) + ',' + (Y + b) + ',' + floorId] = enemyhp * 0.4;
+														flags.aoe[(X + a) + ',' + (Y + b) + ',' + floorId] = core.getEnemyInfo(core.material.enemys[core.getBlockId(X + a, Y + b)]).hp * 0.4;
 														if (core.getEnemyInfo(core.getBlockId(X + a, Y + b), null, X + a, Y + b).hp <= 0) core.kill(X + a, Y + b);
 													} else {
-														flags.aoe[(X + a) + ',' + (Y + b) + ',' + floorId] += enemyhp * 0.4;
+														flags.aoe[(X + a) + ',' + (Y + b) + ',' + floorId] += core.getEnemyInfo(core.material.enemys[core.getBlockId(X + a, Y + b)]).hp * 0.4;
 														if (core.getEnemyInfo(core.getBlockId(X + a, Y + b), null, X + a, Y + b).hp <= 0) core.kill(X + a, Y + b);
 													}
 												} else if (core.plugin.Army.includes(core.material.enemys[core.getBlockId(X + a, Y + b)].type)) { //常规怪
 													if (!flags.aoe[(X + a) + ',' + (Y + b) + ',' + core.status.floorId]) {
-														flags.aoe[(X + a) + ',' + (Y + b) + ',' + floorId] = enemyhp * 0.8;
+														flags.aoe[(X + a) + ',' + (Y + b) + ',' + floorId] = core.getEnemyInfo(core.material.enemys[core.getBlockId(X + a, Y + b)]).hp * 0.8;
 														if (core.getEnemyInfo(core.getBlockId(X + a, Y + b), null, X + a, Y + b).hp <= 0) core.kill(X + a, Y + b);
 													} else {
-														flags.aoe[(X + a) + ',' + (Y + b) + ',' + floorId] += enemyhp * 0.8;
+														flags.aoe[(X + a) + ',' + (Y + b) + ',' + floorId] += core.getEnemyInfo(core.material.enemys[core.getBlockId(X + a, Y + b)]).hp * 0.8;
 														if (core.getEnemyInfo(core.getBlockId(X + a, Y + b), null, X + a, Y + b).hp <= 0) core.kill(X + a, Y + b);
 													}
 												}
-												if (core.getEnemyInfo(core.getBlockId(X + a, Y + b), null, X + a, Y + b).hp <= 0) core.kill(X + a, Y + b)
 											} else if (core.getBlockCls(X + a, Y + b) === 'animates' || core.getBlockCls(X + a, Y + b) === 'terrains' || core.getBlockCls(X + a, Y + b) === 'npcs' || core.getBlockCls(X + a, Y + b) === 'autotile' || core.getBlockCls(X + a, Y + b) === 'tileset') { //是墙
 												if (core.getBlock(X + a, Y + b).event.canBreak) {
 													core.removeBlock(X + a, Y + b);
@@ -5041,22 +5044,21 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 													if (core.getBlockCls(X + a, Y + b, floorId) === 'enemys') { //是怪
 														if (!core.hasSpecial(core.getBlockId(X + a, Y + b), 57) && core.plugin.Army.includes(core.material.enemys[core.getBlockId(X + a, Y + b)].type)) { //主将
 															if (!flags.aoe[(X + a) + ',' + (Y + b) + ',' + core.status.floorId]) {
-																flags.aoe[(X + a) + ',' + (Y + b) + ',' + floorId] = enemyhp * 0.4;
+																flags.aoe[(X + a) + ',' + (Y + b) + ',' + floorId] = core.getEnemyInfo(core.material.enemys[core.getBlockId(X + a, Y + b)]).hp * 0.4;
 																if (core.getEnemyInfo(core.getBlockId(X + a, Y + b), null, X + a, Y + b).hp <= 0) core.kill(X + a, Y + b);
 															} else {
-																flags.aoe[(X + a) + ',' + (Y + b) + ',' + floorId] += enemyhp * 0.4;
+																flags.aoe[(X + a) + ',' + (Y + b) + ',' + floorId] += core.getEnemyInfo(core.material.enemys[core.getBlockId(X + a, Y + b)]).hp * 0.4;
 																if (core.getEnemyInfo(core.getBlockId(X + a, Y + b), null, X + a, Y + b).hp <= 0) core.kill(X + a, Y + b);
 															}
 														} else if (core.plugin.Army.includes(core.material.enemys[core.getBlockId(X + a, Y + b)].type)) { //常规怪
 															if (!flags.aoe[(X + a) + ',' + (Y + b) + ',' + core.status.floorId]) {
-																flags.aoe[(X + a) + ',' + (Y + b) + ',' + floorId] = enemyhp * 0.8;
+																flags.aoe[(X + a) + ',' + (Y + b) + ',' + floorId] = core.getEnemyInfo(core.material.enemys[core.getBlockId(X + a, Y + b)]).hp * 0.8;
 																if (core.getEnemyInfo(core.getBlockId(X + a, Y + b), null, X + a, Y + b).hp <= 0) core.kill(X + a, Y + b);
 															} else {
-																flags.aoe[(X + a) + ',' + (Y + b) + ',' + floorId] += enemyhp * 0.8;
+																flags.aoe[(X + a) + ',' + (Y + b) + ',' + floorId] += core.getEnemyInfo(core.material.enemys[core.getBlockId(X + a, Y + b)]).hp * 0.8;
 																if (core.getEnemyInfo(core.getBlockId(X + a, Y + b), null, X + a, Y + b).hp <= 0) core.kill(X + a, Y + b);
 															}
 														}
-														if (core.getEnemyInfo(core.getBlockId(X + a, Y + b), null, X + a, Y + b).hp <= 0) core.kill(X + a, Y + b)
 													} else if (core.getBlockCls(X + a, Y + b) === 'animates' || core.getBlockCls(X + a, Y + b) === 'terrains' || core.getBlockCls(X + a, Y + b) === 'npcs' || core.getBlockCls(X + a, Y + b) === 'autotile' || core.getBlockCls(X + a, Y + b) === 'tileset') { //是墙
 														if (core.getBlock(X + a, Y + b).event.canBreak) {
 															core.removeBlock(X + a, Y + b);

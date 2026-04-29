@@ -22,7 +22,7 @@ main.floors.MT226=
             "type": "setCurtain",
             "time": 500
         },
-        "\r[yellow]Mission 33 沙中猛虎",
+        "\r[yellow]Mission 32 沙中猛虎",
         {
             "type": "text",
             "text": "\t[蒙哥马利]\f[montgomary.png,0,310]我们的兵力数量呈优势。空军开路，地面部队集中兵力，从单点突破马雷特防线。",

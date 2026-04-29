@@ -32,7 +32,7 @@ main.floors.MT359=
             "type": "setCurtain",
             "time": 500
         },
-        "\r[yellow]Mission 49 遥控炸弹",
+        "\r[yellow]Mission 48 遥控炸弹",
         {
             "type": "playSound",
             "name": "xinxinmagic.mp3"

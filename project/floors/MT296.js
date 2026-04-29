@@ -25,7 +25,7 @@ main.floors.MT296=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        "\r[yellow]Mission 41 戈林？迈耶！",
+        "\r[yellow]Mission 40 戈林？迈耶！",
         {
             "type": "setValue",
             "name": "flag:escort",

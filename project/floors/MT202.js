@@ -22,7 +22,7 @@ main.floors.MT202=
             "type": "setCurtain",
             "time": 500
         },
-        "\r[yellow]Mission 30 火炬行动",
+        "\r[yellow]Mission 29 火炬行动",
         {
             "type": "text",
             "text": "\t[艾森豪威尔]\f[eisenhower.png,0,310]“火炬行动”已经开始，这是我们美军在西线的第一次亮相，请各位务必认真对待。",

@@ -22,7 +22,7 @@ main.floors.MT284=
             "type": "setCurtain",
             "time": 500
         },
-        "\r[yellow]Mission 40 卡西诺绞肉机",
+        "\r[yellow]Mission 39 卡西诺绞肉机",
         {
             "type": "text",
             "text": "\t[克拉克]\f[clark.png,0,310]卡西诺山的敌人必须被拔除，这样我才能成为第一个进入罗马的将军！现在，开始渡河！",

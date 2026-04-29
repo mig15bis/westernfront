@@ -32,6 +32,11 @@ main.floors.MT363=
             },
             {
                 "type": "setValue",
+                "name": "flag:铝箔条",
+                "value": "0"
+            },
+            {
+                "type": "setValue",
                 "name": "item:icePickaxe",
                 "value": "0"
             },
@@ -39,34 +44,6 @@ main.floors.MT363=
                 "type": "setValue",
                 "name": "flag:第48关通关",
                 "value": "1"
-            },
-            {
-                "type": "unloadEquip",
-                "pos": 0
-            },
-            {
-                "type": "unloadEquip",
-                "pos": 1
-            },
-            {
-                "type": "unloadEquip",
-                "pos": 2
-            },
-            {
-                "type": "unloadEquip",
-                "pos": 3
-            },
-            {
-                "type": "unloadEquip",
-                "pos": 4
-            },
-            {
-                "type": "unloadEquip",
-                "pos": 5
-            },
-            {
-                "type": "unloadEquip",
-                "pos": 6
             },
             {
                 "type": "update"

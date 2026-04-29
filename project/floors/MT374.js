@@ -22,7 +22,7 @@ main.floors.MT374=
             "type": "setCurtain",
             "time": 500
         },
-        "\r[yellow]Mission 51 北方的孤独女王",
+        "\r[yellow]Mission 50 北方的孤独女王",
         "\t[盟军指挥官,hero]舰队集结完毕，“钨”作战正式开始。扫清拦路的敌人，向挪威进发！",
         {
             "type": "playSound",

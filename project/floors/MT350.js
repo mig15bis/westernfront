@@ -33,7 +33,7 @@ main.floors.MT350=
             "type": "setCurtain",
             "time": 500
         },
-        "\r[yellow]Mission 48 速度与激情",
+        "\r[yellow]Mission 47 速度与激情",
         {
             "type": "playSound",
             "name": "bomber.mp3"

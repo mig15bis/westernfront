@@ -29,7 +29,7 @@ main.floors.MT417=
             "type": "setCurtain",
             "time": 500
         },
-        "\r[yellow]Mission 57 燃烧的天空",
+        "\r[yellow]Mission 56 燃烧的天空",
         "\t[盟军指挥官,hero]空中发现敌机，制空编队跟我来，其他人去扫射机场。",
         {
             "type": "playSound",

@@ -22,7 +22,7 @@ main.floors.MT241=
             "type": "setCurtain",
             "time": 500
         },
-        "\r[yellow]Mission 35 决战突尼斯",
+        "\r[yellow]Mission 34 决战突尼斯",
         {
             "type": "text",
             "text": "\t[蒙哥马利]\f[montgomary.png,0,310]皇家陆军沿滨海方向进攻，做好巷战准备，全力拿下突尼斯！",

@@ -22,7 +22,7 @@ main.floors.MT305=
             "type": "setCurtain",
             "time": 500
         },
-        "\r[yellow]Mission 42 欺诈行动",
+        "\r[yellow]Mission 41 欺诈行动",
         "\t[盟军指挥官,hero]已经能看到加莱海滩了。各单位，冲出云层，自由攻击。注意提防敌人的战斗机。",
         {
             "type": "playSound",

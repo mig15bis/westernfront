@@ -22,7 +22,7 @@ main.floors.MT388=
             "type": "setCurtain",
             "time": 500
         },
-        "\r[yellow]Mission 53 突出部之战",
+        "\r[yellow]Mission 52 突出部之战",
         "\t[盟军指挥官,hero]坚持住！不能让敌人突破防线！",
         {
             "type": "text",

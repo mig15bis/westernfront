@@ -22,7 +22,7 @@ main.floors.MT172=
             "type": "setCurtain",
             "time": 500
         },
-        "\r[yellow]Mission 26 第一次阿拉曼战役",
+        "\r[yellow]Mission 25 第一次阿拉曼战役",
         {
             "type": "text",
             "text": "\t[奥金莱克]\f[auchinleck.png,0,310]阿拉曼防线是我们最后的防线，一旦这里被攻破，通往苏伊士运河的道路就是畅通无阻的。",

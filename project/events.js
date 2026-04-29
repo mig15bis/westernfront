@@ -1497,64 +1497,50 @@ var events_c12a15a8_c380_4b28_8144_256cba95f760 =
 								]
 							},
 							{
-								"text": "退役 M4A3E2巨无霸（6000）",
+								"text": "退役 M4A3E2巨无霸（9000）",
 								"icon": "m4a3e2",
 								"need": "core.hasItem('m4a3e2')&&!core.hasEquip('m4a3e2')",
 								"condition": "core.hasItem('m4a3e2')&&!core.hasEquip('m4a3e2')",
 								"action": [
 									{
-										"type": "confirm",
-										"text": "该装备可改造，确定直接出售？",
-										"yes": [
-											{
-												"type": "playSound",
-												"name": "shop.mp3"
-											},
-											{
-												"type": "setValue",
-												"name": "item:m4a3e2",
-												"operator": "-=",
-												"value": "1"
-											},
-											{
-												"type": "setValue",
-												"name": "status:money",
-												"operator": "+=",
-												"value": "6000"
-											}
-										],
-										"no": []
+										"type": "playSound",
+										"name": "shop.mp3"
+									},
+									{
+										"type": "setValue",
+										"name": "item:m4a3e2",
+										"operator": "-=",
+										"value": "1"
+									},
+									{
+										"type": "setValue",
+										"name": "status:money",
+										"operator": "+=",
+										"value": "9000"
 									}
 								]
 							},
 							{
-								"text": "退役 谢尔曼“萤火虫”（9000）",
+								"text": "退役 谢尔曼“萤火虫”（13500）",
 								"icon": "firefly",
 								"need": "core.hasItem('firefly')&&!core.hasEquip('firefly')",
 								"condition": "core.hasItem('firefly')&&!core.hasEquip('firefly')",
 								"action": [
 									{
-										"type": "confirm",
-										"text": "该装备可改造，确定直接出售？",
-										"yes": [
-											{
-												"type": "playSound",
-												"name": "shop.mp3"
-											},
-											{
-												"type": "setValue",
-												"name": "item:firefly",
-												"operator": "-=",
-												"value": "1"
-											},
-											{
-												"type": "setValue",
-												"name": "status:money",
-												"operator": "+=",
-												"value": "9000"
-											}
-										],
-										"no": []
+										"type": "playSound",
+										"name": "shop.mp3"
+									},
+									{
+										"type": "setValue",
+										"name": "item:firefly",
+										"operator": "-=",
+										"value": "1"
+									},
+									{
+										"type": "setValue",
+										"name": "status:money",
+										"operator": "+=",
+										"value": "13500"
 									}
 								]
 							},

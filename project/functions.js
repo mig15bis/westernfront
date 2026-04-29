@@ -377,20 +377,6 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		delete flags['空中打击'];
 	}
 
-	//地狱猫·安全返航
-	if (ff === 'f6f5' && core.status.hero.hp < core.status.hero.hpmax * 0.3) {
-		core.status.hero.hp += core.status.hero.hpmax * 0.05;
-	}
-	if (bb === 'essex' && core.status.hero.hp < core.status.hero.hpmax * 0.3) { //埃塞克斯舰载机
-		core.status.hero.hp += core.status.hero.hpmax * 0.05;
-	}
-	if (flags.ussrair === true) {
-		flags.ussrair = false;
-	}
-	if (ff === 'la9' && core.status.hero.hp < core.status.hero.hpmax * 0.3) {
-		core.status.hero.hp += core.status.hero.hpmax * 0.1;
-		flags.ussrair = true;
-	}
 	//直掩
 	/*core.searchBlockWithFilter(block => {
 		if (!block || !block.event.cls.startsWith("enemy"))
@@ -445,6 +431,20 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 				// 战斗失败
 			}
 		}
+	}
+	//地狱猫·安全返航
+	if (ff === 'f6f5' && core.status.hero.hp < core.getRealStatus('hpmax') * 0.3) {
+		core.status.hero.hp += core.getRealStatus('hpmax') * 0.05;
+	}
+	if (bb === 'essex' && core.status.hero.hp < core.getRealStatus('hpmax') * 0.3) { //埃塞克斯舰载机
+		core.status.hero.hp += core.getRealStatus('hpmax') * 0.05;
+	}
+	if (flags.ussrair === true) {
+		flags.ussrair = false;
+	}
+	if (ff === 'la9' && core.status.hero.hp < core.getRealStatus('hpmax') * 0.3) {
+		core.status.hero.hp += core.getRealStatus('hpmax') * 0.1;
+		flags.ussrair = true;
 	}
 	//台风攻击机·纵深打击
 	if (fb === 'typhoon') {
@@ -970,7 +970,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		[50, "遥控", "该敌人控制着“弗里茨X”导弹进行攻击。被摧毁后，“弗里茨X”就会失控坠毁"],
 		[51, "歼灭", "主角经过该敌人十字范围内1格时，若生命值低于10%生命上限，则会立即死亡", "#ff0000"],
 		[52, "包夹", "主角站在两个该敌人中间时，遭受这两个敌人的一次普通攻击", "#c677dd"],
-		[54, "细菌弹", "731部队研制成果，沾满了中国人的鲜血。战后施加1层“感染”，每层使主角在接下来的战斗之后额外失去1%生命值，无法解除。"],
+		[54, "细菌弹", "731部队研制成果，沾满了中国人的鲜血。战后施加1层“感染”，每层使主角在接下来的战斗之后额外失去1%生命值，无法解除。", "#00ff00"],
 		[55, "沙漠军团", "不会受到“炎热debuff”的负面影响", "#bdb76b"],
 		[56, "狙击", "主角与该敌人发生战斗时，立即遭受一次该敌人2倍攻击力的伤害", "#ff8c00"],
 		[57, "主将", "主角必须消灭当前地图所有杂兵后才可攻击主将", "#00ff00"],
@@ -1568,6 +1568,8 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		} else if (tk === 'm26pershing' && (mon_skillNum.type === '步兵' || mon_skillNum.type === '反坦克炮' || mon_skillNum.type === '榴弹炮' || mon_skillNum.type === '高射炮')) { //潘兴
 			beilv *= 1.5;
 			finalDamage *= 0.6;
+		} else if (tk === 'm26pershing' && istank) {
+			beilv *= 1.2;
 		}
 		//态势回合计算	
 		if (taishi === "劣势") {
@@ -1854,6 +1856,8 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		hvar = mon_skillNum.type === '步兵' || mon_skillNum.type === '反坦克炮' || mon_skillNum.type === '榴弹炮' || mon_skillNum.type === '高射炮' || mon_skillNum.type === '驱逐',
 		rp3 = mon_skillNum.type === '轻坦' || mon_skillNum.type === '中坦' || mon_skillNum.type === '重坦' || mon_skillNum.type === '坦歼' || mon_skillNum.type === '建筑',
 		p51lianji = false,
+		hasla9 = (ff === 'la9') ? 1 : 0,
+		la9beilv = 1,
 		radaron = ((fb === "beautifighter" || fb === "mosquito" || fb === 'p61') || (bb === 'essex' || bb === "enterprise") || lb === 'tbf') && core.hasSpecial(mon_special, 1);
 	let monsk30 = 1,
 		monsk36 = 1,
@@ -2422,11 +2426,9 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 			hero_bomb *= 1.3;
 			hero_skytorpedo *= 1.3;
 		}
-		if (ff === 'la9') { //拉9·一击必杀
+		if (hasla9) { //拉9·一击必杀
 			if (turn === 1) {
-				beilv *= 3;
-			} else {
-				beilv *= 0.9;
+				la9beilv = 3;
 			}
 		}
 		/*if (core.hasSpecial(mon_special, 36)) { //技能36：防雷带
@@ -2446,7 +2448,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		}*/
 		hero_bomb *= monsk87;
 
-		hero_perDamage += (hero_common + hero_dc + hero_rocket + hero_bomb + hero_torpedo + hero_skytorpedo + hero_main) * beilv; //总伤计算
+		hero_perDamage += (hero_common + hero_dc + hero_rocket + hero_bomb + hero_torpedo + hero_skytorpedo + hero_main) * beilv * la9beilv; //总伤计算
 		if (p51lianji) { //P51连击
 			hero_perDamage *= 2;
 		}
@@ -2647,7 +2649,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 		finalDamage *= 1.25;
 	}
 	if (core.hasSpecial(mon_special, 82) && tk !== 'is3') { //万岁冲锋
-		finalDamage = Math.min(0.9, finalDamage);
+		finalDamage = Math.max(0.9, finalDamage);
 	}
 	damage *= finalDamage;
 	damage *= burndamage;

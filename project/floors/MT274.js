@@ -437,34 +437,6 @@ main.floors.MT274=
         "\t[机腹球形炮塔机枪手,N622]敌机！两点钟方向！他们又来了！",
         "\t[盟军指挥官,hero]见鬼……全体机枪手，再次准备战斗！",
         {
-            "type": "unloadEquip",
-            "pos": 0
-        },
-        {
-            "type": "unloadEquip",
-            "pos": 1
-        },
-        {
-            "type": "unloadEquip",
-            "pos": 2
-        },
-        {
-            "type": "unloadEquip",
-            "pos": 3
-        },
-        {
-            "type": "unloadEquip",
-            "pos": 4
-        },
-        {
-            "type": "unloadEquip",
-            "pos": 5
-        },
-        {
-            "type": "unloadEquip",
-            "pos": 6
-        },
-        {
             "type": "update"
         },
         {

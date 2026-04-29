@@ -22,7 +22,7 @@ main.floors.MT410=
             "type": "setCurtain",
             "time": 500
         },
-        "\r[yellow]Mission 56 柏林之路",
+        "\r[yellow]Mission 55 柏林之路",
         "\t[希特勒]那是我的命令！让斯坦纳进攻是我的命令！你们这群懦夫！叛徒！饭桶！你们这些将军都是德国的败类！现在完了，全完了！剩下的只有死亡！",
         {
             "type": "text",

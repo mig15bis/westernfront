@@ -32,7 +32,7 @@ main.floors.MT277=
             "name": "flag:友军血量",
             "value": "3000000"
         },
-        "\r[yellow]Mission 39 可敬的对手",
+        "\r[yellow]Mission 38 可敬的对手",
         {
             "type": "closeDoor",
             "id": "specialDoor",

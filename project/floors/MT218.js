@@ -274,7 +274,7 @@ main.floors.MT218=
             "name": "lavaDamage",
             "value": 40000
         },
-        "\r[yellow]Mission 32 凯赛林隘口战役",
+        "\r[yellow]Mission 31 凯赛林隘口战役",
         {
             "type": "sleep",
             "time": 500

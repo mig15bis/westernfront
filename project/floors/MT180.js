@@ -22,7 +22,7 @@ main.floors.MT180=
             "type": "setCurtain",
             "time": 500
         },
-        "\r[yellow]Mission 27 魔鬼花园",
+        "\r[yellow]Mission 26 魔鬼花园",
         {
             "type": "text",
             "text": "\t[蒙哥马利]\f[montgomary.png,0,310]今晚注定是个不眠之夜，对敌人和我们来说都是。",

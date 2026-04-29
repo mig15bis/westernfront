@@ -22,7 +22,7 @@ main.floors.MT403=
             "type": "setCurtain",
             "time": 500
         },
-        "\r[yellow]Mission 55 易北河会师",
+        "\r[yellow]Mission 54 易北河会师",
         {
             "type": "playSound",
             "name": "xinxinmagic.mp3"
