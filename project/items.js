@@ -283,7 +283,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"coin": {
 		"cls": "constants",
 		"name": "战争财",
-		"text": "美国可以说是二战最大的受益国，依靠各种手段大发战争财，并奠定战后金融霸权地位。\n持有时，战斗获得三倍黄金和经验（可与其他增收手段叠加或叠乘）。"
+		"text": "美国可以说是二战最大的受益国，依靠各种手段大发战争财，并奠定战后金融霸权地位。\n持有时，战斗获得三倍黄金和经验（可与其他增收手段叠加或叠乘），拾取获得的黄金数量翻倍。"
 	},
 	"freezeBadge": {
 		"cls": "constants",
@@ -538,7 +538,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"canUseItemEffect": "true",
 		"text": "，黄金+500",
 		"itemEffectTip": "，黄金+500",
-		"itemEffect": "core.status.hero.money += 500;"
+		"itemEffect": "core.status.hero.money += 500 * (core.hasItem('coin')) ? 2 : 1;"
 	},
 	"I342": {
 		"cls": "items",
@@ -896,7 +896,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "轻巡·爱丁堡号",
 		"canUseItemEffect": "true",
-		"text": "攻+200，雷击+100，鱼雷管+1。\n被动：黄金护卫：装备时，每次战后额外获得2枚黄金。",
+		"text": "攻+200，雷击+100，鱼雷管+1。\n被动：\n黄金护卫：装备时，每次战后额外获得2枚黄金。",
 		"equip": {
 			"type": 2,
 			"value": {
@@ -1159,7 +1159,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "飓风MK1",
 		"canUseItemEffect": "true",
-		"text": "攻+40。每回合对轰炸机追加80点伤害。",
+		"text": "攻+40。\n被动：\n捍卫领空：每回合对轰炸机追加80点伤害。",
 		"equip": {
 			"type": 4,
 			"value": {
@@ -1172,7 +1172,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "喷火MK1",
 		"canUseItemEffect": "true",
-		"text": "攻击+60，与战斗机作战时，每回合额外追加10%伤害",
+		"text": "攻击+60。\n被动：\n不列颠之鹰：与战斗机作战时，每回合额外追加10%伤害",
 		"equip": {
 			"type": 4,
 			"value": {
@@ -1183,7 +1183,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	},
 	"hurricanemk2": {
 		"cls": "equips",
-		"name": "飓风MK2",
+		"name": "飓风MK2C",
 		"canUseItemEffect": "true",
 		"text": "装备属性：攻+100。\n被动：\n机炮扫射：攻击对象为轰炸机或装甲小于20的坦克时，每回合普攻伤害额外增加20%",
 		"equip": {
@@ -1397,7 +1397,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "剑鱼式鱼雷机",
 		"canUseItemEffect": "true",
-		"text": "无属性加成。挂载：1×MK12鱼雷 或 3×200磅炸弹\n对舰攻击时，每5回合投放3枚鱼雷。对地攻击时，每5回合投放一轮炸弹，每颗炸弹伤害为0.6倍攻击力.",
+		"text": "无属性加成。挂载：1×MK12鱼雷 或 3×200磅炸弹\n对舰攻击时，每5回合投放3枚鱼雷。对地攻击时，每5回合投放一轮炸弹，每颗炸弹伤害为0.6倍攻击力。",
 		"equip": {
 			"type": 6,
 			"value": {},
@@ -1562,7 +1562,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"canUseItemEffect": "true",
 		"text": "，黄金+5",
 		"itemEffectTip": "，黄金+5",
-		"itemEffect": "core.status.hero.money += 5;"
+		"itemEffect": "core.status.hero.money += 5 * (core.hasItem('coin')) ? 2 : 1;"
 	},
 	"I521": {
 		"cls": "items",
@@ -1570,7 +1570,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"canUseItemEffect": "true",
 		"text": "，黄金+10",
 		"itemEffectTip": "，黄金+10",
-		"itemEffect": "core.status.hero.money += 10;"
+		"itemEffect": "core.status.hero.money += 10 * (core.hasItem('coin')) ? 2 : 1;"
 	},
 	"I522": {
 		"cls": "items",
@@ -1578,13 +1578,13 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"canUseItemEffect": "true",
 		"text": "，黄金+50",
 		"itemEffectTip": "，黄金+50",
-		"itemEffect": "core.status.hero.money += 50;"
+		"itemEffect": "core.status.hero.money += 50 * (core.hasItem('coin')) ? 2 : 1;"
 	},
 	"I523": {
 		"cls": "items",
 		"name": "金块",
 		"canUseItemEffect": "true",
-		"itemEffect": "core.status.hero.money += 100;",
+		"itemEffect": "core.status.hero.money += 100 * (core.hasItem('coin')) ? 2 : 1;",
 		"text": "，黄金+100",
 		"itemEffectTip": "，黄金+100"
 	},
@@ -1594,7 +1594,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"canUseItemEffect": "true",
 		"text": "，黄金+1000",
 		"itemEffectTip": "，黄金+1000",
-		"itemEffect": "core.status.hero.money += 1000;"
+		"itemEffect": "core.status.hero.money += 1000 * (core.hasItem('coin')) ? 2 : 1;"
 	},
 	"red2Gem": {
 		"cls": "items",
@@ -2064,7 +2064,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "喷火MK9",
 		"canUseItemEffect": "true",
-		"text": "挂载：8×RP-3火箭弹\n属性：攻击＋400后额外加40%。首回合发射一轮火箭弹，每发火箭弹伤害为0.1倍攻击力（对装甲、建筑增伤20%）\n被动：\n不列颠之鹰II：与敌方战斗机作战时，普攻伤害增加0.2倍后勤值。\n空中掩护：已夺取制空权时，制空权加成改为20%。",
+		"text": "挂载：8×RP-3火箭弹\n属性：攻击＋400后额外加40%。首回合发射一轮火箭弹，每发火箭弹伤害为0.1倍攻击力（对装甲、建筑增伤20%）\n被动：\n不列颠之鹰III：与敌方战斗机作战时，普攻伤害增加0.2倍后勤值。\n空中掩护：已夺取制空权时，制空权加成改为20%。",
 		"equip": {
 			"type": 4,
 			"value": {
@@ -2079,7 +2079,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "喷火MK5",
 		"canUseItemEffect": "true",
-		"text": "攻击+170后额外加20%。\n被动：\n不列颠之鹰：与敌方战斗机作战时，每回合增伤10%。此外，如果回合结束时该敌机血量高于60%，额外受到等同于我方攻击力15%的伤害。",
+		"text": "攻击+170后额外加20%。\n被动：\n不列颠之鹰II：与敌方战斗机作战时，每回合增伤10%。此外，如果回合结束时该敌机血量高于60%，额外受到等同于我方攻击力15%的伤害。",
 		"equip": {
 			"type": 4,
 			"value": {

@@ -12,7 +12,7 @@ main.floors.MT121=
     "images": [],
     "ratio": 1,
     "defaultGround": "england",
-    "bgm": "gaijin3.mp3",
+    "bgm": "gaijin5.mp3",
     "firstArrive": [
         {
             "type": "setCurtain",

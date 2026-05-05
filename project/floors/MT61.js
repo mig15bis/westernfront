@@ -12,7 +12,7 @@ main.floors.MT61=
     "images": [],
     "ratio": 1,
     "defaultGround": "ground",
-    "bgm": "wots2.mp3",
+    "bgm": "gaijin2.mp3",
     "firstArrive": [
         {
             "type": "setCurtain",

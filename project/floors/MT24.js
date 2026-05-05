@@ -12,7 +12,7 @@ main.floors.MT24=
     "images": [],
     "ratio": 1,
     "defaultGround": "grass2",
-    "bgm": "cao4.mp3",
+    "bgm": "cao2.mp3",
     "firstArrive": [],
     "eachArrive": [],
     "parallelDo": "",

@@ -12,7 +12,7 @@ main.floors.MT401=
     "images": [],
     "ratio": 1,
     "defaultGround": "ground6",
-    "bgm": "gaijin3.mp3",
+    "bgm": "gaijin5.mp3",
     "firstArrive": [
         {
             "type": "setCurtain",

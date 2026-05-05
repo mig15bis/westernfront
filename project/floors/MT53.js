@@ -12,7 +12,7 @@ main.floors.MT53=
     "images": [],
     "ratio": 1,
     "defaultGround": "ground",
-    "bgm": "gaijin3.mp3",
+    "bgm": "gaijin5.mp3",
     "firstArrive": [
         {
             "type": "setCurtain",

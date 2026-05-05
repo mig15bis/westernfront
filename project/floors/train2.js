@@ -745,6 +745,6 @@ main.floors.train2=
     "fgmap": [
 
 ],
-    "bgm": "ConquestofParadise.mp3",
+    "bgm": "relax.mp3",
     "area": "陆地"
 }

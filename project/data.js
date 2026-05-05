@@ -722,7 +722,6 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"15.png",
 			"AirfieldBombardment.png",
 			"CityBombardment.png",
-			"a26.jpg",
 			"abstract.png",
 			"activesonar.jpg",
 			"aircraft1.png",
@@ -736,7 +735,6 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"aircraft9.png",
 			"alexanda.png",
 			"anyum.png",
-			"arnorid.png",
 			"attackbismark.jpg",
 			"auchinleck.png",
 			"b17.jpg",
@@ -751,10 +749,9 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"beautifighter.jpg",
 			"benson.jpg",
 			"bg.jpg",
+			"bg2.png",
 			"black.png",
 			"blenheim.png",
-			"bock.png",
-			"bradley.png",
 			"brave.png",
 			"c200.jpg",
 			"c202.jpg",
@@ -773,7 +770,6 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"chapter8.jpg",
 			"chapter9.jpg",
 			"churchill3.jpg",
-			"churchill7.jpg",
 			"clark.png",
 			"classe.jpg",
 			"classj.jpg",
@@ -788,7 +784,6 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"cvstrike.png",
 			"deutschland.jpg",
 			"donitz.png",
-			"dorsetshire.jpg",
 			"dowdin.png",
 			"dragon.png",
 			"eagle.jpg",
@@ -819,11 +814,9 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"gaulle.png",
 			"gorlin.png",
 			"graziani.png",
-			"gridley.jpg",
 			"guderian.png",
 			"h35.jpg",
 			"halsey.jpg",
-			"heinrich.png",
 			"hero.png",
 			"hero2.png",
 			"hipper.jpg",
@@ -839,9 +832,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"kinggeorgev.jpg",
 			"lancaster.jpg",
 			"leclere.png",
-			"leeb.png",
 			"londoninfire.jpg",
-			"lundstedt.png",
 			"m26.jpg",
 			"m3grant.jpg",
 			"m4.jpg",
@@ -851,7 +842,6 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"macarthur.png",
 			"mahan.jpg",
 			"manhattan.jpg",
-			"manstein.png",
 			"matilda.jpg",
 			"messer.png",
 			"model.png",
@@ -875,7 +865,6 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"pearlharbor1.png",
 			"pearlharbor2.png",
 			"penicillin.jpg",
-			"petain.png",
 			"pq17.jpg",
 			"raider.jpg",
 			"rommel.png",
@@ -908,7 +897,6 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"skill5.jpg",
 			"skill6.png",
 			"skill9.png",
-			"skillnone.jpg",
 			"skua.jpg",
 			"sky.jpg",
 			"sm79.jpg",
@@ -919,14 +907,9 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"spitfiremk5.jpg",
 			"spitfiremk9.jpg",
 			"star.png",
-			"status.png",
-			"statusBackground.png",
-			"statusBackground2.png",
-			"statusBackground3.jpg",
 			"statusbar.png",
 			"swordfish.jpg",
 			"taranto.jpg",
-			"tassigne.png",
 			"tbd.jpg",
 			"tbf.jpg",
 			"teach1.png",
@@ -1052,7 +1035,6 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"7days4.mp3",
 			"7days5.mp3",
 			"7days6.mp3",
-			"ConquestofParadise.mp3",
 			"allthis.mp3",
 			"backwater.mp3",
 			"bgm.mp3",
@@ -1063,7 +1045,6 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"cao1.mp3",
 			"cao2.mp3",
 			"cao3.mp3",
-			"cao4.mp3",
 			"cao5.mp3",
 			"cao6.mp3",
 			"cao7.mp3",
@@ -1081,7 +1062,6 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"farthestend.mp3",
 			"gaijin1.mp3",
 			"gaijin2.mp3",
-			"gaijin3.mp3",
 			"gaijin4.mp3",
 			"gaijin5.mp3",
 			"hiaction2.mp3",
@@ -1089,20 +1069,14 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"hiaction6.mp3",
 			"hitman.mp3",
 			"medaction1.mp3",
-			"medaction5.mp3",
-			"medaction8.mp3",
 			"pearlharbor.mp3",
 			"relax.mp3",
 			"wot1.mp3",
 			"wot2.mp3",
 			"wots1.mp3",
-			"wots2.mp3",
 			"wots3.mp3",
-			"wots4.mp3",
 			"wots5.mp3",
-			"wots6.mp3",
-			"wots7.mp3",
-			"wots8.mp3"
+			"wots6.mp3"
 		],
 		"sounds": [
 			"005-System05.mp3",
@@ -1500,9 +1474,9 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 				],
 				"loc": [
 					640,
-					240,
+					220,
 					200,
-					50
+					70
 				],
 				"opacity": 1,
 				"time": 0
@@ -1520,7 +1494,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 					640,
 					290,
 					200,
-					50
+					70
 				],
 				"opacity": 1,
 				"time": 0
@@ -1536,9 +1510,9 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 				],
 				"loc": [
 					640,
-					340,
+					360,
 					200,
-					50
+					70
 				],
 				"opacity": 1,
 				"time": 0
@@ -1616,7 +1590,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 				"code": 4,
 				"to": [
 					140,
-					240
+					220
 				],
 				"time": 800,
 				"async": true
@@ -1636,7 +1610,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 				"code": 6,
 				"to": [
 					140,
-					340
+					360
 				],
 				"time": 800,
 				"async": true
@@ -1676,7 +1650,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 									340
 								],
 								"py": [
-									240,
+									220,
 									289
 								],
 								"action": [
@@ -1771,7 +1745,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								],
 								"py": [
 									290,
-									339
+									359
 								],
 								"action": [
 									{
@@ -1786,8 +1760,8 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 									340
 								],
 								"py": [
-									340,
-									390
+									360,
+									430
 								],
 								"action": [
 									"\t[步兵,scoutinf]\b[down,null]\f[title6.png,90,50]基础兵种，战斗力较低，但会在战场上发挥多种多样的技能，常常出奇制胜。\n（高血量、低攻击，数量多，技能多样）",
@@ -1890,7 +1864,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"text": "新版商店中需要手动扣减金币和增加访问次数"
 							},
 							"\f[ft17.jpg,90,50]法国雷诺FT-17轻型坦克于第一次世界大战时期研制成功。它是世界上第一种装有可360度旋转炮塔的坦克，而且动力舱后置、车体前设驾驶席，这种设计自那以后就成了坦克设计的标配，直到现在。虽然雷诺坦克具有划时代的意义，但到了二战开始时，它们已经过时，在德军新型坦克面前不堪一击。",
-							"\f[ft17.jpg,90,50]装备属性：攻击+10，10穿甲，22装甲。\n被动：\n机枪：对步兵伤害+5%。",
+							"\f[ft17.jpg,90,50]装备属性：攻+10，穿10装22。\n被动：\n机枪：对步兵伤害+5%",
 							{
 								"type": "confirm",
 								"text": "确定购买？",
@@ -1934,7 +1908,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						"condition": "!core.hasEquip('h35')&&!core.hasItem('h35')",
 						"action": [
 							"\f[h35.jpg,90,50]哈奇开斯H35是法国在1934年研发的轻型坦克。作为一款步兵支援坦克，其火炮穿甲能力和机动性都很差，无法与敌军坦克正面对抗。法国战役结束后，绝大多数H35都被德军缴获，为敌人效力。",
-							"\f[h35.jpg,90,50]装备属性：攻击+20，26穿甲，24装甲",
+							"\f[h35.jpg,90,50]装备属性：攻+20，穿26装24",
 							{
 								"type": "confirm",
 								"text": "确定购买？",
@@ -2022,7 +1996,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						"condition": "!core.hasEquip('skua')&&!core.hasItem('skua')",
 						"action": [
 							"\f[skua.jpg,90,50]布莱克本B24“贼鸥”式是英国海军航空兵在1940年代初期所使用的一种单发双座舰载飞机，是英国海军航空兵所拥有的第一种全金属结构的单翼飞机。“贼鸥”不仅能进行俯冲轰炸，必要时还可以拦截轰炸机，但它们不是德军战斗机的对手。1941年后，“贼鸥”退出了一线，由更优秀的飞机接替。",
-							"\f[skua.jpg,90,50]装备属性：攻+20。挂载：1×500磅炸弹。\n每4个回合投弹，造成2倍攻击力的伤害。\n被动：俯冲轰炸——攻击军舰时，炸弹造成的伤害提升10%。",
+							"\f[skua.jpg,90,50]装备属性：攻+20。挂载：1×500磅炸弹。\n每4个回合投弹，造成2倍攻击力的伤害。\n被动技能：\n俯冲轰炸：攻击军舰时，炸弹造成的伤害提升50%。",
 							{
 								"type": "confirm",
 								"text": "确定购买？",
@@ -2066,7 +2040,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 						"condition": "!core.hasEquip('swordfish')&&!core.hasItem('swordfish')",
 						"action": [
 							"\f[swordfish.jpg,90,50]剑鱼式鱼雷机于1935年研发完成。二战爆发时，“剑鱼”已经明显落伍——双翼机，仅有225km/h的速度，以及少得可怜的装备和防护，看上去就和一战时期的飞机一样不堪一击。然而就是这款落后的鱼雷机为英军立下了赫赫战功——奇袭塔兰托、围剿俾斯麦……剑鱼式完成了很多本不属于它们这个阶级的任务，直到战争结束。",
-							"\f[swordfish.jpg,90,50]装备属性：无\n无属性加成。挂载：1×MK12鱼雷 或 3×200磅炸弹\n对舰攻击时，每5回合投放3枚鱼雷。对地攻击时，每5回合投放一次炸弹，每颗炸弹伤害为0.6倍攻击力.",
+							"\f[swordfish.jpg,90,50]装备属性：无属性加成。挂载：1×MK12鱼雷 或 3×200磅炸弹\n对舰攻击时，每5回合投放3枚鱼雷。对地攻击时，每5回合投放一轮炸弹，每颗炸弹伤害为0.6倍攻击力。",
 							{
 								"type": "confirm",
 								"text": "确定购买？",
@@ -2171,7 +2145,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"text": "新版商店中需要手动扣减金币和增加访问次数"
 							},
 							"\f[hurricanemk1.jpg,90,50]飓风式战斗机是二战期间英国空军的主力战斗机之一。作为英国的首批单翼战斗机，“飓风”的战斗力不算出众。他们速度迟缓，机体笨重而脆弱，完全不能与同时期的德国ME109战斗机硬碰硬，但“飓风”火力强劲，易于生产，又便于维修。在不列颠空战中，人们的注意力都集中在“喷火”战斗机与ME109的史诗级大战中时，数量众多的主力“飓风”则趁机猎杀德军轰炸机，为英国空军的胜利做出了不可磨灭的功劳。",
-							"\f[hurricanemk1.jpg,90,50]装备属性：攻+40。每回合对轰炸机追加80点伤害。",
+							"\f[hurricanemk1.jpg,90,50]装备属性：攻+40。\n被动：\n捍卫领空：每回合对轰炸机追加80点伤害。",
 							{
 								"type": "confirm",
 								"text": "确定购买？",
@@ -2219,7 +2193,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"text": "新版商店中需要手动扣减金币和增加访问次数"
 							},
 							"\f[spitfiremk1.jpg,90,50]超级马林公司设计的喷火式战斗机，是二战中最著名的战斗机之一。“喷火”造型优美，速度飞快，性能突出，是英国皇家空军引以为豪的中坚力量。“喷火”几乎从始至终都扮演着二战英国空军的主力，他的各种型号活跃于各大战场，还有专供航空母舰使用的“海喷火”系列型号。毫无疑问，“喷火”是英国赢得战争的一大功臣。",
-							"\f[spitfiremk1.jpg,90,50]装备属性：攻击+60，与战斗机作战时，每回合额外追加10%伤害",
+							"\f[spitfiremk1.jpg,90,50]装备属性：攻击+60。\n被动：\n不列颠之鹰：与战斗机作战时，每回合额外追加10%伤害",
 							{
 								"type": "confirm",
 								"text": "确定购买？",
@@ -2411,7 +2385,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"text": "新版商店中需要手动扣减金币和增加访问次数"
 							},
 							"\f[edinburgh.jpg,90,50]爱丁堡号巡洋舰是爱丁堡级巡洋舰的首舰，二号舰名叫贝尔法斯特号。爱丁堡号于1938年下水，在二战期间主要在北海和北冰洋执行任务。爱丁堡号装备有12门152毫米主炮，其装甲防护在同时期英国轻巡洋舰当中是最厚的。当苏德两国开战时，爱丁堡号经常护送向苏联运送物资的船队。1942年5月2日，装载着465块金砖（4570kg）的爱丁堡号在从苏联返回英国的途中被德军潜艇击沉，至今仍有5块金砖未被打捞。",
-							"\f[edinburgh.jpg,90,50]装备属性：攻+200，雷击+100，鱼雷管+1。闪避鱼雷数+1。\n被动：黄金护卫：每次战斗后额外获得2枚黄金。",
+							"\f[edinburgh.jpg,90,50]装备属性：攻+200，雷击+100，鱼雷管+1。\n被动：\n黄金护卫：装备时，每次战后额外获得2枚黄金。",
 							{
 								"type": "confirm",
 								"text": "确定购买？",
@@ -2564,7 +2538,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"text": "新版商店中需要手动扣减金币和增加访问次数"
 							},
 							"\f[valentine.jpg,90,50]瓦伦丁坦克是英国的一种步兵坦克。它们的火力不强，速度缓慢，但装甲却比较结实，适合配合步兵行动。瓦伦丁坦克于1941年在非洲沙漠首次参战，尽管不是大多数德军坦克的对手，但瓦伦丁的低故障率以及每车一个的无线电台使其备受欢迎。一部分坦克还被出口到苏联用于支援卫国战争，但苏军觉得原有的2磅炮（40mm口径）太弱，为其换上了76.2mm炮。到二战中期，英国装甲军团中的瓦伦丁坦克逐渐被其他新型坦克替代。",
-							"\f[valentine.jpg,90,50]装备属性：攻+50，穿50，装60。\n被动技能：\n迟缓：未击穿敌方装甲时，敌人额外先攻5回合。",
+							"\f[valentine.jpg,90,50]装备属性：攻+50，穿50，装60。\n被动技能：\n迟缓：被敌人单向击穿时，敌人额外先攻5回合。",
 							{
 								"type": "confirm",
 								"text": "确定购买？",
@@ -2908,7 +2882,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 								"type": "comment",
 								"text": "新版商店中需要手动扣减金币和增加访问次数"
 							},
-							"\f[f4f.jpg,90,50]格鲁曼公司设计的F4F“野猫”式战斗机是二战前期美国最重要的航母舰载战斗机。野猫的速度只有515km/h，机体较为笨重，但却有着6挺12.7mm机枪的充沛火力和坚实可靠的护甲。野猫是太平洋战争初期美国海军对抗日本零式战斗机的主要力量。事实证明，如果飞行员战术得当，做到扬长避短，野猫战斗机是可以与零式一较高下的。",
+							"\f[f4f.jpg,90,50]格鲁曼公司设计的F4F“野猫”式战斗机是二战前期美国最重要的航母舰载战斗机。野猫的速度只有515km/h，机体较为笨重，但却有着6挺12.7mm机枪的充沛火力和坚实可靠的护甲。野猫是太平洋战争初期美国海军对抗日本零式战斗机的主要力量。事实证明，如果飞行员战术得当，做到扬长避短，野猫战斗机是可以与零式一较高下的。一部分“野猫”被出口到英国以填补舰载机空缺，这些在英国服役的野猫被重新命名为“岩燕”。",
 							"\f[f4f.jpg,90,50]装备属性：攻+80后额外加10%。仅第2回合投弹，造成两次0.4倍攻击力的伤害。\n被动：\n萨奇剪刀：与敌方战斗机作战时，以受到伤害增加5%为代价，使普攻伤害+20%。",
 							{
 								"type": "confirm",
