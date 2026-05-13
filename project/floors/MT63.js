@@ -170,15 +170,7 @@ main.floors.MT63=
     "parallelDo": "",
     "events": {
         "0,9": [
-            {
-                "type": "text",
-                "text": "\t[伊吹萃香]\f[specialnpc.jpg,0,280,100,200]对付以鱼雷攻击为主要攻击方式的敌人时，“Z字规避”是个相当值的技能，只不过花费有点高，要把技能用在刀刃上！例如那些讨厌的潜艇……",
-                "pos": [
-                    100,
-                    280,
-                    380
-                ]
-            }
+            "\t[伊吹萃香]\f[specialnpc.jpg,30,200,150,300]对付以鱼雷攻击为主要攻击方式的敌人时，“Z字规避”是个相当值的技能，只不过花费有点高，要把技能用在刀刃上！例如那些讨厌的潜艇……"
         ]
     },
     "changeFloor": {
@@ -193,7 +185,34 @@ main.floors.MT63=
     "beforeBattle": {},
     "afterBattle": {},
     "afterGetItem": {},
-    "afterOpenDoor": {},
+    "afterOpenDoor": {
+        "3,7": [
+            {
+                "type": "if",
+                "condition": "(flag:hard===1)",
+                "true": [
+                    "\t[系统提示]检测到当前为“神剧难度”，友军血量翻倍",
+                    {
+                        "type": "setValue",
+                        "name": "flag:友军血量",
+                        "value": "600000"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:hard===2)",
+                "true": [
+                    "\t[系统提示]检测到当前为“街机难度”，友军血量加10w",
+                    {
+                        "type": "setValue",
+                        "name": "flag:友军血量",
+                        "value": "400000"
+                    }
+                ]
+            }
+        ]
+    },
     "autoEvent": {},
     "cannotMove": {},
     "cannotMoveIn": {},

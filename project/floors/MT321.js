@@ -18,15 +18,7 @@ main.floors.MT321=
     "parallelDo": "",
     "events": {
         "1,6": [
-            {
-                "type": "text",
-                "text": "\t[伊吹萃香]\f[specialnpc.jpg,0,280,100,200]当时，海恩·赛弗罗只是一名“普通”的机枪手……",
-                "pos": [
-                    100,
-                    280,
-                    380
-                ]
-            }
+            "\t[伊吹萃香]\f[specialnpc.jpg,30,200,150,300]当时，海恩·赛弗罗只是一名“普通”的机枪手……"
         ]
     },
     "changeFloor": {

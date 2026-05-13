@@ -382,15 +382,7 @@ main.floors.MT84=
     "parallelDo": "",
     "events": {
         "9,13": [
-            {
-                "type": "text",
-                "text": "\t[伊吹萃香]\f[specialnpc.jpg,0,280,100,200]本关击败boss后有个小小的剧情杀，并且在不给重新换装和技能的前提下直接进入下一关。希望你是按照牌子上的提示去选择技能和装备的哦~",
-                "pos": [
-                    100,
-                    280,
-                    380
-                ]
-            }
+            "\t[伊吹萃香]\f[specialnpc.jpg,30,200,150,300]本关击败boss后有个小小的剧情杀，并且在不给重新换装和技能的前提下直接进入下一关。希望你是按照牌子上的提示去选择技能和装备的哦~"
         ]
     },
     "changeFloor": {
@@ -405,7 +397,60 @@ main.floors.MT84=
     "beforeBattle": {},
     "afterBattle": {},
     "afterGetItem": {},
-    "afterOpenDoor": {},
+    "afterOpenDoor": {
+        "7,12": [
+            {
+                "type": "if",
+                "condition": "(flag:hard===1)",
+                "true": [
+                    "\t[系统提示]检测到当前为“神剧难度”，获得100瓶下午茶、2000指挥点数、10黄5蓝",
+                    {
+                        "type": "setValue",
+                        "name": "item:tea",
+                        "operator": "+=",
+                        "value": "100"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:mana",
+                        "operator": "+=",
+                        "value": "2000"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "item:yellowKey",
+                        "operator": "+=",
+                        "value": "10"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "item:blueKey",
+                        "operator": "+=",
+                        "value": "5"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:hard===2)",
+                "true": [
+                    "\t[系统提示]检测到当前为“街机难度”，获得10黄5蓝",
+                    {
+                        "type": "setValue",
+                        "name": "item:yellowKey",
+                        "operator": "+=",
+                        "value": "10"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "item:blueKey",
+                        "operator": "+=",
+                        "value": "5"
+                    }
+                ]
+            }
+        ]
+    },
     "autoEvent": {},
     "cannotMove": {},
     "cannotMoveIn": {},

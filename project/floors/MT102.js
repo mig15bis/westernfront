@@ -255,15 +255,7 @@ main.floors.MT102=
             "\t[系统提示]为平衡游戏性，从本区域开始做出如下改动：敌方轻型坦克血量大幅下调，并新增“机动”属性：它们被主角单向击穿时，主角先攻的次数-3。由此，主角的重装甲坦克对轻坦的有效性略微降低，而轻装甲坦克的强度得到了上调。但这并不代表重装甲坦克完全失去作用。对于穿透能力不那么突出的敌方中型坦克而言，我方的重装甲坦克仍然是致命存在。"
         ],
         "13,6": [
-            {
-                "type": "text",
-                "text": "\t[伊吹萃香]\f[specialnpc.jpg,0,280,100,200]意大利部队的战斗力非常拉跨，这区可以试着少用技能和茶，积攒一些资源。",
-                "pos": [
-                    100,
-                    280,
-                    380
-                ]
-            }
+            "\t[伊吹萃香]\f[specialnpc.jpg,30,200,150,300]意大利部队的战斗力非常拉跨，这区可以试着少用技能和茶，积攒一些资源。"
         ]
     },
     "changeFloor": {
@@ -278,7 +270,54 @@ main.floors.MT102=
     "beforeBattle": {},
     "afterBattle": {},
     "afterGetItem": {},
-    "afterOpenDoor": {},
+    "afterOpenDoor": {
+        "11,7": [
+            {
+                "type": "if",
+                "condition": "(flag:hard===1)",
+                "true": [
+                    "\t[系统提示]检测到当前为“神剧难度”，获得30瓶下午茶、1000指挥点数、50攻击。该难度下免疫“炎热debuff”的负面效果",
+                    {
+                        "type": "setValue",
+                        "name": "item:tea",
+                        "operator": "+=",
+                        "value": "30"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:mana",
+                        "operator": "+=",
+                        "value": "1000"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "status:atk",
+                        "operator": "+=",
+                        "value": "50"
+                    }
+                ]
+            },
+            {
+                "type": "if",
+                "condition": "(flag:hard===2)",
+                "true": [
+                    "\t[系统提示]检测到当前为“街机难度”，获得15黄3蓝",
+                    {
+                        "type": "setValue",
+                        "name": "item:yellowKey",
+                        "operator": "+=",
+                        "value": "15"
+                    },
+                    {
+                        "type": "setValue",
+                        "name": "item:blueKey",
+                        "operator": "+=",
+                        "value": "3"
+                    }
+                ]
+            }
+        ]
+    },
     "autoEvent": {},
     "cannotMove": {},
     "cannotMoveIn": {},
