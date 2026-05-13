@@ -111,7 +111,55 @@ main.floors.prepare1=
             "type": "playSound",
             "name": "xinxinmagic.mp3"
         },
-        "\t[系统提示]\r[aqua]经费不足，某些地图画出来的效果可能非常不理想，还请谅解下，凑合玩吧。\r"
+        "\t[系统提示]\r[aqua]经费不足，某些地图画出来的效果可能非常不理想，还请谅解下，凑合玩吧。\r",
+        {
+            "type": "if",
+            "condition": "(flag:hard===1)",
+            "true": [
+                {
+                    "type": "playSound",
+                    "name": "xinxinmagic.mp3"
+                },
+                "\t[系统提示]检测到当前难度为神剧，请查收您的神剧难度福利！",
+                {
+                    "type": "setValue",
+                    "name": "item:hard1",
+                    "operator": "+=",
+                    "value": "1"
+                },
+                {
+                    "type": "setValue",
+                    "name": "item:coin",
+                    "operator": "+=",
+                    "value": "1"
+                }
+            ],
+            "false": [
+                {
+                    "type": "if",
+                    "condition": "(flag:hard===2)",
+                    "true": [
+                        {
+                            "type": "playSound",
+                            "name": "xinxinmagic.mp3"
+                        },
+                        "\t[系统提示]检测到当前难度为街机，请查收您的街机难度福利！",
+                        {
+                            "type": "setValue",
+                            "name": "item:hard2",
+                            "operator": "+=",
+                            "value": "1"
+                        },
+                        {
+                            "type": "setValue",
+                            "name": "item:coin",
+                            "operator": "+=",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
+        }
     ],
     "eachArrive": [],
     "parallelDo": "",
@@ -175,145 +223,6 @@ main.floors.prepare1=
             },
             "\t[系统提示]当前区域敌人特点：步兵居多，伴随少量轻型火炮、轻型坦克和飞机。\n推荐携带技能：战壕\n推荐出战装备：无"
         ],
-        "9,12": [
-            "展示技能：核弹",
-            {
-                "type": "showImage",
-                "code": 1,
-                "image": "aircraft6.png",
-                "loc": [
-                    20,
-                    480
-                ],
-                "opacity": 1,
-                "time": 0
-            },
-            {
-                "type": "playSound",
-                "name": "bomber1.mp3"
-            },
-            {
-                "type": "moveImage",
-                "code": 1,
-                "to": [
-                    20,
-                    -330
-                ],
-                "time": 2000
-            },
-            {
-                "type": "hideImage",
-                "code": 1,
-                "time": 0
-            },
-            {
-                "type": "sleep",
-                "time": 2000
-            },
-            {
-                "type": "setCurtain",
-                "color": [
-                    255,
-                    255,
-                    255,
-                    1
-                ],
-                "time": 100,
-                "keep": true
-            },
-            {
-                "type": "showImage",
-                "code": 1,
-                "image": "nuke.jpg",
-                "loc": [
-                    0,
-                    0
-                ],
-                "opacity": 1,
-                "time": 0
-            },
-            {
-                "type": "sleep",
-                "time": 1000
-            },
-            {
-                "type": "playSound",
-                "name": "049-Explosion02.mp3"
-            },
-            {
-                "type": "vibrate",
-                "direction": "horizontal",
-                "time": 3000,
-                "speed": 10,
-                "power": 10,
-                "async": true
-            },
-            {
-                "type": "setCurtain",
-                "time": 500
-            },
-            {
-                "type": "sleep",
-                "time": 2000
-            },
-            {
-                "type": "setCurtain",
-                "color": [
-                    255,
-                    255,
-                    255,
-                    1
-                ],
-                "time": 500,
-                "keep": true
-            },
-            {
-                "type": "hideImage",
-                "code": 1,
-                "time": 0
-            },
-            {
-                "type": "sleep",
-                "time": 500
-            },
-            {
-                "type": "setCurtain",
-                "time": 500
-            },
-            {
-                "type": "waitAsync"
-            }
-        ],
-        "4,1": [
-            "展示结局",
-            {
-                "type": "setCurtain",
-                "color": [
-                    0,
-                    0,
-                    0,
-                    1
-                ],
-                "time": 500,
-                "keep": true
-            },
-            {
-                "type": "confirm",
-                "text": "要观看结尾吗？",
-                "yes": [
-                    {
-                        "type": "insert",
-                        "name": "结尾剧情"
-                    }
-                ],
-                "no": [
-                    {
-                        "type": "setCurtain",
-                        "time": 500
-                    }
-                ]
-            }
-        ],
         "11,2": [
             "坦克车间\n（选择出战的坦克类装备）"
         ],
@@ -323,148 +232,14 @@ main.floors.prepare1=
         "11,8": [
             "盟军作战指挥室\n（选择技能以及开始游戏）"
         ],
-        "9,13": [
-            {
-                "type": "showImage",
-                "code": 1,
-                "image": "aircraft9.png",
-                "loc": [
-                    480,
-                    115
-                ],
-                "opacity": 1,
-                "time": 0
-            },
-            {
-                "type": "moveImage",
-                "code": 1,
-                "to": [
-                    -195,
-                    115
-                ],
-                "time": 700,
-                "async": true
-            },
-            {
-                "type": "playSound",
-                "name": "fighter.mp3"
-            },
-            {
-                "type": "sleep",
-                "time": 100,
-                "noSkip": true
-            },
-            {
-                "type": "playSound",
-                "name": "Saint4.mp3"
-            },
-            {
-                "type": "animate",
-                "name": "disturb",
-                "loc": [
-                    9,
-                    12
-                ],
-                "async": true
-            },
-            {
-                "type": "sleep",
-                "time": 100,
-                "noSkip": true
-            },
-            {
-                "type": "animate",
-                "name": "disturb",
-                "loc": [
-                    4,
-                    10
-                ],
-                "async": true
-            },
-            {
-                "type": "sleep",
-                "time": 100,
-                "noSkip": true
-            },
-            {
-                "type": "animate",
-                "name": "disturb",
-                "loc": [
-                    3,
-                    5
-                ],
-                "async": true
-            },
-            {
-                "type": "sleep",
-                "time": 100,
-                "noSkip": true
-            },
-            {
-                "type": "animate",
-                "name": "disturb",
-                "loc": [
-                    8,
-                    4
-                ],
-                "async": true
-            },
-            {
-                "type": "sleep",
-                "time": 100,
-                "noSkip": true
-            },
-            {
-                "type": "animate",
-                "name": "disturb",
-                "loc": [
-                    7,
-                    7
-                ],
-                "async": true
-            },
-            {
-                "type": "waitAsync"
-            },
-            {
-                "type": "hideImage",
-                "code": 1,
-                "time": 0
-            }
+        "7,11": [
+            "前方为跳关系统。由于本塔流程较长，为减轻玩家负担，可以使用该系统直接跳转至您想要开始游玩的章节。跳转至对应章节后，系统将按照官方存档（即作者本人在历史难度下抵达该章节时的状态）重置玩家的属性值和道具（难度福利不会消失）。",
+            "需注意：跳关系统仅可在此处使用，不会跳转至附加章节。且跳转章节后，前面的关卡视为任务均未完成，不计入分数。"
         ],
-        "9,9": [
+        "8,14": [
             {
-                "type": "animate",
-                "name": "hand",
-                "loc": [
-                    "core.nextX()",
-                    "core.nextY()"
-                ],
-                "async": true
-            },
-            {
-                "type": "jump",
-                "from": [
-                    "core.nextX()",
-                    "core.nextY()"
-                ],
-                "to": [
-                    "core.nextX(2)",
-                    "core.nextY(2)"
-                ],
-                "time": 500,
-                "async": true
-            },
-            {
-                "type": "waitAsync"
-            },
-            {
-                "type": "animate",
-                "name": "bigexplore",
-                "loc": [
-                    "core.nextX(2)",
-                    "core.nextY(2)"
-                ]
+                "type": "insert",
+                "name": "跳关系统"
             }
         ]
     },
@@ -478,7 +253,7 @@ main.floors.prepare1=
     "cannotMoveIn": {},
     "map": [
     [120054,120055,  0,  0,  0,80650,80651,80650,80651,140085,140086,140087,140088,  0,140085],
-    [120098,120099,120100,  0,10289,80658,80659,80658,80659,140102,140103,140104,140105,  0,140102],
+    [120098,120099,120100,  0,  0,80658,80659,80658,80659,140102,140103,140104,140105,  0,140102],
     [120142,120143,120144,120145,  0,  0,  0,  0,  0,  0,  0,10289,514,130063,  0],
     [120186,120187,120188,120189,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
     [  0,  0,  0,  0,130063,  0,  0,  0,  0,  0,  0,  0,  0,  0,130016],
@@ -488,10 +263,10 @@ main.floors.prepare1=
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,10289,  0,130063,  0],
     [  0,  0,  0,  0,  0,130016,  0,  0,  0,311,311,311,517,311,311],
     [  0,  0,  0,  0,  0,  0,  0,  0,  0,311,10110,  0,  0,10161,10162],
-    [  0,  0,  0,  0,  0,  0,  0,  0,  0,311,  0,  0,517,  0,  0],
+    [  0,  0,  0,  0,  0,  0,  0,129,  0,311,  0,  0,517,  0,  0],
     [  0,  0,  0,  0,30509,30509,30509,30509,  0,311,  0,10136,10137,10138,  0],
     [  0,  0,  0,  0,30509,30509,30509,30509,  0,311,517,10144,10145,10146,517],
-    [  0,  0,  0,  0,30509,30509,30509,30509,  0,311,  0,10152,10153,10154,  0]
+    [  0,  0,  0,  0,30509,30509,30509,30509, 89,311,  0,10152,10153,10154,  0]
 ],
     "bgmap": [
     [120707,120399,120707,120708,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
@@ -507,7 +282,7 @@ main.floors.prepare1=
     [120707,120399,120707,120708,  0,  0,  0,  0,  0,  0,359,359,359,359,359],
     [120707,120707,120707,120708,  0,100040,  0,  0,  0,  0,359,359,359,359,359],
     [120707,120399,120707,120708,  0,  0,  0,  0,  0,  0,359,359,359,359,359],
-    [120707,120399,120707,120708,  0,  0,  0,  0,  0,  0,359,359,359,359,359],
+    [120707,120399,120707,120708,  0,  0,  0,  0,556,  0,359,359,359,359,359],
     [120707,120707,120707,120708,  0,  0,  0,  0,  0,  0,359,359,359,359,359]
 ],
     "fgmap": [

@@ -193,34 +193,7 @@ main.floors.MT63=
     "beforeBattle": {},
     "afterBattle": {},
     "afterGetItem": {},
-    "afterOpenDoor": {
-        "3,7": [
-            {
-                "type": "if",
-                "condition": "(flag:hard===1)",
-                "true": [
-                    "\t[系统提示]检测到当前为“神剧难度”，友军血量翻倍",
-                    {
-                        "type": "setValue",
-                        "name": "flag:友军血量",
-                        "value": "600000"
-                    }
-                ]
-            },
-            {
-                "type": "if",
-                "condition": "(flag:hard===2)",
-                "true": [
-                    "\t[系统提示]检测到当前为“街机难度”，友军血量加10w",
-                    {
-                        "type": "setValue",
-                        "name": "flag:友军血量",
-                        "value": "400000"
-                    }
-                ]
-            }
-        ]
-    },
+    "afterOpenDoor": {},
     "autoEvent": {},
     "cannotMove": {},
     "cannotMoveIn": {},

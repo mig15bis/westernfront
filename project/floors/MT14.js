@@ -354,60 +354,7 @@ main.floors.MT14=
     "beforeBattle": {},
     "afterBattle": {},
     "afterGetItem": {},
-    "afterOpenDoor": {
-        "7,3": [
-            {
-                "type": "if",
-                "condition": "(flag:hard===1)",
-                "true": [
-                    "\t[系统提示]检测到当前为“神剧难度”，获得10瓶下午茶、500指挥点数、500黄金",
-                    {
-                        "type": "setValue",
-                        "name": "item:tea",
-                        "operator": "+=",
-                        "value": "10"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "status:mana",
-                        "operator": "+=",
-                        "value": "500"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "status:money",
-                        "operator": "+=",
-                        "value": "500"
-                    }
-                ]
-            },
-            {
-                "type": "if",
-                "condition": "(flag:hard===2)",
-                "true": [
-                    "\t[系统提示]检测到当前为“街机难度”，获得5瓶下午茶、100指挥点数、100黄金",
-                    {
-                        "type": "setValue",
-                        "name": "item:tea",
-                        "operator": "+=",
-                        "value": "5"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "status:mana",
-                        "operator": "+=",
-                        "value": "100"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "status:money",
-                        "operator": "+=",
-                        "value": "100"
-                    }
-                ]
-            }
-        ]
-    },
+    "afterOpenDoor": {},
     "autoEvent": {},
     "cannotMove": {},
     "cannotMoveIn": {},

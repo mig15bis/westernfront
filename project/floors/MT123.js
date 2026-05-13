@@ -546,54 +546,7 @@ main.floors.MT123=
     "beforeBattle": {},
     "afterBattle": {},
     "afterGetItem": {},
-    "afterOpenDoor": {
-        "7,11": [
-            {
-                "type": "if",
-                "condition": "(flag:hard===1)",
-                "true": [
-                    "\t[系统提示]检测到当前为“神剧难度”，获得20瓶下午茶、10黄5蓝。",
-                    {
-                        "type": "setValue",
-                        "name": "item:tea",
-                        "operator": "+=",
-                        "value": "20"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "item:yellowKey",
-                        "operator": "+=",
-                        "value": "10"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "item:blueKey",
-                        "operator": "+=",
-                        "value": "5"
-                    }
-                ]
-            },
-            {
-                "type": "if",
-                "condition": "(flag:hard===2)",
-                "true": [
-                    "\t[系统提示]检测到当前为“街机难度”，获得5黄2蓝",
-                    {
-                        "type": "setValue",
-                        "name": "item:yellowKey",
-                        "operator": "+=",
-                        "value": "5"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "item:blueKey",
-                        "operator": "+=",
-                        "value": "2"
-                    }
-                ]
-            }
-        ]
-    },
+    "afterOpenDoor": {},
     "autoEvent": {},
     "cannotMove": {},
     "cannotMoveIn": {},

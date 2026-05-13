@@ -461,78 +461,7 @@ main.floors.MT21=
     "beforeBattle": {},
     "afterBattle": {},
     "afterGetItem": {},
-    "afterOpenDoor": {
-        "7,3": [
-            {
-                "type": "if",
-                "condition": "(flag:hard===1)",
-                "true": [
-                    "\t[系统提示]检测到当前为“神剧难度”，获得10瓶下午茶、1000血限和血量、20攻击力、200指挥点数",
-                    {
-                        "type": "setValue",
-                        "name": "item:tea",
-                        "operator": "+=",
-                        "value": "10"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "status:mana",
-                        "operator": "+=",
-                        "value": "100"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "status:atk",
-                        "operator": "+=",
-                        "value": "20"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "status:hpmax",
-                        "operator": "+=",
-                        "value": "1000"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "status:hp",
-                        "operator": "+=",
-                        "value": "1000"
-                    }
-                ]
-            },
-            {
-                "type": "if",
-                "condition": "(flag:hard===2)",
-                "true": [
-                    "\t[系统提示]检测到当前为“街机难度”，获得10瓶下午茶、500血限和血量、100指挥点数",
-                    {
-                        "type": "setValue",
-                        "name": "item:tea",
-                        "operator": "+=",
-                        "value": "10"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "status:mana",
-                        "operator": "+=",
-                        "value": "100"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "status:hpmax",
-                        "operator": "+=",
-                        "value": "500"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "status:hp",
-                        "operator": "+=",
-                        "value": "500"
-                    }
-                ]
-            }
-        ]
-    },
+    "afterOpenDoor": {},
     "autoEvent": {},
     "cannotMove": {},
     "cannotMoveIn": {},

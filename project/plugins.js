@@ -2595,15 +2595,26 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				core.fillRect(uictx, 32, 58.5, 94, 18, "#000000") //血槽
 				let bloodmax = core.getRealStatus('hpmax'),
 					blood = core.getRealStatus('hp');
-				if (blood >= bloodmax * 0.8) { //变色血
+				if (blood >= bloodmax * 0.8) { //变色血及血量百分比
 					core.fillRect(uictx, 34, 60.5, 90 * blood / bloodmax, 14, "#00FF00");
+					core.fillText(uictx, Math.floor(blood / bloodmax * 100) + '%', 110, 55, "#00FF00", '8px number');
 				} else if (blood >= bloodmax * 0.6) {
 					core.fillRect(uictx, 34, 60.5, 90 * blood / bloodmax, 14, "#9ACD32");
+					core.fillText(uictx, Math.floor(blood / bloodmax * 100) + '%', 110, 55, "#9ACD32", '8px number');
 				} else if (blood >= bloodmax * 0.4) {
 					core.fillRect(uictx, 34, 60.5, 90 * blood / bloodmax, 14, "#FFD700");
+					core.fillText(uictx, Math.floor(blood / bloodmax * 100) + '%', 110, 55, "#FFD700", '8px number');
 				} else if (blood >= bloodmax * 0.2) {
 					core.fillRect(uictx, 34, 60.5, 90 * blood / bloodmax, 14, "#FFA500");
-				} else { core.fillRect(uictx, 34, 60.5, 90 * blood / bloodmax, 14, "#FF0000"); }
+					core.fillText(uictx, Math.floor(blood / bloodmax * 100) + '%', 110, 55, "#FFA500", '8px number');
+				} else {
+					core.fillRect(uictx, 34, 60.5, 90 * blood / bloodmax, 14, "#FF0000");
+					if (blood <= bloodmax * 0.01) {
+						core.fillText(uictx, '<=1%', 110, 55, '#FF0000', '8px number');
+					} else {
+						core.fillText(uictx, Math.floor(blood / bloodmax * 100) + '%', 110, 55, "#FF0000", '8px number');
+					}
+				}
 				core.setTextAlign("outerUI", "center")
 				core.fillText(uictx, core.formatBigNumber(blood, true) + "/" + core.formatBigNumber(bloodmax, true), 79, 72, "#FFFFFF", "12px number", 90) //  血量数字
 
@@ -2718,15 +2729,26 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				core.fillRect(uictx, 36, 107, 106, 24, "#000000") //血槽
 				let bloodmax = core.getRealStatus('hpmax'),
 					blood = core.getRealStatus('hp');
-				if (blood >= bloodmax * 0.8) { //变色血
+				if (blood >= bloodmax * 0.8) { //变色血及血量百分比
 					core.fillRect(uictx, 38, 109, 102 * blood / bloodmax, 20, "#00FF00");
+					core.fillText(uictx, Math.floor(blood / bloodmax * 100) + '%', 130, 105, "#00FF00", '8px number');
 				} else if (blood >= bloodmax * 0.6) {
 					core.fillRect(uictx, 38, 109, 102 * blood / bloodmax, 20, "#9ACD32");
+					core.fillText(uictx, Math.floor(blood / bloodmax * 100) + '%', 130, 105, "#9ACD32", '8px number');
 				} else if (blood >= bloodmax * 0.4) {
 					core.fillRect(uictx, 38, 109, 102 * blood / bloodmax, 20, "#FFD700");
+					core.fillText(uictx, Math.floor(blood / bloodmax * 100) + '%', 130, 105, "#FFD700", '8px number');
 				} else if (blood >= bloodmax * 0.2) {
 					core.fillRect(uictx, 38, 109, 102 * blood / bloodmax, 20, "#FFA500");
-				} else { core.fillRect(uictx, 38, 109, 102 * blood / bloodmax, 20, "#FF0000"); }
+					core.fillText(uictx, Math.floor(blood / bloodmax * 100) + '%', 130, 105, "#FFA500", '8px number');
+				} else {
+					core.fillRect(uictx, 38, 109, 102 * blood / bloodmax, 20, "#FF0000");
+					if (blood <= bloodmax * 0.01) {
+						core.fillText(uictx, '<=1%', 130, 105, '#FF0000', '8px number');
+					} else {
+						core.fillText(uictx, Math.floor(blood / bloodmax * 100) + '%', 130, 105, "#FF0000", '8px number');
+					}
+				}
 				core.fillText(uictx, core.formatBigNumber(blood, true) + "/" + core.formatBigNumber(bloodmax, true), 89, 123.5, "#FFFFFF", "12px number", 102) //  血量数字
 
 				core.fillRoundRect(uictx, 4, 133, 142, 84, 5, "rgba(0,0,0,0.5)"); //常规状态底板

@@ -327,66 +327,7 @@ main.floors.MT116=
     "beforeBattle": {},
     "afterBattle": {},
     "afterGetItem": {},
-    "afterOpenDoor": {
-        "7,12": [
-            {
-                "type": "if",
-                "condition": "(flag:hard===1)",
-                "true": [
-                    "\t[系统提示]检测到当前为“神剧难度”，获得30瓶下午茶、500指挥点数、2000血量和血限",
-                    {
-                        "type": "setValue",
-                        "name": "item:tea",
-                        "operator": "+=",
-                        "value": "30"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "status:mana",
-                        "operator": "+=",
-                        "value": "500"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "status:hpmax",
-                        "operator": "+=",
-                        "value": "2000"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "status:hp",
-                        "operator": "+=",
-                        "value": "2000"
-                    }
-                ]
-            },
-            {
-                "type": "if",
-                "condition": "(flag:hard===2)",
-                "true": [
-                    "\t[系统提示]检测到当前为“街机难度”，获得1000血量和血限、10瓶下午茶",
-                    {
-                        "type": "setValue",
-                        "name": "status:hpmax",
-                        "operator": "+=",
-                        "value": "1000"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "status:hp",
-                        "operator": "+=",
-                        "value": "1000"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "item:tea",
-                        "operator": "+=",
-                        "value": "10"
-                    }
-                ]
-            }
-        ]
-    },
+    "afterOpenDoor": {},
     "autoEvent": {},
     "cannotMove": {},
     "cannotMoveIn": {},

@@ -455,66 +455,7 @@ main.floors.MT48=
         ]
     },
     "afterGetItem": {},
-    "afterOpenDoor": {
-        "7,3": [
-            {
-                "type": "if",
-                "condition": "(flag:hard===1)",
-                "true": [
-                    "\t[系统提示]检测到当前为“神剧难度”，获得50瓶下午茶、1000指挥点数、500黄金、20黄5蓝",
-                    {
-                        "type": "setValue",
-                        "name": "item:tea",
-                        "operator": "+=",
-                        "value": "20"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "status:mana",
-                        "operator": "+=",
-                        "value": "1000"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "status:money",
-                        "operator": "+=",
-                        "value": "500"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "item:yellowKey",
-                        "operator": "+=",
-                        "value": "20"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "item:blueKey",
-                        "operator": "+=",
-                        "value": "5"
-                    }
-                ]
-            },
-            {
-                "type": "if",
-                "condition": "(flag:hard===2)",
-                "true": [
-                    "\t[系统提示]检测到当前为“街机难度”，获得10瓶下午茶、100指挥点数",
-                    {
-                        "type": "setValue",
-                        "name": "item:tea",
-                        "operator": "+=",
-                        "value": "20"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "status:mana",
-                        "operator": "+=",
-                        "value": "1000"
-                    }
-                ]
-            }
-        ]
-    },
+    "afterOpenDoor": {},
     "autoEvent": {
         "6,14": {
             "1": null

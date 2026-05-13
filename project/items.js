@@ -31,8 +31,8 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 	"blueGem": {
 		"cls": "items",
 		"name": "蓝宝石",
-		"text": "，指挥点数+10",
-		"itemEffect": "core.status.hero.mana += 10;\nif (flags.anime === true && !core.getFlag(\"__statistics__\")) {\n\tcore.drawHeroAnimate('manaup');\n}",
+		"text": "，指挥点数+${10 * ((core.hasItem('hard1')) ? 2 : 1) * (core.hasItem('hard2')) ? 1.5 : 1}",
+		"itemEffect": "core.status.hero.mana += 10 * ((core.hasItem('hard1')) ? 2 : 1) * (core.hasItem('hard2')) ? 1.5 : 1;\nif (flags.anime === true && !core.getFlag(\"__statistics__\")) {\n\tcore.drawHeroAnimate('manaup');\n}",
 		"itemEffectTip": "，指挥点+10",
 		"useItemEffect": "core.status.hero.mana += 10;",
 		"canUseItemEffect": "true"
@@ -1066,7 +1066,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "光辉号航空母舰",
 		"canUseItemEffect": "true",
-		"text": "舰载机：海喷火MK5、梭鱼式鱼雷机、剑鱼式鱼雷机。闪避鱼雷数-2。\n被动：\n装甲航母：在海上遭遇敌方空袭时，减少25%炸弹伤害。遭遇非战列舰的水面舰艇攻击时，伤害减少20%。\n先手起飞：海战时，在战斗前起飞所有飞机，舰载机在首回合中即可进行炸弹和鱼雷攻击，同时免疫敌战列舰首轮跨射攻击。",
+		"text": "舰载机：海喷火MK5、梭鱼式鱼雷机、剑鱼式鱼雷机。闪避鱼雷数-2。\n（舰载机基础属性合计：攻+170后+20%）\n被动：\n装甲航母：在海上遭遇敌方空袭时，减少25%炸弹伤害。遭遇非战列舰的水面舰艇攻击时，伤害减少20%。\n先手起飞：海战时，在战斗前起飞所有飞机，舰载机在首回合中即可进行炸弹和鱼雷攻击，同时免疫敌战列舰首轮跨射攻击。",
 		"equip": {
 			"type": 3,
 			"value": {
@@ -1082,7 +1082,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "鹰号航空母舰",
 		"canUseItemEffect": "true",
-		"text": "舰载机：海飓风MK1、贼鸥式轰炸机、剑鱼式鱼雷机。闪避鱼雷数-2。\n受到敌方鱼雷伤害增加20%。",
+		"text": "舰载机：海飓风MK1、贼鸥式轰炸机、剑鱼式鱼雷机。闪避鱼雷数-2。\n（舰载机基础属性合计：攻击+60）\n受到敌方鱼雷伤害增加20%。",
 		"equip": {
 			"type": 3,
 			"value": {
@@ -1096,12 +1096,12 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "突击者号航空母舰",
 		"canUseItemEffect": "true",
-		"text": "舰载机：F4F-3野猫战斗机、SBD-3无畏式轰炸机、TBD蹂躏者鱼雷机，闪避鱼雷数-2\n被动：\n航弹强化：此航母的俯冲轰炸机造成的炸弹伤害提升40%。",
+		"text": "舰载机：F4F-3野猫战斗机、SBD-3无畏式轰炸机、TBD蹂躏者鱼雷机，闪避鱼雷数-2\n（舰载机基础属性合计：攻击+130后+10%）\n被动：\n航弹强化：此航母的俯冲轰炸机造成的炸弹伤害提升40%。",
 		"equip": {
 			"type": 3,
 			"value": {
-				"atk": 130,
-				"dod": -2
+				"dod": -2,
+				"atk": 130
 			},
 			"percentage": {
 				"atk": 10
@@ -1112,7 +1112,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "埃塞克斯级航空母舰",
 		"canUseItemEffect": "true",
-		"text": "攻击+5%，后勤+20%。舰载机：F6F-5地狱猫战斗机、SB2C地狱俯冲者轰炸机、TBF复仇者鱼雷机。\n合计：攻击+450后+25%，雷击+120%，后勤+20%。\n被动：\n远程空袭：无视敌军战列舰主炮伤害，且可以支援我军在陆地上的行动。\n制海权：与除潜艇外的敌方海军交战时，伤害提升50%，受伤降低30%。\n先发制人：航母机群在首回合即可投放炸弹和鱼雷。",
+		"text": "攻击+5%，后勤+20%。舰载机：F6F-5地狱猫战斗机、SB2C地狱俯冲者轰炸机、TBF复仇者鱼雷机。\n（基础属性合计：攻击+450后+25%，雷击+120%，后勤+20%。）\n被动：\n远程空袭：无视敌军战列舰主炮伤害，且可以支援我军在陆地上的行动。\n制海权：与除潜艇外的敌方海军交战时，伤害提升50%，受伤降低30%。\n先发制人：航母机群在首回合即可投放炸弹和鱼雷。",
 		"equip": {
 			"type": 3,
 			"value": {
@@ -1213,7 +1213,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "F6F-5地狱猫",
 		"canUseItemEffect": "true",
-		"text": "挂载：6×HVAR火箭弹和2×1000磅炸弹\n属性：攻+250后额外＋20%，与陆军或水面舰艇战斗时可以先后分别使用火箭弹和炸弹攻击：\n首回合抢先发射一轮火箭弹，每枚火箭弹伤害为0.2倍攻击力（对步、炮以及小型舰艇增伤15%）。仅第2回合投弹，每颗炸弹伤害为4倍攻击力\n被动：\n火鸡猎手：敌方战斗机的每一点连击数都会额外增加我方5%的普攻伤害。（无连击时视为1连击，仍有5%保底加成）\n安全返航：战斗结束时，如果剩余血量小于30%，额外回复5%（不计入显伤）。",
+		"text": "攻+250后额外＋20%，挂载：6×HVAR火箭弹和2×1000磅炸弹。\n首回合抢先发射一轮火箭弹，每枚火箭弹伤害为0.2倍攻击力（对步、炮以及小型舰艇增伤15%）。仅第2回合投弹，每颗炸弹伤害为4倍攻击力\n被动：\n火鸡猎手：敌方战斗机的每一点连击数都会额外增加我方5%的普攻伤害。（无连击时视为1连击，仍有5%保底加成）\n安全返航：战斗结束时，如果剩余血量小于30%，额外回复5%（不计入显伤）。",
 		"equip": {
 			"type": 4,
 			"value": {
@@ -1228,7 +1228,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "喷火MK16",
 		"canUseItemEffect": "true",
-		"text": "属性：攻击+n后额外加50%。挂载：8×RP-3火箭弹和2×500磅炸弹。与陆军或水面舰艇战斗时可以先后使用火箭弹和炸弹攻击：\n首回合抢先发射2轮火箭弹，每枚火箭弹伤害为0.1倍攻击力（对装甲、建筑增伤20%）。仅第2回合投弹，每颗炸弹伤害为2倍攻击力\n被动：\n最后的喷火：与敌机作战时，普攻伤害提升20%的基础上+20%后勤值。\n空中掩护：已夺取制空权时，加成效果改为25%。",
+		"text": "攻击+250后额外加30%。挂载：8×RP-3火箭弹和2×500磅炸弹。与陆军或水面舰艇战斗时可以先后使用火箭弹和炸弹攻击：\n首回合抢先发射2轮火箭弹，每枚火箭弹伤害为0.1倍攻击力（对装甲、建筑增伤20%）。仅第2回合投弹，每颗炸弹伤害为2倍攻击力\n被动：\n最后的喷火：与敌机作战时，普攻伤害提升20%的基础上+20%后勤值。\n空中掩护：已夺取制空权时，加成效果改为25%。",
 		"equip": {
 			"type": 4,
 			"value": {
@@ -1249,7 +1249,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "F4U-4B海盗",
 		"canUseItemEffect": "true",
-		"text": "挂载：8×HVAR火箭弹和2×1000磅炸弹\n属性：攻击+350后额外加40%。与陆军和海军作战时抢先发射2轮火箭弹，每枚火箭弹伤害为0.2倍攻击力（对步、炮和小型舰艇增伤15%）。仅第2回合投弹，每颗炸弹伤害为4倍攻击力。\n被动：\n死亡口哨：战斗开始前，削减敌人20%血量和攻击力（同种飞机不可叠加）。\n空域肃清：已夺取制空权时，我军一切空袭伤害提高20%。未夺取制空权时，对战斗机伤害提升20%。（同种飞机不可叠加）",
+		"text": "攻击+350后额外加40%。挂载：8×HVAR火箭弹和2×1000磅炸弹。\n与陆军和海军作战时抢先发射2轮火箭弹，每枚火箭弹伤害为0.2倍攻击力（对步、炮和小型舰艇增伤15%）。仅第2回合投弹，每颗炸弹伤害为4倍攻击力。\n被动：\n死亡口哨：战斗开始前，削减敌人20%血量和攻击力（同种飞机不可叠加）。\n空域肃清：已夺取制空权时，我军一切空袭伤害提高20%。未夺取制空权时，对战斗机伤害提升20%。（同种飞机不可叠加）",
 		"equip": {
 			"type": 4,
 			"value": {
@@ -1264,7 +1264,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "P51D野马",
 		"canUseItemEffect": "true",
-		"text": "挂载：10×HVAR火箭弹\n属性：攻击+350后额外加40%。与陆军和水面舰艇战斗时抢先发射2轮火箭弹，每枚火箭弹伤害为0.2倍攻击力（对步、炮和小型舰艇增伤15%）。\n被动：\n长途护航：受到的所有战斗伤害减少30%，如果是空中目标，则改为减少50%。部分护航战关卡中不会撤退。\n制空霸权：与敌方空军战斗时，战斗方式改为2连击（对喷气机不生效）。已夺取制空权时，普攻伤害提高20%，火箭弹、炸弹和航空鱼雷伤害提升30%。",
+		"text": "攻击+350后额外加40%。挂载：10×HVAR火箭弹。\n与陆军和水面舰艇战斗时抢先发射2轮火箭弹，每枚火箭弹伤害为0.2倍攻击力（对步、炮和小型舰艇增伤15%）。\n被动：\n长途护航：受到的所有战斗伤害减少30%，如果是空中目标，则改为减少50%。部分护航战关卡中不会撤退。\n制空霸权：与敌方空军战斗时，战斗方式改为2连击（对喷气机不生效）。已夺取制空权时，普攻伤害提高20%，火箭弹、炸弹和航空鱼雷伤害提升30%。",
 		"equip": {
 			"type": 4,
 			"value": {
@@ -1331,7 +1331,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "蚊式战斗机",
 		"canUseItemEffect": "true",
-		"text": "挂载：8×RP3火箭弹\n属性：攻击+450后额外加20%。与陆军和水面舰艇作战时抢先发射2轮火箭弹，每枚火箭弹伤害为0.1倍攻击力（对装甲、建筑增伤20%）\n被动：\n木制奇迹：与敌方空军作战时，如果对方不是喷气战斗机，先手造成3倍攻击力伤害。\n机载雷达：敌人的“先攻”技能无效且我方额外进行2次普通攻击。\n高效侦察：以50%倍率免疫领域类伤害。\n狗斗：战斗机不在场时，也可以代替争夺制空权。",
+		"text": "攻击+450后额外加20%。挂载：8×RP3火箭弹。\n首回合发射2轮火箭弹，每枚火箭弹伤害为0.1倍攻击力（对装甲、建筑增伤20%）\n被动：\n木制奇迹：与敌方空军作战时，如果对方不是喷气战斗机，先手造成3倍攻击力伤害。\n机载雷达：敌人的“先攻”技能无效且我方额外进行2次普通攻击。\n高效侦察：以50%倍率免疫领域类伤害。\n狗斗：战斗机不在场时，也可以代替争夺制空权。",
 		"equip": {
 			"type": 5,
 			"value": {
@@ -1346,7 +1346,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "P47D雷电",
 		"canUseItemEffect": "true",
-		"text": "挂载：8×HVAR火箭弹和3×500磅炸弹\n属性：攻击＋400后额外加40%。\n首回合发射2轮火箭弹，每枚基础伤害0.2倍攻击力（对步、炮和小型舰艇增伤15%）。每3回合投掷2轮炸弹，每颗炸弹伤害为1.5倍攻击力。\n被动：\n铜墙铁壁：与空军和高射炮作战时，获得20%减伤。\n舔地狂魔：与地面单位作战时，P47D投掷的炸弹数量增加一轮。\n战机转职：未夺取制空权时，炸弹和火箭弹伤害-30%，但对空普攻伤害提高40%。\n狗斗：战斗机不在场时，也可以代替争夺制空权。",
+		"text": "攻击＋400后额外加40%。挂载：8×HVAR火箭弹和3×500磅炸弹\n首回合发射2轮火箭弹，每枚基础伤害0.2倍攻击力（对步、炮和小型舰艇增伤15%）。每3回合投掷2轮炸弹，每颗炸弹伤害为1.5倍攻击力。\n被动：\n铜墙铁壁：与空军和高射炮作战时，获得20%减伤。\n舔地狂魔：与地面单位作战时，P47D投掷的炸弹数量增加一轮。\n战机转职：未夺取制空权时，炸弹和火箭弹伤害-30%，但对空普攻伤害提高40%。\n狗斗：战斗机不在场时，也可以代替争夺制空权。",
 		"equip": {
 			"type": 5,
 			"value": {
@@ -1361,7 +1361,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "SB2C地狱俯冲者",
 		"canUseItemEffect": "true",
-		"text": "挂载：8×HVAR火箭弹和1×2000磅炸弹或1×MK13鱼雷\n属性：攻击+100，雷击+50%。\n与陆军和水面舰艇作战时抢先发射2轮火箭弹，每枚火箭弹伤害为0.2倍攻击力（对步、炮和小型舰艇增伤15%）。每4回合投弹，每颗炸弹伤害为8倍攻击力。\n被动：\n俯冲轰炸：对舰攻击时，炸弹造成的伤害提升50%。\n地狱咆哮：敌人攻击力减少15%，闪避-2。对重巡、战列舰和航母造成的炸弹伤害增加50%。\n双重打击：攻击军舰时，可以在投弹的同时发射5枚鱼雷攻击。\n哑弹：发射的鱼雷不会爆炸。",
+		"text": "攻击+100，雷击+50%。挂载：8×HVAR火箭弹和1×2000磅炸弹或1×MK13鱼雷\n与陆军和水面舰艇作战时抢先发射2轮火箭弹，每枚火箭弹伤害为0.2倍攻击力（对步、炮和小型舰艇增伤15%）。每4回合投弹，每颗炸弹伤害为8倍攻击力。\n被动：\n俯冲轰炸：对舰攻击时，炸弹造成的伤害提升50%。\n地狱咆哮：敌人攻击力减少15%，闪避-2。对重巡、战列舰和航母造成的炸弹伤害增加50%。\n双重打击：攻击军舰时，可以在投弹的同时发射5枚鱼雷攻击。\n哑弹：发射的鱼雷不会爆炸。",
 		"equip": {
 			"type": 5,
 			"value": {
@@ -1382,7 +1382,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "P61黑寡妇",
 		"canUseItemEffect": "true",
-		"text": "挂载：4×500磅炸弹\n属性：攻击+450，后勤+40%。每5个回合投弹，每颗炸弹伤害为1倍攻击力。\n被动：\n暗夜行者：与高射炮对战时，免疫60%伤害；免疫80%领域伤害。\n机载雷达：敌人的“先攻”技能无效且我方额外进行2次普通攻击。\n狗斗：战斗机不在场时，也可以代替争夺制空权。",
+		"text": "攻击+450，后勤+40%。挂载：4×500磅炸弹。\n每5个回合投弹，每颗炸弹伤害为1倍攻击力。\n被动：\n暗夜行者：与高射炮对战时，免疫60%伤害；免疫80%领域伤害。\n机载雷达：敌人的“先攻”技能无效且我方额外进行2次普通攻击。\n狗斗：战斗机不在场时，也可以代替争夺制空权。",
 		"equip": {
 			"type": 5,
 			"value": {
@@ -1447,7 +1447,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "梭鱼式轰炸机",
 		"canUseItemEffect": "true",
-		"text": "挂载：6×250磅炸弹或1×MK12鱼雷\n无属性加成。\n对地攻击时，每5回合投掷一轮炸弹，每颗炸弹伤害为0.5倍攻击力\n对舰攻击时，每5回合投掷5枚鱼雷。\n被动：\n双重打击：对舰攻击时，同时进行炸弹和鱼雷攻击。",
+		"text": "无属性加成。挂载：6×250磅炸弹或1×MK12鱼雷\n对地攻击时，每5回合投掷一轮炸弹，每颗炸弹伤害为0.5倍攻击力\n对舰攻击时，每5回合投掷5枚鱼雷。\n被动：\n双重打击：对舰攻击时，同时进行炸弹和鱼雷攻击。",
 		"equip": {
 			"type": 6,
 			"value": {},
@@ -1458,7 +1458,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "TBF复仇者",
 		"canUseItemEffect": "true",
-		"text": "挂载：4×500磅炸弹或1×MK13鱼雷\n属性：攻击+100，雷击+70%。对地攻击时，每4回合投掷1轮炸弹，每颗炸弹伤害为1倍攻击力。对舰攻击时，每4回合投放10枚鱼雷。\n被动：\n巨舰猎手：攻击重巡、战列舰、航母等大型战舰时，鱼雷伤害增加100%\n机载雷达：敌人的“先攻”技能无效且我方额外进行2次普通攻击。\n哑弹：发射的鱼雷不会爆炸。",
+		"text": "攻击+100，雷击+70%。挂载：4×500磅炸弹或1×MK13鱼雷。\n对地攻击时，每4回合投掷1轮炸弹，每颗炸弹伤害为1倍攻击力。对舰攻击时，每4回合投放10枚鱼雷。\n被动：\n巨舰猎手：攻击重巡、战列舰、航母等大型战舰时，鱼雷伤害增加100%\n机载雷达：敌人的“先攻”技能无效且我方额外进行2次普通攻击。\n哑弹：发射的鱼雷不会爆炸。",
 		"equip": {
 			"type": 6,
 			"value": {
@@ -1633,7 +1633,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "items",
 		"name": "2阶蓝宝石",
 		"canUseItemEffect": "true",
-		"itemEffect": "core.status.hero.mana += 20;\nif (flags.anime === true&&!core.getFlag(\"__statistics__\")) {\n\tcore.drawHeroAnimate('manaup');\n}",
+		"itemEffect": "core.status.hero.mana += 20 * ((core.hasItem('hard1')) ? 2 : 1) * (core.hasItem('hard2')) ? 1.5 : 1;\nif (flags.anime === true && !core.getFlag(\"__statistics__\")) {\n\tcore.drawHeroAnimate('manaup');\n}",
 		"text": "，指挥点数+20",
 		"itemEffectTip": "，指挥点+20",
 		"useItemEffect": "core.status.hero.mana += 20;"
@@ -1644,7 +1644,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"canUseItemEffect": "true",
 		"text": "，指挥点数+50",
 		"itemEffectTip": "，指挥点数+50",
-		"itemEffect": "core.status.hero.mana += 50;\nif (flags.anime === true&&!core.getFlag(\"__statistics__\")) {\n\tcore.drawHeroAnimate('manaup');\n}"
+		"itemEffect": "core.status.hero.mana += 50 * ((core.hasItem('hard1')) ? 2 : 1) * (core.hasItem('hard2')) ? 1.5 : 1;\nif (flags.anime === true && !core.getFlag(\"__statistics__\")) {\n\tcore.drawHeroAnimate('manaup');\n}"
 	},
 	"blue4Gem": {
 		"cls": "items",
@@ -1652,7 +1652,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"canUseItemEffect": "true",
 		"text": "，指挥点数+100",
 		"itemEffectTip": "，指挥点数+100",
-		"itemEffect": "core.status.hero.mana += 100;\nif (flags.anime === true&&!core.getFlag(\"__statistics__\")) {\n\tcore.drawHeroAnimate('manaup');\n}"
+		"itemEffect": "core.status.hero.mana += 100 * ((core.hasItem('hard1')) ? 2 : 1) * (core.hasItem('hard2')) ? 1.5 : 1;\nif (flags.anime === true && !core.getFlag(\"__statistics__\")) {\n\tcore.drawHeroAnimate('manaup');\n}"
 	},
 	"blue5Gem": {
 		"cls": "items",
@@ -1660,7 +1660,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"canUseItemEffect": "true",
 		"text": "，指挥点数+200",
 		"itemEffectTip": "，指挥点数+200",
-		"itemEffect": "core.status.hero.mana += 200;\nif (flags.anime === true&&!core.getFlag(\"__statistics__\")) {\n\tcore.drawHeroAnimate('manaup');\n}"
+		"itemEffect": "core.status.hero.mana += 200 * ((core.hasItem('hard1')) ? 2 : 1) * (core.hasItem('hard2')) ? 1.5 : 1;\nif (flags.anime === true && !core.getFlag(\"__statistics__\")) {\n\tcore.drawHeroAnimate('manaup');\n}"
 	},
 	"green2Gem": {
 		"cls": "items",
@@ -1794,13 +1794,13 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "constants",
 		"name": "神剧难度",
 		"canUseItemEffect": "true",
-		"text": "全塔战斗减伤40%"
+		"text": "全塔战斗减伤40%，获得的指挥点数+100%"
 	},
 	"hard2": {
 		"cls": "constants",
 		"name": "街机难度",
 		"canUseItemEffect": "true",
-		"text": "全塔战斗减伤20%"
+		"text": "全塔战斗减伤10%，获得的指挥点数+50%"
 	},
 	"hard4": {
 		"cls": "constants",
@@ -2064,7 +2064,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "equips",
 		"name": "喷火MK9",
 		"canUseItemEffect": "true",
-		"text": "挂载：8×RP-3火箭弹\n属性：攻击＋400后额外加40%。首回合发射一轮火箭弹，每发火箭弹伤害为0.1倍攻击力（对装甲、建筑增伤20%）\n被动：\n不列颠之鹰III：与敌方战斗机作战时，普攻伤害增加0.2倍后勤值。\n空中掩护：已夺取制空权时，制空权加成改为20%。",
+		"text": "属性：攻击＋400后额外加40%。挂载：8×RP-3火箭弹。\n首回合发射一轮火箭弹，每发火箭弹伤害为0.1倍攻击力（对装甲、建筑增伤20%）\n被动：\n不列颠之鹰III：与敌方战斗机作战时，普攻伤害增加0.2倍后勤值。\n空中掩护：已夺取制空权时，制空权加成改为20%。",
 		"equip": {
 			"type": 4,
 			"value": {
@@ -2249,7 +2249,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"canUseItemEffect": "true",
 		"text": "，指挥点数+300",
 		"itemEffectTip": "，指挥点数+300",
-		"itemEffect": "core.status.hero.mana += 300;\nif (flags.anime === true&&!core.getFlag(\"__statistics__\")) {\n\tcore.drawHeroAnimate('manaup');\n}"
+		"itemEffect": "core.status.hero.mana += 300 * ((core.hasItem('hard1')) ? 2 : 1) * (core.hasItem('hard2')) ? 1.5 : 1;\nif (flags.anime === true && !core.getFlag(\"__statistics__\")) {\n\tcore.drawHeroAnimate('manaup');\n}"
 	},
 	"green6Gem": {
 		"cls": "items",
@@ -2289,7 +2289,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"canUseItemEffect": "true",
 		"text": "，指挥点数+400",
 		"itemEffectTip": "，指挥点数+400",
-		"itemEffect": "core.status.hero.mana += 400;\nif (flags.anime === true&&!core.getFlag(\"__statistics__\")) {\n\tcore.drawHeroAnimate('manaup');\n}"
+		"itemEffect": "core.status.hero.mana += 400 * ((core.hasItem('hard1')) ? 2 : 1) * (core.hasItem('hard2')) ? 1.5 : 1;\nif (flags.anime === true && !core.getFlag(\"__statistics__\")) {\n\tcore.drawHeroAnimate('manaup');\n}"
 	},
 	"green7Gem": {
 		"cls": "items",
@@ -2329,7 +2329,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"canUseItemEffect": "true",
 		"text": "，指挥点数+500",
 		"itemEffectTip": "，指挥点数+500",
-		"itemEffect": "core.status.hero.mana += 500;\nif (flags.anime === true&&!core.getFlag(\"__statistics__\")) {\n\tcore.drawHeroAnimate('manaup');\n}"
+		"itemEffect": "core.status.hero.mana += 500 * ((core.hasItem('hard1')) ? 2 : 1) * (core.hasItem('hard2')) ? 1.5 : 1;\nif (flags.anime === true && !core.getFlag(\"__statistics__\")) {\n\tcore.drawHeroAnimate('manaup');\n}"
 	},
 	"green8Gem": {
 		"cls": "items",

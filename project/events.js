@@ -7051,6 +7051,449 @@ var events_c12a15a8_c380_4b28_8144_256cba95f760 =
 				"direction": "down",
 				"time": 1000
 			}
+		],
+		"跳关系统": [
+			{
+				"type": "while",
+				"condition": "true",
+				"data": [
+					{
+						"type": "choices",
+						"text": "\t[跳关系统]请选择想要前往的历史节点",
+						"choices": [
+							{
+								"text": "第二章 不列颠之鹰",
+								"action": [
+									{
+										"type": "showImage",
+										"code": 1,
+										"image": "chapter2.jpg",
+										"loc": [
+											0,
+											0
+										],
+										"opacity": 1,
+										"time": 0
+									},
+									{
+										"type": "choices",
+										"text": "\t[章节概述]西欧大陆已然沦陷，只有英吉利海峡将英国本土与德国的闪电攻势分隔。唯有挡下敌人的空中攻势，才能守住最后的阵地。",
+										"choices": [
+											{
+												"text": "立即前往",
+												"action": [
+													{
+														"type": "hideImage",
+														"code": 1,
+														"time": 0
+													}
+												]
+											},
+											{
+												"text": "再想想",
+												"action": [
+													{
+														"type": "hideImage",
+														"code": 1,
+														"time": 0
+													}
+												]
+											}
+										]
+									}
+								]
+							},
+							{
+								"text": "第三章 惊涛骇浪",
+								"action": [
+									{
+										"type": "showImage",
+										"code": 1,
+										"image": "chapter3.jpg",
+										"loc": [
+											0,
+											0
+										],
+										"opacity": 1,
+										"time": 0
+									},
+									{
+										"type": "choices",
+										"text": "\t[章节概述]空中的战斗仍在持续，在波涛汹涌的大西洋下，德军的“深海狼群”正对着英国的海上交通线虎视眈眈……",
+										"choices": [
+											{
+												"text": "立即前往",
+												"action": [
+													{
+														"type": "hideImage",
+														"code": 1,
+														"time": 0
+													}
+												]
+											},
+											{
+												"text": "再想想",
+												"action": [
+													{
+														"type": "hideImage",
+														"code": 1,
+														"time": 0
+													}
+												]
+											}
+										]
+									}
+								]
+							},
+							{
+								"text": "第四章 绝命沙原",
+								"action": [
+									{
+										"type": "showImage",
+										"code": 1,
+										"image": "chapter4.jpg",
+										"loc": [
+											0,
+											0
+										],
+										"opacity": 1,
+										"time": 0
+									},
+									{
+										"type": "choices",
+										"text": "\t[章节概述]非洲的漫天黄沙之下，意大利军队也在觊觎着苏伊士运河的控制权。在沙漠的另一端，一条狐狸尾巴忽隐忽现。",
+										"choices": [
+											{
+												"text": "立即前往",
+												"action": [
+													{
+														"type": "hideImage",
+														"code": 1,
+														"time": 0
+													}
+												]
+											},
+											{
+												"text": "再想想",
+												"action": [
+													{
+														"type": "hideImage",
+														"code": 1,
+														"time": 0
+													}
+												]
+											}
+										]
+									}
+								]
+							},
+							{
+								"text": "第五章 全面开战",
+								"action": [
+									{
+										"type": "showImage",
+										"code": 1,
+										"image": "chapter5.jpg",
+										"loc": [
+											0,
+											0
+										],
+										"opacity": 1,
+										"time": 0
+									},
+									{
+										"type": "choices",
+										"text": "\t[章节概述]随着美苏的加入，战争的规模已达顶峰。越来越多的人力和物力将被源源不断送往前线，在那之前，务必顶住！",
+										"choices": [
+											{
+												"text": "立即前往",
+												"action": [
+													{
+														"type": "hideImage",
+														"code": 1,
+														"time": 0
+													}
+												]
+											},
+											{
+												"text": "再想想",
+												"action": [
+													{
+														"type": "hideImage",
+														"code": 1,
+														"time": 0
+													}
+												]
+											}
+										]
+									}
+								]
+							},
+							{
+								"text": "第六章 反击时刻",
+								"action": [
+									{
+										"type": "showImage",
+										"code": 1,
+										"image": "chapter6.jpg",
+										"loc": [
+											0,
+											0
+										],
+										"opacity": 1,
+										"time": 0
+									},
+									{
+										"type": "choices",
+										"text": "\t[章节概述]持续的消耗战已经让曾经战无不胜的“沙漠之狐”显露疲态。现在正是，反击之时！",
+										"choices": [
+											{
+												"text": "立即前往",
+												"action": [
+													{
+														"type": "hideImage",
+														"code": 1,
+														"time": 0
+													}
+												]
+											},
+											{
+												"text": "再想想",
+												"action": [
+													{
+														"type": "hideImage",
+														"code": 1,
+														"time": 0
+													}
+												]
+											}
+										]
+									}
+								]
+							},
+							{
+								"text": "第七章 王牌陨落",
+								"action": [
+									{
+										"type": "showImage",
+										"code": 1,
+										"image": "chapter7.jpg",
+										"loc": [
+											0,
+											0
+										],
+										"opacity": 1,
+										"time": 0
+									},
+									{
+										"type": "choices",
+										"text": "\t[章节概述]沙漠军团最后的力量已被逼退至最后一个据点。然而，沙暴之中，隐隐浮现出一些钢铁虎纹……",
+										"choices": [
+											{
+												"text": "立即前往",
+												"action": [
+													{
+														"type": "hideImage",
+														"code": 1,
+														"time": 0
+													}
+												]
+											},
+											{
+												"text": "再想想",
+												"action": [
+													{
+														"type": "hideImage",
+														"code": 1,
+														"time": 0
+													}
+												]
+											}
+										]
+									}
+								]
+							},
+							{
+								"text": "第八章 战火蔓延",
+								"action": [
+									{
+										"type": "showImage",
+										"code": 1,
+										"image": "chapter8.jpg",
+										"loc": [
+											0,
+											0
+										],
+										"opacity": 1,
+										"time": 0
+									},
+									{
+										"type": "choices",
+										"text": "\t[章节概述]漫长的北非之战已经过去，下一步就是重返欧陆。迎接你的究竟是鲜花与荣耀，还是炮火与死亡？",
+										"choices": [
+											{
+												"text": "立即前往",
+												"action": [
+													{
+														"type": "hideImage",
+														"code": 1,
+														"time": 0
+													}
+												]
+											},
+											{
+												"text": "再想想",
+												"action": [
+													{
+														"type": "hideImage",
+														"code": 1,
+														"time": 0
+													}
+												]
+											}
+										]
+									}
+								]
+							},
+							{
+								"text": "第九章 D-Day",
+								"action": [
+									{
+										"type": "showImage",
+										"code": 1,
+										"image": "chapter9.jpg",
+										"loc": [
+											0,
+											0
+										],
+										"opacity": 1,
+										"time": 0
+									},
+									{
+										"type": "choices",
+										"text": "\t[章节概述]主力部队集结完毕，这一战，将载入史册！",
+										"choices": [
+											{
+												"text": "立即前往",
+												"action": [
+													{
+														"type": "hideImage",
+														"code": 1,
+														"time": 0
+													}
+												]
+											},
+											{
+												"text": "再想想",
+												"action": [
+													{
+														"type": "hideImage",
+														"code": 1,
+														"time": 0
+													}
+												]
+											}
+										]
+									}
+								]
+							},
+							{
+								"text": "第十章 阴云密布",
+								"action": [
+									{
+										"type": "showImage",
+										"code": 1,
+										"image": "chapter10.jpg",
+										"loc": [
+											0,
+											0
+										],
+										"opacity": 1,
+										"time": 0
+									},
+									{
+										"type": "choices",
+										"text": "\t[章节概述]一声轰鸣再次划破本该归于宁静的天空，跨时代的武器逐一登台亮相。本应唾手可得的胜利，重新蒙上了一层阴霾。",
+										"choices": [
+											{
+												"text": "立即前往",
+												"action": [
+													{
+														"type": "hideImage",
+														"code": 1,
+														"time": 0
+													}
+												]
+											},
+											{
+												"text": "再想想",
+												"action": [
+													{
+														"type": "hideImage",
+														"code": 1,
+														"time": 0
+													}
+												]
+											}
+										]
+									}
+								]
+							},
+							{
+								"text": "第十一章 胜利之歌",
+								"action": [
+									{
+										"type": "showImage",
+										"code": 1,
+										"image": "chapter11.jpg",
+										"loc": [
+											0,
+											0
+										],
+										"opacity": 1,
+										"time": 0
+									},
+									{
+										"type": "choices",
+										"text": "\t[章节概述]最终竞速已经开始，敌人发起最后的冲锋。在黎明到来之前，战斗的火把还不能熄灭！",
+										"choices": [
+											{
+												"text": "立即前往",
+												"action": [
+													{
+														"type": "hideImage",
+														"code": 1,
+														"time": 0
+													}
+												]
+											},
+											{
+												"text": "再想想",
+												"action": [
+													{
+														"type": "hideImage",
+														"code": 1,
+														"time": 0
+													}
+												]
+											}
+										]
+									}
+								]
+							},
+							{
+								"text": "退出",
+								"action": [
+									{
+										"type": "break",
+										"n": 1
+									}
+								]
+							}
+						]
+					}
+				]
+			}
 		]
 	}
 }

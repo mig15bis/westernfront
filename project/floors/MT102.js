@@ -278,54 +278,7 @@ main.floors.MT102=
     "beforeBattle": {},
     "afterBattle": {},
     "afterGetItem": {},
-    "afterOpenDoor": {
-        "11,7": [
-            {
-                "type": "if",
-                "condition": "(flag:hard===1)",
-                "true": [
-                    "\t[系统提示]检测到当前为“神剧难度”，获得30瓶下午茶、1000指挥点数、50攻击。该难度下免疫“炎热debuff”的负面效果",
-                    {
-                        "type": "setValue",
-                        "name": "item:tea",
-                        "operator": "+=",
-                        "value": "30"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "status:mana",
-                        "operator": "+=",
-                        "value": "1000"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "status:atk",
-                        "operator": "+=",
-                        "value": "50"
-                    }
-                ]
-            },
-            {
-                "type": "if",
-                "condition": "(flag:hard===2)",
-                "true": [
-                    "\t[系统提示]检测到当前为“街机难度”，获得15黄3蓝",
-                    {
-                        "type": "setValue",
-                        "name": "item:yellowKey",
-                        "operator": "+=",
-                        "value": "15"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "item:blueKey",
-                        "operator": "+=",
-                        "value": "3"
-                    }
-                ]
-            }
-        ]
-    },
+    "afterOpenDoor": {},
     "autoEvent": {},
     "cannotMove": {},
     "cannotMoveIn": {},

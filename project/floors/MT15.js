@@ -18,7 +18,37 @@ main.floors.MT15=
             "type": "playSound",
             "name": "xinxinmagic.mp3"
         },
-        "\t[系统提示]与本地图右下角机关门内的红色物品交互，可获得新的技能。但需要注意，由于机制问题，你无法在本区域使用新获得的技能，请把握好获取该技能的时机。"
+        "\t[系统提示]与本地图右下角机关门内的红色物品交互，可获得新的技能。但需要注意，由于机制问题，你无法在本区域使用新获得的技能，请把握好获取该技能的时机。",
+        {
+            "type": "sleep",
+            "time": 500
+        },
+        {
+            "type": "showImage",
+            "code": 1,
+            "image": "teach11.png",
+            "sloc": [
+                0,
+                0,
+                null
+            ],
+            "loc": [
+                20,
+                102,
+                440,
+                275
+            ],
+            "opacity": 1,
+            "time": 500
+        },
+        {
+            "type": "wait"
+        },
+        {
+            "type": "hideImage",
+            "code": 1,
+            "time": 500
+        }
     ],
     "eachArrive": [],
     "parallelDo": "",

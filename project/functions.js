@@ -2671,7 +2671,7 @@ var functions_d6ad677b_427a_4623_b50f_a445a3b0ef8a =
 	if (core.hasItem('hard1')) {
 		damage *= 0.6;
 	} else if (core.hasItem('hard2')) {
-		damage *= 0.8;
+		damage *= 0.9;
 	}
 	if (manstein && istank) { //装甲之父
 		damage += mon_atk * 1.5;

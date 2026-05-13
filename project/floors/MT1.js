@@ -156,6 +156,36 @@ main.floors.MT1=
                     "text": "剩余敌人数量"
                 }
             ]
+        },
+        {
+            "type": "sleep",
+            "time": 500
+        },
+        {
+            "type": "showImage",
+            "code": 1,
+            "image": "teach1.png",
+            "sloc": [
+                0,
+                0,
+                null
+            ],
+            "loc": [
+                20,
+                102,
+                440,
+                275
+            ],
+            "opacity": 1,
+            "time": 500
+        },
+        {
+            "type": "wait"
+        },
+        {
+            "type": "hideImage",
+            "code": 1,
+            "time": 500
         }
     ],
     "eachArrive": [],
@@ -278,102 +308,7 @@ main.floors.MT1=
     "beforeBattle": {},
     "afterBattle": {},
     "afterGetItem": {},
-    "afterOpenDoor": {
-        "4,7": [
-            {
-                "type": "playSound",
-                "name": "xinxinmagic.mp3"
-            },
-            "\t[系统提示]再次提示：如果是第一次游玩完结版玩家，建议看一下牌子里的完结版更新内容。",
-            {
-                "type": "if",
-                "condition": "(flag:hard===1)",
-                "true": [
-                    "\t[系统提示]检测到当前为“神剧难度”，获得40%全塔战斗减伤道具、20黄5蓝。祝游戏愉快！",
-                    {
-                        "type": "setValue",
-                        "name": "item:yellowKey",
-                        "operator": "+=",
-                        "value": "20"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "item:blueKey",
-                        "operator": "+=",
-                        "value": "5"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "item:hard1",
-                        "operator": "+=",
-                        "value": "1"
-                    }
-                ]
-            },
-            {
-                "type": "if",
-                "condition": "(flag:hard===2)",
-                "true": [
-                    "\t[系统提示]检测到当前为“街机难度”，获得20%全塔战斗减伤道具、10黄2蓝。祝游戏愉快！",
-                    {
-                        "type": "setValue",
-                        "name": "item:yellowKey",
-                        "operator": "+=",
-                        "value": "10"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "item:blueKey",
-                        "operator": "+=",
-                        "value": "2"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "item:hard2",
-                        "operator": "+=",
-                        "value": "1"
-                    }
-                ]
-            },
-            {
-                "type": "if",
-                "condition": "(flag:hard===3)",
-                "true": [
-                    "\t[系统提示]检测到当前为“历史难度”，无福利。祝游戏愉快！"
-                ]
-            },
-            {
-                "type": "sleep",
-                "time": 500
-            },
-            {
-                "type": "showImage",
-                "code": 1,
-                "image": "teach1.png",
-                "sloc": [
-                    0,
-                    0,
-                    null
-                ],
-                "loc": [
-                    20,
-                    102,
-                    440,
-                    275
-                ],
-                "opacity": 1,
-                "time": 500
-            },
-            {
-                "type": "wait"
-            },
-            {
-                "type": "hideImage",
-                "code": 1,
-                "time": 500
-            }
-        ]
-    },
+    "afterOpenDoor": {},
     "autoEvent": {},
     "cannotMove": {},
     "cannotMoveIn": {},

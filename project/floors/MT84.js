@@ -405,60 +405,7 @@ main.floors.MT84=
     "beforeBattle": {},
     "afterBattle": {},
     "afterGetItem": {},
-    "afterOpenDoor": {
-        "7,12": [
-            {
-                "type": "if",
-                "condition": "(flag:hard===1)",
-                "true": [
-                    "\t[系统提示]检测到当前为“神剧难度”，获得100瓶下午茶、2000指挥点数、10黄5蓝",
-                    {
-                        "type": "setValue",
-                        "name": "item:tea",
-                        "operator": "+=",
-                        "value": "100"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "status:mana",
-                        "operator": "+=",
-                        "value": "2000"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "item:yellowKey",
-                        "operator": "+=",
-                        "value": "10"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "item:blueKey",
-                        "operator": "+=",
-                        "value": "5"
-                    }
-                ]
-            },
-            {
-                "type": "if",
-                "condition": "(flag:hard===2)",
-                "true": [
-                    "\t[系统提示]检测到当前为“街机难度”，获得10黄5蓝",
-                    {
-                        "type": "setValue",
-                        "name": "item:yellowKey",
-                        "operator": "+=",
-                        "value": "10"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "item:blueKey",
-                        "operator": "+=",
-                        "value": "5"
-                    }
-                ]
-            }
-        ]
-    },
+    "afterOpenDoor": {},
     "autoEvent": {},
     "cannotMove": {},
     "cannotMoveIn": {},
