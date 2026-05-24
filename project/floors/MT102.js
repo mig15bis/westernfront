@@ -27,7 +27,11 @@ main.floors.MT102=
             "name": "flag:dry",
             "value": "true"
         },
-        "\r[yellow]Mission 16 罗盘行动",
+        {
+            "type": "function",
+            "async": true,
+            "function": "function(){\ncore.ui.mission.mis('MISSION 16', '罗盘行动', core.doAction);\n}"
+        },
         {
             "type": "text",
             "text": "\t[奥金莱克]\f[auchinleck.png,0,310]虽然我们先前没能料到敌人的突袭导致丢失了大片占领地，但现在夺回来还不算晚。",

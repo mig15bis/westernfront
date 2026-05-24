@@ -22,7 +22,11 @@ main.floors.MT260=
             "type": "setCurtain",
             "time": 500
         },
-        "\r[yellow]Mission 36 萨勒诺登陆",
+        {
+            "type": "function",
+            "async": true,
+            "function": "function(){\ncore.ui.mission.mis('MISSION 36', '萨勒诺登陆', core.doAction);\n}"
+        },
         {
             "type": "text",
             "text": "\t[克拉克]\f[clark.png,0,310]虽然失去了奇袭效果，但第五集团军仍然顺利登陆，接下来就是向那不勒斯方向挺进了。",

@@ -22,7 +22,11 @@ main.floors.MT403=
             "type": "setCurtain",
             "time": 500
         },
-        "\r[yellow]Mission 54 易北河会师",
+        {
+            "type": "function",
+            "async": true,
+            "function": "function(){\ncore.ui.mission.mis('MISSION 54', '易北河会师', core.doAction);\n}"
+        },
         {
             "type": "playSound",
             "name": "xinxinmagic.mp3"

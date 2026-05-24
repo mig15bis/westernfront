@@ -25,7 +25,11 @@ main.floors.MT318=
         {
             "type": "showui"
         },
-        "\r[yellow]Mission 43 登陆日——奥马哈海滩",
+        {
+            "type": "function",
+            "async": true,
+            "function": "function(){\ncore.ui.mission.mis('MISSION 43', '奥马哈海滩', core.doAction);\n}"
+        },
         "\t[盟军指挥官,hero]敌军占据了有利地形，这让友军无法取得更多进展。",
         "\t[盟军指挥官,hero]把悬崖上居高临下的敌军全部清理掉，就可以解除友军的困境。",
         {

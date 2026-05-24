@@ -29,7 +29,11 @@ main.floors.MT41=
             "type": "setCurtain",
             "time": 500
         },
-        "\r[yellow]Mission 7 鹰击长空",
+        {
+            "type": "function",
+            "async": true,
+            "function": "function(){\ncore.ui.mission.mis('MISSION 7', '鹰击长空', core.doAction);\n}"
+        },
         "\t[地面指挥部]指挥官阁下，根据我们的计算，你们已经接近敌机群，请注意对空搜索。",
         "\t[盟军指挥官,hero]看见了，一大群德国佬，我们已经占据有利高度，随时可以攻击。",
         "\t[地面指挥部]收到，准许开火！",

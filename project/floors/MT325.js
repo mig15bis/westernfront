@@ -22,7 +22,11 @@ main.floors.MT325=
             "type": "setCurtain",
             "time": 500
         },
-        "\r[yellow]Mission 44 血战卡昂",
+        {
+            "type": "function",
+            "async": true,
+            "function": "function(){\ncore.ui.mission.mis('MISSION 44', '血战卡昂', core.doAction);\n}"
+        },
         "\t[盟军指挥官,hero]开始进攻，完成我们未完成的战略目标！",
         {
             "type": "playSound",

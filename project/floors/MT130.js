@@ -22,7 +22,11 @@ main.floors.MT130=
             "type": "setCurtain",
             "time": 500
         },
-        "\r[yellow]Mission 20 十字军行动",
+        {
+            "type": "function",
+            "async": true,
+            "function": "function(){\ncore.ui.mission.mis('MISSION 20', '十字军行动', core.doAction);\n}"
+        },
         {
             "type": "text",
             "text": "\t[奥金莱克]\f[auchinleck.png,0,310]十字军行动已经开始，各部队出发，按预定作战计划行动。",

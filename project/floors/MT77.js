@@ -32,7 +32,11 @@ main.floors.MT77=
             "type": "setCurtain",
             "time": 500
         },
-        "\r[yellow]Mission 12 冰冷水域",
+        {
+            "type": "function",
+            "async": true,
+            "function": "function(){\ncore.ui.mission.mis('MISSION 12', '冰冷水域', core.doAction);\n}"
+        },
         "\t[德军潜艇（无线电截获）,u7]发现大量敌方商船，有大型护航舰队。坐标&%￥#，航向%@#&，汇报完毕。",
         "\t[盟军指挥官,hero]电报上的就是我们的位置。舰队位置已经暴露，所有人打起精神，注意对海和对空搜索，发现敌人立刻汇报。",
         {

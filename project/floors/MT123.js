@@ -22,7 +22,11 @@ main.floors.MT123=
             "type": "setCurtain",
             "time": 500
         },
-        "\r[yellow]Mission 19 战斧行动",
+        {
+            "type": "function",
+            "async": true,
+            "function": "function(){\ncore.ui.mission.mis('MISSION 19', '战斧行动', core.doAction);\n}"
+        },
         {
             "type": "text",
             "text": "\t[奥金莱克]\f[auchinleck.png,0,310]战斧行动已经开始。坦克部队在前面开路，冲散敌人的防御！",

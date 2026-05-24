@@ -25,7 +25,11 @@ main.floors.MT209=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        "\r[yellow]Mission 30 空中堡垒",
+        {
+            "type": "function",
+            "async": true,
+            "function": "function(){\ncore.ui.mission.mis('MISSION 30', '空中堡垒', core.doAction);\n}"
+        },
         {
             "type": "setValue",
             "name": "flag:escort",

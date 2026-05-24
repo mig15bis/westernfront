@@ -32,7 +32,11 @@ main.floors.MT158=
             "type": "setCurtain",
             "time": 500
         },
-        "\r[yellow]Mission 23 PQ17的单程票",
+        {
+            "type": "function",
+            "async": true,
+            "function": "function(){\ncore.ui.mission.mis('MISSION 23', 'PQ17的单程票', core.doAction);\n}"
+        },
         "\t[盟军指挥官,hero]根据情报，敌人的海军和空军已经尽数出动，用不了多久就会和我们发生接触。",
         "\t[盟军指挥官,hero]全体护航舰船注意保护商船队，后援正在赶来的路上。",
         {

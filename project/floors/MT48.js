@@ -32,7 +32,11 @@ main.floors.MT48=
             "type": "setCurtain",
             "time": 500
         },
-        "\r[yellow]Mission 8 燃烧的天空",
+        {
+            "type": "function",
+            "async": true,
+            "function": "function(){\ncore.ui.mission.mis('MISSION 8', '燃烧的天空', core.doAction);\n}"
+        },
         "\t[地面指挥部]红色长机，收到请回答！",
         "\t[盟军指挥官,hero]收到，请讲。",
         "\t[地面指挥部]赶快干掉这附近所有的轰炸机，不然等他们飞到机场，我们都得玩完！",

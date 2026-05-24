@@ -22,7 +22,11 @@ main.floors.MT424=
             "type": "setCurtain",
             "time": 500
         },
-        "\r[yellow]Mission 57 最后的海战",
+        {
+            "type": "function",
+            "async": true,
+            "function": "function(){\ncore.ui.mission.mis('MISSION 57', '最后的海战', core.doAction);\n}"
+        },
         {
             "type": "text",
             "text": "\t[尼米兹]\f[nimitz.png,0,310]航空母舰特混舰队集结完毕，开始空袭，同时密切注意敌机动向。",

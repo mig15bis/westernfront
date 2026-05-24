@@ -22,7 +22,11 @@ main.floors.MT95=
             "type": "setCurtain",
             "time": 500
         },
-        "\r[yellow]Mission 15 巨舰的谢幕",
+        {
+            "type": "function",
+            "async": true,
+            "function": "function(){\ncore.ui.mission.mis('MISSION 15', '巨舰的谢幕', core.doAction);\n}"
+        },
         {
             "type": "text",
             "text": "\t[蒙巴顿]\f[montbarton.png,0,310]俾斯麦号已经停下了，距离为胡德号复仇只剩一步之遥。",

@@ -18,7 +18,11 @@ main.floors.MT55=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        "\r[yellow]Mission 9 伦敦上空的鹰",
+        {
+            "type": "function",
+            "async": true,
+            "function": "function(){\ncore.ui.mission.mis('MISSION 9', '伦敦上空的鹰', core.doAction);\n}"
+        },
         {
             "type": "playSound",
             "name": "airalarm.mp3"

@@ -25,7 +25,11 @@ main.floors.MT267=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        "\r[yellow]Mission 37 黑色星期四",
+        {
+            "type": "function",
+            "async": true,
+            "function": "function(){\ncore.ui.mission.mis('MISSION 37', '黑色星期四', core.doAction);\n}"
+        },
         {
             "type": "setValue",
             "name": "flag:escort",

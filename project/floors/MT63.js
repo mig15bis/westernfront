@@ -32,7 +32,11 @@ main.floors.MT63=
             "type": "setCurtain",
             "time": 500
         },
-        "\r[yellow]Mission 10 保卫船队",
+        {
+            "type": "function",
+            "async": true,
+            "function": "function(){\ncore.ui.mission.mis('MISSION 10', '保卫船队', core.doAction);\n}"
+        },
         "\t[盟军指挥官,hero]已完成任务交接，所有舰船保持队形，注意搜索敌人。",
         {
             "type": "playSound",

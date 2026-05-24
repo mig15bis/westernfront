@@ -33,7 +33,11 @@ main.floors.MT350=
             "type": "setCurtain",
             "time": 500
         },
-        "\r[yellow]Mission 47 速度与激情",
+        {
+            "type": "function",
+            "async": true,
+            "function": "function(){\ncore.ui.mission.mis('MISSION 47', '速度与激情', core.doAction);\n}"
+        },
         {
             "type": "playSound",
             "name": "bomber.mp3"

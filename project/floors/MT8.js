@@ -18,7 +18,11 @@ main.floors.MT8=
             "type": "setCurtain",
             "time": 500
         },
-        "\r[yellow]Mission 2  势不可挡的“闪电”",
+        {
+            "type": "function",
+            "async": true,
+            "function": "function(){\ncore.ui.mission.mis('MISSION 2', '闪电战', core.doAction);\n}"
+        },
         {
             "type": "text",
             "text": "\t[古德里安]\f[guderian.png,0,310]前面的盟军士兵听着！想活命的马上放下武器离开战场！我没时间俘虏你们！",

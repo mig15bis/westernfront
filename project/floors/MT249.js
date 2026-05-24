@@ -22,7 +22,11 @@ main.floors.MT249=
             "type": "setCurtain",
             "time": 500
         },
-        "\r[yellow]Mission 35 西西里岛登陆战",
+        {
+            "type": "function",
+            "async": true,
+            "function": "function(){\ncore.ui.mission.mis('MISSION 35', '登陆西西里', core.doAction);\n}"
+        },
         {
             "type": "text",
             "text": "\t[蒙哥马利]\f[montgomary.png,0,310]我们的部队已顺利上岸，敌人抵抗并不强烈。",

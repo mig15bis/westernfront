@@ -22,7 +22,11 @@ main.floors.MT116=
             "type": "setCurtain",
             "time": 500
         },
-        "\r[yellow]Mission 18 马耳他之战",
+        {
+            "type": "function",
+            "async": true,
+            "function": "function(){\ncore.ui.mission.mis('MISSION 18', '不屈的孤岛', core.doAction);\n}"
+        },
         "\t[盟军指挥官,hero]各位战士们，在这场战斗中，请妥善利用身边的任何掩体，一击脱离，保护好自己。",
         "\t[盟军指挥官,hero]与以往不同，我们正在背水一战，这一次无法承受太多牺牲了。",
         {
@@ -319,66 +323,7 @@ main.floors.MT116=
     "beforeBattle": {},
     "afterBattle": {},
     "afterGetItem": {},
-    "afterOpenDoor": {
-        "7,12": [
-            {
-                "type": "if",
-                "condition": "(flag:hard===1)",
-                "true": [
-                    "\t[系统提示]检测到当前为“神剧难度”，获得30瓶下午茶、500指挥点数、2000血量和血限",
-                    {
-                        "type": "setValue",
-                        "name": "item:tea",
-                        "operator": "+=",
-                        "value": "30"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "status:mana",
-                        "operator": "+=",
-                        "value": "500"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "status:hpmax",
-                        "operator": "+=",
-                        "value": "2000"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "status:hp",
-                        "operator": "+=",
-                        "value": "2000"
-                    }
-                ]
-            },
-            {
-                "type": "if",
-                "condition": "(flag:hard===2)",
-                "true": [
-                    "\t[系统提示]检测到当前为“街机难度”，获得1000血量和血限、10瓶下午茶",
-                    {
-                        "type": "setValue",
-                        "name": "status:hpmax",
-                        "operator": "+=",
-                        "value": "1000"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "status:hp",
-                        "operator": "+=",
-                        "value": "1000"
-                    },
-                    {
-                        "type": "setValue",
-                        "name": "item:tea",
-                        "operator": "+=",
-                        "value": "10"
-                    }
-                ]
-            }
-        ]
-    },
+    "afterOpenDoor": {},
     "autoEvent": {},
     "cannotMove": {},
     "cannotMoveIn": {},

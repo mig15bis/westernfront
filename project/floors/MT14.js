@@ -22,7 +22,11 @@ main.floors.MT14=
             "type": "setCurtain",
             "time": 500
         },
-        "\r[yellow]Mission 3  反击之刻",
+        {
+            "type": "function",
+            "async": true,
+            "function": "function(){\ncore.ui.mission.mis('MISSION 3', '阿拉斯反击战', core.doAction);\n}"
+        },
         {
             "type": "text",
             "text": "\t[亚历山大]\f[alexanda.png,0,310]指挥官阁下，我们的新型坦克性能在德军之上，不过还是要注意敌人的空袭。丘吉尔首相在等着你的好消息！",

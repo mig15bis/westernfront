@@ -32,7 +32,11 @@ main.floors.MT277=
             "name": "flag:友军血量",
             "value": "3000000"
         },
-        "\r[yellow]Mission 38 可敬的对手",
+        {
+            "type": "function",
+            "async": true,
+            "function": "function(){\ncore.ui.mission.mis('MISSION 38', '可敬的对手', core.doAction);\n}"
+        },
         {
             "type": "closeDoor",
             "id": "specialDoor",

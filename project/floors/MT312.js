@@ -18,7 +18,11 @@ main.floors.MT312=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        "\r[yellow]Mission 42 登陆日——朱诺海滩",
+        {
+            "type": "function",
+            "async": true,
+            "function": "function(){\ncore.ui.mission.mis('MISSION 42', '朱诺海滩', core.doAction);\n}"
+        },
         {
             "type": "setCurtain",
             "time": 500

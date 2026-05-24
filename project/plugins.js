@@ -2343,7 +2343,8 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 		main.dom.outerBackground.style.height = obj.totalHeight + "px";
 		main.dom.outerUI.style.width = obj.totalWidth + "px";
 		main.dom.outerUI.style.height = obj.totalHeight + "px";
-
+		main.dom.start.style.width = obj.totalWidth + "px";
+		main.dom.start.style.height = obj.totalHeight + "px";
 		// perf 8: HD compatibility.
 		const innerSize = obj.canvasWidth * core.domStyle.scale + "px";
 		for (let i = 0; i < core.dom.gameCanvas.length; ++i) {
@@ -7488,5 +7489,225 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 		inverseTrigo: N,
 		shake: B,
 	};
+},
+    "标题界面高级动画": function () {
+	// 在此增加新插件
+	const start = document.createElement("canvas"); //start画布设置
+	start.style.position = "absolute";
+	start.style.zIndex = 300;
+	start.style.display = "disable";
+	start.id = "start";
+	main.dom.startPanel.insertAdjacentElement("afterend", start)
+	const ctx = start.getContext("2d");
+	main.dom.start = start;
+	start.onclick = function (e) {
+		try {
+			e.preventDefault();
+			if (core.isPlaying()) return false;
+			const left = core.dom.gameGroup.offsetLeft;
+			const top = core.dom.gameGroup.offsetTop;
+			const px = Math.floor((e.clientX - left) / core.domStyle.scale),
+				py = Math.floor((e.clientY - top) / core.domStyle.scale);
+			core.ui.start.onclick(px, py);
+		} catch (ee) {
+			main.log(ee);
+		}
+	};
+	const { Animation, Transition, linear, bezier, circle, hyper, trigo, power, inverseTrigo, shake, sleep } = core.plugin.animate
+	class START {
+		async ani() {
+			this.mode = 'animate';
+			const tran = new Transition();
+			tran.value.bgalpha = 1
+			tran.value.bgY = 0;
+			tran.value.title1X = -280;
+			tran.value.title2X = 850;
+			tran.value.title1Y1 = 170;
+			tran.value.title1Y2 = 320;
+			tran.value.title2Y1 = 240;
+			tran.value.title2Y2 = 390;
+			tran.value.clearT1Y = -171;
+			tran.value.clearT2Y = -101;
+			tran.value.airY1 = 780;
+			tran.value.airY2 = 480;
+			const fn = () => {
+				core.clearMap(ctx);
+				if (core.domStyle.isVertical) { //竖屏
+					core.maps._setHDCanvasSize(ctx, 480, 780);
+					core.drawImage(ctx, 'bg2.png', 0, 150, 480, 480);
+					core.drawImage(ctx, 'title1.png', 140, 190, 200, 50);
+					core.drawImage(ctx, 'title2.png', 120, 240, 240, 80);
+					core.drawImage(ctx, 'start1.png', 140, 360, 200, 80);
+					core.drawImage(ctx, 'load1.png', 140, 440, 200, 80);
+					core.drawImage(ctx, 'abstract1.png', 140, 520, 200, 80);
+					core.drawImage(ctx, 'bg.jpg', -150, tran.value.bgY + 150, 780, 480);
+					core.drawImage(ctx, 'title1.png', tran.value.title1X, tran.value.title1Y2, 280, 70);
+					core.drawImage(ctx, 'title2.png', tran.value.title2X, tran.value.title2Y2, 330, 101);
+					core.drawImage(ctx, 'aircraft6.png', 0, tran.value.airY1, 480, 360);
+					core.fillRect(ctx, 0, 0, 480, 780, `rgba(0,0,0,${tran.value.bgalpha}`)
+				} else { //横屏
+					core.maps._setHDCanvasSize(ctx, 780, 480)
+					core.drawImage(ctx, 'bg2.png', 150, 0, 480, 480);
+					core.drawImage(ctx, 'title1.png', 290, 40, 200, 50);
+					core.drawImage(ctx, 'title2.png', 270, 90, 240, 80);
+					core.drawImage(ctx, 'start1.png', 290, 210, 200, 80);
+					core.drawImage(ctx, 'load1.png', 290, 290, 200, 80);
+					core.drawImage(ctx, 'abstract1.png', 290, 370, 200, 80);
+					core.drawImage(ctx, 'bg.jpg', 0, tran.value.bgY, 780, 480);
+					core.drawImage(ctx, 'title1.png', tran.value.title1X, tran.value.title1Y1, 280, 70);
+					core.drawImage(ctx, 'title2.png', tran.value.title2X, tran.value.title2Y1, 330, 101);
+					core.drawImage(ctx, 'aircraft6.png', 150, tran.value.airY2, 480, 360);
+					core.fillRect(ctx, 0, 0, 780, 480, `rgba(0,0,0,${tran.value.bgalpha}`)
+
+				}
+
+			}
+			tran.ticker.add(fn)
+			tran.mode(hyper('sin', 'out')).time(500).absolute();
+			tran.value.bgalpha = 0
+			await sleep(500)
+			if (core.domStyle.isVertical) {
+				tran.value.title1X = 100;
+				tran.value.title2X = 75;
+			} else {
+				tran.value.title1X = 250;
+				tran.value.title2X = 225;
+			}
+			core.playSound('158-Skill02.mp3')
+			await sleep(1500)
+			tran.value.bgY = -780;
+			if (core.domStyle.isVertical) {
+				tran.value.title1Y2 = -460;
+				tran.value.title2Y2 = -390;
+			} else {
+				tran.value.title1Y1 = -460;
+				tran.value.title2Y1 = -390;
+			}
+			core.playSound('bomber.mp3')
+			tran.value.airY1 = -810;
+			tran.value.airY2 = -810;
+			await sleep(500);
+			//core.clearMap(ctx);
+			tran.ticker.destroy();
+
+		}
+		constructor() {
+			this.mode = 'animate';
+		}
+		update() {
+			//绘制规则
+			if (core.domStyle.isVertical) { //设置画布大小
+				core.maps._setHDCanvasSize(ctx, 480, 780);
+				core.drawImage('ctx', 'bg.jpg', 0, 150, 480, 480);
+			} else {
+				core.maps._setHDCanvasSize(ctx, 780, 480)
+				core.drawImage('ctx', 'bg.jpg', 150, 0, 480, 480);
+			}
+
+		}
+		onclick(px, py) {
+			//点击规则
+		}
+	}
+	core.ui.start = new START()
+},
+    "关卡名称高级动画": function () {
+	// 在此增加新插件
+	const mission = document.createElement("canvas"); //关卡画布设置
+	mission.style.position = "absolute";
+	mission.style.zIndex = 200;
+	mission.style.display = "block";
+	mission.id = "mission";
+	main.dom.startPanel.insertAdjacentElement("afterend", mission)
+	const ctx = mission.getContext("2d");
+	main.dom.mission = mission;
+	mission.onclick = function (e) {
+		try {
+			e.preventDefault();
+			if (core.isPlaying()) return false;
+			const left = core.dom.gameGroup.offsetLeft;
+			const top = core.dom.gameGroup.offsetTop;
+			const px = Math.floor((e.clientX - left) / core.domStyle.scale),
+				py = Math.floor((e.clientY - top) / core.domStyle.scale);
+			core.ui.mission.onclick(px, py);
+		} catch (ee) {
+			main.log(ee);
+		}
+	};
+	const { Animation, Transition, linear, bezier, circle, hyper, trigo, power, inverseTrigo, shake, sleep } = core.plugin.animate
+	class MISSION {
+		async mis2(text1, text2, callback) {
+			const tran = new Transition();
+			const ctx2 = core.createCanvas("mission2", 0, 0, 480, 480, 200)
+			tran.value.x = -100
+			tran.value.z = 580
+			tran.value.y = 0
+			const fn = () => {
+				core.clearMap(ctx2);
+				core.fillRect(ctx2, 0, 0, 480, 480, `rgba(0,0,0,${tran.value.y})`)
+				core.setTextAlign(ctx2, 'center')
+				core.setTextBaseline(ctx2, "middle")
+				core.fillBoldText(ctx2, text1, tran.value.x, 208, '#00FF00', '#FFFFFF', '32px number');
+				core.fillBoldText(ctx2, text2, tran.value.z, 240, '#00FF00', '#FFFFFF', '32px number');
+			}
+			tran.ticker.add(fn);
+			tran.mode(trigo('sin', 'in-out')).time(1000).absolute()
+			tran.value.y = 0.5
+			await sleep(1000)
+			tran.value.x = 240
+			tran.value.z = 240
+			await sleep(1500);
+			tran.value.x = 580
+			tran.value.z = -100
+			await sleep(1000)
+			tran.value.y = 0
+			await sleep(1000)
+			tran.ticker.destroy();
+			core.deleteCanvas("mission2")
+			if (callback) callback()
+
+		}
+		async mis(text1, text2, callback) {
+			const animate = new Animation();
+			const ctx2 = core.createCanvas("mission2", 0, 0, 480, 480, 200)
+			const fn = () => {
+				core.clearMap(ctx2);
+				core.fillRect(ctx2, 0, 0, 480, 480, `rgba(0,0,0,${animate.y/100})`)
+				core.setTextAlign(ctx2, 'center')
+				core.setTextBaseline(ctx2, "middle")
+				core.fillBoldText(ctx2, text1, -100 + animate.x, 208, '#FFFF00', '#FF0000', '32px kaiti');
+				core.fillBoldText(ctx2, text2, 580 - animate.x, 250, '#FFFF00', '#FF0000', '32px kaiti');
+			}
+			animate.ticker.add(fn);
+			animate.mode(trigo('sin', 'in-out')).time(1000).absolute().move(0, 50)
+			await animate.all()
+			animate.move(340, 50)
+			await sleep(3000);
+			animate.move(680, 50)
+			await animate.all()
+			animate.move(680, 0)
+			await animate.all()
+			animate.ticker.destroy();
+			core.deleteCanvas("mission2")
+			if (callback) callback()
+
+		}
+		constructor() {}
+		update() {
+			//绘制规则
+			if (core.domStyle.isVertical) { //设置画布大小
+				core.maps._setHDCanvasSize(ctx, 480, 780);
+				core.drawImage('ctx', 'bg.jpg', 0, 150, 480, 480);
+			} else {
+				core.maps._setHDCanvasSize(ctx, 780, 480)
+				core.drawImage('ctx', 'bg.jpg', 150, 0, 480, 480);
+			}
+
+		}
+		onclick(px, py) {
+			//点击规则
+		}
+	}
+	core.ui.mission = new MISSION()
 }
 }

@@ -25,7 +25,11 @@ main.floors.MT296=
             "type": "setHeroOpacity",
             "opacity": 1
         },
-        "\r[yellow]Mission 40 戈林？迈耶！",
+        {
+            "type": "function",
+            "async": true,
+            "function": "function(){\ncore.ui.mission.mis('MISSION 40', '戈林？迈耶！', core.doAction);\n}"
+        },
         {
             "type": "setValue",
             "name": "flag:escort",

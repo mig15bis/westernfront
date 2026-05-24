@@ -32,7 +32,11 @@ main.floors.MT151=
             "type": "setCurtain",
             "time": 500
         },
-        "\r[yellow]Mission 22 深海群狼",
+        {
+            "type": "function",
+            "async": true,
+            "function": "function(){\ncore.ui.mission.mis('MISSION 22', '深海群狼', core.doAction);\n}"
+        },
         {
             "type": "playSound",
             "name": "Sonar.wav"

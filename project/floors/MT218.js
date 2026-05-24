@@ -274,7 +274,11 @@ main.floors.MT218=
             "name": "lavaDamage",
             "value": 40000
         },
-        "\r[yellow]Mission 31 凯赛林隘口战役",
+        {
+            "type": "function",
+            "async": true,
+            "function": "function(){\ncore.ui.mission.mis('MISSION 31', '傲慢的代价', core.doAction);\n}"
+        },
         {
             "type": "sleep",
             "time": 500

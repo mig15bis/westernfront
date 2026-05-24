@@ -22,7 +22,11 @@ main.floors.MT109=
             "type": "setCurtain",
             "time": 500
         },
-        "\r[yellow]Mission 17 沙漠之狐",
+        {
+            "type": "function",
+            "async": true,
+            "function": "function(){\ncore.ui.mission.mis('MISSION 17', '沙漠之狐', core.doAction);\n}"
+        },
         {
             "type": "text",
             "text": "\t[奥金莱克]\f[auchinleck.png,0,310]全军出击，沿海岸线进攻，依次占领德尔纳和班加西！",

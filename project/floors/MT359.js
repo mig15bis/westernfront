@@ -32,7 +32,11 @@ main.floors.MT359=
             "type": "setCurtain",
             "time": 500
         },
-        "\r[yellow]Mission 48 遥控炸弹",
+        {
+            "type": "function",
+            "async": true,
+            "function": "function(){\ncore.ui.mission.mis('MISSION 48', '遥控炸弹', core.doAction);\n}"
+        },
         {
             "type": "playSound",
             "name": "xinxinmagic.mp3"

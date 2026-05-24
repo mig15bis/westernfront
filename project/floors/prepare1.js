@@ -16,6 +16,39 @@ main.floors.prepare1=
     "firstArrive": [
         {
             "type": "setValue",
+            "name": "flag:cri",
+            "value": "true"
+        },
+        {
+            "type": "setValue",
+            "name": "item:I600",
+            "operator": "+=",
+            "value": "1"
+        },
+        {
+            "type": "setValue",
+            "name": "flag:hitice",
+            "value": "true"
+        },
+        {
+            "type": "setValue",
+            "name": "flag:lighton",
+            "value": "true"
+        },
+        {
+            "type": "setValue",
+            "name": "item:I335",
+            "operator": "+=",
+            "value": "1"
+        },
+        {
+            "type": "setValue",
+            "name": "item:I746",
+            "operator": "+=",
+            "value": "1"
+        },
+        {
+            "type": "setValue",
             "name": "status:hp",
             "value": "1000",
             "norefresh": true

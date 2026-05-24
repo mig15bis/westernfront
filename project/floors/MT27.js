@@ -32,7 +32,11 @@ main.floors.MT27=
             "type": "setCurtain",
             "time": 500
         },
-        "\r[yellow]Mission 5  海上撤退",
+        {
+            "type": "function",
+            "async": true,
+            "function": "function(){\ncore.ui.mission.mis('MISSION 5', '海上撤退', core.doAction);\n}"
+        },
         {
             "type": "text",
             "text": "\t[道丁]\f[dowdin.png,0,310]敌人对我们的船队发起了大规模袭击！指挥官阁下，所有皇家海军和空军的指挥权都已交给你，务必保护好我们撤退的船队！",

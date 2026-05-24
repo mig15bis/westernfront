@@ -22,7 +22,11 @@ main.floors.MT381=
             "type": "setCurtain",
             "time": 500
         },
-        "\r[yellow]Mission 51 反击的序曲",
+        {
+            "type": "function",
+            "async": true,
+            "function": "function(){\ncore.ui.mission.mis('MISSION 51', '反击的序曲', core.doAction);\n}"
+        },
         "\t[盟军指挥官,hero]巴斯托涅的守军数量很少，尽快解决吧。",
         {
             "type": "playSound",

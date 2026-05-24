@@ -26,7 +26,11 @@ main.floors.MT439=
             "type": "unloadEquip",
             "pos": 1
         },
-        "\r[yellow]Mission 60 凋零的樱花",
+        {
+            "type": "function",
+            "async": true,
+            "function": "function(){\ncore.ui.mission.mis('MISSION 60', '凋零的樱花', core.doAction);\n}"
+        },
         {
             "type": "text",
             "text": "\t[麦克阿瑟]\f[macarthur.png,0,310]日本需要一个新的领导者来接管，而那个人将会是我。",

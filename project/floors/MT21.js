@@ -22,7 +22,11 @@ main.floors.MT21=
             "type": "setCurtain",
             "time": 500
         },
-        "\r[yellow]Mission 4  拖延战术",
+        {
+            "type": "function",
+            "async": true,
+            "function": "function(){\ncore.ui.mission.mis('MISSION 4', '拖延战术', core.doAction);\n}"
+        },
         {
             "type": "text",
             "text": "\t[蒙哥马利]\f[montgomary.png,0,310]我们的部队正在准备撤退，但这个过程必须不受打扰。",

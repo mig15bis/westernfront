@@ -22,7 +22,11 @@ main.floors.MT34=
             "type": "setCurtain",
             "time": 500
         },
-        "\r[yellow]Mission 6 守护军港",
+        {
+            "type": "function",
+            "async": true,
+            "function": "function(){\ncore.ui.mission.mis('MISSION 6', '守护军港', core.doAction);\n}"
+        },
         "\t[盟军指挥官,hero]所有战机注意，十二点方向，2000米高度，发现一大群德国佬。",
         "\t[盟军指挥官,hero]两人一组，准备俯冲，给我瞄准轰炸机狠狠的打！",
         "\t[系统提示]敌人战力重置中",

@@ -22,7 +22,11 @@ main.floors.MT396=
             "type": "setCurtain",
             "time": 500
         },
-        "\r[yellow]Mission 53 底板行动",
+        {
+            "type": "function",
+            "async": true,
+            "function": "function(){\ncore.ui.mission.mis('MISSION 53', '底板行动', core.doAction);\n}"
+        },
         "\t[盟军指挥官,hero]该死！这里到处都是敌机！所有人注意掩护其他战机起飞，我们需要以最快的速度缩小战力差距！",
         {
             "type": "playSound",

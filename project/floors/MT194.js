@@ -22,7 +22,11 @@ main.floors.MT194=
             "type": "setCurtain",
             "time": 500
         },
-        "\r[yellow]Mission 28 第二次阿拉曼战役",
+        {
+            "type": "function",
+            "async": true,
+            "function": "function(){\ncore.ui.mission.mis('MISSION 28', '阿拉曼 第二战', core.doAction);\n}"
+        },
         {
             "type": "text",
             "text": "\t[蒙哥马利]\f[montgomary.png,0,310]士兵们，感到荣幸吧！我将带领你们，击败那个曾令你们恐惧的沙漠之狐！非洲军团即将遭受灭顶之灾！",

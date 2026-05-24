@@ -22,7 +22,11 @@ main.floors.MT343=
             "type": "setCurtain",
             "time": 500
         },
-        "\r[yellow]Mission 46 会飞的炸弹",
+        {
+            "type": "function",
+            "async": true,
+            "function": "function(){\ncore.ui.mission.mis('MISSION 46', '会飞的炸弹', core.doAction);\n}"
+        },
         "\t[盟军指挥官,hero]开始进攻，把敌人打回他们的老家去！",
         {
             "type": "playSound",

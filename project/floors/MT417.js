@@ -29,7 +29,11 @@ main.floors.MT417=
             "type": "setCurtain",
             "time": 500
         },
-        "\r[yellow]Mission 56 燃烧的天空",
+        {
+            "type": "function",
+            "async": true,
+            "function": "function(){\ncore.ui.mission.mis('MISSION 56', '空中扫荡', core.doAction);\n}"
+        },
         "\t[盟军指挥官,hero]空中发现敌机，制空编队跟我来，其他人去扫射机场。",
         {
             "type": "playSound",

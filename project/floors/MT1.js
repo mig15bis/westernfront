@@ -14,39 +14,6 @@ main.floors.MT1=
     "defaultGround": "grass",
     "firstArrive": [
         {
-            "type": "setValue",
-            "name": "flag:cri",
-            "value": "true"
-        },
-        {
-            "type": "setValue",
-            "name": "item:I600",
-            "operator": "+=",
-            "value": "1"
-        },
-        {
-            "type": "setValue",
-            "name": "flag:hitice",
-            "value": "true"
-        },
-        {
-            "type": "setValue",
-            "name": "flag:lighton",
-            "value": "true"
-        },
-        {
-            "type": "setValue",
-            "name": "item:I335",
-            "operator": "+=",
-            "value": "1"
-        },
-        {
-            "type": "setValue",
-            "name": "item:I746",
-            "operator": "+=",
-            "value": "1"
-        },
-        {
             "type": "setHeroOpacity",
             "opacity": 1
         },
@@ -66,7 +33,11 @@ main.floors.MT1=
             "name": "flag:stage",
             "value": "1"
         },
-        "\r[yellow]Mission 1 马奇诺防线",
+        {
+            "type": "function",
+            "async": true,
+            "function": "function(){\ncore.ui.mission.mis('MISSION 1', '马奇诺防线', core.doAction);\n}"
+        },
         {
             "type": "sleep",
             "time": 500

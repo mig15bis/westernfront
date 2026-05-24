@@ -28,7 +28,11 @@ main.floors.MT89=
         {
             "type": "forbidSave"
         },
-        "\r[yellow]Mission 14 追击俾斯麦",
+        {
+            "type": "function",
+            "async": true,
+            "function": "function(){\ncore.ui.mission.mis('MISSION 14', '追击俾斯麦', core.doAction);\n}"
+        },
         "\t[盟军指挥官,hero]失去胡德号对我们而言是个沉痛的打击，但我们必须迅速振作起来。",
         "\t[盟军指挥官,hero]总部已经得知这个噩耗，相信他们很快便会派遣增援来为胡德号复仇。",
         "\t[盟军指挥官,hero]在那之前，我们必须紧跟俾斯麦号，将其行踪持续上报给总部。",

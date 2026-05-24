@@ -22,7 +22,11 @@ main.floors.MT70=
             "type": "setCurtain",
             "time": 500
         },
-        "\r[yellow]Mission 11 奇袭塔兰托",
+        {
+            "type": "function",
+            "async": true,
+            "function": "function(){\ncore.ui.mission.mis('MISSION 11', '奇袭塔兰托', core.doAction);\n}"
+        },
         {
             "type": "text",
             "text": "\t[坎宁安]\f[cunningham.jpg,0,310]指挥官阁下，我的战列舰编队会在侧翼为你提供掩护，你只要专心解决正面的敌人即可。",

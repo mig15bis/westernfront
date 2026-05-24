@@ -22,7 +22,11 @@ main.floors.MT84=
             "type": "setCurtain",
             "time": 500
         },
-        "\r[yellow]Mission 13 胡德的绝唱",
+        {
+            "type": "function",
+            "async": true,
+            "function": "function(){\ncore.ui.mission.mis('MISSION 13', '胡德的绝唱', core.doAction);\n}"
+        },
         "\t[盟军指挥官,hero]该死的鬼天气，这么低的能见度，不降低速度很容易迷航。",
         "\t[盟军指挥官,hero]必须尽快突破封锁，赶往丹麦海峡，否则很有可能错失拦截俾斯麦号的绝佳机会。",
         "\t[盟军指挥官,hero]（怎么有种不祥的预感？但愿是我想多了）",

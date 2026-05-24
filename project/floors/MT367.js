@@ -22,7 +22,11 @@ main.floors.MT367=
             "type": "setCurtain",
             "time": 500
         },
-        "\r[yellow]Mission 49 市场花园行动",
+        {
+            "type": "function",
+            "async": true,
+            "function": "function(){\ncore.ui.mission.mis('MISSION 49', '市场花园行动', core.doAction);\n}"
+        },
         {
             "type": "text",
             "text": "\t[蒙哥马利]\f[montgomary.png,0,310]我们的情报出了问题，前线传回来的求救信号表明，德军在空降区域有大规模装甲部队把守！",

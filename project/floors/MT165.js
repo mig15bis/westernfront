@@ -27,7 +27,11 @@ main.floors.MT165=
             "type": "setCurtain",
             "time": 500
         },
-        "\r[yellow]Mission 24 沙漠空战",
+        {
+            "type": "function",
+            "async": true,
+            "function": "function(){\ncore.ui.mission.mis('MISSION 24', '沙漠空战', core.doAction);\n}"
+        },
         "\t[盟军指挥官,hero]全体注意，前方发现敌军战斗机和高炮阵地，注意躲避。战斗机编队保护好各自的轰炸机！",
         {
             "type": "playSound",

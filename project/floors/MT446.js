@@ -22,7 +22,11 @@ main.floors.MT446=
             "type": "setCurtain",
             "time": 500
         },
-        "\r[yellow]Mission 60 凋零的樱花",
+        {
+            "type": "function",
+            "async": true,
+            "function": "function(){\ncore.ui.mission.mis('MISSION 60', '凋零的樱花', core.doAction);\n}"
+        },
         {
             "type": "text",
             "text": "\t[山下奉文]\f[yamashita.jpg,0,310]帝国已经到了最危险的时候，现在将绝密武器投入战场。所有叛逃者必须被就地处决，我们将以死表达对天皇的忠心！",

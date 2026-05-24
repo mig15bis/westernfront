@@ -22,7 +22,11 @@ main.floors.MT388=
             "type": "setCurtain",
             "time": 500
         },
-        "\r[yellow]Mission 52 突出部之战",
+        {
+            "type": "function",
+            "async": true,
+            "function": "function(){\ncore.ui.mission.mis('MISSION 52', '突出部之战', core.doAction);\n}"
+        },
         "\t[盟军指挥官,hero]坚持住！不能让敌人突破防线！",
         {
             "type": "text",

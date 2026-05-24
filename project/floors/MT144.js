@@ -27,7 +27,11 @@ main.floors.MT144=
             "name": "flag:dry",
             "value": "true"
         },
-        "\r[yellow]Mission 21 加查拉防线",
+        {
+            "type": "function",
+            "async": true,
+            "function": "function(){\ncore.ui.mission.mis('MISSION 21', '加查拉防线', core.doAction);\n}"
+        },
         {
             "type": "text",
             "text": "\t[奥金莱克]\f[auchinleck.png,0,310]指挥官阁下，请务必挡住敌人的进攻。如果防线失守，我们就不得不全线撤退了。",
