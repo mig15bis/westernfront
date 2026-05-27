@@ -652,13 +652,13 @@ actions.prototype._sys_onmove_choices = function (x, y, px, py) {
 actions.prototype._sys_onmove = function (x, y, px, py) {
     if (core.status.lockControl) return false;
 
-    if (core.status.preview.dragging) {
+    if (core.status.preview?.dragging) {
         core.setViewport(core.bigmap.offsetX - px + core.status.preview.px, core.bigmap.offsetY - py + core.status.preview.py);
         core.status.preview.px = px;
         core.status.preview.py = py;
         return true;
     }
-    if (core.status.preview.prepareDragging) {
+    if (core.status.preview?.prepareDragging) {
         if (Math.abs(px - core.status.preview.px) <= 20 && Math.abs(py - core.status.preview.py) <= 20)
             return true;
         else core.status.preview.prepareDragging = false;
@@ -2056,8 +2056,10 @@ actions.prototype._clickSL = function (x, y) {
             return;
         core.ui.closePanel();
         delete core.status.tempRoute;
-        if (!core.isPlaying())
+        if (!core.isPlaying()){
             core.showStartAnimate(true);
+           core.ui.start.ani()
+        }
         return;
     }
     // 删除

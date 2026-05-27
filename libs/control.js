@@ -376,7 +376,7 @@ control.prototype.showStartAnimate = function (noAnimate, callback) {
 
 control.prototype._showStartAnimate_resetDom = function () {
     core.dom.startPanel.style.opacity = 1;
-    core.dom.startPanel.style.display = "block";
+    //core.dom.startPanel.style.display = "block";
     core.dom.startTop.style.opacity = 1;
     core.dom.startTop.style.display = "block";
     core.dom.startButtonGroup.style.display = 'none';
@@ -1356,6 +1356,7 @@ control.prototype.chooseReplayFile = function () {
         if (!obj.route) return alert("无效的录像！");
         var _replay = function () {
             core.startGame(core.flags.startUsingCanvas ? '' : obj.hard || '', obj.seed, core.decodeRoute(obj.route));
+            main.dom.start.style.display="none"
         }
         if (obj.version && obj.version != core.firstData.version) {
             core.myconfirm("游戏版本不一致！\n你仍然想播放录像吗？", _replay);

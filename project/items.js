@@ -32,7 +32,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "items",
 		"name": "蓝宝石",
 		"text": "，指挥点数+${10 * ((core.hasItem('hard1')) ? 2 : 1) * (core.hasItem('hard2')) ? 1.5 : 1}",
-		"itemEffect": "core.status.hero.mana += 10 * ((core.hasItem('hard1')) ? 2 : 1) * (core.hasItem('hard2')) ? 1.5 : 1;\nif (flags.anime === true && !core.getFlag(\"__statistics__\")) {\n\tcore.drawHeroAnimate('manaup');\n}",
+		"itemEffect": "core.status.hero.mana += 10 * (core.hasItem('hard1') ? 2 : 1) * (core.hasItem('hard2') ? 1.5 : 1);\nif (flags.anime === true && !core.getFlag(\"__statistics__\")) {\n\tcore.drawHeroAnimate('manaup');\n}",
 		"itemEffectTip": "，指挥点+10",
 		"useItemEffect": "core.status.hero.mana += 10;",
 		"canUseItemEffect": "true"
@@ -538,7 +538,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"canUseItemEffect": "true",
 		"text": "，黄金+500",
 		"itemEffectTip": "，黄金+500",
-		"itemEffect": "core.status.hero.money += 500 * (core.hasItem('coin')) ? 2 : 1;"
+		"itemEffect": "core.status.hero.money += 500 * (core.hasItem('coin') ? 2 : 1);"
 	},
 	"I342": {
 		"cls": "items",
@@ -1562,7 +1562,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"canUseItemEffect": "true",
 		"text": "，黄金+5",
 		"itemEffectTip": "，黄金+5",
-		"itemEffect": "core.status.hero.money += 5 * (core.hasItem('coin')) ? 2 : 1;"
+		"itemEffect": "core.status.hero.money += 5 * (core.hasItem('coin') ? 2 : 1);"
 	},
 	"I521": {
 		"cls": "items",
@@ -1570,7 +1570,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"canUseItemEffect": "true",
 		"text": "，黄金+10",
 		"itemEffectTip": "，黄金+10",
-		"itemEffect": "core.status.hero.money += 10 * (core.hasItem('coin')) ? 2 : 1;"
+		"itemEffect": "core.status.hero.money += 10 * (core.hasItem('coin') ? 2 : 1);"
 	},
 	"I522": {
 		"cls": "items",
@@ -1578,13 +1578,13 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"canUseItemEffect": "true",
 		"text": "，黄金+50",
 		"itemEffectTip": "，黄金+50",
-		"itemEffect": "core.status.hero.money += 50 * (core.hasItem('coin')) ? 2 : 1;"
+		"itemEffect": "core.status.hero.money += 50 * (core.hasItem('coin') ? 2 : 1);"
 	},
 	"I523": {
 		"cls": "items",
 		"name": "金块",
 		"canUseItemEffect": "true",
-		"itemEffect": "core.status.hero.money += 100 * (core.hasItem('coin')) ? 2 : 1;",
+		"itemEffect": "core.status.hero.money += 100 * (core.hasItem('coin') ? 2 : 1);",
 		"text": "，黄金+100",
 		"itemEffectTip": "，黄金+100"
 	},
@@ -1594,7 +1594,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"canUseItemEffect": "true",
 		"text": "，黄金+1000",
 		"itemEffectTip": "，黄金+1000",
-		"itemEffect": "core.status.hero.money += 1000 * (core.hasItem('coin')) ? 2 : 1;"
+		"itemEffect": "core.status.hero.money += 1000 * (core.hasItem('coin') ? 2 : 1);"
 	},
 	"red2Gem": {
 		"cls": "items",
@@ -1633,7 +1633,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"cls": "items",
 		"name": "2阶蓝宝石",
 		"canUseItemEffect": "true",
-		"itemEffect": "core.status.hero.mana += 20 * ((core.hasItem('hard1')) ? 2 : 1) * (core.hasItem('hard2')) ? 1.5 : 1;\nif (flags.anime === true && !core.getFlag(\"__statistics__\")) {\n\tcore.drawHeroAnimate('manaup');\n}",
+		"itemEffect": "core.status.hero.mana += 20 * (core.hasItem('hard1') ? 2 : 1) * (core.hasItem('hard2') ? 1.5 : 1);\nif (flags.anime === true && !core.getFlag(\"__statistics__\")) {\n\tcore.drawHeroAnimate('manaup');\n}",
 		"text": "，指挥点数+20",
 		"itemEffectTip": "，指挥点+20",
 		"useItemEffect": "core.status.hero.mana += 20;"
@@ -1644,7 +1644,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"canUseItemEffect": "true",
 		"text": "，指挥点数+50",
 		"itemEffectTip": "，指挥点数+50",
-		"itemEffect": "core.status.hero.mana += 50 * ((core.hasItem('hard1')) ? 2 : 1) * (core.hasItem('hard2')) ? 1.5 : 1;\nif (flags.anime === true && !core.getFlag(\"__statistics__\")) {\n\tcore.drawHeroAnimate('manaup');\n}"
+		"itemEffect": "core.status.hero.mana += 50 * (core.hasItem('hard1') ? 2 : 1) * (core.hasItem('hard2') ? 1.5 : 1);\nif (flags.anime === true && !core.getFlag(\"__statistics__\")) {\n\tcore.drawHeroAnimate('manaup');\n}"
 	},
 	"blue4Gem": {
 		"cls": "items",
@@ -1652,7 +1652,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"canUseItemEffect": "true",
 		"text": "，指挥点数+100",
 		"itemEffectTip": "，指挥点数+100",
-		"itemEffect": "core.status.hero.mana += 100 * ((core.hasItem('hard1')) ? 2 : 1) * (core.hasItem('hard2')) ? 1.5 : 1;\nif (flags.anime === true && !core.getFlag(\"__statistics__\")) {\n\tcore.drawHeroAnimate('manaup');\n}"
+		"itemEffect": "core.status.hero.mana += 100 * (core.hasItem('hard1') ? 2 : 1) * (core.hasItem('hard2') ? 1.5 : 1);\nif (flags.anime === true && !core.getFlag(\"__statistics__\")) {\n\tcore.drawHeroAnimate('manaup');\n}"
 	},
 	"blue5Gem": {
 		"cls": "items",
@@ -1660,7 +1660,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"canUseItemEffect": "true",
 		"text": "，指挥点数+200",
 		"itemEffectTip": "，指挥点数+200",
-		"itemEffect": "core.status.hero.mana += 200 * ((core.hasItem('hard1')) ? 2 : 1) * (core.hasItem('hard2')) ? 1.5 : 1;\nif (flags.anime === true && !core.getFlag(\"__statistics__\")) {\n\tcore.drawHeroAnimate('manaup');\n}"
+		"itemEffect": "core.status.hero.mana += 200 * (core.hasItem('hard1') ? 2 : 1) * (core.hasItem('hard2') ? 1.5 : 1);\nif (flags.anime === true && !core.getFlag(\"__statistics__\")) {\n\tcore.drawHeroAnimate('manaup');\n}"
 	},
 	"green2Gem": {
 		"cls": "items",
@@ -2249,7 +2249,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"canUseItemEffect": "true",
 		"text": "，指挥点数+300",
 		"itemEffectTip": "，指挥点数+300",
-		"itemEffect": "core.status.hero.mana += 300 * ((core.hasItem('hard1')) ? 2 : 1) * (core.hasItem('hard2')) ? 1.5 : 1;\nif (flags.anime === true && !core.getFlag(\"__statistics__\")) {\n\tcore.drawHeroAnimate('manaup');\n}"
+		"itemEffect": "core.status.hero.mana += 300 * (core.hasItem('hard1') ? 2 : 1) * (core.hasItem('hard2') ? 1.5 : 1);\nif (flags.anime === true && !core.getFlag(\"__statistics__\")) {\n\tcore.drawHeroAnimate('manaup');\n}"
 	},
 	"green6Gem": {
 		"cls": "items",
@@ -2289,7 +2289,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"canUseItemEffect": "true",
 		"text": "，指挥点数+400",
 		"itemEffectTip": "，指挥点数+400",
-		"itemEffect": "core.status.hero.mana += 400 * ((core.hasItem('hard1')) ? 2 : 1) * (core.hasItem('hard2')) ? 1.5 : 1;\nif (flags.anime === true && !core.getFlag(\"__statistics__\")) {\n\tcore.drawHeroAnimate('manaup');\n}"
+		"itemEffect": "core.status.hero.mana += 400 * (core.hasItem('hard1') ? 2 : 1) * (core.hasItem('hard2') ? 1.5 : 1);\nif (flags.anime === true && !core.getFlag(\"__statistics__\")) {\n\tcore.drawHeroAnimate('manaup');\n}"
 	},
 	"green7Gem": {
 		"cls": "items",
@@ -2329,7 +2329,7 @@ var items_296f5d02_12fd_4166_a7c1_b5e830c9ee3a =
 		"canUseItemEffect": "true",
 		"text": "，指挥点数+500",
 		"itemEffectTip": "，指挥点数+500",
-		"itemEffect": "core.status.hero.mana += 500 * ((core.hasItem('hard1')) ? 2 : 1) * (core.hasItem('hard2')) ? 1.5 : 1;\nif (flags.anime === true && !core.getFlag(\"__statistics__\")) {\n\tcore.drawHeroAnimate('manaup');\n}"
+		"itemEffect": "core.status.hero.mana += 500 * (core.hasItem('hard1') ? 2 : 1) * (core.hasItem('hard2') ? 1.5 : 1);\nif (flags.anime === true && !core.getFlag(\"__statistics__\")) {\n\tcore.drawHeroAnimate('manaup');\n}"
 	},
 	"green8Gem": {
 		"cls": "items",

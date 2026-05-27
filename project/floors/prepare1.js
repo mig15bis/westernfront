@@ -138,7 +138,7 @@ main.floors.prepare1=
         "\t[系统提示]绿色箭头指向的NPC们可以帮助你装上装备，或是选择出战的技能。准备完成后，可以在参谋\\i[N517]处正式开始游戏。",
         {
             "type": "function",
-            "function": "function(){\nflags.learned[1]=true\n}"
+            "function": "function(){\ndebugger\nflags.learned[1] = true\n}"
         },
         {
             "type": "playSound",
@@ -147,7 +147,7 @@ main.floors.prepare1=
         "\t[系统提示]\r[aqua]经费不足，某些地图画出来的效果可能非常不理想，还请谅解下，凑合玩吧。\r",
         {
             "type": "if",
-            "condition": "(flag:hard===1)",
+            "condition": "(flag:难度===1)",
             "true": [
                 {
                     "type": "playSound",
@@ -170,7 +170,7 @@ main.floors.prepare1=
             "false": [
                 {
                     "type": "if",
-                    "condition": "(flag:hard===2)",
+                    "condition": "(flag:难度===2)",
                     "true": [
                         {
                             "type": "playSound",

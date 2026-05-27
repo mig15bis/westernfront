@@ -24,6 +24,10 @@ main.floors.MT25=
                 "value": "1"
             },
             {
+                "type": "unloadEquip",
+                "pos": 0
+            },
+            {
                 "type": "update"
             },
             {

@@ -771,6 +771,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"chapter7.jpg",
 			"chapter8.jpg",
 			"chapter9.jpg",
+			"choosehard.png",
 			"churchill3.jpg",
 			"clark.png",
 			"classe.jpg",
@@ -789,6 +790,8 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"dowdin.png",
 			"dragon.png",
 			"eagle.jpg",
+			"easy1.png",
+			"easy2.png",
 			"edinburgh.jpg",
 			"eisenhower.png",
 			"end1.jpg",
@@ -819,6 +822,8 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"guderian.png",
 			"h35.jpg",
 			"halsey.jpg",
+			"hard1.png",
+			"hard2.png",
 			"hero.png",
 			"hero2.png",
 			"hipper.jpg",
@@ -855,6 +860,8 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			"nanbu.jpg",
 			"nimitz.png",
 			"norfolk.jpg",
+			"normal1.png",
+			"normal2.png",
 			"northcarolina.jpg",
 			"nuke.jpg",
 			"ozawa.jpg",
@@ -1777,6 +1784,29 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 			}
 		],
 		"startText": [
+			{
+				"type": "hideui"
+			},
+			{
+				"type": "function",
+				"function": "function(){\nflags.learned=[];flags.skillList=[0,0,0,0,0,0,0];\n}"
+			},
+			{
+				"type": "function",
+				"function": "function(){\ncore.stopAnimate(flags.lastId || 0)\n}"
+			},
+			{
+				"type": "setText",
+				"position": "down",
+				"offset": 10,
+				"bold": false,
+				"background": "15.png",
+				"time": 40
+			},
+			{
+				"type": "insert",
+				"name": "新难度选择"
+			},
 			{
 				"type": "sleep",
 				"time": 500
@@ -7160,7 +7190,7 @@ var data_a1e2fb4a_e986_4524_b0da_9b7ba7c0874d =
 		"enableNegativeDamage": false,
 		"betweenAttackMax": false,
 		"useLoop": true,
-		"startUsingCanvas": true,
+		"startUsingCanvas": false,
 		"statusCanvas": false,
 		"enableEnemyPoint": true,
 		"enableGentleClick": true,

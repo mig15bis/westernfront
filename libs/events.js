@@ -272,6 +272,7 @@ events.prototype._gameOver_askRate = function (ending) {
 events.prototype.restart = function () {
     core.showStartAnimate();
     core.playBgm(main.startBgm);
+    core.ui.start.ani()
 }
 
 ////// 询问是否需要重新开始 //////

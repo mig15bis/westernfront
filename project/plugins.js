@@ -1,557 +1,10 @@
 var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 = 
 {
     "init": function () {
-	this.getHeroPerTurnDamageFn = function (enemyInfo, hero, x, y, floorId) {
-		hero = hero || core.status.hero;
-		floorId = floorId || core.status.floorId;
-		if (typeof enemyInfo === 'string') enemyInfo = core.getEnemyInfo(enemyInfo, hero, x, y, floorId);
-		const heroInfo = {};
-		['hp', 'atk', 'def', 'mdef', 'ap', 'arm', 'top', 'bom', 'tpn', 'dod', 'gro'].forEach((field) => {
-			heroInfo[field] = core.getRealStatusOrDefault(hero, field);
-		});
-		const mon_special = enemyInfo.special;
-		const code = [ /* js */ `
-			var hero_hp = heroInfo.hp,
-				hero_atk = heroInfo.atk,
-				hero_def = heroInfo.def,
-				hero_mdef = heroInfo.mdef,
-				hero_ap = heroInfo.ap,
-				hero_arm = heroInfo.arm,
-				hero_top = heroInfo.top,
-				hero_bom = heroInfo.bom,
-				hero_tpn = heroInfo.tpn,
-				hero_dod = heroInfo.dod,
-				hero_gro = heroInfo.gro;
-			var mon_hp = enemyInfo.hp,
-				mon_atk = enemyInfo.atk,
-				mon_def = enemyInfo.def,
-				mon_ap = enemyInfo.ap,
-				mon_arm = enemyInfo.arm,
-				mon_top = enemyInfo.top,
-				mon_bom = enemyInfo.bom,
-				mon_tpn = enemyInfo.tpn,
-				mon_dod = enemyInfo.dod,
-				mon_cd = enemyInfo.cd,
-				mon_ammo = enemyInfo.ammo,
-				mon_spd = enemyInfo.spd,
-				mon_gro = enemyInfo.gro;
-			hero_dod = core.clamp(hero_dod, 0, mon_tpn);
-			mon_dod = core.clamp(mon_dod, 0, hero_tpn);
-		`];
-		if (core.hasSpecial(mon_special, 36)) // 俯冲轰炸，除前spd个回合外，攻击降低
-			code.push( /* js */ `if (nthTurn > mon_spd) hero_atk *= 0.95;`);
-		if (flags.skill === 3 && this.Luftwaffe.includes(enemyInfo.type)) // 技能3：防空弹幕，对空攻击力为1.2倍
-			code.push( /* js */ `hero_atk *= 1.2;`);
-		//谢馒头
-		if (core.hasEquip('m4') && this.Army.includes(enemyInfo.type)) {
-			code.push( /* js */ `
-				if (hero_ap <= mon_arm && hero_arm < mon_ap) {
-					hero_atk *= 1.15;
-				}
-			`);
-		}
-		//M4A2馒头
-		if (core.hasEquip('m4a2') && this.Army.includes(enemyInfo.type)) {
-			code.push( /* js */ `
-				if (hero_ap <= mon_arm && hero_arm < mon_ap) {
-					hero_atk *= 1.15;
-				}
-			`);
-		}
-		code.push( /* js */ `
-			var damage = hero_atk,
-				torpeodoDamage = 0,
-				depthcharge = 0,
-				bombDamage = 0;
-		`);
-		if (this.Army.includes(enemyInfo.type)) { // 陆战
-			//飓风MK2
-			if (core.hasEquip('hurricanemk2')) {
-				if (enemyInfo.type.endsWith('轻坦') || enemyInfo.type.endsWith('中坦') || enemyInfo.type.endsWith('重坦') || enemyInfo.type.endsWith('坦歼')) { //对地
-					code.push( /* js */ `if (mon_arm < 20) damage *= 1.2;`);
-				}
-			}
-			//台风战斗机
-			if (core.hasEquip('typhoon')) {
-				if (enemyInfo.type.endsWith('轻坦') || enemyInfo.type.endsWith('中坦') || enemyInfo.type.endsWith('重坦') || enemyInfo.type.endsWith('坦歼')) {
-					code.push( /* js */ `if (mon_arm < 20) damage *= 1.2;`);
-				} else if (enemyInfo.type.endsWith('反坦克炮') || enemyInfo.type.endsWith('榴弹炮') || enemyInfo.type.endsWith('高射炮') || enemyInfo.type.endsWith('步兵')) {
-					code.push( /* js */ `damage *= 1.2`);
-				}
-			}
-			//野猫
-			if (core.hasEquip('f4f3')) {
-				code.push( /* js */ `if (nthTurn === 2) bombDamage += 0.4 * 2 * hero_atk;`);
-			}
-			if (core.hasEquip('raider')) {
-				code.push( /* js */ `if (nthTurn === 2) bombDamage += 0.4 * 2 * hero_atk;`);
-			}
-			//地狱猫
-			if (core.hasEquip('f6f5')) {
-				code.push( /* js */ `if (nthTurn === 2) bombDamage += 2 * 2 * hero_atk;`);
-			}
-			if (core.hasEquip('essex')) {
-				code.push( /* js */ `if (nthTurn === 2) bombDamage += 2 * 2 * hero_atk;`);
-			}
-			//P40B战斧
-			if (core.hasEquip('p40c')) {
-				code.push( /* js */ `if (nthTurn === 2) bombDamage += 2.8 * hero_atk;`);
-			}
-			// 装备加成——攻击机
-			if (core.hasEquip('skua')) // 贼鸥式轰炸机
-				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 4 === 0) bombDamage += hero_atk * 2;`);
-			if (core.hasEquip("eagle")) // 贼鸥式轰炸机(鹰号航母)
-				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 4 === 0) bombDamage += hero_atk * 2;`);
-			if (core.hasEquip('sbd3')) //无畏
-				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 4 === 0) bombDamage += hero_atk * 4.5;`);
-			if (core.hasEquip('raider')) //无畏（突击者号航母）
-				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 4 === 0) bombDamage += hero_atk * 6.3;`);
-			if (core.hasEquip('barracuda')) //梭鱼
-				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 5 === 0) bombDamage += hero_atk * 6 * 0.5;`);
-			if (core.hasEquip('illustrious')) //梭鱼（光辉号）
-				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 5 === 0) bombDamage += hero_atk * 6 * 0.5;`);
-			if (core.hasEquip('typhoon')) // 台风式攻击机
-				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 4 === 0) bombDamage += hero_atk * 2;`);
-			// 装备加成——轰炸机
-			if (core.hasEquip('swordfish')) // 箭鱼鱼雷机
-				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 5 === 0) bombDamage += hero_atk * 0.6 * 3;`);
-			if (core.hasEquip("eagle")) // 箭鱼鱼雷机(鹰号航母)
-				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 5 === 0) bombDamage += hero_atk * 0.6 * 3;`);
-			if (core.hasEquip('blenheim')) //布伦海姆
-				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 5 === 0) bombDamage += hero_atk * 0.7 * 4;`);
-			if (core.hasEquip('tbd')) //TBD鱼雷机
-				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 5 === 0) bombDamage += hero_atk * 3;`);
-			if (core.hasEquip('raider')) //TBD鱼雷机（突击者
-				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 5 === 0) bombDamage += hero_atk * 3;`);
-			if (core.hasEquip('b25')) { //B25米切尔
-				if (!['eagle', 'illustrious', 'raider', 'essex', 'enterprise'].some(id => core.hasEquip(id))) {
-					code.push( /* js */ `if (nthTurn > 0 && nthTurn % 5 === 0) bombDamage += hero_atk * 12 * 0.6;`);
-				} else {
-					code.push( /* js */ `if (nthTurn > 0 && nthTurn % 5 === 0) bombDamage += hero_atk * 6 * 0.6;`);
-				}
-			}
-		} else if (this.Navy.includes(enemyInfo.type)) { // 海战
-			//野猫
-			if (core.hasEquip('f4f3')) { //野猫
-				code.push( /* js */ `if (nthTurn === 2) bombDamage += 0.4 * 2 * hero_atk;`);
-			}
-			if (core.hasEquip('raider')) { //野猫（突击者航空母舰）
-				code.push( /* js */ `if (nthTurn === 2) bombDamage += 0.4 * 2 * hero_atk;`);
-			}
-			//P40B战斧
-			if (core.hasEquip('p40c')) {
-				code.push( /* js */ `if (nthTurn === 2) bombDamage += 2.8 * hero_atk;`);
-			}
-			// 装备加成——攻击机
-			if (core.hasEquip('skua')) { // 贼鸥式轰炸机
-				code.push( /* js */ `
-					if (nthTurn > 0 && nthTurn % 4 === 0) {
-						bombDamage += hero_atk * 2;
-						bombDamage *= 1.5;
-					}
-				`);
-			}
-			if (core.hasEquip('eagle')) { // 贼鸥式轰炸机(鹰号航母)
-				code.push( /* js */ `
-					if (nthTurn > 0 && nthTurn % 4 === 0) {
-						bombDamage += hero_atk * 2;
-						bombDamage *= 1.5;
-					}
-				`);
-			}
-			if (core.hasEquip('illus1941')) { // 贼鸥式轰炸机(光辉1941)
-				code.push( /* js */ `
-					if (nthTurn > 0 && nthTurn % 4 === 0) {
-						bombDamage += hero_atk * 2;
-						bombDamage *= 1.5;
-					}
-				`);
-			}
-			if (core.hasEquip('sbd3')) { //无畏
-				code.push( /* js */ `
-					if (nthTurn > 0 && nthTurn % 4 === 0) {
-						bombDamage += hero_atk * 4.5;
-						bombDamage *= 1.5;
-					}
-				`);
-			}
-			if (core.hasEquip('raider')) { //无畏（突击者号航母）
-				code.push( /* js */ `
-					if (nthTurn > 0 && nthTurn % 4 === 0) {
-						bombDamage += hero_atk * 6.3;
-						bombDamage *= 1.5;
-					}
-				`);
-			}
-			if (core.hasEquip('barracuda')) { //梭鱼
-				code.push( /* js */ `
-                   if (nthTurn > 0 && nthTurn % 5 === 0) {
-                       bombDamage += hero_atk * 6 * 0.5;
-                   if (mon_dod <= 5)
-                       torpeodoDamage += hero_top * (5- mon_dod);
-                   }
-                `);
-			}
-			if (core.hasEquip('illustrious')) { //梭鱼（光辉号）
-				code.push( /* js */ `
-                   if (nthTurn > 0 && nthTurn % 5 === 0) {
-                       bombDamage += hero_atk * 6 * 0.5;
-                   if (mon_dod <= 5)
-                       torpeodoDamage += hero_top * (5- mon_dod);
-                   if (nthTurn = 1){
-                      bombDamage += hero_atk * 6 * 0.5;
-                   if (mon_dod <= 5)
-                       torpeodoDamage += hero_top * (5- mon_dod);
-                   }
-                   }
-                `);
-			}
-			if (core.hasEquip('typhoon')) // 台风式攻击机
-				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 4 === 0) bombDamage += hero_atk * 2;`);
-			// 装备加成——轰炸机
-			if (core.hasEquip('swordfish')) { // 箭鱼鱼雷机
-				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 5 === 0 && mon_dod <= 3) torpeodoDamage += hero_top * (3 - mon_dod);`);
-			}
-			if (core.hasEquip('eagle')) // 箭鱼鱼雷机(鹰号航母)
-				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 5 === 0 && mon_dod <= 3) torpeodoDamage += hero_top * (3 - mon_dod);`);
-			if (core.hasEquip("illus1941")) // 箭鱼鱼雷机(光辉1941)
-				code.push( /* js */ `
-                   if (nthTurn > 0 && nthTurn % 5 === 0 && mon_dod <= 3) 
-                       torpeodoDamage += hero_top * (3 - mon_dod);
-                   if (nthTurn = 1 && mon_dod <= 3){
-                       torpeodoDamage += hero_top * (3 - mon_dod);
-                   }
-                `);
-			if (core.hasEquip('blenheim')) //布伦海姆
-				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 5 === 0) bombDamage += hero_atk * 0.7 * 4;`);
-			if (core.hasEquip('b25')) { //B25米切尔
-				if (!['eagle', 'illustrious', 'raider', 'essex', 'enterprise'].some(id => core.hasEquip(id))) {
-					code.push( /* js */ `if (nthTurn > 0 && nthTurn % 5 === 0) bombDamage += hero_atk * 12 * 0.6;`);
-				} else {
-					code.push( /* js */ `if (nthTurn > 0 && nthTurn % 5 === 0) bombDamage += hero_atk * 6 * 0.6;`);
-				}
-			}
-			if (flags.skill === 8) { //技能8：剑鱼818中队
-				code.push( /* js */ `
-					if (nthTurn === 5 && mon_dod < 3) {
-						torpeodoDamage += hero_top * (3 - mon_dod);
-						mon_dod -= 2;
-						if (mon_dod < 0)
-							mon_dod = 0;
-					}
-				`);
-			}
-			if (flags.skill === 12) { //技能12：从海底出击
-				code.push( /* js */ `if (nthTurn === 1 && mon_dod < 8) torpeodoDamage += hero_top * (8 - mon_dod);`);
-			}
-			if (core.hasEquip('tbd')) { //TBD蹂躏者（有哑弹）
-				if (flags.hard === 1 || flags['引信改良'])
-					code.push( /* js */ `if (nthTurn > 0 && nthTurn % 4 === 0 && mon_dod <= 3) torpeodoDamage += hero_top * (3 - mon_dod);`);
-			}
-			if (core.hasEquip('raider')) { //TBD蹂躏者（突击者号航空母舰）
-				if (flags.hard === 1 || flags['引信改良'])
-					code.push( /* js */ `if (nthTurn > 0 && nthTurn % 4 === 0 && mon_dod <= 3) torpeodoDamage += hero_top * (3 - mon_dod);`);
-			}
-			if (core.hasEquip('tbf')) { //TBF复仇者（有哑弹）
-				if (flags.hard === 1 || flags['引信改良'])
-					code.push( /* js */ `
-                    if (nthTurn > 0 && nthTurn % 4 === 0 && mon_dod <= 10) {
-                        torpeodoDamage += hero_top * (10 - mon_dod);
-                        if (enemyInfo.type === '重巡' || enemyInfo.type === '战列'){
-                           torpeodoDamage *= 2;
-                        }
-                   }
-               `);
-			}
-			if (core.hasEquip('essex')) { //TBF复仇者（企业号）
-				if (flags.hard === 1 || flags['引信改良'])
-					code.push( /* js */ `
-                    if (nthTurn > 0 && nthTurn % 4 === 0 && mon_dod <= 10) {
-                        torpeodoDamage += hero_top * (10 - mon_dod);
-                        if (enemyInfo.type === '重巡' || enemyInfo.type === '战列'){
-                           torpeodoDamage *= 2;
-                        }
-                   }
-               `);
-			}
-			if (core.hasEquip('enterprise')) { //TBF复仇者（企业号）
-				if (flags.hard === 1 || flags['引信改良'])
-					code.push( /* js */ `
-                    if (nthTurn > 0 && nthTurn % 4 === 0 && mon_dod <= 10) {
-                        torpeodoDamage += hero_top * (10 - mon_dod);
-                        if (enemyInfo.type === '重巡' || enemyInfo.type === '战列'){
-                           torpeodoDamage *= 2;
-                        }
-                   }
-               `);
-			}
-			// 正常情况，鱼雷攻击
-			code.push( /* js */ `var torpeodo = 10;`);
-			//先判定是否哑弹
-			if (flags.hard === 1 || flags['引信改良'] || !['mahan', 'gridley', 'benson', 'fletcher', 'cleveland', 'raider', 'enterprise'].some(id => core.hasEquip(id))) {
-				if (core.hasEquip('benson')) {
-					code.push( /* js */ `torpeodo -= 2;`);
-				} //本森级，-2轮鱼雷cd
-				code.push( /* js */ `if (nthTurn % torpeodo === 0){ //发射鱼雷 
-                torpeodoDamage += hero_top * (hero_tpn - mon_dod);
-                }
-             `);
-			}
-			// 装备加成——军舰
-			// 厌战号战列舰
-			if (core.hasEquip('warspite') && enemyInfo.type != '潜艇')
-				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 3 === 0) damage += 3 * hero_atk;`);
-			//胡德号战列舰
-			if (core.hasEquip('hood') && enemyInfo.type != '潜艇')
-				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 4 === 0) damage += 6 * hero_atk;`);
-			//乔五号战列舰
-			if (core.hasEquip('kinggeorge5') && enemyInfo.type != '潜艇')
-				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 4 === 0) damage += 6 * hero_atk;`);
-			//北卡号战列舰
-			if (core.hasEquip('northcarolina') && enemyInfo.type != '潜艇')
-				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 4 === 0) damage += 9 * hero_atk;`);
-			// 潜行
-			if (core.hasSpecial(mon_special, 33))
-				code.push( /* js */ `damage *= 0.1;`);
-			//E级驱逐舰
-			if (core.hasEquip('classe') && enemyInfo.type === '潜艇')
-				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 3 === 0) depthcharge += 0.5 * hero_atk;`);
-			//马汉级
-			if (core.hasEquip('mahan') && enemyInfo.type === '潜艇')
-				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 3 === 0) depthcharge += 0.5 * hero_atk;`);
-			//V级
-			if (core.hasEquip('classv') && enemyInfo.type === '潜艇')
-				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 3 === 0) depthcharge += hero_atk;`);
-			//本森级
-			if (core.hasEquip('benson') && enemyInfo.type === '潜艇')
-				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 3 === 0) depthcharge += hero_atk;`);
-		} else if (this.Luftwaffe.includes(enemyInfo.type)) { // 空战
-			if (core.hasEquip('f4f3')) { //野猫
-				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 2 === 0) damage *= 1.15;`);
-			}
-			if (core.hasEquip('raider')) { //野猫（突击者）
-				code.push( /* js */ `if (nthTurn > 0 && nthTurn % 2 === 0) damage *= 1.15;`);
-			}
-			if (core.hasEquip('hurricanemk1') && enemyInfo.type.endsWith('轰炸机')) // 飓风MK1
-				code.push( /* js */ `damage += 80;`);
-			if (core.hasEquip('eagle') && enemyInfo.type.endsWith('轰炸机')) //飓风MK1（鹰号航母）
-				code.push( /* js */ `damage += 80;`);
-			if (core.hasEquip('spitfiremk1') && enemyInfo.type.endsWith('战斗机')) //喷火MK1
-				code.push( /* js */ `damage *= 1.1;`);
-			if (core.hasEquip('illus1941') && enemyInfo.type.endsWith('战斗机')) //光辉1941
-				code.push( /* js */ `damage *= 1.1;`);
-			if (core.hasEquip('hurricanemk2') && enemyInfo.type.endsWith('轰炸机')) //飓风MK2
-				code.push( /* js */ `damage *= 1.2;`);
-			if (core.hasEquip('typhoon') && enemyInfo.type.endsWith('轰炸机')) //台风战斗机
-				code.push( /* js */ `damage *= 1.2;`);
-			if (core.hasEquip('spitfiremk5') && enemyInfo.type.endsWith('战斗机')) //喷火MK5
-				code.push( /* js */ `damage *= 1.1;`);
-			if (core.hasEquip('illustrious') && enemyInfo.type.endsWith('战斗机')) //喷火MK5（光辉号）
-				code.push( /* js */ `damage *= 1.1;`);
-			if (core.hasEquip('spitfiremk5') && enemyInfo.type.endsWith('战斗机')) //喷火MK9
-				code.push( /* js */ `damage += 0.2 * hero.mdef;`);
-			if (core.hasEquip('f6f5') && enemyInfo.type.endsWith('战斗机')) { //地狱猫——火鸡猎手
-				if (core.hasSpecial(mon_special, 4)) { code.push( /* js */ `damage *= 1.4`); }
-				if (core.hasSpecial(mon_special, 5)) { code.push( /* js */ `damage *= 1.6`); }
-				if (core.hasSpecial(mon_special, 6)) { code.push( /* js */ `damage *= enemyInfo.n * 0.2 + 1`); }
-				if (!core.hasSpecial(mon_special, 4) && !core.hasSpecial(mon_special, 5) && !core.hasSpecial(mon_special, 6)) { code.push( /* js */ `damage *= 1.2`); }
-			}
-			if (core.hasEquip('beautifighter') && enemyInfo.type.endsWith('轰炸机')) //英俊战士
-				code.push( /* js */ `if (nthTurn === 1) damage *= 2;`);
-			if (core.hasEquip('p38') && enemyInfo.type.endsWith('轰炸机')) //P38
-				code.push( /* js */ `if (nthTurn === 1) damage *= 2;`);
-			if (core.hasEquip("northcarolina") && core.status.thisMap.area === "海洋") //北卡禁飞区
-				code.push( /* js */ `damage *= 1.6;`);
-			if (core.hasEquip("cleveland")) //克利夫兰
-				code.push( /* js */ `damage *= 1.25;`);
-		}
-		code.push( /* js */ `damage += torpeodoDamage + bombDamage + depthcharge;`);
-		if (flags.dry === true && !core.hasSpecial(mon_special, 55) && !core.hasSpecial(mon_special, 62)) { //炎热debuff
-			code.push( /* js */ `damage *= 1.2;`);
-		}
-		if (core.hasEquip('p38') && core.hasSpecial(mon_special, 57)) { //P38闪电，斩首行动
-			code.push( /* js */ `damage *= 1.5;`);
-		}
-		if (this.Army.includes(enemyInfo.type)) { // 陆战中被对方单向击穿
-			var preTurn = 5;
-			if (core.hasEquip('crusades')) preTurn = 3; //十字军坦克：敌人先攻-2
-			if (core.hasEquip('valentine')) preTurn = 10; //瓦伦丁坦克
-			if (core.hasEquip('matilda')) preTurn = 10; // 玛蒂尔达步兵坦克：无法击穿对方时前10回合无法造成伤害
-			if (core.hasEquip('m3grant')) preTurn = 15; //M3格兰特
-			if (core.hasEquip('churchillmk3')) preTurn = 15; //傻丘3
-			// 前5回合无法造成伤害，其他回合伤害只有80%
-			code.push( /* js */ `
-				if (hero_ap <= mon_arm && hero_arm < mon_ap) {
-					var preTurn = ${preTurn};
-					if (nthTurn <= preTurn) damage = 0;
-					else damage *= 0.8;
-				}
-			`);
-		}
-		code.push( /* js */ `return damage;`);
-		const fn = new Function("heroInfo", "enemyInfo", "nthTurn", code.join('\n'));
-		return (nthTurn) => fn(heroInfo, enemyInfo, nthTurn);
-	}
-	this.getEnemyPerDamage = function (enemyInfo, hero, x, y, floorId, nthTurn) {
-		hero = hero || core.status.hero;
-		floorId = floorId || core.status.floorId;
-		if (typeof enemyInfo === 'string') enemyInfo = core.getEnemyInfo(enemyInfo, hero, x, y, floorId);
-		var hero_hp = core.getRealStatusOrDefault(hero, 'hp'),
-			hero_atk = core.getRealStatusOrDefault(hero, 'atk'),
-			hero_def = core.getRealStatusOrDefault(hero, 'def'),
-			hero_mdef = core.getRealStatusOrDefault(hero, 'mdef'),
-			hero_ap = core.getRealStatusOrDefault(hero, 'ap'),
-			hero_arm = core.getRealStatusOrDefault(hero, 'arm'),
-			hero_top = core.getRealStatusOrDefault(hero, 'top'),
-			hero_bom = core.getRealStatusOrDefault(hero, 'bom'),
-			hero_tpn = core.getRealStatusOrDefault(hero, 'tpn'),
-			hero_dod = core.getRealStatusOrDefault(hero, 'dod'),
-			hero_gro = core.getRealStatusOrDefault(hero, 'gro');
-		var mon_hp = enemyInfo.hp,
-			mon_atk = enemyInfo.atk,
-			mon_def = enemyInfo.def,
-			mon_special = enemyInfo.special,
-			mon_ap = enemyInfo.ap,
-			mon_arm = enemyInfo.arm,
-			mon_top = enemyInfo.top,
-			mon_bom = enemyInfo.bom,
-			mon_tpn = enemyInfo.tpn,
-			mon_dod = enemyInfo.dod,
-			mon_cd = enemyInfo.cd,
-			mon_ammo = enemyInfo.ammo,
-			mon_spd = enemyInfo.spd,
-			mon_gro = enemyInfo.gro;
-		var damage = mon_atk;
-		//技能6：Z字规避
-		if (flags.skill === 6) {
-			hero_dod += 3;
-		}
-		//技能5：预警
-		if (flags.skill === 5) {
-			hero_dod += 6;
-		}
-		hero_dod = core.clamp(hero_dod, 0, mon_tpn);
-		mon_dod = core.clamp(mon_dod, 0, hero_tpn);
-		var torpeodoDamage = 0,
-			bombDamage = 0;
-		// 连击
-		if (core.hasSpecial(mon_special, 4)) damage *= 2;
-		if (core.hasSpecial(mon_special, 5)) damage *= 3;
-		if (core.hasSpecial(mon_special, 6)) damage *= enemyInfo.n;
-		if (this.Army.includes(enemyInfo.type)) { // 陆战
-			if (core.hasSpecial(mon_special, 43) && mon_ap > hero_arm) // 超压：勇士被对方穿甲则对方伤害为1.4倍
-				damage *= 1.4;
-			if (core.hasEquip('matilda') && hero_arm >= mon_ap) // 玛蒂尔达步兵坦克：勇士未被对方穿甲则对方伤害为0.8倍
-				damage *= 0.8;
-			if (core.hasEquip('m3grant') && hero_arm >= mon_ap) // M3格兰特：勇士未被对方穿甲则对方伤害为0.8倍
-				damage *= 0.8;
-			//380舰炮
-			if (core.hasSpecial(mon_special, 32) && nthTurn > 0 && nthTurn % 4 === 0) {
-				damage += 6 * mon_atk;
-			}
-			if (hero_ap > mon_arm && hero_arm >= mon_ap) { // 被勇士单向击穿
-				if (core.hasSpecial(mon_special, 60)) {
-					if (nthTurn <= 2) damage = 0;
-				} else if (nthTurn <= 5) damage = 0;
-				else damage *= 0.8;
-			}
-			if (core.hasEquip('b17')) { //b17伤害减免
-				if (enemyInfo.type === '高射炮') {
-					damage *= 0.8
-				}
-			}
-		} else if (this.Navy.includes(enemyInfo.type)) { // 海战
-			//光辉号装甲
-			if (core.hasEquip('illus1941') && !enemyInfo.type.endsWith('战列') && !enemyInfo.type.endsWith('潜艇')) {
-				damage *= 0.8
-			}
-			if (core.hasEquip('illustrious') && !enemyInfo.type.endsWith('战列') && !enemyInfo.type.endsWith('潜艇')) {
-				damage *= 0.8
-			}
-			//乔五战列舰装甲
-			if (core.hasEquip('kinggeorge5')) {
-				if (enemyInfo.type === '驱逐' || enemyInfo.type === '轻巡') {
-					damage *= 0.5;
-				}
-			}
-			//北卡战列舰装甲
-			if (core.hasEquip('northcarolina')) {
-				if (enemyInfo.type === '驱逐' || enemyInfo.type === '轻巡') {
-					damage *= 0.4;
-				}
-			}
-			// 鱼雷
-			if (core.hasSpecial(mon_special, 29) && nthTurn > 0 && nthTurn % mon_cd === 0) {
-				torpeodoDamage += mon_top * (mon_tpn - hero_dod);
-				if (core.hasEquip('eagle')) torpeodoDamage *= 1.2; // 鹰号航母
-			}
-			//280舰炮
-			if (core.hasSpecial(mon_special, 31) && nthTurn > 0 && nthTurn % 3 === 0) {
-				damage += 3 * mon_atk;
-			}
-			//380舰炮
-			if (core.hasSpecial(mon_special, 32) && nthTurn > 0 && nthTurn % 4 === 0) {
-				damage += 6 * mon_atk;
-			}
-		} else if (this.Luftwaffe.includes(enemyInfo.type)) { // 空战
-			if (core.hasEquip('typhoon') && enemyInfo.type.endsWith('战斗机')) // 台风式攻击机
-				damage *= 1.3;
-			if (core.hasEquip('p47b')) //P47B雷电
-				damage *= 0.8;
-			if (core.hasSpecial(mon_special, 30)) { //航炮
-				damage += mon_atk * 0.3;
-			}
-			// 航弹
-			if (core.hasSpecial(mon_special, 28) && nthTurn > 0 && nthTurn % mon_spd === 0) {
-				// 俯冲轰炸机
-				if (core.hasSpecial(mon_special, 36)) bombDamage += mon_ammo * mon_bom * 1.5;
-				else bombDamage += mon_ammo * mon_bom;
-			}
-			//光辉号炸弹抗性
-			if (core.hasEquip('illus1941') && core.status.thisMap.area === "海洋") {
-				bombDamage *= 0.75;
-			}
-			if (core.hasEquip('illustrious') && core.status.thisMap.area === "海洋") {
-				bombDamage *= 0.75;
-			}
-			// 鱼雷
-			if (core.hasSpecial(mon_special, 29) && nthTurn > 0 && nthTurn % mon_cd === 0) {
-				torpeodoDamage += mon_top * (mon_tpn - hero_dod);
-				if (core.hasEquip('eagle')) torpeodoDamage *= 1.2; // 鹰号航母
-			}
-			if (core.hasEquip('b17')) { //b17伤害减免
-				if (enemyInfo.type.endsWith('战斗机')) {
-					damage *= 0.8;
-				}
-			}
-		}
-		//乔五战列舰鱼雷减抗
-		if (core.hasEquip('kinggeorge5')) {
-			torpeodoDamage *= 1.4;
-		}
-		//北卡战列舰鱼雷减抗
-		if (core.hasEquip("northcarolina")) {
-			torpeodoDamage *= 1.2;
-		}
-		damage += torpeodoDamage + bombDamage;
-		if (core.hasSpecial(mon_special, 38)) { //精锐
-			damage *= 2;
-		}
-		if (core.hasEquip('mosquito') && enemyInfo.type.endsWith('战斗机') && nthTurn <= 3) { //蚊式战斗机木制奇迹（喷气机以后做）
-			damage = 0;
-		}
-		if (flags.dry === true && !core.hasItem('hard1')) { //炎热
-			if (core.hasSpecial(mon_special, 62)) { //沙漠之狐
-				damage *= 1.5;
-			} else
-				damage *= 1.2;
-		}
-		return damage;
-	}
-
 
 	this._afterLoadResources = function () {
 		core.ui.statusBar.init()
+		core.ui.start.ani()
 		// 本函数将在所有资源加载完毕后，游戏开启前被执行（原init）
 	}
 },
@@ -2570,16 +2023,16 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 					core.fillBoldText(uictx, core.getLvName(), 150, 38, "#CC9900", "#000000", "bold 16px kaiti", 35)
 				}
 				core.setTextAlign("outerUI", "center") //居中
-				let a = core.status.hard,
+				let a = flags.难度,
 					b = "",
 					c = ""; //难度
-				if (a === 'Massacre') {
+				if (a === 1) {
 					b = "神剧";
 					c = "#60B103";
-				} else if (a === 'Arcade') {
+				} else if (a === 2) {
 					b = "街机";
 					c = "#EBB659"
-				} else if (a === 'History') {
+				} else if (a === 3) {
 					b = "历史";
 					c = "#CD0001"
 				}
@@ -2657,8 +2110,8 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				core.fillText(uictx, core.formatBigNumber(core.getRealStatus('top'), false), 234, 114, "#FF8C00", "18px number", 100) //雷击数字
 
 				core.drawIcon(uictx, "statusTpn", 170, 119, 24, 24) //鱼雷
-				core.fillText(uictx, "鱼雷:", 196, 136.5, "#CC33FF", "bold 16px kaiti") //鱼雷：
-				core.fillText(uictx, core.formatBigNumber(core.getRealStatus('tpn'), false), 234, 138, "#CC33FF", "18px number", 100) //鱼雷数字
+				core.fillText(uictx, "鱼雷管:", 196, 136.5, "#CC33FF", "bold 16px kaiti") //鱼雷：
+				core.fillText(uictx, core.formatBigNumber(core.getRealStatus('tpn'), false), 248, 138, "#CC33FF", "18px number", 100) //鱼雷数字
 
 				core.fillRoundRect(uictx, 325, 4, 148, 49, 5, "rgba(0,0,0,0.5)"); //非战斗属性底板
 				core.drawIcon(uictx, "statusMoney", 330, 6, 24, 24) //黄金
@@ -2693,16 +2146,16 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 					core.fillBoldText(uictx, core.getLvName(), 16, 38, "#CC9900", "#000000", "bold 16px kaiti", 150)
 				}
 				core.setTextAlign("outerUI", "center") //居中
-				let a = core.status.hard,
+				let a = flags.难度,
 					b = "",
 					c = ""; //难度
-				if (a === 'Massacre') {
+				if (a === 1) {
 					b = "神剧";
 					c = "#60B103";
-				} else if (a === 'Arcade') {
+				} else if (a === 2) {
 					b = "街机";
 					c = "#EBB659"
-				} else if (a === 'History') {
+				} else if (a === 3) {
 					b = "历史";
 					c = "#CD0001"
 				}
@@ -2790,8 +2243,8 @@ var plugins_bb40132b_638b_4a9f_b028_d3fe47acc8d1 =
 				core.fillText(uictx, core.formatBigNumber(core.getRealStatus('top'), false), 74, 345, "#FF8C00", "18px number", 70) //雷击数字
 
 				core.drawIcon(uictx, "statusTpn", 4, 351, 32, 32) //鱼雷
-				core.fillText(uictx, "鱼雷:", 36, 373, "#CC33FF", "bold 16px kaiti") //鱼雷：
-				core.fillText(uictx, core.formatBigNumber(core.getRealStatus('tpn'), false), 74, 374.5, "#CC33FF", "18px number", 70) //鱼雷数字
+				core.fillText(uictx, "鱼雷管:", 36, 373, "#CC33FF", "bold 16px kaiti") //鱼雷：
+				core.fillText(uictx, core.formatBigNumber(core.getRealStatus('tpn'), false), 90, 374.5, "#CC33FF", "18px number", 70) //鱼雷数字
 
 				core.setTextAlign("outerUI", "center") //居中
 				core.fillText(uictx, "————————————————————————", 75, 395, "#FFFFFF", "bold 16px kaiti")
@@ -7494,12 +6947,26 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 	// 在此增加新插件
 	const start = document.createElement("canvas"); //start画布设置
 	start.style.position = "absolute";
-	start.style.zIndex = 300;
-	start.style.display = "disable";
+	start.style.zIndex = 500;
+	start.style.display = "block";
 	start.id = "start";
 	main.dom.startPanel.insertAdjacentElement("afterend", start)
+	main.dom.startPanel.style.display = "none"
 	const ctx = start.getContext("2d");
 	main.dom.start = start;
+	const makeBox = ([x, y], [w, h]) => {
+		return [
+			[x, y],
+			[x + w, y + h],
+		];
+	};
+
+	const inRect = ([x, y], [
+		[sx, sy],
+		[dx, dy]
+	]) => {
+		return sx <= x && x <= dx && sy <= y && y <= dy;
+	};
 	start.onclick = function (e) {
 		try {
 			e.preventDefault();
@@ -7513,9 +6980,45 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 			main.log(ee);
 		}
 	};
+	let starttime = 0
+	start.onmousemove = function (e) {
+		try {
+
+			e.preventDefault();
+			if (core.isPlaying()) return false;
+			if (core.ui.start.mode !== 'start') return false
+			if (core.animateFrame.totalTimeStart - starttime < 50) { return false } else { starttime = core.animateFrame.totalTimeStart; }
+			const left = core.dom.gameGroup.offsetLeft;
+			const top = core.dom.gameGroup.offsetTop;
+			const px = Math.floor((e.clientX - left) / core.domStyle.scale),
+				py = Math.floor((e.clientY - top) / core.domStyle.scale);
+			let mouse = 0
+			if (core.domStyle.isVertical) {
+				const box1 = makeBox([140, 360], [200, 80]),
+					box2 = makeBox([140, 440], [200, 80]),
+					box3 = makeBox([140, 520], [200, 80]);
+				if (inRect([px, py], box1)) mouse = 1
+				if (inRect([px, py], box2)) mouse = 2
+				if (inRect([px, py], box3)) mouse = 3
+			} else {
+				const box1 = makeBox([290, 210], [200, 80]),
+					box2 = makeBox([290, 290], [200, 80]),
+					box3 = makeBox([290, 370], [200, 80]);
+				if (inRect([px, py], box1)) mouse = 1
+				if (inRect([px, py], box2)) mouse = 2
+				if (inRect([px, py], box3)) mouse = 3
+			}
+			core.ui.start.update(mouse)
+		} catch (ee) {
+			main.log(ee);
+		}
+	}
+
+
 	const { Animation, Transition, linear, bezier, circle, hyper, trigo, power, inverseTrigo, shake, sleep } = core.plugin.animate
 	class START {
 		async ani() {
+			start.style.display = "block";
 			this.mode = 'animate';
 			const tran = new Transition();
 			tran.value.bgalpha = 1
@@ -7587,26 +7090,96 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 			tran.value.airY1 = -810;
 			tran.value.airY2 = -810;
 			await sleep(500);
+			core.playBgm('relax.mp3');
 			//core.clearMap(ctx);
 			tran.ticker.destroy();
+			this.mode = "start"
+			this.update()
 
 		}
 		constructor() {
 			this.mode = 'animate';
 		}
-		update() {
+		update(mouse) {
+			core.clearMap(ctx);
 			//绘制规则
-			if (core.domStyle.isVertical) { //设置画布大小
+			if (core.domStyle.isVertical) { //竖屏
 				core.maps._setHDCanvasSize(ctx, 480, 780);
-				core.drawImage('ctx', 'bg.jpg', 0, 150, 480, 480);
-			} else {
-				core.maps._setHDCanvasSize(ctx, 780, 480)
-				core.drawImage('ctx', 'bg.jpg', 150, 0, 480, 480);
-			}
+				core.drawImage(ctx, 'bg2.png', 0, 150, 480, 480);
+				core.drawImage(ctx, 'title1.png', 140, 190, 200, 50);
+				core.drawImage(ctx, 'title2.png', 120, 240, 240, 80);
+				if (mouse !== 1) { core.drawImage(ctx, 'start1.png', 140, 360, 200, 80); } else { core.drawImage(ctx, 'start2.png', 140, 360, 200, 80); }
+				if (mouse !== 2) { core.drawImage(ctx, 'load1.png', 140, 440, 200, 80); } else { core.drawImage(ctx, 'load2.png', 140, 440, 200, 80); }
+				if (mouse !== 3) { core.drawImage(ctx, 'abstract1.png', 140, 520, 200, 80); } else { core.drawImage(ctx, 'abstract2.png', 140, 520, 200, 80); }
 
+			} else { //横屏
+				core.maps._setHDCanvasSize(ctx, 780, 480)
+				core.drawImage(ctx, 'bg2.png', 150, 0, 480, 480);
+				core.drawImage(ctx, 'title1.png', 290, 40, 200, 50);
+				core.drawImage(ctx, 'title2.png', 270, 90, 240, 80);
+				if (mouse !== 1) { core.drawImage(ctx, 'start1.png', 290, 210, 200, 80); } else { core.drawImage(ctx, 'start2.png', 290, 210, 200, 80); }
+				if (mouse !== 2) { core.drawImage(ctx, 'load1.png', 290, 290, 200, 80); } else { core.drawImage(ctx, 'load2.png', 290, 290, 200, 80); }
+				if (mouse !== 3) { core.drawImage(ctx, 'abstract1.png', 290, 370, 200, 80); } else { core.drawImage(ctx, 'abstract2.png', 290, 370, 200, 80); }
+			}
+			this.mode = "start"
 		}
 		onclick(px, py) {
 			//点击规则
+			if (core.ui.start.mode === 'start') {
+				if (core.domStyle.isVertical) {
+					const box1 = makeBox([140, 360], [200, 80]),
+						box2 = makeBox([140, 440], [200, 80]),
+						box3 = makeBox([140, 520], [200, 80]);
+					if (inRect([px, py], box1)) {
+						core.playSound('005-System05.mp3');
+						main.core.control.checkBgm();
+						core.events.startGame('');
+						this.mode = 'play';
+						start.style.display = "none"
+					}
+					if (inRect([px, py], box2)) {
+						core.playSound('005-System05.mp3');
+						main.core.control.checkBgm();
+						main.core.load();
+						this.mode = 'load';
+						start.style.display = "none"
+					}
+
+					if (inRect([px, py], box3)) {
+						core.playSound('005-System05.mp3');
+						main.core.control.checkBgm();
+						main.core.chooseReplayFile();
+
+
+					}
+				} else {
+					const box1 = makeBox([290, 210], [200, 80]),
+						box2 = makeBox([290, 290], [200, 80]),
+						box3 = makeBox([290, 370], [200, 80]);
+					if (inRect([px, py], box1)) {
+						core.playSound('005-System05.mp3');
+						main.core.control.checkBgm();
+						core.events.startGame('');
+						this.mode = 'play';
+						start.style.display = "none"
+					}
+					if (inRect([px, py], box2)) {
+						core.playSound('005-System05.mp3');
+						main.core.control.checkBgm();
+						main.core.load();
+						this.mode = 'load';
+						start.style.display = "none"
+					}
+
+					if (inRect([px, py], box3)) {
+						core.playSound('005-System05.mp3');
+						main.core.control.checkBgm();
+						main.core.chooseReplayFile();
+
+
+					}
+				}
+			}
 		}
 	}
 	core.ui.start = new START()
@@ -7709,5 +7282,160 @@ ${core.taskSystem.tasksInfo[2].text}`;*/
 		}
 	}
 	core.ui.mission = new MISSION()
+},
+    "兵种图鉴高级动画": function () {
+	// 在此增加新插件
+	const illus = document.createElement("canvas"); //图鉴画布设置
+	illus.style.position = "absolute";
+	illus.style.zIndex = 510;
+	illus.style.display = "block";
+	illus.id = "illus";
+	main.dom.startPanel.insertAdjacentElement("afterend", illus)
+	main.dom.startPanel.style.display = "none"
+	const ctx = illus.getContext("2d");
+	main.dom.illus = illus;
+	const makeBox = ([x, y], [w, h]) => {
+		return [
+			[x, y],
+			[x + w, y + h],
+		];
+	};
+
+	const inRect = ([x, y], [
+		[sx, sy],
+		[dx, dy]
+	]) => {
+		return sx <= x && x <= dx && sy <= y && y <= dy;
+	};
+	illus.onclick = function (e) {
+		try {
+			e.preventDefault();
+			if (core.isPlaying()) return false;
+			const left = core.dom.gameGroup.offsetLeft;
+			const top = core.dom.gameGroup.offsetTop;
+			const px = Math.floor((e.clientX - left) / core.domStyle.scale),
+				py = Math.floor((e.clientY - top) / core.domStyle.scale);
+			core.ui.illus.onclick(px, py);
+		} catch (ee) {
+			main.log(ee);
+		}
+	};
+	let starttime = 0
+	illus.onmousemove = function (e) {
+		try {
+
+			e.preventDefault();
+			if (core.isPlaying()) return false;
+			if (core.ui.illus.mode !== 'illus') return false
+			if (core.animateFrame.totalTimeStart - starttime < 50) { return false } else { starttime = core.animateFrame.totalTimeStart; }
+			const left = core.dom.gameGroup.offsetLeft;
+			const top = core.dom.gameGroup.offsetTop;
+			const px = Math.floor((e.clientX - left) / core.domStyle.scale),
+				py = Math.floor((e.clientY - top) / core.domStyle.scale);
+			let mouse = 0
+			if (core.domStyle.isVertical) {
+				const box1 = makeBox([30, 170], [96, 32]),
+					box2 = makeBox([140, 440], [200, 80]),
+					box3 = makeBox([140, 520], [200, 80]);
+				if (inRect([px, py], box1)) mouse = 1
+				if (inRect([px, py], box2)) mouse = 2
+				if (inRect([px, py], box3)) mouse = 3
+			} else {
+				const box1 = makeBox([212, 20], [96, 32]),
+					box2 = makeBox([290, 290], [200, 80]),
+					box3 = makeBox([290, 370], [200, 80]);
+				if (inRect([px, py], box1)) mouse = 1
+				if (inRect([px, py], box2)) mouse = 2
+				if (inRect([px, py], box3)) mouse = 3
+			}
+			core.ui.illus.update(mouse)
+		} catch (ee) {
+			main.log(ee);
+		}
+	}
+
+
+	const { Animation, Transition, linear, bezier, circle, hyper, trigo, power, inverseTrigo, shake, sleep } = core.plugin.animate
+	class ILLUS {
+		constructor() {}
+		update(mouse) {
+			core.clearMap(ctx);
+			//绘制规则
+			if (core.domStyle.isVertical) { //竖屏
+				core.maps._setHDCanvasSize(ctx, 480, 780);
+				core.drawImage(ctx, 'bg2.png', 0, 150, 240, 240);
+				core.drawIcon(ctx, 'scoutinf', 30, 170);
+				core.setTextAlign(ctx, 'left');
+				if (mouse !== 1) { core.fillBoldText(ctx, '步兵', 62, 190, '#ffffff', '#000000', '16px kaiti'); } else { core.fillBoldText(ctx, '步兵', 62, 190, '#ffffff', '#00ff00', '16px kaiti'); }
+
+			} else { //横屏
+				core.maps._setHDCanvasSize(ctx, 780, 480)
+				core.drawImage(ctx, 'bg2.png', 150, 0, 480, 480);
+				core.drawIcon(ctx, "scoutinf", 180, 20);
+				core.setTextAlign(ctx, 'left');
+				if (mouse !== 1) { core.fillBoldText(ctx, '步兵', 212, 40, '#ffffff', '#000000', '16px kaiti'); } else { core.fillBoldText(ctx, '步兵', 212, 40, '#ffffff', '#00ff00', '16px kaiti'); }
+			}
+			this.mode = "illus"
+		}
+		onclick(px, py) {
+			//点击规则
+			if (core.ui.illus.mode === 'illus') {
+				if (core.domStyle.isVertical) {
+					const box1 = makeBox([140, 360], [200, 80]),
+						box2 = makeBox([140, 440], [200, 80]),
+						box3 = makeBox([140, 520], [200, 80]);
+					if (inRect([px, py], box1)) {
+						core.playSound('005-System05.mp3');
+						main.core.control.checkBgm();
+						core.events.startGame('');
+						this.mode = 'play';
+						illus.style.display = "none"
+					}
+					if (inRect([px, py], box2)) {
+						core.playSound('005-System05.mp3');
+						main.core.control.checkBgm();
+						main.core.load();
+						this.mode = 'load';
+						illus.style.display = "none"
+					}
+
+					if (inRect([px, py], box3)) {
+						core.playSound('005-System05.mp3');
+						main.core.control.checkBgm();
+						main.core.chooseReplayFile();
+
+
+					}
+				} else {
+					const box1 = makeBox([290, 210], [200, 80]),
+						box2 = makeBox([290, 290], [200, 80]),
+						box3 = makeBox([290, 370], [200, 80]);
+					if (inRect([px, py], box1)) {
+						core.playSound('005-System05.mp3');
+						main.core.control.checkBgm();
+						core.events.startGame('');
+						this.mode = 'play';
+						illus.style.display = "none"
+					}
+					if (inRect([px, py], box2)) {
+						core.playSound('005-System05.mp3');
+						main.core.control.checkBgm();
+						main.core.load();
+						this.mode = 'load';
+						illus.style.display = "none"
+					}
+
+					if (inRect([px, py], box3)) {
+						core.playSound('005-System05.mp3');
+						main.core.control.checkBgm();
+						main.core.chooseReplayFile();
+
+
+					}
+				}
+			}
+		}
+	}
+	core.ui.illus = new ILLUS()
 }
 }

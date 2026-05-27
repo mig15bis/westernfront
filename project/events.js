@@ -7073,7 +7073,11 @@ var events_c12a15a8_c380_4b28_8144_256cba95f760 =
 											0
 										],
 										"opacity": 1,
-										"time": 0
+										"time": 500
+									},
+									{
+										"type": "sleep",
+										"time": 1000
 									},
 									{
 										"type": "choices",
@@ -7095,7 +7099,7 @@ var events_c12a15a8_c380_4b28_8144_256cba95f760 =
 													{
 														"type": "hideImage",
 														"code": 1,
-														"time": 0
+														"time": 500
 													}
 												]
 											}
@@ -7115,7 +7119,11 @@ var events_c12a15a8_c380_4b28_8144_256cba95f760 =
 											0
 										],
 										"opacity": 1,
-										"time": 0
+										"time": 500
+									},
+									{
+										"type": "sleep",
+										"time": 1000
 									},
 									{
 										"type": "choices",
@@ -7137,7 +7145,7 @@ var events_c12a15a8_c380_4b28_8144_256cba95f760 =
 													{
 														"type": "hideImage",
 														"code": 1,
-														"time": 0
+														"time": 500
 													}
 												]
 											}
@@ -7157,7 +7165,11 @@ var events_c12a15a8_c380_4b28_8144_256cba95f760 =
 											0
 										],
 										"opacity": 1,
-										"time": 0
+										"time": 500
+									},
+									{
+										"type": "sleep",
+										"time": 1000
 									},
 									{
 										"type": "choices",
@@ -7179,7 +7191,7 @@ var events_c12a15a8_c380_4b28_8144_256cba95f760 =
 													{
 														"type": "hideImage",
 														"code": 1,
-														"time": 0
+														"time": 500
 													}
 												]
 											}
@@ -7199,7 +7211,11 @@ var events_c12a15a8_c380_4b28_8144_256cba95f760 =
 											0
 										],
 										"opacity": 1,
-										"time": 0
+										"time": 500
+									},
+									{
+										"type": "sleep",
+										"time": 1000
 									},
 									{
 										"type": "choices",
@@ -7221,7 +7237,7 @@ var events_c12a15a8_c380_4b28_8144_256cba95f760 =
 													{
 														"type": "hideImage",
 														"code": 1,
-														"time": 0
+														"time": 500
 													}
 												]
 											}
@@ -7241,7 +7257,11 @@ var events_c12a15a8_c380_4b28_8144_256cba95f760 =
 											0
 										],
 										"opacity": 1,
-										"time": 0
+										"time": 500
+									},
+									{
+										"type": "sleep",
+										"time": 1000
 									},
 									{
 										"type": "choices",
@@ -7263,7 +7283,7 @@ var events_c12a15a8_c380_4b28_8144_256cba95f760 =
 													{
 														"type": "hideImage",
 														"code": 1,
-														"time": 0
+														"time": 500
 													}
 												]
 											}
@@ -7283,7 +7303,11 @@ var events_c12a15a8_c380_4b28_8144_256cba95f760 =
 											0
 										],
 										"opacity": 1,
-										"time": 0
+										"time": 500
+									},
+									{
+										"type": "sleep",
+										"time": 1000
 									},
 									{
 										"type": "choices",
@@ -7305,7 +7329,7 @@ var events_c12a15a8_c380_4b28_8144_256cba95f760 =
 													{
 														"type": "hideImage",
 														"code": 1,
-														"time": 0
+														"time": 500
 													}
 												]
 											}
@@ -7325,7 +7349,11 @@ var events_c12a15a8_c380_4b28_8144_256cba95f760 =
 											0
 										],
 										"opacity": 1,
-										"time": 0
+										"time": 500
+									},
+									{
+										"type": "sleep",
+										"time": 1000
 									},
 									{
 										"type": "choices",
@@ -7347,7 +7375,7 @@ var events_c12a15a8_c380_4b28_8144_256cba95f760 =
 													{
 														"type": "hideImage",
 														"code": 1,
-														"time": 0
+														"time": 500
 													}
 												]
 											}
@@ -7367,7 +7395,11 @@ var events_c12a15a8_c380_4b28_8144_256cba95f760 =
 											0
 										],
 										"opacity": 1,
-										"time": 0
+										"time": 500
+									},
+									{
+										"type": "sleep",
+										"time": 1000
 									},
 									{
 										"type": "choices",
@@ -7389,7 +7421,7 @@ var events_c12a15a8_c380_4b28_8144_256cba95f760 =
 													{
 														"type": "hideImage",
 														"code": 1,
-														"time": 0
+														"time": 500
 													}
 												]
 											}
@@ -7409,7 +7441,11 @@ var events_c12a15a8_c380_4b28_8144_256cba95f760 =
 											0
 										],
 										"opacity": 1,
-										"time": 0
+										"time": 500
+									},
+									{
+										"type": "sleep",
+										"time": 1000
 									},
 									{
 										"type": "choices",
@@ -7431,7 +7467,7 @@ var events_c12a15a8_c380_4b28_8144_256cba95f760 =
 													{
 														"type": "hideImage",
 														"code": 1,
-														"time": 0
+														"time": 500
 													}
 												]
 											}
@@ -7451,7 +7487,11 @@ var events_c12a15a8_c380_4b28_8144_256cba95f760 =
 											0
 										],
 										"opacity": 1,
-										"time": 0
+										"time": 500
+									},
+									{
+										"type": "sleep",
+										"time": 1000
 									},
 									{
 										"type": "choices",
@@ -7473,7 +7513,7 @@ var events_c12a15a8_c380_4b28_8144_256cba95f760 =
 													{
 														"type": "hideImage",
 														"code": 1,
-														"time": 0
+														"time": 500
 													}
 												]
 											}
@@ -7493,6 +7533,421 @@ var events_c12a15a8_c380_4b28_8144_256cba95f760 =
 						]
 					}
 				]
+			}
+		],
+		"新难度选择": [
+			{
+				"type": "showImage",
+				"code": 1,
+				"image": "bg2.png",
+				"sloc": [
+					0,
+					0,
+					null
+				],
+				"loc": [
+					0,
+					0,
+					480,
+					480
+				],
+				"opacity": 1,
+				"time": 0
+			},
+			{
+				"type": "showImage",
+				"code": 2,
+				"image": "choosehard.png",
+				"sloc": [
+					0,
+					0,
+					null
+				],
+				"loc": [
+					120,
+					20,
+					240,
+					80
+				],
+				"opacity": 1,
+				"time": 0
+			},
+			{
+				"type": "showImage",
+				"code": 3,
+				"image": "easy1.png",
+				"sloc": [
+					0,
+					0,
+					null
+				],
+				"loc": [
+					150,
+					520,
+					180,
+					60
+				],
+				"opacity": 1,
+				"time": 0
+			},
+			{
+				"type": "showImage",
+				"code": 4,
+				"image": "normal1.png",
+				"sloc": [
+					0,
+					0,
+					null
+				],
+				"loc": [
+					150,
+					580,
+					180,
+					60
+				],
+				"opacity": 1,
+				"time": 0
+			},
+			{
+				"type": "showImage",
+				"code": 5,
+				"image": "hard1.png",
+				"sloc": [
+					0,
+					0,
+					null
+				],
+				"loc": [
+					150,
+					640,
+					180,
+					60
+				],
+				"opacity": 1,
+				"time": 0
+			},
+			{
+				"type": "moveImage",
+				"code": 3,
+				"to": [
+					150,
+					140
+				],
+				"time": 200
+			},
+			{
+				"type": "moveImage",
+				"code": 4,
+				"to": [
+					150,
+					240
+				],
+				"time": 200
+			},
+			{
+				"type": "moveImage",
+				"code": 5,
+				"to": [
+					150,
+					340
+				],
+				"time": 200
+			},
+			{
+				"type": "while",
+				"condition": "(flag:chosehard!==true)",
+				"data": [
+					{
+						"type": "wait",
+						"data": [
+							{
+								"case": "mouse",
+								"px": [
+									150,
+									390
+								],
+								"py": [
+									140,
+									200
+								],
+								"action": [
+									{
+										"type": "showImage",
+										"code": 3,
+										"image": "easy2.png",
+										"sloc": [
+											0,
+											0,
+											null
+										],
+										"loc": [
+											150,
+											140,
+											180,
+											60
+										],
+										"opacity": 1,
+										"time": 0
+									},
+									{
+										"type": "playSound",
+										"name": "telegram.mp3"
+									},
+									{
+										"type": "sleep",
+										"time": 500
+									},
+									{
+										"type": "choices",
+										"text": "\t[神剧难度]描述：可以扔掉大脑直接冲进敌阵开无双。适合只想看剧情或体验乱杀快感的玩家。\n难度福利：获得40%全战斗减伤，获得的指挥点数+100%，战斗获得3倍金经，拾取金币翻倍。",
+										"choices": [
+											{
+												"text": "开打！",
+												"action": [
+													{
+														"type": "setValue",
+														"name": "flag:难度",
+														"value": "1"
+													},
+													{
+														"type": "setValue",
+														"name": "flag:chosehard",
+														"value": "true"
+													}
+												]
+											},
+											{
+												"text": "换一个",
+												"action": [
+													{
+														"type": "showImage",
+														"code": 3,
+														"image": "easy1.png",
+														"sloc": [
+															0,
+															0,
+															null
+														],
+														"loc": [
+															150,
+															140,
+															180,
+															60
+														],
+														"opacity": 1,
+														"time": 0
+													}
+												]
+											}
+										]
+									}
+								]
+							},
+							{
+								"case": "mouse",
+								"px": [
+									150,
+									390
+								],
+								"py": [
+									240,
+									300
+								],
+								"action": [
+									{
+										"type": "showImage",
+										"code": 4,
+										"image": "normal2.png",
+										"sloc": [
+											0,
+											0,
+											null
+										],
+										"loc": [
+											150,
+											240,
+											180,
+											60
+										],
+										"opacity": 1,
+										"time": 0
+									},
+									{
+										"type": "playSound",
+										"name": "telegram.mp3"
+									},
+									{
+										"type": "sleep",
+										"time": 500
+									},
+									{
+										"type": "choices",
+										"text": "\t[街机难度]描述：虽不至于无脑乱撞但依旧比较亲民，相比常规蓝海塔的最简单难度可能还要简单一些，适合大部分玩家。\n难度福利：获得10%全战斗减伤，获得的指挥点数+50%，战斗获得3倍金经，拾取金币翻倍。",
+										"choices": [
+											{
+												"text": "开打！",
+												"action": [
+													{
+														"type": "setValue",
+														"name": "flag:难度",
+														"value": "2"
+													},
+													{
+														"type": "setValue",
+														"name": "flag:chosehard",
+														"value": "true"
+													}
+												]
+											},
+											{
+												"text": "换一个",
+												"action": [
+													{
+														"type": "showImage",
+														"code": 4,
+														"image": "normal1.png",
+														"sloc": [
+															0,
+															0,
+															null
+														],
+														"loc": [
+															150,
+															240,
+															180,
+															60
+														],
+														"opacity": 1,
+														"time": 0
+													}
+												]
+											}
+										]
+									}
+								]
+							},
+							{
+								"case": "mouse",
+								"px": [
+									150,
+									390
+								],
+								"py": [
+									340,
+									400
+								],
+								"action": [
+									{
+										"type": "showImage",
+										"code": 5,
+										"image": "hard2.png",
+										"sloc": [
+											0,
+											0,
+											null
+										],
+										"loc": [
+											150,
+											340,
+											180,
+											60
+										],
+										"opacity": 1,
+										"time": 0
+									},
+									{
+										"type": "playSound",
+										"name": "telegram.mp3"
+									},
+									{
+										"type": "sleep",
+										"time": 500
+									},
+									{
+										"type": "choices",
+										"text": "\t[历史难度]描述：直面敌人精锐，进行旷日持久的作战。适合想要有一定挑战性，技术比作者本人更高或持平的玩家（作者水平：蓝海塔最简单难度都不一定通关）。\n无任何福利。",
+										"choices": [
+											{
+												"text": "开打！",
+												"action": [
+													{
+														"type": "setValue",
+														"name": "flag:难度",
+														"value": "3"
+													},
+													{
+														"type": "setValue",
+														"name": "flag:chosehard",
+														"value": "true"
+													}
+												]
+											},
+											{
+												"text": "换一个",
+												"action": [
+													{
+														"type": "showImage",
+														"code": 5,
+														"image": "hard1.png",
+														"sloc": [
+															0,
+															0,
+															null
+														],
+														"loc": [
+															150,
+															340,
+															180,
+															60
+														],
+														"opacity": 1,
+														"time": 0
+													}
+												]
+											}
+										]
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"type": "setCurtain",
+				"color": [
+					0,
+					0,
+					0,
+					1
+				],
+				"time": 500,
+				"keep": true
+			},
+			{
+				"type": "hideImage",
+				"code": 1,
+				"time": 0
+			},
+			{
+				"type": "hideImage",
+				"code": 2,
+				"time": 0
+			},
+			{
+				"type": "hideImage",
+				"code": 3,
+				"time": 0
+			},
+			{
+				"type": "hideImage",
+				"code": 4,
+				"time": 0
+			},
+			{
+				"type": "hideImage",
+				"code": 5,
+				"time": 0
 			}
 		]
 	}
